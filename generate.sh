@@ -1,3 +1,1 @@
-npm install @openapitools/openapi-generator-cli -g
-
-npx @openapitools/openapi-generator-cli generate -i https://api.relewise.com/public/swagger.json -g java -o ./src
+dotnet run --project Generator src/src/main/java/com/relewise/client

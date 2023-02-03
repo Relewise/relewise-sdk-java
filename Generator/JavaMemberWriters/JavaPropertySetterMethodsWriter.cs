@@ -1,0 +1,91 @@
+﻿using Generator.Extensions;
+using System.CodeDom.Compiler;
+using System.Reflection;
+
+namespace Generator.JavaMemberWriters;
+
+public class JavaPropertySetterMethodsWriter
+{
+    private readonly JavaWriter javaWriter;
+
+    public JavaPropertySetterMethodsWriter(JavaWriter javaWriter)
+    {
+        this.javaWriter = javaWriter;
+    }
+
+    public void Write(IndentedTextWriter writer, Type returnType, string returnTypeName, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations)
+    {
+        foreach (var (info, propertyTypeName, propertyName, lowerCaseName) in propertyInformations)
+        {
+            var propertyType = info.PropertyType;
+            if (propertyType.IsGenericType && propertyType.GetGenericTypeDefinition() == typeof(Dictionary<,>) && propertyType.GenericTypeArguments is [var keyType, var valueType])
+            {
+                writer.WriteLine($"public {returnTypeName} addTo{propertyName}({javaWriter.TypeName(keyType)} key, {javaWriter.TypeName(valueType)} value)");
+                writer.WriteLine("{");
+                writer.Indent++;
+                writer.WriteLine($"if (this.{lowerCaseName} == null)");
+                writer.WriteLine("{");
+                writer.Indent++;
+                writer.WriteLine($"this.{lowerCaseName} = new HashMap<>();");
+                writer.Indent--;
+                writer.WriteLine("}");
+                writer.WriteLine($"this.{lowerCaseName}.put(key, value);");
+                writer.WriteLine("return this;");
+                writer.Indent--;
+                writer.WriteLine("}");
+            }
+
+            var parameterType = javaWriter.BetterTypedParameterTypeName(propertyTypeName, propertyType);
+            writer.WriteLine($"public {returnTypeName} set{propertyName}({parameterType} {lowerCaseName})");
+            writer.WriteLine("{");
+            writer.Indent++;
+            writer.WriteLine($"this.{lowerCaseName} = {lowerCaseName};");
+            writer.WriteLine("return this;");
+            writer.Indent--;
+            writer.WriteLine("}");
+            
+            if (propertyType.IsArray && !returnType.GenericTypeArguments.Contains(propertyType.GetElementType()))
+            {
+                var elementType = propertyType.GetElementType()!;
+                writer.WriteLine($"public {returnTypeName} addTo{propertyName}({javaWriter.TypeName(elementType)} {lowerCaseName.SingularIfPossible()})");
+                writer.WriteLine("{");
+                writer.Indent++;
+                writer.WriteLine($"if (this.{lowerCaseName} == null)");
+                writer.WriteLine("{");
+                writer.Indent++;
+                writer.WriteLine($"this.{lowerCaseName} = new {javaWriter.TypeName(elementType)}[] {{ {lowerCaseName.SingularIfPossible()} }};");
+                writer.Indent--;
+                writer.WriteLine("}");
+                writer.WriteLine("else");
+                writer.WriteLine("{");
+                writer.Indent++;
+                writer.WriteLine($"ArrayList<{javaWriter.TypeName(elementType)}> existingList = new ArrayList<>(Arrays.asList(this.{lowerCaseName}));");
+                writer.WriteLine($"existingList.add({lowerCaseName.SingularIfPossible()});");
+                writer.WriteLine($"this.{lowerCaseName} = existingList.toArray(new {javaWriter.TypeName(elementType)}[0]);");
+                writer.Indent--;
+                writer.WriteLine("}");
+                writer.WriteLine("return this;");
+
+                writer.Indent--;
+                writer.WriteLine("}");
+            }
+            else if (propertyType.IsGenericType && propertyType.GetGenericTypeDefinition() == typeof(List<>) && !propertyType.GenericTypeArguments[0].IsGenericTypeParameter)
+            {
+                writer.WriteLine($"public {returnTypeName} addTo{propertyName}({javaWriter.TypeName(propertyType.GenericTypeArguments[0])} {lowerCaseName})");
+                writer.WriteLine("{");
+                writer.Indent++;
+                writer.WriteLine($"if (this.{lowerCaseName} == null)");
+                writer.WriteLine("{");
+                writer.Indent++;
+                writer.WriteLine($"this.{lowerCaseName} = new ArrayList<>();");
+                writer.Indent--;
+                writer.WriteLine("}");
+                writer.WriteLine($"this.{lowerCaseName}.add({lowerCaseName});");
+                writer.WriteLine("return this;");
+
+                writer.Indent--;
+                writer.WriteLine("}");
+            }
+        }
+    }
+}
