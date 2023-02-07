@@ -6,6 +6,9 @@ public class Constants
     public const string GenerationFolderPath = "model";
 
     public const string StandardImports = """
+        import com.fasterxml.jackson.annotation.JsonTypeInfo;
+        import com.fasterxml.jackson.annotation.JsonSubTypes;
+        import com.fasterxml.jackson.annotation.Type;
         import javax.annotation.Nullable;
         import java.io.IOException;
         import java.time.OffsetDateTime;
