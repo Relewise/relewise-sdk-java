@@ -1,5 +1,9 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Metadata;
 using Generator.Extensions;
+using Relewise.Client.DataTypes.Search.Facets.Result;
 
 namespace Generator;
 
@@ -16,7 +20,7 @@ public class JavaTypeResolver
         this.assembly = assembly;
     }
 
-    public string ResolveType(Type type) => type.Name switch
+    public string ResolveType(Type type, Type? parentType = null) => type.Name switch
     {
         "String" => "String",
         "Guid" => "UUID",
@@ -55,20 +59,12 @@ public class JavaTypeResolver
 
     private static string GetTypeName(Type type)
     {
-        return type.Name.Replace("`1", "").Replace("`2", "");
-    }
+        if (type.IsNested)
+        {
+            return type.DeclaringType!.Name + type.Name.Replace("`1", "").Replace("`2", "");
+        }
 
-    public string GenericTypeName(Type type)
-    {
-        if (type.GetGenericArguments().Length is 1)
-        {
-            return $"{GetTypeName(type)}<{type.GetGenericArguments()[0].Name}>";
-        }
-        if (type.GetGenericArguments().Length is 2)
-        {
-            return $"{GetTypeName(type)}<{type.GetGenericArguments()[0].Name}, {type.GetGenericArguments()[1].Name}>";
-        }
-        return GetTypeName(type);
+        return type.Name.Replace("`1", "").Replace("`2", "");
     }
 
     private string AddCollectionTypeDefinition(Type type)
@@ -97,38 +93,39 @@ public class JavaTypeResolver
 
     private string GetGenericTypeDefinition(Type type)
     {
-        if (type.IsGenericTypeDefinition)
-        {
-            switch (type.GenericTypeArguments.Length)
-            {
-                case 1:
-                    return $"{GetOrAddTypeDefinition(type)}<{type.GenericTypeArguments.Single()}>";
-                case 2:
-                    return $"{GetOrAddTypeDefinition(type)}<{type.GenericTypeArguments.First().Name}, {type.GenericTypeArguments.Last().Name}>";
-            }
-        }
-
         // We use `RemoveNullable` in the following section because Java does not support to annotate generic type arguments.
         switch (type.GenericTypeArguments.Length)
         {
             case 1:
-                return $"{GetOrAddTypeDefinition(type)}<{ResolveType(type.GenericTypeArguments.Single()).RemoveNullable()}>";
+                return $"{ResolveType(type.GenericTypeArguments.Single()).RemoveNullable()}{GetOrAddTypeDefinition(type)}";
             case 2:
-                return $"{GetOrAddTypeDefinition(type)}<{ResolveType(type.GenericTypeArguments.First()).RemoveNullable()}, {ResolveType(type.GenericTypeArguments.Last()).RemoveNullable()}>";
+                return $"{ResolveType(type.GenericTypeArguments.First()).RemoveNullable()}{ResolveType(type.GenericTypeArguments.Last()).RemoveNullable()}{GetOrAddTypeDefinition(type)}";
         }
 
-        if (type.GenericTypeArguments is not [var genericTypeArgumentDefinition])
+        if (type.GetGenericArguments() is not [var genericTypeArgumentDefinition])
         {
             return GetOrAddTypeDefinition(type);
         }
 
-        return $"{GetOrAddTypeDefinition(type)}<{genericTypeArgumentDefinition.Name.RemoveNullable()}>";
-    }
-    private void AddDerivedTypeDefinitions(Type type)
-    {
-        if (!type.IsAbstract && !type.IsInterface)
+        if (genericTypeArgumentDefinition.GetGenericParameterConstraints() is not [var genericTypeArgumentConstraint])
         {
-            return;
+            return GetOrAddTypeDefinition(type);
+        }
+
+        GetOrAddTypeDefinition(genericTypeArgumentConstraint);
+        if (AddDerivedTypeDefinitions(genericTypeArgumentConstraint) is { } concreteTypeName)
+        {
+            return $"{concreteTypeName}{GetOrAddTypeDefinition(type)}";
+        }
+
+        return GetOrAddTypeDefinition(type);
+    }
+
+    private string? AddDerivedTypeDefinitions(Type type)
+    {
+        if (!type.IsAbstract)
+        {
+            return null;
         }
         var derivedTypes = assembly
             .GetTypes()
@@ -137,11 +134,13 @@ public class JavaTypeResolver
             .ToArray();
         if (derivedTypes.Length is 0)
         {
-            return;
+            return null;
         }
-        foreach (var derivedType in derivedTypes)
+        // We do the extra work of generating classes for all the types that implement the 'genericTypeArgumentConstraint'
+        foreach (var derivedType in derivedTypes.Skip(1))
         {
             GetOrAddTypeDefinition(derivedType);
         }
+        return ResolveType(derivedTypes.First());
     }
 }

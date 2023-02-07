@@ -43,30 +43,19 @@ public class JavaWriter
         {
             var type = javaTypeResolver.TypesToGenerate.Dequeue();
 
-            string typeName = "";
-            var fileTypeName = "";
-            if (type.IsGenericType)
-            {
-                typeName = GenericTypeName(type.GetGenericTypeDefinition());
-                fileTypeName = TypeName(type.GetGenericTypeDefinition());
-            }
-            else
-            {
-                typeName = TypeName(type);
-                fileTypeName = typeName;
-;
-            }
+            var potentialNullableTypeName = TypeName(type);
+            string typeName = potentialNullableTypeName.RemoveNullable();
 
             typeName = typeName.RemoveNullable();
 
-            if (javaTypeResolver.IsWritten(fileTypeName)) continue;
+            if (javaTypeResolver.IsWritten(typeName)) continue;
 
-            if ((type.IsGenericTypeParameter || typeName.Contains("d__")))
+            if (type.IsGenericTypeDefinition || type.IsGenericTypeParameter || typeName.Contains("d__"))
             {
                 continue;
             }
 
-            using var streamWriter = File.CreateText($"{BasePath}/{Constants.GenerationFolderPath}/{FileName(fileTypeName)}.java");
+            using var streamWriter = File.CreateText($"{BasePath}/{Constants.GenerationFolderPath}/{typeName}.java");
             using var writer = new IndentedTextWriter(streamWriter);
 
             var phpTypeWriter = javaTypeWriters.FirstOrDefault(writer => writer.CanWrite(type));
@@ -77,7 +66,7 @@ public class JavaWriter
             else
             {
                 phpTypeWriter.Write(writer, type, typeName);
-                javaTypeResolver.HasWritten(fileTypeName);
+                javaTypeResolver.HasWritten(typeName);
             }
         }
     }
@@ -96,8 +85,6 @@ public class JavaWriter
         return PrependNullableIfApplicable(typeName, new NullabilityInfoContext().Create(property));
     }
 
-    public string GenericTypeName(Type type) => javaTypeResolver.GenericTypeName(type);
-
     private static string PrependNullableIfApplicable(string typeName, NullabilityInfo nullabilityInfo)
     {
         if (!typeName.StartsWith("@Nullable")
@@ -111,17 +98,15 @@ public class JavaWriter
 
     public string BetterTypedParameterTypeName(string parameterTypeName, Type propertyType)
     {
-        return parameterTypeName[^3..] is "[]"
+        return parameterTypeName.Length > 2 ? parameterTypeName[^2..] is "[]"
             ? propertyType.IsGenericType && propertyType.GetGenericTypeDefinition() == typeof(List<>) &&
               propertyType.GenericTypeArguments is [var elementType]
                 ? TypeName(elementType) + "..."
                 : propertyType.IsArray
                     ? TypeName(propertyType.GetElementType()!) + "..."
                     : "Object..."
-            : parameterTypeName;
+            : parameterTypeName : parameterTypeName;
     }
-
-    private string FileName(string typeName) => typeName.Replace("<", "").Replace(">", "");
 
     public string ValueSetter(Type toType, string toName, Type fromType, string fromName) => (toType, fromType) switch
     {

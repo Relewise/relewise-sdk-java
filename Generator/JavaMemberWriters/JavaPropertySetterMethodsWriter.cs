@@ -13,7 +13,7 @@ public class JavaPropertySetterMethodsWriter
         this.javaWriter = javaWriter;
     }
 
-    public void Write(IndentedTextWriter writer, Type returnType, string returnTypeName, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations)
+    public void Write(IndentedTextWriter writer, Type returnType, string returnTypeName, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations, string[] ownedProperties)
     {
         foreach (var (info, propertyTypeName, propertyName, lowerCaseName) in propertyInformations)
         {
@@ -36,6 +36,10 @@ public class JavaPropertySetterMethodsWriter
             }
 
             var parameterType = javaWriter.BetterTypedParameterTypeName(propertyTypeName, propertyType);
+            if (!ownedProperties.Any(p => p.ToLower() == lowerCaseName.ToLower()))
+            {
+                writer.WriteLine("@Override");
+            }
             writer.WriteLine($"public {returnTypeName} set{propertyName}({parameterType} {lowerCaseName})");
             writer.WriteLine("{");
             writer.Indent++;
@@ -61,7 +65,7 @@ public class JavaPropertySetterMethodsWriter
                 writer.Indent++;
                 writer.WriteLine($"ArrayList<{javaWriter.TypeName(elementType)}> existingList = new ArrayList<>(Arrays.asList(this.{lowerCaseName}));");
                 writer.WriteLine($"existingList.add({lowerCaseName.SingularIfPossible()});");
-                writer.WriteLine($"this.{lowerCaseName} = existingList.toArray(new {javaWriter.TypeName(elementType)}[0]);");
+                writer.WriteLine($"this.{lowerCaseName} = existingList.toArray({NewUpper(javaWriter.TypeName(elementType))}[0]);");
                 writer.Indent--;
                 writer.WriteLine("}");
                 writer.WriteLine("return this;");
@@ -88,4 +92,9 @@ public class JavaPropertySetterMethodsWriter
             }
         }
     }
+
+    private string NewUpper(string typeName) => typeName switch {
+        _ when typeName.EndsWith("[]") => $"new {typeName[..^2]}[0]",
+        _ => $"new {typeName}",
+    };
 }

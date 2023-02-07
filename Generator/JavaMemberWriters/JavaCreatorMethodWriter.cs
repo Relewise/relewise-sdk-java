@@ -150,7 +150,7 @@ public class JavaCreatorMethodWriter
             double number => $"{number.ToString(CultureInfo.InvariantCulture)}",
             float number => $"{number.ToString(CultureInfo.InvariantCulture)}",
             string stringLiteral => $"\"{stringLiteral}\"",
-            _ when obj.GetType().IsEnum => $"{javaWriter.TypeName(obj.GetType())}::{obj}",
+            _ when obj.GetType().IsEnum => $"{javaWriter.TypeName(obj.GetType())}.{obj}",
             _ => System.Text.Json.JsonSerializer.Serialize(obj)
         };
     }

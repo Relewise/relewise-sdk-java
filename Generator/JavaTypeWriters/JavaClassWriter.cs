@@ -61,10 +61,10 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
             .ToArray();
 
         javaWriter.SettablePropertiesWriter.Write(writer, ownedProperties);
-        javaWriter.StaticReadonlyPropertiesWriter.Write(writer, staticGetterProperties);
+        javaWriter.StaticReadonlyPropertiesWriter.Write(writer, type, staticGetterProperties);
 
         javaWriter.CreatorMethodWriter.Write(writer, type, typeName, ownedProperties);
-        javaWriter.PropertySetterMethodsWriter.Write(writer, type, typeName, settableProperties);
+        javaWriter.PropertySetterMethodsWriter.Write(writer, type, typeName, settableProperties, ownedProperties.Select(p => p.propertyName).ToArray());
 
         writer.Indent--;
         writer.WriteLine("}");

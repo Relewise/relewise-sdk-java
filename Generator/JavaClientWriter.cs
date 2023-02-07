@@ -4,18 +4,18 @@ using System.CodeDom.Compiler;
 
 namespace Generator;
 
-public class PhpClientWriter
+public class JavaClientWriter
 {
-    private readonly JavaWriter phpWriter;
+    private readonly JavaWriter javaWriter;
 
-    public PhpClientWriter(JavaWriter phpWriter)
+    public JavaClientWriter(JavaWriter javaWriter)
     {
-        this.phpWriter = phpWriter;
+        this.javaWriter = javaWriter;
     }
 
     public void GenerateClientClass(Type clientType, string[] clientMethodNames)
     {
-        using var streamWriter = File.CreateText($"{phpWriter.BasePath}/{clientType.Name}.php");
+        using var streamWriter = File.CreateText($"{javaWriter.BasePath}/{clientType.Name}.php");
         using var writer = new IndentedTextWriter(streamWriter);
 
         var clientMethods = clientType
@@ -29,19 +29,19 @@ public class PhpClientWriter
                            && info.GetParameters().First().ParameterType.IsAssignableTo(typeof(LicensedRequest))
             )
             .SelectMany(info => info.GetParameters().First().ParameterType.IsAbstract
-                ? phpWriter.Assembly
+                ? javaWriter.Assembly
                     .GetTypes()
                     .Where(derivingType => !derivingType.IsGenericType && derivingType.IsAssignableTo(info.GetParameters().First().ParameterType))
                     .Select(derivedType => (
-                        methodName: phpWriter.TypeName(derivedType).ToCamelCase(),
-                        parameterType: phpWriter.TypeName(derivedType),
+                        methodName: javaWriter.TypeName(derivedType).ToCamelCase(),
+                        parameterType: javaWriter.TypeName(derivedType),
                         parameterName: info.GetParameters().First().Name!,
                         returnType: info.ReturnType))
                 : new[]
                 {
                 (
-                    methodName: phpWriter.TypeName(info.GetParameters().First().ParameterType).ToCamelCase(),
-                    parameterType: phpWriter.TypeName(info.GetParameters().First().ParameterType),
+                    methodName: javaWriter.TypeName(info.GetParameters().First().ParameterType).ToCamelCase(),
+                    parameterType: javaWriter.TypeName(info.GetParameters().First().ParameterType),
                     parameterName: info.GetParameters().First().Name!,
                     returnType: info.ReturnType)
                 })
@@ -61,7 +61,7 @@ use Relewise\Infrastructure\HttpClient\Response;
         }
         foreach (var method in clientMethods.DistinctBy(method => method.returnType).Where(method => method.returnType != typeof(void)))
         {
-            writer.WriteLine($"use {Constants.Namespace}\\{phpWriter.TypeName(method.returnType)};");
+            writer.WriteLine($"use {Constants.Namespace}\\{javaWriter.TypeName(method.returnType)};");
         }
         writer.WriteLine($"");
 
@@ -71,7 +71,7 @@ use Relewise\Infrastructure\HttpClient\Response;
         foreach (var method in clientMethods.DistinctBy(method => method.parameterType))
         {
             var methodName = method.methodName.EndsWith("Request") ? method.methodName[..^7].ToCamelCase() : method.methodName.EndsWith("RequestCollection") ? $"batch{method.methodName[..^17]}" : method.methodName.ToCamelCase();
-            writer.WriteLine($"public function {methodName}({method.parameterType} ${method.parameterName}){(method.returnType != typeof(void) ? $" : ?{phpWriter.TypeName(method.returnType)}" : "")}");
+            writer.WriteLine($"public function {methodName}({method.parameterType} ${method.parameterName}){(method.returnType != typeof(void) ? $" : ?{javaWriter.TypeName(method.returnType)}" : "")}");
             writer.WriteLine("{");
             writer.Indent++;
             if (method.returnType == typeof(void))
@@ -87,7 +87,7 @@ use Relewise\Infrastructure\HttpClient\Response;
                 writer.WriteLine("return Null;");
                 writer.Indent--;
                 writer.WriteLine("}");
-                writer.WriteLine($"return {phpWriter.TypeName(method.returnType)}::hydrate($response);");
+                writer.WriteLine($"return {javaWriter.TypeName(method.returnType)}.hydrate($response);");
             }
             writer.Indent--;
             writer.WriteLine("}");

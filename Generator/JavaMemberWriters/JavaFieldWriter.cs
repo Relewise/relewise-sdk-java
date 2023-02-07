@@ -5,11 +5,11 @@ namespace Generator.JavaMemberWriters;
 
 public class JavaFieldWriter
 {
-    private readonly JavaWriter phpWriter;
+    private readonly JavaWriter javaWriter;
 
-    public JavaFieldWriter(JavaWriter phpWriter)
+    public JavaFieldWriter(JavaWriter javaWriter)
     {
-        this.phpWriter = phpWriter;
+        this.javaWriter = javaWriter;
     }
 
     public void Write(IndentedTextWriter writer, (PropertyInfo type, string propertyTypeName, string propertyName, string lowerCaseName)[] ownedProperties)
