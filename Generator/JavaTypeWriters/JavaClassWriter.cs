@@ -51,10 +51,6 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
         writer.WriteLine($"public {(type.IsAbstract ? "abstract " : "")}class {typeName}{(type.BaseType != typeof(object) && type.BaseType is { } baseType ? $" extends {javaWriter.TypeName(baseType).RemoveNullable()}" : "")}{(type.GetInterfaces() is { Length: > 0 } interfaces ? " implements " + string.Join(", ", interfaces.Select(i => javaWriter.TypeName(i))) : "")}");
         writer.WriteLine("{");
         writer.Indent++;
-        if (type.BaseType != typeof(object) && type.BaseType is { IsAbstract: true } || type.IsAbstract)
-        {
-            writer.WriteLine($"public String $type = \"{type.FullName}, {type.Assembly.FullName!.Split(",")[0]}\";");
-        }
         
         var gettablePropertyInfo = type
             .GetProperties()
