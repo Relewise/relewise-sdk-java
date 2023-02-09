@@ -2,11 +2,10 @@ package com.relewise.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.UncheckedIOException;
+import java.io.*;
 import java.net.http.HttpResponse;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 public class JsonBodyHandler<T> implements HttpResponse.BodyHandler<Supplier<T>> {
 
@@ -34,7 +33,9 @@ public class JsonBodyHandler<T> implements HttpResponse.BodyHandler<Supplier<T>>
         return () -> {
             try (InputStream stream = inputStream) {
                 ObjectMapper objectMapper = new ObjectMapper();
-                return objectMapper.readValue(stream, targetType);
+                var res = new BufferedReader(new InputStreamReader(stream))
+                        .lines().collect(Collectors.joining("\n"));
+                return objectMapper.readValue(res, targetType);
             } catch (IOException e) {
                 throw new UncheckedIOException(e);
             }
