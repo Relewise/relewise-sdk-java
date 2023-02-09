@@ -13,13 +13,20 @@ class SearcherTest extends TestBase {
         var searcher = new Searcher(GetDatasetId(), GetApiKey());
 
         var productSearch = ProductSearchRequest.create(
-                Language.UNDEFINED,
-                Currency.UNDEFINED,
-                UserFactory.byTemporaryId("t-id"),
-                "integration test",
-                "p-1",
-                0,
-                3
+            Language.UNDEFINED,
+            Currency.UNDEFINED,
+            UserFactory.byTemporaryId("t-id"),
+            "integration test",
+            "p-1",
+            0,
+            3
+        ).setRelevanceModifiers(
+            RelevanceModifierCollection.create(
+                ProductDataRelevanceModifier.create(
+                    "NoveltyBoostModifier",
+                    DataDoubleSelector.create("NoveltyBoostModifier")
+                )
+            )
         );
 
         Callable<ProductSearchResponse> action = () -> searcher.search(productSearch);
