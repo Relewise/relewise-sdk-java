@@ -2,6 +2,7 @@
 using Relewise.Client;
 using Relewise.Client.Requests;
 using Relewise.Client.Responses;
+using Relewise.Client.Search;
 using System.Reflection;
 
 if (args.Length is not 1)
@@ -31,12 +32,12 @@ javaWriter.WriteTypes(assembly
     .GetTypes()
     .Where(type => type.IsSubclassOf(typeof(TimedResponse))));
 
-//var javaClientWriter = new JavaClientWriter(phpWriter);
+var javaClientWriter = new JavaClientWriter(javaWriter);
 
-//javaClientWriter.GenerateClientClass(typeof(Tracker), new[] { "Track" });
-//javaClientWriter.GenerateClientClass(typeof(Searcher), new[] { "Search", "Predict", "Batch" });
-//javaClientWriter.GenerateClientClass(typeof(Recommender), new[] { "Recommend" });
-//javaClientWriter.GenerateClientClass(typeof(SearchAdministrator), new[] { "Delete", "Save", "Load" });
+javaClientWriter.GenerateClientClass(typeof(Tracker), new[] { "Track" });
+javaClientWriter.GenerateClientClass(typeof(Searcher), new[] { "Search", "Predict", "Batch" });
+javaClientWriter.GenerateClientClass(typeof(Recommender), new[] { "Recommend" });
+javaClientWriter.GenerateClientClass(typeof(SearchAdministrator), new[] { "Delete", "Save", "Load" });
 
 if (javaWriter.MissingTypeDefinitions.Count > 0)
 {

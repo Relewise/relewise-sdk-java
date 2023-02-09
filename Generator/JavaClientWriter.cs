@@ -15,7 +15,7 @@ public class JavaClientWriter
 
     public void GenerateClientClass(Type clientType, string[] clientMethodNames)
     {
-        using var streamWriter = File.CreateText($"{javaWriter.BasePath}/{clientType.Name}.php");
+        using var streamWriter = File.CreateText($"{javaWriter.BasePath}/{clientType.Name}.java");
         using var writer = new IndentedTextWriter(streamWriter);
 
         var clientMethods = clientType
@@ -33,14 +33,14 @@ public class JavaClientWriter
                     .GetTypes()
                     .Where(derivingType => !derivingType.IsGenericType && derivingType.IsAssignableTo(info.GetParameters().First().ParameterType))
                     .Select(derivedType => (
-                        methodName: javaWriter.TypeName(derivedType).ToCamelCase(),
+                        methodName: info.Name.ToCamelCase(),
                         parameterType: javaWriter.TypeName(derivedType),
                         parameterName: info.GetParameters().First().Name!,
                         returnType: info.ReturnType))
                 : new[]
                 {
                 (
-                    methodName: javaWriter.TypeName(info.GetParameters().First().ParameterType).ToCamelCase(),
+                    methodName: info.Name.ToCamelCase(),
                     parameterType: javaWriter.TypeName(info.GetParameters().First().ParameterType),
                     parameterName: info.GetParameters().First().Name!,
                     returnType: info.ReturnType)
@@ -48,46 +48,30 @@ public class JavaClientWriter
             .ToArray();
 
         writer.WriteLine($"""
-<?php declare(strict_types=1);
+package {Constants.Namespace};
 
-namespace {Constants.Namespace};
+import {Constants.Namespace}.{Constants.GenerationFolderPath}.*;
+import java.io.IOException;
 
-use Relewise\Infrastructure\HttpClient\Response;
 """);
-
-        foreach (var method in clientMethods.DistinctBy(method => method.parameterType))
-        {
-            writer.WriteLine($"use {Constants.Namespace}\\{method.parameterType};");
-        }
-        foreach (var method in clientMethods.DistinctBy(method => method.returnType).Where(method => method.returnType != typeof(void)))
-        {
-            writer.WriteLine($"use {Constants.Namespace}\\{javaWriter.TypeName(method.returnType)};");
-        }
-        writer.WriteLine($"");
 
         writer.WriteLine($"class {clientType.Name} extends RelewiseClient");
         writer.WriteLine("{");
         writer.Indent++;
+        writer.WriteLine($"public {clientType.Name}(String datasetId, String apiKey) {{ super(datasetId, apiKey); }}");
+
         foreach (var method in clientMethods.DistinctBy(method => method.parameterType))
         {
-            var methodName = method.methodName.EndsWith("Request") ? method.methodName[..^7].ToCamelCase() : method.methodName.EndsWith("RequestCollection") ? $"batch{method.methodName[..^17]}" : method.methodName.ToCamelCase();
-            writer.WriteLine($"public function {methodName}({method.parameterType} ${method.parameterName}){(method.returnType != typeof(void) ? $" : ?{javaWriter.TypeName(method.returnType)}" : "")}");
-            writer.WriteLine("{");
+            writer.WriteLine("");
+            writer.WriteLine($"public {(method.returnType == typeof(void) ? "void" : javaWriter.TypeName(method.returnType))} {method.methodName}({method.parameterType} {method.parameterName}) throws IOException, InterruptedException {{");
             writer.Indent++;
             if (method.returnType == typeof(void))
             {
-                writer.WriteLine($"return $this->requestAndValidate(\"{method.parameterType}\", ${method.parameterName});");
+                writer.WriteLine($"makeRequestAndValidate(\"{method.parameterType}\", {method.parameterName}, {javaWriter.TypeName(method.returnType)}.class);");
             }
             else
             {
-                writer.WriteLine($"$response = $this->requestAndValidate(\"{method.parameterType}\", ${method.parameterName});");
-                writer.WriteLine("if ($response == Null)");
-                writer.WriteLine("{");
-                writer.Indent++;
-                writer.WriteLine("return Null;");
-                writer.Indent--;
-                writer.WriteLine("}");
-                writer.WriteLine($"return {javaWriter.TypeName(method.returnType)}.hydrate($response);");
+                writer.WriteLine($"return makeRequestAndValidate(\"{method.parameterType}\", {method.parameterName}, {javaWriter.TypeName(method.returnType)}.class);");
             }
             writer.Indent--;
             writer.WriteLine("}");
