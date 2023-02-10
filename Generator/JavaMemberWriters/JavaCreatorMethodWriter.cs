@@ -1,11 +1,8 @@
 ﻿using Generator.Extensions;
+using Newtonsoft.Json;
 using System.CodeDom.Compiler;
-using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
-using System.Reflection.Metadata;
-using System.Security.Cryptography;
 
 namespace Generator.JavaMemberWriters;
 
@@ -41,73 +38,77 @@ public class JavaCreatorMethodWriter
                                     ) // There is a property type that matches each parameter type.
             );
 
+        var allConstructorParametersIntersectionWithMappableNamesAndTypes = type
+            .GetConstructors()
+            .Where(c => c.GetParameters().Length > 0)
+            .MinBy(c => c.GetParameters().Length);
+
         if (coveringTypeMappableConstructor != null)
         {
-            WriteConstructor(writer, typeName, propertyInformations, coveringTypeMappableConstructor, Array.Empty<string>());
-        }
+            string[] defaultParameters = coveringTypeMappableConstructor.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
 
-        foreach (var constructor in type.GetConstructors().Where(c => c.GetParameters().Length > 0))
-        {
-            string[] defaultParameters = constructor.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
-
-            WriteConstructor(writer, typeName, propertyInformations, constructor, defaultParameters);
+            WriteConstructor(writer, type, typeName, propertyInformations, coveringTypeMappableConstructor, Array.Empty<string>(), ignoreNameEquivalence: true);
             if (defaultParameters.Any())
             {
-                WriteConstructor(writer, typeName, propertyInformations, constructor, Array.Empty<string>());
+                WriteConstructor(writer, type, typeName, propertyInformations, coveringTypeMappableConstructor, defaultParameters);
             }
         }
-    }
+        else if (allConstructorParametersIntersectionWithMappableNamesAndTypes != null)
+        {
+            string[] defaultParameters = allConstructorParametersIntersectionWithMappableNamesAndTypes.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
 
-    private IEnumerable<IEnumerable<string>> GetPermuationsWithExcludingEachElementOption(List<string> list)
-    {
-        if (list.Count is 1)
-        {
-            yield return new List<string>() { };
-            yield return new List<string>() { list.Single() };
-        }
-        else
-        {
-            foreach (var permutation in GetPermuationsWithExcludingEachElementOption(list.Skip(1).ToList()))
+            WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, Array.Empty<string>(), ignoreNameEquivalence: true);
+            if (defaultParameters.Any())
             {
-                yield return permutation.Concat(new List<string>() { list.First() });
-                yield return permutation;
+                WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, defaultParameters);
             }
         }
     }
 
-    private void WriteConstructor(IndentedTextWriter writer, string typeName, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations, ConstructorInfo constructorInfo, string[] includedNullableParameters)
+    private void WriteConstructor(IndentedTextWriter writer, Type returnType, string typeName, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations, ConstructorInfo constructorInfo, string[] includedNullableParameters, bool ignoreNameEquivalence = false)
     {
-        var parameters = constructorInfo.GetParameters().Where(parameter => !parameter.HasDefaultValue || includedNullableParameters.Contains(parameter.Name)).ToArray();
+        var parameters = constructorInfo.GetParameters()
+            .Where(parameter => returnType.GetProperties()
+                .Any(property => 
+                    (property.GetIndexParameters().Length is 0
+                           && property.GetMethod is { IsAbstract: false }
+                           && property.SetMethod is { IsAbstract: false }
+                           && !Attribute.IsDefined(property, typeof(JsonIgnoreAttribute))
+                           && property.GetAccessors(false).All(ax => !ax.IsAbstract && ax.IsPublic))
+                    && (property.Name.ToCamelCase() == parameter.Name || ignoreNameEquivalence)
+                    && (property.PropertyType == parameter.ParameterType || EqualCollectionElementType(property.PropertyType, parameter.ParameterType)))
+                && (!parameter.HasDefaultValue || includedNullableParameters.Contains(parameter.Name))).ToArray();
+
         var nonIncludedDefaultParameters = constructorInfo.GetParameters().Where(parameter => parameter.HasDefaultValue && !includedNullableParameters.Contains(parameter.Name)).ToArray();
 
-        var methodHead = $"public static {typeName} create({ParameterList(parameters)})";
-        if (WrittenCreator.Contains(methodHead))
+        var signature = string.Join(',', parameters.Select(p => javaWriter.TypeName(p.ParameterType)));
+        if (WrittenCreator.Contains(signature))
         {
             return;
         }
-        WrittenCreator.Add(methodHead);
+        WrittenCreator.Add(signature);
 
-        writer.WriteLine(methodHead);
+        writer.WriteLine($"public static {typeName} create({ParameterList(parameters)})");
         writer.WriteLine("{");
         writer.Indent++;
         writer.WriteLine($"{typeName} result = new {typeName}();");
         foreach (var parameter in parameters)
         {
             string? propertyName;
-            var property = propertyInformations.FirstOrDefault(property => property.lowerCaseName == parameter.Name);
-            propertyName = property.lowerCaseName;
+            var property = returnType.GetProperties().FirstOrDefault(property => property.Name.ToCamelCase() == parameter.Name);
+            propertyName = property?.Name.ToCamelCase();
             if (propertyName is null)
             {
-                property = propertyInformations.FirstOrDefault(property => property.info.PropertyType == parameter.ParameterType || EqualCollectionElementType(property.info.PropertyType, parameter.ParameterType));
-                propertyName = property.lowerCaseName;
+                property = returnType.GetProperties().FirstOrDefault(property => property.PropertyType == parameter.ParameterType || EqualCollectionElementType(property.PropertyType, parameter.ParameterType));
+                propertyName = property?.Name.ToCamelCase();
             }
             if (propertyName is not null)
             {
-                if (property.info.PropertyType.IsGenericType && property.info.PropertyType.GetGenericTypeDefinition() == typeof(List<>) && parameter.ParameterType.IsArray)
+                if (property!.PropertyType.IsGenericType && property!.PropertyType.GetGenericTypeDefinition() == typeof(List<>) && parameter.ParameterType.IsArray)
                 {
                     writer.WriteLine($"result.{propertyName} = new ArrayList<>(Arrays.asList({parameter.Name}));");
                 }
-                else if (property.info.PropertyType.IsArray && parameter.ParameterType.IsGenericType && parameter.ParameterType.GetGenericTypeDefinition() == typeof(List<>))
+                else if (property!.PropertyType.IsArray && parameter.ParameterType.IsGenericType && parameter.ParameterType.GetGenericTypeDefinition() == typeof(List<>))
                 {
                     writer.WriteLine($"result.{propertyName} = {parameter.Name}.asArray();");
                 }
@@ -120,12 +121,12 @@ public class JavaCreatorMethodWriter
         foreach (var parameter in nonIncludedDefaultParameters)
         {
             string? propertyName;
-            var property = propertyInformations.FirstOrDefault(property => property.lowerCaseName == parameter.Name);
-            propertyName = property.lowerCaseName;
+            var property = returnType.GetProperties().FirstOrDefault(property => property.Name.ToCamelCase() == parameter.Name);
+            propertyName = property?.Name.ToCamelCase();
             if (propertyName is null)
             {
-                property = propertyInformations.FirstOrDefault(property => property.info.PropertyType == parameter.ParameterType);
-                propertyName = property.lowerCaseName;
+                property = returnType.GetProperties().FirstOrDefault(property => property.PropertyType == parameter.ParameterType || EqualCollectionElementType(property.PropertyType, parameter.ParameterType));
+                propertyName = property?.Name.ToCamelCase();
             }
             if (propertyName is not null)
             {
@@ -147,8 +148,8 @@ public class JavaCreatorMethodWriter
         return obj switch
         {
             int number => $"{number}",
-            double number => $"{number.ToString(CultureInfo.InvariantCulture)}",
-            float number => $"{number.ToString(CultureInfo.InvariantCulture)}",
+            double number => $"{number.ToString(CultureInfo.InvariantCulture)}d",
+            float number => $"{number.ToString(CultureInfo.InvariantCulture)}f",
             string stringLiteral => $"\"{stringLiteral}\"",
             _ when obj.GetType().IsEnum => $"{javaWriter.TypeName(obj.GetType())}.{obj}",
             _ => System.Text.Json.JsonSerializer.Serialize(obj)
