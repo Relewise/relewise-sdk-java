@@ -5,6 +5,9 @@ import com.relewise.client.model.User;
 import java.util.HashMap;
 
 public class UserFactory {
+    public static User anonymous() {
+        return new User();
+    }
     public static User byAuthenticatedId(String authenticatedId, String temporaryId) {
         var user = byAuthenticatedId(authenticatedId);
         user.temporaryId = temporaryId;

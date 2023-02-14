@@ -15,17 +15,15 @@ import com.relewise.client.model.TimedResponse;
 public class RelewiseClient {
     public String serverUrl  = "https://api.relewise.com";
     private static final String apiVersion = "v1";
-    private final HttpClient httpClient;
     private final String datasetId;
     private final String apiKey;
 
     public RelewiseClient(String datasetId, String apiKey) {
-        httpClient = HttpClient.newHttpClient();
         this.datasetId = datasetId;
         this.apiKey = apiKey;
     }
 
-    public <T> HttpResponse<Supplier<T>> makeRequest(String endpoint, LicensedRequest requestBody, Class<T> responseClass) throws IOException, InterruptedException {
+    public <T> HttpResponse<Supplier<T>> makeRequestAsync(String endpoint, LicensedRequest requestBody, Class<T> responseClass) throws IOException, InterruptedException {
         ObjectMapper objectMapper = new ObjectMapper();
 
         var stringRequestBody = objectMapper.writeValueAsString(requestBody);
@@ -41,12 +39,16 @@ public class RelewiseClient {
                 .header("Content-Type", "application/json")
                 .build();
 
+        var httpClient = HttpClient.newHttpClient();
         return httpClient.send(request, new JsonBodyHandler<T>(responseClass));
     }
 
     public <T> T makeRequestAndValidate(String endpoint, LicensedRequest requestBody, Class<T> responseClass) throws IOException, InterruptedException {
-        var response = makeRequest(endpoint, requestBody, responseClass);
+        var response = makeRequestAsync(endpoint, requestBody, responseClass);
         // TODO: Add validation for error codes
+        if (responseClass == Void.class) {
+            return (T)null;
+        }
         return response.body().get();
     }
 

@@ -33,9 +33,7 @@ public class JsonBodyHandler<T> implements HttpResponse.BodyHandler<Supplier<T>>
         return () -> {
             try (InputStream stream = inputStream) {
                 ObjectMapper objectMapper = new ObjectMapper();
-                var res = new BufferedReader(new InputStreamReader(stream))
-                        .lines().collect(Collectors.joining("\n"));
-                return objectMapper.readValue(res, targetType);
+                return objectMapper.readValue(stream, targetType);
             } catch (IOException e) {
                 throw new UncheckedIOException(e);
             }

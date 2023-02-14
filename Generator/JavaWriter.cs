@@ -96,16 +96,18 @@ public class JavaWriter
         return typeName;
     }
 
-    public string BetterTypedParameterTypeName(string parameterTypeName, Type propertyType)
+    public string BetterTypedParameterTypeName(Type parameterType, NullabilityInfo nullabilityInfo)
     {
-        return parameterTypeName.Length > 2 ? parameterTypeName[^2..] is "[]"
-            ? propertyType.IsGenericType && propertyType.GetGenericTypeDefinition() == typeof(List<>) &&
-              propertyType.GenericTypeArguments is [var elementType]
+        if (nullabilityInfo.WriteState is NullabilityState.Nullable)
+        {
+            parameterType = nullabilityInfo.Type;
+        }
+        return parameterType.IsGenericType && parameterType.GetGenericTypeDefinition() == typeof(List<>) &&
+              parameterType.GenericTypeArguments is [var elementType]
                 ? TypeName(elementType) + "..."
-                : propertyType.IsArray
-                    ? TypeName(propertyType.GetElementType()!) + "..."
-                    : "Object..."
-            : parameterTypeName : parameterTypeName;
+                : parameterType.IsArray
+                    ? TypeName(parameterType.GetElementType()!) + "..."
+                    : TypeName(parameterType);
     }
 
     public string ValueSetter(Type toType, string toName, Type fromType, string fromName) => (toType, fromType) switch

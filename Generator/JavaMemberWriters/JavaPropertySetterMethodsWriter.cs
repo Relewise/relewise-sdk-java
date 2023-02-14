@@ -35,7 +35,7 @@ public class JavaPropertySetterMethodsWriter
                 writer.WriteLine("}");
             }
 
-            var parameterType = javaWriter.BetterTypedParameterTypeName(propertyTypeName, propertyType);
+            var parameterType = javaWriter.BetterTypedParameterTypeName(propertyType, new NullabilityInfoContext().Create(info));
             if (!ownedProperties.Any(p => p.ToLower() == lowerCaseName.ToLower()))
             {
                 writer.WriteLine("@Override");
@@ -43,11 +43,11 @@ public class JavaPropertySetterMethodsWriter
             writer.WriteLine($"public {returnTypeName} set{propertyName}({parameterType} {lowerCaseName})");
             writer.WriteLine("{");
             writer.Indent++;
-            writer.WriteLine($"this.{lowerCaseName} = {lowerCaseName};");
+            writer.WriteLine($"this.{javaWriter.ValueSetter(propertyType, lowerCaseName, propertyType is { IsGenericType: true } genericType && genericType.GetGenericTypeDefinition() == typeof(List<>) ? (genericType.GenericTypeArguments[0]).MakeArrayType() : propertyType, lowerCaseName)};");
             writer.WriteLine("return this;");
             writer.Indent--;
             writer.WriteLine("}");
-            
+
             if (propertyType.IsArray && !returnType.GenericTypeArguments.Contains(propertyType.GetElementType()))
             {
                 var elementType = propertyType.GetElementType()!;
@@ -93,7 +93,8 @@ public class JavaPropertySetterMethodsWriter
         }
     }
 
-    private string NewUpper(string typeName) => typeName switch {
+    private string NewUpper(string typeName) => typeName switch
+    {
         _ when typeName.EndsWith("[]") => $"new {typeName[..^2]}[0]",
         _ => $"new {typeName}",
     };

@@ -27,34 +27,37 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
     
 """);
 
-        if (!type.IsAssignableTo(typeof(TimedResponse)))
+        if (type.IsAbstract || type.IsInterface)
         {
-            if (type.IsAbstract || type.IsInterface)
+            var attributes = System.Attribute.GetCustomAttributes(type);
+            if (attributes.Any(a => a is MessagePackObjectAttribute))
             {
-                var attributes = System.Attribute.GetCustomAttributes(type);
-                if (attributes.Any(a => a is MessagePackObjectAttribute))
+                writer.WriteLine("@JsonTypeInfo(");
+                writer.Indent++;
+                writer.WriteLine("use = JsonTypeInfo.Id.CLASS,");
+                writer.WriteLine("include = JsonTypeInfo.As.EXISTING_PROPERTY,");
+                writer.WriteLine("property = \"$type\")");
+                writer.Indent--;
+                writer.WriteLine("@JsonSubTypes({");
+                writer.Indent++;
+                foreach (var attribute in attributes)
                 {
-                    writer.WriteLine("@JsonTypeInfo(");
-                    writer.Indent++;
-                    writer.WriteLine("use = JsonTypeInfo.Id.NAME,");
-                    writer.WriteLine("include = JsonTypeInfo.As.EXISTING_PROPERTY,");
-                    writer.WriteLine("property = \"$type\")");
-                    writer.Indent--;
-                    writer.WriteLine("@JsonSubTypes({");
-                    writer.Indent++;
-                    foreach (var attribute in attributes)
-                    {
-                        if (attribute is not UnionAttribute unionAttribute) continue;
-                        writer.WriteLine($"@JsonSubTypes.Type(value = {javaWriter.TypeName(unionAttribute.SubType)}.class, name = \"{unionAttribute.SubType.FullName}, {unionAttribute.SubType.Assembly.FullName!.Split(",")[0]}\"),");
-                    }
-                    writer.Indent--;
-                    writer.WriteLine("})");
+                    if (attribute is not UnionAttribute unionAttribute) continue;
+                    writer.WriteLine($"@JsonSubTypes.Type(value = {javaWriter.TypeName(unionAttribute.SubType)}.class, name = \"{unionAttribute.SubType.FullName}, {unionAttribute.SubType.Assembly.FullName!.Split(",")[0]}\"),");
                 }
+                writer.Indent--;
+                writer.WriteLine("})");
             }
-            else
-            {
-                writer.WriteLine($"@JsonTypeName(\"{type.FullName}, {type.Assembly.FullName!.Split(",")[0]}\")");
-            }
+        }
+        else
+        {
+            writer.WriteLine("@JsonTypeInfo(");
+            writer.Indent++;
+            writer.WriteLine("use = JsonTypeInfo.Id.CLASS,");
+            writer.WriteLine("include = JsonTypeInfo.As.EXISTING_PROPERTY,");
+            writer.WriteLine("property = \"$type\",");
+            writer.WriteLine($"defaultImpl = {typeName}.class)");
+            writer.Indent--;
         }
 
         writer.WriteLine($"public {(type.IsAbstract ? "abstract " : "")}class {typeName}{(type.BaseType != typeof(object) && type.BaseType is { } baseType ? $" extends {javaWriter.TypeName(baseType).RemoveNullable()}" : "")}{(type.GetInterfaces() is { Length: > 0 } interfaces ? " implements " + string.Join(", ", interfaces.Select(i => javaWriter.TypeName(i))) : "")}");

@@ -63,6 +63,15 @@ public class JavaCreatorMethodWriter
                 WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, defaultParameters);
             }
         }
+        else
+        {
+            writer.WriteLine($"public static {typeName} create()");
+            writer.WriteLine("{");
+            writer.Indent++;
+            writer.WriteLine($"return new {typeName}();");
+            writer.Indent--;
+            writer.WriteLine("}");
+        }
     }
 
     private void WriteConstructor(IndentedTextWriter writer, Type returnType, string typeName, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations, ConstructorInfo constructorInfo, string[] includedNullableParameters, bool ignoreNameEquivalence = false)
@@ -104,7 +113,8 @@ public class JavaCreatorMethodWriter
             }
             if (propertyName is not null)
             {
-                if (property!.PropertyType.IsGenericType && property!.PropertyType.GetGenericTypeDefinition() == typeof(List<>) && parameter.ParameterType.IsArray)
+                if (property!.PropertyType.IsGenericType && property!.PropertyType.GetGenericTypeDefinition() == typeof(List<>) && (parameter.ParameterType.IsArray
+                    || (parameter == parameters.Last() && javaWriter.BetterTypedParameterTypeName(parameter.ParameterType, new NullabilityInfoContext().Create(parameter)).Contains("..."))))
                 {
                     writer.WriteLine($"result.{propertyName} = new ArrayList<>(Arrays.asList({parameter.Name}));");
                 }
@@ -160,7 +170,7 @@ public class JavaCreatorMethodWriter
     {
         return string.Join(", ",
             parameters.Select(parameter =>
-                $"{(parameters[^1] == parameter ? javaWriter.BetterTypedParameterTypeName(javaWriter.TypeName(parameter), parameter.ParameterType) : javaWriter.TypeName(parameter))} {parameter.Name}"
+                $"{(parameters[^1] == parameter ? javaWriter.BetterTypedParameterTypeName(parameter.ParameterType, new NullabilityInfoContext().Create(parameter)) : javaWriter.TypeName(parameter))} {parameter.Name}"
             )
         );
     }
