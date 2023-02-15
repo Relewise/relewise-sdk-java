@@ -34,7 +34,7 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
             {
                 writer.WriteLine("@JsonTypeInfo(");
                 writer.Indent++;
-                writer.WriteLine("use = JsonTypeInfo.Id.CLASS,");
+                writer.WriteLine("use = JsonTypeInfo.Id.NAME,");
                 writer.WriteLine("include = JsonTypeInfo.As.EXISTING_PROPERTY,");
                 writer.WriteLine("property = \"$type\")");
                 writer.Indent--;
@@ -53,7 +53,7 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
         {
             writer.WriteLine("@JsonTypeInfo(");
             writer.Indent++;
-            writer.WriteLine("use = JsonTypeInfo.Id.CLASS,");
+            writer.WriteLine("use = JsonTypeInfo.Id.NAME,");
             writer.WriteLine("include = JsonTypeInfo.As.EXISTING_PROPERTY,");
             writer.WriteLine("property = \"$type\",");
             writer.WriteLine($"defaultImpl = {typeName}.class)");

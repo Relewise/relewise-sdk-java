@@ -1,4 +1,4 @@
-package com.relewise.client;
+package com.relewise.client.infrastructure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
@@ -12,32 +12,22 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.function.Supplier;
 
-import com.relewise.client.model.TimedResponse;
-
 public class RelewiseClient {
     public String serverUrl  = "https://api.relewise.com";
     private static final String apiVersion = "v1";
     private final String datasetId;
     private final String apiKey;
-    private final boolean isDebugging;
+    private final ObjectMapper objectMapper;
 
     public RelewiseClient(String datasetId, String apiKey) {
         this.datasetId = datasetId;
         this.apiKey = apiKey;
-        this.isDebugging = false;
-    }
-
-    public RelewiseClient(String datasetId, String apiKey, boolean isDebugging) {
-        this.datasetId = datasetId;
-        this.apiKey = apiKey;
-        this.isDebugging = isDebugging;
-    }
-
-    public <T> HttpResponse<Supplier<T>> makeRequestAsync(String endpoint, LicensedRequest requestBody, Class<T> responseClass) throws IOException, InterruptedException {
-        ObjectMapper objectMapper = JsonMapper.builder()
+        this.objectMapper = JsonMapper.builder()
             .addModule(new JavaTimeModule())
             .build();
+    }
 
+    public HttpResponse<String> makeRequestAsync(String endpoint, LicensedRequest requestBody) throws IOException, InterruptedException {
         var stringRequestBody = objectMapper.writeValueAsString(requestBody);
 
         var uri = URI.create(createRequestUrl(
@@ -52,22 +42,39 @@ public class RelewiseClient {
                 .build();
 
         var httpClient = HttpClient.newHttpClient();
-        return httpClient.send(request, new JsonBodyHandler<T>(responseClass, isDebugging));
+        return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     }
 
-    public <T> T makeRequestAndValidate(String endpoint, LicensedRequest requestBody, Class<T> responseClass) throws IOException, InterruptedException {
-        var response = makeRequestAsync(endpoint, requestBody, responseClass);
+    public <T> T makeRequestAndValidate(String endpoint, LicensedRequest requestBody, Class<T> responseClass) throws IOException, InterruptedException, ClientException {
+        var response = makeRequestAsync(endpoint, requestBody);
 
         var statusCode = response.statusCode();
         if (statusCode >= 200 && statusCode <= 299) {
             if (responseClass == Void.class) {
-                return (T)null;
+                return null;
             }
-            return response.body().get();
+            return objectMapper.readValue(response.body(), responseClass);
         }
         if (statusCode == 401) {
-
+            throw new UnauthorizedException(response.body(), statusCode);
         }
+        if (statusCode == 503) {
+            throw new ServiceUnavailableException(response.body(), statusCode);
+        }
+        if (statusCode == 500) {
+            throw new InternalServerErrorException(response.body(), statusCode);
+        }
+        if (statusCode == 400) {
+            var contentType = response.headers().firstValue("contentType");
+            if (contentType.isPresent() && contentType.get().equals("application/problem+json")) {
+                throw new ProblemDetailsException(response.body(), statusCode);
+            }
+            throw new BadRequestException(response.body(), statusCode);
+        }
+        if (statusCode == 404) {
+            return null;
+        }
+        throw new ClientException(response.body(), statusCode);
     }
 
     private String createRequestUrl(String baseUrl, String[] segments) {

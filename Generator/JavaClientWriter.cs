@@ -51,6 +51,7 @@ public class JavaClientWriter
 package {Constants.Namespace};
 
 import {Constants.Namespace}.{Constants.GenerationFolderPath}.*;
+import {Constants.Namespace}.infrastructure.*;
 import java.io.IOException;
 
 """);
@@ -63,7 +64,7 @@ import java.io.IOException;
         foreach (var method in clientMethods.DistinctBy(method => method.parameterType))
         {
             writer.WriteLine("");
-            writer.WriteLine($"public {(method.returnType == typeof(void) ? "void" : javaWriter.TypeName(method.returnType))} {method.methodName}({method.parameterType} {method.parameterName}) throws IOException, InterruptedException {{");
+            writer.WriteLine($"public {(method.returnType == typeof(void) ? "void" : javaWriter.TypeName(method.returnType))} {method.methodName}({method.parameterType} {method.parameterName}) throws IOException, InterruptedException, ClientException {{");
             writer.Indent++;
             if (method.returnType == typeof(void))
             {
