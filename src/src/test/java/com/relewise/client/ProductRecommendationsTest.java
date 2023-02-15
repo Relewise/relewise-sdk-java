@@ -76,11 +76,14 @@ class ProductRecommendationsTest extends TestBase {
                                     .setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode.Any),
                                 ContainsCondition.create(DataValueFactory.create(true, false, true))
                                     .setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode.Any),
-                                ContainsCondition.create(DataValueFactory.create(Multilingual.create(MultilingualValue.create(Language.create("da-dk"), "danish text"))))
+                                ContainsCondition.create(DataValueFactory.create(Multilingual.create(MultilingualValue.create(Language.create("da-dk"), "dansk tekst"))))
                                     .setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode.Any),
-                                ContainsCondition.create(DataValueFactory.create(Language.create("da-dk"), "this text", "and this text"))
+                                ContainsCondition.create(DataValueFactory.create(Language.create("en-US"), "this text", "and this text"))
                                     .setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode.Any),
-                                ContainsCondition.create(DataValueFactory.create(new MultilingualCollectionValue[] {MultilingualCollectionValue.create(Language.create("da-dk"), "this text", "and this text")}))
+                                ContainsCondition.create(DataValueFactory.create(new MultilingualCollectionValue[] {
+                                        MultilingualCollectionValue.create(Language.create("da-dk"), "den her tekst", "og den her"),
+                                        MultilingualCollectionValue.create(Language.create("en-US"), "this text", "and this text")
+                                    }))
                                     .setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode.Any),
                                 ContainsCondition.create(DataValueFactory.create(new Object() { public final String Key1 = "Value1"; public final String Key2 = "Value2"; }))
                                     .setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode.Any),
