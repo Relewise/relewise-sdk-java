@@ -25,17 +25,18 @@ public class JavaCreatorMethodWriter
 
         var coveringTypeMappableConstructor = type
             .GetConstructors() // All 
-            .FirstOrDefault(c => c.GetParameters().Count() == c.GetParameters().DistinctBy(parameter => parameter.ParameterType).Count() // There are no parameters with the same type.
-                              && c.GetParameters().Count() == propertyInformations.Length // There are as many parameters as there are properties.
-                              && c.GetParameters()
-                                    .All(parameter => propertyInformations
-                                        .Any(property =>
-                                            (property.info.PropertyType == parameter.ParameterType
-                                             && new NullabilityInfoContext().Create(property.info).WriteState is NullabilityState.Nullable
-                                             == new NullabilityInfoContext().Create(parameter).WriteState is NullabilityState.Nullable) // If the type matches then the nullability annotation also has to.
-                                            || EqualCollectionElementType(property.info.PropertyType, parameter.ParameterType) // if they only match on their collection element type then we are more relaxed as method params can be empty.
-                                        )
-                                    ) // There is a property type that matches each parameter type.
+            .FirstOrDefault(c => c.GetParameters().Length > 0
+                                 && c.GetParameters().Count() == c.GetParameters().DistinctBy(parameter => parameter.ParameterType).Count() // There are no parameters with the same type.
+                                 && c.GetParameters().Count() == propertyInformations.Length // There are as many parameters as there are properties.
+                                 && c.GetParameters()
+                                     .All(parameter => propertyInformations
+                                         .Any(property =>
+                                                 (property.info.PropertyType == parameter.ParameterType
+                                                  && new NullabilityInfoContext().Create(property.info).WriteState is NullabilityState.Nullable
+                                                  == new NullabilityInfoContext().Create(parameter).WriteState is NullabilityState.Nullable) // If the type matches then the nullability annotation also has to.
+                                                 || EqualCollectionElementType(property.info.PropertyType, parameter.ParameterType) // if they only match on their collection element type then we are more relaxed as method params can be empty.
+                                         )
+                                     ) // There is a property type that matches each parameter type.
             );
 
         var allConstructorParametersIntersectionWithMappableNamesAndTypes = type

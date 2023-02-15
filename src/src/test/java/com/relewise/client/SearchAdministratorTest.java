@@ -79,7 +79,6 @@ class SearchAdministratorTest extends TestBase {
 
         // Validate Delete
         getRequest = SearchIndexRequest.create("to_be_deleted");
-
         getResponse  = searchAdministrator.load(getRequest);
         assertNull(getResponse);
     }
