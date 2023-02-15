@@ -1,5 +1,6 @@
 package com.relewise.client;
 
+import com.relewise.client.factory.DataValueFactory;
 import com.relewise.client.factory.UserFactory;
 import com.relewise.client.model.*;
 import org.junit.jupiter.api.Test;
@@ -56,7 +57,10 @@ class TrackerTest extends TestBase {
                                 )
                             )
                         )
-                    // TODO: Add missing DataValue's here.
+                        .addToData("SomeString", DataValueFactory.create("SomeValue"))
+                        .addToData("SomeObject", DataValueFactory.create(new Object() { public final String SomeString = "SomeValue"; }))
+                        .addToData("SomeStringList", DataValueFactory.create("FirstString", "SecondString"))
+                        .addToData("SomeBooleanList", DataValueFactory.create(true, true, false))
                 )
                 .setVariants(
                     ProductVariant.create("v-1")
