@@ -1,1 +1,0 @@
-dotnet run --project Generator src/src/main/java/com/relewise/client
