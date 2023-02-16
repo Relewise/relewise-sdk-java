@@ -8,9 +8,9 @@ import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TestTracker extends TestBase {
+public class TrackerTest extends TestBase {
     @Test
-    void testProductView() throws Exception {
+    public void testProductView() throws Exception {
         var tracker = new Tracker(GetDatasetId(), GetApiKey());
 
         var productSearch = TrackProductViewRequest.create(
@@ -26,7 +26,7 @@ class TestTracker extends TestBase {
     }
 
     @Test
-    void testProductUpdateWithVariant() throws Exception {
+    public void testProductUpdateWithVariant() throws Exception {
         // Create Product by tracking it.
         var tracker = new Tracker(GetDatasetId(), GetApiKey());
 

@@ -8,9 +8,9 @@ import java.util.concurrent.Callable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BatchedSearchesTest extends TestBase {
+public class BatchedSearchesTest extends TestBase {
     @Test
-    void testBatchedSearch() throws Exception {
+    public void testBatchedSearch() throws Exception {
         var searcher = new Searcher(GetDatasetId(), GetApiKey());
 
         var searchRequestCollection = SearchRequestCollection.create(

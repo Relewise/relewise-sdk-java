@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ContentRecommendationsTest extends TestBase {
+public class ContentRecommendationsTest extends TestBase {
     @Test
-    void testContentsViewedAfterViewing() throws Exception {
+    public void testContentsViewedAfterViewing() throws Exception {
         var recommender = new Recommender(GetDatasetId(), GetApiKey());
 
         var contentsViewedAfterViewingContent = ContentsViewedAfterViewingContentRequest.create(
@@ -26,7 +26,7 @@ class ContentRecommendationsTest extends TestBase {
     }
 
     @Test
-    void testPopularContent() throws Exception {
+    public void testPopularContent() throws Exception {
         var recommender = new Recommender(GetDatasetId(), GetApiKey());
 
         var popularContents = PopularContentsRequest.create(

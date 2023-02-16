@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class DataObjectsTest extends TestBase {
+public class DataObjectsTest extends TestBase {
     @Test
-    void testDataObjectsCanBeDeserialized() throws Exception {
+    public void testDataObjectsCanBeDeserialized() throws Exception {
         var searcher = new Searcher(GetDatasetId(), GetApiKey());
 
         var productSearch = ProductSearchRequest.create(

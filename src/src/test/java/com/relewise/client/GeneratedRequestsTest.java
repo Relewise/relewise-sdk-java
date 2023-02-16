@@ -8,9 +8,9 @@ import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GeneratedRequestsTest extends TestBase {
+public class GeneratedRequestsTest extends TestBase {
     @Test
-    void testTrackOrderRequestWithBuilderPatternAndCreatorMethod() throws Exception {
+    public void testTrackOrderRequestWithBuilderPatternAndCreatorMethod() throws Exception {
         var tracker = new Tracker(GetDatasetId(), GetApiKey());
 
         var orderRequest = TrackOrderRequest.create(
@@ -32,7 +32,7 @@ class GeneratedRequestsTest extends TestBase {
      * @throws Exception
      */
     @Test
-    void testTrackOrderRequestWithBuilderPattern() throws Exception {
+    public void testTrackOrderRequestWithBuilderPattern() throws Exception {
         var tracker = new Tracker(GetDatasetId(), GetApiKey());
 
         var orderRequest = (new TrackOrderRequest())
@@ -59,7 +59,7 @@ class GeneratedRequestsTest extends TestBase {
      * @throws Exception
      */
     @Test
-    void testTrackOrderRequest() throws Exception {
+    public void testTrackOrderRequest() throws Exception {
         var tracker = new Tracker(GetDatasetId(), GetApiKey());
 
         var order = new Order(

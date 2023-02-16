@@ -9,9 +9,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FacetsTest extends TestBase {
+public class FacetsTest extends TestBase {
     @Test
-    void testSalesPriceFacet() throws Exception {
+    public void testSalesPriceFacet() throws Exception {
         var searcher = new Searcher(GetDatasetId(), GetApiKey());
 
         var productSearch = ProductSearchRequest.create(
@@ -39,7 +39,7 @@ class FacetsTest extends TestBase {
     }
 
     @Test
-    void testBrandFacet() throws Exception {
+    public void testBrandFacet() throws Exception {
         var searcher = new Searcher(GetDatasetId(), GetApiKey());
 
         var productSearch = ProductSearchRequest.create(
@@ -69,7 +69,7 @@ class FacetsTest extends TestBase {
     }
 
     @Test
-    void testProductDataFacet() throws Exception {
+    public void testProductDataFacet() throws Exception {
         var searcher = new Searcher(GetDatasetId(), GetApiKey());
 
         var productSearch = ProductSearchRequest.create(
@@ -101,11 +101,12 @@ class FacetsTest extends TestBase {
         assertEquals(ProductDataStringValueFacetResult.class, response.facets.items.get(0).getClass());
         assertEquals(DataSelectionStrategy.Product, ((ProductDataStringValueFacetResult) response.facets.items.get(0)).dataSelectionStrategy);
         assertEquals("ShortDescription", ((ProductDataStringValueFacetResult) response.facets.items.get(0)).key);
+        // assertEquals("data_key_1", ((ProductDataStringValueFacetResult) response.facets.items.get(0)).selected.get(0)); This is apparently not something we get back.
         assertEquals(FacetingField.Data, response.facets.items.get(0).field);
     }
 
     @Test
-    void testCategoryFacet() throws Exception {
+    public void testCategoryFacet() throws Exception {
         var searcher = new Searcher(GetDatasetId(), GetApiKey());
 
         var productSearch = ProductSearchRequest.create(

@@ -11,9 +11,9 @@ import java.util.concurrent.Callable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ProductRecommendationsTest extends TestBase {
+public class ProductRecommendationsTest extends TestBase {
     @Test
-    void testPurchasedWithProduct() throws Exception {
+    public void testPurchasedWithProduct() throws Exception {
         var recommender = new Recommender(GetDatasetId(), GetApiKey());
 
         var purchasedWithProduct = PurchasedWithProductRequest.create(
@@ -31,7 +31,7 @@ class ProductRecommendationsTest extends TestBase {
     }
 
     @Test
-    void testProductsViewedAfterViewingProduct() throws Exception {
+    public void testProductsViewedAfterViewingProduct() throws Exception {
         var recommender = new Recommender(GetDatasetId(), GetApiKey());
 
         var productsViewedAfterViewingProduct = ProductsViewedAfterViewingProductRequest.create(
@@ -49,7 +49,7 @@ class ProductRecommendationsTest extends TestBase {
     }
 
     @Test
-    void testProductsViewedAfterViewingProductWithAllConditions() throws Exception {
+    public void testProductsViewedAfterViewingProductWithAllConditions() throws Exception {
         var recommender = new Recommender(GetDatasetId(), GetApiKey());
 
         var productsViewedAfterViewingProduct = ProductsViewedAfterViewingProductRequest.create(

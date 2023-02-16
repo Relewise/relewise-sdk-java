@@ -8,9 +8,9 @@ import java.util.concurrent.Callable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SearchAdministratorTest extends TestBase {
+public class SearchAdministratorTest extends TestBase {
     @Test
-    void testSaveSimpleSearchIndex() throws Exception {
+    public void testSaveSimpleSearchIndex() throws Exception {
         var searchAdministrator = new SearchAdministrator(GetDatasetId(), GetApiKey());
 
         var saveSearchIndex = SaveSearchIndexRequest.create(
@@ -41,7 +41,7 @@ class SearchAdministratorTest extends TestBase {
     }
 
     @Test
-    void testSaveGetUpdateAndDeleteSearchIndex() throws Exception {
+    public void testSaveGetUpdateAndDeleteSearchIndex() throws Exception {
         var searchAdministrator = new SearchAdministrator(GetDatasetId(), GetApiKey());
 
         // Create

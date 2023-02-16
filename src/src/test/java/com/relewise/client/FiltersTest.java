@@ -8,9 +8,9 @@ import java.util.concurrent.Callable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FiltersTest extends TestBase {
+public class FiltersTest extends TestBase {
     @Test
-    void testProductAssortmentFilter() throws Exception {
+    public void testProductAssortmentFilter() throws Exception {
         var searcher = new Searcher(GetDatasetId(), GetApiKey());
 
         var productSearch = ProductSearchRequest.create(
@@ -33,7 +33,7 @@ class FiltersTest extends TestBase {
     }
 
     @Test
-    void testProductIdFilter() throws Exception {
+    public void testProductIdFilter() throws Exception {
         var searcher = new Searcher(GetDatasetId(), GetApiKey());
 
         var productSearch = ProductSearchRequest.create(

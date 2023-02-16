@@ -8,9 +8,9 @@ import java.util.concurrent.Callable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SearchTermPredictionTest extends TestBase {
+public class SearchTermPredictionTest extends TestBase {
     @Test
-    void testSearchTermPrediction() throws Exception {
+    public void testSearchTermPrediction() throws Exception {
         var searcher = new Searcher(GetDatasetId(), GetApiKey());
 
         var searchTermPrediction = SearchTermPredictionRequest.create(

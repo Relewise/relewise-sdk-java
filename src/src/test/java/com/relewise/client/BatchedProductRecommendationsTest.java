@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BatchedProductRecommendationsTest extends TestBase {
+public class BatchedProductRecommendationsTest extends TestBase {
     @Test
-    void testBatchedProductRecommendations() throws Exception {
+    public void testBatchedProductRecommendations() throws Exception {
         var recommender = new Recommender(GetDatasetId(), GetApiKey());
 
         var productRecommendationRequestCollection = ProductRecommendationRequestCollection.create(
