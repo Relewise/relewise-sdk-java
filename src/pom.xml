@@ -6,7 +6,20 @@
 
     <groupId>com.relewise.client</groupId>
     <artifactId>relewise-sdk-java</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-alpha.1</version>
+    <description>Relewise is a next generation personalization SaaS-platform, which offers functionality within product- and content recommendations and personalized search. This official SDK helps you interact with our API.</description>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://github.com/Relewise/relewise-sdk-java/blob/main/LICENSE</url>
+        </license>
+    </licenses>
+    <organization>
+        <name>Relewise</name>
+        <url>https://relewise.com/</url>
+    </organization>
+    <name>relewise-sdk-java</name>
+    <url>https://github.com/Relewise/relewise-sdk-java</url>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
