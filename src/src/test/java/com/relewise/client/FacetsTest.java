@@ -85,8 +85,8 @@ public class FacetsTest extends TestBase {
                 .setItems(
                     ProductDataStringValueFacet.create(
                             DataSelectionStrategy.Product,
-                            "ShortDescription",
-                            new ArrayList<>(List.of(new String[]{"data_key_1"})),
+                            "SomeStringList",
+                            new ArrayList<>(List.of(new String[]{"FirstString"})),
                             CollectionFilterType.And
                         )
                         .setField(FacetingField.Data)
@@ -100,8 +100,8 @@ public class FacetsTest extends TestBase {
         assertNotEquals(0, response.facets.items.size());
         assertEquals(ProductDataStringValueFacetResult.class, response.facets.items.get(0).getClass());
         assertEquals(DataSelectionStrategy.Product, ((ProductDataStringValueFacetResult) response.facets.items.get(0)).dataSelectionStrategy);
-        assertEquals("ShortDescription", ((ProductDataStringValueFacetResult) response.facets.items.get(0)).key);
-        // assertEquals("data_key_1", ((ProductDataStringValueFacetResult) response.facets.items.get(0)).selected.get(0)); This is apparently not something we get back.
+        assertEquals("SomeStringList", ((ProductDataStringValueFacetResult) response.facets.items.get(0)).key);
+        assertEquals("FirstString", ((ProductDataStringValueFacetResult) response.facets.items.get(0)).selected.get(0));
         assertEquals(FacetingField.Data, response.facets.items.get(0).field);
     }
 
