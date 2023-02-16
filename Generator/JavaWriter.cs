@@ -16,6 +16,7 @@ public class JavaWriter
     public Assembly Assembly { get; }
     public string BasePath { get; }
     public JavaCreatorMethodWriter CreatorMethodWriter { get; }
+    public JavaPropertyGetterMethodsWriter PropertyGetterMethodsWriter { get; }
     public JavaPropertySetterMethodsWriter PropertySetterMethodsWriter { get; }
     public JavaStaticReadonlyPropertiesWriter StaticReadonlyPropertiesWriter { get; }
     public JavaFieldWriter SettablePropertiesWriter { get; }
@@ -27,6 +28,7 @@ public class JavaWriter
         Assembly = assembly;
         BasePath = basePath;
         CreatorMethodWriter = new JavaCreatorMethodWriter(this);
+        PropertyGetterMethodsWriter = new JavaPropertyGetterMethodsWriter(this);
         PropertySetterMethodsWriter = new JavaPropertySetterMethodsWriter(this);
         StaticReadonlyPropertiesWriter = new JavaStaticReadonlyPropertiesWriter(this);
         SettablePropertiesWriter = new JavaFieldWriter(this);
