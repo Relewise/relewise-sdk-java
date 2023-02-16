@@ -73,6 +73,28 @@ public class JavaCreatorMethodWriter
             writer.Indent--;
             writer.WriteLine("}");
         }
+
+        var allDefaultParameters = type.GetProperties().Where(property =>
+                (property.GetIndexParameters().Length is 0
+                 && property.GetMethod is { IsAbstract: false }
+                 && property.SetMethod is { IsAbstract: false }
+                 && !Attribute.IsDefined(property, typeof(JsonIgnoreAttribute))
+                 && property.GetAccessors(false).All(ax => !ax.IsAbstract && ax.IsPublic))
+                && type.GetConstructors().SelectMany(c => c.GetParameters())
+                    .Any(p => p.Name == property.Name.ToCamelCase() && (p.ParameterType == property.PropertyType || EqualCollectionElementType(p.ParameterType, property.PropertyType)) && p.HasDefaultValue)
+            ).Select(property => type.GetConstructors().SelectMany(c => c.GetParameters())
+                .First(p => p.Name == property.Name.ToCamelCase() && p.HasDefaultValue))
+            .ToArray();
+
+        if (!WrittenCreator.Contains(""))
+        {
+            writer.WriteLine($"public {typeName}()");
+            writer.WriteLine("{");
+            writer.Indent++;
+            WriteCreatorMethodBody(writer, "this", type, Array.Empty<ParameterInfo>(), allDefaultParameters);
+            writer.Indent--;
+            writer.WriteLine("}");
+        }
     }
 
     private void WriteConstructor(IndentedTextWriter writer, Type returnType, string typeName, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations, ConstructorInfo constructorInfo, string[] includedNullableParameters, bool ignoreNameEquivalence = false)
@@ -101,7 +123,20 @@ public class JavaCreatorMethodWriter
         writer.WriteLine($"public static {typeName} create({ParameterList(parameters)})");
         writer.WriteLine("{");
         writer.Indent++;
-        writer.WriteLine($"{typeName} result = new {typeName}();");
+        writer.WriteLine($"return new {typeName}({string.Join(", ", parameters.Select(p => p.Name))});");
+        writer.Indent--;
+        writer.WriteLine("}");
+
+        writer.WriteLine($"public {typeName}({ParameterList(parameters)})");
+        writer.WriteLine("{");
+        writer.Indent++;
+        WriteCreatorMethodBody(writer, "this", returnType, parameters, nonIncludedDefaultParameters);
+        writer.Indent--;
+        writer.WriteLine("}");
+    }
+
+    private void WriteCreatorMethodBody(IndentedTextWriter writer, string variable, Type returnType, ParameterInfo[] parameters, ParameterInfo[] nonIncludedDefaultParameters)
+    {
         foreach (var parameter in parameters)
         {
             string? propertyName;
@@ -117,15 +152,15 @@ public class JavaCreatorMethodWriter
                 if (property!.PropertyType.IsGenericType && property!.PropertyType.GetGenericTypeDefinition() == typeof(List<>) && (parameter.ParameterType.IsArray
                     || (parameter == parameters.Last() && javaWriter.BetterTypedParameterTypeName(parameter.ParameterType, new NullabilityInfoContext().Create(parameter)).Contains("..."))))
                 {
-                    writer.WriteLine($"result.{propertyName} = new ArrayList<>(Arrays.asList({parameter.Name}));");
+                    writer.WriteLine($"{variable}.{propertyName} = new ArrayList<>(Arrays.asList({parameter.Name}));");
                 }
                 else if (property!.PropertyType.IsArray && parameter.ParameterType.IsGenericType && parameter.ParameterType.GetGenericTypeDefinition() == typeof(List<>))
                 {
-                    writer.WriteLine($"result.{propertyName} = {parameter.Name}.asArray();");
+                    writer.WriteLine($"{variable}.{propertyName} = {parameter.Name}.asArray();");
                 }
                 else
                 {
-                    writer.WriteLine($"result.{propertyName} = {parameter.Name};");
+                    writer.WriteLine($"{variable}.{propertyName} = {parameter.Name};");
                 }
             }
         }
@@ -141,12 +176,9 @@ public class JavaCreatorMethodWriter
             }
             if (propertyName is not null)
             {
-                writer.WriteLine($"result.{propertyName}{DefaultValueSetter(parameter)};");
+                writer.WriteLine($"{variable}.{propertyName}{DefaultValueSetter(parameter)};");
             }
         }
-        writer.WriteLine("return result;");
-        writer.Indent--;
-        writer.WriteLine("}");
     }
 
     private string DefaultValueSetter(ParameterInfo parameter)
