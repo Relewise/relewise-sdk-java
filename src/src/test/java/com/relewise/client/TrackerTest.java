@@ -6,11 +6,9 @@ import com.relewise.client.model.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
-import java.util.concurrent.Callable;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-class TrackerTest extends TestBase {
+class TestTracker extends TestBase {
     @Test
     void testProductView() throws Exception {
         var tracker = new Tracker(GetDatasetId(), GetApiKey());
