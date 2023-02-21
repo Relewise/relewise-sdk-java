@@ -48,4 +48,4 @@ jobs:
           JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DATASET_ID: ${{secrets.INTEGRATIONTESTS_DATASET_ID}}
           API_KEY: ${{secrets.INTEGRATIONTESTS_API_KEY}}
-        run: mvn -Prelease deploy jreleaser:deploy --file src/pom.xml
+        run: mvn -e -X -Prelease deploy jreleaser:deploy --file src/pom.xml
