@@ -37,15 +37,11 @@ jobs:
 
       - name: Build
         run: mvn --batch-mode -DskipTests package --file src/pom.xml
-
-      - name: Test
-        run: mvn --batch-mode -Dmaven.test.failure.ignore=true test --file src/pom.xml
-        env:
-          DATASET_ID: ${{secrets.INTEGRATIONTESTS_DATASET_ID}}
-          API_KEY: ${{secrets.INTEGRATIONTESTS_API_KEY}}
-
+        
       - name: Publish to GitHub Packages Apache Maven
-        run: mvn -Prelease deploy jreleaser:deploy -DaltDeploymentRepository=local::default::https://oss.sonatype.org/service/local/staging/deploy/maven2/ --file src/pom.xml
+        run: |
+          cd src
+          mvn -Prelease deploy jreleaser:deploy -DaltDeploymentRepository=local::file:./target/staging-deploy
         env:
           JRELEASER_NEXUS2_USERNAME: ${{ secrets.JRELEASER_NEXUS2_USERNAME }}
           JRELEASER_NEXUS2_PASSWORD: ${{ secrets.JRELEASER_NEXUS2_PASSWORD }}
