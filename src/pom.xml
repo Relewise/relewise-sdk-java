@@ -70,7 +70,7 @@
         <profile>
             <id>release</id>
             <properties>
-                <altDeploymentRepository>local::file:./target/staging-deploy</altDeploymentRepository>
+                <altDeploymentRepository>local::file:/src/target/staging-deploy</altDeploymentRepository>
             </properties>
             <build>
                 <plugins>
