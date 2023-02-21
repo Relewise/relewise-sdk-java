@@ -69,9 +69,6 @@
     <profiles>
         <profile>
             <id>release</id>
-            <properties>
-                <altDeploymentRepository>local::file:/src/target/staging-deploy</altDeploymentRepository>
-            </properties>
             <build>
                 <plugins>
                     <plugin>
