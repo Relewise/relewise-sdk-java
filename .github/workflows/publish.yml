@@ -54,4 +54,4 @@ jobs:
           JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DATASET_ID: ${{secrets.INTEGRATIONTESTS_DATASET_ID}}
           API_KEY: ${{secrets.INTEGRATIONTESTS_API_KEY}}
-        run: ./src/mvnw -Prelease deploy jreleaser:deploy -DaltDeploymentRepository=local::file:./target/staging-deploy --file src/pom.xml
+        run: ./src/mvnw -e -X -Prelease deploy jreleaser:deploy -DaltDeploymentRepository=local::file:./target/staging-deploy --file src/pom.xml
