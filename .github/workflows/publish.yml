@@ -42,7 +42,7 @@ jobs:
         run: mvn -v
         
       - name: POM validator
-        run: mvn org.kordamp.maven:pomchecker-maven-plugin:1.7.0:check-maven-central
+        run: mvn org.kordamp.maven:pomchecker-maven-plugin:1.7.0:check-maven-central --file src/pom.xml
       
       - name: Publish package
         env:
