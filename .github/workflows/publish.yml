@@ -41,6 +41,9 @@ jobs:
       - name: Maven version check
         run: mvn -v
         
+      - name: target folder ls
+        run: ls ./src/target
+        
       - name: POM validator
         run: mvn org.kordamp.maven:pomchecker-maven-plugin:1.7.0:check-maven-central --file src/pom.xml
       
