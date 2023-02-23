@@ -11,6 +11,7 @@
         <url>https://relewise.com/</url>
     </organization>
     <name>relewise-sdk</name>
+    <inceptionYear>2023</inceptionYear>
     <url>https://github.com/Relewise/relewise-sdk-java</url>
     <scm>
         <url>https://github.com/Relewise/relewise-sdk-java</url>
@@ -109,6 +110,7 @@
                         <artifactId>jreleaser-maven-plugin</artifactId>
                         <version>1.4.0</version>
                         <configuration>
+                            <gitRootSearch>true</gitRootSearch>
                             <jreleaser>
                                 <signing>
                                     <active>ALWAYS</active>
