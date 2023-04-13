@@ -5,8 +5,7 @@ Java SDK for Relewise
 
 Install via Maven.
 
-```
-<!-- https://mvnrepository.com/artifact/com.relewise.client/relewise-sdk -->
+```XML
 <dependency>
     <groupId>com.relewise.client</groupId>
     <artifactId>relewise-sdk</artifactId>
