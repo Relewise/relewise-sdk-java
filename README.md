@@ -1,6 +1,19 @@
 # relewise-sdk-java
 Java SDK for Relewise
 
+## Installation
+
+Install via Maven.
+
+```
+<!-- https://mvnrepository.com/artifact/com.relewise.client/relewise-sdk -->
+<dependency>
+    <groupId>com.relewise.client</groupId>
+    <artifactId>relewise-sdk</artifactId>
+    <version>1.0.0-alpha.2</version>
+</dependency>
+```
+
 ## Contributing
 Pull requests are always welcome.
 Please fork this repository and make a PR when you are ready with your contribution.
