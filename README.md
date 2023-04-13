@@ -8,7 +8,7 @@ Please fork this repository and make a PR when you are ready with your contribut
 Otherwise you are welcome to open an Issue in our issue tracker.
 
 ## License
-relewise-sdk-php is licensed under the MIT license
+relewise-sdk-java is licensed under the MIT license
 
 ## Local Development
 Check [DEVELOPMENT.md](./DEVELOPMENT.md) for details on running this project locally for development.
