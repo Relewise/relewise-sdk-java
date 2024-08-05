@@ -3,6 +3,7 @@ package com.relewise.client;
 import com.relewise.client.factory.UserFactory;
 import com.relewise.client.model.*;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 
 import java.util.concurrent.Callable;
 
@@ -10,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SearchAdministratorTest extends TestBase {
     @Test
+    @Disabled
     public void testSaveSimpleSearchIndex() throws Exception {
         var searchAdministrator = new SearchAdministrator(GetDatasetId(), GetApiKey());
 

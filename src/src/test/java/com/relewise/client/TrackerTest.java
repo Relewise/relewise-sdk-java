@@ -56,7 +56,9 @@ public class TrackerTest extends TestBase {
                             )
                         )
                         .addToData("SomeString", DataValueFactory.create("SomeValue"))
-                        .addToData("SomeObject", DataValueFactory.create(new Object() { public final String SomeString = "SomeValue"; }))
+                        .addToData("SomeObject", DataValueFactory.create(new Object() {
+                            public final String SomeString = "SomeValue";
+                        }))
                         .addToData("SomeStringList", DataValueFactory.create("FirstString", "SecondString"))
                         .addToData("SomeBooleanList", DataValueFactory.create(true, true, false))
                 )
@@ -99,7 +101,10 @@ public class TrackerTest extends TestBase {
                         .setDisplayName(true)
                         .setCategoryPaths(true)
                 )
-        );
+        ).setFilters(FilterCollection.create(
+            ProductIdFilter.create().setProductIds("p-1"),
+            VariantIdFilter.create().setVariantIds("v-1")
+        ));
 
         var searchResult = searcher.search(productSearch);
 

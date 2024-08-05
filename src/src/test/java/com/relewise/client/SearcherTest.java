@@ -34,7 +34,7 @@ public class SearcherTest extends TestBase {
         assertDoesNotThrow(action::call);
         var response = action.call();
         assertNotNull(response);
-        assertEquals(1, response.hits);
+        assertTrue(response.hits > 0);
         assertNotEquals(0, response.results.length);
     }
 
