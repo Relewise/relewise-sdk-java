@@ -56,7 +56,7 @@ import java.io.IOException;
 
 """);
 
-        writer.WriteLine($"class {clientType.Name} extends RelewiseClient");
+        writer.WriteLine($"public class {clientType.Name} extends RelewiseClient");
         writer.WriteLine("{");
         writer.Indent++;
         writer.WriteLine($"public {clientType.Name}(String datasetId, String apiKey) {{ super(datasetId, apiKey); }}");
