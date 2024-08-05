@@ -4,7 +4,7 @@ import com.relewise.client.model.*;
 import com.relewise.client.infrastructure.*;
 import java.io.IOException;
 
-class SearchAdministrator extends RelewiseClient
+public class SearchAdministrator extends RelewiseClient
 {
     public SearchAdministrator(String datasetId, String apiKey) { super(datasetId, apiKey); }
     

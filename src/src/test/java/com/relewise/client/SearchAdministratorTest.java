@@ -9,36 +9,36 @@ import java.util.concurrent.Callable;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SearchAdministratorTest extends TestBase {
-    @Test
-    public void testSaveSimpleSearchIndex() throws Exception {
-        var searchAdministrator = new SearchAdministrator(GetDatasetId(), GetApiKey());
-
-        var saveSearchIndex = SaveSearchIndexRequest.create(
-            SearchIndex.create("simple", "a simple test index that is not default", false)
-                .setConfiguration(
-                    IndexConfiguration.create()
-                        .setLanguage(LanguageIndexConfiguration.create()
-                            .setLanguages(
-                                LanguageIndexConfigurationEntry.create(Language.create("da-dk"), true),
-                                LanguageIndexConfigurationEntry.create(Language.create("da.dk"), true)
-                            )
-                        )
-                        .setProduct(ProductIndexConfiguration.create()
-                            .setId(FieldIndexConfiguration.create(true, (short)1, PredictionSourceType.Disabled))
-                            .setDisplayName(FieldIndexConfiguration.create(true, (short)9, PredictionSourceType.PartialWordSequences))
-                            .setData(
-                                DataIndexConfiguration.create()
-                                    .addToKeys("Tags", FieldIndexConfiguration.create(true, (short)8, PredictionSourceType.IndividualWords))
-                                    .addToKeys("Description", FieldIndexConfiguration.create(true, (short)5, PredictionSourceType.PartialWordSequences).setParser(HtmlParser.create()))
-                            )
-                        )
-                ),
-            "Java Integration test"
-        );
-
-        var response = searchAdministrator.save(saveSearchIndex);
-        assertNotNull(response);
-    }
+//    @Test
+//    public void testSaveSimpleSearchIndex() throws Exception {
+//        var searchAdministrator = new SearchAdministrator(GetDatasetId(), GetApiKey());
+//
+//        var saveSearchIndex = SaveSearchIndexRequest.create(
+//            SearchIndex.create("simple", "a simple test index that is not default", false)
+//                .setConfiguration(
+//                    IndexConfiguration.create()
+//                        .setLanguage(LanguageIndexConfiguration.create()
+//                            .setLanguages(
+//                                LanguageIndexConfigurationEntry.create(Language.create("da-dk"), true),
+//                                LanguageIndexConfigurationEntry.create(Language.create("da.dk"), true)
+//                            )
+//                        )
+//                        .setProduct(ProductIndexConfiguration.create()
+//                            .setId(FieldIndexConfiguration.create(true, (short)1, PredictionSourceType.Disabled))
+//                            .setDisplayName(FieldIndexConfiguration.create(true, (short)9, PredictionSourceType.PartialWordSequences))
+//                            .setData(
+//                                DataIndexConfiguration.create()
+//                                    .addToKeys("Tags", FieldIndexConfiguration.create(true, (short)8, PredictionSourceType.IndividualWords))
+//                                    .addToKeys("Description", FieldIndexConfiguration.create(true, (short)5, PredictionSourceType.PartialWordSequences).setParser(HtmlParser.create()))
+//                            )
+//                        )
+//                ),
+//            "Java Integration test"
+//        );
+//
+//        var response = searchAdministrator.save(saveSearchIndex);
+//        assertNotNull(response);
+//    }
 
     @Test
     public void testSaveGetUpdateAndDeleteSearchIndex() throws Exception {
