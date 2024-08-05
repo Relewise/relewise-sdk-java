@@ -4,7 +4,7 @@ import com.relewise.client.model.*;
 import com.relewise.client.infrastructure.*;
 import java.io.IOException;
 
-class Tracker extends RelewiseClient
+public class Tracker extends RelewiseClient
 {
     public Tracker(String datasetId, String apiKey) { super(datasetId, apiKey); }
     

@@ -4,7 +4,7 @@ import com.relewise.client.model.*;
 import com.relewise.client.infrastructure.*;
 import java.io.IOException;
 
-class Recommender extends RelewiseClient
+public class Recommender extends RelewiseClient
 {
     public Recommender(String datasetId, String apiKey) { super(datasetId, apiKey); }
     
