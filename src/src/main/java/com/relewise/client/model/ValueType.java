@@ -22,5 +22,5 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ValueType
 {
-    public String $type = "System.ValueType, System.Private.CoreLib";
+    public String $type = "";
 }

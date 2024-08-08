@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = RecommendPopularSearchTermSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RecommendPopularSearchTermSettings
 {
-    public String $type = "Relewise.Client.Requests.Recommendations.RecommendPopularSearchTermSettings, Relewise.Client";
     public @Nullable EntityType[] targetEntityTypes;
     public Integer numberOfRecommendations;
     public static RecommendPopularSearchTermSettings create()

@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class IntegerValueFacetResult extends IntegerIntegerValueFacetResult
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Result.ValueFacetResult`1[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
+    public String $type = "";
     @Override
     public IntegerValueFacetResult setSelected(Integer... selected)
     {

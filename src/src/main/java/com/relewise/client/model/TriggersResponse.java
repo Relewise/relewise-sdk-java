@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class TriggersResponse extends TimedResponse
 {
-    public String $type = "Relewise.Client.Responses.Triggers.TriggersResponse, Relewise.Client";
+    public String $type = "";
     public Integer remainingResults;
     public Integer getRemainingResults()
     {

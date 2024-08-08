@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ContentFacetQuery.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ContentFacetQuery
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.ContentFacetQuery, Relewise.Client";
     public ArrayList<Facet> items;
     public static ContentFacetQuery create()
     {

@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = IntegerRange.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IntegerRange
 {
-    public String $type = "Relewise.Client.DataTypes.Range`1[[System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
     public @Nullable Integer lowerBoundInclusive;
     public @Nullable Integer upperBoundInclusive;
     public static IntegerRange create(@Nullable Integer lowerBoundInclusive, @Nullable Integer upperBoundInclusive)

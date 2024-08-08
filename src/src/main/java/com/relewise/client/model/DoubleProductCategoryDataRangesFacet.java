@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class DoubleProductCategoryDataRangesFacet extends DoubleDataRangesFacet
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.ProductCategoryDataRangesFacet`1[[System.Nullable`1[[System.Double, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
+    public String $type = "";
     @Override
     public DoubleProductCategoryDataRangesFacet setPredefinedRanges(DoubleChainableRange... predefinedRanges)
     {

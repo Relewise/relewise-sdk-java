@@ -30,7 +30,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class CategoryUpdate extends Trackable
 {
-    public String $type = "Relewise.Client.DataTypes.CategoryUpdate, Relewise.Client";
+    public String $type = "";
     public CategoryUpdateUpdateKind kind;
     public CategoryUpdateUpdateKind getKind()
     {

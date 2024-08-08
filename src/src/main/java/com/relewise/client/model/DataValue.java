@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = DataValue.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DataValue
 {
-    public String $type = "Relewise.Client.DataTypes.DataValue, Relewise.Client";
     public DataValueDataValueTypes type;
     public Object value;
     public static DataValue create()

@@ -32,7 +32,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class DeleteSearchRulesRequest extends LicensedRequest
 {
-    public String $type = "Relewise.Client.Requests.Search.Rules.DeleteSearchRulesRequest, Relewise.Client";
+    public String $type = "";
     public UUID[] ids;
     public String deletedBy;
     public UUID[] getIds()

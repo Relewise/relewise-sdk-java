@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = OverriddenContentRecommendationRequestSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OverriddenContentRecommendationRequestSettings
 {
-    public String $type = "Relewise.Client.Requests.Recommendations.OverriddenContentRecommendationRequestSettings, Relewise.Client";
     public @Nullable Integer numberOfRecommendations;
     public @Nullable Boolean allowFillIfNecessaryToReachNumberOfRecommendations;
     public @Nullable Boolean allowReplacingOfRecentlyShownRecommendations;

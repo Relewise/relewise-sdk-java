@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = FieldIndexConfiguration.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FieldIndexConfiguration
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.FieldIndexConfiguration, Relewise.Client";
     public Boolean included;
     public Short weight;
     public PredictionSourceType predictionSourceType;

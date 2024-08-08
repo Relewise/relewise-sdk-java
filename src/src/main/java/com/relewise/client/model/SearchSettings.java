@@ -22,5 +22,5 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class SearchSettings
 {
-    public String $type = "Relewise.Client.Requests.Search.Settings.SearchSettings, Relewise.Client";
+    public String $type = "";
 }

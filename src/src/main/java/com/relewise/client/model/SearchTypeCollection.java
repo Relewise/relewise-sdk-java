@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = SearchTypeCollection.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTypeCollection
 {
-    public String $type = "Relewise.Client.DataTypes.Merchandising.SearchTypeCollection, Relewise.Client";
     public ArrayList<Short> unionCodes;
     public static SearchTypeCollection create()
     {

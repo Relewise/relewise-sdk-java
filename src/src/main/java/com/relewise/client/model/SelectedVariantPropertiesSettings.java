@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = SelectedVariantPropertiesSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SelectedVariantPropertiesSettings
 {
-    public String $type = "Relewise.Client.Requests.Shared.SelectedVariantPropertiesSettings, Relewise.Client";
     public Boolean displayName;
     public Boolean pricing;
     public Boolean allSpecifications;

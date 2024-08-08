@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ContentResultDetails.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ContentResultDetails
 {
-    public String $type = "Relewise.Client.DataTypes.ContentResultDetails, Relewise.Client";
     public String contentId;
     public Multilingual displayName;
     public Integer[] assortments;

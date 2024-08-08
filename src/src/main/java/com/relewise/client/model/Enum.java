@@ -22,5 +22,5 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Enum extends ValueType implements IComparable, IFormattable, IConvertible
 {
-    public String $type = "System.Enum, System.Private.CoreLib";
+    public String $type = "";
 }

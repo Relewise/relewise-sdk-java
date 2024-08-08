@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = CategoryPathResult.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryPathResult
 {
-    public String $type = "Relewise.Client.DataTypes.CategoryPathResult, Relewise.Client";
     public ArrayList<CategoryNameAndIdResult> pathFromRoot;
     public Integer rank;
     public static CategoryPathResult create(CategoryNameAndIdResult... pathFromRoot)

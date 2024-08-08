@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = SelectedProductPropertiesSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SelectedProductPropertiesSettings
 {
-    public String $type = "Relewise.Client.Requests.Shared.SelectedProductPropertiesSettings, Relewise.Client";
     public Boolean displayName;
     public Boolean categoryPaths;
     public Boolean assortments;

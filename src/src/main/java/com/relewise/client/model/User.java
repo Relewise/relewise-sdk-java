@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = User.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User
 {
-    public String $type = "Relewise.Client.DataTypes.User, Relewise.Client";
     public @Nullable String authenticatedId;
     public @Nullable String temporaryId;
     public @Nullable String email;

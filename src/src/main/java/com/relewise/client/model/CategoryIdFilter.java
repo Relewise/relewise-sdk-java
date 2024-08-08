@@ -30,7 +30,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class CategoryIdFilter extends Filter
 {
-    public String $type = "Relewise.Client.Requests.Filters.CategoryIdFilter, Relewise.Client";
+    public String $type = "";
     public ArrayList<String> categoryIds;
     public CategoryScope evaluationScope;
     public ArrayList<String> getCategoryIds()

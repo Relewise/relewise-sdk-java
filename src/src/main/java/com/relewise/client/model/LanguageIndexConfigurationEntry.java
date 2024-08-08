@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = LanguageIndexConfigurationEntry.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LanguageIndexConfigurationEntry
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.LanguageIndexConfigurationEntry, Relewise.Client";
     public Language language;
     public Boolean included;
     public @Nullable String iSO639_1;

@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = MultilingualValue.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MultilingualValue
 {
-    public String $type = "Relewise.Client.DataTypes.Multilingual+Value, Relewise.Client";
     public Language language;
     public @Nullable String text;
     public static MultilingualValue create(Language language, String text)

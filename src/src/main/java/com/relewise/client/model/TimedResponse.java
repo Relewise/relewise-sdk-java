@@ -45,7 +45,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class TimedResponse
 {
-    public String $type = "Relewise.Client.Responses.TimedResponse, Relewise.Client";
+    public String $type = "";
     public Statistics statistics;
     public Statistics getStatistics()
     {

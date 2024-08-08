@@ -54,7 +54,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class RecommendationRequest extends LicensedRequest implements IUserIdentifier
 {
-    public String $type = "Relewise.Client.Requests.Recommendations.RecommendationRequest, Relewise.Client";
+    public String $type = "";
     public @Nullable Language language;
     public User user;
     public RelevanceModifierCollection relevanceModifiers;

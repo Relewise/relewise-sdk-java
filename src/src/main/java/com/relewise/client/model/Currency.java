@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = Currency.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Currency
 {
-    public String $type = "Relewise.Client.DataTypes.Currency, Relewise.Client";
     public String value;
     public static final Currency UNDEFINED = null;
     public static Currency create(String name)

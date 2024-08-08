@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = SearchRuleFilters.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchRuleFilters
 {
-    public String $type = "Relewise.Client.Requests.Search.Rules.SearchRuleFilters, Relewise.Client";
     public @Nullable String term;
     public @Nullable Boolean approved;
     public @Nullable UUID id;

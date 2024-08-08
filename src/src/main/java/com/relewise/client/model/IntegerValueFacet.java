@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class IntegerValueFacet extends Facet
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.ValueFacet`1[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
+    public String $type = "";
     public @Nullable ArrayList<Integer> selected;
     public @Nullable ArrayList<Integer> getSelected()
     {

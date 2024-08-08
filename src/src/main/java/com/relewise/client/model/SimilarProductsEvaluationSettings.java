@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = SimilarProductsEvaluationSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SimilarProductsEvaluationSettings
 {
-    public String $type = "Relewise.Client.Requests.Recommendations.SimilarProductsEvaluationSettings, Relewise.Client";
     public Double significanceOfSimilaritiesInDisplayName;
     public @Nullable TrimStringTransformer productDisplayNameTransformer;
     public Double significanceOfSimilarListPrice;

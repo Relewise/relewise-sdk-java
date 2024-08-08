@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ContentCategoryRecommendationRequestSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ContentCategoryRecommendationRequestSettings
 {
-    public String $type = "Relewise.Client.Requests.Recommendations.ContentCategoryRecommendationRequestSettings, Relewise.Client";
     public Integer numberOfRecommendations;
     public Boolean allowFillIfNecessaryToReachNumberOfRecommendations;
     public Boolean allowReplacingOfRecentlyShownRecommendations;

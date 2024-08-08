@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = IndexConfiguration.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IndexConfiguration
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.IndexConfiguration, Relewise.Client";
     public LanguageIndexConfiguration language;
     public ProductIndexConfiguration product;
     public ContentIndexConfiguration content;

@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = PredictionRulePromotion.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PredictionRulePromotion
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.PredictionRule+Promotion, Relewise.Client";
     public PromotionPosition to;
     public String[] values;
     public static PredictionRulePromotion create(PromotionPosition toPosition, String... values)

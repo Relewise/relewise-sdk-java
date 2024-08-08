@@ -32,7 +32,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class MerchandisingRule
 {
-    public String $type = "Relewise.Client.DataTypes.Merchandising.Rules.MerchandisingRule, Relewise.Client";
+    public String $type = "";
     public UUID id;
     public String name;
     public String description;

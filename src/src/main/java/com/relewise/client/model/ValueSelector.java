@@ -30,5 +30,5 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ValueSelector
 {
-    public String $type = "Relewise.Client.Requests.ValueSelectors.ValueSelector, Relewise.Client";
+    public String $type = "";
 }

@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class CategoryAdministrativeAction extends Trackable
 {
-    public String $type = "Relewise.Client.DataTypes.CategoryAdministrativeAction, Relewise.Client";
+    public String $type = "";
     public FilterCollection filters;
     public @Nullable Language language;
     public CategoryAdministrativeActionUpdateKind kind;

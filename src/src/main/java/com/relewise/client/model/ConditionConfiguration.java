@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ConditionConfiguration.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ConditionConfiguration
 {
-    public String $type = "Relewise.Client.DataTypes.Merchandising.Configurations.ConditionConfiguration, Relewise.Client";
     public UserConditionConfiguration user;
     public InputConditionConfiguration input;
     public TargetConditionConfiguration target;

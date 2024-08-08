@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = DataObjectFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DataObjectFilter
 {
-    public String $type = "Relewise.Client.Requests.Filters.DataObjects.DataObjectFilter, Relewise.Client";
     public @Nullable ArrayList<ObjectValueCondition> conditions;
     public @Nullable Integer skip;
     public @Nullable Integer take;
