@@ -34,6 +34,7 @@ public class RelewiseClient {
             properties.load(this.getClass().getClassLoader().getResourceAsStream("project.properties"));
             clientVersion = properties.getProperty("version");
         } catch (IOException e) {
+            // We intentionally swallow this exception as we don't want users code to throw exceptions if this is not successful.
         }
     }
 
