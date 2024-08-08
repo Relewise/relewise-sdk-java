@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ProductRecommendationsTest extends TestBase {
     @Test
     public void testPurchasedWithProduct() throws Exception {
-        var recommender = new Recommender(GetDatasetId(), GetApiKey());
+        var recommender = new Recommender(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var purchasedWithProduct = PurchasedWithProductRequest.create(
             Language.create("en-US"),
@@ -32,7 +32,7 @@ public class ProductRecommendationsTest extends TestBase {
 
     @Test
     public void testProductsViewedAfterViewingProduct() throws Exception {
-        var recommender = new Recommender(GetDatasetId(), GetApiKey());
+        var recommender = new Recommender(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productsViewedAfterViewingProduct = ProductsViewedAfterViewingProductRequest.create(
             Language.create("en-US"),
@@ -50,7 +50,7 @@ public class ProductRecommendationsTest extends TestBase {
 
     @Test
     public void testProductsViewedAfterViewingProductWithAllConditions() throws Exception {
-        var recommender = new Recommender(GetDatasetId(), GetApiKey());
+        var recommender = new Recommender(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productsViewedAfterViewingProduct = ProductsViewedAfterViewingProductRequest.create(
             Language.create("en-US"),

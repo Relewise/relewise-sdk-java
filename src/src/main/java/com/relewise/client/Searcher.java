@@ -6,7 +6,8 @@ import java.io.IOException;
 
 public class Searcher extends RelewiseClient
 {
-    public Searcher(String datasetId, String apiKey) { super(datasetId, apiKey); }
+    public Searcher(String datasetId, String apiKey, String serverUrl) { super(datasetId, apiKey, serverUrl, 3); }
+    public Searcher(String datasetId, String apiKey, String serverUrl, int timeout) { super(datasetId, apiKey, serverUrl, timeout); }
     
     public ProductSearchResponse search(ProductSearchRequest request) throws IOException, InterruptedException, ClientException {
         return makeRequestAndValidate("ProductSearchRequest", request, ProductSearchResponse.class);

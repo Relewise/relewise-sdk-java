@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class FacetsTest extends TestBase {
     @Test
     public void testSalesPriceFacet() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey());
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productSearch = ProductSearchRequest.create(
             Language.create("en-US"),
@@ -40,7 +40,7 @@ public class FacetsTest extends TestBase {
 
     @Test
     public void testBrandFacet() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey());
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productSearch = ProductSearchRequest.create(
             Language.create("en-US"),
@@ -70,7 +70,7 @@ public class FacetsTest extends TestBase {
 
     @Test
     public void testProductDataFacet() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey());
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productSearch = ProductSearchRequest.create(
             Language.create("en-US"),
@@ -107,7 +107,7 @@ public class FacetsTest extends TestBase {
 
     @Test
     public void testCategoryFacet() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey());
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productSearch = ProductSearchRequest.create(
             Language.create("en-US"),

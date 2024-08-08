@@ -47,6 +47,15 @@ public class JavaClientWriter
                 })
             .ToArray();
 
+
+        int timeout = 5;
+        if (clientType.GetConstructor(new[] { typeof(Guid), typeof(string), typeof(int) }) is { } constructor
+            && constructor.GetParameters().Last() is { HasDefaultValue: true } requestTimeoutInSecondsParameter)
+        {
+            timeout = (int)requestTimeoutInSecondsParameter.DefaultValue!;
+        }
+
+
         writer.WriteLine($"""
 package {Constants.Namespace};
 
@@ -59,7 +68,8 @@ import java.io.IOException;
         writer.WriteLine($"public class {clientType.Name} extends RelewiseClient");
         writer.WriteLine("{");
         writer.Indent++;
-        writer.WriteLine($"public {clientType.Name}(String datasetId, String apiKey) {{ super(datasetId, apiKey); }}");
+        writer.WriteLine($"public {clientType.Name}(String datasetId, String apiKey, String serverUrl) {{ super(datasetId, apiKey, serverUrl, {timeout}); }}");
+        writer.WriteLine($"public {clientType.Name}(String datasetId, String apiKey, String serverUrl, int timeout) {{ super(datasetId, apiKey, serverUrl, timeout); }}");
 
         foreach (var method in clientMethods.DistinctBy(method => method.parameterType))
         {

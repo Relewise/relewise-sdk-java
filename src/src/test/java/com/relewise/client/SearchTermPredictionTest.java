@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SearchTermPredictionTest extends TestBase {
     @Test
     public void testSearchTermPrediction() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey());
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var searchTermPrediction = SearchTermPredictionRequest.create(
             Language.create("en-US"),

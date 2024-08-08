@@ -10,21 +10,26 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.function.Supplier;
 
 public class RelewiseClient {
-    public String serverUrl  = "https://api.relewise.com";
     private static final String apiVersion = "v1";
     private static final String clientName = "RelewiseJavaClient";
     private String clientVersion = "unknown";
     private final String datasetId;
     private final String apiKey;
+    private final String serverUrl;
+    private final int timeout;
     private final ObjectMapper objectMapper;
 
-    public RelewiseClient(String datasetId, String apiKey) {
+    public RelewiseClient(String datasetId, String apiKey, String serverUrl, int timeout) {
         this.datasetId = datasetId;
         this.apiKey = apiKey;
+        this.serverUrl = serverUrl;
+        this.timeout = timeout;
+
         this.objectMapper = JsonMapper.builder()
             .addModule(new JavaTimeModule())
             .build();
@@ -32,7 +37,7 @@ public class RelewiseClient {
         try {
             Properties properties = new Properties();
             properties.load(this.getClass().getClassLoader().getResourceAsStream("project.properties"));
-            clientVersion = properties.getProperty("version");
+            this.clientVersion = properties.getProperty("version");
         } catch (IOException e) {
             // We intentionally swallow this exception as we don't want users code to throw exceptions if this is not successful.
         }
@@ -51,6 +56,7 @@ public class RelewiseClient {
                 .header("Authorization", "ApiKey " + apiKey)
                 .header("Content-Type", "application/json")
                 .header("User-Agent",  clientName + "/" + clientVersion)
+                .timeout(Duration.ofSeconds(timeout))
                 .build();
 
         var httpClient = HttpClient.newHttpClient();

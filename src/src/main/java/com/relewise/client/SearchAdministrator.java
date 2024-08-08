@@ -6,7 +6,8 @@ import java.io.IOException;
 
 public class SearchAdministrator extends RelewiseClient
 {
-    public SearchAdministrator(String datasetId, String apiKey) { super(datasetId, apiKey); }
+    public SearchAdministrator(String datasetId, String apiKey, String serverUrl) { super(datasetId, apiKey, serverUrl, 30); }
+    public SearchAdministrator(String datasetId, String apiKey, String serverUrl, int timeout) { super(datasetId, apiKey, serverUrl, timeout); }
     
     public void delete(DeleteSearchIndexRequest request) throws IOException, InterruptedException, ClientException {
         makeRequestAndValidate("DeleteSearchIndexRequest", request, Void.class);

@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SearcherTest extends TestBase {
     @Test
     public void testProductSearchWithNoConditions() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey());
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productSearch = ProductSearchRequest.create(
             Language.create("en-US"),
@@ -40,7 +40,7 @@ public class SearcherTest extends TestBase {
 
     @Test
     public void testProductCategorySearchWithNoConditions() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey());
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productCategorySearch = ProductCategorySearchRequest.create(
             Language.create("en-US"),

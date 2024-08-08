@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TrackerTest extends TestBase {
     @Test
     public void testProductView() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey());
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productSearch = TrackProductViewRequest.create(
             ProductView.create(
@@ -28,7 +28,7 @@ public class TrackerTest extends TestBase {
     @Test
     public void testProductUpdateWithVariant() throws Exception {
         // Create Product by tracking it.
-        var tracker = new Tracker(GetDatasetId(), GetApiKey());
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productUpdate = TrackProductUpdateRequest.create(
             ProductUpdate.create(
@@ -81,7 +81,7 @@ public class TrackerTest extends TestBase {
         assertDoesNotThrow(action);
 
         // Validate that the product was created with search.
-        var searcher = new Searcher(GetDatasetId(), GetApiKey());
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productSearch = ProductSearchRequest.create(
             Language.create("da-dk"),

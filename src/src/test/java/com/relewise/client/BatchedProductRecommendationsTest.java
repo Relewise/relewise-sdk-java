@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BatchedProductRecommendationsTest extends TestBase {
     @Test
     public void testBatchedProductRecommendations() throws Exception {
-        var recommender = new Recommender(GetDatasetId(), GetApiKey());
+        var recommender = new Recommender(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productRecommendationRequestCollection = ProductRecommendationRequestCollection.create(
             false,
