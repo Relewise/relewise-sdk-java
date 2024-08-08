@@ -1,9 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using Generator.Extensions;
 using System.Reflection;
-using System.Reflection.Metadata;
-using Generator.Extensions;
-using Relewise.Client.DataTypes.Search.Facets.Result;
+using System.Text.RegularExpressions;
 
 namespace Generator;
 
@@ -59,12 +56,17 @@ public class JavaTypeResolver
 
     private static string GetTypeName(Type type)
     {
-        if (type.IsNested)
+        var name = type.Name;
+
+        Type? typeToPrependToName = type.DeclaringType;
+        while (typeToPrependToName is not null)
         {
-            return type.DeclaringType!.Name + type.Name.Replace("`1", "").Replace("`2", "");
+            name = typeToPrependToName.Name + name;
+
+            typeToPrependToName = typeToPrependToName.DeclaringType;
         }
 
-        return type.Name.Replace("`1", "").Replace("`2", "");
+        return Regex.Replace(name, @"`\d+", "");
     }
 
     private string AddCollectionTypeDefinition(Type type)
