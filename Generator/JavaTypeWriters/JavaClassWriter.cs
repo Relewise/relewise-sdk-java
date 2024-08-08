@@ -28,7 +28,7 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
     
 """);
 
-        if (type.IsAbstract || type.IsInterface)
+        if (type.IsMaybeBaseClassOfSomethingPolymorphic())
         {
             var attributes = System.Attribute.GetCustomAttributes(type);
             if (attributes.Any(a => a is MessagePackObjectAttribute))
@@ -50,7 +50,7 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
                 writer.WriteLine("})");
             }
         }
-        else if (type.HasBaseTypeAndIsNotAbstract())
+        else if (type.IsConcreteTypeOfSomethingPolymorphic())
         {
             writer.WriteLine("@JsonTypeInfo(");
             writer.Indent++;
@@ -65,16 +65,16 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
         writer.WriteLine($"public {(type.IsAbstract ? "abstract " : "")}class {typeName}{(type.BaseType != typeof(object) && type.BaseType is { } baseType ? $" extends {javaWriter.TypeName(baseType).RemoveNullable()}" : "")}{(type.GetInterfaces() is { Length: > 0 } interfaces ? " implements " + string.Join(", ", interfaces.Select(i => javaWriter.TypeName(i))) : "")}");
         writer.WriteLine("{");
         writer.Indent++;
-        if (type.HasBaseTypeAndIsNotAbstract())
-        {
-            writer.WriteLine($"public String $type = \"{type.FullName}, {type.Assembly.FullName!.Split(",")[0]}\";");
-        }
-        else if (type.IsAbstract)
+        if (type.IsMaybeBaseClassOfSomethingPolymorphic())
         {
             // We do this to ensure that it is the first property always if any of its descendants use it.
             writer.WriteLine("public String $type = \"\";");
         }
-
+        else if (type.IsConcreteTypeOfSomethingPolymorphic())
+        {
+            writer.WriteLine($"public String $type = \"{type.FullName}, {type.Assembly.FullName!.Split(",")[0]}\";");
+        }
+        
         var gettablePropertyInfo = type
             .GetProperties()
             .Where(info => info.MemberType is MemberTypes.Property
