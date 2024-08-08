@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -28,6 +29,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = SaveDecompoundRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SaveDecompoundRulesRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = SaveStemmingRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SaveStemmingRulesRequest, Relewise.Client"),
 })
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class RedirectRuleSaveSearchRulesRequest extends LicensedRequest
 {
     public String $type = "Relewise.Client.Requests.Search.Rules.SaveSearchRulesRequest`1[[Relewise.Client.DataTypes.Search.Configuration.SearchRules.RedirectRule, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";

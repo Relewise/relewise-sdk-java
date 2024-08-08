@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -27,6 +28,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = AbandonedProductCategorySearch.class, name = "Relewise.Client.Responses.Triggers.Results.AbandonedProductCategorySearch, Relewise.Client"),
     @JsonSubTypes.Type(value = AbandonedContentSearch.class, name = "Relewise.Client.Responses.Triggers.Results.AbandonedContentSearch, Relewise.Client"),
 })
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class AbandonedSearch
 {
     public String $type = "Relewise.Client.Responses.Triggers.Results.AbandonedSearch, Relewise.Client";

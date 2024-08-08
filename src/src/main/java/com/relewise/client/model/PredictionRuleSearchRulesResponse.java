@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -28,6 +29,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = DecompoundRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.DecompoundRulesResponse, Relewise.Client"),
     @JsonSubTypes.Type(value = StemmingRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.StemmingRulesResponse, Relewise.Client"),
 })
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class PredictionRuleSearchRulesResponse extends TimedResponse
 {
     public String $type = "Relewise.Client.Responses.Search.Rules.SearchRulesResponse`1[[Relewise.Client.DataTypes.Search.Configuration.SearchRules.PredictionRule, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
