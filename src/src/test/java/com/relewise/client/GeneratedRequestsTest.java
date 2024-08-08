@@ -17,7 +17,6 @@ public class GeneratedRequestsTest extends TestBase {
             Order.create(
                 UserFactory.byTemporaryId("t-id"),
                 Money.create(Currency.create("DKK"), 100.0),
-                "1",
                 "1"
             ).setChannel("Channel 1")
         );
@@ -68,7 +67,6 @@ public class GeneratedRequestsTest extends TestBase {
                 new Currency("DKK"),
                 100.0
             ),
-            "1",
             "1"
         );
         order.setChannel("Channel 1");

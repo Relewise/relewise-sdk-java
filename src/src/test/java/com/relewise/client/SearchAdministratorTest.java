@@ -24,12 +24,12 @@ public class SearchAdministratorTest extends TestBase {
                             )
                         )
                         .setProduct(ProductIndexConfiguration.create()
-                            .setId(FieldIndexConfiguration.create(true, (short)1, PredictionSourceType.Disabled))
-                            .setDisplayName(FieldIndexConfiguration.create(true, (short)9, PredictionSourceType.PartialWordSequences))
+                            .setId(FieldIndexConfiguration.create(true, (short)1, PredictionSourceType.Disabled, new ClearTextParser()))
+                            .setDisplayName(FieldIndexConfiguration.create(true, (short)9, PredictionSourceType.PartialWordSequences, new ClearTextParser()))
                             .setData(
                                 DataIndexConfiguration.create()
-                                    .addToKeys("Tags", FieldIndexConfiguration.create(true, (short)8, PredictionSourceType.IndividualWords))
-                                    .addToKeys("Description", FieldIndexConfiguration.create(true, (short)5, PredictionSourceType.PartialWordSequences).setParser(HtmlParser.create()))
+                                    .addToKeys("Tags", FieldIndexConfiguration.create(true, (short)8, PredictionSourceType.IndividualWords, new ClearTextParser()))
+                                    .addToKeys("Description", FieldIndexConfiguration.create(true, (short)5, PredictionSourceType.PartialWordSequences, new ClearTextParser()).setParser(HtmlParser.create()))
                             )
                         )
                 ),
