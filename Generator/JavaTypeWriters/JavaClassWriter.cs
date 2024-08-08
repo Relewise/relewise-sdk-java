@@ -2,6 +2,7 @@
 using MessagePack;
 using Newtonsoft.Json;
 using Relewise.Client.Responses;
+using System;
 using System.CodeDom.Compiler;
 using System.Reflection;
 
@@ -49,7 +50,7 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
                 writer.WriteLine("})");
             }
         }
-        else
+        else if (type.HasBaseTypeAndIsNotAbstract())
         {
             writer.WriteLine("@JsonTypeInfo(");
             writer.Indent++;
@@ -64,7 +65,15 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
         writer.WriteLine($"public {(type.IsAbstract ? "abstract " : "")}class {typeName}{(type.BaseType != typeof(object) && type.BaseType is { } baseType ? $" extends {javaWriter.TypeName(baseType).RemoveNullable()}" : "")}{(type.GetInterfaces() is { Length: > 0 } interfaces ? " implements " + string.Join(", ", interfaces.Select(i => javaWriter.TypeName(i))) : "")}");
         writer.WriteLine("{");
         writer.Indent++;
-        writer.WriteLine($"public String $type = \"{type.FullName}, {type.Assembly.FullName!.Split(",")[0]}\";");
+        if (type.HasBaseTypeAndIsNotAbstract())
+        {
+            writer.WriteLine($"public String $type = \"{type.FullName}, {type.Assembly.FullName!.Split(",")[0]}\";");
+        }
+        else if (type.IsAbstract)
+        {
+            // We do this to ensure that it is the first property always if any of its descendants use it.
+            writer.WriteLine("public String $type = \"\";");
+        }
 
         var gettablePropertyInfo = type
             .GetProperties()
@@ -84,7 +93,7 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
             .Select(MapPropertyInfo)
             .ToArray();
         var ownedProperties = settablePropertyInfo
-            .Where(info => info.DeclaringType == type 
+            .Where(info => info.DeclaringType == type
                         && info.DeclaringType?.IsAbstract == type.IsAbstract)
             .Select(MapPropertyInfo)
             .ToArray();
