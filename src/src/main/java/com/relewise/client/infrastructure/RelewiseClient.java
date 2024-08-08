@@ -17,7 +17,7 @@ public class RelewiseClient {
     public String serverUrl  = "https://api.relewise.com";
     private static final String apiVersion = "v1";
     private static final String clientName = "RelewiseJavaClient";
-    private final String clientVersion = "unknown";
+    private String clientVersion = "unknown";
     private final String datasetId;
     private final String apiKey;
     private final ObjectMapper objectMapper;
