@@ -15,6 +15,7 @@ import java.util.Properties;
 import java.util.function.Supplier;
 
 public class RelewiseClient {
+    private static final String apiKeyNotDefinedMessage = "apiKey must not be empty.";
     private static final String apiVersion = "v1";
     private static final String clientName = "RelewiseJavaClient";
     private String clientVersion = "unknown";
@@ -25,6 +26,10 @@ public class RelewiseClient {
     private final ObjectMapper objectMapper;
 
     public RelewiseClient(String datasetId, String apiKey, String serverUrl, int timeout) {
+        if (apiKey.isBlank()) {
+            throw new IllegalArgumentException(apiKeyNotDefinedMessage);
+        }
+
         this.datasetId = datasetId;
         this.apiKey = apiKey;
         this.serverUrl = serverUrl;
