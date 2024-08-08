@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -26,6 +27,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = DataDoubleSelector.class, name = "Relewise.Client.Requests.ValueSelectors.DataDoubleSelector, Relewise.Client"),
     @JsonSubTypes.Type(value = FixedDoubleValueSelector.class, name = "Relewise.Client.Requests.ValueSelectors.FixedDoubleValueSelector, Relewise.Client"),
 })
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ValueSelector
 {
     public String $type = "Relewise.Client.Requests.ValueSelectors.ValueSelector, Relewise.Client";

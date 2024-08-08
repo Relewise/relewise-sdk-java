@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -23,6 +24,7 @@ import java.util.HashSet;
     include = JsonTypeInfo.As.EXISTING_PROPERTY,
     property = "$type",
     defaultImpl = ProductRecentlyPurchasedByUserFilter.class)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductRecentlyPurchasedByUserFilter extends Filter implements IProductFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.ProductRecentlyPurchasedByUserFilter, Relewise.Client";

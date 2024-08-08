@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -24,6 +25,7 @@ import java.util.HashSet;
     property = "$type")
 @JsonSubTypes({
 })
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class DoubleProductDataRangesFacet extends DoubleDataRangesFacet
 {
     public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.ProductDataRangesFacet`1[[System.Nullable`1[[System.Double, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";

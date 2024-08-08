@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -30,6 +31,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = SearchResponseCollection.class, name = "Relewise.Client.Responses.Search.SearchResponseCollection, Relewise.Client"),
     @JsonSubTypes.Type(value = ContentCategorySearchResponse.class, name = "Relewise.Client.Responses.Search.ContentCategorySearchResponse, Relewise.Client"),
 })
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class SearchResponse extends TimedResponse
 {
     public String $type = "Relewise.Client.Responses.Search.SearchResponse, Relewise.Client";

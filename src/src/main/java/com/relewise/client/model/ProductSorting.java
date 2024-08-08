@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -31,6 +32,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = ProductVariantAttributeSorting.class, name = "Relewise.Client.DataTypes.Search.Sorting.Product.ProductVariantAttributeSorting, Relewise.Client"),
     @JsonSubTypes.Type(value = ProductDataObjectSorting.class, name = "Relewise.Client.DataTypes.Search.Sorting.Product.ProductDataObjectSorting, Relewise.Client"),
 })
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ProductSorting extends ProductSortingSorting
 {
     public String $type = "Relewise.Client.DataTypes.Search.Sorting.Product.ProductSorting, Relewise.Client";
