@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class GeneratedRequestsTest extends TestBase {
     @Test
     public void testTrackOrderRequestWithBuilderPatternAndCreatorMethod() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey());
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var orderRequest = TrackOrderRequest.create(
             Order.create(
@@ -33,7 +33,7 @@ public class GeneratedRequestsTest extends TestBase {
      */
     @Test
     public void testTrackOrderRequestWithBuilderPattern() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey());
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var orderRequest = (new TrackOrderRequest())
             .setOrder((new Order())
@@ -60,7 +60,7 @@ public class GeneratedRequestsTest extends TestBase {
      */
     @Test
     public void testTrackOrderRequest() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey());
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var order = new Order(
             UserFactory.byTemporaryId("t-ID"),

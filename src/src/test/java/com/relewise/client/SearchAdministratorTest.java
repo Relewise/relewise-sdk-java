@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SearchAdministratorTest extends TestBase {
     @Test
     public void testSaveSimpleSearchIndex() throws Exception {
-        var searchAdministrator = new SearchAdministrator(GetDatasetId(), GetApiKey());
+        var searchAdministrator = new SearchAdministrator(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var saveSearchIndex = SaveSearchIndexRequest.create(
             SearchIndex.create("simple", "a simple test index that is not default", false)
@@ -42,7 +42,7 @@ public class SearchAdministratorTest extends TestBase {
 
     @Test
     public void testSaveGetUpdateAndDeleteSearchIndex() throws Exception {
-        var searchAdministrator = new SearchAdministrator(GetDatasetId(), GetApiKey());
+        var searchAdministrator = new SearchAdministrator(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         // Create
         var saveRequest = SaveSearchIndexRequest.create(

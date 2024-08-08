@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BatchedSearchesTest extends TestBase {
     @Test
     public void testBatchedSearch() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey());
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var searchRequestCollection = SearchRequestCollection.create(
             SearchTermPredictionRequest.create(Language.create("en-US"), Currency.create("USD"), UserFactory.anonymous(), "integration test", "", 0),

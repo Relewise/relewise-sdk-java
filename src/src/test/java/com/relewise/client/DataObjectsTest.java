@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class DataObjectsTest extends TestBase {
     @Test
     public void testDataObjectsCanBeDeserialized() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey());
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var productSearch = ProductSearchRequest.create(
                 Language.create("da-dk"),
