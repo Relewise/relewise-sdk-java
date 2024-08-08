@@ -39,6 +39,15 @@ public class UserUpdate extends Trackable
         this.user = user;
         this.kind = UserUpdateUpdateKind.UpdateAndAppend;
     }
+    public static UserUpdate create(User user, UserUpdateUpdateKind updateKind)
+    {
+        return new UserUpdate(user, updateKind);
+    }
+    public UserUpdate(User user, UserUpdateUpdateKind updateKind)
+    {
+        this.user = user;
+        this.kind = updateKind;
+    }
     public UserUpdate()
     {
     }

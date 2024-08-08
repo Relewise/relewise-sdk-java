@@ -26,13 +26,15 @@ public class DataObjectValueSelector
     public @Nullable DataObjectFilter filter;
     public @Nullable DataObjectValueSelector childSelector;
     public @Nullable DataObjectValueSelector fallbackSelector;
-    public static DataObjectValueSelector create(String key)
+    public static DataObjectValueSelector create(String key, @Nullable DataObjectFilter filter, DataObjectValueSelector childSelector)
     {
-        return new DataObjectValueSelector(key);
+        return new DataObjectValueSelector(key, filter, childSelector);
     }
-    public DataObjectValueSelector(String key)
+    public DataObjectValueSelector(String key, @Nullable DataObjectFilter filter, DataObjectValueSelector childSelector)
     {
         this.key = key;
+        this.filter = filter;
+        this.childSelector = childSelector;
     }
     public DataObjectValueSelector()
     {

@@ -36,26 +36,28 @@ public class Order extends Trackable implements IUserIdentifier
     public @Nullable String channel;
     public @Nullable String subChannel;
     public @Nullable String trackingNumber;
-    public static Order create(User user, Money subtotal, String orderNumber)
+    public static Order create(User user, Money subtotal, String orderNumber, LineItem... lineItems)
     {
-        return new Order(user, subtotal, orderNumber);
+        return new Order(user, subtotal, orderNumber, lineItems);
     }
-    public Order(User user, Money subtotal, String orderNumber)
+    public Order(User user, Money subtotal, String orderNumber, LineItem... lineItems)
     {
         this.user = user;
         this.subtotal = subtotal;
         this.orderNumber = orderNumber;
+        this.lineItems = new ArrayList<>(Arrays.asList(lineItems));
         this.cartName = "default";
     }
-    public static Order create(User user, Money subtotal, String orderNumber, String cartName)
+    public static Order create(User user, Money subtotal, String orderNumber, ArrayList<LineItem> lineItems, String cartName)
     {
-        return new Order(user, subtotal, orderNumber, cartName);
+        return new Order(user, subtotal, orderNumber, lineItems, cartName);
     }
-    public Order(User user, Money subtotal, String orderNumber, String cartName)
+    public Order(User user, Money subtotal, String orderNumber, ArrayList<LineItem> lineItems, String cartName)
     {
         this.user = user;
         this.subtotal = subtotal;
         this.orderNumber = orderNumber;
+        this.lineItems = lineItems;
         this.cartName = cartName;
     }
     public Order()

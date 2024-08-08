@@ -27,12 +27,29 @@ public class SearchTermCondition
     public @Nullable ArrayList<SearchTermCondition> andConditions;
     public @Nullable ArrayList<SearchTermCondition> orConditions;
     public @Nullable Integer minimumLength;
-    public static SearchTermCondition create()
+    public static SearchTermCondition create(SearchTermConditionConditionKind kind, String value)
     {
-        return new SearchTermCondition();
+        return new SearchTermCondition(kind, value);
+    }
+    public SearchTermCondition(SearchTermConditionConditionKind kind, String value)
+    {
+        this.kind = kind;
+        this.value = value;
+        this.minimumLength = null;
+    }
+    public static SearchTermCondition create(SearchTermConditionConditionKind kind, String value, @Nullable Integer minimumLength)
+    {
+        return new SearchTermCondition(kind, value, minimumLength);
+    }
+    public SearchTermCondition(SearchTermConditionConditionKind kind, String value, @Nullable Integer minimumLength)
+    {
+        this.kind = kind;
+        this.value = value;
+        this.minimumLength = minimumLength;
     }
     public SearchTermCondition()
     {
+        this.minimumLength = null;
     }
     public @Nullable SearchTermConditionConditionKind getKind()
     {

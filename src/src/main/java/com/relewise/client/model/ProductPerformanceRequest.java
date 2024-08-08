@@ -52,6 +52,18 @@ public class ProductPerformanceRequest extends AnalyzerRequest
         this.numberOfResults = numberOfResultsPerRequest;
         this.skipNumberOfResults = 0;
     }
+    public static ProductPerformanceRequest create(@Nullable Language language, @Nullable Currency currency, Boolean byVariant, Integer numberOfResultsPerRequest, Integer skipNumberOfResults)
+    {
+        return new ProductPerformanceRequest(language, currency, byVariant, numberOfResultsPerRequest, skipNumberOfResults);
+    }
+    public ProductPerformanceRequest(@Nullable Language language, @Nullable Currency currency, Boolean byVariant, Integer numberOfResultsPerRequest, Integer skipNumberOfResults)
+    {
+        this.language = language;
+        this.currency = currency;
+        this.byVariant = byVariant;
+        this.numberOfResults = numberOfResultsPerRequest;
+        this.skipNumberOfResults = skipNumberOfResults;
+    }
     public ProductPerformanceRequest()
     {
         this.skipNumberOfResults = 0;

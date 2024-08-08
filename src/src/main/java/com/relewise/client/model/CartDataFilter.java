@@ -41,18 +41,20 @@ public class CartDataFilter extends Filter
     public CartDataFilter(String key)
     {
         this.key = key;
+        this.conditions = null;
         this.mustMatchAllConditions = true;
         this.filterOutIfKeyIsNotFound = true;
         this.language = null;
         this.currency = null;
     }
-    public static CartDataFilter create(String key, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    public static CartDataFilter create(String key, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
     {
-        return new CartDataFilter(key, mustMatchAllConditions, filterOutIfKeyIsNotFound, language, currency);
+        return new CartDataFilter(key, conditions, mustMatchAllConditions, filterOutIfKeyIsNotFound, language, currency);
     }
-    public CartDataFilter(String key, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    public CartDataFilter(String key, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
     {
         this.key = key;
+        this.conditions = conditions;
         this.mustMatchAllConditions = mustMatchAllConditions;
         this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
         this.language = language;

@@ -32,25 +32,33 @@ public class UserFavoriteProductRelevanceModifier extends RelevanceModifier impl
     public Double numberOfPurchasesWeight;
     public Double mostRecentPurchaseWeight;
     public Double ifNotPurchasedBaseWeight;
-    public static UserFavoriteProductRelevanceModifier create()
+    public static UserFavoriteProductRelevanceModifier create(Integer sinceMinutesAgo)
     {
-        return new UserFavoriteProductRelevanceModifier();
+        return new UserFavoriteProductRelevanceModifier(sinceMinutesAgo);
+    }
+    public UserFavoriteProductRelevanceModifier(Integer sinceMinutesAgo)
+    {
+        this.sinceMinutesAgo = sinceMinutesAgo;
+        this.numberOfPurchasesWeight = 1d;
+        this.mostRecentPurchaseWeight = 1d;
+        this.ifNotPurchasedBaseWeight = 1d;
+    }
+    public static UserFavoriteProductRelevanceModifier create(Integer sinceMinutesAgo, Double numberOfPurchasesWeight, Double mostRecentPurchaseWeight, Double ifNotPurchasedBaseWeight)
+    {
+        return new UserFavoriteProductRelevanceModifier(sinceMinutesAgo, numberOfPurchasesWeight, mostRecentPurchaseWeight, ifNotPurchasedBaseWeight);
+    }
+    public UserFavoriteProductRelevanceModifier(Integer sinceMinutesAgo, Double numberOfPurchasesWeight, Double mostRecentPurchaseWeight, Double ifNotPurchasedBaseWeight)
+    {
+        this.sinceMinutesAgo = sinceMinutesAgo;
+        this.numberOfPurchasesWeight = numberOfPurchasesWeight;
+        this.mostRecentPurchaseWeight = mostRecentPurchaseWeight;
+        this.ifNotPurchasedBaseWeight = ifNotPurchasedBaseWeight;
     }
     public UserFavoriteProductRelevanceModifier()
     {
         this.numberOfPurchasesWeight = 1d;
         this.mostRecentPurchaseWeight = 1d;
         this.ifNotPurchasedBaseWeight = 1d;
-    }
-    public static UserFavoriteProductRelevanceModifier create(Double numberOfPurchasesWeight, Double mostRecentPurchaseWeight, Double ifNotPurchasedBaseWeight)
-    {
-        return new UserFavoriteProductRelevanceModifier(numberOfPurchasesWeight, mostRecentPurchaseWeight, ifNotPurchasedBaseWeight);
-    }
-    public UserFavoriteProductRelevanceModifier(Double numberOfPurchasesWeight, Double mostRecentPurchaseWeight, Double ifNotPurchasedBaseWeight)
-    {
-        this.numberOfPurchasesWeight = numberOfPurchasesWeight;
-        this.mostRecentPurchaseWeight = mostRecentPurchaseWeight;
-        this.ifNotPurchasedBaseWeight = ifNotPurchasedBaseWeight;
     }
     public Integer getSinceMinutesAgo()
     {

@@ -34,24 +34,28 @@ public class ProductDataRelevanceModifier extends RelevanceModifier implements I
     public Boolean mustMatchAllConditions;
     public ArrayList<ValueCondition> conditions;
     public ValueSelector multiplierSelector;
-    public static ProductDataRelevanceModifier create(String key, ValueSelector multiplierSelector)
+    public static ProductDataRelevanceModifier create(String key, ArrayList<ValueCondition> conditions, ValueSelector multiplierSelector)
     {
-        return new ProductDataRelevanceModifier(key, multiplierSelector);
+        return new ProductDataRelevanceModifier(key, conditions, multiplierSelector);
     }
-    public ProductDataRelevanceModifier(String key, ValueSelector multiplierSelector)
+    public ProductDataRelevanceModifier(String key, ArrayList<ValueCondition> conditions, ValueSelector multiplierSelector)
     {
         this.key = key;
+        this.conditions = conditions;
         this.multiplierSelector = multiplierSelector;
+        this.mustMatchAllConditions = true;
         this.considerAsMatchIfKeyIsNotFound = false;
     }
-    public static ProductDataRelevanceModifier create(String key, ValueSelector multiplierSelector, Boolean considerAsMatchIfKeyIsNotFound)
+    public static ProductDataRelevanceModifier create(String key, ArrayList<ValueCondition> conditions, ValueSelector multiplierSelector, Boolean mustMatchAllConditions, Boolean considerAsMatchIfKeyIsNotFound)
     {
-        return new ProductDataRelevanceModifier(key, multiplierSelector, considerAsMatchIfKeyIsNotFound);
+        return new ProductDataRelevanceModifier(key, conditions, multiplierSelector, mustMatchAllConditions, considerAsMatchIfKeyIsNotFound);
     }
-    public ProductDataRelevanceModifier(String key, ValueSelector multiplierSelector, Boolean considerAsMatchIfKeyIsNotFound)
+    public ProductDataRelevanceModifier(String key, ArrayList<ValueCondition> conditions, ValueSelector multiplierSelector, Boolean mustMatchAllConditions, Boolean considerAsMatchIfKeyIsNotFound)
     {
         this.key = key;
+        this.conditions = conditions;
         this.multiplierSelector = multiplierSelector;
+        this.mustMatchAllConditions = mustMatchAllConditions;
         this.considerAsMatchIfKeyIsNotFound = considerAsMatchIfKeyIsNotFound;
     }
     public ProductDataRelevanceModifier()

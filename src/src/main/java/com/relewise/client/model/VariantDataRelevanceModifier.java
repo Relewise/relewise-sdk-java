@@ -34,24 +34,26 @@ public class VariantDataRelevanceModifier extends RelevanceModifier implements I
     public Boolean mustMatchAllConditions;
     public ArrayList<ValueCondition> conditions;
     public ValueSelector multiplierSelector;
-    public static VariantDataRelevanceModifier create(String key, ValueSelector multiplierSelector)
+    public static VariantDataRelevanceModifier create(String key, ArrayList<ValueCondition> conditions, ValueSelector multiplierSelector)
     {
-        return new VariantDataRelevanceModifier(key, multiplierSelector);
+        return new VariantDataRelevanceModifier(key, conditions, multiplierSelector);
     }
-    public VariantDataRelevanceModifier(String key, ValueSelector multiplierSelector)
+    public VariantDataRelevanceModifier(String key, ArrayList<ValueCondition> conditions, ValueSelector multiplierSelector)
     {
         this.key = key;
+        this.conditions = conditions;
         this.multiplierSelector = multiplierSelector;
         this.mustMatchAllConditions = true;
         this.considerAsMatchIfKeyIsNotFound = false;
     }
-    public static VariantDataRelevanceModifier create(String key, ValueSelector multiplierSelector, Boolean mustMatchAllConditions, Boolean considerAsMatchIfKeyIsNotFound)
+    public static VariantDataRelevanceModifier create(String key, ArrayList<ValueCondition> conditions, ValueSelector multiplierSelector, Boolean mustMatchAllConditions, Boolean considerAsMatchIfKeyIsNotFound)
     {
-        return new VariantDataRelevanceModifier(key, multiplierSelector, mustMatchAllConditions, considerAsMatchIfKeyIsNotFound);
+        return new VariantDataRelevanceModifier(key, conditions, multiplierSelector, mustMatchAllConditions, considerAsMatchIfKeyIsNotFound);
     }
-    public VariantDataRelevanceModifier(String key, ValueSelector multiplierSelector, Boolean mustMatchAllConditions, Boolean considerAsMatchIfKeyIsNotFound)
+    public VariantDataRelevanceModifier(String key, ArrayList<ValueCondition> conditions, ValueSelector multiplierSelector, Boolean mustMatchAllConditions, Boolean considerAsMatchIfKeyIsNotFound)
     {
         this.key = key;
+        this.conditions = conditions;
         this.multiplierSelector = multiplierSelector;
         this.mustMatchAllConditions = mustMatchAllConditions;
         this.considerAsMatchIfKeyIsNotFound = considerAsMatchIfKeyIsNotFound;

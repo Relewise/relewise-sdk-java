@@ -31,21 +31,30 @@ public class ProductDisplayNameFilter extends Filter implements IProductFilter
     public @Nullable Language language;
     public @Nullable ValueConditionCollection conditions;
     public Boolean mustMatchAllConditions;
-    public static ProductDisplayNameFilter create()
+    public static ProductDisplayNameFilter create(ValueConditionCollection conditions)
     {
-        return new ProductDisplayNameFilter();
+        return new ProductDisplayNameFilter(conditions);
+    }
+    public ProductDisplayNameFilter(ValueConditionCollection conditions)
+    {
+        this.conditions = conditions;
+        this.mustMatchAllConditions = true;
+        this.language = null;
+    }
+    public static ProductDisplayNameFilter create(ValueConditionCollection conditions, Boolean mustMatchAllConditions, Language language)
+    {
+        return new ProductDisplayNameFilter(conditions, mustMatchAllConditions, language);
+    }
+    public ProductDisplayNameFilter(ValueConditionCollection conditions, Boolean mustMatchAllConditions, Language language)
+    {
+        this.conditions = conditions;
+        this.mustMatchAllConditions = mustMatchAllConditions;
+        this.language = language;
     }
     public ProductDisplayNameFilter()
     {
         this.language = null;
-    }
-    public static ProductDisplayNameFilter create(Language language)
-    {
-        return new ProductDisplayNameFilter(language);
-    }
-    public ProductDisplayNameFilter(Language language)
-    {
-        this.language = language;
+        this.mustMatchAllConditions = true;
     }
     public @Nullable Language getLanguage()
     {
