@@ -37,6 +37,9 @@ jobs:
 
       - name: Build
         run: mvn --batch-mode -DskipTests package --file src/pom.xml
+
+      - name: Load version into generated .properties file.
+        run: mvn resources:resources
         
       - name: Maven version check
         run: mvn -v
