@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = SynonymsRequestSynonymSortingSorting.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SynonymsRequestSynonymSortingSorting
 {
-    public String $type = "Relewise.Client.Requests.Shared.Sorting`1[[Relewise.Client.Requests.Search.SynonymsRequest+SynonymSorting, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
     public SynonymsRequestSynonymSorting sortBy;
     public SortOrder sortOrder;
     public static SynonymsRequestSynonymSortingSorting create(SynonymsRequestSynonymSorting sortBy, SortOrder sortOrder)

@@ -33,7 +33,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ValueCondition
 {
-    public String $type = "Relewise.Client.Requests.Conditions.ValueCondition, Relewise.Client";
+    public String $type = "";
     public Boolean negated;
     public Boolean getNegated()
     {

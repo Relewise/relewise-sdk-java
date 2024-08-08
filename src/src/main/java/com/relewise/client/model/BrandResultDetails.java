@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = BrandResultDetails.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BrandResultDetails
 {
-    public String $type = "Relewise.Client.DataTypes.BrandResultDetails, Relewise.Client";
     public String brandId;
     public String displayName;
     public Integer[] assortments;

@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class BooleanValueFacetResult extends BooleanBooleanValueFacetResult
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Result.ValueFacetResult`1[[System.Boolean, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
+    public String $type = "";
     @Override
     public BooleanValueFacetResult setSelected(Boolean... selected)
     {

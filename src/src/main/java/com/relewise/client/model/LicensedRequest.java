@@ -28,5 +28,5 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class LicensedRequest
 {
-    public String $type = "Relewise.Client.Requests.LicensedRequest, Relewise.Client";
+    public String $type = "";
 }

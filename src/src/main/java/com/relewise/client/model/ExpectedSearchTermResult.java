@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ExpectedSearchTermResult.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ExpectedSearchTermResult
 {
-    public String $type = "Relewise.Client.DataTypes.ExpectedSearchTermResult, Relewise.Client";
     public Integer estimatedHits;
     public EntityType type;
     public static ExpectedSearchTermResult create()

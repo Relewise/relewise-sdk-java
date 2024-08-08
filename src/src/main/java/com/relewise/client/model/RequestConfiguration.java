@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = RequestConfiguration.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RequestConfiguration
 {
-    public String $type = "Relewise.Client.DataTypes.Merchandising.Configurations.RequestConfiguration, Relewise.Client";
     public RequestConfigurationPrioritization filters;
     public RequestConfigurationPrioritization relevanceModifiers;
     public OverriddenProductRecommendationRequestSettings overriddenProductRecommendationRequestSettings;

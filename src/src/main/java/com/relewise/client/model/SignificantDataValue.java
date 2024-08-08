@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = SignificantDataValue.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SignificantDataValue
 {
-    public String $type = "Relewise.Client.DataTypes.SignificantDataValue, Relewise.Client";
     public String key;
     public SignificantDataValueSignificantDataValueComparer comparer;
     public Double significance;

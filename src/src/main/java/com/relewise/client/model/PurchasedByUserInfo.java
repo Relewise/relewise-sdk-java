@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = PurchasedByUserInfo.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchasedByUserInfo
 {
-    public String $type = "Relewise.Client.DataTypes.PurchasedByUserInfo, Relewise.Client";
     public OffsetDateTime mostRecentPurchasedUtc;
     public Long totalNumberOfTimesPurchased;
     public static PurchasedByUserInfo create(OffsetDateTime mostRecentPurchasedUtc, Long totalNumberOfTimesPurchased)

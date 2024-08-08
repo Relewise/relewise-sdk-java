@@ -34,7 +34,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class SearchResponse extends TimedResponse
 {
-    public String $type = "Relewise.Client.Responses.Search.SearchResponse, Relewise.Client";
+    public String $type = "";
     @Override
     public SearchResponse setStatistics(Statistics statistics)
     {

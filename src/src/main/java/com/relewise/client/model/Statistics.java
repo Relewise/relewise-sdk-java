@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = Statistics.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Statistics
 {
-    public String $type = "Relewise.Client.DataTypes.Statistics, Relewise.Client";
     public Double serverTimeInMs;
     public static Statistics create()
     {

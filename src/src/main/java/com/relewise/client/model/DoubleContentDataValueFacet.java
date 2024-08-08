@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class DoubleContentDataValueFacet extends DoubleDataValueFacet
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.ContentDataValueFacet`1[[System.Double, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
+    public String $type = "";
     @Override
     public DoubleContentDataValueFacet setKey(String key)
     {

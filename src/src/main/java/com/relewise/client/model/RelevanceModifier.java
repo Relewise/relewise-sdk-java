@@ -44,7 +44,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class RelevanceModifier
 {
-    public String $type = "Relewise.Client.Requests.RelevanceModifiers.RelevanceModifier, Relewise.Client";
+    public String $type = "";
     public FilterCollection filters;
     public FilterCollection getFilters()
     {

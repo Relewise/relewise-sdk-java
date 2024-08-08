@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class DoubleDoubleValueFacetResult extends FacetResult
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Result.ValueFacetResult`2[[System.Double, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
+    public String $type = "";
     public ArrayList<Double> selected;
     public ArrayList<DoubleAvailableFacetValue> available;
     public ArrayList<Double> getSelected()

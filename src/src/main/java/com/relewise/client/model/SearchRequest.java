@@ -34,7 +34,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class SearchRequest extends LicensedRequest implements IUserIdentifier
 {
-    public String $type = "Relewise.Client.Requests.Search.SearchRequest, Relewise.Client";
+    public String $type = "";
     public @Nullable Language language;
     public @Nullable Currency currency;
     public @Nullable User user;

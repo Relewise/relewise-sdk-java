@@ -35,7 +35,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ObjectValueCondition
 {
-    public String $type = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueCondition, Relewise.Client";
+    public String $type = "";
     public Boolean negated;
     public String key;
     public @Nullable String[] objectPath;

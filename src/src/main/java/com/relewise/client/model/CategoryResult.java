@@ -30,7 +30,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class CategoryResult
 {
-    public String $type = "Relewise.Client.DataTypes.CategoryResult, Relewise.Client";
+    public String $type = "";
     public String categoryId;
     public String displayName;
     public Integer rank;

@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = UserQueryCriteria.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserQueryCriteria
 {
-    public String $type = "Relewise.Client.DataTypes.UserQueryCriteria, Relewise.Client";
     public @Nullable String authenticatedId;
     public @Nullable String temporaryId;
     public @Nullable String email;

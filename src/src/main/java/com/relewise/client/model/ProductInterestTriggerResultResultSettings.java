@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ProductInterestTriggerResultResultSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductInterestTriggerResultResultSettings
 {
-    public String $type = "Relewise.Client.Responses.Triggers.Results.ProductInterestTriggerResult+ResultSettings, Relewise.Client";
     public SelectedProductPropertiesSettings selectedProductProperties;
     public SelectedVariantPropertiesSettings selectedVariantProperties;
     public static ProductInterestTriggerResultResultSettings create()

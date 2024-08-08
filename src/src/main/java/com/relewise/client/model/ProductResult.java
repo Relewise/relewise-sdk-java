@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ProductResult.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductResult
 {
-    public String $type = "Relewise.Client.DataTypes.ProductResult, Relewise.Client";
     public String productId;
     public String displayName;
     public VariantResult variant;

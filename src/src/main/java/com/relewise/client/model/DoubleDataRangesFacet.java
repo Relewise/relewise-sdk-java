@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class DoubleDataRangesFacet extends Facet
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.DataRangesFacet`1[[System.Nullable`1[[System.Double, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
+    public String $type = "";
     public @Nullable ArrayList<DoubleChainableRange> predefinedRanges;
     public @Nullable Double expandedRangeSize;
     public @Nullable ArrayList<DoubleChainableRange> selected;

@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ApplicableIndexes.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicableIndexes
 {
-    public String $type = "Relewise.Client.DataTypes.ApplicableIndexes, Relewise.Client";
     public String[] indexes;
     public static final ApplicableIndexes ALL = null;
     public static ApplicableIndexes create(String... indexes)

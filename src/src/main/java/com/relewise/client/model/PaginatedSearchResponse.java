@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class PaginatedSearchResponse extends SearchResponse
 {
-    public String $type = "Relewise.Client.Responses.Search.PaginatedSearchResponse, Relewise.Client";
+    public String $type = "";
     public Integer hits;
     public Integer getHits()
     {

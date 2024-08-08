@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = CategoryNameAndIdResult.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryNameAndIdResult
 {
-    public String $type = "Relewise.Client.DataTypes.CategoryNameAndIdResult, Relewise.Client";
     public String id;
     public String displayName;
     public static CategoryNameAndIdResult create(String id, String displayName)

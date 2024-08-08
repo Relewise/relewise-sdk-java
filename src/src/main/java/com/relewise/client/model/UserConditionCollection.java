@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = UserConditionCollection.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserConditionCollection
 {
-    public String $type = "Relewise.Client.DataTypes.UserConditions.UserConditionCollection, Relewise.Client";
     public ArrayList<UserCondition> items;
     public static UserConditionCollection create(UserCondition... conditions)
     {

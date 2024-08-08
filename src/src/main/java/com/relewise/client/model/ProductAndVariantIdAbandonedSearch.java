@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ProductAndVariantIdAbandonedSearch extends AbandonedSearch
 {
-    public String $type = "Relewise.Client.Responses.Triggers.Results.AbandonedSearch`1[[Relewise.Client.DataTypes.ProductAndVariantId, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
+    public String $type = "";
     public ProductAndVariantId[] topResults;
     public ProductAndVariantId[] getTopResults()
     {

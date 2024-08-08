@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = Language.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Language
 {
-    public String $type = "Relewise.Client.DataTypes.Language, Relewise.Client";
     public String value;
     public static final Language UNDEFINED = null;
     public static Language create(String name)

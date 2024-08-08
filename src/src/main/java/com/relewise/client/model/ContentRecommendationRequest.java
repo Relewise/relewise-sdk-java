@@ -34,7 +34,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ContentRecommendationRequest extends RecommendationRequest implements IUserIdentifier
 {
-    public String $type = "Relewise.Client.Requests.Recommendations.ContentRecommendationRequest, Relewise.Client";
+    public String $type = "";
     public ContentRecommendationRequestSettings settings;
     public ContentRecommendationRequestSettings getSettings()
     {

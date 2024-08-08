@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class StringDataValueFacet extends StringValueFacet
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.DataValueFacet`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
+    public String $type = "";
     public String key;
     public @Nullable CollectionFilterType collectionFilterType;
     public String getKey()

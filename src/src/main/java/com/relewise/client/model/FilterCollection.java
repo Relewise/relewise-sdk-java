@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = FilterCollection.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FilterCollection
 {
-    public String $type = "Relewise.Client.Requests.Filters.FilterCollection, Relewise.Client";
     public @Nullable ArrayList<Filter> items;
     public static FilterCollection create(Filter... filters)
     {

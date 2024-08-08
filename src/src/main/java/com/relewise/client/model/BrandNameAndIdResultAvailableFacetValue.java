@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = BrandNameAndIdResultAvailableFacetValue.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BrandNameAndIdResultAvailableFacetValue
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Result.AvailableFacetValue`1[[Relewise.Client.DataTypes.BrandNameAndIdResult, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
     public BrandNameAndIdResult value;
     public Integer hits;
     public Boolean selected;

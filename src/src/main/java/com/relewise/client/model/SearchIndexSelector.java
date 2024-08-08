@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = SearchIndexSelector.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchIndexSelector
 {
-    public String $type = "Relewise.Client.DataTypes.Search.SearchIndexSelector, Relewise.Client";
     public String id;
     public static final SearchIndexSelector DEFAULT = null;
     public static SearchIndexSelector create(String id)

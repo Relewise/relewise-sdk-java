@@ -30,7 +30,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ProductCategoryResultDetailsCategoryResultDetails
 {
-    public String $type = "Relewise.Client.DataTypes.CategoryResultDetails`1[[Relewise.Client.DataTypes.ProductCategoryResultDetails, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
+    public String $type = "";
     public String categoryId;
     public Multilingual displayName;
     public Integer[] assortments;

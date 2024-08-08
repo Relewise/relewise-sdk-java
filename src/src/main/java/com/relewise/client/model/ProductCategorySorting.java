@@ -32,7 +32,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ProductCategorySorting extends ProductCategorySortingSorting
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Sorting.ProductCategory.ProductCategorySorting, Relewise.Client";
+    public String $type = "";
     @Override
     public ProductCategorySorting setOrder(SortOrder order)
     {

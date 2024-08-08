@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = CategoryPathResultDetails.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryPathResultDetails
 {
-    public String $type = "Relewise.Client.DataTypes.CategoryPathResultDetails, Relewise.Client";
     public ArrayList<CategoryNameAndId> breadcrumbPathStartingFromRoot;
     public static CategoryPathResultDetails create(CategoryNameAndId... breadcrumbPathStartingFromRoot)
     {

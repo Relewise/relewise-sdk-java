@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = DoubleRange.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DoubleRange
 {
-    public String $type = "Relewise.Client.DataTypes.Range`1[[System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
     public @Nullable Double lowerBoundInclusive;
     public @Nullable Double upperBoundInclusive;
     public static DoubleRange create(@Nullable Double lowerBoundInclusive, @Nullable Double upperBoundInclusive)

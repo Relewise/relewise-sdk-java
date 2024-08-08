@@ -32,7 +32,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class StemmingRuleSaveSearchRulesRequest extends LicensedRequest
 {
-    public String $type = "Relewise.Client.Requests.Search.Rules.SaveSearchRulesRequest`1[[Relewise.Client.DataTypes.Search.Configuration.SearchRules.StemmingRule, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
+    public String $type = "";
     public StemmingRule[] rules;
     public String modifiedBy;
     public StemmingRule[] getRules()

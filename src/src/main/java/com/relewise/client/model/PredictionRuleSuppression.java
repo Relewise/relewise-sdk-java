@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = PredictionRuleSuppression.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PredictionRuleSuppression
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.PredictionRule+Suppression, Relewise.Client";
     public SuppressionConditionKind condition;
     public String[] values;
     public static PredictionRuleSuppression create(SuppressionConditionKind condition, String... values)

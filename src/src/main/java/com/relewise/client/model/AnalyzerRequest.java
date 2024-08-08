@@ -29,7 +29,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class AnalyzerRequest extends LicensedRequest
 {
-    public String $type = "Relewise.Client.Requests.Analyzers.AnalyzerRequest, Relewise.Client";
+    public String $type = "";
     public @Nullable Language language;
     public @Nullable Currency currency;
     public @Nullable Language getLanguage()

@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = DoubleAvailableFacetValue.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DoubleAvailableFacetValue
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Result.AvailableFacetValue`1[[System.Double, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
     public Double value;
     public Integer hits;
     public Boolean selected;

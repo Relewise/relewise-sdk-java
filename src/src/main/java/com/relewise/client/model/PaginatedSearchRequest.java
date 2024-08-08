@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class PaginatedSearchRequest extends SearchRequest implements IUserIdentifier
 {
-    public String $type = "Relewise.Client.Requests.Search.PaginatedSearchRequest, Relewise.Client";
+    public String $type = "";
     public Integer skip;
     public Integer take;
     public Integer getSkip()

@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = Synonym.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Synonym
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Synonyms.Synonym, Relewise.Client";
     public UUID id;
     public SynonymType type;
     public String[] indexes;

@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = VariantResultDetails.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VariantResultDetails
 {
-    public String $type = "Relewise.Client.DataTypes.VariantResultDetails, Relewise.Client";
     public String variantId;
     public Multilingual displayName;
     public HashMap<String, String> specification;
