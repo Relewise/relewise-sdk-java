@@ -3,6 +3,7 @@ package com.relewise.client.factory;
 import com.relewise.client.model.*;
 
 import javax.xml.crypto.Data;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DataValueFactory {
@@ -21,7 +22,19 @@ public class DataValueFactory {
     public static DataValue create(MultiCurrency value) {
         return DataValue.create()
             .setType(DataValueDataValueTypes.MultiCurrency)
-            .setValue(value);
+            .setValue(new Object() {
+                public final String $type = "Relewise.Client.DataTypes.MultiCurrency, Relewise.Client";
+                public final ArrayList<Money> Values = value.getValues();
+            });
+    }
+
+    public static DataValue create(Money... moneyValues) {
+        return DataValue.create()
+            .setType(DataValueDataValueTypes.MultiCurrency)
+            .setValue(new Object() {
+                public final String $type = "Relewise.Client.DataTypes.MultiCurrency, Relewise.Client";
+                public final Money[] Values = moneyValues;
+            });
     }
 
     public static DataValue create(String... values) {
@@ -54,7 +67,10 @@ public class DataValueFactory {
     public static DataValue create(Multilingual value) {
         return DataValue.create()
             .setType(DataValueDataValueTypes.Multilingual)
-            .setValue(value);
+            .setValue(new Object() {
+                public final String $type = "Relewise.Client.DataTypes.Multilingual, Relewise.Client";
+                public final ArrayList<MultilingualValue> Values = value.getValues();
+            });
     }
 
     public static DataValue create(Language language, String... values) {

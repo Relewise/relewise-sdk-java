@@ -68,6 +68,8 @@ public class ProductRecommendationsTest extends TestBase {
                                     .setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode.Any),
                                 ContainsCondition.create(DataValueFactory.create(1))
                                     .setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode.Any),
+                                ContainsCondition.create(DataValueFactory.create(Money.create(Currency.create("USD"), 1.0)))
+                                    .setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode.Any),
                                 ContainsCondition.create(DataValueFactory.create(MultiCurrency.create(Money.create(Currency.create("USD"), 1.0))))
                                     .setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode.Any),
                                 ContainsCondition.create(DataValueFactory.create("a", "b"))
