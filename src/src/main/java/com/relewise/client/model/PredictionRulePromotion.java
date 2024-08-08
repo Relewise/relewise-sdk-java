@@ -22,13 +22,13 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PredictionRulePromotion
 {
-    public PromotionPosition to;
+    public PredictionRulePromotionPosition to;
     public String[] values;
-    public static PredictionRulePromotion create(PromotionPosition toPosition, String... values)
+    public static PredictionRulePromotion create(PredictionRulePromotionPosition toPosition, String... values)
     {
         return new PredictionRulePromotion(toPosition, values);
     }
-    public PredictionRulePromotion(PromotionPosition toPosition, String... values)
+    public PredictionRulePromotion(PredictionRulePromotionPosition toPosition, String... values)
     {
         this.to = toPosition;
         this.values = values;
@@ -36,7 +36,7 @@ public class PredictionRulePromotion
     public PredictionRulePromotion()
     {
     }
-    public PromotionPosition getTo()
+    public PredictionRulePromotionPosition getTo()
     {
         return this.to;
     }
@@ -44,7 +44,7 @@ public class PredictionRulePromotion
     {
         return this.values;
     }
-    public PredictionRulePromotion setTo(PromotionPosition to)
+    public PredictionRulePromotion setTo(PredictionRulePromotionPosition to)
     {
         this.to = to;;
         return this;

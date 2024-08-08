@@ -20,15 +20,15 @@ import java.util.Set;
 import java.util.HashSet;
     
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CategoryProductAndVariant
+public class ProductCategoryInterestTriggerResultCategoryProductAndVariant
 {
     public ProductResultDetails product;
     public VariantResultDetails variant;
-    public static CategoryProductAndVariant create()
+    public static ProductCategoryInterestTriggerResultCategoryProductAndVariant create()
     {
-        return new CategoryProductAndVariant();
+        return new ProductCategoryInterestTriggerResultCategoryProductAndVariant();
     }
-    public CategoryProductAndVariant()
+    public ProductCategoryInterestTriggerResultCategoryProductAndVariant()
     {
     }
     public ProductResultDetails getProduct()
@@ -39,12 +39,12 @@ public class CategoryProductAndVariant
     {
         return this.variant;
     }
-    public CategoryProductAndVariant setProduct(ProductResultDetails product)
+    public ProductCategoryInterestTriggerResultCategoryProductAndVariant setProduct(ProductResultDetails product)
     {
         this.product = product;;
         return this;
     }
-    public CategoryProductAndVariant setVariant(VariantResultDetails variant)
+    public ProductCategoryInterestTriggerResultCategoryProductAndVariant setVariant(VariantResultDetails variant)
     {
         this.variant = variant;;
         return this;
