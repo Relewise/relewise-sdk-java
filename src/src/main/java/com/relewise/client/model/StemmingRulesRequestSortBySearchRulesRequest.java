@@ -32,7 +32,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class StemmingRulesRequestSortBySearchRulesRequest extends LicensedRequest
 {
-    public String $type = "Relewise.Client.Requests.Search.Rules.SearchRulesRequest`1[[Relewise.Client.Requests.Search.Rules.StemmingRulesRequest+SortBy, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
+    public String $type = "";
     public SearchRuleFilters filters;
     public StemmingRulesRequestSortBySorting sorting;
     public Integer skip;

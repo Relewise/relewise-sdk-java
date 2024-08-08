@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = KeyMultiplier.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class KeyMultiplier
 {
-    public String $type = "Relewise.Client.DataTypes.KeyMultiplier, Relewise.Client";
     public String key;
     public Double multiplier;
     public static KeyMultiplier create(String key, Double multiplier)

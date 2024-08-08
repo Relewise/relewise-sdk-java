@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = DataIndexConfiguration.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DataIndexConfiguration
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.DataIndexConfiguration, Relewise.Client";
     public HashMap<String, FieldIndexConfiguration> keys;
     public FieldIndexConfiguration unspecified;
     public static DataIndexConfiguration create()

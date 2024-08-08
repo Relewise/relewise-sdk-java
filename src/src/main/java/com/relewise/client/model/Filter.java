@@ -66,7 +66,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Filter
 {
-    public String $type = "Relewise.Client.Requests.Filters.Filter, Relewise.Client";
+    public String $type = "";
     public Boolean negated;
     public Boolean getNegated()
     {

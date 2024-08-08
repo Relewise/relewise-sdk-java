@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class AbandonedSearchTriggerResultTriggerConfiguration extends TriggerConfiguration
 {
-    public String $type = "Relewise.Client.DataTypes.Triggers.Configurations.TriggerConfiguration`1[[Relewise.Client.Responses.Triggers.Results.AbandonedSearchTriggerResult, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
+    public String $type = "";
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setId(UUID id)
     {

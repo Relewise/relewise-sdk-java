@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ProductCategorySortBySpecification.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCategorySortBySpecification
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Sorting.ProductCategory.ProductCategorySortBySpecification, Relewise.Client";
     public ProductCategorySorting value;
     public static ProductCategorySortBySpecification create()
     {

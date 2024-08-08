@@ -30,7 +30,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class BrandRecommendationRequest extends RecommendationRequest implements IUserIdentifier
 {
-    public String $type = "Relewise.Client.Requests.Recommendations.BrandRecommendationRequest, Relewise.Client";
+    public String $type = "";
     public BrandRecommendationRequestSettings settings;
     public BrandRecommendationRequestSettings getSettings()
     {

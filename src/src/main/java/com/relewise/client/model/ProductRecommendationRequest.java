@@ -41,7 +41,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ProductRecommendationRequest extends RecommendationRequest implements IUserIdentifier
 {
-    public String $type = "Relewise.Client.Requests.Recommendations.ProductRecommendationRequest, Relewise.Client";
+    public String $type = "";
     public ProductRecommendationRequestSettings settings;
     public ProductRecommendationRequestSettings getSettings()
     {

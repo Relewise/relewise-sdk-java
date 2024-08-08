@@ -60,7 +60,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class FacetResult
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Result.FacetResult, Relewise.Client";
+    public String $type = "";
     public FacetingField field;
     public FacetingField getField()
     {

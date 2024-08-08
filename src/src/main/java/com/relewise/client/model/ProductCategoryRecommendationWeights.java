@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ProductCategoryRecommendationWeights.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCategoryRecommendationWeights
 {
-    public String $type = "Relewise.Client.Requests.Recommendations.ProductCategoryRecommendationWeights, Relewise.Client";
     public Double categoryViews;
     public Double productViews;
     public Double productPurchases;

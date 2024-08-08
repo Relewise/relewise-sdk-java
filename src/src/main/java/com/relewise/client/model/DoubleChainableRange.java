@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = DoubleChainableRange.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DoubleChainableRange
 {
-    public String $type = "Relewise.Client.DataTypes.ChainableRange`1[[System.Nullable`1[[System.Double, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Relewise.Client";
     public @Nullable Double lowerBoundInclusive;
     public @Nullable Double upperBoundExclusive;
     public static DoubleChainableRange create(@Nullable Double lowerBoundInclusive, @Nullable Double upperBoundExclusive)

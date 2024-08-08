@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ContentCategoryIdFilterCategoryQuery extends LicensedRequest
 {
-    public String $type = "Relewise.Client.Requests.Queries.CategoryQuery`1[[Relewise.Client.Requests.Filters.ContentCategoryIdFilter, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
+    public String $type = "";
     public FilterCollection filters;
     public Integer numberOfResults;
     public @Nullable Language language;

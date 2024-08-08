@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Category
 {
-    public String $type = "Relewise.Client.DataTypes.Category, Relewise.Client";
+    public String $type = "";
     public String id;
     public Multilingual displayName;
     public ArrayList<CategoryPath> categoryPaths;

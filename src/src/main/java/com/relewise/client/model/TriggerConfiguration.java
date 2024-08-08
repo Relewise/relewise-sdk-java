@@ -34,7 +34,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class TriggerConfiguration
 {
-    public String $type = "Relewise.Client.DataTypes.Triggers.Configurations.TriggerConfiguration, Relewise.Client";
+    public String $type = "";
     public UUID id;
     public String name;
     public String description;

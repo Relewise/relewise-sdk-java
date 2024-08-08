@@ -31,7 +31,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class AbandonedSearch
 {
-    public String $type = "Relewise.Client.Responses.Triggers.Results.AbandonedSearch, Relewise.Client";
+    public String $type = "";
     public String loweredSearchTerm;
     public Integer hits;
     public String getLoweredSearchTerm()

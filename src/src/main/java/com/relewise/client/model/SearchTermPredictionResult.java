@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = SearchTermPredictionResult.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTermPredictionResult
 {
-    public String $type = "Relewise.Client.DataTypes.SearchTermPredictionResult, Relewise.Client";
     public String term;
     public Integer rank;
     public ExpectedSearchTermResult[] expectedResultTypes;

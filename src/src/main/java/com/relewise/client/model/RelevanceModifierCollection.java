@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = RelevanceModifierCollection.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RelevanceModifierCollection
 {
-    public String $type = "Relewise.Client.Requests.RelevanceModifiers.RelevanceModifierCollection, Relewise.Client";
     public @Nullable ArrayList<RelevanceModifier> items;
     public static RelevanceModifierCollection create(RelevanceModifier... relevanceModifiers)
     {

@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class RecommendationResponse extends TimedResponse
 {
-    public String $type = "Relewise.Client.Responses.RecommendationResponse, Relewise.Client";
+    public String $type = "";
     @Override
     public RecommendationResponse setStatistics(Statistics statistics)
     {

@@ -30,7 +30,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class CategoryLevelFilter extends Filter
 {
-    public String $type = "Relewise.Client.Requests.Filters.CategoryLevelFilter, Relewise.Client";
+    public String $type = "";
     public ArrayList<Integer> levels;
     public ArrayList<Integer> getLevels()
     {

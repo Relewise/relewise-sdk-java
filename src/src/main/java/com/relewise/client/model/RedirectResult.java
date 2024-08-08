@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = RedirectResult.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RedirectResult
 {
-    public String $type = "Relewise.Client.DataTypes.RedirectResult, Relewise.Client";
     public UUID id;
     public SearchTermCondition condition;
     public @Nullable String destination;

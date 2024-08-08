@@ -32,7 +32,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class StemmingRuleSearchRulesResponse extends TimedResponse
 {
-    public String $type = "Relewise.Client.Responses.Search.Rules.SearchRulesResponse`1[[Relewise.Client.DataTypes.Search.Configuration.SearchRules.StemmingRule, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
+    public String $type = "";
     public StemmingRule[] rules;
     public Integer hits;
     public StemmingRule[] getRules()

@@ -32,7 +32,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class SearchRule
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.SearchRule, Relewise.Client";
+    public String $type = "";
     public UUID id;
     public @Nullable ApplicableIndexes indexes;
     public @Nullable ApplicableLanguages languages;

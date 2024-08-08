@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = CategoryProductAndVariant.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryProductAndVariant
 {
-    public String $type = "Relewise.Client.Responses.Triggers.Results.ProductCategoryInterestTriggerResult+Category+ProductAndVariant, Relewise.Client";
     public ProductResultDetails product;
     public VariantResultDetails variant;
     public static CategoryProductAndVariant create()

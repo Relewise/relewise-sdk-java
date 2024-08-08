@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = OverriddenSelectedBrandPropertiesSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OverriddenSelectedBrandPropertiesSettings
 {
-    public String $type = "Relewise.Client.Requests.Shared.OverriddenSelectedBrandPropertiesSettings, Relewise.Client";
     public @Nullable Boolean displayName;
     public @Nullable Boolean assortments;
     public @Nullable Boolean viewedByUserInfo;

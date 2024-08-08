@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = SearchTermCondition.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTermCondition
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.SearchTermCondition, Relewise.Client";
     public @Nullable SearchTermConditionConditionKind kind;
     public @Nullable String value;
     public @Nullable ArrayList<SearchTermCondition> andConditions;

@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = RecommendationSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RecommendationSettings
 {
-    public String $type = "Relewise.Client.Requests.Search.Settings.RecommendationSettings, Relewise.Client";
     public @Nullable Integer take;
     public @Nullable Integer onlyIncludeRecommendationsWhenLessResultsThan;
     public static RecommendationSettings create()

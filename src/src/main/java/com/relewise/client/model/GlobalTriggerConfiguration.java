@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = GlobalTriggerConfiguration.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GlobalTriggerConfiguration
 {
-    public String $type = "Relewise.Client.DataTypes.Triggers.GlobalTriggerConfiguration, Relewise.Client";
     public OffsetDateTime modified;
     public String modifiedBy;
     public Boolean enabled;

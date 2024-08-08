@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = PredictionRulesRequestSortBySorting.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PredictionRulesRequestSortBySorting
 {
-    public String $type = "Relewise.Client.Requests.Shared.Sorting`1[[Relewise.Client.Requests.Search.Rules.PredictionRulesRequest+SortBy, Relewise.Client, Version=1.61.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
     public PredictionRulesRequestSortBy sortBy;
     public SortOrder sortOrder;
     public static PredictionRulesRequestSortBySorting create(PredictionRulesRequestSortBy sortBy, SortOrder sortOrder)

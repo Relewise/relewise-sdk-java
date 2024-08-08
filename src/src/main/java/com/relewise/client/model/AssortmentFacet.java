@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class AssortmentFacet extends IntegerValueFacet
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.AssortmentFacet, Relewise.Client";
+    public String $type = "";
     public AssortmentFilterType assortmentFilterType;
     public AssortmentFilterType getAssortmentFilterType()
     {

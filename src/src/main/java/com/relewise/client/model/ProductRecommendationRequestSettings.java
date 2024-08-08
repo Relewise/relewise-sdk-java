@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ProductRecommendationRequestSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductRecommendationRequestSettings
 {
-    public String $type = "Relewise.Client.Requests.Recommendations.ProductRecommendationRequestSettings, Relewise.Client";
     public Integer numberOfRecommendations;
     public Boolean allowFillIfNecessaryToReachNumberOfRecommendations;
     public Boolean allowReplacingOfRecentlyShownRecommendations;

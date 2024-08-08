@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = ProductPerformanceResultRankMetrics.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductPerformanceResultRankMetrics
 {
-    public String $type = "Relewise.Client.DataTypes.ProductPerformanceResult+RankMetrics, Relewise.Client";
     public ProductPerformanceResultViewsAndSalesMetrics overall;
     public ProductPerformanceResultCategoryMetrics[] withinCategories;
     public ProductPerformanceResultViewsAndSalesMetrics withinBrand;

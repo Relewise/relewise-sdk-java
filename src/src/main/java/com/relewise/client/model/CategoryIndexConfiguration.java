@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = CategoryIndexConfiguration.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryIndexConfiguration
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.CategoryIndexConfiguration, Relewise.Client";
     public CategoryIndexConfigurationEntry unspecified;
     public static CategoryIndexConfiguration create()
     {

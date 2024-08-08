@@ -28,7 +28,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class DataFilter extends Filter
 {
-    public String $type = "Relewise.Client.Requests.Filters.DataFilter, Relewise.Client";
+    public String $type = "";
     public String key;
     public Boolean filterOutIfKeyIsNotFound;
     public Boolean mustMatchAllConditions;

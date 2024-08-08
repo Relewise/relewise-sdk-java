@@ -30,5 +30,5 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Parser
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.Parsers.Parser, Relewise.Client";
+    public String $type = "";
 }

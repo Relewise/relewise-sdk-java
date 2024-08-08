@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = TrimStringTransformer.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TrimStringTransformer
 {
-    public String $type = "Relewise.Client.Requests.Transformers.TrimStringTransformer, Relewise.Client";
     public String[] valuesToTrim;
     public static TrimStringTransformer create(String... valuesToTrim)
     {

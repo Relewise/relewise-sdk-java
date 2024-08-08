@@ -48,5 +48,5 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class TrackingRequest extends LicensedRequest
 {
-    public String $type = "Relewise.Client.Requests.Tracking.TrackingRequest, Relewise.Client";
+    public String $type = "";
 }

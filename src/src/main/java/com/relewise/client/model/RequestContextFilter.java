@@ -19,15 +19,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type",
-    defaultImpl = RequestContextFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RequestContextFilter
 {
-    public String $type = "Relewise.Client.DataTypes.Merchandising.RequestContextFilter, Relewise.Client";
     public RecommendationTypeCollection recommendations;
     public SearchTypeCollection searches;
     public ArrayList<String> locations;

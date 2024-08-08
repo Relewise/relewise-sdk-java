@@ -47,5 +47,5 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Trackable
 {
-    public String $type = "Relewise.Client.Requests.Trackable, Relewise.Client";
+    public String $type = "";
 }
