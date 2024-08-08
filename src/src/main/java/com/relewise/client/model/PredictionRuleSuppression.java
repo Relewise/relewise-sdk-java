@@ -22,13 +22,13 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PredictionRuleSuppression
 {
-    public SuppressionConditionKind condition;
+    public PredictionRuleSuppressionConditionKind condition;
     public String[] values;
-    public static PredictionRuleSuppression create(SuppressionConditionKind condition, String... values)
+    public static PredictionRuleSuppression create(PredictionRuleSuppressionConditionKind condition, String... values)
     {
         return new PredictionRuleSuppression(condition, values);
     }
-    public PredictionRuleSuppression(SuppressionConditionKind condition, String... values)
+    public PredictionRuleSuppression(PredictionRuleSuppressionConditionKind condition, String... values)
     {
         this.condition = condition;
         this.values = values;
@@ -36,7 +36,7 @@ public class PredictionRuleSuppression
     public PredictionRuleSuppression()
     {
     }
-    public SuppressionConditionKind getCondition()
+    public PredictionRuleSuppressionConditionKind getCondition()
     {
         return this.condition;
     }
@@ -44,7 +44,7 @@ public class PredictionRuleSuppression
     {
         return this.values;
     }
-    public PredictionRuleSuppression setCondition(SuppressionConditionKind condition)
+    public PredictionRuleSuppression setCondition(PredictionRuleSuppressionConditionKind condition)
     {
         this.condition = condition;;
         return this;

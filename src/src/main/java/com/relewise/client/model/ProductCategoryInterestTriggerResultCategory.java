@@ -24,7 +24,7 @@ public class ProductCategoryInterestTriggerResultCategory
 {
     public String[] lastPath;
     public Integer views;
-    public CategoryProductAndVariant[] viewedProducts;
+    public ProductCategoryInterestTriggerResultCategoryProductAndVariant[] viewedProducts;
     public static ProductCategoryInterestTriggerResultCategory create()
     {
         return new ProductCategoryInterestTriggerResultCategory();
@@ -40,7 +40,7 @@ public class ProductCategoryInterestTriggerResultCategory
     {
         return this.views;
     }
-    public CategoryProductAndVariant[] getViewedProducts()
+    public ProductCategoryInterestTriggerResultCategoryProductAndVariant[] getViewedProducts()
     {
         return this.viewedProducts;
     }
@@ -68,22 +68,22 @@ public class ProductCategoryInterestTriggerResultCategory
         this.views = views;;
         return this;
     }
-    public ProductCategoryInterestTriggerResultCategory setViewedProducts(CategoryProductAndVariant... viewedProducts)
+    public ProductCategoryInterestTriggerResultCategory setViewedProducts(ProductCategoryInterestTriggerResultCategoryProductAndVariant... viewedProducts)
     {
         this.viewedProducts = viewedProducts;;
         return this;
     }
-    public ProductCategoryInterestTriggerResultCategory addToViewedProducts(CategoryProductAndVariant viewedProduct)
+    public ProductCategoryInterestTriggerResultCategory addToViewedProducts(ProductCategoryInterestTriggerResultCategoryProductAndVariant viewedProduct)
     {
         if (this.viewedProducts == null)
         {
-            this.viewedProducts = new CategoryProductAndVariant[] { viewedProduct };
+            this.viewedProducts = new ProductCategoryInterestTriggerResultCategoryProductAndVariant[] { viewedProduct };
         }
         else
         {
-            ArrayList<CategoryProductAndVariant> existingList = new ArrayList<>(Arrays.asList(this.viewedProducts));
+            ArrayList<ProductCategoryInterestTriggerResultCategoryProductAndVariant> existingList = new ArrayList<>(Arrays.asList(this.viewedProducts));
             existingList.add(viewedProduct);
-            this.viewedProducts = existingList.toArray(new CategoryProductAndVariant[0]);
+            this.viewedProducts = existingList.toArray(new ProductCategoryInterestTriggerResultCategoryProductAndVariant[0]);
         }
         return this;
     }

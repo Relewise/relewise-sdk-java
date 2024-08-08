@@ -19,11 +19,16 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
 
-public enum SuppressionConditionKind
+public enum PredictionRulePromotionPosition
 {
-    Contains {
+    Top {
         public String toString() {
-            return "Contains";
+            return "Top";
+        }
+    },
+    Bottom {
+        public String toString() {
+            return "Bottom";
         }
     },
 }
