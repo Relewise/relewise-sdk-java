@@ -1,9 +1,12 @@
 package com.relewise.client;
 
+import com.fasterxml.jackson.databind.json.JsonMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.relewise.client.factory.*;
 import com.relewise.client.model.*;
 import org.junit.jupiter.api.Test;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 
@@ -29,6 +32,32 @@ public class SearcherTest extends TestBase {
                     new ArrayList<>(),
                     DataDoubleSelector.create("NoveltyBoostModifier")
                 )
+            )
+        );
+
+        Callable<ProductSearchResponse> action = () -> searcher.search(productSearch);
+        assertDoesNotThrow(action::call);
+        var response = action.call();
+        assertNotNull(response);
+        assertTrue(response.hits > 0);
+        assertNotEquals(0, response.results.length);
+    }
+
+    @Test
+    public void testProductSearchWithRecentlyViewedFilter() throws Exception {
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+
+        var productSearch = ProductSearchRequest.create(
+            Language.create("en-US"),
+            Currency.create("USD"),
+            UserFactory.byTemporaryId("t-id"),
+            "integration test",
+            null,
+            0,
+            3
+        ).setFilters(
+            FilterCollection.create(
+                ProductRecentlyViewedByUserFilter.create(OffsetDateTime.now().minusDays(365))
             )
         );
 
