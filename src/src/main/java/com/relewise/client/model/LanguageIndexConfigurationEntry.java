@@ -35,6 +35,16 @@ public class LanguageIndexConfigurationEntry
         this.included = included;
         this.iSO639_1 = null;
     }
+    public static LanguageIndexConfigurationEntry create(Language language, Boolean included, String iso639_1)
+    {
+        return new LanguageIndexConfigurationEntry(language, included, iso639_1);
+    }
+    public LanguageIndexConfigurationEntry(Language language, Boolean included, String iso639_1)
+    {
+        this.language = language;
+        this.included = included;
+        this.iSO639_1 = iso639_1;
+    }
     public LanguageIndexConfigurationEntry()
     {
     }

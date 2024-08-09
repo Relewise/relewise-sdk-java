@@ -29,9 +29,13 @@ public class MerchandisingRulesRequest extends LicensedRequest
 {
     public String $type = "Relewise.Client.Requests.Merchandising.MerchandisingRulesRequest, Relewise.Client";
     public @Nullable Short type;
-    public static MerchandisingRulesRequest create()
+    public static MerchandisingRulesRequest create(Short type)
     {
-        return new MerchandisingRulesRequest();
+        return new MerchandisingRulesRequest(type);
+    }
+    public MerchandisingRulesRequest(Short type)
+    {
+        this.type = type;
     }
     public MerchandisingRulesRequest()
     {

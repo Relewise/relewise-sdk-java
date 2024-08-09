@@ -33,15 +33,27 @@ public class Cart extends Trackable implements IUserIdentifier
     public @Nullable Money subtotal;
     public @Nullable ArrayList<LineItem> lineItems;
     public @Nullable HashMap<String, DataValue> data;
-    public static Cart create(@Nullable User user, Money subtotal)
+    public static Cart create(@Nullable User user, Money subtotal, LineItem... lineItems)
     {
-        return new Cart(user, subtotal);
+        return new Cart(user, subtotal, lineItems);
     }
-    public Cart(@Nullable User user, Money subtotal)
+    public Cart(@Nullable User user, Money subtotal, LineItem... lineItems)
     {
         this.user = user;
         this.subtotal = subtotal;
+        this.lineItems = new ArrayList<>(Arrays.asList(lineItems));
         this.name = "default";
+    }
+    public static Cart create(@Nullable User user, Money subtotal, @Nullable ArrayList<LineItem> lineItems, String cartName)
+    {
+        return new Cart(user, subtotal, lineItems, cartName);
+    }
+    public Cart(@Nullable User user, Money subtotal, @Nullable ArrayList<LineItem> lineItems, String cartName)
+    {
+        this.user = user;
+        this.subtotal = subtotal;
+        this.lineItems = lineItems;
+        this.name = cartName;
     }
     public Cart()
     {

@@ -33,15 +33,17 @@ public class ProductAdministrativeAction extends Trackable
     public ProductAdministrativeActionUpdateKind productUpdateKind;
     public ProductAdministrativeActionUpdateKind variantUpdateKind;
     public @Nullable Currency currency;
-    public static ProductAdministrativeAction create(@Nullable Language language, @Nullable Currency currency, ProductAdministrativeActionUpdateKind productUpdateKind)
+    public static ProductAdministrativeAction create(@Nullable Language language, @Nullable Currency currency, FilterCollection filters, ProductAdministrativeActionUpdateKind productUpdateKind, ProductAdministrativeActionUpdateKind variantUpdateKind)
     {
-        return new ProductAdministrativeAction(language, currency, productUpdateKind);
+        return new ProductAdministrativeAction(language, currency, filters, productUpdateKind, variantUpdateKind);
     }
-    public ProductAdministrativeAction(@Nullable Language language, @Nullable Currency currency, ProductAdministrativeActionUpdateKind productUpdateKind)
+    public ProductAdministrativeAction(@Nullable Language language, @Nullable Currency currency, FilterCollection filters, ProductAdministrativeActionUpdateKind productUpdateKind, ProductAdministrativeActionUpdateKind variantUpdateKind)
     {
         this.language = language;
         this.currency = currency;
+        this.filters = filters;
         this.productUpdateKind = productUpdateKind;
+        this.variantUpdateKind = variantUpdateKind;
     }
     public ProductAdministrativeAction()
     {

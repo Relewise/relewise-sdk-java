@@ -30,13 +30,14 @@ public class TriggerConfigurationRequest extends LicensedRequest
     public String $type = "Relewise.Client.Requests.Triggers.TriggerConfigurationRequest, Relewise.Client";
     public UUID id;
     public @Nullable Integer type;
-    public static TriggerConfigurationRequest create(UUID id)
+    public static TriggerConfigurationRequest create(UUID id, Integer type)
     {
-        return new TriggerConfigurationRequest(id);
+        return new TriggerConfigurationRequest(id, type);
     }
-    public TriggerConfigurationRequest(UUID id)
+    public TriggerConfigurationRequest(UUID id, Integer type)
     {
         this.id = id;
+        this.type = type;
     }
     public TriggerConfigurationRequest()
     {

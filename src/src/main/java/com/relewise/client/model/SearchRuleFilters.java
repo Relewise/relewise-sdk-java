@@ -25,9 +25,14 @@ public class SearchRuleFilters
     public @Nullable String term;
     public @Nullable Boolean approved;
     public @Nullable UUID id;
-    public static SearchRuleFilters create()
+    public static SearchRuleFilters create(@Nullable String term, @Nullable Boolean approved)
     {
-        return new SearchRuleFilters();
+        return new SearchRuleFilters(term, approved);
+    }
+    public SearchRuleFilters(@Nullable String term, @Nullable Boolean approved)
+    {
+        this.term = term;
+        this.approved = approved;
     }
     public SearchRuleFilters()
     {

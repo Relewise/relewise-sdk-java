@@ -29,9 +29,13 @@ public class TriggerConfigurationsRequest extends LicensedRequest
 {
     public String $type = "Relewise.Client.Requests.Triggers.TriggerConfigurationsRequest, Relewise.Client";
     public @Nullable Integer type;
-    public static TriggerConfigurationsRequest create()
+    public static TriggerConfigurationsRequest create(Integer type)
     {
-        return new TriggerConfigurationsRequest();
+        return new TriggerConfigurationsRequest(type);
+    }
+    public TriggerConfigurationsRequest(Integer type)
+    {
+        this.type = type;
     }
     public TriggerConfigurationsRequest()
     {

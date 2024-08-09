@@ -30,13 +30,14 @@ public class MerchandisingRuleRequest extends LicensedRequest
     public String $type = "Relewise.Client.Requests.Merchandising.MerchandisingRuleRequest, Relewise.Client";
     public UUID id;
     public @Nullable Short type;
-    public static MerchandisingRuleRequest create(UUID id)
+    public static MerchandisingRuleRequest create(UUID id, Short type)
     {
-        return new MerchandisingRuleRequest(id);
+        return new MerchandisingRuleRequest(id, type);
     }
-    public MerchandisingRuleRequest(UUID id)
+    public MerchandisingRuleRequest(UUID id, Short type)
     {
         this.id = id;
+        this.type = type;
     }
     public MerchandisingRuleRequest()
     {

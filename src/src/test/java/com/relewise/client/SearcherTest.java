@@ -4,6 +4,7 @@ import com.relewise.client.factory.*;
 import com.relewise.client.model.*;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.concurrent.Callable;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,6 +26,7 @@ public class SearcherTest extends TestBase {
             RelevanceModifierCollection.create(
                 ProductDataRelevanceModifier.create(
                     "NoveltyBoostModifier",
+                    new ArrayList<>(),
                     DataDoubleSelector.create("NoveltyBoostModifier")
                 )
             )
@@ -54,6 +56,7 @@ public class SearcherTest extends TestBase {
             RelevanceModifierCollection.create(
                 ProductDataRelevanceModifier.create(
                     "NoveltyBoostModifier",
+                    new ArrayList<>(),
                     DataDoubleSelector.create("NoveltyBoostModifier")
                 )
             )

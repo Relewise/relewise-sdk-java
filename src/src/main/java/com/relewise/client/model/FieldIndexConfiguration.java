@@ -26,15 +26,16 @@ public class FieldIndexConfiguration
     public Short weight;
     public PredictionSourceType predictionSourceType;
     public @Nullable Parser parser;
-    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType)
+    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser)
     {
-        return new FieldIndexConfiguration(included, weight, predictionSourceType);
+        return new FieldIndexConfiguration(included, weight, predictionSourceType, parser);
     }
-    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType)
+    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser)
     {
         this.included = included;
         this.weight = weight;
         this.predictionSourceType = predictionSourceType;
+        this.parser = parser;
     }
     public FieldIndexConfiguration()
     {
