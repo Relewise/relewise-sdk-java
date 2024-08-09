@@ -56,7 +56,7 @@ public class JavaCreatorMethodWriter
         {
             string[] defaultParameters = coveringUniqueTypeMappableConstructorParameters.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
 
-            WriteConstructor(writer, type, typeName, propertyInformations, coveringUniqueTypeMappableConstructorParameters, Array.Empty<string>(), ignoreNameEquivalence: true);
+            WriteConstructor(writer, type, typeName, propertyInformations, coveringUniqueTypeMappableConstructorParameters, Array.Empty<string>());
             if (defaultParameters.Any())
             {
                 WriteConstructor(writer, type, typeName, propertyInformations, coveringUniqueTypeMappableConstructorParameters, defaultParameters);
@@ -66,7 +66,7 @@ public class JavaCreatorMethodWriter
         {
             string[] defaultParameters = coveringTypeAndNameMappableConstructorParameters.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
 
-            WriteConstructor(writer, type, typeName, propertyInformations, coveringTypeAndNameMappableConstructorParameters, Array.Empty<string>(), ignoreNameEquivalence: true);
+            WriteConstructor(writer, type, typeName, propertyInformations, coveringTypeAndNameMappableConstructorParameters, Array.Empty<string>());
             if (defaultParameters.Any())
             {
                 WriteConstructor(writer, type, typeName, propertyInformations, coveringTypeAndNameMappableConstructorParameters, defaultParameters);
@@ -76,7 +76,7 @@ public class JavaCreatorMethodWriter
         {
             string[] defaultParameters = allConstructorParametersIntersectionWithMappableNamesAndTypes.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
 
-            WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, Array.Empty<string>(), ignoreNameEquivalence: true);
+            WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, Array.Empty<string>());
             if (defaultParameters.Any())
             {
                 WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, defaultParameters);
@@ -115,19 +115,11 @@ public class JavaCreatorMethodWriter
         }
     }
 
-    private void WriteConstructor(IndentedTextWriter writer, Type returnType, string typeName, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations, ConstructorInfo constructorInfo, string[] includedNullableParameters, bool ignoreNameEquivalence = false)
+    private void WriteConstructor(IndentedTextWriter writer, Type returnType, string typeName, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations, ConstructorInfo constructorInfo, string[] includedNullableParameters)
     {
         var parameters = constructorInfo.GetParameters()
-            .Where(parameter => returnType.GetProperties()
-                .Any(property => 
-                    (property.GetIndexParameters().Length is 0
-                           && property.GetMethod is { IsAbstract: false }
-                           && property.SetMethod is { IsAbstract: false }
-                           && !Attribute.IsDefined(property, typeof(JsonIgnoreAttribute))
-                           && property.GetAccessors(false).All(ax => !ax.IsAbstract && ax.IsPublic))
-                    && (ContainedWithinEitherOne(property.Name, parameter.Name) || ignoreNameEquivalence)
-                    && (ParameterIsPersuadableIntoPropertyType(property, parameter) || EqualCollectionElementType(property.PropertyType, parameter.ParameterType)))
-                && (!parameter.HasDefaultValue || includedNullableParameters.Contains(parameter.Name))).ToArray();
+            .Where(parameter => SingleMatchingProperty(returnType, parameter) is not null
+                                && (!parameter.HasDefaultValue || includedNullableParameters.Contains(parameter.Name))).ToArray();
 
         var nonIncludedDefaultParameters = constructorInfo.GetParameters().Where(parameter => parameter.HasDefaultValue && !includedNullableParameters.Contains(parameter.Name)).ToArray();
 
@@ -157,14 +149,8 @@ public class JavaCreatorMethodWriter
     {
         foreach (var parameter in parameters)
         {
-            string? propertyName;
-            var property = returnType.GetProperties().FirstOrDefault(property => property.Name.ToCamelCase() == parameter.Name);
-            propertyName = property?.Name.ToCamelCase();
-            if (propertyName is null)
-            {
-                property = returnType.GetProperties().FirstOrDefault(property => property.PropertyType == parameter.ParameterType || EqualCollectionElementType(property.PropertyType, parameter.ParameterType));
-                propertyName = property?.Name.ToCamelCase();
-            }
+            PropertyInfo? property = SingleMatchingProperty(returnType, parameter);
+            string? propertyName = property?.Name.ToCamelCase();
             if (propertyName is not null)
             {
                 if (property!.PropertyType.IsGenericType && property!.PropertyType.GetGenericTypeDefinition() == typeof(List<>) && (parameter.ParameterType.IsArray
@@ -184,19 +170,50 @@ public class JavaCreatorMethodWriter
         }
         foreach (var parameter in nonIncludedDefaultParameters)
         {
-            string? propertyName;
-            var property = returnType.GetProperties().FirstOrDefault(property => property.Name.ToCamelCase() == parameter.Name);
-            propertyName = property?.Name.ToCamelCase();
-            if (propertyName is null)
-            {
-                property = returnType.GetProperties().FirstOrDefault(property => property.PropertyType == parameter.ParameterType || EqualCollectionElementType(property.PropertyType, parameter.ParameterType));
-                propertyName = property?.Name.ToCamelCase();
-            }
+            PropertyInfo? property = SingleMatchingProperty(returnType, parameter);
+            string? propertyName = property?.Name.ToCamelCase();
             if (propertyName is not null)
             {
                 writer.WriteLine($"{variable}.{propertyName}{DefaultValueSetter(parameter)};");
             }
         }
+    }
+
+    private PropertyInfo? SingleMatchingProperty(Type returnType, ParameterInfo parameter)
+    {
+        var settableProperties = returnType.GetProperties()
+            .Where(property =>
+                property.GetIndexParameters().Length is 0
+                && property.GetMethod is { IsAbstract: false }
+                && property.SetMethod is { IsAbstract: false }
+                && !Attribute.IsDefined(property, typeof(JsonIgnoreAttribute))
+                && property.GetAccessors(false).All(ax => !ax.IsAbstract && ax.IsPublic))
+            .ToList();
+
+        if (settableProperties.FirstOrDefault(p => p.Name.ToCamelCase() == parameter.Name && ParameterIsPersuadableIntoPropertyType(p, parameter)) is { } exactSameNameProperty)
+        {
+            return exactSameNameProperty;
+        }
+
+        var propertiesWithSameType = settableProperties
+            .Where(p => ParameterIsPersuadableIntoPropertyType(p, parameter))
+            .ToList();
+
+        if (propertiesWithSameType.Count == 1)
+        {
+            return propertiesWithSameType.Single();
+        }
+
+        var propertiesWithCloseNameAndPersuadableType = propertiesWithSameType
+            .Where(p => ContainedWithinEitherOne(p.Name, parameter.Name))
+            .ToList();
+
+        if (propertiesWithCloseNameAndPersuadableType.Count == 1)
+        {
+            return propertiesWithCloseNameAndPersuadableType.Single();
+        }
+
+        return null;
     }
 
     private string DefaultValueSetter(ParameterInfo parameter)

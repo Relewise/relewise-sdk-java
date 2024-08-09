@@ -38,7 +38,7 @@ public class VariantSpecificationFilter extends Filter implements IVariantFilter
     public VariantSpecificationFilter(String key, String equalToValue)
     {
         this.key = key;
-        this.key = equalToValue;
+        this.equalTo = equalToValue;
         this.filterOutIfKeyIsNotFound = true;
     }
     public static VariantSpecificationFilter create(String key, String equalToValue, Boolean filterOutIfKeyIsNotFound)
@@ -48,7 +48,7 @@ public class VariantSpecificationFilter extends Filter implements IVariantFilter
     public VariantSpecificationFilter(String key, String equalToValue, Boolean filterOutIfKeyIsNotFound)
     {
         this.key = key;
-        this.key = equalToValue;
+        this.equalTo = equalToValue;
         this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
     }
     public VariantSpecificationFilter()
