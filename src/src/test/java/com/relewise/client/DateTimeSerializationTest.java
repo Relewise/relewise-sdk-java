@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class DateTimeSerializationTest extends TestBase {
     @Test
-    public void testSerializeOffsetDateTime() {
+    public void testSerializeOffsetDateTime() throws Exception {
         var objectMapper = JsonMapper.builder()
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
             .addModule(new JavaTimeModule())
@@ -30,7 +30,7 @@ public class DateTimeSerializationTest extends TestBase {
     }
 
     @Test
-    public void testSerializeLocalDateTime() {
+    public void testSerializeLocalDateTime() throws Exception {
         var objectMapper = JsonMapper.builder()
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
             .addModule(new JavaTimeModule())
