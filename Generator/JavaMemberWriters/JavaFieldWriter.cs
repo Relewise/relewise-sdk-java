@@ -22,7 +22,7 @@ public class JavaFieldWriter
                 propertyInfo.GetCustomAttribute(typeof(ObsoleteAttribute)) is ObsoleteAttribute { } obsolete ? $"@deprecated {obsolete.Message}" : null
             );
 
-            writer.WriteLine($"public {propertyTypeName} {lowerCaseName};");
+            writer.WriteLine($"public {propertyTypeName} {lowerCaseName.AsFieldName()};");
         }
     }
 }

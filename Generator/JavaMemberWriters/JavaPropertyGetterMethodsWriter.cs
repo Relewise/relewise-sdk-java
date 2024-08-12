@@ -22,10 +22,15 @@ public class JavaPropertyGetterMethodsWriter
                 propertyInfo.GetCustomAttribute(typeof(ObsoleteAttribute)) is ObsoleteAttribute { } obsolete ? $"@deprecated {obsolete.Message}" : null
             );
 
+            if (lowerCaseName == "default")
+            {
+                writer.WriteLine("@JsonProperty(\"default\")");
+            }
+
             writer.WriteLine($"public {propertyTypeName} get{propertyName}()");
             writer.WriteLine("{");
             writer.Indent++;
-            writer.WriteLine($"return this.{lowerCaseName};");
+            writer.WriteLine($"return this.{lowerCaseName.AsFieldName()};");
             writer.Indent--;
             writer.WriteLine("}");
         }

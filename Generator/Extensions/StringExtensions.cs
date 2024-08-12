@@ -20,4 +20,6 @@ public static class StringExtensions
     }
 
     public static string RemoveNullable(this string value) => value.Length > 10 ? value[..10] is "@Nullable " ? value[10..] : value : value;
+
+    public static string AsFieldName(this string? fieldName) => fieldName == "default" ? "_default" : fieldName ?? null!;
 }

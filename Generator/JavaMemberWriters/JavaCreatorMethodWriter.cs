@@ -159,7 +159,7 @@ public class JavaCreatorMethodWriter
         writer.WriteLine($"public static {typeName} create({ParameterList(parameters)})");
         writer.WriteLine("{");
         writer.Indent++;
-        writer.WriteLine($"return new {typeName}({string.Join(", ", parameters.Select(p => p.Name))});");
+        writer.WriteLine($"return new {typeName}({string.Join(", ", parameters.Select(p => p.Name.AsFieldName()))});");
         writer.Indent--;
         writer.WriteLine("}");
 
@@ -188,15 +188,15 @@ public class JavaCreatorMethodWriter
                 if (property!.PropertyType.IsGenericType && property!.PropertyType.GetGenericTypeDefinition() == typeof(List<>) && (parameter.ParameterType.IsArray
                     || (parameter == parameters.Last() && javaWriter.BetterTypedParameterTypeName(parameter.ParameterType, new NullabilityInfoContext().Create(parameter)).Contains("..."))))
                 {
-                    writer.WriteLine($"{variable}.{propertyName} = new ArrayList<>(Arrays.asList({parameter.Name}));");
+                    writer.WriteLine($"{variable}.{propertyName.AsFieldName()} = new ArrayList<>(Arrays.asList({parameter.Name.AsFieldName()}));");
                 }
                 else if (property!.PropertyType.IsArray && parameter.ParameterType.IsGenericType && parameter.ParameterType.GetGenericTypeDefinition() == typeof(List<>))
                 {
-                    writer.WriteLine($"{variable}.{propertyName} = {parameter.Name}.asArray();");
+                    writer.WriteLine($"{variable}.{propertyName.AsFieldName()} = {parameter.Name.AsFieldName()}.asArray();");
                 }
                 else
                 {
-                    writer.WriteLine($"{variable}.{propertyName} = {parameter.Name};");
+                    writer.WriteLine($"{variable}.{propertyName.AsFieldName()} = {parameter.Name.AsFieldName()};");
                 }
             }
         }
@@ -206,7 +206,7 @@ public class JavaCreatorMethodWriter
             string? propertyName = property?.Name.ToCamelCase();
             if (propertyName is not null)
             {
-                writer.WriteLine($"{variable}.{propertyName}{DefaultValueSetter(parameter)};");
+                writer.WriteLine($"{variable}.{propertyName.AsFieldName()}{DefaultValueSetter(parameter)};");
             }
         }
     }
@@ -251,6 +251,7 @@ public class JavaCreatorMethodWriter
             int number => $"{number}",
             double number => $"{number.ToString(CultureInfo.InvariantCulture)}d",
             float number => $"{number.ToString(CultureInfo.InvariantCulture)}f",
+            long number => $"{number.ToString(CultureInfo.InvariantCulture)}L",
             string stringLiteral => $"\"{stringLiteral}\"",
             _ when obj.GetType().IsEnum => $"{javaWriter.TypeName(obj.GetType())}.{obj}",
             _ => System.Text.Json.JsonSerializer.Serialize(obj)
@@ -261,7 +262,7 @@ public class JavaCreatorMethodWriter
     {
         return string.Join(", ",
             parameters.Select(parameter =>
-                $"{(parameters[^1] == parameter ? javaWriter.BetterTypedParameterTypeName(parameter.ParameterType, new NullabilityInfoContext().Create(parameter)) : javaWriter.TypeName(parameter))} {parameter.Name}"
+                $"{(parameters[^1] == parameter ? javaWriter.BetterTypedParameterTypeName(parameter.ParameterType, new NullabilityInfoContext().Create(parameter)) : javaWriter.TypeName(parameter))} {parameter.Name.AsFieldName()}"
             )
         );
     }
