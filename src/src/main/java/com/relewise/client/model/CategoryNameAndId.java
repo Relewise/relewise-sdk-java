@@ -19,6 +19,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
+/** A category segment, containing the id and display name(s) of an individual category */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryNameAndId
 {
@@ -33,10 +34,20 @@ public class CategoryNameAndId
         this.id = id;
         this.displayName = null;
     }
+    /**
+     * The id and name of a category segment
+     * @param id The ID of the category (Which is generally very unlikely to change in the future)
+     * @param displayName The Display name of the category (More likely to change in the future)
+     */
     public static CategoryNameAndId create(String id, Multilingual displayName)
     {
         return new CategoryNameAndId(id, displayName);
     }
+    /**
+     * The id and name of a category segment
+     * @param id The ID of the category (Which is generally very unlikely to change in the future)
+     * @param displayName The Display name of the category (More likely to change in the future)
+     */
     public CategoryNameAndId(String id, Multilingual displayName)
     {
         this.id = id;
