@@ -106,7 +106,7 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
         javaWriter.SettablePropertiesWriter.Write(writer, ownedProperties);
         javaWriter.StaticReadonlyPropertiesWriter.Write(writer, type, staticGetterProperties);
 
-        javaWriter.CreatorMethodWriter.Write(writer, type, typeName, ownedProperties);
+        javaWriter.CreatorMethodWriter.Write(writer, type, typeName, settableProperties);
         javaWriter.PropertyGetterMethodsWriter.Write(writer, ownedProperties);
         javaWriter.PropertySetterMethodsWriter.Write(writer, type, typeName, settableProperties, ownedProperties.Select(p => p.propertyName).ToArray());
 

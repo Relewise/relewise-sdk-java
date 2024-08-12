@@ -33,7 +33,7 @@ public class JavaCreatorMethodWriter
                                  && c.GetParameters().Length == propertyInformations.Length // There are as many parameters as there are properties.
                                  && c.GetParameters()
                                      .All(parameter => propertyInformations
-                                         .Any(property => ParameterIsPersuadableIntoPropertyType(property.info, parameter))
+                                         .Any(property => ParameterHasSameNullabilityAsProperty(property.info, parameter))
                                      ) // There is a property type that matches each parameter type.
             );
 
@@ -45,7 +45,14 @@ public class JavaCreatorMethodWriter
                             && ParameterIsPersuadableIntoPropertyType(property.info, parameter)) == 1
                     ) // There is exactly 1 property type that matches each parameter type and name
             )
-            .MaxBy(c => c.GetParameters().Length); // We take the largest constructor to be more deterministic.
+            .Where(c => c.GetParameters().Length > 0)
+            .ToArray();
+
+        var largestCoveringTypeAndNameMappableConstructorParameters = coveringTypeAndNameMappableConstructorParameters
+            .MaxBy(c => c.GetParameters().Length);
+
+        var smallestCoveringTypeAndNameMappableConstructorParameters = coveringTypeAndNameMappableConstructorParameters
+            .MinBy(c => c.GetParameters().Length);
 
         var allConstructorParametersIntersectionWithMappableNamesAndTypes = type
             .GetConstructors()
@@ -62,14 +69,27 @@ public class JavaCreatorMethodWriter
                 WriteConstructor(writer, type, typeName, propertyInformations, coveringUniqueTypeMappableConstructorParameters, defaultParameters);
             }
         }
-        else if (coveringTypeAndNameMappableConstructorParameters != null)
+        else if (largestCoveringTypeAndNameMappableConstructorParameters != null || smallestCoveringTypeAndNameMappableConstructorParameters != null)
         {
-            string[] defaultParameters = coveringTypeAndNameMappableConstructorParameters.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
-
-            WriteConstructor(writer, type, typeName, propertyInformations, coveringTypeAndNameMappableConstructorParameters, Array.Empty<string>());
-            if (defaultParameters.Any())
+            if (largestCoveringTypeAndNameMappableConstructorParameters != null)
             {
-                WriteConstructor(writer, type, typeName, propertyInformations, coveringTypeAndNameMappableConstructorParameters, defaultParameters);
+                string[] defaultParameters = largestCoveringTypeAndNameMappableConstructorParameters.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
+
+                WriteConstructor(writer, type, typeName, propertyInformations, largestCoveringTypeAndNameMappableConstructorParameters, Array.Empty<string>());
+                if (defaultParameters.Any())
+                {
+                    WriteConstructor(writer, type, typeName, propertyInformations, largestCoveringTypeAndNameMappableConstructorParameters, defaultParameters);
+                }
+            }
+            if (smallestCoveringTypeAndNameMappableConstructorParameters != null)
+            {
+                string[] defaultParameters = smallestCoveringTypeAndNameMappableConstructorParameters.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
+
+                WriteConstructor(writer, type, typeName, propertyInformations, smallestCoveringTypeAndNameMappableConstructorParameters, Array.Empty<string>());
+                if (defaultParameters.Any())
+                {
+                    WriteConstructor(writer, type, typeName, propertyInformations, smallestCoveringTypeAndNameMappableConstructorParameters, defaultParameters);
+                }
             }
         }
         else if (allConstructorParametersIntersectionWithMappableNamesAndTypes != null)
@@ -289,6 +309,30 @@ public class JavaCreatorMethodWriter
         }
 
         return false;
+    }
+
+    private static bool ParameterHasSameNullabilityAsProperty(PropertyInfo property, ParameterInfo parameter)
+    {
+        if (EqualCollectionElementType(property.PropertyType, parameter.ParameterType))
+        {
+            return true;
+        }
+
+        Type propertyType = property.PropertyType.IsConstructedGenericType && property.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>) ? property.PropertyType.GetGenericArguments()[0] : property.PropertyType;
+        Type parameterType = parameter.ParameterType.IsConstructedGenericType && parameter.ParameterType.GetGenericTypeDefinition() == typeof(Nullable<>) ? parameter.ParameterType.GetGenericArguments()[0] : parameter.ParameterType;
+
+        var propertyNullabilityContext = new NullabilityInfoContext().Create(property);
+        var parameterNullabilityContext = new NullabilityInfoContext().Create(parameter);
+
+        bool propertyIsNullable = property.PropertyType != propertyType || propertyNullabilityContext.WriteState is NullabilityState.Nullable;
+        bool parameterIsNullable = parameter.ParameterType != parameterType || parameterNullabilityContext.WriteState is NullabilityState.Nullable;
+
+        if (propertyType != parameterType)
+        {
+            return false;
+        }
+
+        return parameterIsNullable == propertyIsNullable;
     }
 
     private static bool ContainedWithinEitherOne(string? first, string? second)
