@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -27,6 +25,7 @@ public class RequestContextFilter
     public ArrayList<String> locations;
     public ArrayList<Language> languages;
     public ArrayList<Currency> currencies;
+    public RequestFilterCriteria filters;
     public static RequestContextFilter create()
     {
         return new RequestContextFilter();
@@ -53,6 +52,10 @@ public class RequestContextFilter
     public ArrayList<Currency> getCurrencies()
     {
         return this.currencies;
+    }
+    public RequestFilterCriteria getFilters()
+    {
+        return this.filters;
     }
     public RequestContextFilter setRecommendations(RecommendationTypeCollection recommendations)
     {
@@ -104,6 +107,11 @@ public class RequestContextFilter
             this.currencies = new ArrayList<>();
         }
         this.currencies.add(currencies);
+        return this;
+    }
+    public RequestContextFilter setFilters(RequestFilterCriteria filters)
+    {
+        this.filters = filters;
         return this;
     }
 }

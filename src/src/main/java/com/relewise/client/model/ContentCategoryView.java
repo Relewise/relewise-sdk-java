@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -30,6 +28,8 @@ public class ContentCategoryView extends Trackable implements IUserIdentifier
     public String $type = "Relewise.Client.DataTypes.ContentCategoryView, Relewise.Client";
     public @Nullable User user;
     public String[] idPath;
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel channel;
     public static ContentCategoryView create(@Nullable User user, String... idPath)
     {
         return new ContentCategoryView(user, idPath);
@@ -49,6 +49,11 @@ public class ContentCategoryView extends Trackable implements IUserIdentifier
     public String[] getIdPath()
     {
         return this.idPath;
+    }
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel getChannel()
+    {
+        return this.channel;
     }
     public ContentCategoryView setUser(User user)
     {
@@ -72,6 +77,12 @@ public class ContentCategoryView extends Trackable implements IUserIdentifier
             existingList.add(idPath);
             this.idPath = existingList.toArray(new String[0]);
         }
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    public ContentCategoryView setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -27,6 +25,7 @@ public class ProductCategoryRecommendationRequestSettings
     public Boolean allowReplacingOfRecentlyShownRecommendations;
     public Boolean prioritizeDiversityBetweenRequests;
     public SelectedProductCategoryPropertiesSettings selectedProductCategoryProperties;
+    public @Nullable Integer prioritizeResultsNotRecommendedWithinSeconds;
     public static ProductCategoryRecommendationRequestSettings create()
     {
         return new ProductCategoryRecommendationRequestSettings();
@@ -54,6 +53,10 @@ public class ProductCategoryRecommendationRequestSettings
     {
         return this.selectedProductCategoryProperties;
     }
+    public @Nullable Integer getPrioritizeResultsNotRecommendedWithinSeconds()
+    {
+        return this.prioritizeResultsNotRecommendedWithinSeconds;
+    }
     public ProductCategoryRecommendationRequestSettings setNumberOfRecommendations(Integer numberOfRecommendations)
     {
         this.numberOfRecommendations = numberOfRecommendations;
@@ -77,6 +80,11 @@ public class ProductCategoryRecommendationRequestSettings
     public ProductCategoryRecommendationRequestSettings setSelectedProductCategoryProperties(SelectedProductCategoryPropertiesSettings selectedProductCategoryProperties)
     {
         this.selectedProductCategoryProperties = selectedProductCategoryProperties;
+        return this;
+    }
+    public ProductCategoryRecommendationRequestSettings setPrioritizeResultsNotRecommendedWithinSeconds(@Nullable Integer prioritizeResultsNotRecommendedWithinSeconds)
+    {
+        this.prioritizeResultsNotRecommendedWithinSeconds = prioritizeResultsNotRecommendedWithinSeconds;
         return this;
     }
 }

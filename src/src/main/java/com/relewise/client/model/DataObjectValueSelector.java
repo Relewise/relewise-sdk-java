@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -26,15 +24,16 @@ public class DataObjectValueSelector
     public @Nullable DataObjectFilter filter;
     public @Nullable DataObjectValueSelector childSelector;
     public @Nullable DataObjectValueSelector fallbackSelector;
-    public static DataObjectValueSelector create(String key, @Nullable DataObjectFilter filter, DataObjectValueSelector childSelector)
+    public static DataObjectValueSelector create(String key, @Nullable DataObjectFilter filter, @Nullable DataObjectValueSelector childSelector, DataObjectValueSelector fallbackSelector)
     {
-        return new DataObjectValueSelector(key, filter, childSelector);
+        return new DataObjectValueSelector(key, filter, childSelector, fallbackSelector);
     }
-    public DataObjectValueSelector(String key, @Nullable DataObjectFilter filter, DataObjectValueSelector childSelector)
+    public DataObjectValueSelector(String key, @Nullable DataObjectFilter filter, @Nullable DataObjectValueSelector childSelector, DataObjectValueSelector fallbackSelector)
     {
         this.key = key;
         this.filter = filter;
         this.childSelector = childSelector;
+        this.fallbackSelector = fallbackSelector;
     }
     public static DataObjectValueSelector create(String key)
     {

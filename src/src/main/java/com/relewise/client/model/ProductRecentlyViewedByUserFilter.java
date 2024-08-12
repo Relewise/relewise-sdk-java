@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -28,7 +26,8 @@ import java.util.HashSet;
 public class ProductRecentlyViewedByUserFilter extends Filter implements IProductFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.ProductRecentlyViewedByUserFilter, Relewise.Client";
-    public OffsetDateTime sinceUtc;
+    public @Nullable OffsetDateTime sinceUtc;
+    public @Nullable Integer sinceMinutesAgo;
     public static ProductRecentlyViewedByUserFilter create(OffsetDateTime sinceUtc)
     {
         return new ProductRecentlyViewedByUserFilter(sinceUtc);
@@ -51,19 +50,34 @@ public class ProductRecentlyViewedByUserFilter extends Filter implements IProduc
     {
         this.negated = false;
     }
-    public OffsetDateTime getSinceUtc()
+    public @Nullable OffsetDateTime getSinceUtc()
     {
         return this.sinceUtc;
     }
-    public ProductRecentlyViewedByUserFilter setSinceUtc(OffsetDateTime sinceUtc)
+    public @Nullable Integer getSinceMinutesAgo()
+    {
+        return this.sinceMinutesAgo;
+    }
+    public ProductRecentlyViewedByUserFilter setSinceUtc(@Nullable OffsetDateTime sinceUtc)
     {
         this.sinceUtc = sinceUtc;
+        return this;
+    }
+    public ProductRecentlyViewedByUserFilter setSinceMinutesAgo(@Nullable Integer sinceMinutesAgo)
+    {
+        this.sinceMinutesAgo = sinceMinutesAgo;
         return this;
     }
     @Override
     public ProductRecentlyViewedByUserFilter setNegated(Boolean negated)
     {
         this.negated = negated;
+        return this;
+    }
+    @Override
+    public ProductRecentlyViewedByUserFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
         return this;
     }
 }

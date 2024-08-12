@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -35,6 +33,9 @@ public class ProductResult
     public @Nullable Double salesPrice;
     public BrandResult brand;
     public VariantResult[] allVariants;
+    public PurchasedByUserCompanyInfo purchasedByUserCompany;
+    public ViewedByUserCompanyInfo viewedByUserCompany;
+    public VariantResult[] filteredVariants;
     public static ProductResult create(String productId, Integer rank)
     {
         return new ProductResult(productId, rank);
@@ -98,6 +99,18 @@ public class ProductResult
     public VariantResult[] getAllVariants()
     {
         return this.allVariants;
+    }
+    public PurchasedByUserCompanyInfo getPurchasedByUserCompany()
+    {
+        return this.purchasedByUserCompany;
+    }
+    public ViewedByUserCompanyInfo getViewedByUserCompany()
+    {
+        return this.viewedByUserCompany;
+    }
+    public VariantResult[] getFilteredVariants()
+    {
+        return this.filteredVariants;
     }
     public ProductResult setProductId(String productId)
     {
@@ -212,6 +225,35 @@ public class ProductResult
             ArrayList<VariantResult> existingList = new ArrayList<>(Arrays.asList(this.allVariants));
             existingList.add(allVariant);
             this.allVariants = existingList.toArray(new VariantResult[0]);
+        }
+        return this;
+    }
+    public ProductResult setPurchasedByUserCompany(PurchasedByUserCompanyInfo purchasedByUserCompany)
+    {
+        this.purchasedByUserCompany = purchasedByUserCompany;
+        return this;
+    }
+    public ProductResult setViewedByUserCompany(ViewedByUserCompanyInfo viewedByUserCompany)
+    {
+        this.viewedByUserCompany = viewedByUserCompany;
+        return this;
+    }
+    public ProductResult setFilteredVariants(VariantResult... filteredVariants)
+    {
+        this.filteredVariants = filteredVariants;
+        return this;
+    }
+    public ProductResult addToFilteredVariants(VariantResult filteredVariant)
+    {
+        if (this.filteredVariants == null)
+        {
+            this.filteredVariants = new VariantResult[] { filteredVariant };
+        }
+        else
+        {
+            ArrayList<VariantResult> existingList = new ArrayList<>(Arrays.asList(this.filteredVariants));
+            existingList.add(filteredVariant);
+            this.filteredVariants = existingList.toArray(new VariantResult[0]);
         }
         return this;
     }

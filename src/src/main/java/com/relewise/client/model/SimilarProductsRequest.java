@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -32,6 +30,7 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
     public @Nullable Product productData;
     public Boolean considerAlreadyKnownInformationAboutProduct;
     public @Nullable SimilarProductsEvaluationSettings evaluationSettings;
+    public @Nullable Integer explodedVariants;
     public static SimilarProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Product productData, Boolean considerAlreadyKnownInformationAboutProduct)
     {
         return new SimilarProductsRequest(language, currency, displayedAtLocationType, user, productData, considerAlreadyKnownInformationAboutProduct);
@@ -106,6 +105,10 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
     {
         return this.evaluationSettings;
     }
+    public @Nullable Integer getExplodedVariants()
+    {
+        return this.explodedVariants;
+    }
     public SimilarProductsRequest setExistingProductId(ProductAndVariantId existingProductId)
     {
         this.existingProductId = existingProductId;
@@ -124,6 +127,11 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
     public SimilarProductsRequest setEvaluationSettings(SimilarProductsEvaluationSettings evaluationSettings)
     {
         this.evaluationSettings = evaluationSettings;
+        return this;
+    }
+    public SimilarProductsRequest setExplodedVariants(@Nullable Integer explodedVariants)
+    {
+        this.explodedVariants = explodedVariants;
         return this;
     }
     @Override
@@ -166,6 +174,13 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
     public SimilarProductsRequest setCurrency(Currency currency)
     {
         this.currency = currency;
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public SimilarProductsRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

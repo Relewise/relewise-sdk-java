@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -33,6 +31,7 @@ public class SimilarProductsEvaluationSettings
     public @Nullable ArrayList<SignificantDataValue> significantProductDataFields;
     public Double significanceOfSimilarSalesPrice;
     public Double significanceOfSimilarBrand;
+    public @Nullable SimilarVariantEvaluationSettings variantEvaluationSettings;
     public static SimilarProductsEvaluationSettings create()
     {
         return new SimilarProductsEvaluationSettings();
@@ -83,6 +82,10 @@ public class SimilarProductsEvaluationSettings
     public Double getSignificanceOfSimilarBrand()
     {
         return this.significanceOfSimilarBrand;
+    }
+    public @Nullable SimilarVariantEvaluationSettings getVariantEvaluationSettings()
+    {
+        return this.variantEvaluationSettings;
     }
     public SimilarProductsEvaluationSettings setSignificanceOfSimilaritiesInDisplayName(Double significanceOfSimilaritiesInDisplayName)
     {
@@ -146,6 +149,11 @@ public class SimilarProductsEvaluationSettings
     public SimilarProductsEvaluationSettings setSignificanceOfSimilarBrand(Double significanceOfSimilarBrand)
     {
         this.significanceOfSimilarBrand = significanceOfSimilarBrand;
+        return this;
+    }
+    public SimilarProductsEvaluationSettings setVariantEvaluationSettings(SimilarVariantEvaluationSettings variantEvaluationSettings)
+    {
+        this.variantEvaluationSettings = variantEvaluationSettings;
         return this;
     }
 }

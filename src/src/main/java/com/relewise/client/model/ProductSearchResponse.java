@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -32,6 +30,7 @@ public class ProductSearchResponse extends PaginatedSearchResponse
     public ProductFacetResult facets;
     public ProductResult[] recommendations;
     public RedirectResult[] redirects;
+    public RetailMediaResult retailMedia;
     public static ProductSearchResponse create()
     {
         return new ProductSearchResponse();
@@ -54,6 +53,10 @@ public class ProductSearchResponse extends PaginatedSearchResponse
     public RedirectResult[] getRedirects()
     {
         return this.redirects;
+    }
+    public RetailMediaResult getRetailMedia()
+    {
+        return this.retailMedia;
     }
     public ProductSearchResponse setResults(ProductResult... results)
     {
@@ -115,6 +118,11 @@ public class ProductSearchResponse extends PaginatedSearchResponse
             existingList.add(redirect);
             this.redirects = existingList.toArray(new RedirectResult[0]);
         }
+        return this;
+    }
+    public ProductSearchResponse setRetailMedia(RetailMediaResult retailMedia)
+    {
+        this.retailMedia = retailMedia;
         return this;
     }
     @Override

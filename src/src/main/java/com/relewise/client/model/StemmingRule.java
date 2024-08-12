@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -27,7 +25,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StemmingRule extends SearchRule
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.StemmingRule, Relewise.Client";
+    public String $type = "Relewise.Client.DataTypes.Search.Rules.StemmingRule, Relewise.Client";
     public String[] words;
     public @Nullable String stem;
     public static StemmingRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, String[] words, String stem)

@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -30,6 +28,8 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
     public String $type = "Relewise.Client.Requests.Recommendations.PopularProductsRequest, Relewise.Client";
     public PopularityTypes basedOn;
     public Integer sinceMinutesAgo;
+    /** A selector for changing the weighing of observed views or purchases on an entity basis when making the recommendation. */
+    public @Nullable PopularityMultiplierSelector popularityMultiplier;
     public static PopularProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, PopularityTypes basedOn, Integer sinceMinutesAgo)
     {
         return new PopularProductsRequest(language, currency, displayedAtLocationType, user, basedOn, sinceMinutesAgo);
@@ -54,6 +54,11 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
     {
         return this.sinceMinutesAgo;
     }
+    /** A selector for changing the weighing of observed views or purchases on an entity basis when making the recommendation. */
+    public @Nullable PopularityMultiplierSelector getPopularityMultiplier()
+    {
+        return this.popularityMultiplier;
+    }
     public PopularProductsRequest setBasedOn(PopularityTypes basedOn)
     {
         this.basedOn = basedOn;
@@ -62,6 +67,12 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
     public PopularProductsRequest setSinceMinutesAgo(Integer sinceMinutesAgo)
     {
         this.sinceMinutesAgo = sinceMinutesAgo;
+        return this;
+    }
+    /** A selector for changing the weighing of observed views or purchases on an entity basis when making the recommendation. */
+    public PopularProductsRequest setPopularityMultiplier(PopularityMultiplierSelector popularityMultiplier)
+    {
+        this.popularityMultiplier = popularityMultiplier;
         return this;
     }
     @Override
@@ -104,6 +115,13 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
     public PopularProductsRequest setCurrency(Currency currency)
     {
         this.currency = currency;
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public PopularProductsRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -32,6 +30,7 @@ public class ProductSearchRequest extends PaginatedSearchRequest implements IUse
     public @Nullable ProductFacetQuery facets;
     public @Nullable ProductSearchSettings settings;
     public @Nullable ProductSortBySpecification sorting;
+    public @Nullable RetailMediaQuery retailMedia;
     public static ProductSearchRequest create(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, User user, String displayedAtLocation, @Nullable String term, Integer skip, Integer take)
     {
         return new ProductSearchRequest(language, currency, indexSelector, user, displayedAtLocation, term, skip, take);
@@ -80,6 +79,10 @@ public class ProductSearchRequest extends PaginatedSearchRequest implements IUse
     {
         return this.sorting;
     }
+    public @Nullable RetailMediaQuery getRetailMedia()
+    {
+        return this.retailMedia;
+    }
     public ProductSearchRequest setTerm(String term)
     {
         this.term = term;
@@ -98,6 +101,11 @@ public class ProductSearchRequest extends PaginatedSearchRequest implements IUse
     public ProductSearchRequest setSorting(ProductSortBySpecification sorting)
     {
         this.sorting = sorting;
+        return this;
+    }
+    public ProductSearchRequest setRetailMedia(RetailMediaQuery retailMedia)
+    {
+        this.retailMedia = retailMedia;
         return this;
     }
     @Override
@@ -158,6 +166,13 @@ public class ProductSearchRequest extends PaginatedSearchRequest implements IUse
     public ProductSearchRequest setPostFilters(FilterCollection postFilters)
     {
         this.postFilters = postFilters;
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public ProductSearchRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

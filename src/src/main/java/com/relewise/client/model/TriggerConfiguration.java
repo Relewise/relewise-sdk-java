@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -30,6 +28,8 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = UserActivityTriggerConfiguration.class, name = "Relewise.Client.DataTypes.Triggers.Configurations.UserActivityTriggerConfiguration, Relewise.Client"),
     @JsonSubTypes.Type(value = ContentCategoryInterestTriggerConfiguration.class, name = "Relewise.Client.DataTypes.Triggers.Configurations.ContentCategoryInterestTriggerConfiguration, Relewise.Client"),
     @JsonSubTypes.Type(value = AbandonedSearchTriggerConfiguration.class, name = "Relewise.Client.DataTypes.Triggers.Configurations.AbandonedSearchTriggerConfiguration, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductChangeTriggerConfiguration.class, name = "Relewise.Client.DataTypes.Triggers.Configurations.ProductChangeTriggerConfiguration, Relewise.Client"),
+    @JsonSubTypes.Type(value = VariantChangeTriggerConfiguration.class, name = "Relewise.Client.DataTypes.Triggers.Configurations.VariantChangeTriggerConfiguration, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class TriggerConfiguration

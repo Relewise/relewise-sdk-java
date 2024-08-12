@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -37,6 +35,8 @@ public class UserResultDetails
     public HashMap<String, DataValue> data;
     /** All known temporary ids for the user */
     public String[] temporaryIds;
+    public @Nullable Channel channel;
+    public @Nullable UserAssociatedCompanyResultDetails company;
     public static UserResultDetails create()
     {
         return new UserResultDetails();
@@ -100,6 +100,14 @@ public class UserResultDetails
     public String[] getTemporaryIds()
     {
         return this.temporaryIds;
+    }
+    public @Nullable Channel getChannel()
+    {
+        return this.channel;
+    }
+    public @Nullable UserAssociatedCompanyResultDetails getCompany()
+    {
+        return this.company;
     }
     public UserResultDetails setAuthenticatedId(String authenticatedId)
     {
@@ -221,6 +229,16 @@ public class UserResultDetails
             existingList.add(temporaryId);
             this.temporaryIds = existingList.toArray(new String[0]);
         }
+        return this;
+    }
+    public UserResultDetails setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
+    public UserResultDetails setCompany(UserAssociatedCompanyResultDetails company)
+    {
+        this.company = company;
         return this;
     }
 }

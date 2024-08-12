@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -34,6 +32,7 @@ public abstract class AbandonedSearch
     public String $type = "";
     public String loweredSearchTerm;
     public Integer hits;
+    public @Nullable Language language;
     public String getLoweredSearchTerm()
     {
         return this.loweredSearchTerm;
@@ -41,6 +40,10 @@ public abstract class AbandonedSearch
     public Integer getHits()
     {
         return this.hits;
+    }
+    public @Nullable Language getLanguage()
+    {
+        return this.language;
     }
     public AbandonedSearch setLoweredSearchTerm(String loweredSearchTerm)
     {
@@ -50,6 +53,11 @@ public abstract class AbandonedSearch
     public AbandonedSearch setHits(Integer hits)
     {
         this.hits = hits;
+        return this;
+    }
+    public AbandonedSearch setLanguage(Language language)
+    {
+        this.language = language;
         return this;
     }
 }

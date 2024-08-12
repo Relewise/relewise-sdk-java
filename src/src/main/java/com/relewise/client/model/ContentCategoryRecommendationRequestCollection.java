@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -29,14 +27,14 @@ public class ContentCategoryRecommendationRequestCollection extends LicensedRequ
 {
     public String $type = "Relewise.Client.Requests.Recommendations.ContentCategoryRecommendationRequestCollection, Relewise.Client";
     public ArrayList<ContentCategoryRecommendationRequest> requests;
-    public Boolean requireDistinctContentAcrossResults;
-    public static ContentCategoryRecommendationRequestCollection create(Boolean requireDistinctContentsAcrossResults, ContentCategoryRecommendationRequest... requests)
+    public Boolean requireDistinctCategoriesAcrossResults;
+    public static ContentCategoryRecommendationRequestCollection create(Boolean requireDistinctCategoriesesAcrossResults, ContentCategoryRecommendationRequest... requests)
     {
-        return new ContentCategoryRecommendationRequestCollection(requireDistinctContentsAcrossResults, requests);
+        return new ContentCategoryRecommendationRequestCollection(requireDistinctCategoriesesAcrossResults, requests);
     }
-    public ContentCategoryRecommendationRequestCollection(Boolean requireDistinctContentsAcrossResults, ContentCategoryRecommendationRequest... requests)
+    public ContentCategoryRecommendationRequestCollection(Boolean requireDistinctCategoriesesAcrossResults, ContentCategoryRecommendationRequest... requests)
     {
-        this.requireDistinctContentAcrossResults = requireDistinctContentsAcrossResults;
+        this.requireDistinctCategoriesAcrossResults = requireDistinctCategoriesesAcrossResults;
         this.requests = new ArrayList<>(Arrays.asList(requests));
     }
     public ContentCategoryRecommendationRequestCollection()
@@ -46,9 +44,9 @@ public class ContentCategoryRecommendationRequestCollection extends LicensedRequ
     {
         return this.requests;
     }
-    public Boolean getRequireDistinctContentAcrossResults()
+    public Boolean getRequireDistinctCategoriesAcrossResults()
     {
-        return this.requireDistinctContentAcrossResults;
+        return this.requireDistinctCategoriesAcrossResults;
     }
     public ContentCategoryRecommendationRequestCollection setRequests(ContentCategoryRecommendationRequest... requests)
     {
@@ -64,9 +62,9 @@ public class ContentCategoryRecommendationRequestCollection extends LicensedRequ
         this.requests.add(requests);
         return this;
     }
-    public ContentCategoryRecommendationRequestCollection setRequireDistinctContentAcrossResults(Boolean requireDistinctContentAcrossResults)
+    public ContentCategoryRecommendationRequestCollection setRequireDistinctCategoriesAcrossResults(Boolean requireDistinctCategoriesAcrossResults)
     {
-        this.requireDistinctContentAcrossResults = requireDistinctContentAcrossResults;
+        this.requireDistinctCategoriesAcrossResults = requireDistinctCategoriesAcrossResults;
         return this;
     }
 }

@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -19,6 +17,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
+/** a <code>Filter</code> that can be used to define which entities to include in queries. */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,
@@ -62,19 +61,62 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = ContentCategoryLevelFilter.class, name = "Relewise.Client.Requests.Filters.ContentCategoryLevelFilter, Relewise.Client"),
     @JsonSubTypes.Type(value = ProductCategoryHasAncestorFilter.class, name = "Relewise.Client.Requests.Filters.ProductCategoryHasAncestorFilter, Relewise.Client"),
     @JsonSubTypes.Type(value = ContentCategoryHasAncestorFilter.class, name = "Relewise.Client.Requests.Filters.ContentCategoryHasAncestorFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentAssortmentFilter.class, name = "Relewise.Client.Requests.Filters.ContentAssortmentFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductCategoryHasProductsFilter.class, name = "Relewise.Client.Requests.Filters.ProductCategoryHasProductsFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentCategoryHasContentsFilter.class, name = "Relewise.Client.Requests.Filters.ContentCategoryHasContentsFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = CompanyIdFilter.class, name = "Relewise.Client.Requests.Filters.CompanyIdFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = CompanyDataFilter.class, name = "Relewise.Client.Requests.Filters.CompanyDataFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductRecentlyViewedByUserCompanyFilter.class, name = "Relewise.Client.Requests.Filters.ProductRecentlyViewedByUserCompanyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductRecentlyViewedByCompanyFilter.class, name = "Relewise.Client.Requests.Filters.ProductRecentlyViewedByCompanyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductRecentlyPurchasedByUserCompanyFilter.class, name = "Relewise.Client.Requests.Filters.ProductRecentlyPurchasedByUserCompanyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductRecentlyPurchasedByCompanyFilter.class, name = "Relewise.Client.Requests.Filters.ProductRecentlyPurchasedByCompanyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentRecentlyViewedByUserFilter.class, name = "Relewise.Client.Requests.Filters.ContentRecentlyViewedByUserFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentCategoryRecentlyViewedByUserFilter.class, name = "Relewise.Client.Requests.Filters.ContentCategoryRecentlyViewedByUserFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductCategoryRecentlyViewedByUserFilter.class, name = "Relewise.Client.Requests.Filters.ProductCategoryRecentlyViewedByUserFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductRecentlyViewedByUserParentCompanyFilter.class, name = "Relewise.Client.Requests.Filters.ProductRecentlyViewedByUserParentCompanyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductRecentlyPurchasedByUserParentCompanyFilter.class, name = "Relewise.Client.Requests.Filters.ProductRecentlyPurchasedByUserParentCompanyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductDisabledFilter.class, name = "Relewise.Client.Requests.Filters.ProductDisabledFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentDisabledFilter.class, name = "Relewise.Client.Requests.Filters.ContentDisabledFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = VariantDisabledFilter.class, name = "Relewise.Client.Requests.Filters.VariantDisabledFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = BrandDisabledFilter.class, name = "Relewise.Client.Requests.Filters.BrandDisabledFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductCategoryDisabledFilter.class, name = "Relewise.Client.Requests.Filters.ProductCategoryDisabledFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentCategoryDisabledFilter.class, name = "Relewise.Client.Requests.Filters.ContentCategoryDisabledFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = CompanyDisabledFilter.class, name = "Relewise.Client.Requests.Filters.CompanyDisabledFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductDataHasKeyFilter.class, name = "Relewise.Client.Requests.Filters.ProductDataHasKeyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentDataHasKeyFilter.class, name = "Relewise.Client.Requests.Filters.ContentDataHasKeyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = VariantDataHasKeyFilter.class, name = "Relewise.Client.Requests.Filters.VariantDataHasKeyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = BrandDataHasKeyFilter.class, name = "Relewise.Client.Requests.Filters.BrandDataHasKeyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductCategoryDataHasKeyFilter.class, name = "Relewise.Client.Requests.Filters.ProductCategoryDataHasKeyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentCategoryDataHasKeyFilter.class, name = "Relewise.Client.Requests.Filters.ContentCategoryDataHasKeyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = CompanyDataHasKeyFilter.class, name = "Relewise.Client.Requests.Filters.CompanyDataHasKeyFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductHasCategoriesFilter.class, name = "Relewise.Client.Requests.Filters.ProductHasCategoriesFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentHasCategoriesFilter.class, name = "Relewise.Client.Requests.Filters.ContentHasCategoriesFilter, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Filter
 {
     public String $type = "";
+    /** Defines whether the <code>Filter</code> should exclude the matching entities instead of including the matching entities. */
     public Boolean negated;
+    public @Nullable FilterSettings settings;
+    /** Defines whether the <code>Filter</code> should exclude the matching entities instead of including the matching entities. */
     public Boolean getNegated()
     {
         return this.negated;
     }
+    public @Nullable FilterSettings getSettings()
+    {
+        return this.settings;
+    }
+    /** Defines whether the <code>Filter</code> should exclude the matching entities instead of including the matching entities. */
     public Filter setNegated(Boolean negated)
     {
         this.negated = negated;
+        return this;
+    }
+    public Filter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
         return this;
     }
 }

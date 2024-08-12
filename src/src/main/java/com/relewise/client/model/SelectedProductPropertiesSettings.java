@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -32,6 +30,9 @@ public class SelectedProductPropertiesSettings
     public Boolean brand;
     public Boolean allVariants;
     public @Nullable String[] dataKeys;
+    public Boolean viewedByUserCompanyInfo;
+    public Boolean purchasedByUserCompanyInfo;
+    public @Nullable FilteredVariantsSettings filteredVariants;
     public static SelectedProductPropertiesSettings create()
     {
         return new SelectedProductPropertiesSettings();
@@ -78,6 +79,18 @@ public class SelectedProductPropertiesSettings
     public @Nullable String[] getDataKeys()
     {
         return this.dataKeys;
+    }
+    public Boolean getViewedByUserCompanyInfo()
+    {
+        return this.viewedByUserCompanyInfo;
+    }
+    public Boolean getPurchasedByUserCompanyInfo()
+    {
+        return this.purchasedByUserCompanyInfo;
+    }
+    public @Nullable FilteredVariantsSettings getFilteredVariants()
+    {
+        return this.filteredVariants;
     }
     public SelectedProductPropertiesSettings setDisplayName(Boolean displayName)
     {
@@ -141,6 +154,21 @@ public class SelectedProductPropertiesSettings
             existingList.add(dataKey);
             this.dataKeys = existingList.toArray(new String[0]);
         }
+        return this;
+    }
+    public SelectedProductPropertiesSettings setViewedByUserCompanyInfo(Boolean viewedByUserCompanyInfo)
+    {
+        this.viewedByUserCompanyInfo = viewedByUserCompanyInfo;
+        return this;
+    }
+    public SelectedProductPropertiesSettings setPurchasedByUserCompanyInfo(Boolean purchasedByUserCompanyInfo)
+    {
+        this.purchasedByUserCompanyInfo = purchasedByUserCompanyInfo;
+        return this;
+    }
+    public SelectedProductPropertiesSettings setFilteredVariants(FilteredVariantsSettings filteredVariants)
+    {
+        this.filteredVariants = filteredVariants;
         return this;
     }
 }

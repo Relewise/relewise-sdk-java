@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -35,6 +33,8 @@ public class ProductSearchSettings extends SearchSettings
     public RecommendationSettings recommendations;
     public @Nullable SelectedBrandPropertiesSettings selectedBrandProperties;
     public @Nullable VariantSearchSettings variantSettings;
+    /** Used to define constraints which must be honoured to be a valid results. The difference between this and Filters, is that filters are evaluated per product and variant, constraints could be acting on the result of such filter evaluations or a combination of factors, such as whether the product has any variants which matched the provided filters etc. */
+    public @Nullable ProductSearchResultConstraint resultConstraint;
     public static ProductSearchSettings create()
     {
         return new ProductSearchSettings();
@@ -67,6 +67,11 @@ public class ProductSearchSettings extends SearchSettings
     {
         return this.variantSettings;
     }
+    /** Used to define constraints which must be honoured to be a valid results. The difference between this and Filters, is that filters are evaluated per product and variant, constraints could be acting on the result of such filter evaluations or a combination of factors, such as whether the product has any variants which matched the provided filters etc. */
+    public @Nullable ProductSearchResultConstraint getResultConstraint()
+    {
+        return this.resultConstraint;
+    }
     public ProductSearchSettings setSelectedProductProperties(SelectedProductPropertiesSettings selectedProductProperties)
     {
         this.selectedProductProperties = selectedProductProperties;
@@ -96,6 +101,12 @@ public class ProductSearchSettings extends SearchSettings
     public ProductSearchSettings setVariantSettings(VariantSearchSettings variantSettings)
     {
         this.variantSettings = variantSettings;
+        return this;
+    }
+    /** Used to define constraints which must be honoured to be a valid results. The difference between this and Filters, is that filters are evaluated per product and variant, constraints could be acting on the result of such filter evaluations or a combination of factors, such as whether the product has any variants which matched the provided filters etc. */
+    public ProductSearchSettings setResultConstraint(ProductSearchResultConstraint resultConstraint)
+    {
+        this.resultConstraint = resultConstraint;
         return this;
     }
 }

@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -27,6 +25,7 @@ public class OverriddenContentRecommendationRequestSettings
     public @Nullable Boolean allowReplacingOfRecentlyShownRecommendations;
     public OverriddenSelectedContentPropertiesSettings selectedContentProperties;
     public @Nullable Boolean prioritizeDiversityBetweenRequests;
+    public @Nullable Integer prioritizeResultsNotRecommendedWithinSeconds;
     public static OverriddenContentRecommendationRequestSettings create()
     {
         return new OverriddenContentRecommendationRequestSettings();
@@ -54,6 +53,10 @@ public class OverriddenContentRecommendationRequestSettings
     {
         return this.prioritizeDiversityBetweenRequests;
     }
+    public @Nullable Integer getPrioritizeResultsNotRecommendedWithinSeconds()
+    {
+        return this.prioritizeResultsNotRecommendedWithinSeconds;
+    }
     public OverriddenContentRecommendationRequestSettings setNumberOfRecommendations(@Nullable Integer numberOfRecommendations)
     {
         this.numberOfRecommendations = numberOfRecommendations;
@@ -77,6 +80,11 @@ public class OverriddenContentRecommendationRequestSettings
     public OverriddenContentRecommendationRequestSettings setPrioritizeDiversityBetweenRequests(@Nullable Boolean prioritizeDiversityBetweenRequests)
     {
         this.prioritizeDiversityBetweenRequests = prioritizeDiversityBetweenRequests;
+        return this;
+    }
+    public OverriddenContentRecommendationRequestSettings setPrioritizeResultsNotRecommendedWithinSeconds(@Nullable Integer prioritizeResultsNotRecommendedWithinSeconds)
+    {
+        this.prioritizeResultsNotRecommendedWithinSeconds = prioritizeResultsNotRecommendedWithinSeconds;
         return this;
     }
 }

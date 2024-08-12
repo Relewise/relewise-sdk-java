@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -19,6 +17,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
+/** a <code>RelevanceModifier</code> that can change the relevance of a Product depending on whether the Assortments match <code>Assortments</code>. */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,
@@ -28,7 +27,9 @@ import java.util.HashSet;
 public class ProductAssortmentRelevanceModifier extends RelevanceModifier implements IProductRelevanceModifier
 {
     public String $type = "Relewise.Client.Requests.RelevanceModifiers.ProductAssortmentRelevanceModifier, Relewise.Client";
+    /** The assortments that this <code>RelevanceModifier</code> will multiply the weight for. */
     public Integer[] assortments;
+    /** The weight that this <code>RelevanceModifier</code> will multiply relevant products with. */
     public Double multiplyWeightBy;
     public static ProductAssortmentRelevanceModifier create()
     {
@@ -46,19 +47,23 @@ public class ProductAssortmentRelevanceModifier extends RelevanceModifier implem
     {
         this.multiplyWeightBy = multiplyWeightBy;
     }
+    /** The assortments that this <code>RelevanceModifier</code> will multiply the weight for. */
     public Integer[] getAssortments()
     {
         return this.assortments;
     }
+    /** The weight that this <code>RelevanceModifier</code> will multiply relevant products with. */
     public Double getMultiplyWeightBy()
     {
         return this.multiplyWeightBy;
     }
+    /** The assortments that this <code>RelevanceModifier</code> will multiply the weight for. */
     public ProductAssortmentRelevanceModifier setAssortments(Integer... assortments)
     {
         this.assortments = assortments;
         return this;
     }
+    /** The assortments that this <code>RelevanceModifier</code> will multiply the weight for. */
     public ProductAssortmentRelevanceModifier addToAssortments(Integer assortment)
     {
         if (this.assortments == null)
@@ -73,6 +78,7 @@ public class ProductAssortmentRelevanceModifier extends RelevanceModifier implem
         }
         return this;
     }
+    /** The weight that this <code>RelevanceModifier</code> will multiply relevant products with. */
     public ProductAssortmentRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
         this.multiplyWeightBy = multiplyWeightBy;

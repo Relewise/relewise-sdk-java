@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -56,16 +54,18 @@ public abstract class RecommendationRequest extends LicensedRequest implements I
 {
     public String $type = "";
     public @Nullable Language language;
-    public User user;
+    public @Nullable User user;
     public RelevanceModifierCollection relevanceModifiers;
     public FilterCollection filters;
     public String displayedAtLocationType;
     public @Nullable Currency currency;
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel channel;
     public @Nullable Language getLanguage()
     {
         return this.language;
     }
-    public User getUser()
+    public @Nullable User getUser()
     {
         return this.user;
     }
@@ -84,6 +84,11 @@ public abstract class RecommendationRequest extends LicensedRequest implements I
     public @Nullable Currency getCurrency()
     {
         return this.currency;
+    }
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel getChannel()
+    {
+        return this.channel;
     }
     public RecommendationRequest setLanguage(Language language)
     {
@@ -113,6 +118,12 @@ public abstract class RecommendationRequest extends LicensedRequest implements I
     public RecommendationRequest setCurrency(Currency currency)
     {
         this.currency = currency;
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    public RecommendationRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -27,6 +25,7 @@ public class BrandRecommendationRequestSettings
     public Boolean allowReplacingOfRecentlyShownRecommendations;
     public Boolean prioritizeDiversityBetweenRequests;
     public @Nullable SelectedBrandPropertiesSettings selectedBrandProperties;
+    public @Nullable Integer prioritizeResultsNotRecommendedWithinSeconds;
     public static BrandRecommendationRequestSettings create()
     {
         return new BrandRecommendationRequestSettings();
@@ -54,6 +53,10 @@ public class BrandRecommendationRequestSettings
     {
         return this.selectedBrandProperties;
     }
+    public @Nullable Integer getPrioritizeResultsNotRecommendedWithinSeconds()
+    {
+        return this.prioritizeResultsNotRecommendedWithinSeconds;
+    }
     public BrandRecommendationRequestSettings setNumberOfRecommendations(Integer numberOfRecommendations)
     {
         this.numberOfRecommendations = numberOfRecommendations;
@@ -77,6 +80,11 @@ public class BrandRecommendationRequestSettings
     public BrandRecommendationRequestSettings setSelectedBrandProperties(SelectedBrandPropertiesSettings selectedBrandProperties)
     {
         this.selectedBrandProperties = selectedBrandProperties;
+        return this;
+    }
+    public BrandRecommendationRequestSettings setPrioritizeResultsNotRecommendedWithinSeconds(@Nullable Integer prioritizeResultsNotRecommendedWithinSeconds)
+    {
+        this.prioritizeResultsNotRecommendedWithinSeconds = prioritizeResultsNotRecommendedWithinSeconds;
         return this;
     }
 }

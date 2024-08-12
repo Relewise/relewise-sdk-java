@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -56,6 +54,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = DataObjectDoubleRangeFacetResult.class, name = "Relewise.Client.DataTypes.Search.Facets.Result.DataObjectDoubleRangeFacetResult, Relewise.Client"),
     @JsonSubTypes.Type(value = DataObjectDoubleRangesFacetResult.class, name = "Relewise.Client.DataTypes.Search.Facets.Result.DataObjectDoubleRangesFacetResult, Relewise.Client"),
     @JsonSubTypes.Type(value = DataObjectFacetResult.class, name = "Relewise.Client.DataTypes.Search.Facets.Result.DataObjectFacetResult, Relewise.Client"),
+    @JsonSubTypes.Type(value = CategoryHierarchyFacetResult.class, name = "Relewise.Client.DataTypes.Search.Facets.Result.CategoryHierarchyFacetResult, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class FacetResult

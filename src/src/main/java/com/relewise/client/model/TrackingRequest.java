@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -44,6 +42,8 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = TrackContentCategoryViewRequest.class, name = "Relewise.Client.Requests.Tracking.TrackContentCategoryViewRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = TrackContentCategoryUpdateRequest.class, name = "Relewise.Client.Requests.Tracking.TrackContentCategoryUpdateRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = TrackContentCategoryAdministrativeActionRequest.class, name = "Relewise.Client.Requests.Tracking.TrackContentCategoryAdministrativeActionRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = TrackCompanyUpdateRequest.class, name = "Relewise.Client.Requests.Tracking.TrackCompanyUpdateRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = TrackCompanyAdministrativeActionRequest.class, name = "Relewise.Client.Requests.Tracking.TrackCompanyAdministrativeActionRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class TrackingRequest extends LicensedRequest

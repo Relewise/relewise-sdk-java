@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -43,6 +41,7 @@ public class ProductResultDetails
     public MultiCurrency listPrice;
     public MultiCurrency salesPrice;
     public BrandResultDetails brand;
+    public VariantResultDetails[] filteredVariants;
     public static ProductResultDetails create(String productId)
     {
         return new ProductResultDetails(productId);
@@ -137,6 +136,10 @@ public class ProductResultDetails
     public BrandResultDetails getBrand()
     {
         return this.brand;
+    }
+    public VariantResultDetails[] getFilteredVariants()
+    {
+        return this.filteredVariants;
     }
     public ProductResultDetails setProductId(String productId)
     {
@@ -292,6 +295,25 @@ public class ProductResultDetails
     public ProductResultDetails setBrand(BrandResultDetails brand)
     {
         this.brand = brand;
+        return this;
+    }
+    public ProductResultDetails setFilteredVariants(VariantResultDetails... filteredVariants)
+    {
+        this.filteredVariants = filteredVariants;
+        return this;
+    }
+    public ProductResultDetails addToFilteredVariants(VariantResultDetails filteredVariant)
+    {
+        if (this.filteredVariants == null)
+        {
+            this.filteredVariants = new VariantResultDetails[] { filteredVariant };
+        }
+        else
+        {
+            ArrayList<VariantResultDetails> existingList = new ArrayList<>(Arrays.asList(this.filteredVariants));
+            existingList.add(filteredVariant);
+            this.filteredVariants = existingList.toArray(new VariantResultDetails[0]);
+        }
         return this;
     }
 }

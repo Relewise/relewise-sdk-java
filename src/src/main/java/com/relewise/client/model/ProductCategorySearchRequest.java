@@ -1,12 +1,10 @@
 package com.relewise.client.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
@@ -158,6 +156,13 @@ public class ProductCategorySearchRequest extends PaginatedSearchRequest impleme
     public ProductCategorySearchRequest setPostFilters(FilterCollection postFilters)
     {
         this.postFilters = postFilters;
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public ProductCategorySearchRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }
