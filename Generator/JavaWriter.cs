@@ -45,6 +45,9 @@ public class JavaWriter
         {
             var type = javaTypeResolver.TypesToGenerate.Dequeue();
 
+            if (type == typeof(object) || type == typeof(ValueType) || type == typeof(Enum))
+                continue;
+
             var potentialNullableTypeName = TypeName(type);
             string typeName = potentialNullableTypeName.RemoveNullable();
 
