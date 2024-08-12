@@ -129,7 +129,7 @@ public class JavaCreatorMethodWriter
             writer.WriteLine($"public {typeName}()");
             writer.WriteLine("{");
             writer.Indent++;
-            WriteCreatorMethodBody(writer, "this", type, Array.Empty<ParameterInfo>(), allDefaultParameters);
+            WriteCreatorMethodBody(writer, "this", type, propertyInformations, Array.Empty<ParameterInfo>(), allDefaultParameters);
             writer.Indent--;
             writer.WriteLine("}");
         }
@@ -138,7 +138,7 @@ public class JavaCreatorMethodWriter
     private void WriteConstructor(IndentedTextWriter writer, Type returnType, string typeName, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations, ConstructorInfo constructorInfo, string[] includedNullableParameters)
     {
         var parameters = constructorInfo.GetParameters()
-            .Where(parameter => SingleMatchingProperty(returnType, parameter) is not null
+            .Where(parameter => SingleMatchingProperty(returnType, propertyInformations, parameter) is not null
                                 && (!parameter.HasDefaultValue || includedNullableParameters.Contains(parameter.Name))).ToArray();
 
         var nonIncludedDefaultParameters = constructorInfo.GetParameters().Where(parameter => parameter.HasDefaultValue && !includedNullableParameters.Contains(parameter.Name)).ToArray();
@@ -160,16 +160,16 @@ public class JavaCreatorMethodWriter
         writer.WriteLine($"public {typeName}({ParameterList(parameters)})");
         writer.WriteLine("{");
         writer.Indent++;
-        WriteCreatorMethodBody(writer, "this", returnType, parameters, nonIncludedDefaultParameters);
+        WriteCreatorMethodBody(writer, "this", returnType, propertyInformations, parameters, nonIncludedDefaultParameters);
         writer.Indent--;
         writer.WriteLine("}");
     }
 
-    private void WriteCreatorMethodBody(IndentedTextWriter writer, string variable, Type returnType, ParameterInfo[] parameters, ParameterInfo[] nonIncludedDefaultParameters)
+    private void WriteCreatorMethodBody(IndentedTextWriter writer, string variable, Type returnType, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations, ParameterInfo[] parameters, ParameterInfo[] nonIncludedDefaultParameters)
     {
         foreach (var parameter in parameters)
         {
-            PropertyInfo? property = SingleMatchingProperty(returnType, parameter);
+            PropertyInfo? property = SingleMatchingProperty(returnType, propertyInformations, parameter);
             string? propertyName = property?.Name.ToCamelCase();
             if (propertyName is not null)
             {
@@ -190,7 +190,7 @@ public class JavaCreatorMethodWriter
         }
         foreach (var parameter in nonIncludedDefaultParameters)
         {
-            PropertyInfo? property = SingleMatchingProperty(returnType, parameter);
+            PropertyInfo? property = SingleMatchingProperty(returnType, propertyInformations, parameter);
             string? propertyName = property?.Name.ToCamelCase();
             if (propertyName is not null)
             {
@@ -199,38 +199,29 @@ public class JavaCreatorMethodWriter
         }
     }
 
-    private PropertyInfo? SingleMatchingProperty(Type returnType, ParameterInfo parameter)
+    private PropertyInfo? SingleMatchingProperty(Type returnType, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations, ParameterInfo parameter)
     {
-        var settableProperties = returnType.GetProperties()
-            .Where(property =>
-                property.GetIndexParameters().Length is 0
-                && property.GetMethod is { IsAbstract: false }
-                && property.SetMethod is { IsAbstract: false }
-                && !Attribute.IsDefined(property, typeof(JsonIgnoreAttribute))
-                && property.GetAccessors(false).All(ax => !ax.IsAbstract && ax.IsPublic))
-            .ToList();
-
-        if (settableProperties.FirstOrDefault(p => p.Name.ToCamelCase() == parameter.Name && ParameterIsPersuadableIntoPropertyType(p, parameter)) is { } exactSameNameProperty)
+        if (propertyInformations.FirstOrDefault(p => p.lowerCaseName == parameter.Name && ParameterIsPersuadableIntoPropertyType(p.info, parameter)) is { info: {} } exactSameNameProperty)
         {
-            return exactSameNameProperty;
+            return exactSameNameProperty.info;
         }
 
-        var propertiesWithSameType = settableProperties
-            .Where(p => ParameterIsPersuadableIntoPropertyType(p, parameter))
+        var propertiesWithSameType = propertyInformations
+            .Where(p => ParameterIsPersuadableIntoPropertyType(p.info, parameter))
             .ToList();
 
         if (propertiesWithSameType.Count == 1)
         {
-            return propertiesWithSameType.Single();
+            return propertiesWithSameType.Single().info;
         }
 
         var propertiesWithCloseNameAndPersuadableType = propertiesWithSameType
-            .Where(p => ContainedWithinEitherOne(p.Name, parameter.Name))
+            .Where(p => ContainedWithinEitherOne(p.lowerCaseName, parameter.Name))
             .ToList();
 
         if (propertiesWithCloseNameAndPersuadableType.Count == 1)
         {
-            return propertiesWithCloseNameAndPersuadableType.Single();
+            return propertiesWithCloseNameAndPersuadableType.Single().info;
         }
 
         return null;

@@ -23,7 +23,7 @@ public class JavaWriter
 
     public JavaWriter(Assembly assembly, string basePath)
     {
-        javaTypeWriters = new List<IJavaTypeWriter>() { new JavaClassWriter(this), new JavaEnumWriter(this), new JavaInterfaceWriter(this) };
+        javaTypeWriters = new List<IJavaTypeWriter>() { new JavaEnumWriter(this), new JavaInterfaceWriter(this), new JavaClassWriter(this) };
         javaTypeResolver = new JavaTypeResolver(assembly);
         Assembly = assembly;
         BasePath = basePath;
