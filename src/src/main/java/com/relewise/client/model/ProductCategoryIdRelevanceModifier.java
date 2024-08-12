@@ -43,10 +43,12 @@ public class ProductCategoryIdRelevanceModifier extends RelevanceModifier implem
         this.multiplyWeightBy = 1d;
         this.negated = false;
     }
+    /** 0.0: Means it will be given zero percentage of its default weight during evaluation, but may still be used as "fill" to meet the "desiredNumberOfRecommendations" 0.5: Means a product must be twice as good a match as one with a default weight of 1.0 in order to be considered equal in the recommendation results. 1.0: Default weight 2.0: Means a product only have to be half as good a match, as one with a weight of 1.0 to still score equally high in the recommendation results */
     public static ProductCategoryIdRelevanceModifier create(String categoryId, CategoryScope evaluationScope, Double multiplyWeightBy, Boolean negated)
     {
         return new ProductCategoryIdRelevanceModifier(categoryId, evaluationScope, multiplyWeightBy, negated);
     }
+    /** 0.0: Means it will be given zero percentage of its default weight during evaluation, but may still be used as "fill" to meet the "desiredNumberOfRecommendations" 0.5: Means a product must be twice as good a match as one with a default weight of 1.0 in order to be considered equal in the recommendation results. 1.0: Default weight 2.0: Means a product only have to be half as good a match, as one with a weight of 1.0 to still score equally high in the recommendation results */
     public ProductCategoryIdRelevanceModifier(String categoryId, CategoryScope evaluationScope, Double multiplyWeightBy, Boolean negated)
     {
         this.categoryId = categoryId;

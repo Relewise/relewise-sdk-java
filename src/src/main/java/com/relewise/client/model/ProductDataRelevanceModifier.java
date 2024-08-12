@@ -30,6 +30,7 @@ public class ProductDataRelevanceModifier extends RelevanceModifier implements I
     public String $type = "Relewise.Client.Requests.RelevanceModifiers.ProductDataRelevanceModifier, Relewise.Client";
     public String key;
     public Boolean considerAsMatchIfKeyIsNotFound;
+    /** @deprecated Use MultiplierSelector instead */
     public Double multiplyWeightBy;
     public Boolean mustMatchAllConditions;
     public ArrayList<ValueCondition> conditions;
@@ -71,6 +72,7 @@ public class ProductDataRelevanceModifier extends RelevanceModifier implements I
     {
         return this.considerAsMatchIfKeyIsNotFound;
     }
+    /** @deprecated Use MultiplierSelector instead */
     public Double getMultiplyWeightBy()
     {
         return this.multiplyWeightBy;
@@ -97,6 +99,7 @@ public class ProductDataRelevanceModifier extends RelevanceModifier implements I
         this.considerAsMatchIfKeyIsNotFound = considerAsMatchIfKeyIsNotFound;
         return this;
     }
+    /** @deprecated Use MultiplierSelector instead */
     public ProductDataRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
         this.multiplyWeightBy = multiplyWeightBy;

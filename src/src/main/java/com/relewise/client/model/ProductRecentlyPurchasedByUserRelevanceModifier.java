@@ -41,10 +41,12 @@ public class ProductRecentlyPurchasedByUserRelevanceModifier extends RelevanceMo
         this.ifPreviouslyPurchasedByUserMultiplyWeightBy = 1d;
         this.ifNotPreviouslyPurchasedByUserMultiplyWeightBy = 1d;
     }
+    /** 0.0: Means it will be given zero percentage of its default weight during evaluation, but may still be used as "fill" to meet the "desiredNumberOfRecommendations" 0.5: Means a product must be twice as good a match as one with a default weight of 1.0 in order to be considered equal in the recommendation results. 1.0: Default weight 2.0: Means a product only have to be half as good a match, as one with a weight of 1.0 to still score equally high in the recommendation results */
     public static ProductRecentlyPurchasedByUserRelevanceModifier create(OffsetDateTime sinceUtc, Double ifPreviouslyPurchasedByUserMultiplyWeightBy, Double ifNotPreviouslyPurchasedByUserMultiplyWeightBy)
     {
         return new ProductRecentlyPurchasedByUserRelevanceModifier(sinceUtc, ifPreviouslyPurchasedByUserMultiplyWeightBy, ifNotPreviouslyPurchasedByUserMultiplyWeightBy);
     }
+    /** 0.0: Means it will be given zero percentage of its default weight during evaluation, but may still be used as "fill" to meet the "desiredNumberOfRecommendations" 0.5: Means a product must be twice as good a match as one with a default weight of 1.0 in order to be considered equal in the recommendation results. 1.0: Default weight 2.0: Means a product only have to be half as good a match, as one with a weight of 1.0 to still score equally high in the recommendation results */
     public ProductRecentlyPurchasedByUserRelevanceModifier(OffsetDateTime sinceUtc, Double ifPreviouslyPurchasedByUserMultiplyWeightBy, Double ifNotPreviouslyPurchasedByUserMultiplyWeightBy)
     {
         this.sinceUtc = sinceUtc;

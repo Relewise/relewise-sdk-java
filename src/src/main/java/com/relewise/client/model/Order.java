@@ -35,6 +35,7 @@ public class Order extends Trackable implements IUserIdentifier
     public String cartName;
     public @Nullable String channel;
     public @Nullable String subChannel;
+    /** @deprecated Use OrderNumber instead. */
     public @Nullable String trackingNumber;
     public static Order create(User user, Money subtotal, String orderNumber, LineItem... lineItems)
     {
@@ -92,6 +93,7 @@ public class Order extends Trackable implements IUserIdentifier
     {
         return this.subChannel;
     }
+    /** @deprecated Use OrderNumber instead. */
     public @Nullable String getTrackingNumber()
     {
         return this.trackingNumber;
@@ -140,6 +142,7 @@ public class Order extends Trackable implements IUserIdentifier
         this.subChannel = subChannel;
         return this;
     }
+    /** @deprecated Use OrderNumber instead. */
     public Order setTrackingNumber(String trackingNumber)
     {
         this.trackingNumber = trackingNumber;

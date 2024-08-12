@@ -29,10 +29,18 @@ public class VariantSpecificationsInCommonRelevanceModifier extends RelevanceMod
 {
     public String $type = "Relewise.Client.Requests.RelevanceModifiers.VariantSpecificationsInCommonRelevanceModifier, Relewise.Client";
     public KeyMultiplier[] specificationKeysAndMultipliers;
+    /**
+     * The default multiplier for keys not included, is 1.0
+     * @param specificationKeysAndMultipliers 
+     */
     public static VariantSpecificationsInCommonRelevanceModifier create(KeyMultiplier... specificationKeysAndMultipliers)
     {
         return new VariantSpecificationsInCommonRelevanceModifier(specificationKeysAndMultipliers);
     }
+    /**
+     * The default multiplier for keys not included, is 1.0
+     * @param specificationKeysAndMultipliers 
+     */
     public VariantSpecificationsInCommonRelevanceModifier(KeyMultiplier... specificationKeysAndMultipliers)
     {
         this.specificationKeysAndMultipliers = specificationKeysAndMultipliers;

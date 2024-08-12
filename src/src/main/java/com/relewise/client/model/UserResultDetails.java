@@ -35,6 +35,7 @@ public class UserResultDetails
     public HashMap<String, String> identifiers;
     public Integer key;
     public HashMap<String, DataValue> data;
+    /** All known temporary ids for the user */
     public String[] temporaryIds;
     public static UserResultDetails create()
     {
@@ -95,6 +96,7 @@ public class UserResultDetails
     {
         return this.data;
     }
+    /** All known temporary ids for the user */
     public String[] getTemporaryIds()
     {
         return this.temporaryIds;
@@ -200,11 +202,13 @@ public class UserResultDetails
         this.data = data;
         return this;
     }
+    /** All known temporary ids for the user */
     public UserResultDetails setTemporaryIds(String... temporaryIds)
     {
         this.temporaryIds = temporaryIds;
         return this;
     }
+    /** All known temporary ids for the user */
     public UserResultDetails addToTemporaryIds(String temporaryId)
     {
         if (this.temporaryIds == null)

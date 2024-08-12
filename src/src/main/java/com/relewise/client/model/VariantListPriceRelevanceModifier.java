@@ -43,10 +43,12 @@ public class VariantListPriceRelevanceModifier extends RelevanceModifier impleme
         this.currency = null;
         this.negated = false;
     }
+    /** 0.0: Means it will be given zero percentage of its default weight during evaluation, but may still be used as "fill" to meet the "desiredNumberOfRecommendations" 0.5: Means a variant must be twice as good a match as one with a default weight of 1.0 in order to be considered equal in the recommendation results. 1.0: Default weight 2.0: Means a variant only have to be half as good a match, as one with a weight of 1.0 to still score equally high in the recommendation results */
     public static VariantListPriceRelevanceModifier create(DoubleRange range, Double multiplyWeightBy, @Nullable Currency currency, Boolean negated)
     {
         return new VariantListPriceRelevanceModifier(range, multiplyWeightBy, currency, negated);
     }
+    /** 0.0: Means it will be given zero percentage of its default weight during evaluation, but may still be used as "fill" to meet the "desiredNumberOfRecommendations" 0.5: Means a variant must be twice as good a match as one with a default weight of 1.0 in order to be considered equal in the recommendation results. 1.0: Default weight 2.0: Means a variant only have to be half as good a match, as one with a weight of 1.0 to still score equally high in the recommendation results */
     public VariantListPriceRelevanceModifier(DoubleRange range, Double multiplyWeightBy, @Nullable Currency currency, Boolean negated)
     {
         this.range = range;
