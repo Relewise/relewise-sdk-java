@@ -47,13 +47,13 @@ public class HasPlacedOrderCondition extends UserCondition
     }
     public HasPlacedOrderCondition setWithinMinutes(Integer withinMinutes)
     {
-        this.withinMinutes = withinMinutes;;
+        this.withinMinutes = withinMinutes;
         return this;
     }
     @Override
     public HasPlacedOrderCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

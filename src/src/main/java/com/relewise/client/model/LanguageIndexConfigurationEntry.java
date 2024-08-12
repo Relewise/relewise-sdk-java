@@ -62,17 +62,17 @@ public class LanguageIndexConfigurationEntry
     }
     public LanguageIndexConfigurationEntry setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public LanguageIndexConfigurationEntry setIncluded(Boolean included)
     {
-        this.included = included;;
+        this.included = included;
         return this;
     }
     public LanguageIndexConfigurationEntry setISO639_1(String iSO639_1)
     {
-        this.iSO639_1 = iSO639_1;;
+        this.iSO639_1 = iSO639_1;
         return this;
     }
 }

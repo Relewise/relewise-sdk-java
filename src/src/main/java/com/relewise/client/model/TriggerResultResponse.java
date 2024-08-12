@@ -42,13 +42,13 @@ public class TriggerResultResponse extends TimedResponse
     }
     public TriggerResultResponse setResult(ITriggerResult result)
     {
-        this.result = result;;
+        this.result = result;
         return this;
     }
     @Override
     public TriggerResultResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

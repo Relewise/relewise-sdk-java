@@ -36,7 +36,7 @@ public class CategoryIndexConfiguration
     }
     public CategoryIndexConfiguration setUnspecified(CategoryIndexConfigurationEntry unspecified)
     {
-        this.unspecified = unspecified;;
+        this.unspecified = unspecified;
         return this;
     }
 }

@@ -47,12 +47,12 @@ public class ProductCategoryInterestTriggerResult implements ITriggerResult
     }
     public ProductCategoryInterestTriggerResult setUser(UserResultDetails user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public ProductCategoryInterestTriggerResult setCategories(ProductCategoryInterestTriggerResultCategory... categories)
     {
-        this.categories = categories;;
+        this.categories = categories;
         return this;
     }
     public ProductCategoryInterestTriggerResult addToCategories(ProductCategoryInterestTriggerResultCategory category)

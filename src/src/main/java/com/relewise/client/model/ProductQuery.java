@@ -93,47 +93,47 @@ public class ProductQuery extends LicensedRequest
     }
     public ProductQuery setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public ProductQuery setNumberOfResults(Integer numberOfResults)
     {
-        this.numberOfResults = numberOfResults;;
+        this.numberOfResults = numberOfResults;
         return this;
     }
     public ProductQuery setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public ProductQuery setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     public ProductQuery setSkipNumberOfResults(Integer skipNumberOfResults)
     {
-        this.skipNumberOfResults = skipNumberOfResults;;
+        this.skipNumberOfResults = skipNumberOfResults;
         return this;
     }
     public ProductQuery setReturnTotalNumberOfResults(Boolean returnTotalNumberOfResults)
     {
-        this.returnTotalNumberOfResults = returnTotalNumberOfResults;;
+        this.returnTotalNumberOfResults = returnTotalNumberOfResults;
         return this;
     }
     public ProductQuery setIncludeDisabledProducts(Boolean includeDisabledProducts)
     {
-        this.includeDisabledProducts = includeDisabledProducts;;
+        this.includeDisabledProducts = includeDisabledProducts;
         return this;
     }
     public ProductQuery setIncludeDisabledVariants(Boolean includeDisabledVariants)
     {
-        this.includeDisabledVariants = includeDisabledVariants;;
+        this.includeDisabledVariants = includeDisabledVariants;
         return this;
     }
     public ProductQuery setExcludeProductsWithNoVariants(Boolean excludeProductsWithNoVariants)
     {
-        this.excludeProductsWithNoVariants = excludeProductsWithNoVariants;;
+        this.excludeProductsWithNoVariants = excludeProductsWithNoVariants;
         return this;
     }
 }

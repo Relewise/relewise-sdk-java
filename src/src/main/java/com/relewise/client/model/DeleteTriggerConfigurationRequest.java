@@ -46,7 +46,7 @@ public class DeleteTriggerConfigurationRequest extends LicensedRequest
     }
     public DeleteTriggerConfigurationRequest setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
 }

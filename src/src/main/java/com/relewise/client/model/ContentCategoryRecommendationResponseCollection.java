@@ -46,7 +46,7 @@ public class ContentCategoryRecommendationResponseCollection extends TimedRespon
     }
     public ContentCategoryRecommendationResponseCollection setResponses(ContentCategoryRecommendationResponse... responses)
     {
-        this.responses = responses;;
+        this.responses = responses;
         return this;
     }
     public ContentCategoryRecommendationResponseCollection addToResponses(ContentCategoryRecommendationResponse response)
@@ -66,7 +66,7 @@ public class ContentCategoryRecommendationResponseCollection extends TimedRespon
     @Override
     public ContentCategoryRecommendationResponseCollection setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

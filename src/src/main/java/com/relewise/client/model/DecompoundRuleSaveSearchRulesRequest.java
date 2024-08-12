@@ -45,12 +45,12 @@ public abstract class DecompoundRuleSaveSearchRulesRequest extends LicensedReque
     }
     public DecompoundRuleSaveSearchRulesRequest setRules(DecompoundRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public DecompoundRuleSaveSearchRulesRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

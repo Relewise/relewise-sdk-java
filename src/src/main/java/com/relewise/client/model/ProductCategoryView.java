@@ -52,12 +52,12 @@ public class ProductCategoryView extends Trackable implements IUserIdentifier
     }
     public ProductCategoryView setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public ProductCategoryView setIdPath(String... idPath)
     {
-        this.idPath = idPath;;
+        this.idPath = idPath;
         return this;
     }
     public ProductCategoryView addToIdPath(String idPath)

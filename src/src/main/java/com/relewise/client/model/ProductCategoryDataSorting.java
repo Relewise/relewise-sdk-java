@@ -64,24 +64,24 @@ public class ProductCategoryDataSorting extends ProductCategorySorting
     }
     public ProductCategoryDataSorting setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public ProductCategoryDataSorting setMode(SortMode mode)
     {
-        this.mode = mode;;
+        this.mode = mode;
         return this;
     }
     @Override
     public ProductCategoryDataSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ProductCategoryDataSorting setThenBy(ProductCategorySorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

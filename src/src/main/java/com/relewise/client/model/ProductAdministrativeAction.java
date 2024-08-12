@@ -81,27 +81,27 @@ public class ProductAdministrativeAction extends Trackable
     }
     public ProductAdministrativeAction setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public ProductAdministrativeAction setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public ProductAdministrativeAction setProductUpdateKind(ProductAdministrativeActionUpdateKind productUpdateKind)
     {
-        this.productUpdateKind = productUpdateKind;;
+        this.productUpdateKind = productUpdateKind;
         return this;
     }
     public ProductAdministrativeAction setVariantUpdateKind(ProductAdministrativeActionUpdateKind variantUpdateKind)
     {
-        this.variantUpdateKind = variantUpdateKind;;
+        this.variantUpdateKind = variantUpdateKind;
         return this;
     }
     public ProductAdministrativeAction setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

@@ -64,24 +64,24 @@ public class ContentAttributeSorting extends ContentSorting
     }
     public ContentAttributeSorting setAttribute(ContentAttributeSortingSortableAttribute attribute)
     {
-        this.attribute = attribute;;
+        this.attribute = attribute;
         return this;
     }
     public ContentAttributeSorting setMode(SortMode mode)
     {
-        this.mode = mode;;
+        this.mode = mode;
         return this;
     }
     @Override
     public ContentAttributeSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ContentAttributeSorting setThenBy(ContentSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

@@ -74,7 +74,7 @@ public abstract class Filter
     }
     public Filter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

@@ -76,47 +76,47 @@ public abstract class ContentCategoryIdFilterCategoryQuery extends LicensedReque
     }
     public ContentCategoryIdFilterCategoryQuery setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public ContentCategoryIdFilterCategoryQuery setNumberOfResults(Integer numberOfResults)
     {
-        this.numberOfResults = numberOfResults;;
+        this.numberOfResults = numberOfResults;
         return this;
     }
     public ContentCategoryIdFilterCategoryQuery setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public ContentCategoryIdFilterCategoryQuery setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     public ContentCategoryIdFilterCategoryQuery setSkipNumberOfResults(Integer skipNumberOfResults)
     {
-        this.skipNumberOfResults = skipNumberOfResults;;
+        this.skipNumberOfResults = skipNumberOfResults;
         return this;
     }
     public ContentCategoryIdFilterCategoryQuery setReturnTotalNumberOfResults(Boolean returnTotalNumberOfResults)
     {
-        this.returnTotalNumberOfResults = returnTotalNumberOfResults;;
+        this.returnTotalNumberOfResults = returnTotalNumberOfResults;
         return this;
     }
     public ContentCategoryIdFilterCategoryQuery setIncludeDisabledCategories(Boolean includeDisabledCategories)
     {
-        this.includeDisabledCategories = includeDisabledCategories;;
+        this.includeDisabledCategories = includeDisabledCategories;
         return this;
     }
     public ContentCategoryIdFilterCategoryQuery setIncludeChildCategoriesToDepth(Integer includeChildCategoriesToDepth)
     {
-        this.includeChildCategoriesToDepth = includeChildCategoriesToDepth;;
+        this.includeChildCategoriesToDepth = includeChildCategoriesToDepth;
         return this;
     }
     public ContentCategoryIdFilterCategoryQuery setIncludeParentCategoriesToDepth(Integer includeParentCategoriesToDepth)
     {
-        this.includeParentCategoriesToDepth = includeParentCategoriesToDepth;;
+        this.includeParentCategoriesToDepth = includeParentCategoriesToDepth;
         return this;
     }
 }

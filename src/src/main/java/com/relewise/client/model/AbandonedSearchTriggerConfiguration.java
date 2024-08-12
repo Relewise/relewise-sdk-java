@@ -66,7 +66,7 @@ public class AbandonedSearchTriggerConfiguration extends AbandonedSearchTriggerR
     }
     public AbandonedSearchTriggerConfiguration setSearchTypesInPrioritizedOrder(SearchType... searchTypesInPrioritizedOrder)
     {
-        this.searchTypesInPrioritizedOrder = searchTypesInPrioritizedOrder;;
+        this.searchTypesInPrioritizedOrder = searchTypesInPrioritizedOrder;
         return this;
     }
     public AbandonedSearchTriggerConfiguration addToSearchTypesInPrioritizedOrder(SearchType searchTypesInPrioritizedOrder)
@@ -85,67 +85,67 @@ public class AbandonedSearchTriggerConfiguration extends AbandonedSearchTriggerR
     }
     public AbandonedSearchTriggerConfiguration setSearchTermCondition(SearchTermCondition searchTermCondition)
     {
-        this.searchTermCondition = searchTermCondition;;
+        this.searchTermCondition = searchTermCondition;
         return this;
     }
     @Override
     public AbandonedSearchTriggerConfiguration setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public AbandonedSearchTriggerConfiguration setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     @Override
     public AbandonedSearchTriggerConfiguration setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     @Override
     public AbandonedSearchTriggerConfiguration setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     @Override
     public AbandonedSearchTriggerConfiguration setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     @Override
     public AbandonedSearchTriggerConfiguration setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public AbandonedSearchTriggerConfiguration setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public AbandonedSearchTriggerConfiguration setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public AbandonedSearchTriggerConfiguration setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public AbandonedSearchTriggerConfiguration setWithinTimeSpanMinutes(Integer withinTimeSpanMinutes)
     {
-        this.withinTimeSpanMinutes = withinTimeSpanMinutes;;
+        this.withinTimeSpanMinutes = withinTimeSpanMinutes;
         return this;
     }
     public AbandonedSearchTriggerConfiguration addToSettings(String key, String value)
@@ -160,13 +160,13 @@ public class AbandonedSearchTriggerConfiguration extends AbandonedSearchTriggerR
     @Override
     public AbandonedSearchTriggerConfiguration setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public AbandonedSearchTriggerConfiguration setUserConditions(UserConditionCollection userConditions)
     {
-        this.userConditions = userConditions;;
+        this.userConditions = userConditions;
         return this;
     }
 }

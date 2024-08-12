@@ -36,7 +36,7 @@ public class TargetConditionConfiguration
     }
     public TargetConditionConfiguration setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

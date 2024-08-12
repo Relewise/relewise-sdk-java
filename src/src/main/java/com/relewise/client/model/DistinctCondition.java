@@ -51,13 +51,13 @@ public class DistinctCondition extends ValueCondition
     }
     public DistinctCondition setNumberOfOccurrencesAllowedWithTheSameValue(Integer numberOfOccurrencesAllowedWithTheSameValue)
     {
-        this.numberOfOccurrencesAllowedWithTheSameValue = numberOfOccurrencesAllowedWithTheSameValue;;
+        this.numberOfOccurrencesAllowedWithTheSameValue = numberOfOccurrencesAllowedWithTheSameValue;
         return this;
     }
     @Override
     public DistinctCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

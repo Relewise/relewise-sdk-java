@@ -59,23 +59,23 @@ public class PriceRangeFacetResult extends FacetResult
     }
     public PriceRangeFacetResult setSelected(DoubleRange selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
     public PriceRangeFacetResult setAvailable(DoubleRangeAvailableFacetValue available)
     {
-        this.available = available;;
+        this.available = available;
         return this;
     }
     public PriceRangeFacetResult setPriceSelectionStrategy(PriceSelectionStrategy priceSelectionStrategy)
     {
-        this.priceSelectionStrategy = priceSelectionStrategy;;
+        this.priceSelectionStrategy = priceSelectionStrategy;
         return this;
     }
     @Override
     public PriceRangeFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

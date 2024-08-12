@@ -61,32 +61,32 @@ public class OverriddenSelectedContentPropertiesSettings
     }
     public OverriddenSelectedContentPropertiesSettings setDisplayName(@Nullable Boolean displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public OverriddenSelectedContentPropertiesSettings setCategoryPaths(@Nullable Boolean categoryPaths)
     {
-        this.categoryPaths = categoryPaths;;
+        this.categoryPaths = categoryPaths;
         return this;
     }
     public OverriddenSelectedContentPropertiesSettings setAssortments(@Nullable Boolean assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public OverriddenSelectedContentPropertiesSettings setAllData(@Nullable Boolean allData)
     {
-        this.allData = allData;;
+        this.allData = allData;
         return this;
     }
     public OverriddenSelectedContentPropertiesSettings setViewedByUserInfo(@Nullable Boolean viewedByUserInfo)
     {
-        this.viewedByUserInfo = viewedByUserInfo;;
+        this.viewedByUserInfo = viewedByUserInfo;
         return this;
     }
     public OverriddenSelectedContentPropertiesSettings setDataKeys(String... dataKeys)
     {
-        this.dataKeys = dataKeys;;
+        this.dataKeys = dataKeys;
         return this;
     }
     public OverriddenSelectedContentPropertiesSettings addToDataKeys(String dataKey)

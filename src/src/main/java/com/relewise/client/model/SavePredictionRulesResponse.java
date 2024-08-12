@@ -42,7 +42,7 @@ public class SavePredictionRulesResponse extends PredictionRuleSaveSearchRulesRe
     @Override
     public SavePredictionRulesResponse setRules(PredictionRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public SavePredictionRulesResponse addToRules(PredictionRule rule)
@@ -62,7 +62,7 @@ public class SavePredictionRulesResponse extends PredictionRuleSaveSearchRulesRe
     @Override
     public SavePredictionRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

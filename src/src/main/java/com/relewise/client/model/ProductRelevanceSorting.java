@@ -47,13 +47,13 @@ public class ProductRelevanceSorting extends ProductSorting
     @Override
     public ProductRelevanceSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ProductRelevanceSorting setThenBy(ProductSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

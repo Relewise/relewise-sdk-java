@@ -43,31 +43,31 @@ public class ContentCategoryResult extends CategoryResult
     @Override
     public ContentCategoryResult setCategoryId(String categoryId)
     {
-        this.categoryId = categoryId;;
+        this.categoryId = categoryId;
         return this;
     }
     @Override
     public ContentCategoryResult setDisplayName(String displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     @Override
     public ContentCategoryResult setRank(Integer rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
     @Override
     public ContentCategoryResult setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
     @Override
     public ContentCategoryResult setPaths(CategoryPathResult... paths)
     {
-        this.paths = paths;;
+        this.paths = paths;
         return this;
     }
     public ContentCategoryResult addToPaths(CategoryPathResult path)
@@ -87,7 +87,7 @@ public class ContentCategoryResult extends CategoryResult
     @Override
     public ContentCategoryResult setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public ContentCategoryResult addToAssortments(Integer assortment)
@@ -116,7 +116,7 @@ public class ContentCategoryResult extends CategoryResult
     @Override
     public ContentCategoryResult setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

@@ -42,7 +42,7 @@ public class SearchIndexCollectionResponse extends TimedResponse
     }
     public SearchIndexCollectionResponse setIndexes(SearchIndex... indexes)
     {
-        this.indexes = indexes;;
+        this.indexes = indexes;
         return this;
     }
     public SearchIndexCollectionResponse addToIndexes(SearchIndex indexe)
@@ -62,7 +62,7 @@ public class SearchIndexCollectionResponse extends TimedResponse
     @Override
     public SearchIndexCollectionResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

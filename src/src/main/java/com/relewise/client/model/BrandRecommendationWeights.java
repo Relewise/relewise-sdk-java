@@ -59,17 +59,17 @@ public class BrandRecommendationWeights
     }
     public BrandRecommendationWeights setBrandViews(Double brandViews)
     {
-        this.brandViews = brandViews;;
+        this.brandViews = brandViews;
         return this;
     }
     public BrandRecommendationWeights setProductViews(Double productViews)
     {
-        this.productViews = productViews;;
+        this.productViews = productViews;
         return this;
     }
     public BrandRecommendationWeights setProductPurchases(Double productPurchases)
     {
-        this.productPurchases = productPurchases;;
+        this.productPurchases = productPurchases;
         return this;
     }
 }

@@ -98,12 +98,12 @@ public class Order extends Trackable implements IUserIdentifier
     }
     public Order setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public Order setSubtotal(Money subtotal)
     {
-        this.subtotal = subtotal;;
+        this.subtotal = subtotal;
         return this;
     }
     public Order setLineItems(LineItem... lineItems)
@@ -122,27 +122,27 @@ public class Order extends Trackable implements IUserIdentifier
     }
     public Order setOrderNumber(String orderNumber)
     {
-        this.orderNumber = orderNumber;;
+        this.orderNumber = orderNumber;
         return this;
     }
     public Order setCartName(String cartName)
     {
-        this.cartName = cartName;;
+        this.cartName = cartName;
         return this;
     }
     public Order setChannel(String channel)
     {
-        this.channel = channel;;
+        this.channel = channel;
         return this;
     }
     public Order setSubChannel(String subChannel)
     {
-        this.subChannel = subChannel;;
+        this.subChannel = subChannel;
         return this;
     }
     public Order setTrackingNumber(String trackingNumber)
     {
-        this.trackingNumber = trackingNumber;;
+        this.trackingNumber = trackingNumber;
         return this;
     }
 }

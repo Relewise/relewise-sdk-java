@@ -45,18 +45,18 @@ public abstract class PredictionRuleSearchRulesResponse extends TimedResponse
     }
     public PredictionRuleSearchRulesResponse setRules(PredictionRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public PredictionRuleSearchRulesResponse setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     @Override
     public PredictionRuleSearchRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

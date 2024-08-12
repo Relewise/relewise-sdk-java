@@ -46,17 +46,17 @@ public class SearchTermResult
     }
     public SearchTermResult setTerm(String term)
     {
-        this.term = term;;
+        this.term = term;
         return this;
     }
     public SearchTermResult setRank(Integer rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
     public SearchTermResult setExpectedResultTypes(ExpectedSearchTermResult... expectedResultTypes)
     {
-        this.expectedResultTypes = expectedResultTypes;;
+        this.expectedResultTypes = expectedResultTypes;
         return this;
     }
     public SearchTermResult addToExpectedResultTypes(ExpectedSearchTermResult expectedResultType)

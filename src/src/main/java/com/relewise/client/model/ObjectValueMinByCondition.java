@@ -73,19 +73,19 @@ public class ObjectValueMinByCondition extends ObjectValueCondition
     @Override
     public ObjectValueMinByCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     @Override
     public ObjectValueMinByCondition setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ObjectValueMinByCondition setObjectPath(String... objectPath)
     {
-        this.objectPath = objectPath;;
+        this.objectPath = objectPath;
         return this;
     }
     public ObjectValueMinByCondition addToObjectPath(String objectPath)

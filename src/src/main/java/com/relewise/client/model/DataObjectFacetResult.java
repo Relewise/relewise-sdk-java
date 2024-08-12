@@ -58,7 +58,7 @@ public class DataObjectFacetResult extends FacetResult
     }
     public DataObjectFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public DataObjectFacetResult setItems(FacetResult... items)
@@ -77,13 +77,13 @@ public class DataObjectFacetResult extends FacetResult
     }
     public DataObjectFacetResult setFilter(DataObjectFilter filter)
     {
-        this.filter = filter;;
+        this.filter = filter;
         return this;
     }
     @Override
     public DataObjectFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

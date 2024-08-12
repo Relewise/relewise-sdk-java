@@ -41,12 +41,12 @@ public abstract class ProductSortingSorting
     }
     public ProductSortingSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     public ProductSortingSorting setThenBy(ProductSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

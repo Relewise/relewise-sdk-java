@@ -41,12 +41,12 @@ public class InputConditionConfiguration
     }
     public InputConditionConfiguration setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public InputConditionConfiguration setEvaluationMode(EvaluationMode evaluationMode)
     {
-        this.evaluationMode = evaluationMode;;
+        this.evaluationMode = evaluationMode;
         return this;
     }
 }

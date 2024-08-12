@@ -48,79 +48,79 @@ public class FixedPositionRule extends MerchandisingRule
     }
     public FixedPositionRule setPosition(Integer position)
     {
-        this.position = position;;
+        this.position = position;
         return this;
     }
     @Override
     public FixedPositionRule setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public FixedPositionRule setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     @Override
     public FixedPositionRule setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     @Override
     public FixedPositionRule setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     @Override
     public FixedPositionRule setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     @Override
     public FixedPositionRule setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public FixedPositionRule setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public FixedPositionRule setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public FixedPositionRule setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public FixedPositionRule setConditions(ConditionConfiguration conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
     @Override
     public FixedPositionRule setRequest(RequestConfiguration request)
     {
-        this.request = request;;
+        this.request = request;
         return this;
     }
     @Override
     public FixedPositionRule setPriority(Double priority)
     {
-        this.priority = priority;;
+        this.priority = priority;
         return this;
     }
     public FixedPositionRule addToSettings(String key, String value)
@@ -135,7 +135,7 @@ public class FixedPositionRule extends MerchandisingRule
     @Override
     public FixedPositionRule setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

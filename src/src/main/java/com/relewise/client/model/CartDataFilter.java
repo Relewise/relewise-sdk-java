@@ -94,38 +94,38 @@ public class CartDataFilter extends Filter
     }
     public CartDataFilter setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public CartDataFilter setFilterOutIfKeyIsNotFound(Boolean filterOutIfKeyIsNotFound)
     {
-        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;;
+        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
         return this;
     }
     public CartDataFilter setMustMatchAllConditions(Boolean mustMatchAllConditions)
     {
-        this.mustMatchAllConditions = mustMatchAllConditions;;
+        this.mustMatchAllConditions = mustMatchAllConditions;
         return this;
     }
     public CartDataFilter setConditions(ValueConditionCollection conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
     public CartDataFilter setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public CartDataFilter setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     @Override
     public CartDataFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

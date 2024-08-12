@@ -101,17 +101,17 @@ public class UserResultDetails
     }
     public UserResultDetails setAuthenticatedId(String authenticatedId)
     {
-        this.authenticatedId = authenticatedId;;
+        this.authenticatedId = authenticatedId;
         return this;
     }
     public UserResultDetails setTemporaryId(String temporaryId)
     {
-        this.temporaryId = temporaryId;;
+        this.temporaryId = temporaryId;
         return this;
     }
     public UserResultDetails setEmail(String email)
     {
-        this.email = email;;
+        this.email = email;
         return this;
     }
     public UserResultDetails addToClassifications(String key, String value)
@@ -125,22 +125,22 @@ public class UserResultDetails
     }
     public UserResultDetails setClassifications(HashMap<String, String> classifications)
     {
-        this.classifications = classifications;;
+        this.classifications = classifications;
         return this;
     }
     public UserResultDetails setLastCartUpdateUtc(@Nullable OffsetDateTime lastCartUpdateUtc)
     {
-        this.lastCartUpdateUtc = lastCartUpdateUtc;;
+        this.lastCartUpdateUtc = lastCartUpdateUtc;
         return this;
     }
     public UserResultDetails setLastActivityUtc(OffsetDateTime lastActivityUtc)
     {
-        this.lastActivityUtc = lastActivityUtc;;
+        this.lastActivityUtc = lastActivityUtc;
         return this;
     }
     public UserResultDetails setLastOrderUtc(@Nullable OffsetDateTime lastOrderUtc)
     {
-        this.lastOrderUtc = lastOrderUtc;;
+        this.lastOrderUtc = lastOrderUtc;
         return this;
     }
     public UserResultDetails addToCarts(String key, CartDetails value)
@@ -154,17 +154,17 @@ public class UserResultDetails
     }
     public UserResultDetails setCarts(HashMap<String, CartDetails> carts)
     {
-        this.carts = carts;;
+        this.carts = carts;
         return this;
     }
     public UserResultDetails setLastActiveCartName(String lastActiveCartName)
     {
-        this.lastActiveCartName = lastActiveCartName;;
+        this.lastActiveCartName = lastActiveCartName;
         return this;
     }
     public UserResultDetails setTotalNumberOfOrders(Integer totalNumberOfOrders)
     {
-        this.totalNumberOfOrders = totalNumberOfOrders;;
+        this.totalNumberOfOrders = totalNumberOfOrders;
         return this;
     }
     public UserResultDetails addToIdentifiers(String key, String value)
@@ -178,12 +178,12 @@ public class UserResultDetails
     }
     public UserResultDetails setIdentifiers(HashMap<String, String> identifiers)
     {
-        this.identifiers = identifiers;;
+        this.identifiers = identifiers;
         return this;
     }
     public UserResultDetails setKey(Integer key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public UserResultDetails addToData(String key, DataValue value)
@@ -197,12 +197,12 @@ public class UserResultDetails
     }
     public UserResultDetails setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public UserResultDetails setTemporaryIds(String... temporaryIds)
     {
-        this.temporaryIds = temporaryIds;;
+        this.temporaryIds = temporaryIds;
         return this;
     }
     public UserResultDetails addToTemporaryIds(String temporaryId)

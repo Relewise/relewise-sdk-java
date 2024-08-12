@@ -46,7 +46,7 @@ public class TriggerResultRequest extends LicensedRequest
     }
     public TriggerResultRequest setConfigurationId(UUID configurationId)
     {
-        this.configurationId = configurationId;;
+        this.configurationId = configurationId;
         return this;
     }
 }

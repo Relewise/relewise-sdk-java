@@ -51,22 +51,22 @@ public class ContentIndexConfiguration
     }
     public ContentIndexConfiguration setId(FieldIndexConfiguration id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public ContentIndexConfiguration setDisplayName(FieldIndexConfiguration displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public ContentIndexConfiguration setCategory(CategoryIndexConfiguration category)
     {
-        this.category = category;;
+        this.category = category;
         return this;
     }
     public ContentIndexConfiguration setData(DataIndexConfiguration data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

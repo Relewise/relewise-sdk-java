@@ -42,13 +42,13 @@ public class MerchandisingRuleResponse extends TimedResponse
     }
     public MerchandisingRuleResponse setRule(MerchandisingRule rule)
     {
-        this.rule = rule;;
+        this.rule = rule;
         return this;
     }
     @Override
     public MerchandisingRuleResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

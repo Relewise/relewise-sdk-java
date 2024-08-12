@@ -64,12 +64,12 @@ public class DataObjectFilter
     }
     public DataObjectFilter setSkip(@Nullable Integer skip)
     {
-        this.skip = skip;;
+        this.skip = skip;
         return this;
     }
     public DataObjectFilter setTake(@Nullable Integer take)
     {
-        this.take = take;;
+        this.take = take;
         return this;
     }
 }

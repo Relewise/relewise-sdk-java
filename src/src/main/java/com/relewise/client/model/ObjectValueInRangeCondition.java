@@ -81,25 +81,25 @@ public class ObjectValueInRangeCondition extends ObjectValueCondition
     }
     public ObjectValueInRangeCondition setRange(DoubleRange range)
     {
-        this.range = range;;
+        this.range = range;
         return this;
     }
     @Override
     public ObjectValueInRangeCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     @Override
     public ObjectValueInRangeCondition setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ObjectValueInRangeCondition setObjectPath(String... objectPath)
     {
-        this.objectPath = objectPath;;
+        this.objectPath = objectPath;
         return this;
     }
     public ObjectValueInRangeCondition addToObjectPath(String objectPath)

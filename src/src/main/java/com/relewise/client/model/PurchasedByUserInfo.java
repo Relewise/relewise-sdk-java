@@ -46,12 +46,12 @@ public class PurchasedByUserInfo
     }
     public PurchasedByUserInfo setMostRecentPurchasedUtc(OffsetDateTime mostRecentPurchasedUtc)
     {
-        this.mostRecentPurchasedUtc = mostRecentPurchasedUtc;;
+        this.mostRecentPurchasedUtc = mostRecentPurchasedUtc;
         return this;
     }
     public PurchasedByUserInfo setTotalNumberOfTimesPurchased(Long totalNumberOfTimesPurchased)
     {
-        this.totalNumberOfTimesPurchased = totalNumberOfTimesPurchased;;
+        this.totalNumberOfTimesPurchased = totalNumberOfTimesPurchased;
         return this;
     }
 }

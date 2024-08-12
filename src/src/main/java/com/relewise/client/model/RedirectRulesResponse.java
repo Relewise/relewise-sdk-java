@@ -43,7 +43,7 @@ public class RedirectRulesResponse extends RedirectRuleSearchRulesResponse
     @Override
     public RedirectRulesResponse setRules(RedirectRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public RedirectRulesResponse addToRules(RedirectRule rule)
@@ -63,13 +63,13 @@ public class RedirectRulesResponse extends RedirectRuleSearchRulesResponse
     @Override
     public RedirectRulesResponse setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     @Override
     public RedirectRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

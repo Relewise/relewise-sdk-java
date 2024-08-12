@@ -56,7 +56,7 @@ public class ProductAssortmentRelevanceModifier extends RelevanceModifier implem
     }
     public ProductAssortmentRelevanceModifier setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public ProductAssortmentRelevanceModifier addToAssortments(Integer assortment)
@@ -75,13 +75,13 @@ public class ProductAssortmentRelevanceModifier extends RelevanceModifier implem
     }
     public ProductAssortmentRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
-        this.multiplyWeightBy = multiplyWeightBy;;
+        this.multiplyWeightBy = multiplyWeightBy;
         return this;
     }
     @Override
     public ProductAssortmentRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

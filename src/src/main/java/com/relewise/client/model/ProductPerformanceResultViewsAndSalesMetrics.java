@@ -41,12 +41,12 @@ public class ProductPerformanceResultViewsAndSalesMetrics
     }
     public ProductPerformanceResultViewsAndSalesMetrics setByViews(Double byViews)
     {
-        this.byViews = byViews;;
+        this.byViews = byViews;
         return this;
     }
     public ProductPerformanceResultViewsAndSalesMetrics setBySales(Double bySales)
     {
-        this.bySales = bySales;;
+        this.bySales = bySales;
         return this;
     }
 }

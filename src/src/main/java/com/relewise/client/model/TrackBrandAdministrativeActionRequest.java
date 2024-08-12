@@ -46,7 +46,7 @@ public class TrackBrandAdministrativeActionRequest extends TrackingRequest
     }
     public TrackBrandAdministrativeActionRequest setAdministrativeAction(BrandAdministrativeAction administrativeAction)
     {
-        this.administrativeAction = administrativeAction;;
+        this.administrativeAction = administrativeAction;
         return this;
     }
 }

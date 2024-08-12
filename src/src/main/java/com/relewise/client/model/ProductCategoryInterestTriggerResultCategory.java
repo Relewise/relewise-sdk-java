@@ -46,7 +46,7 @@ public class ProductCategoryInterestTriggerResultCategory
     }
     public ProductCategoryInterestTriggerResultCategory setLastPath(String... lastPath)
     {
-        this.lastPath = lastPath;;
+        this.lastPath = lastPath;
         return this;
     }
     public ProductCategoryInterestTriggerResultCategory addToLastPath(String lastPath)
@@ -65,12 +65,12 @@ public class ProductCategoryInterestTriggerResultCategory
     }
     public ProductCategoryInterestTriggerResultCategory setViews(Integer views)
     {
-        this.views = views;;
+        this.views = views;
         return this;
     }
     public ProductCategoryInterestTriggerResultCategory setViewedProducts(ProductCategoryInterestTriggerResultCategoryProductAndVariant... viewedProducts)
     {
-        this.viewedProducts = viewedProducts;;
+        this.viewedProducts = viewedProducts;
         return this;
     }
     public ProductCategoryInterestTriggerResultCategory addToViewedProducts(ProductCategoryInterestTriggerResultCategoryProductAndVariant viewedProduct)

@@ -42,7 +42,7 @@ public class AbandonedCartTriggerResult implements ITriggerResult
     }
     public AbandonedCartTriggerResult setUser(UserResultDetails user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
 }

@@ -32,25 +32,25 @@ public abstract class DoubleDataObjectRangeFacet extends DoubleDataRangeFacet
     @Override
     public DoubleDataObjectRangeFacet setSelected(DoubleRange selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
     @Override
     public DoubleDataObjectRangeFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public DoubleDataObjectRangeFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public DoubleDataObjectRangeFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

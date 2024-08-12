@@ -46,12 +46,12 @@ public class DoubleChainableRange
     }
     public DoubleChainableRange setLowerBoundInclusive(@Nullable Double lowerBoundInclusive)
     {
-        this.lowerBoundInclusive = lowerBoundInclusive;;
+        this.lowerBoundInclusive = lowerBoundInclusive;
         return this;
     }
     public DoubleChainableRange setUpperBoundExclusive(@Nullable Double upperBoundExclusive)
     {
-        this.upperBoundExclusive = upperBoundExclusive;;
+        this.upperBoundExclusive = upperBoundExclusive;
         return this;
     }
 }

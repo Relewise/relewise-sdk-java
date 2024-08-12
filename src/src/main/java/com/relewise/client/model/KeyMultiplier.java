@@ -46,12 +46,12 @@ public class KeyMultiplier
     }
     public KeyMultiplier setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public KeyMultiplier setMultiplier(Double multiplier)
     {
-        this.multiplier = multiplier;;
+        this.multiplier = multiplier;
         return this;
     }
 }

@@ -75,12 +75,12 @@ public class VariantResultDetails
     }
     public VariantResultDetails setVariantId(String variantId)
     {
-        this.variantId = variantId;;
+        this.variantId = variantId;
         return this;
     }
     public VariantResultDetails setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public VariantResultDetails addToSpecification(String key, String value)
@@ -94,12 +94,12 @@ public class VariantResultDetails
     }
     public VariantResultDetails setSpecification(HashMap<String, String> specification)
     {
-        this.specification = specification;;
+        this.specification = specification;
         return this;
     }
     public VariantResultDetails setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public VariantResultDetails addToAssortments(Integer assortment)
@@ -127,22 +127,22 @@ public class VariantResultDetails
     }
     public VariantResultDetails setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public VariantResultDetails setListPrice(MultiCurrency listPrice)
     {
-        this.listPrice = listPrice;;
+        this.listPrice = listPrice;
         return this;
     }
     public VariantResultDetails setSalesPrice(MultiCurrency salesPrice)
     {
-        this.salesPrice = salesPrice;;
+        this.salesPrice = salesPrice;
         return this;
     }
     public VariantResultDetails setDisabled(Boolean disabled)
     {
-        this.disabled = disabled;;
+        this.disabled = disabled;
         return this;
     }
 }

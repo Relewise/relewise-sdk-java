@@ -62,17 +62,17 @@ public class DecompoundRule extends SearchRule
     }
     public DecompoundRule setWord(String word)
     {
-        this.word = word;;
+        this.word = word;
         return this;
     }
     public DecompoundRule setHead(String head)
     {
-        this.head = head;;
+        this.head = head;
         return this;
     }
     public DecompoundRule setModifiers(String... modifiers)
     {
-        this.modifiers = modifiers;;
+        this.modifiers = modifiers;
         return this;
     }
     public DecompoundRule addToModifiers(String modifier)
@@ -92,61 +92,61 @@ public class DecompoundRule extends SearchRule
     @Override
     public DecompoundRule setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public DecompoundRule setIndexes(ApplicableIndexes indexes)
     {
-        this.indexes = indexes;;
+        this.indexes = indexes;
         return this;
     }
     @Override
     public DecompoundRule setLanguages(ApplicableLanguages languages)
     {
-        this.languages = languages;;
+        this.languages = languages;
         return this;
     }
     @Override
     public DecompoundRule setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public DecompoundRule setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public DecompoundRule setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public DecompoundRule setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public DecompoundRule setApproved(@Nullable OffsetDateTime approved)
     {
-        this.approved = approved;;
+        this.approved = approved;
         return this;
     }
     @Override
     public DecompoundRule setApprovedBy(String approvedBy)
     {
-        this.approvedBy = approvedBy;;
+        this.approvedBy = approvedBy;
         return this;
     }
     @Override
     public DecompoundRule setIsApproved(Boolean isApproved)
     {
-        this.isApproved = isApproved;;
+        this.isApproved = isApproved;
         return this;
     }
 }

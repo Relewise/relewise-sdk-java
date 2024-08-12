@@ -52,17 +52,17 @@ public class DoubleAvailableFacetValue
     }
     public DoubleAvailableFacetValue setValue(Double value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     public DoubleAvailableFacetValue setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     public DoubleAvailableFacetValue setSelected(Boolean selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
 }

@@ -43,7 +43,7 @@ public class DeleteRedirectRulesRequest extends DeleteSearchRulesRequest
     @Override
     public DeleteRedirectRulesRequest setIds(UUID... ids)
     {
-        this.ids = ids;;
+        this.ids = ids;
         return this;
     }
     public DeleteRedirectRulesRequest addToIds(UUID id)
@@ -63,7 +63,7 @@ public class DeleteRedirectRulesRequest extends DeleteSearchRulesRequest
     @Override
     public DeleteRedirectRulesRequest setDeletedBy(String deletedBy)
     {
-        this.deletedBy = deletedBy;;
+        this.deletedBy = deletedBy;
         return this;
     }
 }

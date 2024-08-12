@@ -38,7 +38,7 @@ public abstract class SearchResponse extends TimedResponse
     @Override
     public SearchResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

@@ -42,7 +42,7 @@ public class HasEmailCondition extends UserCondition
     @Override
     public HasEmailCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

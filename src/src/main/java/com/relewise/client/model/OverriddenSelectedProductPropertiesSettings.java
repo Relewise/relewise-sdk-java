@@ -81,52 +81,52 @@ public class OverriddenSelectedProductPropertiesSettings
     }
     public OverriddenSelectedProductPropertiesSettings setDisplayName(@Nullable Boolean displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public OverriddenSelectedProductPropertiesSettings setCategoryPaths(@Nullable Boolean categoryPaths)
     {
-        this.categoryPaths = categoryPaths;;
+        this.categoryPaths = categoryPaths;
         return this;
     }
     public OverriddenSelectedProductPropertiesSettings setAssortments(@Nullable Boolean assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public OverriddenSelectedProductPropertiesSettings setPricing(@Nullable Boolean pricing)
     {
-        this.pricing = pricing;;
+        this.pricing = pricing;
         return this;
     }
     public OverriddenSelectedProductPropertiesSettings setAllData(@Nullable Boolean allData)
     {
-        this.allData = allData;;
+        this.allData = allData;
         return this;
     }
     public OverriddenSelectedProductPropertiesSettings setViewedByUserInfo(@Nullable Boolean viewedByUserInfo)
     {
-        this.viewedByUserInfo = viewedByUserInfo;;
+        this.viewedByUserInfo = viewedByUserInfo;
         return this;
     }
     public OverriddenSelectedProductPropertiesSettings setPurchasedByUserInfo(@Nullable Boolean purchasedByUserInfo)
     {
-        this.purchasedByUserInfo = purchasedByUserInfo;;
+        this.purchasedByUserInfo = purchasedByUserInfo;
         return this;
     }
     public OverriddenSelectedProductPropertiesSettings setBrand(@Nullable Boolean brand)
     {
-        this.brand = brand;;
+        this.brand = brand;
         return this;
     }
     public OverriddenSelectedProductPropertiesSettings setAllVariants(@Nullable Boolean allVariants)
     {
-        this.allVariants = allVariants;;
+        this.allVariants = allVariants;
         return this;
     }
     public OverriddenSelectedProductPropertiesSettings setDataKeys(String... dataKeys)
     {
-        this.dataKeys = dataKeys;;
+        this.dataKeys = dataKeys;
         return this;
     }
     public OverriddenSelectedProductPropertiesSettings addToDataKeys(String dataKey)

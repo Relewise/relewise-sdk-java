@@ -40,7 +40,7 @@ public class TrimStringTransformer
     }
     public TrimStringTransformer setValuesToTrim(String... valuesToTrim)
     {
-        this.valuesToTrim = valuesToTrim;;
+        this.valuesToTrim = valuesToTrim;
         return this;
     }
     public TrimStringTransformer addToValuesToTrim(String valuesToTrim)

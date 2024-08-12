@@ -47,7 +47,7 @@ public class VariantSpecificationFacet extends StringValueFacet
     }
     public VariantSpecificationFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
@@ -68,13 +68,13 @@ public class VariantSpecificationFacet extends StringValueFacet
     @Override
     public VariantSpecificationFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public VariantSpecificationFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

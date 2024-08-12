@@ -46,7 +46,7 @@ public class ContentCategoryRecommendationResponse extends RecommendationRespons
     }
     public ContentCategoryRecommendationResponse setRecommendations(ContentCategoryResult... recommendations)
     {
-        this.recommendations = recommendations;;
+        this.recommendations = recommendations;
         return this;
     }
     public ContentCategoryRecommendationResponse addToRecommendations(ContentCategoryResult recommendation)
@@ -66,7 +66,7 @@ public class ContentCategoryRecommendationResponse extends RecommendationRespons
     @Override
     public ContentCategoryRecommendationResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

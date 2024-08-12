@@ -81,25 +81,25 @@ public class ObjectValueGreaterThanCondition extends ObjectValueCondition
     }
     public ObjectValueGreaterThanCondition setValue(Double value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     @Override
     public ObjectValueGreaterThanCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     @Override
     public ObjectValueGreaterThanCondition setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ObjectValueGreaterThanCondition setObjectPath(String... objectPath)
     {
-        this.objectPath = objectPath;;
+        this.objectPath = objectPath;
         return this;
     }
     public ObjectValueGreaterThanCondition addToObjectPath(String objectPath)

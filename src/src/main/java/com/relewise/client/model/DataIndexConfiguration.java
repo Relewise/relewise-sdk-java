@@ -50,12 +50,12 @@ public class DataIndexConfiguration
     }
     public DataIndexConfiguration setKeys(HashMap<String, FieldIndexConfiguration> keys)
     {
-        this.keys = keys;;
+        this.keys = keys;
         return this;
     }
     public DataIndexConfiguration setUnspecified(FieldIndexConfiguration unspecified)
     {
-        this.unspecified = unspecified;;
+        this.unspecified = unspecified;
         return this;
     }
 }

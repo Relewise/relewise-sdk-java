@@ -59,17 +59,17 @@ public class ProductCategoryRecommendationWeights
     }
     public ProductCategoryRecommendationWeights setCategoryViews(Double categoryViews)
     {
-        this.categoryViews = categoryViews;;
+        this.categoryViews = categoryViews;
         return this;
     }
     public ProductCategoryRecommendationWeights setProductViews(Double productViews)
     {
-        this.productViews = productViews;;
+        this.productViews = productViews;
         return this;
     }
     public ProductCategoryRecommendationWeights setProductPurchases(Double productPurchases)
     {
-        this.productPurchases = productPurchases;;
+        this.productPurchases = productPurchases;
         return this;
     }
 }

@@ -56,12 +56,12 @@ public class ProductAndVariantId
     }
     public ProductAndVariantId setProductId(String productId)
     {
-        this.productId = productId;;
+        this.productId = productId;
         return this;
     }
     public ProductAndVariantId setVariantId(String variantId)
     {
-        this.variantId = variantId;;
+        this.variantId = variantId;
         return this;
     }
 }

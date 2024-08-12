@@ -68,13 +68,13 @@ public class ContentCategoryIdFilter extends CategoryIdFilter implements IConten
     @Override
     public ContentCategoryIdFilter setEvaluationScope(CategoryScope evaluationScope)
     {
-        this.evaluationScope = evaluationScope;;
+        this.evaluationScope = evaluationScope;
         return this;
     }
     @Override
     public ContentCategoryIdFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

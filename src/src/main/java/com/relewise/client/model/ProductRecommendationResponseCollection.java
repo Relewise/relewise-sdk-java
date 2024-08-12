@@ -46,7 +46,7 @@ public class ProductRecommendationResponseCollection extends TimedResponse
     }
     public ProductRecommendationResponseCollection setResponses(ProductRecommendationResponse... responses)
     {
-        this.responses = responses;;
+        this.responses = responses;
         return this;
     }
     public ProductRecommendationResponseCollection addToResponses(ProductRecommendationResponse response)
@@ -66,7 +66,7 @@ public class ProductRecommendationResponseCollection extends TimedResponse
     @Override
     public ProductRecommendationResponseCollection setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

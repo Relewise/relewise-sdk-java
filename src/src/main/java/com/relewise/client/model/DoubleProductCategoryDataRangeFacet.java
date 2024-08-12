@@ -32,25 +32,25 @@ public abstract class DoubleProductCategoryDataRangeFacet extends DoubleDataRang
     @Override
     public DoubleProductCategoryDataRangeFacet setSelected(DoubleRange selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
     @Override
     public DoubleProductCategoryDataRangeFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public DoubleProductCategoryDataRangeFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public DoubleProductCategoryDataRangeFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

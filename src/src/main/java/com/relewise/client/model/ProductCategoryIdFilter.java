@@ -68,13 +68,13 @@ public class ProductCategoryIdFilter extends CategoryIdFilter implements IProduc
     @Override
     public ProductCategoryIdFilter setEvaluationScope(CategoryScope evaluationScope)
     {
-        this.evaluationScope = evaluationScope;;
+        this.evaluationScope = evaluationScope;
         return this;
     }
     @Override
     public ProductCategoryIdFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

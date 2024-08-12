@@ -56,12 +56,12 @@ public class CategoryNameAndId
     }
     public CategoryNameAndId setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public CategoryNameAndId setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
 }

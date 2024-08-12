@@ -57,7 +57,7 @@ public class OrFilter extends Filter implements IProductFilter, IContentFilter, 
     }
     public OrFilter setFilters(Filter... filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public OrFilter addToFilters(Filter filter)
@@ -77,7 +77,7 @@ public class OrFilter extends Filter implements IProductFilter, IContentFilter, 
     @Override
     public OrFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

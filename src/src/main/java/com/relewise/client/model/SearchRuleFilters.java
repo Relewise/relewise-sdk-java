@@ -59,17 +59,17 @@ public class SearchRuleFilters
     }
     public SearchRuleFilters setTerm(String term)
     {
-        this.term = term;;
+        this.term = term;
         return this;
     }
     public SearchRuleFilters setApproved(@Nullable Boolean approved)
     {
-        this.approved = approved;;
+        this.approved = approved;
         return this;
     }
     public SearchRuleFilters setId(@Nullable UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
 }

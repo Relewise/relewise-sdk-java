@@ -55,22 +55,22 @@ public abstract class RedirectRulesRequestSortBySearchRulesRequest extends Licen
     }
     public RedirectRulesRequestSortBySearchRulesRequest setFilters(SearchRuleFilters filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public RedirectRulesRequestSortBySearchRulesRequest setSorting(RedirectRulesRequestSortBySorting sorting)
     {
-        this.sorting = sorting;;
+        this.sorting = sorting;
         return this;
     }
     public RedirectRulesRequestSortBySearchRulesRequest setSkip(Integer skip)
     {
-        this.skip = skip;;
+        this.skip = skip;
         return this;
     }
     public RedirectRulesRequestSortBySearchRulesRequest setTake(Integer take)
     {
-        this.take = take;;
+        this.take = take;
         return this;
     }
 }

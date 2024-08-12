@@ -42,7 +42,7 @@ public class MerchandisingRuleCollectionResponse extends TimedResponse
     }
     public MerchandisingRuleCollectionResponse setRules(MerchandisingRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public MerchandisingRuleCollectionResponse addToRules(MerchandisingRule rule)
@@ -62,7 +62,7 @@ public class MerchandisingRuleCollectionResponse extends TimedResponse
     @Override
     public MerchandisingRuleCollectionResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

@@ -36,7 +36,7 @@ public class ProductPerformanceResultCartMetrics
     }
     public ProductPerformanceResultCartMetrics setOpened(Integer opened)
     {
-        this.opened = opened;;
+        this.opened = opened;
         return this;
     }
 }

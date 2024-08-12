@@ -42,13 +42,13 @@ public class SearchIndexResponse extends TimedResponse
     }
     public SearchIndexResponse setIndex(SearchIndex index)
     {
-        this.index = index;;
+        this.index = index;
         return this;
     }
     @Override
     public SearchIndexResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

@@ -57,13 +57,13 @@ public class BrandFacet extends StringValueFacet
     @Override
     public BrandFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public BrandFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

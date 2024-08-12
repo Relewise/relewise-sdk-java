@@ -40,13 +40,13 @@ public abstract class RedirectRuleSaveSearchRulesResponse extends TimedResponse
     }
     public RedirectRuleSaveSearchRulesResponse setRules(RedirectRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     @Override
     public RedirectRuleSaveSearchRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

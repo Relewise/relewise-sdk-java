@@ -81,25 +81,25 @@ public class ObjectValueEqualsCondition extends ObjectValueCondition
     }
     public ObjectValueEqualsCondition setValue(DataValue value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     @Override
     public ObjectValueEqualsCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     @Override
     public ObjectValueEqualsCondition setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ObjectValueEqualsCondition setObjectPath(String... objectPath)
     {
-        this.objectPath = objectPath;;
+        this.objectPath = objectPath;
         return this;
     }
     public ObjectValueEqualsCondition addToObjectPath(String objectPath)

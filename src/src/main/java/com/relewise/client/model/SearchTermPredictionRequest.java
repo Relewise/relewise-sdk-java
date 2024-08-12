@@ -75,65 +75,65 @@ public class SearchTermPredictionRequest extends SearchRequest implements IUserI
     }
     public SearchTermPredictionRequest setTerm(String term)
     {
-        this.term = term;;
+        this.term = term;
         return this;
     }
     public SearchTermPredictionRequest setTake(Integer take)
     {
-        this.take = take;;
+        this.take = take;
         return this;
     }
     public SearchTermPredictionRequest setSettings(SearchTermPredictionSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public SearchTermPredictionRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public SearchTermPredictionRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     @Override
     public SearchTermPredictionRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public SearchTermPredictionRequest setDisplayedAtLocation(String displayedAtLocation)
     {
-        this.displayedAtLocation = displayedAtLocation;;
+        this.displayedAtLocation = displayedAtLocation;
         return this;
     }
     @Override
     public SearchTermPredictionRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public SearchTermPredictionRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public SearchTermPredictionRequest setIndexSelector(SearchIndexSelector indexSelector)
     {
-        this.indexSelector = indexSelector;;
+        this.indexSelector = indexSelector;
         return this;
     }
     @Override
     public SearchTermPredictionRequest setPostFilters(FilterCollection postFilters)
     {
-        this.postFilters = postFilters;;
+        this.postFilters = postFilters;
         return this;
     }
 }

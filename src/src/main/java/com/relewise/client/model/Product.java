@@ -75,12 +75,12 @@ public class Product
     }
     public Product setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public Product setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public Product setCategoryPaths(CategoryPath... categoryPaths)
@@ -122,22 +122,22 @@ public class Product
     }
     public Product setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public Product setListPrice(MultiCurrency listPrice)
     {
-        this.listPrice = listPrice;;
+        this.listPrice = listPrice;
         return this;
     }
     public Product setSalesPrice(MultiCurrency salesPrice)
     {
-        this.salesPrice = salesPrice;;
+        this.salesPrice = salesPrice;
         return this;
     }
     public Product setBrand(Brand brand)
     {
-        this.brand = brand;;
+        this.brand = brand;
         return this;
     }
 }

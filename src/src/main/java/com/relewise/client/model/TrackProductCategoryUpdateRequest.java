@@ -46,7 +46,7 @@ public class TrackProductCategoryUpdateRequest extends TrackingRequest
     }
     public TrackProductCategoryUpdateRequest setProductCategoryUpdate(ProductCategoryUpdate productCategoryUpdate)
     {
-        this.productCategoryUpdate = productCategoryUpdate;;
+        this.productCategoryUpdate = productCategoryUpdate;
         return this;
     }
 }

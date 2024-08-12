@@ -89,22 +89,22 @@ public class ProductDataRelevanceModifier extends RelevanceModifier implements I
     }
     public ProductDataRelevanceModifier setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public ProductDataRelevanceModifier setConsiderAsMatchIfKeyIsNotFound(Boolean considerAsMatchIfKeyIsNotFound)
     {
-        this.considerAsMatchIfKeyIsNotFound = considerAsMatchIfKeyIsNotFound;;
+        this.considerAsMatchIfKeyIsNotFound = considerAsMatchIfKeyIsNotFound;
         return this;
     }
     public ProductDataRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
-        this.multiplyWeightBy = multiplyWeightBy;;
+        this.multiplyWeightBy = multiplyWeightBy;
         return this;
     }
     public ProductDataRelevanceModifier setMustMatchAllConditions(Boolean mustMatchAllConditions)
     {
-        this.mustMatchAllConditions = mustMatchAllConditions;;
+        this.mustMatchAllConditions = mustMatchAllConditions;
         return this;
     }
     public ProductDataRelevanceModifier setConditions(ValueCondition... conditions)
@@ -123,13 +123,13 @@ public class ProductDataRelevanceModifier extends RelevanceModifier implements I
     }
     public ProductDataRelevanceModifier setMultiplierSelector(ValueSelector multiplierSelector)
     {
-        this.multiplierSelector = multiplierSelector;;
+        this.multiplierSelector = multiplierSelector;
         return this;
     }
     @Override
     public ProductDataRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

@@ -52,12 +52,12 @@ public class ContentCategoryRecommendationWeights
     }
     public ContentCategoryRecommendationWeights setCategoryViews(Double categoryViews)
     {
-        this.categoryViews = categoryViews;;
+        this.categoryViews = categoryViews;
         return this;
     }
     public ContentCategoryRecommendationWeights setContentViews(Double contentViews)
     {
-        this.contentViews = contentViews;;
+        this.contentViews = contentViews;
         return this;
     }
 }

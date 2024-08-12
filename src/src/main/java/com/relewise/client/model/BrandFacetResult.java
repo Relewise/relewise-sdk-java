@@ -73,7 +73,7 @@ public class BrandFacetResult extends StringBrandNameAndIdResultValueFacetResult
     @Override
     public BrandFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

@@ -70,23 +70,23 @@ public class ProductRecentlyPurchasedByUserRelevanceModifier extends RelevanceMo
     }
     public ProductRecentlyPurchasedByUserRelevanceModifier setSinceUtc(OffsetDateTime sinceUtc)
     {
-        this.sinceUtc = sinceUtc;;
+        this.sinceUtc = sinceUtc;
         return this;
     }
     public ProductRecentlyPurchasedByUserRelevanceModifier setIfPreviouslyPurchasedByUserMultiplyWeightBy(Double ifPreviouslyPurchasedByUserMultiplyWeightBy)
     {
-        this.ifPreviouslyPurchasedByUserMultiplyWeightBy = ifPreviouslyPurchasedByUserMultiplyWeightBy;;
+        this.ifPreviouslyPurchasedByUserMultiplyWeightBy = ifPreviouslyPurchasedByUserMultiplyWeightBy;
         return this;
     }
     public ProductRecentlyPurchasedByUserRelevanceModifier setIfNotPreviouslyPurchasedByUserMultiplyWeightBy(Double ifNotPreviouslyPurchasedByUserMultiplyWeightBy)
     {
-        this.ifNotPreviouslyPurchasedByUserMultiplyWeightBy = ifNotPreviouslyPurchasedByUserMultiplyWeightBy;;
+        this.ifNotPreviouslyPurchasedByUserMultiplyWeightBy = ifNotPreviouslyPurchasedByUserMultiplyWeightBy;
         return this;
     }
     @Override
     public ProductRecentlyPurchasedByUserRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

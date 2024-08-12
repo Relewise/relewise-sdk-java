@@ -58,17 +58,17 @@ public class SearchTerm extends Trackable implements IUserIdentifier
     }
     public SearchTerm setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public SearchTerm setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public SearchTerm setTerm(String term)
     {
-        this.term = term;;
+        this.term = term;
         return this;
     }
 }

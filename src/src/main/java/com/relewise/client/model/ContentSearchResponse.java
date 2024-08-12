@@ -52,7 +52,7 @@ public class ContentSearchResponse extends PaginatedSearchResponse
     }
     public ContentSearchResponse setResults(ContentResult... results)
     {
-        this.results = results;;
+        this.results = results;
         return this;
     }
     public ContentSearchResponse addToResults(ContentResult result)
@@ -71,12 +71,12 @@ public class ContentSearchResponse extends PaginatedSearchResponse
     }
     public ContentSearchResponse setFacets(ContentFacetResult facets)
     {
-        this.facets = facets;;
+        this.facets = facets;
         return this;
     }
     public ContentSearchResponse setRecommendations(ContentResult... recommendations)
     {
-        this.recommendations = recommendations;;
+        this.recommendations = recommendations;
         return this;
     }
     public ContentSearchResponse addToRecommendations(ContentResult recommendation)
@@ -96,13 +96,13 @@ public class ContentSearchResponse extends PaginatedSearchResponse
     @Override
     public ContentSearchResponse setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     @Override
     public ContentSearchResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

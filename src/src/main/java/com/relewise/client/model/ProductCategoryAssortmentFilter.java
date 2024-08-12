@@ -66,7 +66,7 @@ public class ProductCategoryAssortmentFilter extends Filter implements ICategory
     @Override
     public ProductCategoryAssortmentFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

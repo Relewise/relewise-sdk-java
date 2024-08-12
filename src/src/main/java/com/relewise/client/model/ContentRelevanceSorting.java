@@ -47,13 +47,13 @@ public class ContentRelevanceSorting extends ContentSorting
     @Override
     public ContentRelevanceSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ContentRelevanceSorting setThenBy(ContentSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

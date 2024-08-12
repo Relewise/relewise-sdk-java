@@ -71,22 +71,22 @@ public class SignificantDataValue
     }
     public SignificantDataValue setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public SignificantDataValue setComparer(SignificantDataValueSignificantDataValueComparer comparer)
     {
-        this.comparer = comparer;;
+        this.comparer = comparer;
         return this;
     }
     public SignificantDataValue setSignificance(Double significance)
     {
-        this.significance = significance;;
+        this.significance = significance;
         return this;
     }
     public SignificantDataValue setTransformer(TrimStringTransformer transformer)
     {
-        this.transformer = transformer;;
+        this.transformer = transformer;
         return this;
     }
 }

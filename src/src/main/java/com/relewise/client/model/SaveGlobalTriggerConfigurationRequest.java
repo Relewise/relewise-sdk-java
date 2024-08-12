@@ -52,12 +52,12 @@ public class SaveGlobalTriggerConfigurationRequest extends LicensedRequest
     }
     public SaveGlobalTriggerConfigurationRequest setConfiguration(GlobalTriggerConfiguration configuration)
     {
-        this.configuration = configuration;;
+        this.configuration = configuration;
         return this;
     }
     public SaveGlobalTriggerConfigurationRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

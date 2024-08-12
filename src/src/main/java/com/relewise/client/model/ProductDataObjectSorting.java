@@ -71,29 +71,29 @@ public class ProductDataObjectSorting extends ProductSorting
     }
     public ProductDataObjectSorting setDataSelectionStrategy(DataSelectionStrategy dataSelectionStrategy)
     {
-        this.dataSelectionStrategy = dataSelectionStrategy;;
+        this.dataSelectionStrategy = dataSelectionStrategy;
         return this;
     }
     public ProductDataObjectSorting setMode(SortMode mode)
     {
-        this.mode = mode;;
+        this.mode = mode;
         return this;
     }
     public ProductDataObjectSorting setValueSelector(DataObjectValueSelector valueSelector)
     {
-        this.valueSelector = valueSelector;;
+        this.valueSelector = valueSelector;
         return this;
     }
     @Override
     public ProductDataObjectSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ProductDataObjectSorting setThenBy(ProductSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

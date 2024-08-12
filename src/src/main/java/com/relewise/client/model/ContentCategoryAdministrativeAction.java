@@ -45,25 +45,25 @@ public class ContentCategoryAdministrativeAction extends CategoryAdministrativeA
     @Override
     public ContentCategoryAdministrativeAction setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public ContentCategoryAdministrativeAction setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public ContentCategoryAdministrativeAction setKind(CategoryAdministrativeActionUpdateKind kind)
     {
-        this.kind = kind;;
+        this.kind = kind;
         return this;
     }
     @Override
     public ContentCategoryAdministrativeAction setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

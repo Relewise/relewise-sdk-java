@@ -80,17 +80,17 @@ public class Cart extends Trackable implements IUserIdentifier
     }
     public Cart setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public Cart setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     public Cart setSubtotal(Money subtotal)
     {
-        this.subtotal = subtotal;;
+        this.subtotal = subtotal;
         return this;
     }
     public Cart setLineItems(LineItem... lineItems)
@@ -118,7 +118,7 @@ public class Cart extends Trackable implements IUserIdentifier
     }
     public Cart setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

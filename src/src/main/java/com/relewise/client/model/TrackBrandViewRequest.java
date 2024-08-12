@@ -46,7 +46,7 @@ public class TrackBrandViewRequest extends TrackingRequest
     }
     public TrackBrandViewRequest setBrandView(BrandView brandView)
     {
-        this.brandView = brandView;;
+        this.brandView = brandView;
         return this;
     }
 }

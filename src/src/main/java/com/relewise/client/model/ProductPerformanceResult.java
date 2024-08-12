@@ -41,12 +41,12 @@ public class ProductPerformanceResult
     }
     public ProductPerformanceResult setProduct(ProductResult product)
     {
-        this.product = product;;
+        this.product = product;
         return this;
     }
     public ProductPerformanceResult setClassifications(ProductPerformanceResultClassificationMetrics... classifications)
     {
-        this.classifications = classifications;;
+        this.classifications = classifications;
         return this;
     }
     public ProductPerformanceResult addToClassifications(ProductPerformanceResultClassificationMetrics classification)

@@ -52,12 +52,12 @@ public class ContentCategoryView extends Trackable implements IUserIdentifier
     }
     public ContentCategoryView setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public ContentCategoryView setIdPath(String... idPath)
     {
-        this.idPath = idPath;;
+        this.idPath = idPath;
         return this;
     }
     public ContentCategoryView addToIdPath(String idPath)

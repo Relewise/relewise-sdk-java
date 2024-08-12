@@ -46,7 +46,7 @@ public class TrackProductCategoryViewRequest extends TrackingRequest
     }
     public TrackProductCategoryViewRequest setProductCategoryView(ProductCategoryView productCategoryView)
     {
-        this.productCategoryView = productCategoryView;;
+        this.productCategoryView = productCategoryView;
         return this;
     }
 }

@@ -93,17 +93,17 @@ public abstract class ProductCategoryResultDetailsCategoryResultDetails
     }
     public ProductCategoryResultDetailsCategoryResultDetails setCategoryId(String categoryId)
     {
-        this.categoryId = categoryId;;
+        this.categoryId = categoryId;
         return this;
     }
     public ProductCategoryResultDetailsCategoryResultDetails setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public ProductCategoryResultDetailsCategoryResultDetails setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public ProductCategoryResultDetailsCategoryResultDetails addToAssortments(Integer assortment)
@@ -131,47 +131,47 @@ public abstract class ProductCategoryResultDetailsCategoryResultDetails
     }
     public ProductCategoryResultDetailsCategoryResultDetails setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public ProductCategoryResultDetailsCategoryResultDetails setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
     public ProductCategoryResultDetailsCategoryResultDetails setCreatedUtc(OffsetDateTime createdUtc)
     {
-        this.createdUtc = createdUtc;;
+        this.createdUtc = createdUtc;
         return this;
     }
     public ProductCategoryResultDetailsCategoryResultDetails setLastViewedUtc(@Nullable OffsetDateTime lastViewedUtc)
     {
-        this.lastViewedUtc = lastViewedUtc;;
+        this.lastViewedUtc = lastViewedUtc;
         return this;
     }
     public ProductCategoryResultDetailsCategoryResultDetails setViewedTotalNumberOfTimes(Long viewedTotalNumberOfTimes)
     {
-        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;;
+        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;
         return this;
     }
     public ProductCategoryResultDetailsCategoryResultDetails setViewedByDifferentNumberOfUsers(Integer viewedByDifferentNumberOfUsers)
     {
-        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;;
+        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;
         return this;
     }
     public ProductCategoryResultDetailsCategoryResultDetails setDisabled(Boolean disabled)
     {
-        this.disabled = disabled;;
+        this.disabled = disabled;
         return this;
     }
     public ProductCategoryResultDetailsCategoryResultDetails setChildCategories(ProductCategoryResultDetails... childCategories)
     {
-        this.childCategories = childCategories;;
+        this.childCategories = childCategories;
         return this;
     }
     public ProductCategoryResultDetailsCategoryResultDetails setParentCategories(ProductCategoryResultDetails... parentCategories)
     {
-        this.parentCategories = parentCategories;;
+        this.parentCategories = parentCategories;
         return this;
     }
 }

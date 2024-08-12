@@ -64,24 +64,24 @@ public class ProductVariantSpecificationSorting extends ProductSorting
     }
     public ProductVariantSpecificationSorting setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public ProductVariantSpecificationSorting setMode(SortMode mode)
     {
-        this.mode = mode;;
+        this.mode = mode;
         return this;
     }
     @Override
     public ProductVariantSpecificationSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ProductVariantSpecificationSorting setThenBy(ProductSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

@@ -83,37 +83,37 @@ public class BrandQuery extends LicensedRequest
     }
     public BrandQuery setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public BrandQuery setNumberOfResults(Integer numberOfResults)
     {
-        this.numberOfResults = numberOfResults;;
+        this.numberOfResults = numberOfResults;
         return this;
     }
     public BrandQuery setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public BrandQuery setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     public BrandQuery setSkipNumberOfResults(Integer skipNumberOfResults)
     {
-        this.skipNumberOfResults = skipNumberOfResults;;
+        this.skipNumberOfResults = skipNumberOfResults;
         return this;
     }
     public BrandQuery setReturnTotalNumberOfResults(Boolean returnTotalNumberOfResults)
     {
-        this.returnTotalNumberOfResults = returnTotalNumberOfResults;;
+        this.returnTotalNumberOfResults = returnTotalNumberOfResults;
         return this;
     }
     public BrandQuery setIncludeDisabledBrands(Boolean includeDisabledBrands)
     {
-        this.includeDisabledBrands = includeDisabledBrands;;
+        this.includeDisabledBrands = includeDisabledBrands;
         return this;
     }
 }

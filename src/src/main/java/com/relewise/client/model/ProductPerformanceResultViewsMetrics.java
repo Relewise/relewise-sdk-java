@@ -36,7 +36,7 @@ public class ProductPerformanceResultViewsMetrics
     }
     public ProductPerformanceResultViewsMetrics setTotal(Integer total)
     {
-        this.total = total;;
+        this.total = total;
         return this;
     }
 }

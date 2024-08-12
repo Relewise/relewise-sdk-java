@@ -38,7 +38,7 @@ public class AbandonedProductCategorySearch extends StringAbandonedSearch
     @Override
     public AbandonedProductCategorySearch setTopResults(String... topResults)
     {
-        this.topResults = topResults;;
+        this.topResults = topResults;
         return this;
     }
     public AbandonedProductCategorySearch addToTopResults(String topResult)
@@ -58,13 +58,13 @@ public class AbandonedProductCategorySearch extends StringAbandonedSearch
     @Override
     public AbandonedProductCategorySearch setLoweredSearchTerm(String loweredSearchTerm)
     {
-        this.loweredSearchTerm = loweredSearchTerm;;
+        this.loweredSearchTerm = loweredSearchTerm;
         return this;
     }
     @Override
     public AbandonedProductCategorySearch setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
 }

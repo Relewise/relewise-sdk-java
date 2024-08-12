@@ -55,7 +55,7 @@ public class CustomProductRecommendationRequest extends ProductRecommendationReq
     }
     public CustomProductRecommendationRequest setRecommendationType(String recommendationType)
     {
-        this.recommendationType = recommendationType;;
+        this.recommendationType = recommendationType;
         return this;
     }
     public CustomProductRecommendationRequest addToParameters(String key, String value)
@@ -69,49 +69,49 @@ public class CustomProductRecommendationRequest extends ProductRecommendationReq
     }
     public CustomProductRecommendationRequest setParameters(HashMap<String, String> parameters)
     {
-        this.parameters = parameters;;
+        this.parameters = parameters;
         return this;
     }
     @Override
     public CustomProductRecommendationRequest setSettings(ProductRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public CustomProductRecommendationRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public CustomProductRecommendationRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public CustomProductRecommendationRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public CustomProductRecommendationRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public CustomProductRecommendationRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public CustomProductRecommendationRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

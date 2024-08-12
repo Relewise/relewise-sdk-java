@@ -70,7 +70,7 @@ public abstract class BooleanBooleanValueFacetResult extends FacetResult
     @Override
     public BooleanBooleanValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

@@ -51,17 +51,17 @@ public class ProductPerformanceResultSalesMetrics
     }
     public ProductPerformanceResultSalesMetrics setOrders(Integer orders)
     {
-        this.orders = orders;;
+        this.orders = orders;
         return this;
     }
     public ProductPerformanceResultSalesMetrics setAverageNoOfLineItems(Double averageNoOfLineItems)
     {
-        this.averageNoOfLineItems = averageNoOfLineItems;;
+        this.averageNoOfLineItems = averageNoOfLineItems;
         return this;
     }
     public ProductPerformanceResultSalesMetrics setCurrencies(ProductPerformanceResultSalesByCurrency... currencies)
     {
-        this.currencies = currencies;;
+        this.currencies = currencies;
         return this;
     }
     public ProductPerformanceResultSalesMetrics addToCurrencies(ProductPerformanceResultSalesByCurrency currency)
@@ -80,7 +80,7 @@ public class ProductPerformanceResultSalesMetrics
     }
     public ProductPerformanceResultSalesMetrics setWithKnownCartOpener(ProductPerformanceResultSalesWithKnownCartOpenerMetrics withKnownCartOpener)
     {
-        this.withKnownCartOpener = withKnownCartOpener;;
+        this.withKnownCartOpener = withKnownCartOpener;
         return this;
     }
 }

@@ -46,7 +46,7 @@ public class TrackContentCategoryUpdateRequest extends TrackingRequest
     }
     public TrackContentCategoryUpdateRequest setContentCategoryUpdate(ContentCategoryUpdate contentCategoryUpdate)
     {
-        this.contentCategoryUpdate = contentCategoryUpdate;;
+        this.contentCategoryUpdate = contentCategoryUpdate;
         return this;
     }
 }

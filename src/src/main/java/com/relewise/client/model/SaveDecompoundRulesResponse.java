@@ -42,7 +42,7 @@ public class SaveDecompoundRulesResponse extends DecompoundRuleSaveSearchRulesRe
     @Override
     public SaveDecompoundRulesResponse setRules(DecompoundRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public SaveDecompoundRulesResponse addToRules(DecompoundRule rule)
@@ -62,7 +62,7 @@ public class SaveDecompoundRulesResponse extends DecompoundRuleSaveSearchRulesRe
     @Override
     public SaveDecompoundRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

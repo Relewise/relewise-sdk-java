@@ -66,7 +66,7 @@ public class ProductAndVariantIdFilter extends Filter implements IProductFilter
     @Override
     public ProductAndVariantIdFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

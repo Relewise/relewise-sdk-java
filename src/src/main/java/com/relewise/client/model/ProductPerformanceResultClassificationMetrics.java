@@ -65,27 +65,27 @@ public class ProductPerformanceResultClassificationMetrics
     }
     public ProductPerformanceResultClassificationMetrics setCombination(HashMap<String, String> combination)
     {
-        this.combination = combination;;
+        this.combination = combination;
         return this;
     }
     public ProductPerformanceResultClassificationMetrics setViews(ProductPerformanceResultViewsMetrics views)
     {
-        this.views = views;;
+        this.views = views;
         return this;
     }
     public ProductPerformanceResultClassificationMetrics setSales(ProductPerformanceResultSalesMetrics sales)
     {
-        this.sales = sales;;
+        this.sales = sales;
         return this;
     }
     public ProductPerformanceResultClassificationMetrics setCarts(ProductPerformanceResultCartMetrics carts)
     {
-        this.carts = carts;;
+        this.carts = carts;
         return this;
     }
     public ProductPerformanceResultClassificationMetrics setRank(ProductPerformanceResultRankMetrics rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
 }

@@ -63,28 +63,28 @@ public class HasRecentlyReceivedTriggerCondition extends UserCondition
     }
     public HasRecentlyReceivedTriggerCondition setWithinMinutes(Integer withinMinutes)
     {
-        this.withinMinutes = withinMinutes;;
+        this.withinMinutes = withinMinutes;
         return this;
     }
     public HasRecentlyReceivedTriggerCondition setId(@Nullable UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public HasRecentlyReceivedTriggerCondition setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     public HasRecentlyReceivedTriggerCondition setType(@Nullable Short type)
     {
-        this.type = type;;
+        this.type = type;
         return this;
     }
     @Override
     public HasRecentlyReceivedTriggerCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

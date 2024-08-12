@@ -50,49 +50,49 @@ public class ContentsViewedAfterViewingContentRequest extends ContentRecommendat
     }
     public ContentsViewedAfterViewingContentRequest setContentId(String contentId)
     {
-        this.contentId = contentId;;
+        this.contentId = contentId;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingContentRequest setSettings(ContentRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingContentRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingContentRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingContentRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingContentRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingContentRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingContentRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

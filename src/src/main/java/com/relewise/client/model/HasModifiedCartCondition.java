@@ -65,18 +65,18 @@ public class HasModifiedCartCondition extends UserCondition
     }
     public HasModifiedCartCondition setWithinMinutes(Integer withinMinutes)
     {
-        this.withinMinutes = withinMinutes;;
+        this.withinMinutes = withinMinutes;
         return this;
     }
     public HasModifiedCartCondition setCartName(String cartName)
     {
-        this.cartName = cartName;;
+        this.cartName = cartName;
         return this;
     }
     @Override
     public HasModifiedCartCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

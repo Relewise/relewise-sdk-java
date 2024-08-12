@@ -41,18 +41,18 @@ public abstract class DoubleProductDataRangesFacetResult extends DoubleRangesFac
     }
     public DoubleProductDataRangesFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public DoubleProductDataRangesFacetResult setDataSelectionStrategy(DataSelectionStrategy dataSelectionStrategy)
     {
-        this.dataSelectionStrategy = dataSelectionStrategy;;
+        this.dataSelectionStrategy = dataSelectionStrategy;
         return this;
     }
     @Override
     public DoubleProductDataRangesFacetResult setExpandedRangeSize(@Nullable Double expandedRangeSize)
     {
-        this.expandedRangeSize = expandedRangeSize;;
+        this.expandedRangeSize = expandedRangeSize;
         return this;
     }
     @Override
@@ -88,7 +88,7 @@ public abstract class DoubleProductDataRangesFacetResult extends DoubleRangesFac
     @Override
     public DoubleProductDataRangesFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

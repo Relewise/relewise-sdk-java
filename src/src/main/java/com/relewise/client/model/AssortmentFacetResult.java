@@ -36,7 +36,7 @@ public abstract class AssortmentFacetResult extends IntegerIntegerValueFacetResu
     }
     public AssortmentFacetResult setAssortmentFilterType(AssortmentFilterType assortmentFilterType)
     {
-        this.assortmentFilterType = assortmentFilterType;;
+        this.assortmentFilterType = assortmentFilterType;
         return this;
     }
     @Override
@@ -72,7 +72,7 @@ public abstract class AssortmentFacetResult extends IntegerIntegerValueFacetResu
     @Override
     public AssortmentFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

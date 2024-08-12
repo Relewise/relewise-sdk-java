@@ -73,19 +73,19 @@ public class ObjectValueMaxByCondition extends ObjectValueCondition
     @Override
     public ObjectValueMaxByCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     @Override
     public ObjectValueMaxByCondition setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ObjectValueMaxByCondition setObjectPath(String... objectPath)
     {
-        this.objectPath = objectPath;;
+        this.objectPath = objectPath;
         return this;
     }
     public ObjectValueMaxByCondition addToObjectPath(String objectPath)

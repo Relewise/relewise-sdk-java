@@ -64,24 +64,24 @@ public class ContentDataSorting extends ContentSorting
     }
     public ContentDataSorting setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public ContentDataSorting setMode(SortMode mode)
     {
-        this.mode = mode;;
+        this.mode = mode;
         return this;
     }
     @Override
     public ContentDataSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ContentDataSorting setThenBy(ContentSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

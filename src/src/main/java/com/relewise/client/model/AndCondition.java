@@ -47,13 +47,13 @@ public class AndCondition extends UserCondition
     }
     public AndCondition setConditions(UserConditionCollection conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
     @Override
     public AndCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

@@ -47,13 +47,13 @@ public class HasIdentifierCondition extends UserCondition
     }
     public HasIdentifierCondition setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public HasIdentifierCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

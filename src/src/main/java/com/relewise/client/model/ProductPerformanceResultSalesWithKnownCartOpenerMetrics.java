@@ -46,17 +46,17 @@ public class ProductPerformanceResultSalesWithKnownCartOpenerMetrics
     }
     public ProductPerformanceResultSalesWithKnownCartOpenerMetrics setOrders(Integer orders)
     {
-        this.orders = orders;;
+        this.orders = orders;
         return this;
     }
     public ProductPerformanceResultSalesWithKnownCartOpenerMetrics setOpened(Integer opened)
     {
-        this.opened = opened;;
+        this.opened = opened;
         return this;
     }
     public ProductPerformanceResultSalesWithKnownCartOpenerMetrics setOpenedPercent(Double openedPercent)
     {
-        this.openedPercent = openedPercent;;
+        this.openedPercent = openedPercent;
         return this;
     }
 }

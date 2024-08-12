@@ -70,7 +70,7 @@ public abstract class IntegerIntegerValueFacetResult extends FacetResult
     @Override
     public IntegerIntegerValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

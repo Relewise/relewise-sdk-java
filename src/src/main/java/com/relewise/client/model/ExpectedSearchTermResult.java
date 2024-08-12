@@ -41,12 +41,12 @@ public class ExpectedSearchTermResult
     }
     public ExpectedSearchTermResult setEstimatedHits(Integer estimatedHits)
     {
-        this.estimatedHits = estimatedHits;;
+        this.estimatedHits = estimatedHits;
         return this;
     }
     public ExpectedSearchTermResult setType(EntityType type)
     {
-        this.type = type;;
+        this.type = type;
         return this;
     }
 }

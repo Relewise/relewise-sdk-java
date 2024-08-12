@@ -56,54 +56,54 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
     }
     public PopularProductsRequest setBasedOn(PopularityTypes basedOn)
     {
-        this.basedOn = basedOn;;
+        this.basedOn = basedOn;
         return this;
     }
     public PopularProductsRequest setSinceMinutesAgo(Integer sinceMinutesAgo)
     {
-        this.sinceMinutesAgo = sinceMinutesAgo;;
+        this.sinceMinutesAgo = sinceMinutesAgo;
         return this;
     }
     @Override
     public PopularProductsRequest setSettings(ProductRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public PopularProductsRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public PopularProductsRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public PopularProductsRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public PopularProductsRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public PopularProductsRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public PopularProductsRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

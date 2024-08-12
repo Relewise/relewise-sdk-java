@@ -46,12 +46,12 @@ public class IntegerRange
     }
     public IntegerRange setLowerBoundInclusive(@Nullable Integer lowerBoundInclusive)
     {
-        this.lowerBoundInclusive = lowerBoundInclusive;;
+        this.lowerBoundInclusive = lowerBoundInclusive;
         return this;
     }
     public IntegerRange setUpperBoundInclusive(@Nullable Integer upperBoundInclusive)
     {
-        this.upperBoundInclusive = upperBoundInclusive;;
+        this.upperBoundInclusive = upperBoundInclusive;
         return this;
     }
 }

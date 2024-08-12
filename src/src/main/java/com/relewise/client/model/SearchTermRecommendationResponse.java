@@ -42,7 +42,7 @@ public class SearchTermRecommendationResponse extends RecommendationResponse
     }
     public SearchTermRecommendationResponse setRecommendations(SearchTermResult... recommendations)
     {
-        this.recommendations = recommendations;;
+        this.recommendations = recommendations;
         return this;
     }
     public SearchTermRecommendationResponse addToRecommendations(SearchTermResult recommendation)
@@ -62,7 +62,7 @@ public class SearchTermRecommendationResponse extends RecommendationResponse
     @Override
     public SearchTermRecommendationResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

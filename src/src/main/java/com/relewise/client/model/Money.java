@@ -46,12 +46,12 @@ public class Money
     }
     public Money setAmount(Double amount)
     {
-        this.amount = amount;;
+        this.amount = amount;
         return this;
     }
     public Money setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

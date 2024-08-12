@@ -51,30 +51,30 @@ public class ProductCategoryResultDetails extends ProductCategoryResultDetailsCa
     }
     public ProductCategoryResultDetails setPurchasedFromByDifferentNumberOfUsers(Integer purchasedFromByDifferentNumberOfUsers)
     {
-        this.purchasedFromByDifferentNumberOfUsers = purchasedFromByDifferentNumberOfUsers;;
+        this.purchasedFromByDifferentNumberOfUsers = purchasedFromByDifferentNumberOfUsers;
         return this;
     }
     public ProductCategoryResultDetails setPurchasedByUser(PurchasedByUserInfo purchasedByUser)
     {
-        this.purchasedByUser = purchasedByUser;;
+        this.purchasedByUser = purchasedByUser;
         return this;
     }
     @Override
     public ProductCategoryResultDetails setCategoryId(String categoryId)
     {
-        this.categoryId = categoryId;;
+        this.categoryId = categoryId;
         return this;
     }
     @Override
     public ProductCategoryResultDetails setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     @Override
     public ProductCategoryResultDetails setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public ProductCategoryResultDetails addToAssortments(Integer assortment)
@@ -103,49 +103,49 @@ public class ProductCategoryResultDetails extends ProductCategoryResultDetailsCa
     @Override
     public ProductCategoryResultDetails setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     @Override
     public ProductCategoryResultDetails setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
     @Override
     public ProductCategoryResultDetails setCreatedUtc(OffsetDateTime createdUtc)
     {
-        this.createdUtc = createdUtc;;
+        this.createdUtc = createdUtc;
         return this;
     }
     @Override
     public ProductCategoryResultDetails setLastViewedUtc(@Nullable OffsetDateTime lastViewedUtc)
     {
-        this.lastViewedUtc = lastViewedUtc;;
+        this.lastViewedUtc = lastViewedUtc;
         return this;
     }
     @Override
     public ProductCategoryResultDetails setViewedTotalNumberOfTimes(Long viewedTotalNumberOfTimes)
     {
-        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;;
+        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;
         return this;
     }
     @Override
     public ProductCategoryResultDetails setViewedByDifferentNumberOfUsers(Integer viewedByDifferentNumberOfUsers)
     {
-        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;;
+        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;
         return this;
     }
     @Override
     public ProductCategoryResultDetails setDisabled(Boolean disabled)
     {
-        this.disabled = disabled;;
+        this.disabled = disabled;
         return this;
     }
     @Override
     public ProductCategoryResultDetails setChildCategories(ProductCategoryResultDetails... childCategories)
     {
-        this.childCategories = childCategories;;
+        this.childCategories = childCategories;
         return this;
     }
     public ProductCategoryResultDetails addToChildCategories(ProductCategoryResultDetails childCategory)
@@ -165,7 +165,7 @@ public class ProductCategoryResultDetails extends ProductCategoryResultDetailsCa
     @Override
     public ProductCategoryResultDetails setParentCategories(ProductCategoryResultDetails... parentCategories)
     {
-        this.parentCategories = parentCategories;;
+        this.parentCategories = parentCategories;
         return this;
     }
     public ProductCategoryResultDetails addToParentCategories(ProductCategoryResultDetails parentCategory)

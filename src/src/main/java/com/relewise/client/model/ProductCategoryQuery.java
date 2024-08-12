@@ -49,55 +49,55 @@ public class ProductCategoryQuery extends ProductCategoryIdFilterCategoryQuery
     @Override
     public ProductCategoryQuery setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public ProductCategoryQuery setNumberOfResults(Integer numberOfResults)
     {
-        this.numberOfResults = numberOfResults;;
+        this.numberOfResults = numberOfResults;
         return this;
     }
     @Override
     public ProductCategoryQuery setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public ProductCategoryQuery setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     @Override
     public ProductCategoryQuery setSkipNumberOfResults(Integer skipNumberOfResults)
     {
-        this.skipNumberOfResults = skipNumberOfResults;;
+        this.skipNumberOfResults = skipNumberOfResults;
         return this;
     }
     @Override
     public ProductCategoryQuery setReturnTotalNumberOfResults(Boolean returnTotalNumberOfResults)
     {
-        this.returnTotalNumberOfResults = returnTotalNumberOfResults;;
+        this.returnTotalNumberOfResults = returnTotalNumberOfResults;
         return this;
     }
     @Override
     public ProductCategoryQuery setIncludeDisabledCategories(Boolean includeDisabledCategories)
     {
-        this.includeDisabledCategories = includeDisabledCategories;;
+        this.includeDisabledCategories = includeDisabledCategories;
         return this;
     }
     @Override
     public ProductCategoryQuery setIncludeChildCategoriesToDepth(Integer includeChildCategoriesToDepth)
     {
-        this.includeChildCategoriesToDepth = includeChildCategoriesToDepth;;
+        this.includeChildCategoriesToDepth = includeChildCategoriesToDepth;
         return this;
     }
     @Override
     public ProductCategoryQuery setIncludeParentCategoriesToDepth(Integer includeParentCategoriesToDepth)
     {
-        this.includeParentCategoriesToDepth = includeParentCategoriesToDepth;;
+        this.includeParentCategoriesToDepth = includeParentCategoriesToDepth;
         return this;
     }
 }

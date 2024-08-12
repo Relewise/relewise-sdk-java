@@ -46,7 +46,7 @@ public class UserDetailsCollectionResponse extends TimedResponse
     }
     public UserDetailsCollectionResponse setResults(UserResultDetails[]... results)
     {
-        this.results = results;;
+        this.results = results;
         return this;
     }
     public UserDetailsCollectionResponse addToResults(UserResultDetails[] result)
@@ -66,7 +66,7 @@ public class UserDetailsCollectionResponse extends TimedResponse
     @Override
     public UserDetailsCollectionResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

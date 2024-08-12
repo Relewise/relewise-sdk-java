@@ -36,13 +36,13 @@ public abstract class DoubleProductCategoryDataRangesFacetResult extends DoubleR
     }
     public DoubleProductCategoryDataRangesFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public DoubleProductCategoryDataRangesFacetResult setExpandedRangeSize(@Nullable Double expandedRangeSize)
     {
-        this.expandedRangeSize = expandedRangeSize;;
+        this.expandedRangeSize = expandedRangeSize;
         return this;
     }
     @Override
@@ -78,7 +78,7 @@ public abstract class DoubleProductCategoryDataRangesFacetResult extends DoubleR
     @Override
     public DoubleProductCategoryDataRangesFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

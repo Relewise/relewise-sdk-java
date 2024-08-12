@@ -47,7 +47,7 @@ public abstract class DoubleContentDataRangesFacet extends DoubleDataRangesFacet
     @Override
     public DoubleContentDataRangesFacet setExpandedRangeSize(@Nullable Double expandedRangeSize)
     {
-        this.expandedRangeSize = expandedRangeSize;;
+        this.expandedRangeSize = expandedRangeSize;
         return this;
     }
     @Override
@@ -68,19 +68,19 @@ public abstract class DoubleContentDataRangesFacet extends DoubleDataRangesFacet
     @Override
     public DoubleContentDataRangesFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public DoubleContentDataRangesFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public DoubleContentDataRangesFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

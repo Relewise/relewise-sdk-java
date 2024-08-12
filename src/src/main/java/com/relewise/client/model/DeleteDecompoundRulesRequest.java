@@ -43,7 +43,7 @@ public class DeleteDecompoundRulesRequest extends DeleteSearchRulesRequest
     @Override
     public DeleteDecompoundRulesRequest setIds(UUID... ids)
     {
-        this.ids = ids;;
+        this.ids = ids;
         return this;
     }
     public DeleteDecompoundRulesRequest addToIds(UUID id)
@@ -63,7 +63,7 @@ public class DeleteDecompoundRulesRequest extends DeleteSearchRulesRequest
     @Override
     public DeleteDecompoundRulesRequest setDeletedBy(String deletedBy)
     {
-        this.deletedBy = deletedBy;;
+        this.deletedBy = deletedBy;
         return this;
     }
 }

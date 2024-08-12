@@ -46,7 +46,7 @@ public class BrandRecommendationResponse extends RecommendationResponse
     }
     public BrandRecommendationResponse setRecommendations(BrandResult... recommendations)
     {
-        this.recommendations = recommendations;;
+        this.recommendations = recommendations;
         return this;
     }
     public BrandRecommendationResponse addToRecommendations(BrandResult recommendation)
@@ -66,7 +66,7 @@ public class BrandRecommendationResponse extends RecommendationResponse
     @Override
     public BrandRecommendationResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

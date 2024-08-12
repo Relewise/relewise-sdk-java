@@ -41,12 +41,12 @@ public class BrandIndexConfiguration
     }
     public BrandIndexConfiguration setId(FieldIndexConfiguration id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public BrandIndexConfiguration setDisplayName(FieldIndexConfiguration displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
 }

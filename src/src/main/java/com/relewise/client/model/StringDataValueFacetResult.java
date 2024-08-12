@@ -41,12 +41,12 @@ public abstract class StringDataValueFacetResult extends StringValueFacetResult
     }
     public StringDataValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public StringDataValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -82,7 +82,7 @@ public abstract class StringDataValueFacetResult extends StringValueFacetResult
     @Override
     public StringDataValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

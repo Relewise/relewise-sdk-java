@@ -46,17 +46,17 @@ public class ProductPerformanceResultCategoryMetrics
     }
     public ProductPerformanceResultCategoryMetrics setCategory(CategoryNameAndIdResult category)
     {
-        this.category = category;;
+        this.category = category;
         return this;
     }
     public ProductPerformanceResultCategoryMetrics setImmediateParent(Boolean immediateParent)
     {
-        this.immediateParent = immediateParent;;
+        this.immediateParent = immediateParent;
         return this;
     }
     public ProductPerformanceResultCategoryMetrics setRank(ProductPerformanceResultViewsAndSalesMetrics rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
 }

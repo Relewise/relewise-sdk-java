@@ -47,12 +47,12 @@ public class ProductCategorySearchSettings extends SearchSettings
     }
     public ProductCategorySearchSettings setSelectedCategoryProperties(SelectedProductCategoryPropertiesSettings selectedCategoryProperties)
     {
-        this.selectedCategoryProperties = selectedCategoryProperties;;
+        this.selectedCategoryProperties = selectedCategoryProperties;
         return this;
     }
     public ProductCategorySearchSettings setRecommendations(RecommendationSettings recommendations)
     {
-        this.recommendations = recommendations;;
+        this.recommendations = recommendations;
         return this;
     }
 }

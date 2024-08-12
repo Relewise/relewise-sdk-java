@@ -46,12 +46,12 @@ public class PredictionRulePromotion
     }
     public PredictionRulePromotion setTo(PredictionRulePromotionPosition to)
     {
-        this.to = to;;
+        this.to = to;
         return this;
     }
     public PredictionRulePromotion setValues(String... values)
     {
-        this.values = values;;
+        this.values = values;
         return this;
     }
     public PredictionRulePromotion addToValues(String value)

@@ -57,7 +57,7 @@ public class AndFilter extends Filter implements IProductFilter, IContentFilter,
     }
     public AndFilter setFilters(Filter... filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public AndFilter addToFilters(Filter filter)
@@ -77,7 +77,7 @@ public class AndFilter extends Filter implements IProductFilter, IContentFilter,
     @Override
     public AndFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

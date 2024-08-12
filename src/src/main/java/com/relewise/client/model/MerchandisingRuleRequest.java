@@ -60,12 +60,12 @@ public class MerchandisingRuleRequest extends LicensedRequest
     }
     public MerchandisingRuleRequest setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public MerchandisingRuleRequest setType(@Nullable Short type)
     {
-        this.type = type;;
+        this.type = type;
         return this;
     }
 }

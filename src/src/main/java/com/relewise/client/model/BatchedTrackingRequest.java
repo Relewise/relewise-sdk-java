@@ -46,7 +46,7 @@ public class BatchedTrackingRequest extends TrackingRequest
     }
     public BatchedTrackingRequest setItems(Trackable... items)
     {
-        this.items = items;;
+        this.items = items;
         return this;
     }
     public BatchedTrackingRequest addToItems(Trackable item)

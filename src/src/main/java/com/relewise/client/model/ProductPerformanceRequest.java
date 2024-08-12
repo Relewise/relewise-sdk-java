@@ -118,52 +118,52 @@ public class ProductPerformanceRequest extends AnalyzerRequest
     }
     public ProductPerformanceRequest setFromUnixTimeSeconds(Long fromUnixTimeSeconds)
     {
-        this.fromUnixTimeSeconds = fromUnixTimeSeconds;;
+        this.fromUnixTimeSeconds = fromUnixTimeSeconds;
         return this;
     }
     public ProductPerformanceRequest setToUnixTimeSeconds(Long toUnixTimeSeconds)
     {
-        this.toUnixTimeSeconds = toUnixTimeSeconds;;
+        this.toUnixTimeSeconds = toUnixTimeSeconds;
         return this;
     }
     public ProductPerformanceRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public ProductPerformanceRequest setNumberOfResults(Integer numberOfResults)
     {
-        this.numberOfResults = numberOfResults;;
+        this.numberOfResults = numberOfResults;
         return this;
     }
     public ProductPerformanceRequest setSkipNumberOfResults(Integer skipNumberOfResults)
     {
-        this.skipNumberOfResults = skipNumberOfResults;;
+        this.skipNumberOfResults = skipNumberOfResults;
         return this;
     }
     public ProductPerformanceRequest setByVariant(Boolean byVariant)
     {
-        this.byVariant = byVariant;;
+        this.byVariant = byVariant;
         return this;
     }
     public ProductPerformanceRequest setSelectedProductProperties(SelectedProductPropertiesSettings selectedProductProperties)
     {
-        this.selectedProductProperties = selectedProductProperties;;
+        this.selectedProductProperties = selectedProductProperties;
         return this;
     }
     public ProductPerformanceRequest setSelectedVariantProperties(SelectedVariantPropertiesSettings selectedVariantProperties)
     {
-        this.selectedVariantProperties = selectedVariantProperties;;
+        this.selectedVariantProperties = selectedVariantProperties;
         return this;
     }
     public ProductPerformanceRequest setOrderBy(ProductPerformanceRequestOrderByOptions orderBy)
     {
-        this.orderBy = orderBy;;
+        this.orderBy = orderBy;
         return this;
     }
     public ProductPerformanceRequest setVariantData(ProductPerformanceRequestVariantDataOptions variantData)
     {
-        this.variantData = variantData;;
+        this.variantData = variantData;
         return this;
     }
     public ProductPerformanceRequest setClassifications(AbstractMap.SimpleEntry<String, String>... classifications)
@@ -182,19 +182,19 @@ public class ProductPerformanceRequest extends AnalyzerRequest
     }
     public ProductPerformanceRequest setSelectedBrandProperties(SelectedBrandPropertiesSettings selectedBrandProperties)
     {
-        this.selectedBrandProperties = selectedBrandProperties;;
+        this.selectedBrandProperties = selectedBrandProperties;
         return this;
     }
     @Override
     public ProductPerformanceRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public ProductPerformanceRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

@@ -56,7 +56,7 @@ public class VariantAssortmentRelevanceModifier extends RelevanceModifier implem
     }
     public VariantAssortmentRelevanceModifier setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public VariantAssortmentRelevanceModifier addToAssortments(Integer assortment)
@@ -75,13 +75,13 @@ public class VariantAssortmentRelevanceModifier extends RelevanceModifier implem
     }
     public VariantAssortmentRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
-        this.multiplyWeightBy = multiplyWeightBy;;
+        this.multiplyWeightBy = multiplyWeightBy;
         return this;
     }
     @Override
     public VariantAssortmentRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

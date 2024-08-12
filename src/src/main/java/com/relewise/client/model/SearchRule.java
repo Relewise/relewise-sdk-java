@@ -85,52 +85,52 @@ public abstract class SearchRule
     }
     public SearchRule setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public SearchRule setIndexes(ApplicableIndexes indexes)
     {
-        this.indexes = indexes;;
+        this.indexes = indexes;
         return this;
     }
     public SearchRule setLanguages(ApplicableLanguages languages)
     {
-        this.languages = languages;;
+        this.languages = languages;
         return this;
     }
     public SearchRule setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     public SearchRule setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     public SearchRule setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     public SearchRule setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     public SearchRule setApproved(@Nullable OffsetDateTime approved)
     {
-        this.approved = approved;;
+        this.approved = approved;
         return this;
     }
     public SearchRule setApprovedBy(String approvedBy)
     {
-        this.approvedBy = approvedBy;;
+        this.approvedBy = approvedBy;
         return this;
     }
     public SearchRule setIsApproved(Boolean isApproved)
     {
-        this.isApproved = isApproved;;
+        this.isApproved = isApproved;
         return this;
     }
 }

@@ -56,17 +56,17 @@ public class SearchTermPredictionResult
     }
     public SearchTermPredictionResult setTerm(String term)
     {
-        this.term = term;;
+        this.term = term;
         return this;
     }
     public SearchTermPredictionResult setRank(Integer rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
     public SearchTermPredictionResult setExpectedResultTypes(ExpectedSearchTermResult... expectedResultTypes)
     {
-        this.expectedResultTypes = expectedResultTypes;;
+        this.expectedResultTypes = expectedResultTypes;
         return this;
     }
     public SearchTermPredictionResult addToExpectedResultTypes(ExpectedSearchTermResult expectedResultType)
@@ -85,12 +85,12 @@ public class SearchTermPredictionResult
     }
     public SearchTermPredictionResult setType(SearchTermPredictionResultPredictionType type)
     {
-        this.type = type;;
+        this.type = type;
         return this;
     }
     public SearchTermPredictionResult setCorrectedWordsMask(Boolean... correctedWordsMask)
     {
-        this.correctedWordsMask = correctedWordsMask;;
+        this.correctedWordsMask = correctedWordsMask;
         return this;
     }
     public SearchTermPredictionResult addToCorrectedWordsMask(Boolean correctedWordsMask)

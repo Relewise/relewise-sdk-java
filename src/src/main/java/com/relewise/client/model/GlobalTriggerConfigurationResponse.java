@@ -42,13 +42,13 @@ public class GlobalTriggerConfigurationResponse extends TimedResponse
     }
     public GlobalTriggerConfigurationResponse setConfiguration(GlobalTriggerConfiguration configuration)
     {
-        this.configuration = configuration;;
+        this.configuration = configuration;
         return this;
     }
     @Override
     public GlobalTriggerConfigurationResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

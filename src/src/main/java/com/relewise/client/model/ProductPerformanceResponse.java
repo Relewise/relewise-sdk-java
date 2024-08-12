@@ -52,7 +52,7 @@ public class ProductPerformanceResponse extends TimedResponse
     }
     public ProductPerformanceResponse setResults(ProductPerformanceResult... results)
     {
-        this.results = results;;
+        this.results = results;
         return this;
     }
     public ProductPerformanceResponse addToResults(ProductPerformanceResult result)
@@ -71,18 +71,18 @@ public class ProductPerformanceResponse extends TimedResponse
     }
     public ProductPerformanceResponse setTotalNumberOfResults(Integer totalNumberOfResults)
     {
-        this.totalNumberOfResults = totalNumberOfResults;;
+        this.totalNumberOfResults = totalNumberOfResults;
         return this;
     }
     public ProductPerformanceResponse setRemainingNumberOfResults(Integer remainingNumberOfResults)
     {
-        this.remainingNumberOfResults = remainingNumberOfResults;;
+        this.remainingNumberOfResults = remainingNumberOfResults;
         return this;
     }
     @Override
     public ProductPerformanceResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

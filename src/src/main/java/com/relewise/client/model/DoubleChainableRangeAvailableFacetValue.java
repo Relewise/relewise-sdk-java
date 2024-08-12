@@ -52,17 +52,17 @@ public class DoubleChainableRangeAvailableFacetValue
     }
     public DoubleChainableRangeAvailableFacetValue setValue(DoubleChainableRange value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     public DoubleChainableRangeAvailableFacetValue setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     public DoubleChainableRangeAvailableFacetValue setSelected(Boolean selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
 }

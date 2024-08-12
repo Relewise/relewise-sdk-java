@@ -62,7 +62,7 @@ public abstract class DoubleValueFacetResult extends DoubleDoubleValueFacetResul
     @Override
     public DoubleValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

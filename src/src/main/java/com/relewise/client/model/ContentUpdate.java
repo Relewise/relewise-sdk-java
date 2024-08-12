@@ -62,12 +62,12 @@ public class ContentUpdate extends Trackable
     }
     public ContentUpdate setContent(Content content)
     {
-        this.content = content;;
+        this.content = content;
         return this;
     }
     public ContentUpdate setKind(ContentUpdateUpdateKind kind)
     {
-        this.kind = kind;;
+        this.kind = kind;
         return this;
     }
 }

@@ -45,12 +45,12 @@ public abstract class RedirectRuleSaveSearchRulesRequest extends LicensedRequest
     }
     public RedirectRuleSaveSearchRulesRequest setRules(RedirectRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public RedirectRuleSaveSearchRulesRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

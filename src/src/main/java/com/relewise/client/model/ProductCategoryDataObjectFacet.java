@@ -42,7 +42,7 @@ public class ProductCategoryDataObjectFacet extends DataObjectFacet
     @Override
     public ProductCategoryDataObjectFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
@@ -63,19 +63,19 @@ public class ProductCategoryDataObjectFacet extends DataObjectFacet
     @Override
     public ProductCategoryDataObjectFacet setFilter(DataObjectFilter filter)
     {
-        this.filter = filter;;
+        this.filter = filter;
         return this;
     }
     @Override
     public ProductCategoryDataObjectFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public ProductCategoryDataObjectFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

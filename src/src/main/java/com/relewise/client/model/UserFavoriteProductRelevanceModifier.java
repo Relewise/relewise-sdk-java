@@ -78,28 +78,28 @@ public class UserFavoriteProductRelevanceModifier extends RelevanceModifier impl
     }
     public UserFavoriteProductRelevanceModifier setSinceMinutesAgo(Integer sinceMinutesAgo)
     {
-        this.sinceMinutesAgo = sinceMinutesAgo;;
+        this.sinceMinutesAgo = sinceMinutesAgo;
         return this;
     }
     public UserFavoriteProductRelevanceModifier setNumberOfPurchasesWeight(Double numberOfPurchasesWeight)
     {
-        this.numberOfPurchasesWeight = numberOfPurchasesWeight;;
+        this.numberOfPurchasesWeight = numberOfPurchasesWeight;
         return this;
     }
     public UserFavoriteProductRelevanceModifier setMostRecentPurchaseWeight(Double mostRecentPurchaseWeight)
     {
-        this.mostRecentPurchaseWeight = mostRecentPurchaseWeight;;
+        this.mostRecentPurchaseWeight = mostRecentPurchaseWeight;
         return this;
     }
     public UserFavoriteProductRelevanceModifier setIfNotPurchasedBaseWeight(Double ifNotPurchasedBaseWeight)
     {
-        this.ifNotPurchasedBaseWeight = ifNotPurchasedBaseWeight;;
+        this.ifNotPurchasedBaseWeight = ifNotPurchasedBaseWeight;
         return this;
     }
     @Override
     public UserFavoriteProductRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

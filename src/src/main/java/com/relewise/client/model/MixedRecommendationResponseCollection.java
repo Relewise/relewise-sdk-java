@@ -46,7 +46,7 @@ public class MixedRecommendationResponseCollection extends TimedResponse
     }
     public MixedRecommendationResponseCollection setResponses(RecommendationResponse... responses)
     {
-        this.responses = responses;;
+        this.responses = responses;
         return this;
     }
     public MixedRecommendationResponseCollection addToResponses(RecommendationResponse response)
@@ -66,7 +66,7 @@ public class MixedRecommendationResponseCollection extends TimedResponse
     @Override
     public MixedRecommendationResponseCollection setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

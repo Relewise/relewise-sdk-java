@@ -52,12 +52,12 @@ public class BrandView extends Trackable implements IUserIdentifier
     }
     public BrandView setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public BrandView setBrand(Brand brand)
     {
-        this.brand = brand;;
+        this.brand = brand;
         return this;
     }
 }

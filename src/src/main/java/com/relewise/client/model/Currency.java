@@ -41,7 +41,7 @@ public class Currency
     }
     public Currency setValue(String value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
 }

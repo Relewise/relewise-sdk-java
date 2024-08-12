@@ -52,12 +52,12 @@ public class SaveMerchandisingRuleRequest extends LicensedRequest
     }
     public SaveMerchandisingRuleRequest setRule(MerchandisingRule rule)
     {
-        this.rule = rule;;
+        this.rule = rule;
         return this;
     }
     public SaveMerchandisingRuleRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

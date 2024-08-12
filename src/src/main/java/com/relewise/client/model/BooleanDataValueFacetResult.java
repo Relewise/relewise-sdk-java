@@ -41,12 +41,12 @@ public abstract class BooleanDataValueFacetResult extends BooleanValueFacetResul
     }
     public BooleanDataValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public BooleanDataValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -82,7 +82,7 @@ public abstract class BooleanDataValueFacetResult extends BooleanValueFacetResul
     @Override
     public BooleanDataValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

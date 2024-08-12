@@ -62,7 +62,7 @@ public class ContentCategoryHasParentFilter extends HasParentCategoryFilter impl
     @Override
     public ContentCategoryHasParentFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

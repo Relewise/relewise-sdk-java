@@ -45,13 +45,13 @@ public class ProductCategoryDataDoubleValueFacetResult extends DoubleProductCate
     @Override
     public ProductCategoryDataDoubleValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ProductCategoryDataDoubleValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -87,7 +87,7 @@ public class ProductCategoryDataDoubleValueFacetResult extends DoubleProductCate
     @Override
     public ProductCategoryDataDoubleValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

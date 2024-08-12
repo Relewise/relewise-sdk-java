@@ -42,13 +42,13 @@ public class ProductCategory extends Category
     @Override
     public ProductCategory setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public ProductCategory setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     @Override
@@ -93,7 +93,7 @@ public class ProductCategory extends Category
     @Override
     public ProductCategory setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

@@ -36,7 +36,7 @@ public class FacetSettings
     }
     public FacetSettings setAlwaysIncludeSelectedInAvailable(Boolean alwaysIncludeSelectedInAvailable)
     {
-        this.alwaysIncludeSelectedInAvailable = alwaysIncludeSelectedInAvailable;;
+        this.alwaysIncludeSelectedInAvailable = alwaysIncludeSelectedInAvailable;
         return this;
     }
 }

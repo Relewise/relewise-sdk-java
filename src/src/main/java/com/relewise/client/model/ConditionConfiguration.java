@@ -51,22 +51,22 @@ public class ConditionConfiguration
     }
     public ConditionConfiguration setUser(UserConditionConfiguration user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public ConditionConfiguration setInput(InputConditionConfiguration input)
     {
-        this.input = input;;
+        this.input = input;
         return this;
     }
     public ConditionConfiguration setTarget(TargetConditionConfiguration target)
     {
-        this.target = target;;
+        this.target = target;
         return this;
     }
     public ConditionConfiguration setContext(ContextConditionConfiguration context)
     {
-        this.context = context;;
+        this.context = context;
         return this;
     }
 }

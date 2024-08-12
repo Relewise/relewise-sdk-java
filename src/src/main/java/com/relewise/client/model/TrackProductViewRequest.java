@@ -46,7 +46,7 @@ public class TrackProductViewRequest extends TrackingRequest
     }
     public TrackProductViewRequest setProductView(ProductView productView)
     {
-        this.productView = productView;;
+        this.productView = productView;
         return this;
     }
 }

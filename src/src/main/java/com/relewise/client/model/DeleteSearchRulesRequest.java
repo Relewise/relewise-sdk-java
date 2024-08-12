@@ -45,7 +45,7 @@ public abstract class DeleteSearchRulesRequest extends LicensedRequest
     }
     public DeleteSearchRulesRequest setIds(UUID... ids)
     {
-        this.ids = ids;;
+        this.ids = ids;
         return this;
     }
     public DeleteSearchRulesRequest addToIds(UUID id)
@@ -64,7 +64,7 @@ public abstract class DeleteSearchRulesRequest extends LicensedRequest
     }
     public DeleteSearchRulesRequest setDeletedBy(String deletedBy)
     {
-        this.deletedBy = deletedBy;;
+        this.deletedBy = deletedBy;
         return this;
     }
 }

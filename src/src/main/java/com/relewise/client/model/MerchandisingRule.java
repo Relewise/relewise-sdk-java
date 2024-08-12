@@ -100,62 +100,62 @@ public abstract class MerchandisingRule
     }
     public MerchandisingRule setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public MerchandisingRule setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     public MerchandisingRule setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     public MerchandisingRule setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     public MerchandisingRule setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     public MerchandisingRule setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     public MerchandisingRule setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     public MerchandisingRule setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     public MerchandisingRule setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     public MerchandisingRule setConditions(ConditionConfiguration conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
     public MerchandisingRule setRequest(RequestConfiguration request)
     {
-        this.request = request;;
+        this.request = request;
         return this;
     }
     public MerchandisingRule setPriority(Double priority)
     {
-        this.priority = priority;;
+        this.priority = priority;
         return this;
     }
     public MerchandisingRule addToSettings(String key, String value)
@@ -169,7 +169,7 @@ public abstract class MerchandisingRule
     }
     public MerchandisingRule setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

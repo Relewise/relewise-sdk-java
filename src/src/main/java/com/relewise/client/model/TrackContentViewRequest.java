@@ -46,7 +46,7 @@ public class TrackContentViewRequest extends TrackingRequest
     }
     public TrackContentViewRequest setContentView(ContentView contentView)
     {
-        this.contentView = contentView;;
+        this.contentView = contentView;
         return this;
     }
 }

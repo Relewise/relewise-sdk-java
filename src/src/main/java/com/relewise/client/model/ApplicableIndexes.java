@@ -41,7 +41,7 @@ public class ApplicableIndexes
     }
     public ApplicableIndexes setIndexes(String... indexes)
     {
-        this.indexes = indexes;;
+        this.indexes = indexes;
         return this;
     }
     public ApplicableIndexes addToIndexes(String indexe)

@@ -41,7 +41,7 @@ public class ApplicableLanguages
     }
     public ApplicableLanguages setLanguages(Language... languages)
     {
-        this.languages = languages;;
+        this.languages = languages;
         return this;
     }
     public ApplicableLanguages addToLanguages(Language language)

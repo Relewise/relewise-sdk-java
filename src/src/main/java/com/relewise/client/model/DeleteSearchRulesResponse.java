@@ -38,7 +38,7 @@ public class DeleteSearchRulesResponse extends TimedResponse
     @Override
     public DeleteSearchRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

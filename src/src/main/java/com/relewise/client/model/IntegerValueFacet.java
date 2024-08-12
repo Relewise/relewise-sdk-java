@@ -51,13 +51,13 @@ public abstract class IntegerValueFacet extends Facet
     @Override
     public IntegerValueFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public IntegerValueFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

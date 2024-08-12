@@ -38,13 +38,13 @@ public class ContentCategorySearchResponse extends PaginatedSearchResponse
     @Override
     public ContentCategorySearchResponse setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     @Override
     public ContentCategorySearchResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

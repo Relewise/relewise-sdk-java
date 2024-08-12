@@ -46,7 +46,7 @@ public class SearchIndexRequest extends LicensedRequest
     }
     public SearchIndexRequest setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
 }

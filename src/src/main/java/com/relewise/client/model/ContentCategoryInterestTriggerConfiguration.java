@@ -73,77 +73,77 @@ public class ContentCategoryInterestTriggerConfiguration extends ContentCategory
     }
     public ContentCategoryInterestTriggerConfiguration setCategoryViews(IntegerRange categoryViews)
     {
-        this.categoryViews = categoryViews;;
+        this.categoryViews = categoryViews;
         return this;
     }
     public ContentCategoryInterestTriggerConfiguration setContentViews(IntegerRange contentViews)
     {
-        this.contentViews = contentViews;;
+        this.contentViews = contentViews;
         return this;
     }
     public ContentCategoryInterestTriggerConfiguration setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public ContentCategoryInterestTriggerConfiguration setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public ContentCategoryInterestTriggerConfiguration setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     @Override
     public ContentCategoryInterestTriggerConfiguration setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     @Override
     public ContentCategoryInterestTriggerConfiguration setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     @Override
     public ContentCategoryInterestTriggerConfiguration setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     @Override
     public ContentCategoryInterestTriggerConfiguration setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public ContentCategoryInterestTriggerConfiguration setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public ContentCategoryInterestTriggerConfiguration setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public ContentCategoryInterestTriggerConfiguration setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public ContentCategoryInterestTriggerConfiguration setWithinTimeSpanMinutes(Integer withinTimeSpanMinutes)
     {
-        this.withinTimeSpanMinutes = withinTimeSpanMinutes;;
+        this.withinTimeSpanMinutes = withinTimeSpanMinutes;
         return this;
     }
     public ContentCategoryInterestTriggerConfiguration addToSettings(String key, String value)
@@ -158,13 +158,13 @@ public class ContentCategoryInterestTriggerConfiguration extends ContentCategory
     @Override
     public ContentCategoryInterestTriggerConfiguration setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public ContentCategoryInterestTriggerConfiguration setUserConditions(UserConditionCollection userConditions)
     {
-        this.userConditions = userConditions;;
+        this.userConditions = userConditions;
         return this;
     }
 }

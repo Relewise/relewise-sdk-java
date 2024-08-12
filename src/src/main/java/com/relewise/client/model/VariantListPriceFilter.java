@@ -65,18 +65,18 @@ public class VariantListPriceFilter extends Filter implements IVariantFilter
     }
     public VariantListPriceFilter setRange(DoubleRange range)
     {
-        this.range = range;;
+        this.range = range;
         return this;
     }
     public VariantListPriceFilter setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     @Override
     public VariantListPriceFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

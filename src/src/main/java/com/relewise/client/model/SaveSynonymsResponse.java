@@ -46,7 +46,7 @@ public class SaveSynonymsResponse extends TimedResponse
     }
     public SaveSynonymsResponse setValues(Synonym... values)
     {
-        this.values = values;;
+        this.values = values;
         return this;
     }
     public SaveSynonymsResponse addToValues(Synonym value)
@@ -66,7 +66,7 @@ public class SaveSynonymsResponse extends TimedResponse
     @Override
     public SaveSynonymsResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

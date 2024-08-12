@@ -66,32 +66,32 @@ public class OverriddenSelectedVariantPropertiesSettings
     }
     public OverriddenSelectedVariantPropertiesSettings setDisplayName(@Nullable Boolean displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public OverriddenSelectedVariantPropertiesSettings setPricing(@Nullable Boolean pricing)
     {
-        this.pricing = pricing;;
+        this.pricing = pricing;
         return this;
     }
     public OverriddenSelectedVariantPropertiesSettings setAllSpecifications(@Nullable Boolean allSpecifications)
     {
-        this.allSpecifications = allSpecifications;;
+        this.allSpecifications = allSpecifications;
         return this;
     }
     public OverriddenSelectedVariantPropertiesSettings setAssortments(@Nullable Boolean assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public OverriddenSelectedVariantPropertiesSettings setAllData(@Nullable Boolean allData)
     {
-        this.allData = allData;;
+        this.allData = allData;
         return this;
     }
     public OverriddenSelectedVariantPropertiesSettings setDataKeys(String... dataKeys)
     {
-        this.dataKeys = dataKeys;;
+        this.dataKeys = dataKeys;
         return this;
     }
     public OverriddenSelectedVariantPropertiesSettings addToDataKeys(String dataKey)
@@ -110,7 +110,7 @@ public class OverriddenSelectedVariantPropertiesSettings
     }
     public OverriddenSelectedVariantPropertiesSettings setSpecificationKeys(String... specificationKeys)
     {
-        this.specificationKeys = specificationKeys;;
+        this.specificationKeys = specificationKeys;
         return this;
     }
     public OverriddenSelectedVariantPropertiesSettings addToSpecificationKeys(String specificationKey)

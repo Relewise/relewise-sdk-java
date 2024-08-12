@@ -68,7 +68,7 @@ public abstract class FacetResult
     }
     public FacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

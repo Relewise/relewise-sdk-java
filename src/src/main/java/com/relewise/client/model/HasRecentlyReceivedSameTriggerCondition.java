@@ -47,13 +47,13 @@ public class HasRecentlyReceivedSameTriggerCondition extends UserCondition
     }
     public HasRecentlyReceivedSameTriggerCondition setWithinMinutes(Integer withinMinutes)
     {
-        this.withinMinutes = withinMinutes;;
+        this.withinMinutes = withinMinutes;
         return this;
     }
     @Override
     public HasRecentlyReceivedSameTriggerCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

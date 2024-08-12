@@ -57,13 +57,13 @@ public class ProductRecentlyPurchasedByUserFilter extends Filter implements IPro
     }
     public ProductRecentlyPurchasedByUserFilter setSinceUtc(OffsetDateTime sinceUtc)
     {
-        this.sinceUtc = sinceUtc;;
+        this.sinceUtc = sinceUtc;
         return this;
     }
     @Override
     public ProductRecentlyPurchasedByUserFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

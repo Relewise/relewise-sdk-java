@@ -47,7 +47,7 @@ public class CategoryFacet extends StringValueFacet
     }
     public CategoryFacet setCategorySelectionStrategy(CategorySelectionStrategy categorySelectionStrategy)
     {
-        this.categorySelectionStrategy = categorySelectionStrategy;;
+        this.categorySelectionStrategy = categorySelectionStrategy;
         return this;
     }
     @Override
@@ -68,13 +68,13 @@ public class CategoryFacet extends StringValueFacet
     @Override
     public CategoryFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public CategoryFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

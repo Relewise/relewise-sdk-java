@@ -101,27 +101,27 @@ public class ProductResult
     }
     public ProductResult setProductId(String productId)
     {
-        this.productId = productId;;
+        this.productId = productId;
         return this;
     }
     public ProductResult setDisplayName(String displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public ProductResult setVariant(VariantResult variant)
     {
-        this.variant = variant;;
+        this.variant = variant;
         return this;
     }
     public ProductResult setRank(Integer rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
     public ProductResult setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public ProductResult addToAssortments(Integer assortment)
@@ -149,12 +149,12 @@ public class ProductResult
     }
     public ProductResult setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public ProductResult setCategoryPaths(CategoryPathResult... categoryPaths)
     {
-        this.categoryPaths = categoryPaths;;
+        this.categoryPaths = categoryPaths;
         return this;
     }
     public ProductResult addToCategoryPaths(CategoryPathResult categoryPath)
@@ -173,32 +173,32 @@ public class ProductResult
     }
     public ProductResult setPurchasedByUser(PurchasedByUserInfo purchasedByUser)
     {
-        this.purchasedByUser = purchasedByUser;;
+        this.purchasedByUser = purchasedByUser;
         return this;
     }
     public ProductResult setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
     public ProductResult setListPrice(@Nullable Double listPrice)
     {
-        this.listPrice = listPrice;;
+        this.listPrice = listPrice;
         return this;
     }
     public ProductResult setSalesPrice(@Nullable Double salesPrice)
     {
-        this.salesPrice = salesPrice;;
+        this.salesPrice = salesPrice;
         return this;
     }
     public ProductResult setBrand(BrandResult brand)
     {
-        this.brand = brand;;
+        this.brand = brand;
         return this;
     }
     public ProductResult setAllVariants(VariantResult... allVariants)
     {
-        this.allVariants = allVariants;;
+        this.allVariants = allVariants;
         return this;
     }
     public ProductResult addToAllVariants(VariantResult allVariant)

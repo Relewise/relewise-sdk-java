@@ -46,7 +46,7 @@ public class DataDoubleSelector extends ValueSelector
     }
     public DataDoubleSelector setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
 }

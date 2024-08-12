@@ -51,22 +51,22 @@ public abstract class CategoryAdministrativeAction extends Trackable
     }
     public CategoryAdministrativeAction setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public CategoryAdministrativeAction setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public CategoryAdministrativeAction setKind(CategoryAdministrativeActionUpdateKind kind)
     {
-        this.kind = kind;;
+        this.kind = kind;
         return this;
     }
     public CategoryAdministrativeAction setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

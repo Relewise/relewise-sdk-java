@@ -76,12 +76,12 @@ public class VariantResult
     }
     public VariantResult setVariantId(String variantId)
     {
-        this.variantId = variantId;;
+        this.variantId = variantId;
         return this;
     }
     public VariantResult setDisplayName(String displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public VariantResult addToSpecification(String key, String value)
@@ -95,12 +95,12 @@ public class VariantResult
     }
     public VariantResult setSpecification(HashMap<String, String> specification)
     {
-        this.specification = specification;;
+        this.specification = specification;
         return this;
     }
     public VariantResult setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public VariantResult addToAssortments(Integer assortment)
@@ -128,22 +128,22 @@ public class VariantResult
     }
     public VariantResult setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public VariantResult setRank(Integer rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
     public VariantResult setListPrice(@Nullable Double listPrice)
     {
-        this.listPrice = listPrice;;
+        this.listPrice = listPrice;
         return this;
     }
     public VariantResult setSalesPrice(@Nullable Double salesPrice)
     {
-        this.salesPrice = salesPrice;;
+        this.salesPrice = salesPrice;
         return this;
     }
 }

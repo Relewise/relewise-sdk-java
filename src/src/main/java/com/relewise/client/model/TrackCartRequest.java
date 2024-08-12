@@ -46,7 +46,7 @@ public class TrackCartRequest extends TrackingRequest
     }
     public TrackCartRequest setCart(Cart cart)
     {
-        this.cart = cart;;
+        this.cart = cart;
         return this;
     }
 }

@@ -45,13 +45,13 @@ public class ProductCategoryDataDoubleRangesFacetResult extends DoubleProductCat
     @Override
     public ProductCategoryDataDoubleRangesFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ProductCategoryDataDoubleRangesFacetResult setExpandedRangeSize(@Nullable Double expandedRangeSize)
     {
-        this.expandedRangeSize = expandedRangeSize;;
+        this.expandedRangeSize = expandedRangeSize;
         return this;
     }
     @Override
@@ -87,7 +87,7 @@ public class ProductCategoryDataDoubleRangesFacetResult extends DoubleProductCat
     @Override
     public ProductCategoryDataDoubleRangesFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

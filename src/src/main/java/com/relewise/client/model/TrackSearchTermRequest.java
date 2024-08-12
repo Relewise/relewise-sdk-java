@@ -46,7 +46,7 @@ public class TrackSearchTermRequest extends TrackingRequest
     }
     public TrackSearchTermRequest setSearchTerm(SearchTerm searchTerm)
     {
-        this.searchTerm = searchTerm;;
+        this.searchTerm = searchTerm;
         return this;
     }
 }

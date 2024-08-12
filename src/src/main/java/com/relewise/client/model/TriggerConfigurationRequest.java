@@ -60,12 +60,12 @@ public class TriggerConfigurationRequest extends LicensedRequest
     }
     public TriggerConfigurationRequest setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public TriggerConfigurationRequest setType(@Nullable Integer type)
     {
-        this.type = type;;
+        this.type = type;
         return this;
     }
 }

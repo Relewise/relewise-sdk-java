@@ -46,12 +46,12 @@ public class CategoryNameAndIdResult
     }
     public CategoryNameAndIdResult setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public CategoryNameAndIdResult setDisplayName(String displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
 }

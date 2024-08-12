@@ -36,7 +36,7 @@ public class Statistics
     }
     public Statistics setServerTimeInMs(Double serverTimeInMs)
     {
-        this.serverTimeInMs = serverTimeInMs;;
+        this.serverTimeInMs = serverTimeInMs;
         return this;
     }
 }

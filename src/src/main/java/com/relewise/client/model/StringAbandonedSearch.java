@@ -36,19 +36,19 @@ public abstract class StringAbandonedSearch extends AbandonedSearch
     }
     public StringAbandonedSearch setTopResults(String... topResults)
     {
-        this.topResults = topResults;;
+        this.topResults = topResults;
         return this;
     }
     @Override
     public StringAbandonedSearch setLoweredSearchTerm(String loweredSearchTerm)
     {
-        this.loweredSearchTerm = loweredSearchTerm;;
+        this.loweredSearchTerm = loweredSearchTerm;
         return this;
     }
     @Override
     public StringAbandonedSearch setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
 }

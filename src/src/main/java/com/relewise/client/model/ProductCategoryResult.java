@@ -43,31 +43,31 @@ public class ProductCategoryResult extends CategoryResult
     @Override
     public ProductCategoryResult setCategoryId(String categoryId)
     {
-        this.categoryId = categoryId;;
+        this.categoryId = categoryId;
         return this;
     }
     @Override
     public ProductCategoryResult setDisplayName(String displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     @Override
     public ProductCategoryResult setRank(Integer rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
     @Override
     public ProductCategoryResult setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
     @Override
     public ProductCategoryResult setPaths(CategoryPathResult... paths)
     {
-        this.paths = paths;;
+        this.paths = paths;
         return this;
     }
     public ProductCategoryResult addToPaths(CategoryPathResult path)
@@ -87,7 +87,7 @@ public class ProductCategoryResult extends CategoryResult
     @Override
     public ProductCategoryResult setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public ProductCategoryResult addToAssortments(Integer assortment)
@@ -116,7 +116,7 @@ public class ProductCategoryResult extends CategoryResult
     @Override
     public ProductCategoryResult setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

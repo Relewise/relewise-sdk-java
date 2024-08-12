@@ -43,7 +43,7 @@ public class DeletePredictionRulesRequest extends DeleteSearchRulesRequest
     @Override
     public DeletePredictionRulesRequest setIds(UUID... ids)
     {
-        this.ids = ids;;
+        this.ids = ids;
         return this;
     }
     public DeletePredictionRulesRequest addToIds(UUID id)
@@ -63,7 +63,7 @@ public class DeletePredictionRulesRequest extends DeleteSearchRulesRequest
     @Override
     public DeletePredictionRulesRequest setDeletedBy(String deletedBy)
     {
-        this.deletedBy = deletedBy;;
+        this.deletedBy = deletedBy;
         return this;
     }
 }

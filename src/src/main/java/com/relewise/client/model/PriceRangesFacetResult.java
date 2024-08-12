@@ -65,7 +65,7 @@ public class PriceRangesFacetResult extends FacetResult
     }
     public PriceRangesFacetResult setExpandedRangeSize(@Nullable Double expandedRangeSize)
     {
-        this.expandedRangeSize = expandedRangeSize;;
+        this.expandedRangeSize = expandedRangeSize;
         return this;
     }
     public PriceRangesFacetResult setSelected(DoubleChainableRange... selected)
@@ -98,13 +98,13 @@ public class PriceRangesFacetResult extends FacetResult
     }
     public PriceRangesFacetResult setPriceSelectionStrategy(PriceSelectionStrategy priceSelectionStrategy)
     {
-        this.priceSelectionStrategy = priceSelectionStrategy;;
+        this.priceSelectionStrategy = priceSelectionStrategy;
         return this;
     }
     @Override
     public PriceRangesFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

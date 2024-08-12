@@ -41,12 +41,12 @@ public class DataValue
     }
     public DataValue setType(DataValueDataValueTypes type)
     {
-        this.type = type;;
+        this.type = type;
         return this;
     }
     public DataValue setValue(Object value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
 }

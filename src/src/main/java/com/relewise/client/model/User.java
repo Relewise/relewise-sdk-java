@@ -76,17 +76,17 @@ public class User
     }
     public User setAuthenticatedId(String authenticatedId)
     {
-        this.authenticatedId = authenticatedId;;
+        this.authenticatedId = authenticatedId;
         return this;
     }
     public User setTemporaryId(String temporaryId)
     {
-        this.temporaryId = temporaryId;;
+        this.temporaryId = temporaryId;
         return this;
     }
     public User setEmail(String email)
     {
-        this.email = email;;
+        this.email = email;
         return this;
     }
     public User addToClassifications(String key, String value)
@@ -100,7 +100,7 @@ public class User
     }
     public User setClassifications(HashMap<String, String> classifications)
     {
-        this.classifications = classifications;;
+        this.classifications = classifications;
         return this;
     }
     public User addToIdentifiers(String key, String value)
@@ -114,7 +114,7 @@ public class User
     }
     public User setIdentifiers(HashMap<String, String> identifiers)
     {
-        this.identifiers = identifiers;;
+        this.identifiers = identifiers;
         return this;
     }
     public User addToData(String key, DataValue value)
@@ -128,12 +128,12 @@ public class User
     }
     public User setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public User setFingerprint(String fingerprint)
     {
-        this.fingerprint = fingerprint;;
+        this.fingerprint = fingerprint;
         return this;
     }
 }

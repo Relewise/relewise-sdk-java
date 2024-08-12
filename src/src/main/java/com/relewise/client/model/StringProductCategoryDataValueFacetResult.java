@@ -32,13 +32,13 @@ public abstract class StringProductCategoryDataValueFacetResult extends StringDa
     @Override
     public StringProductCategoryDataValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public StringProductCategoryDataValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -74,7 +74,7 @@ public abstract class StringProductCategoryDataValueFacetResult extends StringDa
     @Override
     public StringProductCategoryDataValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

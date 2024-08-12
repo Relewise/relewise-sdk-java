@@ -41,7 +41,7 @@ public class RecommendPopularSearchTermSettings
     }
     public RecommendPopularSearchTermSettings setTargetEntityTypes(EntityType... targetEntityTypes)
     {
-        this.targetEntityTypes = targetEntityTypes;;
+        this.targetEntityTypes = targetEntityTypes;
         return this;
     }
     public RecommendPopularSearchTermSettings addToTargetEntityTypes(EntityType targetEntityType)
@@ -60,7 +60,7 @@ public class RecommendPopularSearchTermSettings
     }
     public RecommendPopularSearchTermSettings setNumberOfRecommendations(Integer numberOfRecommendations)
     {
-        this.numberOfRecommendations = numberOfRecommendations;;
+        this.numberOfRecommendations = numberOfRecommendations;
         return this;
     }
 }

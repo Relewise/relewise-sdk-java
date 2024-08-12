@@ -36,7 +36,7 @@ public abstract class AssortmentFacet extends IntegerValueFacet
     }
     public AssortmentFacet setAssortmentFilterType(AssortmentFilterType assortmentFilterType)
     {
-        this.assortmentFilterType = assortmentFilterType;;
+        this.assortmentFilterType = assortmentFilterType;
         return this;
     }
     @Override
@@ -57,13 +57,13 @@ public abstract class AssortmentFacet extends IntegerValueFacet
     @Override
     public AssortmentFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public AssortmentFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

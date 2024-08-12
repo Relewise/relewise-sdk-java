@@ -41,7 +41,7 @@ public class Language
     }
     public Language setValue(String value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
 }

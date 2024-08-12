@@ -42,7 +42,7 @@ public class SearchResponseCollection extends SearchResponse
     }
     public SearchResponseCollection setResponses(SearchResponse... responses)
     {
-        this.responses = responses;;
+        this.responses = responses;
         return this;
     }
     public SearchResponseCollection addToResponses(SearchResponse response)
@@ -62,7 +62,7 @@ public class SearchResponseCollection extends SearchResponse
     @Override
     public SearchResponseCollection setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

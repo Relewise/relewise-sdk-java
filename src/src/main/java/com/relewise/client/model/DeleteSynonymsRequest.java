@@ -52,7 +52,7 @@ public class DeleteSynonymsRequest extends LicensedRequest
     }
     public DeleteSynonymsRequest setIds(UUID... ids)
     {
-        this.ids = ids;;
+        this.ids = ids;
         return this;
     }
     public DeleteSynonymsRequest addToIds(UUID id)
@@ -71,7 +71,7 @@ public class DeleteSynonymsRequest extends LicensedRequest
     }
     public DeleteSynonymsRequest setDeletedBy(String deletedBy)
     {
-        this.deletedBy = deletedBy;;
+        this.deletedBy = deletedBy;
         return this;
     }
 }

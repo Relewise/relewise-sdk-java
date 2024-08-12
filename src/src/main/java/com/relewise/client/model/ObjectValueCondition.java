@@ -53,17 +53,17 @@ public abstract class ObjectValueCondition
     }
     public ObjectValueCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     public ObjectValueCondition setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public ObjectValueCondition setObjectPath(String... objectPath)
     {
-        this.objectPath = objectPath;;
+        this.objectPath = objectPath;
         return this;
     }
     public ObjectValueCondition addToObjectPath(String objectPath)

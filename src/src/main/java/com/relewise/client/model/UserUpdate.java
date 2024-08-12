@@ -61,12 +61,12 @@ public class UserUpdate extends Trackable
     }
     public UserUpdate setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public UserUpdate setKind(UserUpdateUpdateKind kind)
     {
-        this.kind = kind;;
+        this.kind = kind;
         return this;
     }
 }

@@ -140,22 +140,22 @@ public class ProductResultDetails
     }
     public ProductResultDetails setProductId(String productId)
     {
-        this.productId = productId;;
+        this.productId = productId;
         return this;
     }
     public ProductResultDetails setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public ProductResultDetails setVariant(VariantResult variant)
     {
-        this.variant = variant;;
+        this.variant = variant;
         return this;
     }
     public ProductResultDetails setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public ProductResultDetails addToAssortments(Integer assortment)
@@ -183,12 +183,12 @@ public class ProductResultDetails
     }
     public ProductResultDetails setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public ProductResultDetails setCategoryPaths(CategoryPathResultDetails... categoryPaths)
     {
-        this.categoryPaths = categoryPaths;;
+        this.categoryPaths = categoryPaths;
         return this;
     }
     public ProductResultDetails addToCategoryPaths(CategoryPathResultDetails categoryPath)
@@ -207,17 +207,17 @@ public class ProductResultDetails
     }
     public ProductResultDetails setPurchasedByUser(PurchasedByUserInfo purchasedByUser)
     {
-        this.purchasedByUser = purchasedByUser;;
+        this.purchasedByUser = purchasedByUser;
         return this;
     }
     public ProductResultDetails setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
     public ProductResultDetails setAllVariants(VariantResultDetails... allVariants)
     {
-        this.allVariants = allVariants;;
+        this.allVariants = allVariants;
         return this;
     }
     public ProductResultDetails addToAllVariants(VariantResultDetails allVariant)
@@ -236,62 +236,62 @@ public class ProductResultDetails
     }
     public ProductResultDetails setCreatedUtc(OffsetDateTime createdUtc)
     {
-        this.createdUtc = createdUtc;;
+        this.createdUtc = createdUtc;
         return this;
     }
     public ProductResultDetails setLastPurchasedUtc(@Nullable OffsetDateTime lastPurchasedUtc)
     {
-        this.lastPurchasedUtc = lastPurchasedUtc;;
+        this.lastPurchasedUtc = lastPurchasedUtc;
         return this;
     }
     public ProductResultDetails setLastViewedUtc(@Nullable OffsetDateTime lastViewedUtc)
     {
-        this.lastViewedUtc = lastViewedUtc;;
+        this.lastViewedUtc = lastViewedUtc;
         return this;
     }
     public ProductResultDetails setContainedInTotalNumberOfOrders(Long containedInTotalNumberOfOrders)
     {
-        this.containedInTotalNumberOfOrders = containedInTotalNumberOfOrders;;
+        this.containedInTotalNumberOfOrders = containedInTotalNumberOfOrders;
         return this;
     }
     public ProductResultDetails setViewedTotalNumberOfTimes(Long viewedTotalNumberOfTimes)
     {
-        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;;
+        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;
         return this;
     }
     public ProductResultDetails setPurchasedByDifferentNumberOfUsers(Integer purchasedByDifferentNumberOfUsers)
     {
-        this.purchasedByDifferentNumberOfUsers = purchasedByDifferentNumberOfUsers;;
+        this.purchasedByDifferentNumberOfUsers = purchasedByDifferentNumberOfUsers;
         return this;
     }
     public ProductResultDetails setViewedByDifferentNumberOfUsers(Integer viewedByDifferentNumberOfUsers)
     {
-        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;;
+        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;
         return this;
     }
     public ProductResultDetails setDisabled(Boolean disabled)
     {
-        this.disabled = disabled;;
+        this.disabled = disabled;
         return this;
     }
     public ProductResultDetails setDeleted(Boolean deleted)
     {
-        this.deleted = deleted;;
+        this.deleted = deleted;
         return this;
     }
     public ProductResultDetails setListPrice(MultiCurrency listPrice)
     {
-        this.listPrice = listPrice;;
+        this.listPrice = listPrice;
         return this;
     }
     public ProductResultDetails setSalesPrice(MultiCurrency salesPrice)
     {
-        this.salesPrice = salesPrice;;
+        this.salesPrice = salesPrice;
         return this;
     }
     public ProductResultDetails setBrand(BrandResultDetails brand)
     {
-        this.brand = brand;;
+        this.brand = brand;
         return this;
     }
 }

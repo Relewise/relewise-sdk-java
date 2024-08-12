@@ -57,7 +57,7 @@ public class ProductSearchResponse extends PaginatedSearchResponse
     }
     public ProductSearchResponse setResults(ProductResult... results)
     {
-        this.results = results;;
+        this.results = results;
         return this;
     }
     public ProductSearchResponse addToResults(ProductResult result)
@@ -76,12 +76,12 @@ public class ProductSearchResponse extends PaginatedSearchResponse
     }
     public ProductSearchResponse setFacets(ProductFacetResult facets)
     {
-        this.facets = facets;;
+        this.facets = facets;
         return this;
     }
     public ProductSearchResponse setRecommendations(ProductResult... recommendations)
     {
-        this.recommendations = recommendations;;
+        this.recommendations = recommendations;
         return this;
     }
     public ProductSearchResponse addToRecommendations(ProductResult recommendation)
@@ -100,7 +100,7 @@ public class ProductSearchResponse extends PaginatedSearchResponse
     }
     public ProductSearchResponse setRedirects(RedirectResult... redirects)
     {
-        this.redirects = redirects;;
+        this.redirects = redirects;
         return this;
     }
     public ProductSearchResponse addToRedirects(RedirectResult redirect)
@@ -120,13 +120,13 @@ public class ProductSearchResponse extends PaginatedSearchResponse
     @Override
     public ProductSearchResponse setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     @Override
     public ProductSearchResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

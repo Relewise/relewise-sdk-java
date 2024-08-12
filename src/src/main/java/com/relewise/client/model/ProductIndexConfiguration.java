@@ -61,32 +61,32 @@ public class ProductIndexConfiguration
     }
     public ProductIndexConfiguration setId(FieldIndexConfiguration id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public ProductIndexConfiguration setDisplayName(FieldIndexConfiguration displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public ProductIndexConfiguration setCategory(CategoryIndexConfiguration category)
     {
-        this.category = category;;
+        this.category = category;
         return this;
     }
     public ProductIndexConfiguration setBrand(BrandIndexConfiguration brand)
     {
-        this.brand = brand;;
+        this.brand = brand;
         return this;
     }
     public ProductIndexConfiguration setData(DataIndexConfiguration data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public ProductIndexConfiguration setVariants(VariantIndexConfiguration variants)
     {
-        this.variants = variants;;
+        this.variants = variants;
         return this;
     }
 }

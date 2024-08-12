@@ -42,7 +42,7 @@ public class SaveRedirectRulesResponse extends RedirectRuleSaveSearchRulesRespon
     @Override
     public SaveRedirectRulesResponse setRules(RedirectRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public SaveRedirectRulesResponse addToRules(RedirectRule rule)
@@ -62,7 +62,7 @@ public class SaveRedirectRulesResponse extends RedirectRuleSaveSearchRulesRespon
     @Override
     public SaveRedirectRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

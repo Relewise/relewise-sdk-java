@@ -45,13 +45,13 @@ public class ContentDataBooleanValueFacetResult extends BooleanContentDataValueF
     @Override
     public ContentDataBooleanValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ContentDataBooleanValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -87,7 +87,7 @@ public class ContentDataBooleanValueFacetResult extends BooleanContentDataValueF
     @Override
     public ContentDataBooleanValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

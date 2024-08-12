@@ -63,7 +63,7 @@ public class ProductIdRelevanceModifier extends RelevanceModifier implements IPr
     }
     public ProductIdRelevanceModifier setProductIds(String... productIds)
     {
-        this.productIds = productIds;;
+        this.productIds = productIds;
         return this;
     }
     public ProductIdRelevanceModifier addToProductIds(String productId)
@@ -82,18 +82,18 @@ public class ProductIdRelevanceModifier extends RelevanceModifier implements IPr
     }
     public ProductIdRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
-        this.multiplyWeightBy = multiplyWeightBy;;
+        this.multiplyWeightBy = multiplyWeightBy;
         return this;
     }
     public ProductIdRelevanceModifier setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     @Override
     public ProductIdRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

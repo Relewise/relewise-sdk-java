@@ -45,12 +45,12 @@ public abstract class StemmingRuleSaveSearchRulesRequest extends LicensedRequest
     }
     public StemmingRuleSaveSearchRulesRequest setRules(StemmingRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public StemmingRuleSaveSearchRulesRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

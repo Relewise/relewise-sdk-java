@@ -46,7 +46,7 @@ public abstract class DoubleRangesFacetResult extends FacetResult
     }
     public DoubleRangesFacetResult setExpandedRangeSize(@Nullable Double expandedRangeSize)
     {
-        this.expandedRangeSize = expandedRangeSize;;
+        this.expandedRangeSize = expandedRangeSize;
         return this;
     }
     public DoubleRangesFacetResult setSelected(DoubleChainableRange... selected)
@@ -80,7 +80,7 @@ public abstract class DoubleRangesFacetResult extends FacetResult
     @Override
     public DoubleRangesFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

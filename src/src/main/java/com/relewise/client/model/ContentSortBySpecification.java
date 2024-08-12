@@ -36,7 +36,7 @@ public class ContentSortBySpecification
     }
     public ContentSortBySpecification setValue(ContentSorting value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
 }

@@ -64,22 +64,22 @@ public class ContentAdministrativeAction extends Trackable
     }
     public ContentAdministrativeAction setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public ContentAdministrativeAction setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public ContentAdministrativeAction setKind(ContentAdministrativeActionUpdateKind kind)
     {
-        this.kind = kind;;
+        this.kind = kind;
         return this;
     }
     public ContentAdministrativeAction setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

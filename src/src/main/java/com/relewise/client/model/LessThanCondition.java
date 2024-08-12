@@ -57,13 +57,13 @@ public class LessThanCondition extends ValueCondition
     }
     public LessThanCondition setValue(Double value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     @Override
     public LessThanCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

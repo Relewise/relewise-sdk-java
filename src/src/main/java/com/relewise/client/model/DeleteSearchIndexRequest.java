@@ -52,12 +52,12 @@ public class DeleteSearchIndexRequest extends LicensedRequest
     }
     public DeleteSearchIndexRequest setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public DeleteSearchIndexRequest setDeletedBy(String deletedBy)
     {
-        this.deletedBy = deletedBy;;
+        this.deletedBy = deletedBy;
         return this;
     }
 }

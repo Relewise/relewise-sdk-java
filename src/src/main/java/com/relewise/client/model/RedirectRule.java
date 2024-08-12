@@ -77,12 +77,12 @@ public class RedirectRule extends SearchRule
     }
     public RedirectRule setCondition(SearchTermCondition condition)
     {
-        this.condition = condition;;
+        this.condition = condition;
         return this;
     }
     public RedirectRule setDestination(String destination)
     {
-        this.destination = destination;;
+        this.destination = destination;
         return this;
     }
     public RedirectRule addToData(String key, String value)
@@ -96,67 +96,67 @@ public class RedirectRule extends SearchRule
     }
     public RedirectRule setData(HashMap<String, String> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     @Override
     public RedirectRule setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public RedirectRule setIndexes(ApplicableIndexes indexes)
     {
-        this.indexes = indexes;;
+        this.indexes = indexes;
         return this;
     }
     @Override
     public RedirectRule setLanguages(ApplicableLanguages languages)
     {
-        this.languages = languages;;
+        this.languages = languages;
         return this;
     }
     @Override
     public RedirectRule setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public RedirectRule setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public RedirectRule setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public RedirectRule setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public RedirectRule setApproved(@Nullable OffsetDateTime approved)
     {
-        this.approved = approved;;
+        this.approved = approved;
         return this;
     }
     @Override
     public RedirectRule setApprovedBy(String approvedBy)
     {
-        this.approvedBy = approvedBy;;
+        this.approvedBy = approvedBy;
         return this;
     }
     @Override
     public RedirectRule setIsApproved(Boolean isApproved)
     {
-        this.isApproved = isApproved;;
+        this.isApproved = isApproved;
         return this;
     }
 }

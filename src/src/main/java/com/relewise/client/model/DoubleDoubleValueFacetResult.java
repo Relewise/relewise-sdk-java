@@ -70,7 +70,7 @@ public abstract class DoubleDoubleValueFacetResult extends FacetResult
     @Override
     public DoubleDoubleValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

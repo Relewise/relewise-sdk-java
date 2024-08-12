@@ -52,17 +52,17 @@ public class BooleanAvailableFacetValue
     }
     public BooleanAvailableFacetValue setValue(Boolean value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     public BooleanAvailableFacetValue setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     public BooleanAvailableFacetValue setSelected(Boolean selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
 }

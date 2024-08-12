@@ -42,7 +42,7 @@ public class HasAuthenticatedIdCondition extends UserCondition
     @Override
     public HasAuthenticatedIdCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

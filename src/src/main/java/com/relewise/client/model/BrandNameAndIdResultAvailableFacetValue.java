@@ -52,17 +52,17 @@ public class BrandNameAndIdResultAvailableFacetValue
     }
     public BrandNameAndIdResultAvailableFacetValue setValue(BrandNameAndIdResult value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     public BrandNameAndIdResultAvailableFacetValue setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     public BrandNameAndIdResultAvailableFacetValue setSelected(Boolean selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
 }

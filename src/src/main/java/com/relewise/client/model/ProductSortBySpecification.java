@@ -36,7 +36,7 @@ public class ProductSortBySpecification
     }
     public ProductSortBySpecification setValue(ProductSorting value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
 }

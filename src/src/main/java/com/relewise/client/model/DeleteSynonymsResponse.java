@@ -38,7 +38,7 @@ public class DeleteSynonymsResponse extends TimedResponse
     @Override
     public DeleteSynonymsResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

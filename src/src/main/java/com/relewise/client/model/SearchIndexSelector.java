@@ -41,7 +41,7 @@ public class SearchIndexSelector
     }
     public SearchIndexSelector setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
 }

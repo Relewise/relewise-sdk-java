@@ -46,7 +46,7 @@ public class DeleteMerchandisingRuleRequest extends LicensedRequest
     }
     public DeleteMerchandisingRuleRequest setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
 }
