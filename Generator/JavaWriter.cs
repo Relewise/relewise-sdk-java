@@ -115,6 +115,6 @@ public class JavaWriter
     public string ValueSetter(Type toType, string toName, Type fromType, string fromName) => (toType, fromType) switch
     {
         { fromType: { IsArray: true }, toType: { IsGenericType: true } generic } when generic.GetGenericTypeDefinition() == typeof(List<>) => $"{toName} = new ArrayList<>(Arrays.asList({fromName}));",
-        _ => $"{toName} = {fromName};"
+        _ => $"{toName} = {fromName}"
     };
 }
