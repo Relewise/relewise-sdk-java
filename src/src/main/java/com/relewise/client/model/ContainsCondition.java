@@ -31,6 +31,26 @@ public class ContainsCondition extends ValueCondition
     public @Nullable DataValue value;
     public ContainsConditionCollectionArgumentEvaluationMode valueCollectionEvaluationMode;
     public @Nullable DataObjectFilter objectFilter;
+    public static ContainsCondition create(DataValue value, ContainsConditionCollectionArgumentEvaluationMode valueCollectionEvaluationMode)
+    {
+        return new ContainsCondition(value, valueCollectionEvaluationMode);
+    }
+    public ContainsCondition(DataValue value, ContainsConditionCollectionArgumentEvaluationMode valueCollectionEvaluationMode)
+    {
+        this.value = value;
+        this.valueCollectionEvaluationMode = valueCollectionEvaluationMode;
+        this.negated = false;
+    }
+    public static ContainsCondition create(DataValue value, ContainsConditionCollectionArgumentEvaluationMode valueCollectionEvaluationMode, Boolean negated)
+    {
+        return new ContainsCondition(value, valueCollectionEvaluationMode, negated);
+    }
+    public ContainsCondition(DataValue value, ContainsConditionCollectionArgumentEvaluationMode valueCollectionEvaluationMode, Boolean negated)
+    {
+        this.value = value;
+        this.valueCollectionEvaluationMode = valueCollectionEvaluationMode;
+        this.negated = negated;
+    }
     public static ContainsCondition create(DataValue value)
     {
         return new ContainsCondition(value);

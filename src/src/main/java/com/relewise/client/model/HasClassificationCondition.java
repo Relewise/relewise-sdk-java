@@ -30,6 +30,16 @@ public class HasClassificationCondition extends UserCondition
     public String $type = "Relewise.Client.DataTypes.UserConditions.HasClassificationCondition, Relewise.Client";
     public String key;
     public String value;
+    public static HasClassificationCondition create(String key, String value, Boolean negated)
+    {
+        return new HasClassificationCondition(key, value, negated);
+    }
+    public HasClassificationCondition(String key, String value, Boolean negated)
+    {
+        this.key = key;
+        this.value = value;
+        this.negated = negated;
+    }
     public static HasClassificationCondition create(String key, Boolean negated)
     {
         return new HasClassificationCondition(key, negated);

@@ -31,6 +31,20 @@ public class SearchTermPredictionRequest extends SearchRequest implements IUserI
     public String term;
     public Integer take;
     public @Nullable SearchTermPredictionSettings settings;
+    public static SearchTermPredictionRequest create(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, User user, String displayedAtLocation, String term, Integer take)
+    {
+        return new SearchTermPredictionRequest(language, currency, indexSelector, user, displayedAtLocation, term, take);
+    }
+    public SearchTermPredictionRequest(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, User user, String displayedAtLocation, String term, Integer take)
+    {
+        this.language = language;
+        this.currency = currency;
+        this.indexSelector = indexSelector;
+        this.user = user;
+        this.displayedAtLocation = displayedAtLocation;
+        this.term = term;
+        this.take = take;
+    }
     public static SearchTermPredictionRequest create(@Nullable Language language, @Nullable Currency currency, User user, String displayedAtLocation, String term, Integer take)
     {
         return new SearchTermPredictionRequest(language, currency, user, displayedAtLocation, term, take);

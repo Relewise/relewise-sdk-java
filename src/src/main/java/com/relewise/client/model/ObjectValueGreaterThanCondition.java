@@ -29,6 +29,28 @@ public class ObjectValueGreaterThanCondition extends ObjectValueCondition
 {
     public String $type = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueGreaterThanCondition, Relewise.Client";
     public Double value;
+    public static ObjectValueGreaterThanCondition create(String key, String[] objectPath, Double value)
+    {
+        return new ObjectValueGreaterThanCondition(key, objectPath, value);
+    }
+    public ObjectValueGreaterThanCondition(String key, String[] objectPath, Double value)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.value = value;
+        this.negated = false;
+    }
+    public static ObjectValueGreaterThanCondition create(String key, String[] objectPath, Double value, Boolean negated)
+    {
+        return new ObjectValueGreaterThanCondition(key, objectPath, value, negated);
+    }
+    public ObjectValueGreaterThanCondition(String key, String[] objectPath, Double value, Boolean negated)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.value = value;
+        this.negated = negated;
+    }
     public static ObjectValueGreaterThanCondition create(String key, Double value)
     {
         return new ObjectValueGreaterThanCondition(key, value);

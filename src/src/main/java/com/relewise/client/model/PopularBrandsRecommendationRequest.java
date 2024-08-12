@@ -30,17 +30,18 @@ public class PopularBrandsRecommendationRequest extends BrandRecommendationReque
     public String $type = "Relewise.Client.Requests.Recommendations.PopularBrandsRecommendationRequest, Relewise.Client";
     public Integer sinceMinutesAgo;
     public BrandRecommendationWeights weights;
-    public static PopularBrandsRecommendationRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, BrandRecommendationWeights weights)
+    public static PopularBrandsRecommendationRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, BrandRecommendationWeights weights, Integer sinceMinutesAgo)
     {
-        return new PopularBrandsRecommendationRequest(language, currency, displayedAtLocationType, user, weights);
+        return new PopularBrandsRecommendationRequest(language, currency, displayedAtLocationType, user, weights, sinceMinutesAgo);
     }
-    public PopularBrandsRecommendationRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, BrandRecommendationWeights weights)
+    public PopularBrandsRecommendationRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, BrandRecommendationWeights weights, Integer sinceMinutesAgo)
     {
         this.language = language;
         this.currency = currency;
         this.displayedAtLocationType = displayedAtLocationType;
         this.user = user;
         this.weights = weights;
+        this.sinceMinutesAgo = sinceMinutesAgo;
     }
     public PopularBrandsRecommendationRequest()
     {

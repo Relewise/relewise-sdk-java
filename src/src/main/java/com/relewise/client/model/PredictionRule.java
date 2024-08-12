@@ -31,6 +31,20 @@ public class PredictionRule extends SearchRule
     public SearchTermCondition condition;
     public PredictionRulePromotion promote;
     public PredictionRuleSuppression suppress;
+    public static PredictionRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, PredictionRulePromotion promote, PredictionRuleSuppression suppress)
+    {
+        return new PredictionRule(id, indexes, languages, isApproved, condition, promote, suppress);
+    }
+    public PredictionRule(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, PredictionRulePromotion promote, PredictionRuleSuppression suppress)
+    {
+        this.id = id;
+        this.indexes = indexes;
+        this.languages = languages;
+        this.isApproved = isApproved;
+        this.condition = condition;
+        this.promote = promote;
+        this.suppress = suppress;
+    }
     public static PredictionRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, PredictionRulePromotion promote)
     {
         return new PredictionRule(id, indexes, languages, isApproved, condition, promote);

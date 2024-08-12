@@ -28,12 +28,13 @@ import java.util.HashSet;
 public class DeleteRedirectRulesRequest extends DeleteSearchRulesRequest
 {
     public String $type = "Relewise.Client.Requests.Search.Rules.DeleteRedirectRulesRequest, Relewise.Client";
-    public static DeleteRedirectRulesRequest create(String deletedBy)
+    public static DeleteRedirectRulesRequest create(UUID[] ids, String deletedBy)
     {
-        return new DeleteRedirectRulesRequest(deletedBy);
+        return new DeleteRedirectRulesRequest(ids, deletedBy);
     }
-    public DeleteRedirectRulesRequest(String deletedBy)
+    public DeleteRedirectRulesRequest(UUID[] ids, String deletedBy)
     {
+        this.ids = ids;
         this.deletedBy = deletedBy;
     }
     public DeleteRedirectRulesRequest()

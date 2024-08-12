@@ -32,6 +32,21 @@ public class ContentSearchRequest extends PaginatedSearchRequest implements IUse
     public @Nullable ContentFacetQuery facets;
     public @Nullable ContentSearchSettings settings;
     public @Nullable ContentSortBySpecification sorting;
+    public static ContentSearchRequest create(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, User user, String displayedAtLocation, @Nullable String term, Integer skip, Integer take)
+    {
+        return new ContentSearchRequest(language, currency, indexSelector, user, displayedAtLocation, term, skip, take);
+    }
+    public ContentSearchRequest(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, User user, String displayedAtLocation, @Nullable String term, Integer skip, Integer take)
+    {
+        this.language = language;
+        this.currency = currency;
+        this.indexSelector = indexSelector;
+        this.user = user;
+        this.displayedAtLocation = displayedAtLocation;
+        this.term = term;
+        this.skip = skip;
+        this.take = take;
+    }
     public static ContentSearchRequest create(@Nullable Language language, @Nullable Currency currency, User user, String displayedAtLocation, @Nullable String term, Integer skip, Integer take)
     {
         return new ContentSearchRequest(language, currency, user, displayedAtLocation, term, skip, take);

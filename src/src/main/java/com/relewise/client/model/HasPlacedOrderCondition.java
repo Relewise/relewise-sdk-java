@@ -29,12 +29,13 @@ public class HasPlacedOrderCondition extends UserCondition
 {
     public String $type = "Relewise.Client.DataTypes.UserConditions.HasPlacedOrderCondition, Relewise.Client";
     public Integer withinMinutes;
-    public static HasPlacedOrderCondition create(Boolean negated)
+    public static HasPlacedOrderCondition create(Integer withinMinutes, Boolean negated)
     {
-        return new HasPlacedOrderCondition(negated);
+        return new HasPlacedOrderCondition(withinMinutes, negated);
     }
-    public HasPlacedOrderCondition(Boolean negated)
+    public HasPlacedOrderCondition(Integer withinMinutes, Boolean negated)
     {
+        this.withinMinutes = withinMinutes;
         this.negated = negated;
     }
     public HasPlacedOrderCondition()

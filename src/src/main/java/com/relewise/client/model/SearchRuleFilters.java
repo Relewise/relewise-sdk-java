@@ -34,6 +34,14 @@ public class SearchRuleFilters
         this.term = term;
         this.approved = approved;
     }
+    public static SearchRuleFilters create(UUID id)
+    {
+        return new SearchRuleFilters(id);
+    }
+    public SearchRuleFilters(UUID id)
+    {
+        this.id = id;
+    }
     public SearchRuleFilters()
     {
     }

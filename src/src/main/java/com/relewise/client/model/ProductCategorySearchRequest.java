@@ -32,6 +32,21 @@ public class ProductCategorySearchRequest extends PaginatedSearchRequest impleme
     public @Nullable ProductCategorySearchSettings settings;
     public @Nullable ProductCategoryFacetQuery facets;
     public @Nullable ProductCategorySortBySpecification sorting;
+    public static ProductCategorySearchRequest create(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, User user, String displayedAtLocation, @Nullable String term, Integer skip, Integer take)
+    {
+        return new ProductCategorySearchRequest(language, currency, indexSelector, user, displayedAtLocation, term, skip, take);
+    }
+    public ProductCategorySearchRequest(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, User user, String displayedAtLocation, @Nullable String term, Integer skip, Integer take)
+    {
+        this.language = language;
+        this.currency = currency;
+        this.indexSelector = indexSelector;
+        this.user = user;
+        this.displayedAtLocation = displayedAtLocation;
+        this.term = term;
+        this.skip = skip;
+        this.take = take;
+    }
     public static ProductCategorySearchRequest create(@Nullable Language language, @Nullable Currency currency, User user, String displayedAtLocation, @Nullable String term, Integer skip, Integer take)
     {
         return new ProductCategorySearchRequest(language, currency, user, displayedAtLocation, term, skip, take);

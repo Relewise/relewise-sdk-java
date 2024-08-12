@@ -36,6 +36,14 @@ public class DataObjectValueSelector
         this.filter = filter;
         this.childSelector = childSelector;
     }
+    public static DataObjectValueSelector create(String key)
+    {
+        return new DataObjectValueSelector(key);
+    }
+    public DataObjectValueSelector(String key)
+    {
+        this.key = key;
+    }
     public DataObjectValueSelector()
     {
     }

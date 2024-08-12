@@ -30,17 +30,18 @@ public class PersonalProductCategoryRecommendationRequest extends ProductCategor
     public String $type = "Relewise.Client.Requests.Recommendations.PersonalProductCategoryRecommendationRequest, Relewise.Client";
     public Integer sinceMinutesAgo;
     public ProductCategoryRecommendationWeights weights;
-    public static PersonalProductCategoryRecommendationRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ProductCategoryRecommendationWeights weights)
+    public static PersonalProductCategoryRecommendationRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ProductCategoryRecommendationWeights weights, Integer sinceMinutesAgo)
     {
-        return new PersonalProductCategoryRecommendationRequest(language, currency, displayedAtLocationType, user, weights);
+        return new PersonalProductCategoryRecommendationRequest(language, currency, displayedAtLocationType, user, weights, sinceMinutesAgo);
     }
-    public PersonalProductCategoryRecommendationRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ProductCategoryRecommendationWeights weights)
+    public PersonalProductCategoryRecommendationRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ProductCategoryRecommendationWeights weights, Integer sinceMinutesAgo)
     {
         this.language = language;
         this.currency = currency;
         this.displayedAtLocationType = displayedAtLocationType;
         this.user = user;
         this.weights = weights;
+        this.sinceMinutesAgo = sinceMinutesAgo;
     }
     public PersonalProductCategoryRecommendationRequest()
     {

@@ -30,12 +30,23 @@ public class HasActivityCondition extends UserCondition
     public String $type = "Relewise.Client.DataTypes.UserConditions.HasActivityCondition, Relewise.Client";
     public Integer withinMinutes;
     public Integer forAtLeastSeconds;
-    public static HasActivityCondition create(Boolean negated)
+    public static HasActivityCondition create(Integer withinMinutes, Integer forAtLeastSeconds, Boolean negated)
     {
-        return new HasActivityCondition(negated);
+        return new HasActivityCondition(withinMinutes, forAtLeastSeconds, negated);
     }
-    public HasActivityCondition(Boolean negated)
+    public HasActivityCondition(Integer withinMinutes, Integer forAtLeastSeconds, Boolean negated)
     {
+        this.withinMinutes = withinMinutes;
+        this.forAtLeastSeconds = forAtLeastSeconds;
+        this.negated = negated;
+    }
+    public static HasActivityCondition create(Integer withinMinutes, Boolean negated)
+    {
+        return new HasActivityCondition(withinMinutes, negated);
+    }
+    public HasActivityCondition(Integer withinMinutes, Boolean negated)
+    {
+        this.withinMinutes = withinMinutes;
         this.negated = negated;
     }
     public HasActivityCondition()

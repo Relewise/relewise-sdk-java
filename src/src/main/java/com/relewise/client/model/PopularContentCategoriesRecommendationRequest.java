@@ -30,17 +30,18 @@ public class PopularContentCategoriesRecommendationRequest extends ContentCatego
     public String $type = "Relewise.Client.Requests.Recommendations.PopularContentCategoriesRecommendationRequest, Relewise.Client";
     public Integer sinceMinutesAgo;
     public ContentCategoryRecommendationWeights weights;
-    public static PopularContentCategoriesRecommendationRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ContentCategoryRecommendationWeights weights)
+    public static PopularContentCategoriesRecommendationRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ContentCategoryRecommendationWeights weights, Integer sinceMinutesAgo)
     {
-        return new PopularContentCategoriesRecommendationRequest(language, currency, displayedAtLocationType, user, weights);
+        return new PopularContentCategoriesRecommendationRequest(language, currency, displayedAtLocationType, user, weights, sinceMinutesAgo);
     }
-    public PopularContentCategoriesRecommendationRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ContentCategoryRecommendationWeights weights)
+    public PopularContentCategoriesRecommendationRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ContentCategoryRecommendationWeights weights, Integer sinceMinutesAgo)
     {
         this.language = language;
         this.currency = currency;
         this.displayedAtLocationType = displayedAtLocationType;
         this.user = user;
         this.weights = weights;
+        this.sinceMinutesAgo = sinceMinutesAgo;
     }
     public PopularContentCategoriesRecommendationRequest()
     {

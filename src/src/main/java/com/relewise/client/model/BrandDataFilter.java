@@ -28,6 +28,34 @@ import java.util.HashSet;
 public class BrandDataFilter extends DataFilter implements IBrandFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.BrandDataFilter, Relewise.Client";
+    public static BrandDataFilter create(String key, String... objectPath)
+    {
+        return new BrandDataFilter(key, objectPath);
+    }
+    public BrandDataFilter(String key, String... objectPath)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.conditions = null;
+        this.mustMatchAllConditions = true;
+        this.filterOutIfKeyIsNotFound = true;
+        this.language = null;
+        this.currency = null;
+    }
+    public static BrandDataFilter create(String key, String[] objectPath, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    {
+        return new BrandDataFilter(key, objectPath, conditions, mustMatchAllConditions, filterOutIfKeyIsNotFound, language, currency);
+    }
+    public BrandDataFilter(String key, String[] objectPath, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.conditions = conditions;
+        this.mustMatchAllConditions = mustMatchAllConditions;
+        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
+        this.language = language;
+        this.currency = currency;
+    }
     public static BrandDataFilter create(String key)
     {
         return new BrandDataFilter(key);
@@ -35,17 +63,21 @@ public class BrandDataFilter extends DataFilter implements IBrandFilter
     public BrandDataFilter(String key)
     {
         this.key = key;
+        this.conditions = null;
+        this.mustMatchAllConditions = true;
         this.filterOutIfKeyIsNotFound = true;
         this.language = null;
         this.currency = null;
     }
-    public static BrandDataFilter create(String key, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    public static BrandDataFilter create(String key, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
     {
-        return new BrandDataFilter(key, filterOutIfKeyIsNotFound, language, currency);
+        return new BrandDataFilter(key, conditions, mustMatchAllConditions, filterOutIfKeyIsNotFound, language, currency);
     }
-    public BrandDataFilter(String key, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    public BrandDataFilter(String key, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
     {
         this.key = key;
+        this.conditions = conditions;
+        this.mustMatchAllConditions = mustMatchAllConditions;
         this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
         this.language = language;
         this.currency = currency;

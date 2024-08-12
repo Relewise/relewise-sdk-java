@@ -37,6 +37,16 @@ public class FieldIndexConfiguration
         this.predictionSourceType = predictionSourceType;
         this.parser = parser;
     }
+    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType)
+    {
+        return new FieldIndexConfiguration(included, weight, predictionSourceType);
+    }
+    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType)
+    {
+        this.included = included;
+        this.weight = weight;
+        this.predictionSourceType = predictionSourceType;
+    }
     public FieldIndexConfiguration()
     {
     }

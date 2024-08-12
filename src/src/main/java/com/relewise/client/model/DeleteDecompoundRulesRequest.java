@@ -28,12 +28,13 @@ import java.util.HashSet;
 public class DeleteDecompoundRulesRequest extends DeleteSearchRulesRequest
 {
     public String $type = "Relewise.Client.Requests.Search.Rules.DeleteDecompoundRulesRequest, Relewise.Client";
-    public static DeleteDecompoundRulesRequest create(String deletedBy)
+    public static DeleteDecompoundRulesRequest create(UUID[] ids, String deletedBy)
     {
-        return new DeleteDecompoundRulesRequest(deletedBy);
+        return new DeleteDecompoundRulesRequest(ids, deletedBy);
     }
-    public DeleteDecompoundRulesRequest(String deletedBy)
+    public DeleteDecompoundRulesRequest(UUID[] ids, String deletedBy)
     {
+        this.ids = ids;
         this.deletedBy = deletedBy;
     }
     public DeleteDecompoundRulesRequest()

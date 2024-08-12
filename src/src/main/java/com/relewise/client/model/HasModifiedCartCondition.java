@@ -30,23 +30,30 @@ public class HasModifiedCartCondition extends UserCondition
     public String $type = "Relewise.Client.DataTypes.UserConditions.HasModifiedCartCondition, Relewise.Client";
     public Integer withinMinutes;
     public String cartName;
-    public static HasModifiedCartCondition create()
+    public static HasModifiedCartCondition create(Integer withinMinutes)
     {
-        return new HasModifiedCartCondition();
+        return new HasModifiedCartCondition(withinMinutes);
+    }
+    public HasModifiedCartCondition(Integer withinMinutes)
+    {
+        this.withinMinutes = withinMinutes;
+        this.cartName = null;
+        this.negated = false;
+    }
+    public static HasModifiedCartCondition create(Integer withinMinutes, String cartName, Boolean negated)
+    {
+        return new HasModifiedCartCondition(withinMinutes, cartName, negated);
+    }
+    public HasModifiedCartCondition(Integer withinMinutes, String cartName, Boolean negated)
+    {
+        this.withinMinutes = withinMinutes;
+        this.cartName = cartName;
+        this.negated = negated;
     }
     public HasModifiedCartCondition()
     {
         this.cartName = null;
         this.negated = false;
-    }
-    public static HasModifiedCartCondition create(String cartName, Boolean negated)
-    {
-        return new HasModifiedCartCondition(cartName, negated);
-    }
-    public HasModifiedCartCondition(String cartName, Boolean negated)
-    {
-        this.cartName = cartName;
-        this.negated = negated;
     }
     public Integer getWithinMinutes()
     {

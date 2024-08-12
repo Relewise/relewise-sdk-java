@@ -29,6 +29,28 @@ public class ObjectValueEqualsCondition extends ObjectValueCondition
 {
     public String $type = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueEqualsCondition, Relewise.Client";
     public DataValue value;
+    public static ObjectValueEqualsCondition create(String key, String[] objectPath, DataValue value)
+    {
+        return new ObjectValueEqualsCondition(key, objectPath, value);
+    }
+    public ObjectValueEqualsCondition(String key, String[] objectPath, DataValue value)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.value = value;
+        this.negated = false;
+    }
+    public static ObjectValueEqualsCondition create(String key, String[] objectPath, DataValue value, Boolean negated)
+    {
+        return new ObjectValueEqualsCondition(key, objectPath, value, negated);
+    }
+    public ObjectValueEqualsCondition(String key, String[] objectPath, DataValue value, Boolean negated)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.value = value;
+        this.negated = negated;
+    }
     public static ObjectValueEqualsCondition create(String key, DataValue value)
     {
         return new ObjectValueEqualsCondition(key, value);

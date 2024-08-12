@@ -30,6 +30,30 @@ public class ObjectValueContainsCondition extends ObjectValueCondition
     public String $type = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueContainsCondition, Relewise.Client";
     public DataValue value;
     public ObjectValueContainsConditionCompareMode mode;
+    public static ObjectValueContainsCondition create(String key, String[] objectPath, DataValue value)
+    {
+        return new ObjectValueContainsCondition(key, objectPath, value);
+    }
+    public ObjectValueContainsCondition(String key, String[] objectPath, DataValue value)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.value = value;
+        this.mode = ObjectValueContainsConditionCompareMode.All;
+        this.negated = false;
+    }
+    public static ObjectValueContainsCondition create(String key, String[] objectPath, DataValue value, ObjectValueContainsConditionCompareMode mode, Boolean negated)
+    {
+        return new ObjectValueContainsCondition(key, objectPath, value, mode, negated);
+    }
+    public ObjectValueContainsCondition(String key, String[] objectPath, DataValue value, ObjectValueContainsConditionCompareMode mode, Boolean negated)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.value = value;
+        this.mode = mode;
+        this.negated = negated;
+    }
     public static ObjectValueContainsCondition create(String key, DataValue value)
     {
         return new ObjectValueContainsCondition(key, value);
