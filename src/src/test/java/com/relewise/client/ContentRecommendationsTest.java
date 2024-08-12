@@ -33,8 +33,9 @@ public class ContentRecommendationsTest extends TestBase {
             Language.create("en-US"),
             Currency.create("USD"),
             "integration test",
-            UserFactory.byTemporaryId("t-Id")
-        ).setSinceMinutesAgo(500000);
+            UserFactory.byTemporaryId("t-Id"),
+            500000
+        );
 
         var response = recommender.recommend(popularContents);
         assertNotNull(response);

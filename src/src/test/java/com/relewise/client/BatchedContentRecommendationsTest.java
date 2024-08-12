@@ -17,7 +17,8 @@ public class BatchedContentRecommendationsTest extends TestBase {
                 Language.create("en-US"),
                 Currency.create("USD"),
                 "batched integration test",
-                UserFactory.byTemporaryId("t-Id")
+                UserFactory.byTemporaryId("t-Id"),
+                100000
             ).setSettings(ContentRecommendationRequestSettings.create().setNumberOfRecommendations(1)),
             ContentsViewedAfterViewingContentRequest.create(
                 Language.create("en-US"),
