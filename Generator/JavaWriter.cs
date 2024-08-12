@@ -23,7 +23,7 @@ public class JavaWriter
 
     public JavaWriter(Assembly assembly, string basePath)
     {
-        javaTypeWriters = new List<IJavaTypeWriter>() { new JavaClassWriter(this), new JavaEnumWriter(this), new JavaInterfaceWriter(this) };
+        javaTypeWriters = new List<IJavaTypeWriter>() { new JavaEnumWriter(this), new JavaInterfaceWriter(this), new JavaClassWriter(this) };
         javaTypeResolver = new JavaTypeResolver(assembly);
         Assembly = assembly;
         BasePath = basePath;
@@ -44,6 +44,9 @@ public class JavaWriter
         while (javaTypeResolver.TypesToGenerate.Count > 0)
         {
             var type = javaTypeResolver.TypesToGenerate.Dequeue();
+
+            if (type == typeof(object) || type == typeof(ValueType) || type == typeof(Enum))
+                continue;
 
             var potentialNullableTypeName = TypeName(type);
             string typeName = potentialNullableTypeName.RemoveNullable();
