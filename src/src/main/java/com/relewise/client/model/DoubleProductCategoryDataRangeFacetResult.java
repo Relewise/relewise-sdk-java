@@ -36,25 +36,25 @@ public abstract class DoubleProductCategoryDataRangeFacetResult extends DoubleRa
     }
     public DoubleProductCategoryDataRangeFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public DoubleProductCategoryDataRangeFacetResult setSelected(DoubleRange selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
     @Override
     public DoubleProductCategoryDataRangeFacetResult setAvailable(DoubleRangeAvailableFacetValue available)
     {
-        this.available = available;;
+        this.available = available;
         return this;
     }
     @Override
     public DoubleProductCategoryDataRangeFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

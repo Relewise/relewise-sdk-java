@@ -69,23 +69,23 @@ public class VariantSpecificationFilter extends Filter implements IVariantFilter
     }
     public VariantSpecificationFilter setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public VariantSpecificationFilter setFilterOutIfKeyIsNotFound(Boolean filterOutIfKeyIsNotFound)
     {
-        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;;
+        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
         return this;
     }
     public VariantSpecificationFilter setEqualTo(String equalTo)
     {
-        this.equalTo = equalTo;;
+        this.equalTo = equalTo;
         return this;
     }
     @Override
     public VariantSpecificationFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

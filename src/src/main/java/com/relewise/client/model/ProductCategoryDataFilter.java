@@ -93,43 +93,43 @@ public class ProductCategoryDataFilter extends DataFilter implements ICategoryFi
     @Override
     public ProductCategoryDataFilter setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ProductCategoryDataFilter setFilterOutIfKeyIsNotFound(Boolean filterOutIfKeyIsNotFound)
     {
-        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;;
+        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
         return this;
     }
     @Override
     public ProductCategoryDataFilter setMustMatchAllConditions(Boolean mustMatchAllConditions)
     {
-        this.mustMatchAllConditions = mustMatchAllConditions;;
+        this.mustMatchAllConditions = mustMatchAllConditions;
         return this;
     }
     @Override
     public ProductCategoryDataFilter setConditions(ValueConditionCollection conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
     @Override
     public ProductCategoryDataFilter setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public ProductCategoryDataFilter setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     @Override
     public ProductCategoryDataFilter setObjectPath(String... objectPath)
     {
-        this.objectPath = objectPath;;
+        this.objectPath = objectPath;
         return this;
     }
     public ProductCategoryDataFilter addToObjectPath(String objectPath)
@@ -149,7 +149,7 @@ public class ProductCategoryDataFilter extends DataFilter implements ICategoryFi
     @Override
     public ProductCategoryDataFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

@@ -44,7 +44,7 @@ public class ProductCategoryDataObjectFacetResult extends DataObjectFacetResult
     @Override
     public ProductCategoryDataObjectFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
@@ -65,13 +65,13 @@ public class ProductCategoryDataObjectFacetResult extends DataObjectFacetResult
     @Override
     public ProductCategoryDataObjectFacetResult setFilter(DataObjectFilter filter)
     {
-        this.filter = filter;;
+        this.filter = filter;
         return this;
     }
     @Override
     public ProductCategoryDataObjectFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

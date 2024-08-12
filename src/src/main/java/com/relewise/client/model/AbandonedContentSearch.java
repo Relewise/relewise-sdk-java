@@ -38,7 +38,7 @@ public class AbandonedContentSearch extends StringAbandonedSearch
     @Override
     public AbandonedContentSearch setTopResults(String... topResults)
     {
-        this.topResults = topResults;;
+        this.topResults = topResults;
         return this;
     }
     public AbandonedContentSearch addToTopResults(String topResult)
@@ -58,13 +58,13 @@ public class AbandonedContentSearch extends StringAbandonedSearch
     @Override
     public AbandonedContentSearch setLoweredSearchTerm(String loweredSearchTerm)
     {
-        this.loweredSearchTerm = loweredSearchTerm;;
+        this.loweredSearchTerm = loweredSearchTerm;
         return this;
     }
     @Override
     public AbandonedContentSearch setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
 }

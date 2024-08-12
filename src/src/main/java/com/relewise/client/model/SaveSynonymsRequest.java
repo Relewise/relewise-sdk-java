@@ -52,7 +52,7 @@ public class SaveSynonymsRequest extends LicensedRequest
     }
     public SaveSynonymsRequest setSynonyms(Synonym... synonyms)
     {
-        this.synonyms = synonyms;;
+        this.synonyms = synonyms;
         return this;
     }
     public SaveSynonymsRequest addToSynonyms(Synonym synonym)
@@ -71,7 +71,7 @@ public class SaveSynonymsRequest extends LicensedRequest
     }
     public SaveSynonymsRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

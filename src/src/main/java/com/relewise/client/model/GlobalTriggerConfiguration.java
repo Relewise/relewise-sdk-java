@@ -66,32 +66,32 @@ public class GlobalTriggerConfiguration
     }
     public GlobalTriggerConfiguration setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     public GlobalTriggerConfiguration setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     public GlobalTriggerConfiguration setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     public GlobalTriggerConfiguration setMinimumCooldownAnyTrigger(@Nullable Integer minimumCooldownAnyTrigger)
     {
-        this.minimumCooldownAnyTrigger = minimumCooldownAnyTrigger;;
+        this.minimumCooldownAnyTrigger = minimumCooldownAnyTrigger;
         return this;
     }
     public GlobalTriggerConfiguration setMinimumCooldownSameTrigger(@Nullable Integer minimumCooldownSameTrigger)
     {
-        this.minimumCooldownSameTrigger = minimumCooldownSameTrigger;;
+        this.minimumCooldownSameTrigger = minimumCooldownSameTrigger;
         return this;
     }
     public GlobalTriggerConfiguration setMinimumCooldownSameGroup(@Nullable Integer minimumCooldownSameGroup)
     {
-        this.minimumCooldownSameGroup = minimumCooldownSameGroup;;
+        this.minimumCooldownSameGroup = minimumCooldownSameGroup;
         return this;
     }
     public GlobalTriggerConfiguration addToSettings(String key, String value)
@@ -105,7 +105,7 @@ public class GlobalTriggerConfiguration
     }
     public GlobalTriggerConfiguration setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

@@ -45,13 +45,13 @@ public class ContentDataDoubleValueFacetResult extends DoubleContentDataValueFac
     @Override
     public ContentDataDoubleValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ContentDataDoubleValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -87,7 +87,7 @@ public class ContentDataDoubleValueFacetResult extends DoubleContentDataValueFac
     @Override
     public ContentDataDoubleValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

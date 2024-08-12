@@ -57,13 +57,13 @@ public class ProductRecentlyViewedByUserFilter extends Filter implements IProduc
     }
     public ProductRecentlyViewedByUserFilter setSinceUtc(OffsetDateTime sinceUtc)
     {
-        this.sinceUtc = sinceUtc;;
+        this.sinceUtc = sinceUtc;
         return this;
     }
     @Override
     public ProductRecentlyViewedByUserFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

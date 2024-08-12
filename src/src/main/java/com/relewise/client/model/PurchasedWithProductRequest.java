@@ -50,49 +50,49 @@ public class PurchasedWithProductRequest extends ProductRecommendationRequest im
     }
     public PurchasedWithProductRequest setProductAndVariantId(ProductAndVariantId productAndVariantId)
     {
-        this.productAndVariantId = productAndVariantId;;
+        this.productAndVariantId = productAndVariantId;
         return this;
     }
     @Override
     public PurchasedWithProductRequest setSettings(ProductRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public PurchasedWithProductRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public PurchasedWithProductRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public PurchasedWithProductRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public PurchasedWithProductRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public PurchasedWithProductRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public PurchasedWithProductRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

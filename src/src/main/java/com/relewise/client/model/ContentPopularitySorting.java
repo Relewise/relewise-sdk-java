@@ -47,13 +47,13 @@ public class ContentPopularitySorting extends ContentSorting
     @Override
     public ContentPopularitySorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ContentPopularitySorting setThenBy(ContentSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

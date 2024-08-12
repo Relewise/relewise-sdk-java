@@ -61,32 +61,32 @@ public class SelectedContentCategoryPropertiesSettings
     }
     public SelectedContentCategoryPropertiesSettings setDisplayName(Boolean displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public SelectedContentCategoryPropertiesSettings setPaths(Boolean paths)
     {
-        this.paths = paths;;
+        this.paths = paths;
         return this;
     }
     public SelectedContentCategoryPropertiesSettings setAssortments(Boolean assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public SelectedContentCategoryPropertiesSettings setViewedByUserInfo(Boolean viewedByUserInfo)
     {
-        this.viewedByUserInfo = viewedByUserInfo;;
+        this.viewedByUserInfo = viewedByUserInfo;
         return this;
     }
     public SelectedContentCategoryPropertiesSettings setAllData(Boolean allData)
     {
-        this.allData = allData;;
+        this.allData = allData;
         return this;
     }
     public SelectedContentCategoryPropertiesSettings setDataKeys(String... dataKeys)
     {
-        this.dataKeys = dataKeys;;
+        this.dataKeys = dataKeys;
         return this;
     }
     public SelectedContentCategoryPropertiesSettings addToDataKeys(String dataKey)

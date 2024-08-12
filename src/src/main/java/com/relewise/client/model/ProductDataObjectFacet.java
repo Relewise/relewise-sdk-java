@@ -47,13 +47,13 @@ public class ProductDataObjectFacet extends DataObjectFacet
     }
     public ProductDataObjectFacet setDataSelectionStrategy(DataSelectionStrategy dataSelectionStrategy)
     {
-        this.dataSelectionStrategy = dataSelectionStrategy;;
+        this.dataSelectionStrategy = dataSelectionStrategy;
         return this;
     }
     @Override
     public ProductDataObjectFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
@@ -74,19 +74,19 @@ public class ProductDataObjectFacet extends DataObjectFacet
     @Override
     public ProductDataObjectFacet setFilter(DataObjectFilter filter)
     {
-        this.filter = filter;;
+        this.filter = filter;
         return this;
     }
     @Override
     public ProductDataObjectFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public ProductDataObjectFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

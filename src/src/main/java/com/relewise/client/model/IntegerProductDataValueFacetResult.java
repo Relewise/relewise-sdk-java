@@ -36,19 +36,19 @@ public abstract class IntegerProductDataValueFacetResult extends IntegerDataValu
     }
     public IntegerProductDataValueFacetResult setDataSelectionStrategy(DataSelectionStrategy dataSelectionStrategy)
     {
-        this.dataSelectionStrategy = dataSelectionStrategy;;
+        this.dataSelectionStrategy = dataSelectionStrategy;
         return this;
     }
     @Override
     public IntegerProductDataValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public IntegerProductDataValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -84,7 +84,7 @@ public abstract class IntegerProductDataValueFacetResult extends IntegerDataValu
     @Override
     public IntegerProductDataValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

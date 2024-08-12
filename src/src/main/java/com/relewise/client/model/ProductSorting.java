@@ -39,13 +39,13 @@ public abstract class ProductSorting extends ProductSortingSorting
     @Override
     public ProductSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ProductSorting setThenBy(ProductSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

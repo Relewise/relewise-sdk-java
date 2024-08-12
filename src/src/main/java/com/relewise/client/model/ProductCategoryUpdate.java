@@ -57,13 +57,13 @@ public class ProductCategoryUpdate extends CategoryUpdate
     }
     public ProductCategoryUpdate setCategory(ProductCategory category)
     {
-        this.category = category;;
+        this.category = category;
         return this;
     }
     @Override
     public ProductCategoryUpdate setKind(CategoryUpdateUpdateKind kind)
     {
-        this.kind = kind;;
+        this.kind = kind;
         return this;
     }
 }

@@ -46,7 +46,7 @@ public class TrackBrandUpdateRequest extends TrackingRequest
     }
     public TrackBrandUpdateRequest setBrandUpdate(BrandUpdate brandUpdate)
     {
-        this.brandUpdate = brandUpdate;;
+        this.brandUpdate = brandUpdate;
         return this;
     }
 }

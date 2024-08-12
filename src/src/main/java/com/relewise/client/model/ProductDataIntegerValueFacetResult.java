@@ -46,19 +46,19 @@ public class ProductDataIntegerValueFacetResult extends IntegerProductDataValueF
     @Override
     public ProductDataIntegerValueFacetResult setDataSelectionStrategy(DataSelectionStrategy dataSelectionStrategy)
     {
-        this.dataSelectionStrategy = dataSelectionStrategy;;
+        this.dataSelectionStrategy = dataSelectionStrategy;
         return this;
     }
     @Override
     public ProductDataIntegerValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ProductDataIntegerValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -94,7 +94,7 @@ public class ProductDataIntegerValueFacetResult extends IntegerProductDataValueF
     @Override
     public ProductDataIntegerValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

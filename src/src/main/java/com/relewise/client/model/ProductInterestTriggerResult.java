@@ -47,12 +47,12 @@ public class ProductInterestTriggerResult implements ITriggerResult
     }
     public ProductInterestTriggerResult setUser(UserResultDetails user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public ProductInterestTriggerResult setProducts(ProductInterestTriggerResultProductAndVariant... products)
     {
-        this.products = products;;
+        this.products = products;
         return this;
     }
     public ProductInterestTriggerResult addToProducts(ProductInterestTriggerResultProductAndVariant product)

@@ -56,27 +56,27 @@ public class ContentRecommendationRequestSettings
     }
     public ContentRecommendationRequestSettings setNumberOfRecommendations(Integer numberOfRecommendations)
     {
-        this.numberOfRecommendations = numberOfRecommendations;;
+        this.numberOfRecommendations = numberOfRecommendations;
         return this;
     }
     public ContentRecommendationRequestSettings setAllowFillIfNecessaryToReachNumberOfRecommendations(Boolean allowFillIfNecessaryToReachNumberOfRecommendations)
     {
-        this.allowFillIfNecessaryToReachNumberOfRecommendations = allowFillIfNecessaryToReachNumberOfRecommendations;;
+        this.allowFillIfNecessaryToReachNumberOfRecommendations = allowFillIfNecessaryToReachNumberOfRecommendations;
         return this;
     }
     public ContentRecommendationRequestSettings setAllowReplacingOfRecentlyShownRecommendations(Boolean allowReplacingOfRecentlyShownRecommendations)
     {
-        this.allowReplacingOfRecentlyShownRecommendations = allowReplacingOfRecentlyShownRecommendations;;
+        this.allowReplacingOfRecentlyShownRecommendations = allowReplacingOfRecentlyShownRecommendations;
         return this;
     }
     public ContentRecommendationRequestSettings setSelectedContentProperties(SelectedContentPropertiesSettings selectedContentProperties)
     {
-        this.selectedContentProperties = selectedContentProperties;;
+        this.selectedContentProperties = selectedContentProperties;
         return this;
     }
     public ContentRecommendationRequestSettings setPrioritizeDiversityBetweenRequests(Boolean prioritizeDiversityBetweenRequests)
     {
-        this.prioritizeDiversityBetweenRequests = prioritizeDiversityBetweenRequests;;
+        this.prioritizeDiversityBetweenRequests = prioritizeDiversityBetweenRequests;
         return this;
     }
 }

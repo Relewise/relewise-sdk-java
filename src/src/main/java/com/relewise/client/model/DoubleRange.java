@@ -46,12 +46,12 @@ public class DoubleRange
     }
     public DoubleRange setLowerBoundInclusive(@Nullable Double lowerBoundInclusive)
     {
-        this.lowerBoundInclusive = lowerBoundInclusive;;
+        this.lowerBoundInclusive = lowerBoundInclusive;
         return this;
     }
     public DoubleRange setUpperBoundInclusive(@Nullable Double upperBoundInclusive)
     {
-        this.upperBoundInclusive = upperBoundInclusive;;
+        this.upperBoundInclusive = upperBoundInclusive;
         return this;
     }
 }

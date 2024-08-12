@@ -48,7 +48,7 @@ public class CategoryFacetResult extends StringCategoryNameAndIdResultValueFacet
     }
     public CategoryFacetResult setCategorySelectionStrategy(CategorySelectionStrategy categorySelectionStrategy)
     {
-        this.categorySelectionStrategy = categorySelectionStrategy;;
+        this.categorySelectionStrategy = categorySelectionStrategy;
         return this;
     }
     @Override
@@ -84,7 +84,7 @@ public class CategoryFacetResult extends StringCategoryNameAndIdResultValueFacet
     @Override
     public CategoryFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

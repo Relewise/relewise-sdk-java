@@ -71,22 +71,22 @@ public class ContentResult
     }
     public ContentResult setContentId(String contentId)
     {
-        this.contentId = contentId;;
+        this.contentId = contentId;
         return this;
     }
     public ContentResult setDisplayName(String displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public ContentResult setRank(Integer rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
     public ContentResult setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public ContentResult addToAssortments(Integer assortment)
@@ -114,12 +114,12 @@ public class ContentResult
     }
     public ContentResult setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public ContentResult setCategoryPaths(CategoryPathResult... categoryPaths)
     {
-        this.categoryPaths = categoryPaths;;
+        this.categoryPaths = categoryPaths;
         return this;
     }
     public ContentResult addToCategoryPaths(CategoryPathResult categoryPath)
@@ -138,7 +138,7 @@ public class ContentResult
     }
     public ContentResult setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
 }

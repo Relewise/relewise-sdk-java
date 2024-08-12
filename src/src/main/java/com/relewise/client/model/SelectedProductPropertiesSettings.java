@@ -81,52 +81,52 @@ public class SelectedProductPropertiesSettings
     }
     public SelectedProductPropertiesSettings setDisplayName(Boolean displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public SelectedProductPropertiesSettings setCategoryPaths(Boolean categoryPaths)
     {
-        this.categoryPaths = categoryPaths;;
+        this.categoryPaths = categoryPaths;
         return this;
     }
     public SelectedProductPropertiesSettings setAssortments(Boolean assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public SelectedProductPropertiesSettings setPricing(Boolean pricing)
     {
-        this.pricing = pricing;;
+        this.pricing = pricing;
         return this;
     }
     public SelectedProductPropertiesSettings setAllData(Boolean allData)
     {
-        this.allData = allData;;
+        this.allData = allData;
         return this;
     }
     public SelectedProductPropertiesSettings setViewedByUserInfo(Boolean viewedByUserInfo)
     {
-        this.viewedByUserInfo = viewedByUserInfo;;
+        this.viewedByUserInfo = viewedByUserInfo;
         return this;
     }
     public SelectedProductPropertiesSettings setPurchasedByUserInfo(Boolean purchasedByUserInfo)
     {
-        this.purchasedByUserInfo = purchasedByUserInfo;;
+        this.purchasedByUserInfo = purchasedByUserInfo;
         return this;
     }
     public SelectedProductPropertiesSettings setBrand(Boolean brand)
     {
-        this.brand = brand;;
+        this.brand = brand;
         return this;
     }
     public SelectedProductPropertiesSettings setAllVariants(Boolean allVariants)
     {
-        this.allVariants = allVariants;;
+        this.allVariants = allVariants;
         return this;
     }
     public SelectedProductPropertiesSettings setDataKeys(String... dataKeys)
     {
-        this.dataKeys = dataKeys;;
+        this.dataKeys = dataKeys;
         return this;
     }
     public SelectedProductPropertiesSettings addToDataKeys(String dataKey)

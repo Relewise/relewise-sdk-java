@@ -44,25 +44,25 @@ public class ContentDataDoubleRangeFacetResult extends DoubleContentDataRangeFac
     @Override
     public ContentDataDoubleRangeFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ContentDataDoubleRangeFacetResult setSelected(DoubleRange selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
     @Override
     public ContentDataDoubleRangeFacetResult setAvailable(DoubleRangeAvailableFacetValue available)
     {
-        this.available = available;;
+        this.available = available;
         return this;
     }
     @Override
     public ContentDataDoubleRangeFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

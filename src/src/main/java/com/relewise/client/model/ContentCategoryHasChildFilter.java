@@ -62,7 +62,7 @@ public class ContentCategoryHasChildFilter extends HasChildCategoryFilter implem
     @Override
     public ContentCategoryHasChildFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

@@ -62,12 +62,12 @@ public class BrandUpdate extends Trackable
     }
     public BrandUpdate setBrand(Brand brand)
     {
-        this.brand = brand;;
+        this.brand = brand;
         return this;
     }
     public BrandUpdate setKind(BrandUpdateUpdateKind kind)
     {
-        this.kind = kind;;
+        this.kind = kind;
         return this;
     }
 }

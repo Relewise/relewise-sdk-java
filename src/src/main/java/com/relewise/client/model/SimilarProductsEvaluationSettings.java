@@ -86,42 +86,42 @@ public class SimilarProductsEvaluationSettings
     }
     public SimilarProductsEvaluationSettings setSignificanceOfSimilaritiesInDisplayName(Double significanceOfSimilaritiesInDisplayName)
     {
-        this.significanceOfSimilaritiesInDisplayName = significanceOfSimilaritiesInDisplayName;;
+        this.significanceOfSimilaritiesInDisplayName = significanceOfSimilaritiesInDisplayName;
         return this;
     }
     public SimilarProductsEvaluationSettings setProductDisplayNameTransformer(TrimStringTransformer productDisplayNameTransformer)
     {
-        this.productDisplayNameTransformer = productDisplayNameTransformer;;
+        this.productDisplayNameTransformer = productDisplayNameTransformer;
         return this;
     }
     public SimilarProductsEvaluationSettings setSignificanceOfSimilarListPrice(Double significanceOfSimilarListPrice)
     {
-        this.significanceOfSimilarListPrice = significanceOfSimilarListPrice;;
+        this.significanceOfSimilarListPrice = significanceOfSimilarListPrice;
         return this;
     }
     public SimilarProductsEvaluationSettings setSignificanceOfCommonImmediateParentCategories(Double significanceOfCommonImmediateParentCategories)
     {
-        this.significanceOfCommonImmediateParentCategories = significanceOfCommonImmediateParentCategories;;
+        this.significanceOfCommonImmediateParentCategories = significanceOfCommonImmediateParentCategories;
         return this;
     }
     public SimilarProductsEvaluationSettings setSignificanceOfCommonParentsParentCategories(Double significanceOfCommonParentsParentCategories)
     {
-        this.significanceOfCommonParentsParentCategories = significanceOfCommonParentsParentCategories;;
+        this.significanceOfCommonParentsParentCategories = significanceOfCommonParentsParentCategories;
         return this;
     }
     public SimilarProductsEvaluationSettings setSignificanceOfCommonAncestorCategories(Double significanceOfCommonAncestorCategories)
     {
-        this.significanceOfCommonAncestorCategories = significanceOfCommonAncestorCategories;;
+        this.significanceOfCommonAncestorCategories = significanceOfCommonAncestorCategories;
         return this;
     }
     public SimilarProductsEvaluationSettings setSignificanceOfCommonProductDataKeys(Double significanceOfCommonProductDataKeys)
     {
-        this.significanceOfCommonProductDataKeys = significanceOfCommonProductDataKeys;;
+        this.significanceOfCommonProductDataKeys = significanceOfCommonProductDataKeys;
         return this;
     }
     public SimilarProductsEvaluationSettings setSignificanceOfIdenticalProductDataValues(Double significanceOfIdenticalProductDataValues)
     {
-        this.significanceOfIdenticalProductDataValues = significanceOfIdenticalProductDataValues;;
+        this.significanceOfIdenticalProductDataValues = significanceOfIdenticalProductDataValues;
         return this;
     }
     public SimilarProductsEvaluationSettings setSignificantProductDataFields(SignificantDataValue... significantProductDataFields)
@@ -140,12 +140,12 @@ public class SimilarProductsEvaluationSettings
     }
     public SimilarProductsEvaluationSettings setSignificanceOfSimilarSalesPrice(Double significanceOfSimilarSalesPrice)
     {
-        this.significanceOfSimilarSalesPrice = significanceOfSimilarSalesPrice;;
+        this.significanceOfSimilarSalesPrice = significanceOfSimilarSalesPrice;
         return this;
     }
     public SimilarProductsEvaluationSettings setSignificanceOfSimilarBrand(Double significanceOfSimilarBrand)
     {
-        this.significanceOfSimilarBrand = significanceOfSimilarBrand;;
+        this.significanceOfSimilarBrand = significanceOfSimilarBrand;
         return this;
     }
 }

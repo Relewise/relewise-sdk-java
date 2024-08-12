@@ -70,23 +70,23 @@ public class ProductDisplayNameFilter extends Filter implements IProductFilter
     }
     public ProductDisplayNameFilter setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public ProductDisplayNameFilter setConditions(ValueConditionCollection conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
     public ProductDisplayNameFilter setMustMatchAllConditions(Boolean mustMatchAllConditions)
     {
-        this.mustMatchAllConditions = mustMatchAllConditions;;
+        this.mustMatchAllConditions = mustMatchAllConditions;
         return this;
     }
     @Override
     public ProductDisplayNameFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

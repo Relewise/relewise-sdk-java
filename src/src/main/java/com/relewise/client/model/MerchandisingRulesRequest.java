@@ -46,7 +46,7 @@ public class MerchandisingRulesRequest extends LicensedRequest
     }
     public MerchandisingRulesRequest setType(@Nullable Short type)
     {
-        this.type = type;;
+        this.type = type;
         return this;
     }
 }

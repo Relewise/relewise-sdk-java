@@ -46,12 +46,12 @@ public class DecompoundRulesRequestSortBySorting
     }
     public DecompoundRulesRequestSortBySorting setSortBy(DecompoundRulesRequestSortBy sortBy)
     {
-        this.sortBy = sortBy;;
+        this.sortBy = sortBy;
         return this;
     }
     public DecompoundRulesRequestSortBySorting setSortOrder(SortOrder sortOrder)
     {
-        this.sortOrder = sortOrder;;
+        this.sortOrder = sortOrder;
         return this;
     }
 }

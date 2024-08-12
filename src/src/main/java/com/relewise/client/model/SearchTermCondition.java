@@ -81,12 +81,12 @@ public class SearchTermCondition
     }
     public SearchTermCondition setKind(@Nullable SearchTermConditionConditionKind kind)
     {
-        this.kind = kind;;
+        this.kind = kind;
         return this;
     }
     public SearchTermCondition setValue(String value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     public SearchTermCondition setAndConditions(SearchTermCondition... andConditions)
@@ -119,7 +119,7 @@ public class SearchTermCondition
     }
     public SearchTermCondition setMinimumLength(@Nullable Integer minimumLength)
     {
-        this.minimumLength = minimumLength;;
+        this.minimumLength = minimumLength;
         return this;
     }
 }

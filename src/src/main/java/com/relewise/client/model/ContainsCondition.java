@@ -87,23 +87,23 @@ public class ContainsCondition extends ValueCondition
     }
     public ContainsCondition setValue(DataValue value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     public ContainsCondition setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode valueCollectionEvaluationMode)
     {
-        this.valueCollectionEvaluationMode = valueCollectionEvaluationMode;;
+        this.valueCollectionEvaluationMode = valueCollectionEvaluationMode;
         return this;
     }
     public ContainsCondition setObjectFilter(DataObjectFilter objectFilter)
     {
-        this.objectFilter = objectFilter;;
+        this.objectFilter = objectFilter;
         return this;
     }
     @Override
     public ContainsCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

@@ -46,19 +46,19 @@ public class ProductDataBooleanValueFacetResult extends BooleanProductDataValueF
     @Override
     public ProductDataBooleanValueFacetResult setDataSelectionStrategy(DataSelectionStrategy dataSelectionStrategy)
     {
-        this.dataSelectionStrategy = dataSelectionStrategy;;
+        this.dataSelectionStrategy = dataSelectionStrategy;
         return this;
     }
     @Override
     public ProductDataBooleanValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ProductDataBooleanValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -94,7 +94,7 @@ public class ProductDataBooleanValueFacetResult extends BooleanProductDataValueF
     @Override
     public ProductDataBooleanValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

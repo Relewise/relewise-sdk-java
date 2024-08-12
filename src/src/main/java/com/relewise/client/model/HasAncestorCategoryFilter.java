@@ -53,7 +53,7 @@ public abstract class HasAncestorCategoryFilter extends Filter
     @Override
     public HasAncestorCategoryFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

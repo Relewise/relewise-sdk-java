@@ -57,13 +57,13 @@ public class EqualsCondition extends ValueCondition
     }
     public EqualsCondition setValue(DataValue value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     @Override
     public EqualsCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

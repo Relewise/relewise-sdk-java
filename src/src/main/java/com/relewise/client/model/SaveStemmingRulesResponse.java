@@ -42,7 +42,7 @@ public class SaveStemmingRulesResponse extends StemmingRuleSaveSearchRulesRespon
     @Override
     public SaveStemmingRulesResponse setRules(StemmingRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public SaveStemmingRulesResponse addToRules(StemmingRule rule)
@@ -62,7 +62,7 @@ public class SaveStemmingRulesResponse extends StemmingRuleSaveSearchRulesRespon
     @Override
     public SaveStemmingRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

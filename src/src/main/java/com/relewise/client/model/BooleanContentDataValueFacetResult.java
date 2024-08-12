@@ -32,13 +32,13 @@ public abstract class BooleanContentDataValueFacetResult extends BooleanDataValu
     @Override
     public BooleanContentDataValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public BooleanContentDataValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -74,7 +74,7 @@ public abstract class BooleanContentDataValueFacetResult extends BooleanDataValu
     @Override
     public BooleanContentDataValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

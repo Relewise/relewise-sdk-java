@@ -65,18 +65,18 @@ public class ProductSalesPriceFilter extends Filter implements IProductFilter
     }
     public ProductSalesPriceFilter setRange(DoubleRange range)
     {
-        this.range = range;;
+        this.range = range;
         return this;
     }
     public ProductSalesPriceFilter setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     @Override
     public ProductSalesPriceFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

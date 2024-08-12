@@ -70,12 +70,12 @@ public class ProductVariant
     }
     public ProductVariant setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public ProductVariant setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public ProductVariant setAssortments(Integer... assortments)
@@ -103,7 +103,7 @@ public class ProductVariant
     }
     public ProductVariant setSpecification(HashMap<String, String> specification)
     {
-        this.specification = specification;;
+        this.specification = specification;
         return this;
     }
     public ProductVariant addToData(String key, DataValue value)
@@ -117,17 +117,17 @@ public class ProductVariant
     }
     public ProductVariant setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public ProductVariant setListPrice(MultiCurrency listPrice)
     {
-        this.listPrice = listPrice;;
+        this.listPrice = listPrice;
         return this;
     }
     public ProductVariant setSalesPrice(MultiCurrency salesPrice)
     {
-        this.salesPrice = salesPrice;;
+        this.salesPrice = salesPrice;
         return this;
     }
 }

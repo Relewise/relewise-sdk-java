@@ -40,13 +40,13 @@ public abstract class PredictionRuleSaveSearchRulesResponse extends TimedRespons
     }
     public PredictionRuleSaveSearchRulesResponse setRules(PredictionRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     @Override
     public PredictionRuleSaveSearchRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

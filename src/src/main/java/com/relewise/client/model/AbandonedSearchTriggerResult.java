@@ -52,17 +52,17 @@ public class AbandonedSearchTriggerResult implements ITriggerResult
     }
     public AbandonedSearchTriggerResult setUser(UserResultDetails user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public AbandonedSearchTriggerResult setType(SearchType type)
     {
-        this.type = type;;
+        this.type = type;
         return this;
     }
     public AbandonedSearchTriggerResult setSearches(AbandonedSearch... searches)
     {
-        this.searches = searches;;
+        this.searches = searches;
         return this;
     }
     public AbandonedSearchTriggerResult addToSearches(AbandonedSearch searche)

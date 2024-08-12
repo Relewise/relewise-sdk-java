@@ -41,7 +41,7 @@ public abstract class ValueCondition
     }
     public ValueCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

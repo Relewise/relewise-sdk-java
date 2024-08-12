@@ -52,17 +52,17 @@ public class StringAvailableFacetValue
     }
     public StringAvailableFacetValue setValue(String value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     public StringAvailableFacetValue setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     public StringAvailableFacetValue setSelected(Boolean selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
 }

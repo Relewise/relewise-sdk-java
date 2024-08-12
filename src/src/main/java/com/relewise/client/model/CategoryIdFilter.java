@@ -57,13 +57,13 @@ public abstract class CategoryIdFilter extends Filter
     }
     public CategoryIdFilter setEvaluationScope(CategoryScope evaluationScope)
     {
-        this.evaluationScope = evaluationScope;;
+        this.evaluationScope = evaluationScope;
         return this;
     }
     @Override
     public CategoryIdFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

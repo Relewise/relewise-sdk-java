@@ -52,12 +52,12 @@ public class SaveSearchIndexRequest extends LicensedRequest
     }
     public SaveSearchIndexRequest setIndex(SearchIndex index)
     {
-        this.index = index;;
+        this.index = index;
         return this;
     }
     public SaveSearchIndexRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

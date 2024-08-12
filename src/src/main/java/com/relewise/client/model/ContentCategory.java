@@ -42,13 +42,13 @@ public class ContentCategory extends Category
     @Override
     public ContentCategory setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public ContentCategory setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     @Override
@@ -93,7 +93,7 @@ public class ContentCategory extends Category
     @Override
     public ContentCategory setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

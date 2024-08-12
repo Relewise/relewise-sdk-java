@@ -56,7 +56,7 @@ public class StemmingRule extends SearchRule
     }
     public StemmingRule setWords(String... words)
     {
-        this.words = words;;
+        this.words = words;
         return this;
     }
     public StemmingRule addToWords(String word)
@@ -75,67 +75,67 @@ public class StemmingRule extends SearchRule
     }
     public StemmingRule setStem(String stem)
     {
-        this.stem = stem;;
+        this.stem = stem;
         return this;
     }
     @Override
     public StemmingRule setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public StemmingRule setIndexes(ApplicableIndexes indexes)
     {
-        this.indexes = indexes;;
+        this.indexes = indexes;
         return this;
     }
     @Override
     public StemmingRule setLanguages(ApplicableLanguages languages)
     {
-        this.languages = languages;;
+        this.languages = languages;
         return this;
     }
     @Override
     public StemmingRule setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public StemmingRule setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public StemmingRule setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public StemmingRule setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public StemmingRule setApproved(@Nullable OffsetDateTime approved)
     {
-        this.approved = approved;;
+        this.approved = approved;
         return this;
     }
     @Override
     public StemmingRule setApprovedBy(String approvedBy)
     {
-        this.approvedBy = approvedBy;;
+        this.approvedBy = approvedBy;
         return this;
     }
     @Override
     public StemmingRule setIsApproved(Boolean isApproved)
     {
-        this.isApproved = isApproved;;
+        this.isApproved = isApproved;
         return this;
     }
 }

@@ -68,27 +68,27 @@ public abstract class CategoryResult
     }
     public CategoryResult setCategoryId(String categoryId)
     {
-        this.categoryId = categoryId;;
+        this.categoryId = categoryId;
         return this;
     }
     public CategoryResult setDisplayName(String displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public CategoryResult setRank(Integer rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
     public CategoryResult setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
     public CategoryResult setPaths(CategoryPathResult... paths)
     {
-        this.paths = paths;;
+        this.paths = paths;
         return this;
     }
     public CategoryResult addToPaths(CategoryPathResult path)
@@ -107,7 +107,7 @@ public abstract class CategoryResult
     }
     public CategoryResult setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public CategoryResult addToAssortments(Integer assortment)
@@ -135,7 +135,7 @@ public abstract class CategoryResult
     }
     public CategoryResult setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

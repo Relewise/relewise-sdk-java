@@ -55,12 +55,12 @@ public class Brand
     }
     public Brand setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public Brand setDisplayName(String displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public Brand setAssortments(Integer... assortments)
@@ -88,7 +88,7 @@ public class Brand
     }
     public Brand setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

@@ -42,19 +42,19 @@ public class ContentCategoryResultDetails extends ContentCategoryResultDetailsCa
     @Override
     public ContentCategoryResultDetails setCategoryId(String categoryId)
     {
-        this.categoryId = categoryId;;
+        this.categoryId = categoryId;
         return this;
     }
     @Override
     public ContentCategoryResultDetails setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     @Override
     public ContentCategoryResultDetails setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public ContentCategoryResultDetails addToAssortments(Integer assortment)
@@ -83,49 +83,49 @@ public class ContentCategoryResultDetails extends ContentCategoryResultDetailsCa
     @Override
     public ContentCategoryResultDetails setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     @Override
     public ContentCategoryResultDetails setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
     @Override
     public ContentCategoryResultDetails setCreatedUtc(OffsetDateTime createdUtc)
     {
-        this.createdUtc = createdUtc;;
+        this.createdUtc = createdUtc;
         return this;
     }
     @Override
     public ContentCategoryResultDetails setLastViewedUtc(@Nullable OffsetDateTime lastViewedUtc)
     {
-        this.lastViewedUtc = lastViewedUtc;;
+        this.lastViewedUtc = lastViewedUtc;
         return this;
     }
     @Override
     public ContentCategoryResultDetails setViewedTotalNumberOfTimes(Long viewedTotalNumberOfTimes)
     {
-        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;;
+        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;
         return this;
     }
     @Override
     public ContentCategoryResultDetails setViewedByDifferentNumberOfUsers(Integer viewedByDifferentNumberOfUsers)
     {
-        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;;
+        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;
         return this;
     }
     @Override
     public ContentCategoryResultDetails setDisabled(Boolean disabled)
     {
-        this.disabled = disabled;;
+        this.disabled = disabled;
         return this;
     }
     @Override
     public ContentCategoryResultDetails setChildCategories(ContentCategoryResultDetails... childCategories)
     {
-        this.childCategories = childCategories;;
+        this.childCategories = childCategories;
         return this;
     }
     public ContentCategoryResultDetails addToChildCategories(ContentCategoryResultDetails childCategory)
@@ -145,7 +145,7 @@ public class ContentCategoryResultDetails extends ContentCategoryResultDetailsCa
     @Override
     public ContentCategoryResultDetails setParentCategories(ContentCategoryResultDetails... parentCategories)
     {
-        this.parentCategories = parentCategories;;
+        this.parentCategories = parentCategories;
         return this;
     }
     public ContentCategoryResultDetails addToParentCategories(ContentCategoryResultDetails parentCategory)

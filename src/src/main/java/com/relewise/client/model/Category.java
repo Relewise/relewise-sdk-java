@@ -56,12 +56,12 @@ public abstract class Category
     }
     public Category setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public Category setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public Category setCategoryPaths(CategoryPath... categoryPaths)
@@ -103,7 +103,7 @@ public abstract class Category
     }
     public Category setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

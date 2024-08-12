@@ -43,7 +43,7 @@ public class DeleteStemmingRulesRequest extends DeleteSearchRulesRequest
     @Override
     public DeleteStemmingRulesRequest setIds(UUID... ids)
     {
-        this.ids = ids;;
+        this.ids = ids;
         return this;
     }
     public DeleteStemmingRulesRequest addToIds(UUID id)
@@ -63,7 +63,7 @@ public class DeleteStemmingRulesRequest extends DeleteSearchRulesRequest
     @Override
     public DeleteStemmingRulesRequest setDeletedBy(String deletedBy)
     {
-        this.deletedBy = deletedBy;;
+        this.deletedBy = deletedBy;
         return this;
     }
 }

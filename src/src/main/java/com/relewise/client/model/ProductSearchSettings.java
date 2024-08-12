@@ -67,32 +67,32 @@ public class ProductSearchSettings extends SearchSettings
     }
     public ProductSearchSettings setSelectedProductProperties(SelectedProductPropertiesSettings selectedProductProperties)
     {
-        this.selectedProductProperties = selectedProductProperties;;
+        this.selectedProductProperties = selectedProductProperties;
         return this;
     }
     public ProductSearchSettings setSelectedVariantProperties(SelectedVariantPropertiesSettings selectedVariantProperties)
     {
-        this.selectedVariantProperties = selectedVariantProperties;;
+        this.selectedVariantProperties = selectedVariantProperties;
         return this;
     }
     public ProductSearchSettings setExplodedVariants(@Nullable Integer explodedVariants)
     {
-        this.explodedVariants = explodedVariants;;
+        this.explodedVariants = explodedVariants;
         return this;
     }
     public ProductSearchSettings setRecommendations(RecommendationSettings recommendations)
     {
-        this.recommendations = recommendations;;
+        this.recommendations = recommendations;
         return this;
     }
     public ProductSearchSettings setSelectedBrandProperties(SelectedBrandPropertiesSettings selectedBrandProperties)
     {
-        this.selectedBrandProperties = selectedBrandProperties;;
+        this.selectedBrandProperties = selectedBrandProperties;
         return this;
     }
     public ProductSearchSettings setVariantSettings(VariantSearchSettings variantSettings)
     {
-        this.variantSettings = variantSettings;;
+        this.variantSettings = variantSettings;
         return this;
     }
 }

@@ -32,13 +32,13 @@ public abstract class StringContentDataValueFacetResult extends StringDataValueF
     @Override
     public StringContentDataValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public StringContentDataValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -74,7 +74,7 @@ public abstract class StringContentDataValueFacetResult extends StringDataValueF
     @Override
     public StringContentDataValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

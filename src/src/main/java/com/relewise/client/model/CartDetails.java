@@ -64,17 +64,17 @@ public class CartDetails
     }
     public CartDetails setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     public CartDetails setModifiedUtc(OffsetDateTime modifiedUtc)
     {
-        this.modifiedUtc = modifiedUtc;;
+        this.modifiedUtc = modifiedUtc;
         return this;
     }
     public CartDetails setLineItems(LineItem... lineItems)
     {
-        this.lineItems = lineItems;;
+        this.lineItems = lineItems;
         return this;
     }
     public CartDetails addToLineItems(LineItem lineItem)
@@ -93,7 +93,7 @@ public class CartDetails
     }
     public CartDetails setSubtotal(Money subtotal)
     {
-        this.subtotal = subtotal;;
+        this.subtotal = subtotal;
         return this;
     }
     public CartDetails addToData(String key, DataValue value)
@@ -107,7 +107,7 @@ public class CartDetails
     }
     public CartDetails setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

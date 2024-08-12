@@ -89,22 +89,22 @@ public class VariantDataRelevanceModifier extends RelevanceModifier implements I
     }
     public VariantDataRelevanceModifier setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public VariantDataRelevanceModifier setConsiderAsMatchIfKeyIsNotFound(Boolean considerAsMatchIfKeyIsNotFound)
     {
-        this.considerAsMatchIfKeyIsNotFound = considerAsMatchIfKeyIsNotFound;;
+        this.considerAsMatchIfKeyIsNotFound = considerAsMatchIfKeyIsNotFound;
         return this;
     }
     public VariantDataRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
-        this.multiplyWeightBy = multiplyWeightBy;;
+        this.multiplyWeightBy = multiplyWeightBy;
         return this;
     }
     public VariantDataRelevanceModifier setMustMatchAllConditions(Boolean mustMatchAllConditions)
     {
-        this.mustMatchAllConditions = mustMatchAllConditions;;
+        this.mustMatchAllConditions = mustMatchAllConditions;
         return this;
     }
     public VariantDataRelevanceModifier setConditions(ValueCondition... conditions)
@@ -123,13 +123,13 @@ public class VariantDataRelevanceModifier extends RelevanceModifier implements I
     }
     public VariantDataRelevanceModifier setMultiplierSelector(ValueSelector multiplierSelector)
     {
-        this.multiplierSelector = multiplierSelector;;
+        this.multiplierSelector = multiplierSelector;
         return this;
     }
     @Override
     public VariantDataRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

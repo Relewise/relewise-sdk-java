@@ -46,7 +46,7 @@ public class TrackContentUpdateRequest extends TrackingRequest
     }
     public TrackContentUpdateRequest setContentUpdate(ContentUpdate contentUpdate)
     {
-        this.contentUpdate = contentUpdate;;
+        this.contentUpdate = contentUpdate;
         return this;
     }
 }

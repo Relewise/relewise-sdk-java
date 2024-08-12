@@ -56,27 +56,27 @@ public class ProductCategoryRecommendationRequestSettings
     }
     public ProductCategoryRecommendationRequestSettings setNumberOfRecommendations(Integer numberOfRecommendations)
     {
-        this.numberOfRecommendations = numberOfRecommendations;;
+        this.numberOfRecommendations = numberOfRecommendations;
         return this;
     }
     public ProductCategoryRecommendationRequestSettings setAllowFillIfNecessaryToReachNumberOfRecommendations(Boolean allowFillIfNecessaryToReachNumberOfRecommendations)
     {
-        this.allowFillIfNecessaryToReachNumberOfRecommendations = allowFillIfNecessaryToReachNumberOfRecommendations;;
+        this.allowFillIfNecessaryToReachNumberOfRecommendations = allowFillIfNecessaryToReachNumberOfRecommendations;
         return this;
     }
     public ProductCategoryRecommendationRequestSettings setAllowReplacingOfRecentlyShownRecommendations(Boolean allowReplacingOfRecentlyShownRecommendations)
     {
-        this.allowReplacingOfRecentlyShownRecommendations = allowReplacingOfRecentlyShownRecommendations;;
+        this.allowReplacingOfRecentlyShownRecommendations = allowReplacingOfRecentlyShownRecommendations;
         return this;
     }
     public ProductCategoryRecommendationRequestSettings setPrioritizeDiversityBetweenRequests(Boolean prioritizeDiversityBetweenRequests)
     {
-        this.prioritizeDiversityBetweenRequests = prioritizeDiversityBetweenRequests;;
+        this.prioritizeDiversityBetweenRequests = prioritizeDiversityBetweenRequests;
         return this;
     }
     public ProductCategoryRecommendationRequestSettings setSelectedProductCategoryProperties(SelectedProductCategoryPropertiesSettings selectedProductCategoryProperties)
     {
-        this.selectedProductCategoryProperties = selectedProductCategoryProperties;;
+        this.selectedProductCategoryProperties = selectedProductCategoryProperties;
         return this;
     }
 }

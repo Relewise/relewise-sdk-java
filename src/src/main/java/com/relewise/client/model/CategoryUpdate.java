@@ -38,7 +38,7 @@ public abstract class CategoryUpdate extends Trackable
     }
     public CategoryUpdate setKind(CategoryUpdateUpdateKind kind)
     {
-        this.kind = kind;;
+        this.kind = kind;
         return this;
     }
 }

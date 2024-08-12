@@ -75,12 +75,12 @@ public abstract class Facet
     }
     public Facet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     public Facet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

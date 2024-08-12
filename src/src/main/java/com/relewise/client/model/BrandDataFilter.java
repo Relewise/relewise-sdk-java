@@ -93,43 +93,43 @@ public class BrandDataFilter extends DataFilter implements IBrandFilter
     @Override
     public BrandDataFilter setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public BrandDataFilter setFilterOutIfKeyIsNotFound(Boolean filterOutIfKeyIsNotFound)
     {
-        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;;
+        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
         return this;
     }
     @Override
     public BrandDataFilter setMustMatchAllConditions(Boolean mustMatchAllConditions)
     {
-        this.mustMatchAllConditions = mustMatchAllConditions;;
+        this.mustMatchAllConditions = mustMatchAllConditions;
         return this;
     }
     @Override
     public BrandDataFilter setConditions(ValueConditionCollection conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
     @Override
     public BrandDataFilter setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public BrandDataFilter setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     @Override
     public BrandDataFilter setObjectPath(String... objectPath)
     {
-        this.objectPath = objectPath;;
+        this.objectPath = objectPath;
         return this;
     }
     public BrandDataFilter addToObjectPath(String objectPath)
@@ -149,7 +149,7 @@ public class BrandDataFilter extends DataFilter implements IBrandFilter
     @Override
     public BrandDataFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

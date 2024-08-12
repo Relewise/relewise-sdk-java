@@ -66,32 +66,32 @@ public class SelectedVariantPropertiesSettings
     }
     public SelectedVariantPropertiesSettings setDisplayName(Boolean displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public SelectedVariantPropertiesSettings setPricing(Boolean pricing)
     {
-        this.pricing = pricing;;
+        this.pricing = pricing;
         return this;
     }
     public SelectedVariantPropertiesSettings setAllSpecifications(Boolean allSpecifications)
     {
-        this.allSpecifications = allSpecifications;;
+        this.allSpecifications = allSpecifications;
         return this;
     }
     public SelectedVariantPropertiesSettings setAssortments(Boolean assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public SelectedVariantPropertiesSettings setAllData(Boolean allData)
     {
-        this.allData = allData;;
+        this.allData = allData;
         return this;
     }
     public SelectedVariantPropertiesSettings setDataKeys(String... dataKeys)
     {
-        this.dataKeys = dataKeys;;
+        this.dataKeys = dataKeys;
         return this;
     }
     public SelectedVariantPropertiesSettings addToDataKeys(String dataKey)
@@ -110,7 +110,7 @@ public class SelectedVariantPropertiesSettings
     }
     public SelectedVariantPropertiesSettings setSpecificationKeys(String... specificationKeys)
     {
-        this.specificationKeys = specificationKeys;;
+        this.specificationKeys = specificationKeys;
         return this;
     }
     public SelectedVariantPropertiesSettings addToSpecificationKeys(String specificationKey)

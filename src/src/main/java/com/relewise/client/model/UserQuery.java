@@ -58,7 +58,7 @@ public class UserQuery extends LicensedRequest
     }
     public UserQuery setCriteria(UserQueryCriteria... criteria)
     {
-        this.criteria = criteria;;
+        this.criteria = criteria;
         return this;
     }
     public UserQuery addToCriteria(UserQueryCriteria criteria)
@@ -77,12 +77,12 @@ public class UserQuery extends LicensedRequest
     }
     public UserQuery setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public UserQuery setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

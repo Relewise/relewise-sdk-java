@@ -70,23 +70,23 @@ public class BrandIdRelevanceModifier extends RelevanceModifier implements IProd
     }
     public BrandIdRelevanceModifier setBrandId(String brandId)
     {
-        this.brandId = brandId;;
+        this.brandId = brandId;
         return this;
     }
     public BrandIdRelevanceModifier setIfProductIsBrandMultiplyWeightBy(Double ifProductIsBrandMultiplyWeightBy)
     {
-        this.ifProductIsBrandMultiplyWeightBy = ifProductIsBrandMultiplyWeightBy;;
+        this.ifProductIsBrandMultiplyWeightBy = ifProductIsBrandMultiplyWeightBy;
         return this;
     }
     public BrandIdRelevanceModifier setIfProductIsNotBrandMultiplyWeightBy(Double ifProductIsNotBrandMultiplyWeightBy)
     {
-        this.ifProductIsNotBrandMultiplyWeightBy = ifProductIsNotBrandMultiplyWeightBy;;
+        this.ifProductIsNotBrandMultiplyWeightBy = ifProductIsNotBrandMultiplyWeightBy;
         return this;
     }
     @Override
     public BrandIdRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

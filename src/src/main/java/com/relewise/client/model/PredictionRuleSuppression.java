@@ -46,12 +46,12 @@ public class PredictionRuleSuppression
     }
     public PredictionRuleSuppression setCondition(PredictionRuleSuppressionConditionKind condition)
     {
-        this.condition = condition;;
+        this.condition = condition;
         return this;
     }
     public PredictionRuleSuppression setValues(String... values)
     {
-        this.values = values;;
+        this.values = values;
         return this;
     }
     public PredictionRuleSuppression addToValues(String value)

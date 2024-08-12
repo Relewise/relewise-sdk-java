@@ -32,61 +32,61 @@ public abstract class AbandonedSearchTriggerResultTriggerConfiguration extends T
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setWithinTimeSpanMinutes(Integer withinTimeSpanMinutes)
     {
-        this.withinTimeSpanMinutes = withinTimeSpanMinutes;;
+        this.withinTimeSpanMinutes = withinTimeSpanMinutes;
         return this;
     }
     public AbandonedSearchTriggerResultTriggerConfiguration addToSettings(String key, String value)
@@ -101,13 +101,13 @@ public abstract class AbandonedSearchTriggerResultTriggerConfiguration extends T
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public AbandonedSearchTriggerResultTriggerConfiguration setUserConditions(UserConditionCollection userConditions)
     {
-        this.userConditions = userConditions;;
+        this.userConditions = userConditions;
         return this;
     }
 }

@@ -46,7 +46,7 @@ public class FixedDoubleValueSelector extends ValueSelector
     }
     public FixedDoubleValueSelector setValue(Double value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
 }

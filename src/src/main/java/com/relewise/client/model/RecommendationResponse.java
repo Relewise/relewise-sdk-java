@@ -32,7 +32,7 @@ public abstract class RecommendationResponse extends TimedResponse
     @Override
     public RecommendationResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

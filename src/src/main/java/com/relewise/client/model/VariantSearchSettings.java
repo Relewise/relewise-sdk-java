@@ -36,7 +36,7 @@ public class VariantSearchSettings
     }
     public VariantSearchSettings setExcludeResultsWithoutVariant(Boolean excludeResultsWithoutVariant)
     {
-        this.excludeResultsWithoutVariant = excludeResultsWithoutVariant;;
+        this.excludeResultsWithoutVariant = excludeResultsWithoutVariant;
         return this;
     }
 }

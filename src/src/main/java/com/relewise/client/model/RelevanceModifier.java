@@ -52,7 +52,7 @@ public abstract class RelevanceModifier
     }
     public RelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

@@ -57,13 +57,13 @@ public class ProductHasVariantsFilter extends Filter implements IProductFilter
     }
     public ProductHasVariantsFilter setNumberOfVariants(IntegerRange numberOfVariants)
     {
-        this.numberOfVariants = numberOfVariants;;
+        this.numberOfVariants = numberOfVariants;
         return this;
     }
     @Override
     public ProductHasVariantsFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

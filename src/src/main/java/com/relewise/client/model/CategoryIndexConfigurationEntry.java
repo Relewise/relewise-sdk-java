@@ -46,17 +46,17 @@ public class CategoryIndexConfigurationEntry
     }
     public CategoryIndexConfigurationEntry setId(FieldIndexConfiguration id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public CategoryIndexConfigurationEntry setDisplayName(FieldIndexConfiguration displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public CategoryIndexConfigurationEntry setData(DataIndexConfiguration data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

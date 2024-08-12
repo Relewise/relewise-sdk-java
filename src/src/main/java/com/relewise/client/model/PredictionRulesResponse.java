@@ -43,7 +43,7 @@ public class PredictionRulesResponse extends PredictionRuleSearchRulesResponse
     @Override
     public PredictionRulesResponse setRules(PredictionRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public PredictionRulesResponse addToRules(PredictionRule rule)
@@ -63,13 +63,13 @@ public class PredictionRulesResponse extends PredictionRuleSearchRulesResponse
     @Override
     public PredictionRulesResponse setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     @Override
     public PredictionRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

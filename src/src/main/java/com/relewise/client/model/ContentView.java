@@ -52,12 +52,12 @@ public class ContentView extends Trackable implements IUserIdentifier
     }
     public ContentView setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public ContentView setContent(Content content)
     {
-        this.content = content;;
+        this.content = content;
         return this;
     }
 }

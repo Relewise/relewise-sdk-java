@@ -50,49 +50,49 @@ public class ProductsViewedAfterViewingProductRequest extends ProductRecommendat
     }
     public ProductsViewedAfterViewingProductRequest setProductAndVariantId(ProductAndVariantId productAndVariantId)
     {
-        this.productAndVariantId = productAndVariantId;;
+        this.productAndVariantId = productAndVariantId;
         return this;
     }
     @Override
     public ProductsViewedAfterViewingProductRequest setSettings(ProductRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public ProductsViewedAfterViewingProductRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public ProductsViewedAfterViewingProductRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public ProductsViewedAfterViewingProductRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public ProductsViewedAfterViewingProductRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public ProductsViewedAfterViewingProductRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public ProductsViewedAfterViewingProductRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

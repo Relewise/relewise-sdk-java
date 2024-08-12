@@ -42,7 +42,7 @@ public class SearchTermPredictionResponse extends SearchResponse
     }
     public SearchTermPredictionResponse setPredictions(SearchTermPredictionResult... predictions)
     {
-        this.predictions = predictions;;
+        this.predictions = predictions;
         return this;
     }
     public SearchTermPredictionResponse addToPredictions(SearchTermPredictionResult prediction)
@@ -62,7 +62,7 @@ public class SearchTermPredictionResponse extends SearchResponse
     @Override
     public SearchTermPredictionResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

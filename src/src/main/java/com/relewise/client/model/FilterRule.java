@@ -43,73 +43,73 @@ public class FilterRule extends MerchandisingRule
     @Override
     public FilterRule setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public FilterRule setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     @Override
     public FilterRule setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     @Override
     public FilterRule setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     @Override
     public FilterRule setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     @Override
     public FilterRule setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public FilterRule setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public FilterRule setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public FilterRule setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public FilterRule setConditions(ConditionConfiguration conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
     @Override
     public FilterRule setRequest(RequestConfiguration request)
     {
-        this.request = request;;
+        this.request = request;
         return this;
     }
     @Override
     public FilterRule setPriority(Double priority)
     {
-        this.priority = priority;;
+        this.priority = priority;
         return this;
     }
     public FilterRule addToSettings(String key, String value)
@@ -124,7 +124,7 @@ public class FilterRule extends MerchandisingRule
     @Override
     public FilterRule setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

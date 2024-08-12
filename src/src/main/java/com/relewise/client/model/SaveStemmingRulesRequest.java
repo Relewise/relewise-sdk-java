@@ -43,7 +43,7 @@ public class SaveStemmingRulesRequest extends StemmingRuleSaveSearchRulesRequest
     @Override
     public SaveStemmingRulesRequest setRules(StemmingRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public SaveStemmingRulesRequest addToRules(StemmingRule rule)
@@ -63,7 +63,7 @@ public class SaveStemmingRulesRequest extends StemmingRuleSaveSearchRulesRequest
     @Override
     public SaveStemmingRulesRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

@@ -58,17 +58,17 @@ public class RedirectResult
     }
     public RedirectResult setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public RedirectResult setCondition(SearchTermCondition condition)
     {
-        this.condition = condition;;
+        this.condition = condition;
         return this;
     }
     public RedirectResult setDestination(String destination)
     {
-        this.destination = destination;;
+        this.destination = destination;
         return this;
     }
     public RedirectResult addToData(String key, String value)
@@ -82,7 +82,7 @@ public class RedirectResult
     }
     public RedirectResult setData(HashMap<String, String> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

@@ -93,43 +93,43 @@ public class VariantDataFilter extends DataFilter implements IVariantFilter
     @Override
     public VariantDataFilter setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public VariantDataFilter setFilterOutIfKeyIsNotFound(Boolean filterOutIfKeyIsNotFound)
     {
-        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;;
+        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
         return this;
     }
     @Override
     public VariantDataFilter setMustMatchAllConditions(Boolean mustMatchAllConditions)
     {
-        this.mustMatchAllConditions = mustMatchAllConditions;;
+        this.mustMatchAllConditions = mustMatchAllConditions;
         return this;
     }
     @Override
     public VariantDataFilter setConditions(ValueConditionCollection conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
     @Override
     public VariantDataFilter setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public VariantDataFilter setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     @Override
     public VariantDataFilter setObjectPath(String... objectPath)
     {
-        this.objectPath = objectPath;;
+        this.objectPath = objectPath;
         return this;
     }
     public VariantDataFilter addToObjectPath(String objectPath)
@@ -149,7 +149,7 @@ public class VariantDataFilter extends DataFilter implements IVariantFilter
     @Override
     public VariantDataFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

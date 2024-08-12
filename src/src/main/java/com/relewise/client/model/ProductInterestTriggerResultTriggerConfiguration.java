@@ -32,61 +32,61 @@ public abstract class ProductInterestTriggerResultTriggerConfiguration extends T
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setWithinTimeSpanMinutes(Integer withinTimeSpanMinutes)
     {
-        this.withinTimeSpanMinutes = withinTimeSpanMinutes;;
+        this.withinTimeSpanMinutes = withinTimeSpanMinutes;
         return this;
     }
     public ProductInterestTriggerResultTriggerConfiguration addToSettings(String key, String value)
@@ -101,13 +101,13 @@ public abstract class ProductInterestTriggerResultTriggerConfiguration extends T
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public ProductInterestTriggerResultTriggerConfiguration setUserConditions(UserConditionCollection userConditions)
     {
-        this.userConditions = userConditions;;
+        this.userConditions = userConditions;
         return this;
     }
 }

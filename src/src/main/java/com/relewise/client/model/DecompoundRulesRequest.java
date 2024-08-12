@@ -45,25 +45,25 @@ public class DecompoundRulesRequest extends DecompoundRulesRequestSortBySearchRu
     @Override
     public DecompoundRulesRequest setFilters(SearchRuleFilters filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public DecompoundRulesRequest setSorting(DecompoundRulesRequestSortBySorting sorting)
     {
-        this.sorting = sorting;;
+        this.sorting = sorting;
         return this;
     }
     @Override
     public DecompoundRulesRequest setSkip(Integer skip)
     {
-        this.skip = skip;;
+        this.skip = skip;
         return this;
     }
     @Override
     public DecompoundRulesRequest setTake(Integer take)
     {
-        this.take = take;;
+        this.take = take;
         return this;
     }
 }

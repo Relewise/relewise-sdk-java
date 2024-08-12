@@ -47,12 +47,12 @@ public class ContentCategorySearchSettings extends SearchSettings
     }
     public ContentCategorySearchSettings setNumberOfRecommendations(@Nullable Integer numberOfRecommendations)
     {
-        this.numberOfRecommendations = numberOfRecommendations;;
+        this.numberOfRecommendations = numberOfRecommendations;
         return this;
     }
     public ContentCategorySearchSettings setOnlyIncludeRecommendationsForEmptyResults(@Nullable Boolean onlyIncludeRecommendationsForEmptyResults)
     {
-        this.onlyIncludeRecommendationsForEmptyResults = onlyIncludeRecommendationsForEmptyResults;;
+        this.onlyIncludeRecommendationsForEmptyResults = onlyIncludeRecommendationsForEmptyResults;
         return this;
     }
 }

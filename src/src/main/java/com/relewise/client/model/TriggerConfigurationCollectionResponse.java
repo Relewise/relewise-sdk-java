@@ -42,7 +42,7 @@ public class TriggerConfigurationCollectionResponse extends TimedResponse
     }
     public TriggerConfigurationCollectionResponse setConfigurations(TriggerConfiguration... configurations)
     {
-        this.configurations = configurations;;
+        this.configurations = configurations;
         return this;
     }
     public TriggerConfigurationCollectionResponse addToConfigurations(TriggerConfiguration configuration)
@@ -62,7 +62,7 @@ public class TriggerConfigurationCollectionResponse extends TimedResponse
     @Override
     public TriggerConfigurationCollectionResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

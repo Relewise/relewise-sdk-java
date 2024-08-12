@@ -41,12 +41,12 @@ public abstract class IntegerDataValueFacetResult extends IntegerValueFacetResul
     }
     public IntegerDataValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public IntegerDataValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -82,7 +82,7 @@ public abstract class IntegerDataValueFacetResult extends IntegerValueFacetResul
     @Override
     public IntegerDataValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

@@ -71,29 +71,29 @@ public class ProductDataSorting extends ProductSorting
     }
     public ProductDataSorting setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public ProductDataSorting setDataSelectionStrategy(DataSelectionStrategy dataSelectionStrategy)
     {
-        this.dataSelectionStrategy = dataSelectionStrategy;;
+        this.dataSelectionStrategy = dataSelectionStrategy;
         return this;
     }
     public ProductDataSorting setMode(SortMode mode)
     {
-        this.mode = mode;;
+        this.mode = mode;
         return this;
     }
     @Override
     public ProductDataSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ProductDataSorting setThenBy(ProductSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

@@ -46,12 +46,12 @@ public class ViewedByUserInfo
     }
     public ViewedByUserInfo setMostRecentlyViewedUtc(OffsetDateTime mostRecentlyViewedUtc)
     {
-        this.mostRecentlyViewedUtc = mostRecentlyViewedUtc;;
+        this.mostRecentlyViewedUtc = mostRecentlyViewedUtc;
         return this;
     }
     public ViewedByUserInfo setTotalNumberOfTimesViewed(Integer totalNumberOfTimesViewed)
     {
-        this.totalNumberOfTimesViewed = totalNumberOfTimesViewed;;
+        this.totalNumberOfTimesViewed = totalNumberOfTimesViewed;
         return this;
     }
 }

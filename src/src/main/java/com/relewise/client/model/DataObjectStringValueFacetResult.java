@@ -45,13 +45,13 @@ public class DataObjectStringValueFacetResult extends StringDataObjectValueFacet
     @Override
     public DataObjectStringValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public DataObjectStringValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -87,7 +87,7 @@ public class DataObjectStringValueFacetResult extends StringDataObjectValueFacet
     @Override
     public DataObjectStringValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

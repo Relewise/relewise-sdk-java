@@ -36,13 +36,13 @@ public abstract class TriggersResponse extends TimedResponse
     }
     public TriggersResponse setRemainingResults(Integer remainingResults)
     {
-        this.remainingResults = remainingResults;;
+        this.remainingResults = remainingResults;
         return this;
     }
     @Override
     public TriggersResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

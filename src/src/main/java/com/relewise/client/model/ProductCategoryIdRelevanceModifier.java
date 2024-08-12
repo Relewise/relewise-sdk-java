@@ -77,28 +77,28 @@ public class ProductCategoryIdRelevanceModifier extends RelevanceModifier implem
     }
     public ProductCategoryIdRelevanceModifier setCategoryId(String categoryId)
     {
-        this.categoryId = categoryId;;
+        this.categoryId = categoryId;
         return this;
     }
     public ProductCategoryIdRelevanceModifier setEvaluationScope(CategoryScope evaluationScope)
     {
-        this.evaluationScope = evaluationScope;;
+        this.evaluationScope = evaluationScope;
         return this;
     }
     public ProductCategoryIdRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
-        this.multiplyWeightBy = multiplyWeightBy;;
+        this.multiplyWeightBy = multiplyWeightBy;
         return this;
     }
     public ProductCategoryIdRelevanceModifier setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     @Override
     public ProductCategoryIdRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

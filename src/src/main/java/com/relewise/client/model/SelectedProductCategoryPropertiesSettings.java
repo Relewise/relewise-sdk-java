@@ -61,32 +61,32 @@ public class SelectedProductCategoryPropertiesSettings
     }
     public SelectedProductCategoryPropertiesSettings setDisplayName(Boolean displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public SelectedProductCategoryPropertiesSettings setPaths(Boolean paths)
     {
-        this.paths = paths;;
+        this.paths = paths;
         return this;
     }
     public SelectedProductCategoryPropertiesSettings setAssortments(Boolean assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public SelectedProductCategoryPropertiesSettings setViewedByUserInfo(Boolean viewedByUserInfo)
     {
-        this.viewedByUserInfo = viewedByUserInfo;;
+        this.viewedByUserInfo = viewedByUserInfo;
         return this;
     }
     public SelectedProductCategoryPropertiesSettings setAllData(Boolean allData)
     {
-        this.allData = allData;;
+        this.allData = allData;
         return this;
     }
     public SelectedProductCategoryPropertiesSettings setDataKeys(String... dataKeys)
     {
-        this.dataKeys = dataKeys;;
+        this.dataKeys = dataKeys;
         return this;
     }
     public SelectedProductCategoryPropertiesSettings addToDataKeys(String dataKey)

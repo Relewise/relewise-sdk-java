@@ -49,13 +49,13 @@ public class ProductDataObjectFacetResult extends DataObjectFacetResult
     }
     public ProductDataObjectFacetResult setDataSelectionStrategy(DataSelectionStrategy dataSelectionStrategy)
     {
-        this.dataSelectionStrategy = dataSelectionStrategy;;
+        this.dataSelectionStrategy = dataSelectionStrategy;
         return this;
     }
     @Override
     public ProductDataObjectFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
@@ -76,13 +76,13 @@ public class ProductDataObjectFacetResult extends DataObjectFacetResult
     @Override
     public ProductDataObjectFacetResult setFilter(DataObjectFilter filter)
     {
-        this.filter = filter;;
+        this.filter = filter;
         return this;
     }
     @Override
     public ProductDataObjectFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

@@ -85,33 +85,33 @@ public class VariantSpecificationValueRelevanceModifier extends RelevanceModifie
     }
     public VariantSpecificationValueRelevanceModifier setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public VariantSpecificationValueRelevanceModifier setValue(String value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     public VariantSpecificationValueRelevanceModifier setIfIdenticalMultiplyWeightBy(Double ifIdenticalMultiplyWeightBy)
     {
-        this.ifIdenticalMultiplyWeightBy = ifIdenticalMultiplyWeightBy;;
+        this.ifIdenticalMultiplyWeightBy = ifIdenticalMultiplyWeightBy;
         return this;
     }
     public VariantSpecificationValueRelevanceModifier setIfNotIdenticalMultiplyWeightBy(Double ifNotIdenticalMultiplyWeightBy)
     {
-        this.ifNotIdenticalMultiplyWeightBy = ifNotIdenticalMultiplyWeightBy;;
+        this.ifNotIdenticalMultiplyWeightBy = ifNotIdenticalMultiplyWeightBy;
         return this;
     }
     public VariantSpecificationValueRelevanceModifier setIfSpecificationKeyNotFoundApplyNotEqualMultiplier(Boolean ifSpecificationKeyNotFoundApplyNotEqualMultiplier)
     {
-        this.ifSpecificationKeyNotFoundApplyNotEqualMultiplier = ifSpecificationKeyNotFoundApplyNotEqualMultiplier;;
+        this.ifSpecificationKeyNotFoundApplyNotEqualMultiplier = ifSpecificationKeyNotFoundApplyNotEqualMultiplier;
         return this;
     }
     @Override
     public VariantSpecificationValueRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

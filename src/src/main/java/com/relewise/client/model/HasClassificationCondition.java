@@ -62,18 +62,18 @@ public class HasClassificationCondition extends UserCondition
     }
     public HasClassificationCondition setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public HasClassificationCondition setValue(String value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     @Override
     public HasClassificationCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

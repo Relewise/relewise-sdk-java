@@ -44,7 +44,7 @@ public class ContentDataObjectFacetResult extends DataObjectFacetResult
     @Override
     public ContentDataObjectFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
@@ -65,13 +65,13 @@ public class ContentDataObjectFacetResult extends DataObjectFacetResult
     @Override
     public ContentDataObjectFacetResult setFilter(DataObjectFilter filter)
     {
-        this.filter = filter;;
+        this.filter = filter;
         return this;
     }
     @Override
     public ContentDataObjectFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

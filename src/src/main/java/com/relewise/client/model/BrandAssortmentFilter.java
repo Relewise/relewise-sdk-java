@@ -66,7 +66,7 @@ public class BrandAssortmentFilter extends Filter implements IBrandFilter
     @Override
     public BrandAssortmentFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

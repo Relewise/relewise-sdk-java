@@ -42,13 +42,13 @@ public class TriggerConfigurationResponse extends TimedResponse
     }
     public TriggerConfigurationResponse setConfiguration(TriggerConfiguration configuration)
     {
-        this.configuration = configuration;;
+        this.configuration = configuration;
         return this;
     }
     @Override
     public TriggerConfigurationResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

@@ -45,25 +45,25 @@ public class StemmingRulesRequest extends StemmingRulesRequestSortBySearchRulesR
     @Override
     public StemmingRulesRequest setFilters(SearchRuleFilters filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public StemmingRulesRequest setSorting(StemmingRulesRequestSortBySorting sorting)
     {
-        this.sorting = sorting;;
+        this.sorting = sorting;
         return this;
     }
     @Override
     public StemmingRulesRequest setSkip(Integer skip)
     {
-        this.skip = skip;;
+        this.skip = skip;
         return this;
     }
     @Override
     public StemmingRulesRequest setTake(Integer take)
     {
-        this.take = take;;
+        this.take = take;
         return this;
     }
 }

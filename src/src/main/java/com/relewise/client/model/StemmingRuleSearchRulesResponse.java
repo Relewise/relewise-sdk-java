@@ -45,18 +45,18 @@ public abstract class StemmingRuleSearchRulesResponse extends TimedResponse
     }
     public StemmingRuleSearchRulesResponse setRules(StemmingRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public StemmingRuleSearchRulesResponse setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     @Override
     public StemmingRuleSearchRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

@@ -46,7 +46,7 @@ public class ContentCategoryInterestTriggerResultCategory
     }
     public ContentCategoryInterestTriggerResultCategory setLastPath(String... lastPath)
     {
-        this.lastPath = lastPath;;
+        this.lastPath = lastPath;
         return this;
     }
     public ContentCategoryInterestTriggerResultCategory addToLastPath(String lastPath)
@@ -65,12 +65,12 @@ public class ContentCategoryInterestTriggerResultCategory
     }
     public ContentCategoryInterestTriggerResultCategory setViews(Integer views)
     {
-        this.views = views;;
+        this.views = views;
         return this;
     }
     public ContentCategoryInterestTriggerResultCategory setViewedContents(ContentResultDetails... viewedContents)
     {
-        this.viewedContents = viewedContents;;
+        this.viewedContents = viewedContents;
         return this;
     }
     public ContentCategoryInterestTriggerResultCategory addToViewedContents(ContentResultDetails viewedContent)

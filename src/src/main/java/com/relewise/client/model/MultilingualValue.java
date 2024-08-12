@@ -46,12 +46,12 @@ public class MultilingualValue
     }
     public MultilingualValue setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public MultilingualValue setText(String text)
     {
-        this.text = text;;
+        this.text = text;
         return this;
     }
 }

@@ -45,12 +45,12 @@ public abstract class PredictionRuleSaveSearchRulesRequest extends LicensedReque
     }
     public PredictionRuleSaveSearchRulesRequest setRules(PredictionRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public PredictionRuleSaveSearchRulesRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

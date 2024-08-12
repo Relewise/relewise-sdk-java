@@ -56,12 +56,12 @@ public class RequestContextFilter
     }
     public RequestContextFilter setRecommendations(RecommendationTypeCollection recommendations)
     {
-        this.recommendations = recommendations;;
+        this.recommendations = recommendations;
         return this;
     }
     public RequestContextFilter setSearches(SearchTypeCollection searches)
     {
-        this.searches = searches;;
+        this.searches = searches;
         return this;
     }
     public RequestContextFilter setLocations(String... locations)

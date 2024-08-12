@@ -51,22 +51,22 @@ public class RequestConfiguration
     }
     public RequestConfiguration setFilters(RequestConfigurationPrioritization filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public RequestConfiguration setRelevanceModifiers(RequestConfigurationPrioritization relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     public RequestConfiguration setOverriddenProductRecommendationRequestSettings(OverriddenProductRecommendationRequestSettings overriddenProductRecommendationRequestSettings)
     {
-        this.overriddenProductRecommendationRequestSettings = overriddenProductRecommendationRequestSettings;;
+        this.overriddenProductRecommendationRequestSettings = overriddenProductRecommendationRequestSettings;
         return this;
     }
     public RequestConfiguration setOverriddenContentRecommendationRequestSettings(OverriddenContentRecommendationRequestSettings overriddenContentRecommendationRequestSettings)
     {
-        this.overriddenContentRecommendationRequestSettings = overriddenContentRecommendationRequestSettings;;
+        this.overriddenContentRecommendationRequestSettings = overriddenContentRecommendationRequestSettings;
         return this;
     }
 }

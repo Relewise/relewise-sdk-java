@@ -56,54 +56,54 @@ public class PersonalBrandRecommendationRequest extends BrandRecommendationReque
     }
     public PersonalBrandRecommendationRequest setSinceMinutesAgo(Integer sinceMinutesAgo)
     {
-        this.sinceMinutesAgo = sinceMinutesAgo;;
+        this.sinceMinutesAgo = sinceMinutesAgo;
         return this;
     }
     public PersonalBrandRecommendationRequest setWeights(BrandRecommendationWeights weights)
     {
-        this.weights = weights;;
+        this.weights = weights;
         return this;
     }
     @Override
     public PersonalBrandRecommendationRequest setSettings(BrandRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public PersonalBrandRecommendationRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public PersonalBrandRecommendationRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public PersonalBrandRecommendationRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public PersonalBrandRecommendationRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public PersonalBrandRecommendationRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public PersonalBrandRecommendationRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

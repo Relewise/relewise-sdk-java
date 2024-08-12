@@ -46,12 +46,12 @@ public class RedirectRulesRequestSortBySorting
     }
     public RedirectRulesRequestSortBySorting setSortBy(RedirectRulesRequestSortBy sortBy)
     {
-        this.sortBy = sortBy;;
+        this.sortBy = sortBy;
         return this;
     }
     public RedirectRulesRequestSortBySorting setSortOrder(SortOrder sortOrder)
     {
-        this.sortOrder = sortOrder;;
+        this.sortOrder = sortOrder;
         return this;
     }
 }

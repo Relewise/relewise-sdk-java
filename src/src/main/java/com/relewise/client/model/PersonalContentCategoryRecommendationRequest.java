@@ -56,54 +56,54 @@ public class PersonalContentCategoryRecommendationRequest extends ContentCategor
     }
     public PersonalContentCategoryRecommendationRequest setSinceMinutesAgo(Integer sinceMinutesAgo)
     {
-        this.sinceMinutesAgo = sinceMinutesAgo;;
+        this.sinceMinutesAgo = sinceMinutesAgo;
         return this;
     }
     public PersonalContentCategoryRecommendationRequest setWeights(ContentCategoryRecommendationWeights weights)
     {
-        this.weights = weights;;
+        this.weights = weights;
         return this;
     }
     @Override
     public PersonalContentCategoryRecommendationRequest setSettings(ContentCategoryRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public PersonalContentCategoryRecommendationRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public PersonalContentCategoryRecommendationRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public PersonalContentCategoryRecommendationRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public PersonalContentCategoryRecommendationRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public PersonalContentCategoryRecommendationRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public PersonalContentCategoryRecommendationRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

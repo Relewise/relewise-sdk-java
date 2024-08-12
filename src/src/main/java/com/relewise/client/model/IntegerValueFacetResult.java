@@ -62,7 +62,7 @@ public abstract class IntegerValueFacetResult extends IntegerIntegerValueFacetRe
     @Override
     public IntegerValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

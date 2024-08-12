@@ -62,18 +62,18 @@ public class HasActivityCondition extends UserCondition
     }
     public HasActivityCondition setWithinMinutes(Integer withinMinutes)
     {
-        this.withinMinutes = withinMinutes;;
+        this.withinMinutes = withinMinutes;
         return this;
     }
     public HasActivityCondition setForAtLeastSeconds(Integer forAtLeastSeconds)
     {
-        this.forAtLeastSeconds = forAtLeastSeconds;;
+        this.forAtLeastSeconds = forAtLeastSeconds;
         return this;
     }
     @Override
     public HasActivityCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

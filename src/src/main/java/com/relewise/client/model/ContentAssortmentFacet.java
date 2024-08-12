@@ -43,7 +43,7 @@ public class ContentAssortmentFacet extends AssortmentFacet
     @Override
     public ContentAssortmentFacet setAssortmentFilterType(AssortmentFilterType assortmentFilterType)
     {
-        this.assortmentFilterType = assortmentFilterType;;
+        this.assortmentFilterType = assortmentFilterType;
         return this;
     }
     @Override
@@ -64,13 +64,13 @@ public class ContentAssortmentFacet extends AssortmentFacet
     @Override
     public ContentAssortmentFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public ContentAssortmentFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

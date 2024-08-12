@@ -43,7 +43,7 @@ public class StemmingRulesResponse extends StemmingRuleSearchRulesResponse
     @Override
     public StemmingRulesResponse setRules(StemmingRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public StemmingRulesResponse addToRules(StemmingRule rule)
@@ -63,13 +63,13 @@ public class StemmingRulesResponse extends StemmingRuleSearchRulesResponse
     @Override
     public StemmingRulesResponse setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     @Override
     public StemmingRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

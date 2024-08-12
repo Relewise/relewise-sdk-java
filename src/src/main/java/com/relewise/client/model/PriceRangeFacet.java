@@ -53,24 +53,24 @@ public class PriceRangeFacet extends Facet
     }
     public PriceRangeFacet setSelected(DoubleRange selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
     public PriceRangeFacet setPriceSelectionStrategy(PriceSelectionStrategy priceSelectionStrategy)
     {
-        this.priceSelectionStrategy = priceSelectionStrategy;;
+        this.priceSelectionStrategy = priceSelectionStrategy;
         return this;
     }
     @Override
     public PriceRangeFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public PriceRangeFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

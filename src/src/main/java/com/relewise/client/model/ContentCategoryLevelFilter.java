@@ -62,7 +62,7 @@ public class ContentCategoryLevelFilter extends CategoryLevelFilter implements I
     @Override
     public ContentCategoryLevelFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

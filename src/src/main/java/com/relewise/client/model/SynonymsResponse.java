@@ -52,7 +52,7 @@ public class SynonymsResponse extends TimedResponse
     }
     public SynonymsResponse setValues(Synonym... values)
     {
-        this.values = values;;
+        this.values = values;
         return this;
     }
     public SynonymsResponse addToValues(Synonym value)
@@ -71,13 +71,13 @@ public class SynonymsResponse extends TimedResponse
     }
     public SynonymsResponse setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     @Override
     public SynonymsResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

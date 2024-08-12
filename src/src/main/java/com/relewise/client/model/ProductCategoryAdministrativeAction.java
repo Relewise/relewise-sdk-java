@@ -45,25 +45,25 @@ public class ProductCategoryAdministrativeAction extends CategoryAdministrativeA
     @Override
     public ProductCategoryAdministrativeAction setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public ProductCategoryAdministrativeAction setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public ProductCategoryAdministrativeAction setKind(CategoryAdministrativeActionUpdateKind kind)
     {
-        this.kind = kind;;
+        this.kind = kind;
         return this;
     }
     @Override
     public ProductCategoryAdministrativeAction setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

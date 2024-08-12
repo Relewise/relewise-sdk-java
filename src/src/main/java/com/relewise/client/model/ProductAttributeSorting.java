@@ -64,24 +64,24 @@ public class ProductAttributeSorting extends ProductSorting
     }
     public ProductAttributeSorting setAttribute(ProductAttributeSortingSortableAttribute attribute)
     {
-        this.attribute = attribute;;
+        this.attribute = attribute;
         return this;
     }
     public ProductAttributeSorting setMode(SortMode mode)
     {
-        this.mode = mode;;
+        this.mode = mode;
         return this;
     }
     @Override
     public ProductAttributeSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ProductAttributeSorting setThenBy(ProductSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

@@ -91,30 +91,30 @@ public class ObjectValueContainsCondition extends ObjectValueCondition
     }
     public ObjectValueContainsCondition setValue(DataValue value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     public ObjectValueContainsCondition setMode(ObjectValueContainsConditionCompareMode mode)
     {
-        this.mode = mode;;
+        this.mode = mode;
         return this;
     }
     @Override
     public ObjectValueContainsCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     @Override
     public ObjectValueContainsCondition setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ObjectValueContainsCondition setObjectPath(String... objectPath)
     {
-        this.objectPath = objectPath;;
+        this.objectPath = objectPath;
         return this;
     }
     public ObjectValueContainsCondition addToObjectPath(String objectPath)

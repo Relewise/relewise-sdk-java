@@ -83,37 +83,37 @@ public class ContentQuery extends LicensedRequest
     }
     public ContentQuery setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public ContentQuery setNumberOfResults(Integer numberOfResults)
     {
-        this.numberOfResults = numberOfResults;;
+        this.numberOfResults = numberOfResults;
         return this;
     }
     public ContentQuery setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public ContentQuery setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     public ContentQuery setSkipNumberOfResults(Integer skipNumberOfResults)
     {
-        this.skipNumberOfResults = skipNumberOfResults;;
+        this.skipNumberOfResults = skipNumberOfResults;
         return this;
     }
     public ContentQuery setReturnTotalNumberOfResults(Boolean returnTotalNumberOfResults)
     {
-        this.returnTotalNumberOfResults = returnTotalNumberOfResults;;
+        this.returnTotalNumberOfResults = returnTotalNumberOfResults;
         return this;
     }
     public ContentQuery setIncludeDisabledContents(Boolean includeDisabledContents)
     {
-        this.includeDisabledContents = includeDisabledContents;;
+        this.includeDisabledContents = includeDisabledContents;
         return this;
     }
 }

@@ -73,23 +73,23 @@ public class HasLineItemsInCartCondition extends UserCondition
     }
     public HasLineItemsInCartCondition setNumberOfItems(IntegerRange numberOfItems)
     {
-        this.numberOfItems = numberOfItems;;
+        this.numberOfItems = numberOfItems;
         return this;
     }
     public HasLineItemsInCartCondition setCartName(String cartName)
     {
-        this.cartName = cartName;;
+        this.cartName = cartName;
         return this;
     }
     public HasLineItemsInCartCondition setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public HasLineItemsInCartCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

@@ -76,47 +76,47 @@ public class ProductRecommendationRequestSettings
     }
     public ProductRecommendationRequestSettings setNumberOfRecommendations(Integer numberOfRecommendations)
     {
-        this.numberOfRecommendations = numberOfRecommendations;;
+        this.numberOfRecommendations = numberOfRecommendations;
         return this;
     }
     public ProductRecommendationRequestSettings setAllowFillIfNecessaryToReachNumberOfRecommendations(Boolean allowFillIfNecessaryToReachNumberOfRecommendations)
     {
-        this.allowFillIfNecessaryToReachNumberOfRecommendations = allowFillIfNecessaryToReachNumberOfRecommendations;;
+        this.allowFillIfNecessaryToReachNumberOfRecommendations = allowFillIfNecessaryToReachNumberOfRecommendations;
         return this;
     }
     public ProductRecommendationRequestSettings setAllowReplacingOfRecentlyShownRecommendations(Boolean allowReplacingOfRecentlyShownRecommendations)
     {
-        this.allowReplacingOfRecentlyShownRecommendations = allowReplacingOfRecentlyShownRecommendations;;
+        this.allowReplacingOfRecentlyShownRecommendations = allowReplacingOfRecentlyShownRecommendations;
         return this;
     }
     public ProductRecommendationRequestSettings setRecommendVariant(Boolean recommendVariant)
     {
-        this.recommendVariant = recommendVariant;;
+        this.recommendVariant = recommendVariant;
         return this;
     }
     public ProductRecommendationRequestSettings setSelectedProductProperties(SelectedProductPropertiesSettings selectedProductProperties)
     {
-        this.selectedProductProperties = selectedProductProperties;;
+        this.selectedProductProperties = selectedProductProperties;
         return this;
     }
     public ProductRecommendationRequestSettings setSelectedVariantProperties(SelectedVariantPropertiesSettings selectedVariantProperties)
     {
-        this.selectedVariantProperties = selectedVariantProperties;;
+        this.selectedVariantProperties = selectedVariantProperties;
         return this;
     }
     public ProductRecommendationRequestSettings setPrioritizeDiversityBetweenRequests(Boolean prioritizeDiversityBetweenRequests)
     {
-        this.prioritizeDiversityBetweenRequests = prioritizeDiversityBetweenRequests;;
+        this.prioritizeDiversityBetweenRequests = prioritizeDiversityBetweenRequests;
         return this;
     }
     public ProductRecommendationRequestSettings setAllowProductsCurrentlyInCart(@Nullable Boolean allowProductsCurrentlyInCart)
     {
-        this.allowProductsCurrentlyInCart = allowProductsCurrentlyInCart;;
+        this.allowProductsCurrentlyInCart = allowProductsCurrentlyInCart;
         return this;
     }
     public ProductRecommendationRequestSettings setSelectedBrandProperties(SelectedBrandPropertiesSettings selectedBrandProperties)
     {
-        this.selectedBrandProperties = selectedBrandProperties;;
+        this.selectedBrandProperties = selectedBrandProperties;
         return this;
     }
 }

@@ -68,22 +68,22 @@ public class FieldIndexConfiguration
     }
     public FieldIndexConfiguration setIncluded(Boolean included)
     {
-        this.included = included;;
+        this.included = included;
         return this;
     }
     public FieldIndexConfiguration setWeight(Short weight)
     {
-        this.weight = weight;;
+        this.weight = weight;
         return this;
     }
     public FieldIndexConfiguration setPredictionSourceType(PredictionSourceType predictionSourceType)
     {
-        this.predictionSourceType = predictionSourceType;;
+        this.predictionSourceType = predictionSourceType;
         return this;
     }
     public FieldIndexConfiguration setParser(Parser parser)
     {
-        this.parser = parser;;
+        this.parser = parser;
         return this;
     }
 }

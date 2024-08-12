@@ -82,82 +82,82 @@ public class ProductSearchRequest extends PaginatedSearchRequest implements IUse
     }
     public ProductSearchRequest setTerm(String term)
     {
-        this.term = term;;
+        this.term = term;
         return this;
     }
     public ProductSearchRequest setFacets(ProductFacetQuery facets)
     {
-        this.facets = facets;;
+        this.facets = facets;
         return this;
     }
     public ProductSearchRequest setSettings(ProductSearchSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     public ProductSearchRequest setSorting(ProductSortBySpecification sorting)
     {
-        this.sorting = sorting;;
+        this.sorting = sorting;
         return this;
     }
     @Override
     public ProductSearchRequest setSkip(Integer skip)
     {
-        this.skip = skip;;
+        this.skip = skip;
         return this;
     }
     @Override
     public ProductSearchRequest setTake(Integer take)
     {
-        this.take = take;;
+        this.take = take;
         return this;
     }
     @Override
     public ProductSearchRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public ProductSearchRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     @Override
     public ProductSearchRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public ProductSearchRequest setDisplayedAtLocation(String displayedAtLocation)
     {
-        this.displayedAtLocation = displayedAtLocation;;
+        this.displayedAtLocation = displayedAtLocation;
         return this;
     }
     @Override
     public ProductSearchRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public ProductSearchRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public ProductSearchRequest setIndexSelector(SearchIndexSelector indexSelector)
     {
-        this.indexSelector = indexSelector;;
+        this.indexSelector = indexSelector;
         return this;
     }
     @Override
     public ProductSearchRequest setPostFilters(FilterCollection postFilters)
     {
-        this.postFilters = postFilters;;
+        this.postFilters = postFilters;
         return this;
     }
 }

@@ -57,13 +57,13 @@ public class GreaterThanCondition extends ValueCondition
     }
     public GreaterThanCondition setValue(Double value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     @Override
     public GreaterThanCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

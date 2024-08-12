@@ -65,22 +65,22 @@ public class DataObjectValueSelector
     }
     public DataObjectValueSelector setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public DataObjectValueSelector setFilter(DataObjectFilter filter)
     {
-        this.filter = filter;;
+        this.filter = filter;
         return this;
     }
     public DataObjectValueSelector setChildSelector(DataObjectValueSelector childSelector)
     {
-        this.childSelector = childSelector;;
+        this.childSelector = childSelector;
         return this;
     }
     public DataObjectValueSelector setFallbackSelector(DataObjectValueSelector fallbackSelector)
     {
-        this.fallbackSelector = fallbackSelector;;
+        this.fallbackSelector = fallbackSelector;
         return this;
     }
 }

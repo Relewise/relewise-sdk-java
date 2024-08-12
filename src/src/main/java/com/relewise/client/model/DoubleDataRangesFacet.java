@@ -65,7 +65,7 @@ public abstract class DoubleDataRangesFacet extends Facet
     }
     public DoubleDataRangesFacet setExpandedRangeSize(@Nullable Double expandedRangeSize)
     {
-        this.expandedRangeSize = expandedRangeSize;;
+        this.expandedRangeSize = expandedRangeSize;
         return this;
     }
     public DoubleDataRangesFacet setSelected(DoubleChainableRange... selected)
@@ -84,19 +84,19 @@ public abstract class DoubleDataRangesFacet extends Facet
     }
     public DoubleDataRangesFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public DoubleDataRangesFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public DoubleDataRangesFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

@@ -41,12 +41,12 @@ public class ProductCategoryInterestTriggerResultCategoryProductAndVariant
     }
     public ProductCategoryInterestTriggerResultCategoryProductAndVariant setProduct(ProductResultDetails product)
     {
-        this.product = product;;
+        this.product = product;
         return this;
     }
     public ProductCategoryInterestTriggerResultCategoryProductAndVariant setVariant(VariantResultDetails variant)
     {
-        this.variant = variant;;
+        this.variant = variant;
         return this;
     }
 }

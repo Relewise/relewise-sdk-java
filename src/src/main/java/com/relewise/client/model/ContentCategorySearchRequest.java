@@ -72,72 +72,72 @@ public class ContentCategorySearchRequest extends PaginatedSearchRequest impleme
     }
     public ContentCategorySearchRequest setTerm(String term)
     {
-        this.term = term;;
+        this.term = term;
         return this;
     }
     public ContentCategorySearchRequest setSettings(ContentCategorySearchSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public ContentCategorySearchRequest setSkip(Integer skip)
     {
-        this.skip = skip;;
+        this.skip = skip;
         return this;
     }
     @Override
     public ContentCategorySearchRequest setTake(Integer take)
     {
-        this.take = take;;
+        this.take = take;
         return this;
     }
     @Override
     public ContentCategorySearchRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public ContentCategorySearchRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     @Override
     public ContentCategorySearchRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public ContentCategorySearchRequest setDisplayedAtLocation(String displayedAtLocation)
     {
-        this.displayedAtLocation = displayedAtLocation;;
+        this.displayedAtLocation = displayedAtLocation;
         return this;
     }
     @Override
     public ContentCategorySearchRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public ContentCategorySearchRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public ContentCategorySearchRequest setIndexSelector(SearchIndexSelector indexSelector)
     {
-        this.indexSelector = indexSelector;;
+        this.indexSelector = indexSelector;
         return this;
     }
     @Override
     public ContentCategorySearchRequest setPostFilters(FilterCollection postFilters)
     {
-        this.postFilters = postFilters;;
+        this.postFilters = postFilters;
         return this;
     }
 }

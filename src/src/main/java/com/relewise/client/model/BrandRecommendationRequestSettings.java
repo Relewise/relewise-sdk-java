@@ -56,27 +56,27 @@ public class BrandRecommendationRequestSettings
     }
     public BrandRecommendationRequestSettings setNumberOfRecommendations(Integer numberOfRecommendations)
     {
-        this.numberOfRecommendations = numberOfRecommendations;;
+        this.numberOfRecommendations = numberOfRecommendations;
         return this;
     }
     public BrandRecommendationRequestSettings setAllowFillIfNecessaryToReachNumberOfRecommendations(Boolean allowFillIfNecessaryToReachNumberOfRecommendations)
     {
-        this.allowFillIfNecessaryToReachNumberOfRecommendations = allowFillIfNecessaryToReachNumberOfRecommendations;;
+        this.allowFillIfNecessaryToReachNumberOfRecommendations = allowFillIfNecessaryToReachNumberOfRecommendations;
         return this;
     }
     public BrandRecommendationRequestSettings setAllowReplacingOfRecentlyShownRecommendations(Boolean allowReplacingOfRecentlyShownRecommendations)
     {
-        this.allowReplacingOfRecentlyShownRecommendations = allowReplacingOfRecentlyShownRecommendations;;
+        this.allowReplacingOfRecentlyShownRecommendations = allowReplacingOfRecentlyShownRecommendations;
         return this;
     }
     public BrandRecommendationRequestSettings setPrioritizeDiversityBetweenRequests(Boolean prioritizeDiversityBetweenRequests)
     {
-        this.prioritizeDiversityBetweenRequests = prioritizeDiversityBetweenRequests;;
+        this.prioritizeDiversityBetweenRequests = prioritizeDiversityBetweenRequests;
         return this;
     }
     public BrandRecommendationRequestSettings setSelectedBrandProperties(SelectedBrandPropertiesSettings selectedBrandProperties)
     {
-        this.selectedBrandProperties = selectedBrandProperties;;
+        this.selectedBrandProperties = selectedBrandProperties;
         return this;
     }
 }

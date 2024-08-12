@@ -51,22 +51,22 @@ public class IndexConfiguration
     }
     public IndexConfiguration setLanguage(LanguageIndexConfiguration language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public IndexConfiguration setProduct(ProductIndexConfiguration product)
     {
-        this.product = product;;
+        this.product = product;
         return this;
     }
     public IndexConfiguration setContent(ContentIndexConfiguration content)
     {
-        this.content = content;;
+        this.content = content;
         return this;
     }
     public IndexConfiguration setProductCategory(ProductCategoryIndexConfiguration productCategory)
     {
-        this.productCategory = productCategory;;
+        this.productCategory = productCategory;
         return this;
     }
 }

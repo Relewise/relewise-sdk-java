@@ -47,7 +47,7 @@ public abstract class DoubleProductCategoryDataRangesFacet extends DoubleDataRan
     @Override
     public DoubleProductCategoryDataRangesFacet setExpandedRangeSize(@Nullable Double expandedRangeSize)
     {
-        this.expandedRangeSize = expandedRangeSize;;
+        this.expandedRangeSize = expandedRangeSize;
         return this;
     }
     @Override
@@ -68,19 +68,19 @@ public abstract class DoubleProductCategoryDataRangesFacet extends DoubleDataRan
     @Override
     public DoubleProductCategoryDataRangesFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public DoubleProductCategoryDataRangesFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public DoubleProductCategoryDataRangesFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

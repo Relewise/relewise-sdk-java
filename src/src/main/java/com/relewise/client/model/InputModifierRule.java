@@ -43,73 +43,73 @@ public class InputModifierRule extends MerchandisingRule
     @Override
     public InputModifierRule setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public InputModifierRule setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     @Override
     public InputModifierRule setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     @Override
     public InputModifierRule setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     @Override
     public InputModifierRule setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     @Override
     public InputModifierRule setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public InputModifierRule setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public InputModifierRule setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public InputModifierRule setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public InputModifierRule setConditions(ConditionConfiguration conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
     @Override
     public InputModifierRule setRequest(RequestConfiguration request)
     {
-        this.request = request;;
+        this.request = request;
         return this;
     }
     @Override
     public InputModifierRule setPriority(Double priority)
     {
-        this.priority = priority;;
+        this.priority = priority;
         return this;
     }
     public InputModifierRule addToSettings(String key, String value)
@@ -124,7 +124,7 @@ public class InputModifierRule extends MerchandisingRule
     @Override
     public InputModifierRule setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

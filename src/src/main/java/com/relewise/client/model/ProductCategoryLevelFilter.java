@@ -62,7 +62,7 @@ public class ProductCategoryLevelFilter extends CategoryLevelFilter implements I
     @Override
     public ProductCategoryLevelFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

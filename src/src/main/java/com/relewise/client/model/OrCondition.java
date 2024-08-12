@@ -47,13 +47,13 @@ public class OrCondition extends UserCondition
     }
     public OrCondition setConditions(UserConditionCollection conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
     @Override
     public OrCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

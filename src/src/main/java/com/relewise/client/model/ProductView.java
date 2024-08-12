@@ -69,17 +69,17 @@ public class ProductView extends Trackable implements IUserIdentifier
     }
     public ProductView setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     public ProductView setProduct(Product product)
     {
-        this.product = product;;
+        this.product = product;
         return this;
     }
     public ProductView setVariant(ProductVariant variant)
     {
-        this.variant = variant;;
+        this.variant = variant;
         return this;
     }
 }

@@ -50,7 +50,7 @@ public class ContentsViewedAfterViewingMultipleContentsRequest extends ContentRe
     }
     public ContentsViewedAfterViewingMultipleContentsRequest setContentIds(String... contentIds)
     {
-        this.contentIds = contentIds;;
+        this.contentIds = contentIds;
         return this;
     }
     public ContentsViewedAfterViewingMultipleContentsRequest addToContentIds(String contentId)
@@ -70,43 +70,43 @@ public class ContentsViewedAfterViewingMultipleContentsRequest extends ContentRe
     @Override
     public ContentsViewedAfterViewingMultipleContentsRequest setSettings(ContentRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingMultipleContentsRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingMultipleContentsRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingMultipleContentsRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingMultipleContentsRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingMultipleContentsRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public ContentsViewedAfterViewingMultipleContentsRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

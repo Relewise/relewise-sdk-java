@@ -41,12 +41,12 @@ public class RecommendationSettings
     }
     public RecommendationSettings setTake(@Nullable Integer take)
     {
-        this.take = take;;
+        this.take = take;
         return this;
     }
     public RecommendationSettings setOnlyIncludeRecommendationsWhenLessResultsThan(@Nullable Integer onlyIncludeRecommendationsWhenLessResultsThan)
     {
-        this.onlyIncludeRecommendationsWhenLessResultsThan = onlyIncludeRecommendationsWhenLessResultsThan;;
+        this.onlyIncludeRecommendationsWhenLessResultsThan = onlyIncludeRecommendationsWhenLessResultsThan;
         return this;
     }
 }

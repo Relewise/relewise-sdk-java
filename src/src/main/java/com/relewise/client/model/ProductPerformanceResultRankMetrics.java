@@ -46,12 +46,12 @@ public class ProductPerformanceResultRankMetrics
     }
     public ProductPerformanceResultRankMetrics setOverall(ProductPerformanceResultViewsAndSalesMetrics overall)
     {
-        this.overall = overall;;
+        this.overall = overall;
         return this;
     }
     public ProductPerformanceResultRankMetrics setWithinCategories(ProductPerformanceResultCategoryMetrics... withinCategories)
     {
-        this.withinCategories = withinCategories;;
+        this.withinCategories = withinCategories;
         return this;
     }
     public ProductPerformanceResultRankMetrics addToWithinCategories(ProductPerformanceResultCategoryMetrics withinCategory)
@@ -70,7 +70,7 @@ public class ProductPerformanceResultRankMetrics
     }
     public ProductPerformanceResultRankMetrics setWithinBrand(ProductPerformanceResultViewsAndSalesMetrics withinBrand)
     {
-        this.withinBrand = withinBrand;;
+        this.withinBrand = withinBrand;
         return this;
     }
 }

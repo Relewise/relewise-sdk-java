@@ -66,27 +66,27 @@ public class BrandResult
     }
     public BrandResult setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public BrandResult setDisplayName(String displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public BrandResult setRank(Integer rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
     public BrandResult setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
     public BrandResult setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public BrandResult addToAssortments(Integer assortment)
@@ -114,7 +114,7 @@ public class BrandResult
     }
     public BrandResult setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

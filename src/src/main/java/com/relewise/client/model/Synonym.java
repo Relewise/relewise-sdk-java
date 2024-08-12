@@ -106,17 +106,17 @@ public class Synonym
     }
     public Synonym setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public Synonym setType(SynonymType type)
     {
-        this.type = type;;
+        this.type = type;
         return this;
     }
     public Synonym setIndexes(String... indexes)
     {
-        this.indexes = indexes;;
+        this.indexes = indexes;
         return this;
     }
     public Synonym addToIndexes(String indexe)
@@ -135,7 +135,7 @@ public class Synonym
     }
     public Synonym setLanguages(Language... languages)
     {
-        this.languages = languages;;
+        this.languages = languages;
         return this;
     }
     public Synonym addToLanguages(Language language)
@@ -154,27 +154,27 @@ public class Synonym
     }
     public Synonym setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     public Synonym setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     public Synonym setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     public Synonym setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     public Synonym setFrom(String... from)
     {
-        this.from = from;;
+        this.from = from;
         return this;
     }
     public Synonym addToFrom(String from)
@@ -193,7 +193,7 @@ public class Synonym
     }
     public Synonym setWords(String... words)
     {
-        this.words = words;;
+        this.words = words;
         return this;
     }
     public Synonym addToWords(String word)
@@ -212,27 +212,27 @@ public class Synonym
     }
     public Synonym setApproved(@Nullable OffsetDateTime approved)
     {
-        this.approved = approved;;
+        this.approved = approved;
         return this;
     }
     public Synonym setApprovedBy(String approvedBy)
     {
-        this.approvedBy = approvedBy;;
+        this.approvedBy = approvedBy;
         return this;
     }
     public Synonym setUsages(Long usages)
     {
-        this.usages = usages;;
+        this.usages = usages;
         return this;
     }
     public Synonym setIsApproved(Boolean isApproved)
     {
-        this.isApproved = isApproved;;
+        this.isApproved = isApproved;
         return this;
     }
     public Synonym setAllowInPredictions(Boolean allowInPredictions)
     {
-        this.allowInPredictions = allowInPredictions;;
+        this.allowInPredictions = allowInPredictions;
         return this;
     }
 }

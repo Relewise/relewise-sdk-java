@@ -38,7 +38,7 @@ public class ProductCategoryIndexConfiguration extends CategoryIndexConfiguratio
     @Override
     public ProductCategoryIndexConfiguration setUnspecified(CategoryIndexConfigurationEntry unspecified)
     {
-        this.unspecified = unspecified;;
+        this.unspecified = unspecified;
         return this;
     }
 }

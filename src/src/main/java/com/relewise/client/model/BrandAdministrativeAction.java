@@ -64,22 +64,22 @@ public class BrandAdministrativeAction extends Trackable
     }
     public BrandAdministrativeAction setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public BrandAdministrativeAction setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public BrandAdministrativeAction setKind(BrandAdministrativeActionUpdateKind kind)
     {
-        this.kind = kind;;
+        this.kind = kind;
         return this;
     }
     public BrandAdministrativeAction setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

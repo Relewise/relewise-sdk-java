@@ -53,7 +53,7 @@ public abstract class CategoryLevelFilter extends Filter
     @Override
     public CategoryLevelFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

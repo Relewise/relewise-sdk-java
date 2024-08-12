@@ -43,7 +43,7 @@ public class DecompoundRulesResponse extends DecompoundRuleSearchRulesResponse
     @Override
     public DecompoundRulesResponse setRules(DecompoundRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public DecompoundRulesResponse addToRules(DecompoundRule rule)
@@ -63,13 +63,13 @@ public class DecompoundRulesResponse extends DecompoundRuleSearchRulesResponse
     @Override
     public DecompoundRulesResponse setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
     @Override
     public DecompoundRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

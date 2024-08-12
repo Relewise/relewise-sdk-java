@@ -56,27 +56,27 @@ public class OverriddenSelectedBrandPropertiesSettings
     }
     public OverriddenSelectedBrandPropertiesSettings setDisplayName(@Nullable Boolean displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public OverriddenSelectedBrandPropertiesSettings setAssortments(@Nullable Boolean assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public OverriddenSelectedBrandPropertiesSettings setViewedByUserInfo(@Nullable Boolean viewedByUserInfo)
     {
-        this.viewedByUserInfo = viewedByUserInfo;;
+        this.viewedByUserInfo = viewedByUserInfo;
         return this;
     }
     public OverriddenSelectedBrandPropertiesSettings setAllData(@Nullable Boolean allData)
     {
-        this.allData = allData;;
+        this.allData = allData;
         return this;
     }
     public OverriddenSelectedBrandPropertiesSettings setDataKeys(String... dataKeys)
     {
-        this.dataKeys = dataKeys;;
+        this.dataKeys = dataKeys;
         return this;
     }
     public OverriddenSelectedBrandPropertiesSettings addToDataKeys(String dataKey)

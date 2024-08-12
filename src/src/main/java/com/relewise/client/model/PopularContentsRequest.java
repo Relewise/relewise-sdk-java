@@ -50,49 +50,49 @@ public class PopularContentsRequest extends ContentRecommendationRequest impleme
     }
     public PopularContentsRequest setSinceMinutesAgo(Integer sinceMinutesAgo)
     {
-        this.sinceMinutesAgo = sinceMinutesAgo;;
+        this.sinceMinutesAgo = sinceMinutesAgo;
         return this;
     }
     @Override
     public PopularContentsRequest setSettings(ContentRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public PopularContentsRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public PopularContentsRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public PopularContentsRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public PopularContentsRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public PopularContentsRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public PopularContentsRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

@@ -52,7 +52,7 @@ public class BrandDetailsCollectionResponse extends TimedResponse
     }
     public BrandDetailsCollectionResponse setBrands(BrandResultDetails... brands)
     {
-        this.brands = brands;;
+        this.brands = brands;
         return this;
     }
     public BrandDetailsCollectionResponse addToBrands(BrandResultDetails brand)
@@ -71,13 +71,13 @@ public class BrandDetailsCollectionResponse extends TimedResponse
     }
     public BrandDetailsCollectionResponse setTotalNumberOfResults(@Nullable Integer totalNumberOfResults)
     {
-        this.totalNumberOfResults = totalNumberOfResults;;
+        this.totalNumberOfResults = totalNumberOfResults;
         return this;
     }
     @Override
     public BrandDetailsCollectionResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

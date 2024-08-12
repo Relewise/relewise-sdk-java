@@ -36,7 +36,7 @@ public class UserConditionConfiguration
     }
     public UserConditionConfiguration setConditions(UserConditionCollection conditions)
     {
-        this.conditions = conditions;;
+        this.conditions = conditions;
         return this;
     }
 }

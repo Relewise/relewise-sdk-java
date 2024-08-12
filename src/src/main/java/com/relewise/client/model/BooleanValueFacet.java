@@ -51,13 +51,13 @@ public abstract class BooleanValueFacet extends Facet
     @Override
     public BooleanValueFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public BooleanValueFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

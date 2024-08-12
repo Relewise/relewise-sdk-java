@@ -60,12 +60,12 @@ public class Content
     }
     public Content setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public Content setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public Content setCategoryPaths(CategoryPath... categoryPaths)
@@ -107,7 +107,7 @@ public class Content
     }
     public Content setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

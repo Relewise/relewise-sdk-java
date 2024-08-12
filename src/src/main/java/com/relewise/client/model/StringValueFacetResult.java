@@ -62,7 +62,7 @@ public abstract class StringValueFacetResult extends StringStringValueFacetResul
     @Override
     public StringValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

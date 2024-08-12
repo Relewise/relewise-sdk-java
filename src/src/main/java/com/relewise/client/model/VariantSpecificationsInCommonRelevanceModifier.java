@@ -46,7 +46,7 @@ public class VariantSpecificationsInCommonRelevanceModifier extends RelevanceMod
     }
     public VariantSpecificationsInCommonRelevanceModifier setSpecificationKeysAndMultipliers(KeyMultiplier... specificationKeysAndMultipliers)
     {
-        this.specificationKeysAndMultipliers = specificationKeysAndMultipliers;;
+        this.specificationKeysAndMultipliers = specificationKeysAndMultipliers;
         return this;
     }
     public VariantSpecificationsInCommonRelevanceModifier addToSpecificationKeysAndMultipliers(KeyMultiplier specificationKeysAndMultiplier)
@@ -66,7 +66,7 @@ public class VariantSpecificationsInCommonRelevanceModifier extends RelevanceMod
     @Override
     public VariantSpecificationsInCommonRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

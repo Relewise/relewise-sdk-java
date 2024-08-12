@@ -95,17 +95,17 @@ public class ContentResultDetails
     }
     public ContentResultDetails setContentId(String contentId)
     {
-        this.contentId = contentId;;
+        this.contentId = contentId;
         return this;
     }
     public ContentResultDetails setDisplayName(Multilingual displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public ContentResultDetails setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public ContentResultDetails addToAssortments(Integer assortment)
@@ -133,12 +133,12 @@ public class ContentResultDetails
     }
     public ContentResultDetails setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public ContentResultDetails setCategoryPaths(CategoryPathResultDetails... categoryPaths)
     {
-        this.categoryPaths = categoryPaths;;
+        this.categoryPaths = categoryPaths;
         return this;
     }
     public ContentResultDetails addToCategoryPaths(CategoryPathResultDetails categoryPath)
@@ -157,37 +157,37 @@ public class ContentResultDetails
     }
     public ContentResultDetails setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
     public ContentResultDetails setCreatedUtc(OffsetDateTime createdUtc)
     {
-        this.createdUtc = createdUtc;;
+        this.createdUtc = createdUtc;
         return this;
     }
     public ContentResultDetails setLastViewedUtc(@Nullable OffsetDateTime lastViewedUtc)
     {
-        this.lastViewedUtc = lastViewedUtc;;
+        this.lastViewedUtc = lastViewedUtc;
         return this;
     }
     public ContentResultDetails setViewedTotalNumberOfTimes(Long viewedTotalNumberOfTimes)
     {
-        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;;
+        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;
         return this;
     }
     public ContentResultDetails setViewedByDifferentNumberOfUsers(Integer viewedByDifferentNumberOfUsers)
     {
-        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;;
+        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;
         return this;
     }
     public ContentResultDetails setDisabled(Boolean disabled)
     {
-        this.disabled = disabled;;
+        this.disabled = disabled;
         return this;
     }
     public ContentResultDetails setDeleted(Boolean deleted)
     {
-        this.deleted = deleted;;
+        this.deleted = deleted;
         return this;
     }
 }

@@ -43,7 +43,7 @@ public class SavePredictionRulesRequest extends PredictionRuleSaveSearchRulesReq
     @Override
     public SavePredictionRulesRequest setRules(PredictionRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public SavePredictionRulesRequest addToRules(PredictionRule rule)
@@ -63,7 +63,7 @@ public class SavePredictionRulesRequest extends PredictionRuleSaveSearchRulesReq
     @Override
     public SavePredictionRulesRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

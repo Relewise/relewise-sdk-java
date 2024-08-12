@@ -43,7 +43,7 @@ public class SaveRedirectRulesRequest extends RedirectRuleSaveSearchRulesRequest
     @Override
     public SaveRedirectRulesRequest setRules(RedirectRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public SaveRedirectRulesRequest addToRules(RedirectRule rule)
@@ -63,7 +63,7 @@ public class SaveRedirectRulesRequest extends RedirectRuleSaveSearchRulesRequest
     @Override
     public SaveRedirectRulesRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

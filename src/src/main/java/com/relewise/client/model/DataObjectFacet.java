@@ -56,7 +56,7 @@ public class DataObjectFacet extends Facet
     }
     public DataObjectFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public DataObjectFacet setItems(Facet... items)
@@ -75,19 +75,19 @@ public class DataObjectFacet extends Facet
     }
     public DataObjectFacet setFilter(DataObjectFilter filter)
     {
-        this.filter = filter;;
+        this.filter = filter;
         return this;
     }
     @Override
     public DataObjectFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public DataObjectFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

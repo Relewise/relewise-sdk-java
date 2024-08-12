@@ -84,7 +84,7 @@ public class ProductUpdate extends Trackable
     }
     public ProductUpdate setProduct(Product product)
     {
-        this.product = product;;
+        this.product = product;
         return this;
     }
     public ProductUpdate setVariants(ProductVariant... variants)
@@ -103,22 +103,22 @@ public class ProductUpdate extends Trackable
     }
     public ProductUpdate setProductUpdateKind(ProductUpdateUpdateKind productUpdateKind)
     {
-        this.productUpdateKind = productUpdateKind;;
+        this.productUpdateKind = productUpdateKind;
         return this;
     }
     public ProductUpdate setVariantUpdateKind(ProductUpdateUpdateKind variantUpdateKind)
     {
-        this.variantUpdateKind = variantUpdateKind;;
+        this.variantUpdateKind = variantUpdateKind;
         return this;
     }
     public ProductUpdate setReplaceExistingVariants(Boolean replaceExistingVariants)
     {
-        this.replaceExistingVariants = replaceExistingVariants;;
+        this.replaceExistingVariants = replaceExistingVariants;
         return this;
     }
     public ProductUpdate setBrandUpdateKind(@Nullable BrandUpdateUpdateKind brandUpdateKind)
     {
-        this.brandUpdateKind = brandUpdateKind;;
+        this.brandUpdateKind = brandUpdateKind;
         return this;
     }
 }

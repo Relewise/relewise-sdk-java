@@ -55,22 +55,22 @@ public abstract class PredictionRulesRequestSortBySearchRulesRequest extends Lic
     }
     public PredictionRulesRequestSortBySearchRulesRequest setFilters(SearchRuleFilters filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     public PredictionRulesRequestSortBySearchRulesRequest setSorting(PredictionRulesRequestSortBySorting sorting)
     {
-        this.sorting = sorting;;
+        this.sorting = sorting;
         return this;
     }
     public PredictionRulesRequestSortBySearchRulesRequest setSkip(Integer skip)
     {
-        this.skip = skip;;
+        this.skip = skip;
         return this;
     }
     public PredictionRulesRequestSortBySearchRulesRequest setTake(Integer take)
     {
-        this.take = take;;
+        this.take = take;
         return this;
     }
 }

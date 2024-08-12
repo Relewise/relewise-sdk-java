@@ -52,7 +52,7 @@ public class ProductCategoryDetailsCollectionResponse extends TimedResponse
     }
     public ProductCategoryDetailsCollectionResponse setCategories(ProductCategoryResultDetails... categories)
     {
-        this.categories = categories;;
+        this.categories = categories;
         return this;
     }
     public ProductCategoryDetailsCollectionResponse addToCategories(ProductCategoryResultDetails category)
@@ -71,13 +71,13 @@ public class ProductCategoryDetailsCollectionResponse extends TimedResponse
     }
     public ProductCategoryDetailsCollectionResponse setTotalNumberOfResults(@Nullable Integer totalNumberOfResults)
     {
-        this.totalNumberOfResults = totalNumberOfResults;;
+        this.totalNumberOfResults = totalNumberOfResults;
         return this;
     }
     @Override
     public ProductCategoryDetailsCollectionResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

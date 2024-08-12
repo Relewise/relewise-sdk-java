@@ -53,7 +53,7 @@ public abstract class TimedResponse
     }
     public TimedResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

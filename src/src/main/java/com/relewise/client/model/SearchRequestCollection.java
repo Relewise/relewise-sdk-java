@@ -74,49 +74,49 @@ public class SearchRequestCollection extends SearchRequest implements IUserIdent
     @Override
     public SearchRequestCollection setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public SearchRequestCollection setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     @Override
     public SearchRequestCollection setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public SearchRequestCollection setDisplayedAtLocation(String displayedAtLocation)
     {
-        this.displayedAtLocation = displayedAtLocation;;
+        this.displayedAtLocation = displayedAtLocation;
         return this;
     }
     @Override
     public SearchRequestCollection setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public SearchRequestCollection setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public SearchRequestCollection setIndexSelector(SearchIndexSelector indexSelector)
     {
-        this.indexSelector = indexSelector;;
+        this.indexSelector = indexSelector;
         return this;
     }
     @Override
     public SearchRequestCollection setPostFilters(FilterCollection postFilters)
     {
-        this.postFilters = postFilters;;
+        this.postFilters = postFilters;
         return this;
     }
 }

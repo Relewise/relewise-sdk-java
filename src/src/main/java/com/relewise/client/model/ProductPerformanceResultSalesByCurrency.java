@@ -56,27 +56,27 @@ public class ProductPerformanceResultSalesByCurrency
     }
     public ProductPerformanceResultSalesByCurrency setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     public ProductPerformanceResultSalesByCurrency setOrders(Integer orders)
     {
-        this.orders = orders;;
+        this.orders = orders;
         return this;
     }
     public ProductPerformanceResultSalesByCurrency setAverageSubtotal(Double averageSubtotal)
     {
-        this.averageSubtotal = averageSubtotal;;
+        this.averageSubtotal = averageSubtotal;
         return this;
     }
     public ProductPerformanceResultSalesByCurrency setUnits(Double units)
     {
-        this.units = units;;
+        this.units = units;
         return this;
     }
     public ProductPerformanceResultSalesByCurrency setRevenue(Double revenue)
     {
-        this.revenue = revenue;;
+        this.revenue = revenue;
         return this;
     }
 }

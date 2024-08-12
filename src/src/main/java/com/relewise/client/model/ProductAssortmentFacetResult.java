@@ -49,13 +49,13 @@ public class ProductAssortmentFacetResult extends AssortmentFacetResult
     }
     public ProductAssortmentFacetResult setAssortmentSelectionStrategy(AssortmentSelectionStrategy assortmentSelectionStrategy)
     {
-        this.assortmentSelectionStrategy = assortmentSelectionStrategy;;
+        this.assortmentSelectionStrategy = assortmentSelectionStrategy;
         return this;
     }
     @Override
     public ProductAssortmentFacetResult setAssortmentFilterType(AssortmentFilterType assortmentFilterType)
     {
-        this.assortmentFilterType = assortmentFilterType;;
+        this.assortmentFilterType = assortmentFilterType;
         return this;
     }
     @Override
@@ -91,7 +91,7 @@ public class ProductAssortmentFacetResult extends AssortmentFacetResult
     @Override
     public ProductAssortmentFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

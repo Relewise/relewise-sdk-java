@@ -46,12 +46,12 @@ public class PredictionRulesRequestSortBySorting
     }
     public PredictionRulesRequestSortBySorting setSortBy(PredictionRulesRequestSortBy sortBy)
     {
-        this.sortBy = sortBy;;
+        this.sortBy = sortBy;
         return this;
     }
     public PredictionRulesRequestSortBySorting setSortOrder(SortOrder sortOrder)
     {
-        this.sortOrder = sortOrder;;
+        this.sortOrder = sortOrder;
         return this;
     }
 }

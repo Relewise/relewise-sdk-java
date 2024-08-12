@@ -46,7 +46,7 @@ public class ProductRecommendationResponse extends RecommendationResponse
     }
     public ProductRecommendationResponse setRecommendations(ProductResult... recommendations)
     {
-        this.recommendations = recommendations;;
+        this.recommendations = recommendations;
         return this;
     }
     public ProductRecommendationResponse addToRecommendations(ProductResult recommendation)
@@ -66,7 +66,7 @@ public class ProductRecommendationResponse extends RecommendationResponse
     @Override
     public ProductRecommendationResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

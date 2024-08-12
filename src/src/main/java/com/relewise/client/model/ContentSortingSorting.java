@@ -41,12 +41,12 @@ public abstract class ContentSortingSorting
     }
     public ContentSortingSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     public ContentSortingSorting setThenBy(ContentSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

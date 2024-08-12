@@ -66,7 +66,7 @@ public class ContentRecommendationRequestCollection extends LicensedRequest
     }
     public ContentRecommendationRequestCollection setRequireDistinctContentAcrossResults(Boolean requireDistinctContentAcrossResults)
     {
-        this.requireDistinctContentAcrossResults = requireDistinctContentAcrossResults;;
+        this.requireDistinctContentAcrossResults = requireDistinctContentAcrossResults;
         return this;
     }
 }

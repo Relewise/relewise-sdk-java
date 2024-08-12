@@ -70,7 +70,7 @@ public abstract class StringBrandNameAndIdResultValueFacetResult extends FacetRe
     @Override
     public StringBrandNameAndIdResultValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

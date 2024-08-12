@@ -47,13 +47,13 @@ public class ProductCategoryPopularitySorting extends ProductCategorySorting
     @Override
     public ProductCategoryPopularitySorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ProductCategoryPopularitySorting setThenBy(ProductCategorySorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

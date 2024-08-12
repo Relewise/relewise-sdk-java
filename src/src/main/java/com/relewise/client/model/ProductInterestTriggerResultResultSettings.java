@@ -41,12 +41,12 @@ public class ProductInterestTriggerResultResultSettings
     }
     public ProductInterestTriggerResultResultSettings setSelectedProductProperties(SelectedProductPropertiesSettings selectedProductProperties)
     {
-        this.selectedProductProperties = selectedProductProperties;;
+        this.selectedProductProperties = selectedProductProperties;
         return this;
     }
     public ProductInterestTriggerResultResultSettings setSelectedVariantProperties(SelectedVariantPropertiesSettings selectedVariantProperties)
     {
-        this.selectedVariantProperties = selectedVariantProperties;;
+        this.selectedVariantProperties = selectedVariantProperties;
         return this;
     }
 }

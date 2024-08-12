@@ -59,67 +59,67 @@ public class AbandonedCartTriggerConfiguration extends AbandonedCartTriggerResul
     }
     public AbandonedCartTriggerConfiguration setCartName(String cartName)
     {
-        this.cartName = cartName;;
+        this.cartName = cartName;
         return this;
     }
     @Override
     public AbandonedCartTriggerConfiguration setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public AbandonedCartTriggerConfiguration setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     @Override
     public AbandonedCartTriggerConfiguration setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     @Override
     public AbandonedCartTriggerConfiguration setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     @Override
     public AbandonedCartTriggerConfiguration setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     @Override
     public AbandonedCartTriggerConfiguration setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public AbandonedCartTriggerConfiguration setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public AbandonedCartTriggerConfiguration setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public AbandonedCartTriggerConfiguration setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public AbandonedCartTriggerConfiguration setWithinTimeSpanMinutes(Integer withinTimeSpanMinutes)
     {
-        this.withinTimeSpanMinutes = withinTimeSpanMinutes;;
+        this.withinTimeSpanMinutes = withinTimeSpanMinutes;
         return this;
     }
     public AbandonedCartTriggerConfiguration addToSettings(String key, String value)
@@ -134,13 +134,13 @@ public class AbandonedCartTriggerConfiguration extends AbandonedCartTriggerResul
     @Override
     public AbandonedCartTriggerConfiguration setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public AbandonedCartTriggerConfiguration setUserConditions(UserConditionCollection userConditions)
     {
-        this.userConditions = userConditions;;
+        this.userConditions = userConditions;
         return this;
     }
 }

@@ -46,7 +46,7 @@ public class TrackContentCategoryViewRequest extends TrackingRequest
     }
     public TrackContentCategoryViewRequest setContentCategoryView(ContentCategoryView contentCategoryView)
     {
-        this.contentCategoryView = contentCategoryView;;
+        this.contentCategoryView = contentCategoryView;
         return this;
     }
 }

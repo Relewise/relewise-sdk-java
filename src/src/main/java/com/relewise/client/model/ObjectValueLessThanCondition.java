@@ -81,25 +81,25 @@ public class ObjectValueLessThanCondition extends ObjectValueCondition
     }
     public ObjectValueLessThanCondition setValue(Double value)
     {
-        this.value = value;;
+        this.value = value;
         return this;
     }
     @Override
     public ObjectValueLessThanCondition setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     @Override
     public ObjectValueLessThanCondition setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ObjectValueLessThanCondition setObjectPath(String... objectPath)
     {
-        this.objectPath = objectPath;;
+        this.objectPath = objectPath;
         return this;
     }
     public ObjectValueLessThanCondition addToObjectPath(String objectPath)

@@ -40,13 +40,13 @@ public abstract class DecompoundRuleSaveSearchRulesResponse extends TimedRespons
     }
     public DecompoundRuleSaveSearchRulesResponse setRules(DecompoundRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     @Override
     public DecompoundRuleSaveSearchRulesResponse setStatistics(Statistics statistics)
     {
-        this.statistics = statistics;;
+        this.statistics = statistics;
         return this;
     }
 }

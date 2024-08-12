@@ -66,7 +66,7 @@ public class VariantIdFilter extends Filter implements IVariantFilter
     @Override
     public VariantIdFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

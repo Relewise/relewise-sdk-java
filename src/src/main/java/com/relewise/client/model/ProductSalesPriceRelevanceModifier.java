@@ -78,28 +78,28 @@ public class ProductSalesPriceRelevanceModifier extends RelevanceModifier implem
     }
     public ProductSalesPriceRelevanceModifier setRange(DoubleRange range)
     {
-        this.range = range;;
+        this.range = range;
         return this;
     }
     public ProductSalesPriceRelevanceModifier setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     public ProductSalesPriceRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
-        this.multiplyWeightBy = multiplyWeightBy;;
+        this.multiplyWeightBy = multiplyWeightBy;
         return this;
     }
     public ProductSalesPriceRelevanceModifier setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     @Override
     public ProductSalesPriceRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

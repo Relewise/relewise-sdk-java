@@ -75,77 +75,77 @@ public class PredictionRule extends SearchRule
     }
     public PredictionRule setCondition(SearchTermCondition condition)
     {
-        this.condition = condition;;
+        this.condition = condition;
         return this;
     }
     public PredictionRule setPromote(PredictionRulePromotion promote)
     {
-        this.promote = promote;;
+        this.promote = promote;
         return this;
     }
     public PredictionRule setSuppress(PredictionRuleSuppression suppress)
     {
-        this.suppress = suppress;;
+        this.suppress = suppress;
         return this;
     }
     @Override
     public PredictionRule setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public PredictionRule setIndexes(ApplicableIndexes indexes)
     {
-        this.indexes = indexes;;
+        this.indexes = indexes;
         return this;
     }
     @Override
     public PredictionRule setLanguages(ApplicableLanguages languages)
     {
-        this.languages = languages;;
+        this.languages = languages;
         return this;
     }
     @Override
     public PredictionRule setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public PredictionRule setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public PredictionRule setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public PredictionRule setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public PredictionRule setApproved(@Nullable OffsetDateTime approved)
     {
-        this.approved = approved;;
+        this.approved = approved;
         return this;
     }
     @Override
     public PredictionRule setApprovedBy(String approvedBy)
     {
-        this.approvedBy = approvedBy;;
+        this.approvedBy = approvedBy;
         return this;
     }
     @Override
     public PredictionRule setIsApproved(Boolean isApproved)
     {
-        this.isApproved = isApproved;;
+        this.isApproved = isApproved;
         return this;
     }
 }

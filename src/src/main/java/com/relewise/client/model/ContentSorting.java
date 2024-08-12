@@ -36,13 +36,13 @@ public abstract class ContentSorting extends ContentSortingSorting
     @Override
     public ContentSorting setOrder(SortOrder order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
     @Override
     public ContentSorting setThenBy(ContentSorting thenBy)
     {
-        this.thenBy = thenBy;;
+        this.thenBy = thenBy;
         return this;
     }
 }

@@ -41,12 +41,12 @@ public abstract class DoubleDataValueFacetResult extends DoubleValueFacetResult
     }
     public DoubleDataValueFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     public DoubleDataValueFacetResult setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -82,7 +82,7 @@ public abstract class DoubleDataValueFacetResult extends DoubleValueFacetResult
     @Override
     public DoubleDataValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

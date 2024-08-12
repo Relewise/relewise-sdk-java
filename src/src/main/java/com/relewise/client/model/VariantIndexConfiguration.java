@@ -51,22 +51,22 @@ public class VariantIndexConfiguration
     }
     public VariantIndexConfiguration setId(FieldIndexConfiguration id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public VariantIndexConfiguration setDisplayName(FieldIndexConfiguration displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public VariantIndexConfiguration setSpecifications(SpecificationsIndexConfiguration specifications)
     {
-        this.specifications = specifications;;
+        this.specifications = specifications;
         return this;
     }
     public VariantIndexConfiguration setData(DataIndexConfiguration data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
 }

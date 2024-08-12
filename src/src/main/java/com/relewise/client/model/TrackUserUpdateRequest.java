@@ -46,7 +46,7 @@ public class TrackUserUpdateRequest extends TrackingRequest
     }
     public TrackUserUpdateRequest setUserUpdate(UserUpdate userUpdate)
     {
-        this.userUpdate = userUpdate;;
+        this.userUpdate = userUpdate;
         return this;
     }
 }

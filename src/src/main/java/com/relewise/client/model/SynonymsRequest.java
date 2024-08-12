@@ -62,27 +62,27 @@ public class SynonymsRequest extends LicensedRequest
     }
     public SynonymsRequest setSorting(SynonymsRequestSynonymSortingSorting sorting)
     {
-        this.sorting = sorting;;
+        this.sorting = sorting;
         return this;
     }
     public SynonymsRequest setTake(Integer take)
     {
-        this.take = take;;
+        this.take = take;
         return this;
     }
     public SynonymsRequest setSkip(Integer skip)
     {
-        this.skip = skip;;
+        this.skip = skip;
         return this;
     }
     public SynonymsRequest setTerm(String term)
     {
-        this.term = term;;
+        this.term = term;
         return this;
     }
     public SynonymsRequest setIsApproved(@Nullable Boolean isApproved)
     {
-        this.isApproved = isApproved;;
+        this.isApproved = isApproved;
         return this;
     }
 }

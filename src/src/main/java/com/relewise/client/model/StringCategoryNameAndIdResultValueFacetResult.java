@@ -70,7 +70,7 @@ public abstract class StringCategoryNameAndIdResultValueFacetResult extends Face
     @Override
     public StringCategoryNameAndIdResultValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

@@ -44,12 +44,12 @@ public abstract class AbandonedSearch
     }
     public AbandonedSearch setLoweredSearchTerm(String loweredSearchTerm)
     {
-        this.loweredSearchTerm = loweredSearchTerm;;
+        this.loweredSearchTerm = loweredSearchTerm;
         return this;
     }
     public AbandonedSearch setHits(Integer hits)
     {
-        this.hits = hits;;
+        this.hits = hits;
         return this;
     }
 }

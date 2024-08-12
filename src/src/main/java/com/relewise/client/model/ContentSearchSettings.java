@@ -47,12 +47,12 @@ public class ContentSearchSettings extends SearchSettings
     }
     public ContentSearchSettings setSelectedContentProperties(SelectedContentPropertiesSettings selectedContentProperties)
     {
-        this.selectedContentProperties = selectedContentProperties;;
+        this.selectedContentProperties = selectedContentProperties;
         return this;
     }
     public ContentSearchSettings setRecommendations(RecommendationSettings recommendations)
     {
-        this.recommendations = recommendations;;
+        this.recommendations = recommendations;
         return this;
     }
 }

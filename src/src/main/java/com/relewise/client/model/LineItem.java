@@ -58,22 +58,22 @@ public class LineItem
     }
     public LineItem setProduct(Product product)
     {
-        this.product = product;;
+        this.product = product;
         return this;
     }
     public LineItem setVariant(ProductVariant variant)
     {
-        this.variant = variant;;
+        this.variant = variant;
         return this;
     }
     public LineItem setQuantity(Float quantity)
     {
-        this.quantity = quantity;;
+        this.quantity = quantity;
         return this;
     }
     public LineItem setLineTotal(Double lineTotal)
     {
-        this.lineTotal = lineTotal;;
+        this.lineTotal = lineTotal;
         return this;
     }
 }

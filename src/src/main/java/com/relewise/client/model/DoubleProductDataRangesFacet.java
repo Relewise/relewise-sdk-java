@@ -36,7 +36,7 @@ public abstract class DoubleProductDataRangesFacet extends DoubleDataRangesFacet
     }
     public DoubleProductDataRangesFacet setDataSelectionStrategy(DataSelectionStrategy dataSelectionStrategy)
     {
-        this.dataSelectionStrategy = dataSelectionStrategy;;
+        this.dataSelectionStrategy = dataSelectionStrategy;
         return this;
     }
     @Override
@@ -57,7 +57,7 @@ public abstract class DoubleProductDataRangesFacet extends DoubleDataRangesFacet
     @Override
     public DoubleProductDataRangesFacet setExpandedRangeSize(@Nullable Double expandedRangeSize)
     {
-        this.expandedRangeSize = expandedRangeSize;;
+        this.expandedRangeSize = expandedRangeSize;
         return this;
     }
     @Override
@@ -78,19 +78,19 @@ public abstract class DoubleProductDataRangesFacet extends DoubleDataRangesFacet
     @Override
     public DoubleProductDataRangesFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public DoubleProductDataRangesFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public DoubleProductDataRangesFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

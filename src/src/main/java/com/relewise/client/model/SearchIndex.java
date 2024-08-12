@@ -95,47 +95,47 @@ public class SearchIndex
     }
     public SearchIndex setId(String id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     public SearchIndex setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     public SearchIndex setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     public SearchIndex setIsDefault(Boolean isDefault)
     {
-        this.isDefault = isDefault;;
+        this.isDefault = isDefault;
         return this;
     }
     public SearchIndex setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     public SearchIndex setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     public SearchIndex setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     public SearchIndex setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     public SearchIndex setConfiguration(IndexConfiguration configuration)
     {
-        this.configuration = configuration;;
+        this.configuration = configuration;
         return this;
     }
 }

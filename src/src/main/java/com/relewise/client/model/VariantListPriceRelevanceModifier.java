@@ -78,28 +78,28 @@ public class VariantListPriceRelevanceModifier extends RelevanceModifier impleme
     }
     public VariantListPriceRelevanceModifier setRange(DoubleRange range)
     {
-        this.range = range;;
+        this.range = range;
         return this;
     }
     public VariantListPriceRelevanceModifier setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
     public VariantListPriceRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
-        this.multiplyWeightBy = multiplyWeightBy;;
+        this.multiplyWeightBy = multiplyWeightBy;
         return this;
     }
     public VariantListPriceRelevanceModifier setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
     @Override
     public VariantListPriceRelevanceModifier setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
 }

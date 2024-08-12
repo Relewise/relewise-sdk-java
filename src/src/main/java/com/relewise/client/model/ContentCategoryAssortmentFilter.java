@@ -66,7 +66,7 @@ public class ContentCategoryAssortmentFilter extends Filter implements ICategory
     @Override
     public ContentCategoryAssortmentFilter setNegated(Boolean negated)
     {
-        this.negated = negated;;
+        this.negated = negated;
         return this;
     }
 }

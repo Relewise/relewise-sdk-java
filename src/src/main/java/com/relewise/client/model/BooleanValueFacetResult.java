@@ -62,7 +62,7 @@ public abstract class BooleanValueFacetResult extends BooleanBooleanValueFacetRe
     @Override
     public BooleanValueFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

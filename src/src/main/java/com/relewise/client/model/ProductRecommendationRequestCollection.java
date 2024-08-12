@@ -66,7 +66,7 @@ public class ProductRecommendationRequestCollection extends LicensedRequest
     }
     public ProductRecommendationRequestCollection setRequireDistinctProductsAcrossResults(Boolean requireDistinctProductsAcrossResults)
     {
-        this.requireDistinctProductsAcrossResults = requireDistinctProductsAcrossResults;;
+        this.requireDistinctProductsAcrossResults = requireDistinctProductsAcrossResults;
         return this;
     }
 }

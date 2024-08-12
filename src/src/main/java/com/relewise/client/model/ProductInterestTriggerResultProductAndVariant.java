@@ -46,17 +46,17 @@ public class ProductInterestTriggerResultProductAndVariant
     }
     public ProductInterestTriggerResultProductAndVariant setProduct(ProductResultDetails product)
     {
-        this.product = product;;
+        this.product = product;
         return this;
     }
     public ProductInterestTriggerResultProductAndVariant setVariant(VariantResultDetails variant)
     {
-        this.variant = variant;;
+        this.variant = variant;
         return this;
     }
     public ProductInterestTriggerResultProductAndVariant setViews(Integer views)
     {
-        this.views = views;;
+        this.views = views;
         return this;
     }
 }

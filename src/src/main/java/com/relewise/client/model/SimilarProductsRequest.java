@@ -108,64 +108,64 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
     }
     public SimilarProductsRequest setExistingProductId(ProductAndVariantId existingProductId)
     {
-        this.existingProductId = existingProductId;;
+        this.existingProductId = existingProductId;
         return this;
     }
     public SimilarProductsRequest setProductData(Product productData)
     {
-        this.productData = productData;;
+        this.productData = productData;
         return this;
     }
     public SimilarProductsRequest setConsiderAlreadyKnownInformationAboutProduct(Boolean considerAlreadyKnownInformationAboutProduct)
     {
-        this.considerAlreadyKnownInformationAboutProduct = considerAlreadyKnownInformationAboutProduct;;
+        this.considerAlreadyKnownInformationAboutProduct = considerAlreadyKnownInformationAboutProduct;
         return this;
     }
     public SimilarProductsRequest setEvaluationSettings(SimilarProductsEvaluationSettings evaluationSettings)
     {
-        this.evaluationSettings = evaluationSettings;;
+        this.evaluationSettings = evaluationSettings;
         return this;
     }
     @Override
     public SimilarProductsRequest setSettings(ProductRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public SimilarProductsRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public SimilarProductsRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public SimilarProductsRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public SimilarProductsRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public SimilarProductsRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public SimilarProductsRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

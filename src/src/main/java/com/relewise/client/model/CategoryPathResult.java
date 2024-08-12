@@ -59,7 +59,7 @@ public class CategoryPathResult
     }
     public CategoryPathResult setRank(Integer rank)
     {
-        this.rank = rank;;
+        this.rank = rank;
         return this;
     }
 }

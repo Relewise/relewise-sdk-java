@@ -60,7 +60,7 @@ public class DataObjectDoubleRangesFacet extends DoubleDataObjectRangesFacet
     @Override
     public DataObjectDoubleRangesFacet setExpandedRangeSize(@Nullable Double expandedRangeSize)
     {
-        this.expandedRangeSize = expandedRangeSize;;
+        this.expandedRangeSize = expandedRangeSize;
         return this;
     }
     @Override
@@ -81,19 +81,19 @@ public class DataObjectDoubleRangesFacet extends DoubleDataObjectRangesFacet
     @Override
     public DataObjectDoubleRangesFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public DataObjectDoubleRangesFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public DataObjectDoubleRangesFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

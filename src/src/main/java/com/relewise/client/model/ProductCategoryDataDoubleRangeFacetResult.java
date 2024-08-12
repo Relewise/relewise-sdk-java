@@ -44,25 +44,25 @@ public class ProductCategoryDataDoubleRangeFacetResult extends DoubleProductCate
     @Override
     public ProductCategoryDataDoubleRangeFacetResult setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ProductCategoryDataDoubleRangeFacetResult setSelected(DoubleRange selected)
     {
-        this.selected = selected;;
+        this.selected = selected;
         return this;
     }
     @Override
     public ProductCategoryDataDoubleRangeFacetResult setAvailable(DoubleRangeAvailableFacetValue available)
     {
-        this.available = available;;
+        this.available = available;
         return this;
     }
     @Override
     public ProductCategoryDataDoubleRangeFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }

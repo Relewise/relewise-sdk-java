@@ -32,13 +32,13 @@ public abstract class BooleanProductCategoryDataValueFacet extends BooleanDataVa
     @Override
     public BooleanProductCategoryDataValueFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public BooleanProductCategoryDataValueFacet setCollectionFilterType(@Nullable CollectionFilterType collectionFilterType)
     {
-        this.collectionFilterType = collectionFilterType;;
+        this.collectionFilterType = collectionFilterType;
         return this;
     }
     @Override
@@ -59,13 +59,13 @@ public abstract class BooleanProductCategoryDataValueFacet extends BooleanDataVa
     @Override
     public BooleanProductCategoryDataValueFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public BooleanProductCategoryDataValueFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

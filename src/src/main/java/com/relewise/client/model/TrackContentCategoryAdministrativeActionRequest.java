@@ -46,7 +46,7 @@ public class TrackContentCategoryAdministrativeActionRequest extends TrackingReq
     }
     public TrackContentCategoryAdministrativeActionRequest setAdministrativeAction(ContentCategoryAdministrativeAction administrativeAction)
     {
-        this.administrativeAction = administrativeAction;;
+        this.administrativeAction = administrativeAction;
         return this;
     }
 }

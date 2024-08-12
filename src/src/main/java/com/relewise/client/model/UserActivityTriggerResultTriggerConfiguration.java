@@ -32,61 +32,61 @@ public abstract class UserActivityTriggerResultTriggerConfiguration extends Trig
     @Override
     public UserActivityTriggerResultTriggerConfiguration setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public UserActivityTriggerResultTriggerConfiguration setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     @Override
     public UserActivityTriggerResultTriggerConfiguration setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     @Override
     public UserActivityTriggerResultTriggerConfiguration setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     @Override
     public UserActivityTriggerResultTriggerConfiguration setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     @Override
     public UserActivityTriggerResultTriggerConfiguration setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public UserActivityTriggerResultTriggerConfiguration setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public UserActivityTriggerResultTriggerConfiguration setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public UserActivityTriggerResultTriggerConfiguration setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public UserActivityTriggerResultTriggerConfiguration setWithinTimeSpanMinutes(Integer withinTimeSpanMinutes)
     {
-        this.withinTimeSpanMinutes = withinTimeSpanMinutes;;
+        this.withinTimeSpanMinutes = withinTimeSpanMinutes;
         return this;
     }
     public UserActivityTriggerResultTriggerConfiguration addToSettings(String key, String value)
@@ -101,13 +101,13 @@ public abstract class UserActivityTriggerResultTriggerConfiguration extends Trig
     @Override
     public UserActivityTriggerResultTriggerConfiguration setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public UserActivityTriggerResultTriggerConfiguration setUserConditions(UserConditionCollection userConditions)
     {
-        this.userConditions = userConditions;;
+        this.userConditions = userConditions;
         return this;
     }
 }

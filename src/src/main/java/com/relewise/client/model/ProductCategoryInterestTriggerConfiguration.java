@@ -73,77 +73,77 @@ public class ProductCategoryInterestTriggerConfiguration extends ProductCategory
     }
     public ProductCategoryInterestTriggerConfiguration setCategoryViews(IntegerRange categoryViews)
     {
-        this.categoryViews = categoryViews;;
+        this.categoryViews = categoryViews;
         return this;
     }
     public ProductCategoryInterestTriggerConfiguration setProductViews(IntegerRange productViews)
     {
-        this.productViews = productViews;;
+        this.productViews = productViews;
         return this;
     }
     public ProductCategoryInterestTriggerConfiguration setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public ProductCategoryInterestTriggerConfiguration setId(UUID id)
     {
-        this.id = id;;
+        this.id = id;
         return this;
     }
     @Override
     public ProductCategoryInterestTriggerConfiguration setName(String name)
     {
-        this.name = name;;
+        this.name = name;
         return this;
     }
     @Override
     public ProductCategoryInterestTriggerConfiguration setDescription(String description)
     {
-        this.description = description;;
+        this.description = description;
         return this;
     }
     @Override
     public ProductCategoryInterestTriggerConfiguration setGroup(String group)
     {
-        this.group = group;;
+        this.group = group;
         return this;
     }
     @Override
     public ProductCategoryInterestTriggerConfiguration setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;;
+        this.enabled = enabled;
         return this;
     }
     @Override
     public ProductCategoryInterestTriggerConfiguration setCreated(OffsetDateTime created)
     {
-        this.created = created;;
+        this.created = created;
         return this;
     }
     @Override
     public ProductCategoryInterestTriggerConfiguration setCreatedBy(String createdBy)
     {
-        this.createdBy = createdBy;;
+        this.createdBy = createdBy;
         return this;
     }
     @Override
     public ProductCategoryInterestTriggerConfiguration setModified(OffsetDateTime modified)
     {
-        this.modified = modified;;
+        this.modified = modified;
         return this;
     }
     @Override
     public ProductCategoryInterestTriggerConfiguration setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
     @Override
     public ProductCategoryInterestTriggerConfiguration setWithinTimeSpanMinutes(Integer withinTimeSpanMinutes)
     {
-        this.withinTimeSpanMinutes = withinTimeSpanMinutes;;
+        this.withinTimeSpanMinutes = withinTimeSpanMinutes;
         return this;
     }
     public ProductCategoryInterestTriggerConfiguration addToSettings(String key, String value)
@@ -158,13 +158,13 @@ public class ProductCategoryInterestTriggerConfiguration extends ProductCategory
     @Override
     public ProductCategoryInterestTriggerConfiguration setSettings(HashMap<String, String> settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public ProductCategoryInterestTriggerConfiguration setUserConditions(UserConditionCollection userConditions)
     {
-        this.userConditions = userConditions;;
+        this.userConditions = userConditions;
         return this;
     }
 }

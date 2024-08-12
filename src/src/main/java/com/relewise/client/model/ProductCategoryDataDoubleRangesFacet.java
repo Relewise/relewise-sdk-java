@@ -60,7 +60,7 @@ public class ProductCategoryDataDoubleRangesFacet extends DoubleProductCategoryD
     @Override
     public ProductCategoryDataDoubleRangesFacet setExpandedRangeSize(@Nullable Double expandedRangeSize)
     {
-        this.expandedRangeSize = expandedRangeSize;;
+        this.expandedRangeSize = expandedRangeSize;
         return this;
     }
     @Override
@@ -81,19 +81,19 @@ public class ProductCategoryDataDoubleRangesFacet extends DoubleProductCategoryD
     @Override
     public ProductCategoryDataDoubleRangesFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
     public ProductCategoryDataDoubleRangesFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public ProductCategoryDataDoubleRangesFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

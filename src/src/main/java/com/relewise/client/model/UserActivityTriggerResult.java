@@ -42,7 +42,7 @@ public class UserActivityTriggerResult implements ITriggerResult
     }
     public UserActivityTriggerResult setUser(UserResultDetails user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
 }

@@ -42,7 +42,7 @@ public class ContentDataObjectFacet extends DataObjectFacet
     @Override
     public ContentDataObjectFacet setKey(String key)
     {
-        this.key = key;;
+        this.key = key;
         return this;
     }
     @Override
@@ -63,19 +63,19 @@ public class ContentDataObjectFacet extends DataObjectFacet
     @Override
     public ContentDataObjectFacet setFilter(DataObjectFilter filter)
     {
-        this.filter = filter;;
+        this.filter = filter;
         return this;
     }
     @Override
     public ContentDataObjectFacet setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
     @Override
     public ContentDataObjectFacet setSettings(FacetSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
 }

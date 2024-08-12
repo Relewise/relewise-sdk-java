@@ -95,17 +95,17 @@ public class BrandResultDetails
     }
     public BrandResultDetails setBrandId(String brandId)
     {
-        this.brandId = brandId;;
+        this.brandId = brandId;
         return this;
     }
     public BrandResultDetails setDisplayName(String displayName)
     {
-        this.displayName = displayName;;
+        this.displayName = displayName;
         return this;
     }
     public BrandResultDetails setAssortments(Integer... assortments)
     {
-        this.assortments = assortments;;
+        this.assortments = assortments;
         return this;
     }
     public BrandResultDetails addToAssortments(Integer assortment)
@@ -133,47 +133,47 @@ public class BrandResultDetails
     }
     public BrandResultDetails setData(HashMap<String, DataValue> data)
     {
-        this.data = data;;
+        this.data = data;
         return this;
     }
     public BrandResultDetails setViewedByUser(ViewedByUserInfo viewedByUser)
     {
-        this.viewedByUser = viewedByUser;;
+        this.viewedByUser = viewedByUser;
         return this;
     }
     public BrandResultDetails setCreatedUtc(OffsetDateTime createdUtc)
     {
-        this.createdUtc = createdUtc;;
+        this.createdUtc = createdUtc;
         return this;
     }
     public BrandResultDetails setLastViewedUtc(@Nullable OffsetDateTime lastViewedUtc)
     {
-        this.lastViewedUtc = lastViewedUtc;;
+        this.lastViewedUtc = lastViewedUtc;
         return this;
     }
     public BrandResultDetails setViewedTotalNumberOfTimes(Long viewedTotalNumberOfTimes)
     {
-        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;;
+        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;
         return this;
     }
     public BrandResultDetails setViewedByDifferentNumberOfUsers(Integer viewedByDifferentNumberOfUsers)
     {
-        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;;
+        this.viewedByDifferentNumberOfUsers = viewedByDifferentNumberOfUsers;
         return this;
     }
     public BrandResultDetails setDisabled(Boolean disabled)
     {
-        this.disabled = disabled;;
+        this.disabled = disabled;
         return this;
     }
     public BrandResultDetails setPurchasedFromByDifferentNumberOfUsers(Integer purchasedFromByDifferentNumberOfUsers)
     {
-        this.purchasedFromByDifferentNumberOfUsers = purchasedFromByDifferentNumberOfUsers;;
+        this.purchasedFromByDifferentNumberOfUsers = purchasedFromByDifferentNumberOfUsers;
         return this;
     }
     public BrandResultDetails setPurchasedByUser(PurchasedByUserInfo purchasedByUser)
     {
-        this.purchasedByUser = purchasedByUser;;
+        this.purchasedByUser = purchasedByUser;
         return this;
     }
 }

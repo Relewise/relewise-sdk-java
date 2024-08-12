@@ -49,7 +49,7 @@ public class SortProductsRequest extends ProductRecommendationRequest implements
     }
     public SortProductsRequest setProductIds(String... productIds)
     {
-        this.productIds = productIds;;
+        this.productIds = productIds;
         return this;
     }
     public SortProductsRequest addToProductIds(String productId)
@@ -69,43 +69,43 @@ public class SortProductsRequest extends ProductRecommendationRequest implements
     @Override
     public SortProductsRequest setSettings(ProductRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public SortProductsRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public SortProductsRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public SortProductsRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public SortProductsRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public SortProductsRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public SortProductsRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

@@ -49,7 +49,7 @@ public class PurchasedWithMultipleProductsRequest extends ProductRecommendationR
     }
     public PurchasedWithMultipleProductsRequest setProductAndVariantIds(ProductAndVariantId... productAndVariantIds)
     {
-        this.productAndVariantIds = productAndVariantIds;;
+        this.productAndVariantIds = productAndVariantIds;
         return this;
     }
     public PurchasedWithMultipleProductsRequest addToProductAndVariantIds(ProductAndVariantId productAndVariantId)
@@ -69,43 +69,43 @@ public class PurchasedWithMultipleProductsRequest extends ProductRecommendationR
     @Override
     public PurchasedWithMultipleProductsRequest setSettings(ProductRecommendationRequestSettings settings)
     {
-        this.settings = settings;;
+        this.settings = settings;
         return this;
     }
     @Override
     public PurchasedWithMultipleProductsRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     @Override
     public PurchasedWithMultipleProductsRequest setUser(User user)
     {
-        this.user = user;;
+        this.user = user;
         return this;
     }
     @Override
     public PurchasedWithMultipleProductsRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
     {
-        this.relevanceModifiers = relevanceModifiers;;
+        this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
     public PurchasedWithMultipleProductsRequest setFilters(FilterCollection filters)
     {
-        this.filters = filters;;
+        this.filters = filters;
         return this;
     }
     @Override
     public PurchasedWithMultipleProductsRequest setDisplayedAtLocationType(String displayedAtLocationType)
     {
-        this.displayedAtLocationType = displayedAtLocationType;;
+        this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
     @Override
     public PurchasedWithMultipleProductsRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

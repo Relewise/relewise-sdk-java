@@ -42,12 +42,12 @@ public abstract class AnalyzerRequest extends LicensedRequest
     }
     public AnalyzerRequest setLanguage(Language language)
     {
-        this.language = language;;
+        this.language = language;
         return this;
     }
     public AnalyzerRequest setCurrency(Currency currency)
     {
-        this.currency = currency;;
+        this.currency = currency;
         return this;
     }
 }

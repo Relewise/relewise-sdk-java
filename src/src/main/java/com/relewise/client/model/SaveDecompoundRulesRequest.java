@@ -43,7 +43,7 @@ public class SaveDecompoundRulesRequest extends DecompoundRuleSaveSearchRulesReq
     @Override
     public SaveDecompoundRulesRequest setRules(DecompoundRule... rules)
     {
-        this.rules = rules;;
+        this.rules = rules;
         return this;
     }
     public SaveDecompoundRulesRequest addToRules(DecompoundRule rule)
@@ -63,7 +63,7 @@ public class SaveDecompoundRulesRequest extends DecompoundRuleSaveSearchRulesReq
     @Override
     public SaveDecompoundRulesRequest setModifiedBy(String modifiedBy)
     {
-        this.modifiedBy = modifiedBy;;
+        this.modifiedBy = modifiedBy;
         return this;
     }
 }

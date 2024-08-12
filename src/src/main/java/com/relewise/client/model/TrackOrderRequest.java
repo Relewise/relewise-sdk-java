@@ -46,7 +46,7 @@ public class TrackOrderRequest extends TrackingRequest
     }
     public TrackOrderRequest setOrder(Order order)
     {
-        this.order = order;;
+        this.order = order;
         return this;
     }
 }

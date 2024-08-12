@@ -46,7 +46,7 @@ public class TriggerConfigurationsRequest extends LicensedRequest
     }
     public TriggerConfigurationsRequest setType(@Nullable Integer type)
     {
-        this.type = type;;
+        this.type = type;
         return this;
     }
 }

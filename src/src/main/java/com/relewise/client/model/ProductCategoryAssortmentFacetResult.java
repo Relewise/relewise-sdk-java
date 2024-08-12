@@ -44,7 +44,7 @@ public class ProductCategoryAssortmentFacetResult extends AssortmentFacetResult
     @Override
     public ProductCategoryAssortmentFacetResult setAssortmentFilterType(AssortmentFilterType assortmentFilterType)
     {
-        this.assortmentFilterType = assortmentFilterType;;
+        this.assortmentFilterType = assortmentFilterType;
         return this;
     }
     @Override
@@ -80,7 +80,7 @@ public class ProductCategoryAssortmentFacetResult extends AssortmentFacetResult
     @Override
     public ProductCategoryAssortmentFacetResult setField(FacetingField field)
     {
-        this.field = field;;
+        this.field = field;
         return this;
     }
 }
