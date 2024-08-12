@@ -17,9 +17,14 @@ public class JavaPropertySetterMethodsWriter
     {
         foreach (var (info, propertyTypeName, propertyName, lowerCaseName) in propertyInformations)
         {
+            var deprecationComment = info.GetCustomAttribute(typeof(ObsoleteAttribute)) is ObsoleteAttribute { } obsolete ? $"@deprecated {obsolete.Message}" : null;
             var propertyType = info.PropertyType;
             if (propertyType.IsGenericType && propertyType.GetGenericTypeDefinition() == typeof(Dictionary<,>) && propertyType.GenericTypeArguments is [var keyType, var valueType])
             {
+                writer.WriteCommentBlock(
+                    javaWriter.XmlDocumentation.GetSummary(returnType, propertyName),
+                    deprecationComment
+                );
                 writer.WriteLine($"public {returnTypeName} addTo{propertyName}({javaWriter.TypeName(keyType)} key, {javaWriter.TypeName(valueType)} value)");
                 writer.WriteLine("{");
                 writer.Indent++;
@@ -35,6 +40,10 @@ public class JavaPropertySetterMethodsWriter
                 writer.WriteLine("}");
             }
 
+            writer.WriteCommentBlock(
+                javaWriter.XmlDocumentation.GetSummary(returnType, propertyName),
+                deprecationComment
+            );
             var parameterType = javaWriter.BetterTypedParameterTypeName(propertyType, new NullabilityInfoContext().Create(info));
             if (!ownedProperties.Any(p => p.ToLower() == lowerCaseName.ToLower()))
             {
@@ -50,6 +59,10 @@ public class JavaPropertySetterMethodsWriter
 
             if (propertyType.IsArray && !returnType.GenericTypeArguments.Contains(propertyType.GetElementType()))
             {
+                writer.WriteCommentBlock(
+                    javaWriter.XmlDocumentation.GetSummary(returnType, propertyName),
+                    deprecationComment
+                );
                 var elementType = propertyType.GetElementType()!;
                 writer.WriteLine($"public {returnTypeName} addTo{propertyName}({javaWriter.TypeName(elementType)} {lowerCaseName.SingularIfPossible()})");
                 writer.WriteLine("{");
@@ -75,6 +88,10 @@ public class JavaPropertySetterMethodsWriter
             }
             else if (propertyType.IsGenericType && propertyType.GetGenericTypeDefinition() == typeof(List<>) && !propertyType.GenericTypeArguments[0].IsGenericTypeParameter)
             {
+                writer.WriteCommentBlock(
+                    javaWriter.XmlDocumentation.GetSummary(returnType, propertyName),
+                    deprecationComment
+                );
                 writer.WriteLine($"public {returnTypeName} addTo{propertyName}({javaWriter.TypeName(propertyType.GenericTypeArguments[0])} {lowerCaseName})");
                 writer.WriteLine("{");
                 writer.Indent++;

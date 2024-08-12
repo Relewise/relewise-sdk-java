@@ -16,13 +16,14 @@ if (basePath.EndsWith("/"))
     basePath = basePath[..^1];
 }
 
-var assembly = Assembly.GetAssembly(typeof(ClientBase));
-if (assembly is null)
-{
-    throw new ArgumentException("Could not load Relewise Client assembly.");
-}
+var assembly = Assembly.GetAssembly(typeof(ClientBase)) ?? throw new ArgumentException("Could not load Relewise Client assembly.");
 
-var javaWriter = new JavaWriter(assembly, basePath);
+var xmlDocumentation = await XMLDocsFetcher.Get(assembly.GetName().Name!, assembly.GetName().Version!.ToString());
+
+Console.WriteLine($"Loaded {xmlDocumentation.Summaries.Count} documentation summaries.");
+Console.WriteLine($"Loaded {xmlDocumentation.Params.Count} documentation params.");
+
+var javaWriter = new JavaWriter(assembly, basePath, xmlDocumentation);
 
 javaWriter.WriteTypes(assembly
     .GetTypes()

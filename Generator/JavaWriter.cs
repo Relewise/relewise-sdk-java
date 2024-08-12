@@ -15,18 +15,20 @@ public class JavaWriter
     public HashSet<Type> MissingTypeDefinitions { get; set; } = new();
     public Assembly Assembly { get; }
     public string BasePath { get; }
+    public XmlDocumentation XmlDocumentation { get; }
     public JavaCreatorMethodWriter CreatorMethodWriter { get; }
     public JavaPropertyGetterMethodsWriter PropertyGetterMethodsWriter { get; }
     public JavaPropertySetterMethodsWriter PropertySetterMethodsWriter { get; }
     public JavaStaticReadonlyPropertiesWriter StaticReadonlyPropertiesWriter { get; }
     public JavaFieldWriter SettablePropertiesWriter { get; }
 
-    public JavaWriter(Assembly assembly, string basePath)
+    public JavaWriter(Assembly assembly, string basePath, XmlDocumentation xmlDocumentation)
     {
         javaTypeWriters = new List<IJavaTypeWriter>() { new JavaEnumWriter(this), new JavaInterfaceWriter(this), new JavaClassWriter(this) };
         javaTypeResolver = new JavaTypeResolver(assembly);
         Assembly = assembly;
         BasePath = basePath;
+        XmlDocumentation = xmlDocumentation;
         CreatorMethodWriter = new JavaCreatorMethodWriter(this);
         PropertyGetterMethodsWriter = new JavaPropertyGetterMethodsWriter(this);
         PropertySetterMethodsWriter = new JavaPropertySetterMethodsWriter(this);
@@ -63,14 +65,14 @@ public class JavaWriter
             using var streamWriter = File.CreateText($"{BasePath}/{Constants.GenerationFolderPath}/{typeName}.java");
             using var writer = new IndentedTextWriter(streamWriter);
 
-            var phpTypeWriter = javaTypeWriters.FirstOrDefault(writer => writer.CanWrite(type));
-            if (phpTypeWriter is null)
+            var javaTypeWriter = javaTypeWriters.FirstOrDefault(writer => writer.CanWrite(type));
+            if (javaTypeWriter is null)
             {
                 MissingTypeDefinitions.Add(type);
             }
             else
             {
-                phpTypeWriter.Write(writer, type, typeName);
+                javaTypeWriter.Write(writer, type, typeName);
                 javaTypeResolver.HasWritten(typeName);
             }
         }

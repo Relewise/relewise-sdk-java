@@ -32,6 +32,13 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
     
 """);
 
+        var deprecationComment = type.GetCustomAttribute(typeof(ObsoleteAttribute)) is ObsoleteAttribute { } obsolete ? $"@deprecated {obsolete.Message}" : null;
+
+        writer.WriteCommentBlock(
+            javaWriter.XmlDocumentation.GetSummary(type),
+            deprecationComment
+        );
+
         if (type.IsMaybeBaseClassOfSomethingPolymorphic())
         {
             var attributes = System.Attribute.GetCustomAttributes(type);

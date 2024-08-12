@@ -150,12 +150,24 @@ public class JavaCreatorMethodWriter
         }
         WrittenCreator.Add(signature);
 
+        writer.WriteCommentBlock(
+            parameters.Select(p => javaWriter.XmlDocumentation.GetConstructorParam(typeName, parameters, p))
+                .Prepend(javaWriter.XmlDocumentation.GetConstructorSummary(typeName, parameters))
+                .ToArray()
+        );
+
         writer.WriteLine($"public static {typeName} create({ParameterList(parameters)})");
         writer.WriteLine("{");
         writer.Indent++;
         writer.WriteLine($"return new {typeName}({string.Join(", ", parameters.Select(p => p.Name))});");
         writer.Indent--;
         writer.WriteLine("}");
+
+        writer.WriteCommentBlock(
+            parameters.Select(p => javaWriter.XmlDocumentation.GetConstructorParam(typeName, parameters, p))
+                .Prepend(javaWriter.XmlDocumentation.GetConstructorSummary(typeName, parameters))
+                .ToArray()
+        );
 
         writer.WriteLine($"public {typeName}({ParameterList(parameters)})");
         writer.WriteLine("{");

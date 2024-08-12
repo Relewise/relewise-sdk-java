@@ -1,14 +1,16 @@
 ﻿using System.CodeDom.Compiler;
+using System.Reflection;
+using Generator.Extensions;
 
 namespace Generator.JavaTypeWriters;
 
 internal class JavaEnumWriter : IJavaTypeWriter
 {
-    private readonly JavaWriter phpWriter;
+    private readonly JavaWriter javaWriter;
 
-    public JavaEnumWriter(JavaWriter phpWriter)
+    public JavaEnumWriter(JavaWriter javaWriter)
     {
-        this.phpWriter = phpWriter;
+        this.javaWriter = javaWriter;
     }
 
     public bool CanWrite(Type type) => type.IsEnum;
@@ -21,6 +23,14 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
 {Constants.StandardImports}
 
 """);
+
+        var deprecationComment = type.GetCustomAttribute(typeof(ObsoleteAttribute)) is ObsoleteAttribute { } obsolete ? $"@deprecated {obsolete.Message}" : null;
+
+        writer.WriteCommentBlock(
+            javaWriter.XmlDocumentation.GetSummary(type),
+            deprecationComment
+        );
+
         writer.WriteLine($"public enum {typeName}");
         writer.WriteLine("{");
         writer.Indent++;
