@@ -66,7 +66,13 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
         }
         writer.WriteLine("@JsonIgnoreProperties(ignoreUnknown = true)");
 
-        writer.WriteLine($"public {(type.IsAbstract ? "abstract " : "")}class {typeName}{(type.BaseType != typeof(object) && type.BaseType is { } baseType ? $" extends {javaWriter.TypeName(baseType).RemoveNullable()}" : "")}{(type.GetInterfaces() is { Length: > 0 } interfaces ? " implements " + string.Join(", ", interfaces.Select(i => javaWriter.TypeName(i))) : "")}");
+        string? baseTypeName = null;
+        if (type.BaseType is { } baseType && baseType != typeof(ValueType) && baseType != typeof(object))
+        {
+            baseTypeName = javaWriter.TypeName(baseType).RemoveNullable();
+        }
+
+        writer.WriteLine($"public {(type.IsAbstract ? "abstract " : "")}class {typeName}{(baseTypeName is not null ? $" extends {baseTypeName}" : "")}{(type.GetInterfaces() is { Length: > 0 } interfaces ? " implements " + string.Join(", ", interfaces.Select(i => javaWriter.TypeName(i))) : "")}");
         writer.WriteLine("{");
         writer.Indent++;
         if (type.IsMaybeBaseClassOfSomethingPolymorphic())
