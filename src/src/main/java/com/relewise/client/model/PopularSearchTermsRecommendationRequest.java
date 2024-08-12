@@ -30,6 +30,18 @@ public class PopularSearchTermsRecommendationRequest extends RecommendationReque
     public String $type = "Relewise.Client.Requests.Recommendations.PopularSearchTermsRecommendationRequest, Relewise.Client";
     public @Nullable String term;
     public @Nullable RecommendPopularSearchTermSettings settings;
+    public static PopularSearchTermsRecommendationRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, String term)
+    {
+        return new PopularSearchTermsRecommendationRequest(language, currency, displayedAtLocationType, user, term);
+    }
+    public PopularSearchTermsRecommendationRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, String term)
+    {
+        this.language = language;
+        this.currency = currency;
+        this.displayedAtLocationType = displayedAtLocationType;
+        this.user = user;
+        this.term = term;
+    }
     public static PopularSearchTermsRecommendationRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user)
     {
         return new PopularSearchTermsRecommendationRequest(language, currency, displayedAtLocationType, user);

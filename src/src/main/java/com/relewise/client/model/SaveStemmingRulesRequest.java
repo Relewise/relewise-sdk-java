@@ -28,12 +28,13 @@ import java.util.HashSet;
 public class SaveStemmingRulesRequest extends StemmingRuleSaveSearchRulesRequest
 {
     public String $type = "Relewise.Client.Requests.Search.Rules.SaveStemmingRulesRequest, Relewise.Client";
-    public static SaveStemmingRulesRequest create(String modifiedBy)
+    public static SaveStemmingRulesRequest create(StemmingRule[] rules, String modifiedBy)
     {
-        return new SaveStemmingRulesRequest(modifiedBy);
+        return new SaveStemmingRulesRequest(rules, modifiedBy);
     }
-    public SaveStemmingRulesRequest(String modifiedBy)
+    public SaveStemmingRulesRequest(StemmingRule[] rules, String modifiedBy)
     {
+        this.rules = rules;
         this.modifiedBy = modifiedBy;
     }
     public SaveStemmingRulesRequest()

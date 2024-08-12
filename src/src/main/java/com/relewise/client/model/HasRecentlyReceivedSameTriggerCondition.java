@@ -29,12 +29,13 @@ public class HasRecentlyReceivedSameTriggerCondition extends UserCondition
 {
     public String $type = "Relewise.Client.DataTypes.UserConditions.HasRecentlyReceivedSameTriggerCondition, Relewise.Client";
     public Integer withinMinutes;
-    public static HasRecentlyReceivedSameTriggerCondition create(Boolean negated)
+    public static HasRecentlyReceivedSameTriggerCondition create(Integer withinMinutes, Boolean negated)
     {
-        return new HasRecentlyReceivedSameTriggerCondition(negated);
+        return new HasRecentlyReceivedSameTriggerCondition(withinMinutes, negated);
     }
-    public HasRecentlyReceivedSameTriggerCondition(Boolean negated)
+    public HasRecentlyReceivedSameTriggerCondition(Integer withinMinutes, Boolean negated)
     {
+        this.withinMinutes = withinMinutes;
         this.negated = negated;
     }
     public HasRecentlyReceivedSameTriggerCondition()

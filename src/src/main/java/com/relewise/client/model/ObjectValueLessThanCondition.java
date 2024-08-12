@@ -29,6 +29,28 @@ public class ObjectValueLessThanCondition extends ObjectValueCondition
 {
     public String $type = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueLessThanCondition, Relewise.Client";
     public Double value;
+    public static ObjectValueLessThanCondition create(String key, String[] objectPath, Double value)
+    {
+        return new ObjectValueLessThanCondition(key, objectPath, value);
+    }
+    public ObjectValueLessThanCondition(String key, String[] objectPath, Double value)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.value = value;
+        this.negated = false;
+    }
+    public static ObjectValueLessThanCondition create(String key, String[] objectPath, Double value, Boolean negated)
+    {
+        return new ObjectValueLessThanCondition(key, objectPath, value, negated);
+    }
+    public ObjectValueLessThanCondition(String key, String[] objectPath, Double value, Boolean negated)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.value = value;
+        this.negated = negated;
+    }
     public static ObjectValueLessThanCondition create(String key, Double value)
     {
         return new ObjectValueLessThanCondition(key, value);

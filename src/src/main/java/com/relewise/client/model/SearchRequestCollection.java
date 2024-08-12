@@ -29,6 +29,19 @@ public class SearchRequestCollection extends SearchRequest implements IUserIdent
 {
     public String $type = "Relewise.Client.Requests.Search.SearchRequestCollection, Relewise.Client";
     public ArrayList<SearchRequest> requests;
+    public static SearchRequestCollection create(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, @Nullable User user, @Nullable String displayedAtLocation, SearchRequest... requests)
+    {
+        return new SearchRequestCollection(language, currency, indexSelector, user, displayedAtLocation, requests);
+    }
+    public SearchRequestCollection(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, @Nullable User user, @Nullable String displayedAtLocation, SearchRequest... requests)
+    {
+        this.language = language;
+        this.currency = currency;
+        this.indexSelector = indexSelector;
+        this.user = user;
+        this.displayedAtLocation = displayedAtLocation;
+        this.requests = new ArrayList<>(Arrays.asList(requests));
+    }
     public static SearchRequestCollection create(SearchRequest... requests)
     {
         return new SearchRequestCollection(requests);

@@ -28,12 +28,13 @@ import java.util.HashSet;
 public class DeletePredictionRulesRequest extends DeleteSearchRulesRequest
 {
     public String $type = "Relewise.Client.Requests.Search.Rules.DeletePredictionRulesRequest, Relewise.Client";
-    public static DeletePredictionRulesRequest create(String deletedBy)
+    public static DeletePredictionRulesRequest create(UUID[] ids, String deletedBy)
     {
-        return new DeletePredictionRulesRequest(deletedBy);
+        return new DeletePredictionRulesRequest(ids, deletedBy);
     }
-    public DeletePredictionRulesRequest(String deletedBy)
+    public DeletePredictionRulesRequest(UUID[] ids, String deletedBy)
     {
+        this.ids = ids;
         this.deletedBy = deletedBy;
     }
     public DeletePredictionRulesRequest()

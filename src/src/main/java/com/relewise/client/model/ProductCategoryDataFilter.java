@@ -28,6 +28,34 @@ import java.util.HashSet;
 public class ProductCategoryDataFilter extends DataFilter implements ICategoryFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.ProductCategoryDataFilter, Relewise.Client";
+    public static ProductCategoryDataFilter create(String key, String... objectPath)
+    {
+        return new ProductCategoryDataFilter(key, objectPath);
+    }
+    public ProductCategoryDataFilter(String key, String... objectPath)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.conditions = null;
+        this.mustMatchAllConditions = true;
+        this.filterOutIfKeyIsNotFound = true;
+        this.language = null;
+        this.currency = null;
+    }
+    public static ProductCategoryDataFilter create(String key, String[] objectPath, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    {
+        return new ProductCategoryDataFilter(key, objectPath, conditions, mustMatchAllConditions, filterOutIfKeyIsNotFound, language, currency);
+    }
+    public ProductCategoryDataFilter(String key, String[] objectPath, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.conditions = conditions;
+        this.mustMatchAllConditions = mustMatchAllConditions;
+        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
+        this.language = language;
+        this.currency = currency;
+    }
     public static ProductCategoryDataFilter create(String key)
     {
         return new ProductCategoryDataFilter(key);
@@ -35,17 +63,21 @@ public class ProductCategoryDataFilter extends DataFilter implements ICategoryFi
     public ProductCategoryDataFilter(String key)
     {
         this.key = key;
+        this.conditions = null;
+        this.mustMatchAllConditions = true;
         this.filterOutIfKeyIsNotFound = true;
         this.language = null;
         this.currency = null;
     }
-    public static ProductCategoryDataFilter create(String key, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    public static ProductCategoryDataFilter create(String key, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
     {
-        return new ProductCategoryDataFilter(key, filterOutIfKeyIsNotFound, language, currency);
+        return new ProductCategoryDataFilter(key, conditions, mustMatchAllConditions, filterOutIfKeyIsNotFound, language, currency);
     }
-    public ProductCategoryDataFilter(String key, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    public ProductCategoryDataFilter(String key, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
     {
         this.key = key;
+        this.conditions = conditions;
+        this.mustMatchAllConditions = mustMatchAllConditions;
         this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
         this.language = language;
         this.currency = currency;

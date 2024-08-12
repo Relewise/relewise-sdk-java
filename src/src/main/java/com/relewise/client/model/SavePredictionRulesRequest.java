@@ -28,12 +28,13 @@ import java.util.HashSet;
 public class SavePredictionRulesRequest extends PredictionRuleSaveSearchRulesRequest
 {
     public String $type = "Relewise.Client.Requests.Search.Rules.SavePredictionRulesRequest, Relewise.Client";
-    public static SavePredictionRulesRequest create(String modifiedBy)
+    public static SavePredictionRulesRequest create(PredictionRule[] rules, String modifiedBy)
     {
-        return new SavePredictionRulesRequest(modifiedBy);
+        return new SavePredictionRulesRequest(rules, modifiedBy);
     }
-    public SavePredictionRulesRequest(String modifiedBy)
+    public SavePredictionRulesRequest(PredictionRule[] rules, String modifiedBy)
     {
+        this.rules = rules;
         this.modifiedBy = modifiedBy;
     }
     public SavePredictionRulesRequest()

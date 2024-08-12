@@ -32,6 +32,21 @@ public class ProductSearchRequest extends PaginatedSearchRequest implements IUse
     public @Nullable ProductFacetQuery facets;
     public @Nullable ProductSearchSettings settings;
     public @Nullable ProductSortBySpecification sorting;
+    public static ProductSearchRequest create(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, User user, String displayedAtLocation, @Nullable String term, Integer skip, Integer take)
+    {
+        return new ProductSearchRequest(language, currency, indexSelector, user, displayedAtLocation, term, skip, take);
+    }
+    public ProductSearchRequest(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, User user, String displayedAtLocation, @Nullable String term, Integer skip, Integer take)
+    {
+        this.language = language;
+        this.currency = currency;
+        this.indexSelector = indexSelector;
+        this.user = user;
+        this.displayedAtLocation = displayedAtLocation;
+        this.term = term;
+        this.skip = skip;
+        this.take = take;
+    }
     public static ProductSearchRequest create(@Nullable Language language, @Nullable Currency currency, User user, String displayedAtLocation, @Nullable String term, Integer skip, Integer take)
     {
         return new ProductSearchRequest(language, currency, user, displayedAtLocation, term, skip, take);

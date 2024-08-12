@@ -47,6 +47,14 @@ public class SearchTermCondition
         this.value = value;
         this.minimumLength = minimumLength;
     }
+    public static SearchTermCondition create(Integer minimumLength)
+    {
+        return new SearchTermCondition(minimumLength);
+    }
+    public SearchTermCondition(Integer minimumLength)
+    {
+        this.minimumLength = minimumLength;
+    }
     public SearchTermCondition()
     {
         this.minimumLength = null;

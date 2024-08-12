@@ -28,12 +28,13 @@ import java.util.HashSet;
 public class SaveDecompoundRulesRequest extends DecompoundRuleSaveSearchRulesRequest
 {
     public String $type = "Relewise.Client.Requests.Search.Rules.SaveDecompoundRulesRequest, Relewise.Client";
-    public static SaveDecompoundRulesRequest create(String modifiedBy)
+    public static SaveDecompoundRulesRequest create(DecompoundRule[] rules, String modifiedBy)
     {
-        return new SaveDecompoundRulesRequest(modifiedBy);
+        return new SaveDecompoundRulesRequest(rules, modifiedBy);
     }
-    public SaveDecompoundRulesRequest(String modifiedBy)
+    public SaveDecompoundRulesRequest(DecompoundRule[] rules, String modifiedBy)
     {
+        this.rules = rules;
         this.modifiedBy = modifiedBy;
     }
     public SaveDecompoundRulesRequest()

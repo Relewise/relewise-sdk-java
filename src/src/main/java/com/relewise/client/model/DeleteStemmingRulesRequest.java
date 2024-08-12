@@ -28,12 +28,13 @@ import java.util.HashSet;
 public class DeleteStemmingRulesRequest extends DeleteSearchRulesRequest
 {
     public String $type = "Relewise.Client.Requests.Search.Rules.DeleteStemmingRulesRequest, Relewise.Client";
-    public static DeleteStemmingRulesRequest create(String deletedBy)
+    public static DeleteStemmingRulesRequest create(UUID[] ids, String deletedBy)
     {
-        return new DeleteStemmingRulesRequest(deletedBy);
+        return new DeleteStemmingRulesRequest(ids, deletedBy);
     }
-    public DeleteStemmingRulesRequest(String deletedBy)
+    public DeleteStemmingRulesRequest(UUID[] ids, String deletedBy)
     {
+        this.ids = ids;
         this.deletedBy = deletedBy;
     }
     public DeleteStemmingRulesRequest()

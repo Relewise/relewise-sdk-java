@@ -32,6 +32,34 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
     public @Nullable Product productData;
     public Boolean considerAlreadyKnownInformationAboutProduct;
     public @Nullable SimilarProductsEvaluationSettings evaluationSettings;
+    public static SimilarProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Product productData, Boolean considerAlreadyKnownInformationAboutProduct)
+    {
+        return new SimilarProductsRequest(language, currency, displayedAtLocationType, user, productData, considerAlreadyKnownInformationAboutProduct);
+    }
+    public SimilarProductsRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Product productData, Boolean considerAlreadyKnownInformationAboutProduct)
+    {
+        this.language = language;
+        this.currency = currency;
+        this.displayedAtLocationType = displayedAtLocationType;
+        this.user = user;
+        this.productData = productData;
+        this.considerAlreadyKnownInformationAboutProduct = considerAlreadyKnownInformationAboutProduct;
+        this.evaluationSettings = null;
+    }
+    public static SimilarProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Product productData, Boolean considerAlreadyKnownInformationAboutProduct, SimilarProductsEvaluationSettings evaluationSettings)
+    {
+        return new SimilarProductsRequest(language, currency, displayedAtLocationType, user, productData, considerAlreadyKnownInformationAboutProduct, evaluationSettings);
+    }
+    public SimilarProductsRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Product productData, Boolean considerAlreadyKnownInformationAboutProduct, SimilarProductsEvaluationSettings evaluationSettings)
+    {
+        this.language = language;
+        this.currency = currency;
+        this.displayedAtLocationType = displayedAtLocationType;
+        this.user = user;
+        this.productData = productData;
+        this.considerAlreadyKnownInformationAboutProduct = considerAlreadyKnownInformationAboutProduct;
+        this.evaluationSettings = evaluationSettings;
+    }
     public static SimilarProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ProductAndVariantId existingProductId)
     {
         return new SimilarProductsRequest(language, currency, displayedAtLocationType, user, existingProductId);

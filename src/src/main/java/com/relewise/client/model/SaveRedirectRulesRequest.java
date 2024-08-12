@@ -28,12 +28,13 @@ import java.util.HashSet;
 public class SaveRedirectRulesRequest extends RedirectRuleSaveSearchRulesRequest
 {
     public String $type = "Relewise.Client.Requests.Search.Rules.SaveRedirectRulesRequest, Relewise.Client";
-    public static SaveRedirectRulesRequest create(String modifiedBy)
+    public static SaveRedirectRulesRequest create(RedirectRule[] rules, String modifiedBy)
     {
-        return new SaveRedirectRulesRequest(modifiedBy);
+        return new SaveRedirectRulesRequest(rules, modifiedBy);
     }
-    public SaveRedirectRulesRequest(String modifiedBy)
+    public SaveRedirectRulesRequest(RedirectRule[] rules, String modifiedBy)
     {
+        this.rules = rules;
         this.modifiedBy = modifiedBy;
     }
     public SaveRedirectRulesRequest()

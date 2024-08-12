@@ -28,6 +28,26 @@ import java.util.HashSet;
 public class ObjectValueMaxByCondition extends ObjectValueCondition
 {
     public String $type = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueMaxByCondition, Relewise.Client";
+    public static ObjectValueMaxByCondition create(String key, String... objectPath)
+    {
+        return new ObjectValueMaxByCondition(key, objectPath);
+    }
+    public ObjectValueMaxByCondition(String key, String... objectPath)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.negated = false;
+    }
+    public static ObjectValueMaxByCondition create(String key, String[] objectPath, Boolean negated)
+    {
+        return new ObjectValueMaxByCondition(key, objectPath, negated);
+    }
+    public ObjectValueMaxByCondition(String key, String[] objectPath, Boolean negated)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.negated = negated;
+    }
     public static ObjectValueMaxByCondition create(String key)
     {
         return new ObjectValueMaxByCondition(key);

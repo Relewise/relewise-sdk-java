@@ -39,6 +39,14 @@ public class TriggerConfigurationRequest extends LicensedRequest
         this.id = id;
         this.type = type;
     }
+    public static TriggerConfigurationRequest create(UUID id)
+    {
+        return new TriggerConfigurationRequest(id);
+    }
+    public TriggerConfigurationRequest(UUID id)
+    {
+        this.id = id;
+    }
     public TriggerConfigurationRequest()
     {
     }

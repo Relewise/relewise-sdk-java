@@ -29,6 +29,28 @@ public class ObjectValueInRangeCondition extends ObjectValueCondition
 {
     public String $type = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueInRangeCondition, Relewise.Client";
     public DoubleRange range;
+    public static ObjectValueInRangeCondition create(String key, String[] objectPath, DoubleRange range)
+    {
+        return new ObjectValueInRangeCondition(key, objectPath, range);
+    }
+    public ObjectValueInRangeCondition(String key, String[] objectPath, DoubleRange range)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.range = range;
+        this.negated = false;
+    }
+    public static ObjectValueInRangeCondition create(String key, String[] objectPath, DoubleRange range, Boolean negated)
+    {
+        return new ObjectValueInRangeCondition(key, objectPath, range, negated);
+    }
+    public ObjectValueInRangeCondition(String key, String[] objectPath, DoubleRange range, Boolean negated)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.range = range;
+        this.negated = negated;
+    }
     public static ObjectValueInRangeCondition create(String key, DoubleRange range)
     {
         return new ObjectValueInRangeCondition(key, range);

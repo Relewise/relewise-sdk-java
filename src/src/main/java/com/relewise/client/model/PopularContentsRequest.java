@@ -29,16 +29,17 @@ public class PopularContentsRequest extends ContentRecommendationRequest impleme
 {
     public String $type = "Relewise.Client.Requests.Recommendations.PopularContentsRequest, Relewise.Client";
     public Integer sinceMinutesAgo;
-    public static PopularContentsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user)
+    public static PopularContentsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Integer sinceMinutesAgo)
     {
-        return new PopularContentsRequest(language, currency, displayedAtLocationType, user);
+        return new PopularContentsRequest(language, currency, displayedAtLocationType, user, sinceMinutesAgo);
     }
-    public PopularContentsRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user)
+    public PopularContentsRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Integer sinceMinutesAgo)
     {
         this.language = language;
         this.currency = currency;
         this.displayedAtLocationType = displayedAtLocationType;
         this.user = user;
+        this.sinceMinutesAgo = sinceMinutesAgo;
     }
     public PopularContentsRequest()
     {

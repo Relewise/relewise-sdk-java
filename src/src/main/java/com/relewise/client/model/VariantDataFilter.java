@@ -28,6 +28,34 @@ import java.util.HashSet;
 public class VariantDataFilter extends DataFilter implements IVariantFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.VariantDataFilter, Relewise.Client";
+    public static VariantDataFilter create(String key, String... objectPath)
+    {
+        return new VariantDataFilter(key, objectPath);
+    }
+    public VariantDataFilter(String key, String... objectPath)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.conditions = null;
+        this.mustMatchAllConditions = true;
+        this.filterOutIfKeyIsNotFound = true;
+        this.language = null;
+        this.currency = null;
+    }
+    public static VariantDataFilter create(String key, String[] objectPath, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    {
+        return new VariantDataFilter(key, objectPath, conditions, mustMatchAllConditions, filterOutIfKeyIsNotFound, language, currency);
+    }
+    public VariantDataFilter(String key, String[] objectPath, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.conditions = conditions;
+        this.mustMatchAllConditions = mustMatchAllConditions;
+        this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
+        this.language = language;
+        this.currency = currency;
+    }
     public static VariantDataFilter create(String key)
     {
         return new VariantDataFilter(key);
@@ -35,18 +63,20 @@ public class VariantDataFilter extends DataFilter implements IVariantFilter
     public VariantDataFilter(String key)
     {
         this.key = key;
+        this.conditions = null;
         this.mustMatchAllConditions = true;
         this.filterOutIfKeyIsNotFound = true;
         this.language = null;
         this.currency = null;
     }
-    public static VariantDataFilter create(String key, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    public static VariantDataFilter create(String key, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
     {
-        return new VariantDataFilter(key, mustMatchAllConditions, filterOutIfKeyIsNotFound, language, currency);
+        return new VariantDataFilter(key, conditions, mustMatchAllConditions, filterOutIfKeyIsNotFound, language, currency);
     }
-    public VariantDataFilter(String key, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
+    public VariantDataFilter(String key, @Nullable ValueConditionCollection conditions, Boolean mustMatchAllConditions, Boolean filterOutIfKeyIsNotFound, @Nullable Language language, Currency currency)
     {
         this.key = key;
+        this.conditions = conditions;
         this.mustMatchAllConditions = mustMatchAllConditions;
         this.filterOutIfKeyIsNotFound = filterOutIfKeyIsNotFound;
         this.language = language;

@@ -39,6 +39,14 @@ public class MerchandisingRuleRequest extends LicensedRequest
         this.id = id;
         this.type = type;
     }
+    public static MerchandisingRuleRequest create(UUID id)
+    {
+        return new MerchandisingRuleRequest(id);
+    }
+    public MerchandisingRuleRequest(UUID id)
+    {
+        this.id = id;
+    }
     public MerchandisingRuleRequest()
     {
     }

@@ -30,6 +30,21 @@ public class ContentCategorySearchRequest extends PaginatedSearchRequest impleme
     public String $type = "Relewise.Client.Requests.Search.ContentCategorySearchRequest, Relewise.Client";
     public String term;
     public @Nullable ContentCategorySearchSettings settings;
+    public static ContentCategorySearchRequest create(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, User user, String displayedAtLocation, String term, Integer skip, Integer take)
+    {
+        return new ContentCategorySearchRequest(language, currency, indexSelector, user, displayedAtLocation, term, skip, take);
+    }
+    public ContentCategorySearchRequest(@Nullable Language language, @Nullable Currency currency, @Nullable SearchIndexSelector indexSelector, User user, String displayedAtLocation, String term, Integer skip, Integer take)
+    {
+        this.language = language;
+        this.currency = currency;
+        this.indexSelector = indexSelector;
+        this.user = user;
+        this.displayedAtLocation = displayedAtLocation;
+        this.term = term;
+        this.skip = skip;
+        this.take = take;
+    }
     public static ContentCategorySearchRequest create(@Nullable Language language, @Nullable Currency currency, User user, String displayedAtLocation, String term, Integer skip, Integer take)
     {
         return new ContentCategorySearchRequest(language, currency, user, displayedAtLocation, term, skip, take);

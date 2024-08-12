@@ -28,6 +28,26 @@ import java.util.HashSet;
 public class ObjectValueMinByCondition extends ObjectValueCondition
 {
     public String $type = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueMinByCondition, Relewise.Client";
+    public static ObjectValueMinByCondition create(String key, String... objectPath)
+    {
+        return new ObjectValueMinByCondition(key, objectPath);
+    }
+    public ObjectValueMinByCondition(String key, String... objectPath)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.negated = false;
+    }
+    public static ObjectValueMinByCondition create(String key, String[] objectPath, Boolean negated)
+    {
+        return new ObjectValueMinByCondition(key, objectPath, negated);
+    }
+    public ObjectValueMinByCondition(String key, String[] objectPath, Boolean negated)
+    {
+        this.key = key;
+        this.objectPath = objectPath;
+        this.negated = negated;
+    }
     public static ObjectValueMinByCondition create(String key)
     {
         return new ObjectValueMinByCondition(key);
