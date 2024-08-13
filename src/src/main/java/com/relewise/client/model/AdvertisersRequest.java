@@ -41,13 +41,13 @@ public class AdvertisersRequest extends AdvertiserEntityStateAdvertiserMetadataV
     {
     }
     @Override
-    public AdvertisersRequest setFilters(AdvertisersRequestEntityFilters filters)
+    public AdvertisersRequest setFilters(@Nullable AdvertisersRequestEntityFilters filters)
     {
         this.filters = filters;
         return this;
     }
     @Override
-    public AdvertisersRequest setSorting(AdvertisersRequestSortBySorting sorting)
+    public AdvertisersRequest setSorting(@Nullable AdvertisersRequestSortBySorting sorting)
     {
         this.sorting = sorting;
         return this;

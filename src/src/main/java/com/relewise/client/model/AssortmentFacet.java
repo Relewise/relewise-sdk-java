@@ -59,7 +59,7 @@ public abstract class AssortmentFacet extends IntegerValueFacet
         return this;
     }
     @Override
-    public AssortmentFacet setSettings(FacetSettings settings)
+    public AssortmentFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

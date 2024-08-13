@@ -63,7 +63,7 @@ public abstract class VariantChangeTriggerResultVariantChangeTriggerResultSettin
         return this.resultSettings;
     }
     /** The selector used for choosing which property of the entity the trigger should look for change in. */
-    public VariantChangeTriggerResultVariantChangeTriggerResultSettingsVariantPropertySelectorEntityChangeTriggerConfiguration setEntityPropertySelector(VariantPropertySelector entityPropertySelector)
+    public VariantChangeTriggerResultVariantChangeTriggerResultSettingsVariantPropertySelectorEntityChangeTriggerConfiguration setEntityPropertySelector(@Nullable VariantPropertySelector entityPropertySelector)
     {
         this.entityPropertySelector = entityPropertySelector;
         return this;
@@ -87,7 +87,7 @@ public abstract class VariantChangeTriggerResultVariantChangeTriggerResultSettin
         return this;
     }
     /** Settings for defining which properties should be included in the result of the trigger. */
-    public VariantChangeTriggerResultVariantChangeTriggerResultSettingsVariantPropertySelectorEntityChangeTriggerConfiguration setResultSettings(VariantChangeTriggerResultSettings resultSettings)
+    public VariantChangeTriggerResultVariantChangeTriggerResultSettingsVariantPropertySelectorEntityChangeTriggerConfiguration setResultSettings(@Nullable VariantChangeTriggerResultSettings resultSettings)
     {
         this.resultSettings = resultSettings;
         return this;

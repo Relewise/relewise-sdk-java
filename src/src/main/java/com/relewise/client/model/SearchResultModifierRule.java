@@ -83,13 +83,13 @@ public class SearchResultModifierRule extends SearchRule
         return this;
     }
     @Override
-    public SearchResultModifierRule setIndexes(ApplicableIndexes indexes)
+    public SearchResultModifierRule setIndexes(@Nullable ApplicableIndexes indexes)
     {
         this.indexes = indexes;
         return this;
     }
     @Override
-    public SearchResultModifierRule setLanguages(ApplicableLanguages languages)
+    public SearchResultModifierRule setLanguages(@Nullable ApplicableLanguages languages)
     {
         this.languages = languages;
         return this;

@@ -83,27 +83,27 @@ public class ProductSearchRequest extends PaginatedSearchRequest implements IUse
     {
         return this.retailMedia;
     }
-    public ProductSearchRequest setTerm(String term)
+    public ProductSearchRequest setTerm(@Nullable String term)
     {
         this.term = term;
         return this;
     }
-    public ProductSearchRequest setFacets(ProductFacetQuery facets)
+    public ProductSearchRequest setFacets(@Nullable ProductFacetQuery facets)
     {
         this.facets = facets;
         return this;
     }
-    public ProductSearchRequest setSettings(ProductSearchSettings settings)
+    public ProductSearchRequest setSettings(@Nullable ProductSearchSettings settings)
     {
         this.settings = settings;
         return this;
     }
-    public ProductSearchRequest setSorting(ProductSortBySpecification sorting)
+    public ProductSearchRequest setSorting(@Nullable ProductSortBySpecification sorting)
     {
         this.sorting = sorting;
         return this;
     }
-    public ProductSearchRequest setRetailMedia(RetailMediaQuery retailMedia)
+    public ProductSearchRequest setRetailMedia(@Nullable RetailMediaQuery retailMedia)
     {
         this.retailMedia = retailMedia;
         return this;
@@ -121,56 +121,56 @@ public class ProductSearchRequest extends PaginatedSearchRequest implements IUse
         return this;
     }
     @Override
-    public ProductSearchRequest setLanguage(Language language)
+    public ProductSearchRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ProductSearchRequest setCurrency(Currency currency)
+    public ProductSearchRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     @Override
-    public ProductSearchRequest setUser(User user)
+    public ProductSearchRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
     }
     @Override
-    public ProductSearchRequest setDisplayedAtLocation(String displayedAtLocation)
+    public ProductSearchRequest setDisplayedAtLocation(@Nullable String displayedAtLocation)
     {
         this.displayedAtLocation = displayedAtLocation;
         return this;
     }
     @Override
-    public ProductSearchRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
+    public ProductSearchRequest setRelevanceModifiers(@Nullable RelevanceModifierCollection relevanceModifiers)
     {
         this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
-    public ProductSearchRequest setFilters(FilterCollection filters)
+    public ProductSearchRequest setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;
     }
     @Override
-    public ProductSearchRequest setIndexSelector(SearchIndexSelector indexSelector)
+    public ProductSearchRequest setIndexSelector(@Nullable SearchIndexSelector indexSelector)
     {
         this.indexSelector = indexSelector;
         return this;
     }
     @Override
-    public ProductSearchRequest setPostFilters(FilterCollection postFilters)
+    public ProductSearchRequest setPostFilters(@Nullable FilterCollection postFilters)
     {
         this.postFilters = postFilters;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public ProductSearchRequest setChannel(Channel channel)
+    public ProductSearchRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

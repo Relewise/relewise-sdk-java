@@ -46,7 +46,7 @@ public class ProductPromotionSpecification extends PromotionSpecification
         return this.promotableProducts;
     }
     /** Filters matching the products which may be promoted */
-    public ProductPromotionSpecification setPromotableProducts(FilterCollection promotableProducts)
+    public ProductPromotionSpecification setPromotableProducts(@Nullable FilterCollection promotableProducts)
     {
         this.promotableProducts = promotableProducts;
         return this;

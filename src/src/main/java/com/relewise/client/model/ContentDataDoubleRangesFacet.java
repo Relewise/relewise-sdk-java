@@ -89,7 +89,7 @@ public class ContentDataDoubleRangesFacet extends DoubleContentDataRangesFacet
         return this;
     }
     @Override
-    public ContentDataDoubleRangesFacet setSettings(FacetSettings settings)
+    public ContentDataDoubleRangesFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

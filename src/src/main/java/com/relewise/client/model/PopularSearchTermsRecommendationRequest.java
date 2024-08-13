@@ -62,24 +62,24 @@ public class PopularSearchTermsRecommendationRequest extends RecommendationReque
     {
         return this.settings;
     }
-    public PopularSearchTermsRecommendationRequest setTerm(String term)
+    public PopularSearchTermsRecommendationRequest setTerm(@Nullable String term)
     {
         this.term = term;
         return this;
     }
-    public PopularSearchTermsRecommendationRequest setSettings(RecommendPopularSearchTermSettings settings)
+    public PopularSearchTermsRecommendationRequest setSettings(@Nullable RecommendPopularSearchTermSettings settings)
     {
         this.settings = settings;
         return this;
     }
     @Override
-    public PopularSearchTermsRecommendationRequest setLanguage(Language language)
+    public PopularSearchTermsRecommendationRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public PopularSearchTermsRecommendationRequest setUser(User user)
+    public PopularSearchTermsRecommendationRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -103,14 +103,14 @@ public class PopularSearchTermsRecommendationRequest extends RecommendationReque
         return this;
     }
     @Override
-    public PopularSearchTermsRecommendationRequest setCurrency(Currency currency)
+    public PopularSearchTermsRecommendationRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public PopularSearchTermsRecommendationRequest setChannel(Channel channel)
+    public PopularSearchTermsRecommendationRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

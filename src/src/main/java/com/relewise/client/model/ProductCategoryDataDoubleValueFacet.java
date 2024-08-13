@@ -73,7 +73,7 @@ public class ProductCategoryDataDoubleValueFacet extends DoubleProductCategoryDa
         return this;
     }
     @Override
-    public ProductCategoryDataDoubleValueFacet setSettings(FacetSettings settings)
+    public ProductCategoryDataDoubleValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

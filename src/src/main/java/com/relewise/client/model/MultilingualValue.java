@@ -47,7 +47,7 @@ public class MultilingualValue
         this.language = language;
         return this;
     }
-    public MultilingualValue setText(String text)
+    public MultilingualValue setText(@Nullable String text)
     {
         this.text = text;
         return this;

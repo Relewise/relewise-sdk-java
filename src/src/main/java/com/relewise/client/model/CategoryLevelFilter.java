@@ -55,7 +55,7 @@ public abstract class CategoryLevelFilter extends Filter
         return this;
     }
     @Override
-    public CategoryLevelFilter setSettings(FilterSettings settings)
+    public CategoryLevelFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

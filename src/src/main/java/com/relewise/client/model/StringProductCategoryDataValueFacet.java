@@ -61,7 +61,7 @@ public abstract class StringProductCategoryDataValueFacet extends StringDataValu
         return this;
     }
     @Override
-    public StringProductCategoryDataValueFacet setSettings(FacetSettings settings)
+    public StringProductCategoryDataValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

@@ -70,7 +70,7 @@ public class CategoryFacet extends StringValueFacet
         return this;
     }
     @Override
-    public CategoryFacet setSettings(FacetSettings settings)
+    public CategoryFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

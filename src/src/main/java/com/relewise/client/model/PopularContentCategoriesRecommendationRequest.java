@@ -69,13 +69,13 @@ public class PopularContentCategoriesRecommendationRequest extends ContentCatego
         return this;
     }
     @Override
-    public PopularContentCategoriesRecommendationRequest setLanguage(Language language)
+    public PopularContentCategoriesRecommendationRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public PopularContentCategoriesRecommendationRequest setUser(User user)
+    public PopularContentCategoriesRecommendationRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -99,14 +99,14 @@ public class PopularContentCategoriesRecommendationRequest extends ContentCatego
         return this;
     }
     @Override
-    public PopularContentCategoriesRecommendationRequest setCurrency(Currency currency)
+    public PopularContentCategoriesRecommendationRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public PopularContentCategoriesRecommendationRequest setChannel(Channel channel)
+    public PopularContentCategoriesRecommendationRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

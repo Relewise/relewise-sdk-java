@@ -59,7 +59,7 @@ public class BrandFacet extends StringValueFacet
         return this;
     }
     @Override
-    public BrandFacet setSettings(FacetSettings settings)
+    public BrandFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

@@ -58,7 +58,7 @@ public class AdvertisersRequestEntityFilters extends AdvertiserEntityStateAdvert
         return this;
     }
     @Override
-    public AdvertisersRequestEntityFilters setTerm(String term)
+    public AdvertisersRequestEntityFilters setTerm(@Nullable String term)
     {
         this.term = term;
         return this;

@@ -68,7 +68,7 @@ public class CategoryNameAndId
         this.id = id;
         return this;
     }
-    public CategoryNameAndId setDisplayName(Multilingual displayName)
+    public CategoryNameAndId setDisplayName(@Nullable Multilingual displayName)
     {
         this.displayName = displayName;
         return this;

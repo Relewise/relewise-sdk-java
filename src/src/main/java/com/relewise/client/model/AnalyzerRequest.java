@@ -38,12 +38,12 @@ public abstract class AnalyzerRequest extends LicensedRequest
     {
         return this.currency;
     }
-    public AnalyzerRequest setLanguage(Language language)
+    public AnalyzerRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public AnalyzerRequest setCurrency(Currency currency)
+    public AnalyzerRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

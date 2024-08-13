@@ -107,19 +107,19 @@ public class BrandDataFilter extends DataFilter implements IBrandFilter
         return this;
     }
     @Override
-    public BrandDataFilter setConditions(ValueConditionCollection conditions)
+    public BrandDataFilter setConditions(@Nullable ValueConditionCollection conditions)
     {
         this.conditions = conditions;
         return this;
     }
     @Override
-    public BrandDataFilter setLanguage(Language language)
+    public BrandDataFilter setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public BrandDataFilter setCurrency(Currency currency)
+    public BrandDataFilter setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
@@ -151,7 +151,7 @@ public class BrandDataFilter extends DataFilter implements IBrandFilter
         return this;
     }
     @Override
-    public BrandDataFilter setSettings(FilterSettings settings)
+    public BrandDataFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

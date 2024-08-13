@@ -61,7 +61,7 @@ public abstract class IntegerContentDataValueFacet extends IntegerDataValueFacet
         return this;
     }
     @Override
-    public IntegerContentDataValueFacet setSettings(FacetSettings settings)
+    public IntegerContentDataValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

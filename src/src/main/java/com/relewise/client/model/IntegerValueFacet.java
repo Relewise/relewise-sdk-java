@@ -53,7 +53,7 @@ public abstract class IntegerValueFacet extends Facet
         return this;
     }
     @Override
-    public IntegerValueFacet setSettings(FacetSettings settings)
+    public IntegerValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

@@ -55,7 +55,7 @@ public class SearchRuleFilters
     {
         return this.id;
     }
-    public SearchRuleFilters setTerm(String term)
+    public SearchRuleFilters setTerm(@Nullable String term)
     {
         this.term = term;
         return this;

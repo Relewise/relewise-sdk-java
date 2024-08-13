@@ -50,7 +50,7 @@ public abstract class StringAbandonedSearch extends AbandonedSearch
         return this;
     }
     @Override
-    public StringAbandonedSearch setLanguage(Language language)
+    public StringAbandonedSearch setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;

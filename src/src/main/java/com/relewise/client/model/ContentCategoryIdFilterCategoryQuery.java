@@ -82,12 +82,12 @@ public abstract class ContentCategoryIdFilterCategoryQuery extends LicensedReque
         this.numberOfResults = numberOfResults;
         return this;
     }
-    public ContentCategoryIdFilterCategoryQuery setLanguage(Language language)
+    public ContentCategoryIdFilterCategoryQuery setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public ContentCategoryIdFilterCategoryQuery setCurrency(Currency currency)
+    public ContentCategoryIdFilterCategoryQuery setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

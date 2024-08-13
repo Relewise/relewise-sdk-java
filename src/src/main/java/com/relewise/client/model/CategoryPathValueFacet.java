@@ -53,7 +53,7 @@ public abstract class CategoryPathValueFacet extends Facet
         return this;
     }
     @Override
-    public CategoryPathValueFacet setSettings(FacetSettings settings)
+    public CategoryPathValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

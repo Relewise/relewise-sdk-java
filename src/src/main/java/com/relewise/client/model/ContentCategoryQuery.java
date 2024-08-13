@@ -57,13 +57,13 @@ public class ContentCategoryQuery extends ContentCategoryIdFilterCategoryQuery
         return this;
     }
     @Override
-    public ContentCategoryQuery setLanguage(Language language)
+    public ContentCategoryQuery setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ContentCategoryQuery setCurrency(Currency currency)
+    public ContentCategoryQuery setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

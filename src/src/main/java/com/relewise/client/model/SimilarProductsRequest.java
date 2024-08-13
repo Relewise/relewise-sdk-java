@@ -109,12 +109,12 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
     {
         return this.explodedVariants;
     }
-    public SimilarProductsRequest setExistingProductId(ProductAndVariantId existingProductId)
+    public SimilarProductsRequest setExistingProductId(@Nullable ProductAndVariantId existingProductId)
     {
         this.existingProductId = existingProductId;
         return this;
     }
-    public SimilarProductsRequest setProductData(Product productData)
+    public SimilarProductsRequest setProductData(@Nullable Product productData)
     {
         this.productData = productData;
         return this;
@@ -124,7 +124,7 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
         this.considerAlreadyKnownInformationAboutProduct = considerAlreadyKnownInformationAboutProduct;
         return this;
     }
-    public SimilarProductsRequest setEvaluationSettings(SimilarProductsEvaluationSettings evaluationSettings)
+    public SimilarProductsRequest setEvaluationSettings(@Nullable SimilarProductsEvaluationSettings evaluationSettings)
     {
         this.evaluationSettings = evaluationSettings;
         return this;
@@ -141,13 +141,13 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
         return this;
     }
     @Override
-    public SimilarProductsRequest setLanguage(Language language)
+    public SimilarProductsRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public SimilarProductsRequest setUser(User user)
+    public SimilarProductsRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -171,14 +171,14 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
         return this;
     }
     @Override
-    public SimilarProductsRequest setCurrency(Currency currency)
+    public SimilarProductsRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public SimilarProductsRequest setChannel(Channel channel)
+    public SimilarProductsRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

@@ -58,13 +58,13 @@ public class ProductsViewedAfterViewingContentRequest extends ProductRecommendat
         return this;
     }
     @Override
-    public ProductsViewedAfterViewingContentRequest setLanguage(Language language)
+    public ProductsViewedAfterViewingContentRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ProductsViewedAfterViewingContentRequest setUser(User user)
+    public ProductsViewedAfterViewingContentRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -88,14 +88,14 @@ public class ProductsViewedAfterViewingContentRequest extends ProductRecommendat
         return this;
     }
     @Override
-    public ProductsViewedAfterViewingContentRequest setCurrency(Currency currency)
+    public ProductsViewedAfterViewingContentRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public ProductsViewedAfterViewingContentRequest setChannel(Channel channel)
+    public ProductsViewedAfterViewingContentRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

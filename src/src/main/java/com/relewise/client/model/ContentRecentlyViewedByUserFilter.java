@@ -75,7 +75,7 @@ public class ContentRecentlyViewedByUserFilter extends Filter implements IConten
         return this;
     }
     @Override
-    public ContentRecentlyViewedByUserFilter setSettings(FilterSettings settings)
+    public ContentRecentlyViewedByUserFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

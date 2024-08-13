@@ -65,7 +65,7 @@ public class ContentDataHasKeyFilter extends Filter implements IContentFilter
         return this;
     }
     @Override
-    public ContentDataHasKeyFilter setSettings(FilterSettings settings)
+    public ContentDataHasKeyFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -44,7 +44,7 @@ public class ContentCategoryHasContentsFilter extends Filter implements ICategor
         return this;
     }
     @Override
-    public ContentCategoryHasContentsFilter setSettings(FilterSettings settings)
+    public ContentCategoryHasContentsFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

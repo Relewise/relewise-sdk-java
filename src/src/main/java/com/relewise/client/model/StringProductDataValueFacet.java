@@ -71,7 +71,7 @@ public abstract class StringProductDataValueFacet extends StringDataValueFacet
         return this;
     }
     @Override
-    public StringProductDataValueFacet setSettings(FacetSettings settings)
+    public StringProductDataValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

@@ -55,7 +55,7 @@ public abstract class HasChildCategoryFilter extends Filter
         return this;
     }
     @Override
-    public HasChildCategoryFilter setSettings(FilterSettings settings)
+    public HasChildCategoryFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

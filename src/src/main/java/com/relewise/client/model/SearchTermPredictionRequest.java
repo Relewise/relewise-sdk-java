@@ -81,62 +81,62 @@ public class SearchTermPredictionRequest extends SearchRequest implements IUserI
         this.take = take;
         return this;
     }
-    public SearchTermPredictionRequest setSettings(SearchTermPredictionSettings settings)
+    public SearchTermPredictionRequest setSettings(@Nullable SearchTermPredictionSettings settings)
     {
         this.settings = settings;
         return this;
     }
     @Override
-    public SearchTermPredictionRequest setLanguage(Language language)
+    public SearchTermPredictionRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public SearchTermPredictionRequest setCurrency(Currency currency)
+    public SearchTermPredictionRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     @Override
-    public SearchTermPredictionRequest setUser(User user)
+    public SearchTermPredictionRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
     }
     @Override
-    public SearchTermPredictionRequest setDisplayedAtLocation(String displayedAtLocation)
+    public SearchTermPredictionRequest setDisplayedAtLocation(@Nullable String displayedAtLocation)
     {
         this.displayedAtLocation = displayedAtLocation;
         return this;
     }
     @Override
-    public SearchTermPredictionRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
+    public SearchTermPredictionRequest setRelevanceModifiers(@Nullable RelevanceModifierCollection relevanceModifiers)
     {
         this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
-    public SearchTermPredictionRequest setFilters(FilterCollection filters)
+    public SearchTermPredictionRequest setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;
     }
     @Override
-    public SearchTermPredictionRequest setIndexSelector(SearchIndexSelector indexSelector)
+    public SearchTermPredictionRequest setIndexSelector(@Nullable SearchIndexSelector indexSelector)
     {
         this.indexSelector = indexSelector;
         return this;
     }
     @Override
-    public SearchTermPredictionRequest setPostFilters(FilterCollection postFilters)
+    public SearchTermPredictionRequest setPostFilters(@Nullable FilterCollection postFilters)
     {
         this.postFilters = postFilters;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public SearchTermPredictionRequest setChannel(Channel channel)
+    public SearchTermPredictionRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

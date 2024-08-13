@@ -105,7 +105,7 @@ public class ProductRecentlyViewedByCompanyFilter extends Filter implements IPro
         return this;
     }
     @Override
-    public ProductRecentlyViewedByCompanyFilter setSettings(FilterSettings settings)
+    public ProductRecentlyViewedByCompanyFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -83,17 +83,17 @@ public class Cart extends Trackable implements IUserIdentifier
     {
         return this.channel;
     }
-    public Cart setUser(User user)
+    public Cart setUser(@Nullable User user)
     {
         this.user = user;
         return this;
     }
-    public Cart setName(String name)
+    public Cart setName(@Nullable String name)
     {
         this.name = name;
         return this;
     }
-    public Cart setSubtotal(Money subtotal)
+    public Cart setSubtotal(@Nullable Money subtotal)
     {
         this.subtotal = subtotal;
         return this;
@@ -121,13 +121,13 @@ public class Cart extends Trackable implements IUserIdentifier
         this.data.put(key, value);
         return this;
     }
-    public Cart setData(HashMap<String, DataValue> data)
+    public Cart setData(@Nullable HashMap<String, DataValue> data)
     {
         this.data = data;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
-    public Cart setChannel(Channel channel)
+    public Cart setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

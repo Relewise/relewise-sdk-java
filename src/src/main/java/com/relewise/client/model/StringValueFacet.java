@@ -53,7 +53,7 @@ public abstract class StringValueFacet extends Facet
         return this;
     }
     @Override
-    public StringValueFacet setSettings(FacetSettings settings)
+    public StringValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

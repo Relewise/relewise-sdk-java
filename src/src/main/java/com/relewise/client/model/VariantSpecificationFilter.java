@@ -87,7 +87,7 @@ public class VariantSpecificationFilter extends Filter implements IVariantFilter
         return this;
     }
     @Override
-    public VariantSpecificationFilter setSettings(FilterSettings settings)
+    public VariantSpecificationFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -41,13 +41,13 @@ public class CampaignsRequest extends CampaignEntityStateCampaignMetadataValuesC
     {
     }
     @Override
-    public CampaignsRequest setFilters(CampaignsRequestEntityFilters filters)
+    public CampaignsRequest setFilters(@Nullable CampaignsRequestEntityFilters filters)
     {
         this.filters = filters;
         return this;
     }
     @Override
-    public CampaignsRequest setSorting(CampaignsRequestSortBySorting sorting)
+    public CampaignsRequest setSorting(@Nullable CampaignsRequestSortBySorting sorting)
     {
         this.sorting = sorting;
         return this;

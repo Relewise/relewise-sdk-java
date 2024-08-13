@@ -32,7 +32,7 @@ public class RetailMediaResultPlacementResultEntity
     {
         return this.promotedProduct;
     }
-    public RetailMediaResultPlacementResultEntity setPromotedProduct(RetailMediaResultPlacementResultEntityProduct promotedProduct)
+    public RetailMediaResultPlacementResultEntity setPromotedProduct(@Nullable RetailMediaResultPlacementResultEntityProduct promotedProduct)
     {
         this.promotedProduct = promotedProduct;
         return this;

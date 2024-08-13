@@ -71,7 +71,7 @@ public class ContentDataObjectFacet extends DataObjectFacet
         return this;
     }
     @Override
-    public ContentDataObjectFacet setSettings(FacetSettings settings)
+    public ContentDataObjectFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

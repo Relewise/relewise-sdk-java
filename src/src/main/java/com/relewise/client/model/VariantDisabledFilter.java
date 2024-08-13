@@ -49,7 +49,7 @@ public class VariantDisabledFilter extends Filter implements IVariantFilter
         return this;
     }
     @Override
-    public VariantDisabledFilter setSettings(FilterSettings settings)
+    public VariantDisabledFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

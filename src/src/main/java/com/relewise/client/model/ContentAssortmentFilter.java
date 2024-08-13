@@ -68,7 +68,7 @@ public class ContentAssortmentFilter extends Filter implements IContentFilter
         return this;
     }
     @Override
-    public ContentAssortmentFilter setSettings(FilterSettings settings)
+    public ContentAssortmentFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -69,13 +69,13 @@ public class LocationPlacement
         return this;
     }
     /** A key which is automatically computed based on the name. This value gets created the first time the placement is saved and cannot be modified in the future. Manually assigning a value to this will have no effect. */
-    public LocationPlacement setKey(String key)
+    public LocationPlacement setKey(@Nullable String key)
     {
         this.key = key;
         return this;
     }
     /** The variations of this placement, e.g. to support multiple different views, like Mobile, Tablet, Desktop, Email template etc. If null or empty, no promotions will be shown for this placement */
-    public LocationPlacement setVariations(LocationPlacementVariationCollection variations)
+    public LocationPlacement setVariations(@Nullable LocationPlacementVariationCollection variations)
     {
         this.variations = variations;
         return this;

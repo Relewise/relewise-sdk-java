@@ -73,12 +73,12 @@ public class UserQuery extends LicensedRequest
         }
         return this;
     }
-    public UserQuery setLanguage(Language language)
+    public UserQuery setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public UserQuery setCurrency(Currency currency)
+    public UserQuery setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

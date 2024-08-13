@@ -110,12 +110,12 @@ public class FieldIndexConfiguration
         this.predictionSourceType = predictionSourceType;
         return this;
     }
-    public FieldIndexConfiguration setParser(Parser parser)
+    public FieldIndexConfiguration setParser(@Nullable Parser parser)
     {
         this.parser = parser;
         return this;
     }
-    public FieldIndexConfiguration setMatchTypeSettings(MatchTypeSettings matchTypeSettings)
+    public FieldIndexConfiguration setMatchTypeSettings(@Nullable MatchTypeSettings matchTypeSettings)
     {
         this.matchTypeSettings = matchTypeSettings;
         return this;

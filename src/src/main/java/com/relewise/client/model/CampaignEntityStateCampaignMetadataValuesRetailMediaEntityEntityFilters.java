@@ -37,7 +37,7 @@ public abstract class CampaignEntityStateCampaignMetadataValuesRetailMediaEntity
     {
         return this.states;
     }
-    public CampaignEntityStateCampaignMetadataValuesRetailMediaEntityEntityFilters setTerm(String term)
+    public CampaignEntityStateCampaignMetadataValuesRetailMediaEntityEntityFilters setTerm(@Nullable String term)
     {
         this.term = term;
         return this;

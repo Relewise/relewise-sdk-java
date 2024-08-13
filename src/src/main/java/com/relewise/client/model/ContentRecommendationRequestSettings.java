@@ -72,7 +72,7 @@ public class ContentRecommendationRequestSettings
         this.allowReplacingOfRecentlyShownRecommendations = allowReplacingOfRecentlyShownRecommendations;
         return this;
     }
-    public ContentRecommendationRequestSettings setSelectedContentProperties(SelectedContentPropertiesSettings selectedContentProperties)
+    public ContentRecommendationRequestSettings setSelectedContentProperties(@Nullable SelectedContentPropertiesSettings selectedContentProperties)
     {
         this.selectedContentProperties = selectedContentProperties;
         return this;

@@ -92,7 +92,7 @@ public class ProductRecentlyViewedByUserParentCompanyFilter extends Filter imple
         return this;
     }
     @Override
-    public ProductRecentlyViewedByUserParentCompanyFilter setSettings(FilterSettings settings)
+    public ProductRecentlyViewedByUserParentCompanyFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

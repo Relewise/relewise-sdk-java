@@ -68,7 +68,7 @@ public class CampaignMetadataValues extends MetadataValues
         this.proposed = proposed;
         return this;
     }
-    public CampaignMetadataValues setProposedBy(String proposedBy)
+    public CampaignMetadataValues setProposedBy(@Nullable String proposedBy)
     {
         this.proposedBy = proposedBy;
         return this;
@@ -78,7 +78,7 @@ public class CampaignMetadataValues extends MetadataValues
         this.approved = approved;
         return this;
     }
-    public CampaignMetadataValues setApprovedBy(String approvedBy)
+    public CampaignMetadataValues setApprovedBy(@Nullable String approvedBy)
     {
         this.approvedBy = approvedBy;
         return this;
@@ -88,7 +88,7 @@ public class CampaignMetadataValues extends MetadataValues
         this.archived = archived;
         return this;
     }
-    public CampaignMetadataValues setArchivedBy(String archivedBy)
+    public CampaignMetadataValues setArchivedBy(@Nullable String archivedBy)
     {
         this.archivedBy = archivedBy;
         return this;

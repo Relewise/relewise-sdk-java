@@ -65,7 +65,7 @@ public class ProductCategoryDataHasKeyFilter extends Filter implements ICategory
         return this;
     }
     @Override
-    public ProductCategoryDataHasKeyFilter setSettings(FilterSettings settings)
+    public ProductCategoryDataHasKeyFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

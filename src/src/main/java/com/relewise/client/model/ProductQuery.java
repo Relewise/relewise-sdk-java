@@ -141,7 +141,7 @@ public class ProductQuery extends LicensedRequest
     {
         return this.pageSize;
     }
-    public ProductQuery setFilters(FilterCollection filters)
+    public ProductQuery setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;
@@ -152,12 +152,12 @@ public class ProductQuery extends LicensedRequest
         this.numberOfResults = numberOfResults;
         return this;
     }
-    public ProductQuery setLanguage(Language language)
+    public ProductQuery setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public ProductQuery setCurrency(Currency currency)
+    public ProductQuery setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

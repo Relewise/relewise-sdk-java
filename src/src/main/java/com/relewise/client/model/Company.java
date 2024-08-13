@@ -51,7 +51,7 @@ public class Company
         this.id = id;
         return this;
     }
-    public Company setParent(Company parent)
+    public Company setParent(@Nullable Company parent)
     {
         this.parent = parent;
         return this;
@@ -65,7 +65,7 @@ public class Company
         this.data.put(key, value);
         return this;
     }
-    public Company setData(HashMap<String, DataValue> data)
+    public Company setData(@Nullable HashMap<String, DataValue> data)
     {
         this.data = data;
         return this;

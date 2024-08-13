@@ -69,7 +69,7 @@ public abstract class DoubleDataValueFacet extends DoubleValueFacet
         return this;
     }
     @Override
-    public DoubleDataValueFacet setSettings(FacetSettings settings)
+    public DoubleDataValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

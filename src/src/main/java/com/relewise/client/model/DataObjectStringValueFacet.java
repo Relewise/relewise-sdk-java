@@ -73,7 +73,7 @@ public class DataObjectStringValueFacet extends StringDataObjectValueFacet
         return this;
     }
     @Override
-    public DataObjectStringValueFacet setSettings(FacetSettings settings)
+    public DataObjectStringValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

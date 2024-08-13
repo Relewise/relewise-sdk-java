@@ -106,7 +106,7 @@ public class PriceRangesFacet extends Facet
         return this;
     }
     @Override
-    public PriceRangesFacet setSettings(FacetSettings settings)
+    public PriceRangesFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

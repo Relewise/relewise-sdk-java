@@ -66,7 +66,7 @@ public class AbandonedProductCategorySearch extends StringAbandonedSearch
         return this;
     }
     @Override
-    public AbandonedProductCategorySearch setLanguage(Language language)
+    public AbandonedProductCategorySearch setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;

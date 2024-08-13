@@ -89,12 +89,12 @@ public class BrandQuery extends LicensedRequest
         this.numberOfResults = numberOfResults;
         return this;
     }
-    public BrandQuery setLanguage(Language language)
+    public BrandQuery setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public BrandQuery setCurrency(Currency currency)
+    public BrandQuery setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

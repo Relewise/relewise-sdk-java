@@ -65,7 +65,7 @@ public class CustomProductRecommendationRequest extends ProductRecommendationReq
         this.parameters.put(key, value);
         return this;
     }
-    public CustomProductRecommendationRequest setParameters(HashMap<String, String> parameters)
+    public CustomProductRecommendationRequest setParameters(@Nullable HashMap<String, String> parameters)
     {
         this.parameters = parameters;
         return this;
@@ -77,13 +77,13 @@ public class CustomProductRecommendationRequest extends ProductRecommendationReq
         return this;
     }
     @Override
-    public CustomProductRecommendationRequest setLanguage(Language language)
+    public CustomProductRecommendationRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public CustomProductRecommendationRequest setUser(User user)
+    public CustomProductRecommendationRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -107,14 +107,14 @@ public class CustomProductRecommendationRequest extends ProductRecommendationReq
         return this;
     }
     @Override
-    public CustomProductRecommendationRequest setCurrency(Currency currency)
+    public CustomProductRecommendationRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public CustomProductRecommendationRequest setChannel(Channel channel)
+    public CustomProductRecommendationRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

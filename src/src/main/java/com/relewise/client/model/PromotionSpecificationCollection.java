@@ -32,7 +32,7 @@ public class PromotionSpecificationCollection
     {
         return this.productPromotion;
     }
-    public PromotionSpecificationCollection setProductPromotion(ProductPromotionSpecification productPromotion)
+    public PromotionSpecificationCollection setProductPromotion(@Nullable ProductPromotionSpecification productPromotion)
     {
         this.productPromotion = productPromotion;
         return this;

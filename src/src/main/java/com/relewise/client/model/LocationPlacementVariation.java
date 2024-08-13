@@ -60,12 +60,12 @@ public class LocationPlacementVariation
         this.name = name;
         return this;
     }
-    public LocationPlacementVariation setKey(String key)
+    public LocationPlacementVariation setKey(@Nullable String key)
     {
         this.key = key;
         return this;
     }
-    public LocationPlacementVariation setSupportedPromotions(PromotionSpecificationVariationCollection supportedPromotions)
+    public LocationPlacementVariation setSupportedPromotions(@Nullable PromotionSpecificationVariationCollection supportedPromotions)
     {
         this.supportedPromotions = supportedPromotions;
         return this;

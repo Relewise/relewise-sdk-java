@@ -57,13 +57,13 @@ public class ProductCategoryQuery extends ProductCategoryIdFilterCategoryQuery
         return this;
     }
     @Override
-    public ProductCategoryQuery setLanguage(Language language)
+    public ProductCategoryQuery setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ProductCategoryQuery setCurrency(Currency currency)
+    public ProductCategoryQuery setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

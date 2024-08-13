@@ -43,7 +43,7 @@ public class ProductCategorySearchSettings extends SearchSettings
     {
         return this.recommendations;
     }
-    public ProductCategorySearchSettings setSelectedCategoryProperties(SelectedProductCategoryPropertiesSettings selectedCategoryProperties)
+    public ProductCategorySearchSettings setSelectedCategoryProperties(@Nullable SelectedProductCategoryPropertiesSettings selectedCategoryProperties)
     {
         this.selectedCategoryProperties = selectedCategoryProperties;
         return this;

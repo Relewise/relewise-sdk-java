@@ -68,7 +68,7 @@ public class BrandIdFilter extends Filter implements IProductFilter, IBrandFilte
         return this;
     }
     @Override
-    public BrandIdFilter setSettings(FilterSettings settings)
+    public BrandIdFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -80,7 +80,7 @@ public class ProductDataBooleanValueFacet extends BooleanProductDataValueFacet
         return this;
     }
     @Override
-    public ProductDataBooleanValueFacet setSettings(FacetSettings settings)
+    public ProductDataBooleanValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

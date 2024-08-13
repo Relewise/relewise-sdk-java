@@ -55,7 +55,7 @@ public class ContentCategoryView extends Trackable implements IUserIdentifier
     {
         return this.channel;
     }
-    public ContentCategoryView setUser(User user)
+    public ContentCategoryView setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -80,7 +80,7 @@ public class ContentCategoryView extends Trackable implements IUserIdentifier
         return this;
     }
     /** @deprecated Use User.Channel instead. */
-    public ContentCategoryView setChannel(Channel channel)
+    public ContentCategoryView setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

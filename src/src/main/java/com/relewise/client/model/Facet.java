@@ -77,7 +77,7 @@ public abstract class Facet
         this.field = field;
         return this;
     }
-    public Facet setSettings(FacetSettings settings)
+    public Facet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

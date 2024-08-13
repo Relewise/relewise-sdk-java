@@ -40,13 +40,13 @@ public abstract class BrandRecommendationRequest extends RecommendationRequest i
         return this;
     }
     @Override
-    public BrandRecommendationRequest setLanguage(Language language)
+    public BrandRecommendationRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public BrandRecommendationRequest setUser(User user)
+    public BrandRecommendationRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -70,14 +70,14 @@ public abstract class BrandRecommendationRequest extends RecommendationRequest i
         return this;
     }
     @Override
-    public BrandRecommendationRequest setCurrency(Currency currency)
+    public BrandRecommendationRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public BrandRecommendationRequest setChannel(Channel channel)
+    public BrandRecommendationRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

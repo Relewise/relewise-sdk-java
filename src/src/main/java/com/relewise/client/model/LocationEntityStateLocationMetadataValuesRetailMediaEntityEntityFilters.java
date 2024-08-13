@@ -37,7 +37,7 @@ public abstract class LocationEntityStateLocationMetadataValuesRetailMediaEntity
     {
         return this.states;
     }
-    public LocationEntityStateLocationMetadataValuesRetailMediaEntityEntityFilters setTerm(String term)
+    public LocationEntityStateLocationMetadataValuesRetailMediaEntityEntityFilters setTerm(@Nullable String term)
     {
         this.term = term;
         return this;

@@ -79,7 +79,7 @@ public class AndFilter extends Filter implements IProductFilter, IContentFilter,
         return this;
     }
     @Override
-    public AndFilter setSettings(FilterSettings settings)
+    public AndFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

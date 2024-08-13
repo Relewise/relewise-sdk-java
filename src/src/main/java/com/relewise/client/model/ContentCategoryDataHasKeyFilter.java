@@ -65,7 +65,7 @@ public class ContentCategoryDataHasKeyFilter extends Filter implements ICategory
         return this;
     }
     @Override
-    public ContentCategoryDataHasKeyFilter setSettings(FilterSettings settings)
+    public ContentCategoryDataHasKeyFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

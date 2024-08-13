@@ -65,7 +65,7 @@ public class BrandDataHasKeyFilter extends Filter implements IBrandFilter
         return this;
     }
     @Override
-    public BrandDataHasKeyFilter setSettings(FilterSettings settings)
+    public BrandDataHasKeyFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

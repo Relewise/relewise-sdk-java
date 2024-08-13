@@ -47,7 +47,7 @@ public class ContentCategoryAdministrativeAction extends CategoryAdministrativeA
         return this;
     }
     @Override
-    public ContentCategoryAdministrativeAction setLanguage(Language language)
+    public ContentCategoryAdministrativeAction setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
@@ -59,7 +59,7 @@ public class ContentCategoryAdministrativeAction extends CategoryAdministrativeA
         return this;
     }
     @Override
-    public ContentCategoryAdministrativeAction setCurrency(Currency currency)
+    public ContentCategoryAdministrativeAction setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

@@ -71,7 +71,7 @@ public class ProductVariant
         this.id = id;
         return this;
     }
-    public ProductVariant setDisplayName(Multilingual displayName)
+    public ProductVariant setDisplayName(@Nullable Multilingual displayName)
     {
         this.displayName = displayName;
         return this;
@@ -99,7 +99,7 @@ public class ProductVariant
         this.specification.put(key, value);
         return this;
     }
-    public ProductVariant setSpecification(HashMap<String, String> specification)
+    public ProductVariant setSpecification(@Nullable HashMap<String, String> specification)
     {
         this.specification = specification;
         return this;
@@ -113,17 +113,17 @@ public class ProductVariant
         this.data.put(key, value);
         return this;
     }
-    public ProductVariant setData(HashMap<String, DataValue> data)
+    public ProductVariant setData(@Nullable HashMap<String, DataValue> data)
     {
         this.data = data;
         return this;
     }
-    public ProductVariant setListPrice(MultiCurrency listPrice)
+    public ProductVariant setListPrice(@Nullable MultiCurrency listPrice)
     {
         this.listPrice = listPrice;
         return this;
     }
-    public ProductVariant setSalesPrice(MultiCurrency salesPrice)
+    public ProductVariant setSalesPrice(@Nullable MultiCurrency salesPrice)
     {
         this.salesPrice = salesPrice;
         return this;

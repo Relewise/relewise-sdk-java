@@ -61,7 +61,7 @@ public abstract class BooleanDataObjectValueFacet extends BooleanDataValueFacet
         return this;
     }
     @Override
-    public BooleanDataObjectValueFacet setSettings(FacetSettings settings)
+    public BooleanDataObjectValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

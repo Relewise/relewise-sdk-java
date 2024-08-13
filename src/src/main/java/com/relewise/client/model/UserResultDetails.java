@@ -231,12 +231,12 @@ public class UserResultDetails
         }
         return this;
     }
-    public UserResultDetails setChannel(Channel channel)
+    public UserResultDetails setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;
     }
-    public UserResultDetails setCompany(UserAssociatedCompanyResultDetails company)
+    public UserResultDetails setCompany(@Nullable UserAssociatedCompanyResultDetails company)
     {
         this.company = company;
         return this;

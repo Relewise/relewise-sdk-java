@@ -57,7 +57,7 @@ public class PromotionLocation
         this.key = key;
         return this;
     }
-    public PromotionLocation setPlacements(PromotionLocationPlacementCollection placements)
+    public PromotionLocation setPlacements(@Nullable PromotionLocationPlacementCollection placements)
     {
         this.placements = placements;
         return this;

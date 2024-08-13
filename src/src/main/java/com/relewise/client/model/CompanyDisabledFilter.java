@@ -49,7 +49,7 @@ public class CompanyDisabledFilter extends Filter implements ICompanyFilter
         return this;
     }
     @Override
-    public CompanyDisabledFilter setSettings(FilterSettings settings)
+    public CompanyDisabledFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -76,7 +76,7 @@ public class ProductCategoryIdFilter extends CategoryIdFilter implements IProduc
         return this;
     }
     @Override
-    public ProductCategoryIdFilter setSettings(FilterSettings settings)
+    public ProductCategoryIdFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

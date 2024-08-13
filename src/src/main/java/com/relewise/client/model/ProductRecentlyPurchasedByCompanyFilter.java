@@ -105,7 +105,7 @@ public class ProductRecentlyPurchasedByCompanyFilter extends Filter implements I
         return this;
     }
     @Override
-    public ProductRecentlyPurchasedByCompanyFilter setSettings(FilterSettings settings)
+    public ProductRecentlyPurchasedByCompanyFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

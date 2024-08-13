@@ -78,22 +78,22 @@ public class ContentSearchRequest extends PaginatedSearchRequest implements IUse
     {
         return this.sorting;
     }
-    public ContentSearchRequest setTerm(String term)
+    public ContentSearchRequest setTerm(@Nullable String term)
     {
         this.term = term;
         return this;
     }
-    public ContentSearchRequest setFacets(ContentFacetQuery facets)
+    public ContentSearchRequest setFacets(@Nullable ContentFacetQuery facets)
     {
         this.facets = facets;
         return this;
     }
-    public ContentSearchRequest setSettings(ContentSearchSettings settings)
+    public ContentSearchRequest setSettings(@Nullable ContentSearchSettings settings)
     {
         this.settings = settings;
         return this;
     }
-    public ContentSearchRequest setSorting(ContentSortBySpecification sorting)
+    public ContentSearchRequest setSorting(@Nullable ContentSortBySpecification sorting)
     {
         this.sorting = sorting;
         return this;
@@ -111,56 +111,56 @@ public class ContentSearchRequest extends PaginatedSearchRequest implements IUse
         return this;
     }
     @Override
-    public ContentSearchRequest setLanguage(Language language)
+    public ContentSearchRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ContentSearchRequest setCurrency(Currency currency)
+    public ContentSearchRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     @Override
-    public ContentSearchRequest setUser(User user)
+    public ContentSearchRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
     }
     @Override
-    public ContentSearchRequest setDisplayedAtLocation(String displayedAtLocation)
+    public ContentSearchRequest setDisplayedAtLocation(@Nullable String displayedAtLocation)
     {
         this.displayedAtLocation = displayedAtLocation;
         return this;
     }
     @Override
-    public ContentSearchRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
+    public ContentSearchRequest setRelevanceModifiers(@Nullable RelevanceModifierCollection relevanceModifiers)
     {
         this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
-    public ContentSearchRequest setFilters(FilterCollection filters)
+    public ContentSearchRequest setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;
     }
     @Override
-    public ContentSearchRequest setIndexSelector(SearchIndexSelector indexSelector)
+    public ContentSearchRequest setIndexSelector(@Nullable SearchIndexSelector indexSelector)
     {
         this.indexSelector = indexSelector;
         return this;
     }
     @Override
-    public ContentSearchRequest setPostFilters(FilterCollection postFilters)
+    public ContentSearchRequest setPostFilters(@Nullable FilterCollection postFilters)
     {
         this.postFilters = postFilters;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public ContentSearchRequest setChannel(Channel channel)
+    public ContentSearchRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

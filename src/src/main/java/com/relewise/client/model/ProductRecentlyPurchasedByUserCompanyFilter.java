@@ -92,7 +92,7 @@ public class ProductRecentlyPurchasedByUserCompanyFilter extends Filter implemen
         return this;
     }
     @Override
-    public ProductRecentlyPurchasedByUserCompanyFilter setSettings(FilterSettings settings)
+    public ProductRecentlyPurchasedByUserCompanyFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

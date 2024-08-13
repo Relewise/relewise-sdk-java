@@ -81,48 +81,48 @@ public abstract class SearchRequest extends LicensedRequest implements IUserIden
     {
         return this.channel;
     }
-    public SearchRequest setLanguage(Language language)
+    public SearchRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public SearchRequest setCurrency(Currency currency)
+    public SearchRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
-    public SearchRequest setUser(User user)
+    public SearchRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
     }
-    public SearchRequest setDisplayedAtLocation(String displayedAtLocation)
+    public SearchRequest setDisplayedAtLocation(@Nullable String displayedAtLocation)
     {
         this.displayedAtLocation = displayedAtLocation;
         return this;
     }
-    public SearchRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
+    public SearchRequest setRelevanceModifiers(@Nullable RelevanceModifierCollection relevanceModifiers)
     {
         this.relevanceModifiers = relevanceModifiers;
         return this;
     }
-    public SearchRequest setFilters(FilterCollection filters)
+    public SearchRequest setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;
     }
-    public SearchRequest setIndexSelector(SearchIndexSelector indexSelector)
+    public SearchRequest setIndexSelector(@Nullable SearchIndexSelector indexSelector)
     {
         this.indexSelector = indexSelector;
         return this;
     }
-    public SearchRequest setPostFilters(FilterCollection postFilters)
+    public SearchRequest setPostFilters(@Nullable FilterCollection postFilters)
     {
         this.postFilters = postFilters;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
-    public SearchRequest setChannel(Channel channel)
+    public SearchRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

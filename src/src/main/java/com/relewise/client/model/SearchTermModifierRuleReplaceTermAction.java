@@ -42,7 +42,7 @@ public class SearchTermModifierRuleReplaceTermAction extends SearchTermModifierR
     {
         return this.replacement;
     }
-    public SearchTermModifierRuleReplaceTermAction setReplacement(String replacement)
+    public SearchTermModifierRuleReplaceTermAction setReplacement(@Nullable String replacement)
     {
         this.replacement = replacement;
         return this;

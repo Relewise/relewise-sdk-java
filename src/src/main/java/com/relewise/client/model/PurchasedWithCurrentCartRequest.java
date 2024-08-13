@@ -47,13 +47,13 @@ public class PurchasedWithCurrentCartRequest extends ProductRecommendationReques
         return this;
     }
     @Override
-    public PurchasedWithCurrentCartRequest setLanguage(Language language)
+    public PurchasedWithCurrentCartRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public PurchasedWithCurrentCartRequest setUser(User user)
+    public PurchasedWithCurrentCartRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -77,14 +77,14 @@ public class PurchasedWithCurrentCartRequest extends ProductRecommendationReques
         return this;
     }
     @Override
-    public PurchasedWithCurrentCartRequest setCurrency(Currency currency)
+    public PurchasedWithCurrentCartRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public PurchasedWithCurrentCartRequest setChannel(Channel channel)
+    public PurchasedWithCurrentCartRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

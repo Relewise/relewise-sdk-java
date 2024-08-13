@@ -42,7 +42,7 @@ public class VariantChangeTriggerConfiguration extends VariantChangeTriggerResul
     {
     }
     @Override
-    public VariantChangeTriggerConfiguration setEntityPropertySelector(VariantPropertySelector entityPropertySelector)
+    public VariantChangeTriggerConfiguration setEntityPropertySelector(@Nullable VariantPropertySelector entityPropertySelector)
     {
         this.entityPropertySelector = entityPropertySelector;
         return this;
@@ -66,7 +66,7 @@ public class VariantChangeTriggerConfiguration extends VariantChangeTriggerResul
         return this;
     }
     @Override
-    public VariantChangeTriggerConfiguration setResultSettings(VariantChangeTriggerResultSettings resultSettings)
+    public VariantChangeTriggerConfiguration setResultSettings(@Nullable VariantChangeTriggerResultSettings resultSettings)
     {
         this.resultSettings = resultSettings;
         return this;

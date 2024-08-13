@@ -28,7 +28,7 @@ public abstract class DoubleProductCategoryDataRangeFacet extends DoubleDataRang
 {
     public String $type = "";
     @Override
-    public DoubleProductCategoryDataRangeFacet setSelected(DoubleRange selected)
+    public DoubleProductCategoryDataRangeFacet setSelected(@Nullable DoubleRange selected)
     {
         this.selected = selected;
         return this;
@@ -46,7 +46,7 @@ public abstract class DoubleProductCategoryDataRangeFacet extends DoubleDataRang
         return this;
     }
     @Override
-    public DoubleProductCategoryDataRangeFacet setSettings(FacetSettings settings)
+    public DoubleProductCategoryDataRangeFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

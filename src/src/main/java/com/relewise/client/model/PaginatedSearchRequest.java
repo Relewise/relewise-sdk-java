@@ -48,56 +48,56 @@ public abstract class PaginatedSearchRequest extends SearchRequest implements IU
         return this;
     }
     @Override
-    public PaginatedSearchRequest setLanguage(Language language)
+    public PaginatedSearchRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public PaginatedSearchRequest setCurrency(Currency currency)
+    public PaginatedSearchRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     @Override
-    public PaginatedSearchRequest setUser(User user)
+    public PaginatedSearchRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
     }
     @Override
-    public PaginatedSearchRequest setDisplayedAtLocation(String displayedAtLocation)
+    public PaginatedSearchRequest setDisplayedAtLocation(@Nullable String displayedAtLocation)
     {
         this.displayedAtLocation = displayedAtLocation;
         return this;
     }
     @Override
-    public PaginatedSearchRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
+    public PaginatedSearchRequest setRelevanceModifiers(@Nullable RelevanceModifierCollection relevanceModifiers)
     {
         this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
-    public PaginatedSearchRequest setFilters(FilterCollection filters)
+    public PaginatedSearchRequest setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;
     }
     @Override
-    public PaginatedSearchRequest setIndexSelector(SearchIndexSelector indexSelector)
+    public PaginatedSearchRequest setIndexSelector(@Nullable SearchIndexSelector indexSelector)
     {
         this.indexSelector = indexSelector;
         return this;
     }
     @Override
-    public PaginatedSearchRequest setPostFilters(FilterCollection postFilters)
+    public PaginatedSearchRequest setPostFilters(@Nullable FilterCollection postFilters)
     {
         this.postFilters = postFilters;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public PaginatedSearchRequest setChannel(Channel channel)
+    public PaginatedSearchRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

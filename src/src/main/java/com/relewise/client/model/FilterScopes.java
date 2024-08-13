@@ -38,12 +38,12 @@ public class FilterScopes
     {
         return this.fill;
     }
-    public FilterScopes setDefault(FilterScopeSettings _default)
+    public FilterScopes setDefault(@Nullable FilterScopeSettings _default)
     {
         this._default = _default;
         return this;
     }
-    public FilterScopes setFill(FilterScopeSettings fill)
+    public FilterScopes setFill(@Nullable FilterScopeSettings fill)
     {
         this.fill = fill;
         return this;

@@ -80,7 +80,7 @@ public class ProductDataDoubleValueFacet extends DoubleProductDataValueFacet
         return this;
     }
     @Override
-    public ProductDataDoubleValueFacet setSettings(FacetSettings settings)
+    public ProductDataDoubleValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

@@ -107,19 +107,19 @@ public class CompanyDataFilter extends DataFilter implements ICompanyFilter
         return this;
     }
     @Override
-    public CompanyDataFilter setConditions(ValueConditionCollection conditions)
+    public CompanyDataFilter setConditions(@Nullable ValueConditionCollection conditions)
     {
         this.conditions = conditions;
         return this;
     }
     @Override
-    public CompanyDataFilter setLanguage(Language language)
+    public CompanyDataFilter setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public CompanyDataFilter setCurrency(Currency currency)
+    public CompanyDataFilter setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
@@ -151,7 +151,7 @@ public class CompanyDataFilter extends DataFilter implements ICompanyFilter
         return this;
     }
     @Override
-    public CompanyDataFilter setSettings(FilterSettings settings)
+    public CompanyDataFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -66,12 +66,12 @@ public class ProductDisplayNameFilter extends Filter implements IProductFilter
     {
         return this.mustMatchAllConditions;
     }
-    public ProductDisplayNameFilter setLanguage(Language language)
+    public ProductDisplayNameFilter setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public ProductDisplayNameFilter setConditions(ValueConditionCollection conditions)
+    public ProductDisplayNameFilter setConditions(@Nullable ValueConditionCollection conditions)
     {
         this.conditions = conditions;
         return this;
@@ -88,7 +88,7 @@ public class ProductDisplayNameFilter extends Filter implements IProductFilter
         return this;
     }
     @Override
-    public ProductDisplayNameFilter setSettings(FilterSettings settings)
+    public ProductDisplayNameFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

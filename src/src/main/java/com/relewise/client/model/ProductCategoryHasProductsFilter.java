@@ -44,7 +44,7 @@ public class ProductCategoryHasProductsFilter extends Filter implements ICategor
         return this;
     }
     @Override
-    public ProductCategoryHasProductsFilter setSettings(FilterSettings settings)
+    public ProductCategoryHasProductsFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

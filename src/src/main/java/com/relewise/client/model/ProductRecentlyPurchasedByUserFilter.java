@@ -75,7 +75,7 @@ public class ProductRecentlyPurchasedByUserFilter extends Filter implements IPro
         return this;
     }
     @Override
-    public ProductRecentlyPurchasedByUserFilter setSettings(FilterSettings settings)
+    public ProductRecentlyPurchasedByUserFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

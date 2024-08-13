@@ -80,7 +80,7 @@ public class ProductDataStringValueFacet extends StringProductDataValueFacet
         return this;
     }
     @Override
-    public ProductDataStringValueFacet setSettings(FacetSettings settings)
+    public ProductDataStringValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

@@ -65,7 +65,7 @@ public class ProductHasVariantsFilter extends Filter implements IProductFilter
         return this;
     }
     @Override
-    public ProductHasVariantsFilter setSettings(FilterSettings settings)
+    public ProductHasVariantsFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

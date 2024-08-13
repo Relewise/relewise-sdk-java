@@ -70,7 +70,7 @@ public class CategoryHierarchyFacetResultCategoryNode
         this.hits = hits;
         return this;
     }
-    public CategoryHierarchyFacetResultCategoryNode setParentId(String parentId)
+    public CategoryHierarchyFacetResultCategoryNode setParentId(@Nullable String parentId)
     {
         this.parentId = parentId;
         return this;

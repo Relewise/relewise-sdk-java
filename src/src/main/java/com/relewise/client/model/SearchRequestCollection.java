@@ -70,56 +70,56 @@ public class SearchRequestCollection extends SearchRequest implements IUserIdent
         return this;
     }
     @Override
-    public SearchRequestCollection setLanguage(Language language)
+    public SearchRequestCollection setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public SearchRequestCollection setCurrency(Currency currency)
+    public SearchRequestCollection setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     @Override
-    public SearchRequestCollection setUser(User user)
+    public SearchRequestCollection setUser(@Nullable User user)
     {
         this.user = user;
         return this;
     }
     @Override
-    public SearchRequestCollection setDisplayedAtLocation(String displayedAtLocation)
+    public SearchRequestCollection setDisplayedAtLocation(@Nullable String displayedAtLocation)
     {
         this.displayedAtLocation = displayedAtLocation;
         return this;
     }
     @Override
-    public SearchRequestCollection setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
+    public SearchRequestCollection setRelevanceModifiers(@Nullable RelevanceModifierCollection relevanceModifiers)
     {
         this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
-    public SearchRequestCollection setFilters(FilterCollection filters)
+    public SearchRequestCollection setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;
     }
     @Override
-    public SearchRequestCollection setIndexSelector(SearchIndexSelector indexSelector)
+    public SearchRequestCollection setIndexSelector(@Nullable SearchIndexSelector indexSelector)
     {
         this.indexSelector = indexSelector;
         return this;
     }
     @Override
-    public SearchRequestCollection setPostFilters(FilterCollection postFilters)
+    public SearchRequestCollection setPostFilters(@Nullable FilterCollection postFilters)
     {
         this.postFilters = postFilters;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public SearchRequestCollection setChannel(Channel channel)
+    public SearchRequestCollection setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

@@ -39,7 +39,7 @@ public class ContentDataDoubleRangeFacet extends DoubleContentDataRangeFacet
     {
     }
     @Override
-    public ContentDataDoubleRangeFacet setSelected(DoubleRange selected)
+    public ContentDataDoubleRangeFacet setSelected(@Nullable DoubleRange selected)
     {
         this.selected = selected;
         return this;
@@ -57,7 +57,7 @@ public class ContentDataDoubleRangeFacet extends DoubleContentDataRangeFacet
         return this;
     }
     @Override
-    public ContentDataDoubleRangeFacet setSettings(FacetSettings settings)
+    public ContentDataDoubleRangeFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

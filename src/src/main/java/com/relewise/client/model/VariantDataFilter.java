@@ -107,19 +107,19 @@ public class VariantDataFilter extends DataFilter implements IVariantFilter
         return this;
     }
     @Override
-    public VariantDataFilter setConditions(ValueConditionCollection conditions)
+    public VariantDataFilter setConditions(@Nullable ValueConditionCollection conditions)
     {
         this.conditions = conditions;
         return this;
     }
     @Override
-    public VariantDataFilter setLanguage(Language language)
+    public VariantDataFilter setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public VariantDataFilter setCurrency(Currency currency)
+    public VariantDataFilter setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
@@ -151,7 +151,7 @@ public class VariantDataFilter extends DataFilter implements IVariantFilter
         return this;
     }
     @Override
-    public VariantDataFilter setSettings(FilterSettings settings)
+    public VariantDataFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

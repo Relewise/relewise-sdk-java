@@ -66,13 +66,13 @@ public class Advertiser extends AdvertiserEntityStateAdvertiserMetadataValuesRet
         return this;
     }
     /** Defines what kind of promotions an advertiser is allowed to create, and constraints to what may be promoted. Constraints could as an example be all products belonging to the brand(s) this Advertiser is associated with. If <code>null</code> or empty, an advertiser will not be allowed to make any promotions anywhere, only useful for Advertisers in draft. */
-    public Advertiser setAllowedPromotions(PromotionSpecificationCollection allowedPromotions)
+    public Advertiser setAllowedPromotions(@Nullable PromotionSpecificationCollection allowedPromotions)
     {
         this.allowedPromotions = allowedPromotions;
         return this;
     }
     /** Defines locations/placements/variations where this advertiser is allowed to make promotions at. If <code>null</code> or empty, an advertiser will not be allowed to make any promotions anywhere, only useful for Advertisers in draft. */
-    public Advertiser setAllowedLocations(PromotionLocationCollection allowedLocations)
+    public Advertiser setAllowedLocations(@Nullable PromotionLocationCollection allowedLocations)
     {
         this.allowedLocations = allowedLocations;
         return this;

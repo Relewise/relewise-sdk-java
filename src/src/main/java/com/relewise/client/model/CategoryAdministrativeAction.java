@@ -52,7 +52,7 @@ public abstract class CategoryAdministrativeAction extends Trackable
         this.filters = filters;
         return this;
     }
-    public CategoryAdministrativeAction setLanguage(Language language)
+    public CategoryAdministrativeAction setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
@@ -62,7 +62,7 @@ public abstract class CategoryAdministrativeAction extends Trackable
         this.kind = kind;
         return this;
     }
-    public CategoryAdministrativeAction setCurrency(Currency currency)
+    public CategoryAdministrativeAction setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

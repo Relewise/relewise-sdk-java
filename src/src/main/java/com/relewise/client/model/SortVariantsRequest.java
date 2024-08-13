@@ -58,13 +58,13 @@ public class SortVariantsRequest extends ProductRecommendationRequest implements
         return this;
     }
     @Override
-    public SortVariantsRequest setLanguage(Language language)
+    public SortVariantsRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public SortVariantsRequest setUser(User user)
+    public SortVariantsRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -88,14 +88,14 @@ public class SortVariantsRequest extends ProductRecommendationRequest implements
         return this;
     }
     @Override
-    public SortVariantsRequest setCurrency(Currency currency)
+    public SortVariantsRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public SortVariantsRequest setChannel(Channel channel)
+    public SortVariantsRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

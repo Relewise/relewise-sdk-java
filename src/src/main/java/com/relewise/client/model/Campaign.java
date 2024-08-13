@@ -78,7 +78,7 @@ public class Campaign extends CampaignEntityStateCampaignMetadataValuesRetailMed
         this.name = name;
         return this;
     }
-    public Campaign setSchedule(ISchedule schedule)
+    public Campaign setSchedule(@Nullable ISchedule schedule)
     {
         this.schedule = schedule;
         return this;

@@ -124,7 +124,7 @@ public class ProductPerformanceRequest extends AnalyzerRequest
         this.toUnixTimeSeconds = toUnixTimeSeconds;
         return this;
     }
-    public ProductPerformanceRequest setFilters(FilterCollection filters)
+    public ProductPerformanceRequest setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;
@@ -144,12 +144,12 @@ public class ProductPerformanceRequest extends AnalyzerRequest
         this.byVariant = byVariant;
         return this;
     }
-    public ProductPerformanceRequest setSelectedProductProperties(SelectedProductPropertiesSettings selectedProductProperties)
+    public ProductPerformanceRequest setSelectedProductProperties(@Nullable SelectedProductPropertiesSettings selectedProductProperties)
     {
         this.selectedProductProperties = selectedProductProperties;
         return this;
     }
-    public ProductPerformanceRequest setSelectedVariantProperties(SelectedVariantPropertiesSettings selectedVariantProperties)
+    public ProductPerformanceRequest setSelectedVariantProperties(@Nullable SelectedVariantPropertiesSettings selectedVariantProperties)
     {
         this.selectedVariantProperties = selectedVariantProperties;
         return this;
@@ -178,19 +178,19 @@ public class ProductPerformanceRequest extends AnalyzerRequest
         this.classifications.add(classifications);
         return this;
     }
-    public ProductPerformanceRequest setSelectedBrandProperties(SelectedBrandPropertiesSettings selectedBrandProperties)
+    public ProductPerformanceRequest setSelectedBrandProperties(@Nullable SelectedBrandPropertiesSettings selectedBrandProperties)
     {
         this.selectedBrandProperties = selectedBrandProperties;
         return this;
     }
     @Override
-    public ProductPerformanceRequest setLanguage(Language language)
+    public ProductPerformanceRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ProductPerformanceRequest setCurrency(Currency currency)
+    public ProductPerformanceRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

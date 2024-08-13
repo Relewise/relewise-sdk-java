@@ -64,7 +64,7 @@ public class ContentCategoryHasChildFilter extends HasChildCategoryFilter implem
         return this;
     }
     @Override
-    public ContentCategoryHasChildFilter setSettings(FilterSettings settings)
+    public ContentCategoryHasChildFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

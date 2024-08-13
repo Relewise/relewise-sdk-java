@@ -96,7 +96,7 @@ public class ProductDataDoubleRangesFacet extends DoubleProductDataRangesFacet
         return this;
     }
     @Override
-    public ProductDataDoubleRangesFacet setSettings(FacetSettings settings)
+    public ProductDataDoubleRangesFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

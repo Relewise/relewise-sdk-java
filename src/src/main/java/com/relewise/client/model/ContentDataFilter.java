@@ -107,19 +107,19 @@ public class ContentDataFilter extends DataFilter implements IContentFilter
         return this;
     }
     @Override
-    public ContentDataFilter setConditions(ValueConditionCollection conditions)
+    public ContentDataFilter setConditions(@Nullable ValueConditionCollection conditions)
     {
         this.conditions = conditions;
         return this;
     }
     @Override
-    public ContentDataFilter setLanguage(Language language)
+    public ContentDataFilter setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ContentDataFilter setCurrency(Currency currency)
+    public ContentDataFilter setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
@@ -151,7 +151,7 @@ public class ContentDataFilter extends DataFilter implements IContentFilter
         return this;
     }
     @Override
-    public ContentDataFilter setSettings(FilterSettings settings)
+    public ContentDataFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -68,7 +68,7 @@ public class CampaignAnalyticsRequest extends LicensedRequest
         this.periodUtc = periodUtc;
         return this;
     }
-    public CampaignAnalyticsRequest setFilters(FilterCollection filters)
+    public CampaignAnalyticsRequest setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;

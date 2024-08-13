@@ -89,12 +89,12 @@ public class ContentQuery extends LicensedRequest
         this.numberOfResults = numberOfResults;
         return this;
     }
-    public ContentQuery setLanguage(Language language)
+    public ContentQuery setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public ContentQuery setCurrency(Currency currency)
+    public ContentQuery setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

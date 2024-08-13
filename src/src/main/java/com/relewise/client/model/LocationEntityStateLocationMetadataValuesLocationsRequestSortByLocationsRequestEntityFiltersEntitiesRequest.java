@@ -47,12 +47,12 @@ public abstract class LocationEntityStateLocationMetadataValuesLocationsRequestS
     {
         return this.take;
     }
-    public LocationEntityStateLocationMetadataValuesLocationsRequestSortByLocationsRequestEntityFiltersEntitiesRequest setFilters(LocationsRequestEntityFilters filters)
+    public LocationEntityStateLocationMetadataValuesLocationsRequestSortByLocationsRequestEntityFiltersEntitiesRequest setFilters(@Nullable LocationsRequestEntityFilters filters)
     {
         this.filters = filters;
         return this;
     }
-    public LocationEntityStateLocationMetadataValuesLocationsRequestSortByLocationsRequestEntityFiltersEntitiesRequest setSorting(LocationsRequestSortBySorting sorting)
+    public LocationEntityStateLocationMetadataValuesLocationsRequestSortByLocationsRequestEntityFiltersEntitiesRequest setSorting(@Nullable LocationsRequestSortBySorting sorting)
     {
         this.sorting = sorting;
         return this;

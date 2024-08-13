@@ -76,7 +76,7 @@ public class Product
         this.id = id;
         return this;
     }
-    public Product setDisplayName(Multilingual displayName)
+    public Product setDisplayName(@Nullable Multilingual displayName)
     {
         this.displayName = displayName;
         return this;
@@ -118,22 +118,22 @@ public class Product
         this.data.put(key, value);
         return this;
     }
-    public Product setData(HashMap<String, DataValue> data)
+    public Product setData(@Nullable HashMap<String, DataValue> data)
     {
         this.data = data;
         return this;
     }
-    public Product setListPrice(MultiCurrency listPrice)
+    public Product setListPrice(@Nullable MultiCurrency listPrice)
     {
         this.listPrice = listPrice;
         return this;
     }
-    public Product setSalesPrice(MultiCurrency salesPrice)
+    public Product setSalesPrice(@Nullable MultiCurrency salesPrice)
     {
         this.salesPrice = salesPrice;
         return this;
     }
-    public Product setBrand(Brand brand)
+    public Product setBrand(@Nullable Brand brand)
     {
         this.brand = brand;
         return this;

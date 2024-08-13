@@ -47,12 +47,12 @@ public abstract class AdvertiserEntityStateAdvertiserMetadataValuesAdvertisersRe
     {
         return this.take;
     }
-    public AdvertiserEntityStateAdvertiserMetadataValuesAdvertisersRequestSortByAdvertisersRequestEntityFiltersEntitiesRequest setFilters(AdvertisersRequestEntityFilters filters)
+    public AdvertiserEntityStateAdvertiserMetadataValuesAdvertisersRequestSortByAdvertisersRequestEntityFiltersEntitiesRequest setFilters(@Nullable AdvertisersRequestEntityFilters filters)
     {
         this.filters = filters;
         return this;
     }
-    public AdvertiserEntityStateAdvertiserMetadataValuesAdvertisersRequestSortByAdvertisersRequestEntityFiltersEntitiesRequest setSorting(AdvertisersRequestSortBySorting sorting)
+    public AdvertiserEntityStateAdvertiserMetadataValuesAdvertisersRequestSortByAdvertisersRequestEntityFiltersEntitiesRequest setSorting(@Nullable AdvertisersRequestSortBySorting sorting)
     {
         this.sorting = sorting;
         return this;

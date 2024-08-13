@@ -53,7 +53,7 @@ public class CategoryHierarchyFacet extends CategoryPathValueFacet
         this.categorySelectionStrategy = categorySelectionStrategy;
         return this;
     }
-    public CategoryHierarchyFacet setSelectedPropertiesSettings(SelectedCategoryPropertiesSettings selectedPropertiesSettings)
+    public CategoryHierarchyFacet setSelectedPropertiesSettings(@Nullable SelectedCategoryPropertiesSettings selectedPropertiesSettings)
     {
         this.selectedPropertiesSettings = selectedPropertiesSettings;
         return this;
@@ -80,7 +80,7 @@ public class CategoryHierarchyFacet extends CategoryPathValueFacet
         return this;
     }
     @Override
-    public CategoryHierarchyFacet setSettings(FacetSettings settings)
+    public CategoryHierarchyFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

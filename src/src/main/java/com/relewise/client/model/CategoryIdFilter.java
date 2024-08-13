@@ -65,7 +65,7 @@ public abstract class CategoryIdFilter extends Filter
         return this;
     }
     @Override
-    public CategoryIdFilter setSettings(FilterSettings settings)
+    public CategoryIdFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

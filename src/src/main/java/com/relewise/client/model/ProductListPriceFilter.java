@@ -66,7 +66,7 @@ public class ProductListPriceFilter extends Filter implements IProductFilter
         this.range = range;
         return this;
     }
-    public ProductListPriceFilter setCurrency(Currency currency)
+    public ProductListPriceFilter setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
@@ -78,7 +78,7 @@ public class ProductListPriceFilter extends Filter implements IProductFilter
         return this;
     }
     @Override
-    public ProductListPriceFilter setSettings(FilterSettings settings)
+    public ProductListPriceFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;
