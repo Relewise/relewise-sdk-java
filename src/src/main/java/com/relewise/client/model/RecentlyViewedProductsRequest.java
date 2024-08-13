@@ -82,4 +82,11 @@ public class RecentlyViewedProductsRequest extends ProductRecommendationRequest 
         this.currency = currency;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public RecentlyViewedProductsRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

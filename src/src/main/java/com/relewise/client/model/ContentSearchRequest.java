@@ -158,4 +158,11 @@ public class ContentSearchRequest extends PaginatedSearchRequest implements IUse
         this.postFilters = postFilters;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public ContentSearchRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

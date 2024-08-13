@@ -79,4 +79,11 @@ public abstract class ContentRecommendationRequest extends RecommendationRequest
         this.currency = currency;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public ContentRecommendationRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

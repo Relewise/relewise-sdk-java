@@ -27,14 +27,14 @@ public class ContentRecommendationRequestCollection extends LicensedRequest
 {
     public String $type = "Relewise.Client.Requests.Recommendations.ContentRecommendationRequestCollection, Relewise.Client";
     public ArrayList<ContentRecommendationRequest> requests;
-    public Boolean requireDistinctContentAcrossResults;
+    public Boolean requireDistinctContentsAcrossResults;
     public static ContentRecommendationRequestCollection create(Boolean requireDistinctContentsAcrossResults, ContentRecommendationRequest... requests)
     {
         return new ContentRecommendationRequestCollection(requireDistinctContentsAcrossResults, requests);
     }
     public ContentRecommendationRequestCollection(Boolean requireDistinctContentsAcrossResults, ContentRecommendationRequest... requests)
     {
-        this.requireDistinctContentAcrossResults = requireDistinctContentsAcrossResults;
+        this.requireDistinctContentsAcrossResults = requireDistinctContentsAcrossResults;
         this.requests = new ArrayList<>(Arrays.asList(requests));
     }
     public ContentRecommendationRequestCollection()
@@ -44,9 +44,9 @@ public class ContentRecommendationRequestCollection extends LicensedRequest
     {
         return this.requests;
     }
-    public Boolean getRequireDistinctContentAcrossResults()
+    public Boolean getRequireDistinctContentsAcrossResults()
     {
-        return this.requireDistinctContentAcrossResults;
+        return this.requireDistinctContentsAcrossResults;
     }
     public ContentRecommendationRequestCollection setRequests(ContentRecommendationRequest... requests)
     {
@@ -62,9 +62,9 @@ public class ContentRecommendationRequestCollection extends LicensedRequest
         this.requests.add(requests);
         return this;
     }
-    public ContentRecommendationRequestCollection setRequireDistinctContentAcrossResults(Boolean requireDistinctContentAcrossResults)
+    public ContentRecommendationRequestCollection setRequireDistinctContentsAcrossResults(Boolean requireDistinctContentsAcrossResults)
     {
-        this.requireDistinctContentAcrossResults = requireDistinctContentAcrossResults;
+        this.requireDistinctContentsAcrossResults = requireDistinctContentsAcrossResults;
         return this;
     }
 }

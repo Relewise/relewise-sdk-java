@@ -113,6 +113,10 @@ public class Recommender extends RelewiseClient
         return makeRequestAndValidate("PersonalBrandRecommendationRequest", request, BrandRecommendationResponse.class);
     }
     
+    public BrandRecommendationResponse recommend(BrandRecommendationRequest request) throws IOException, InterruptedException, ClientException {
+        return makeRequestAndValidate("BrandRecommendationRequest", request, BrandRecommendationResponse.class);
+    }
+    
     public ProductRecommendationResponseCollection recommend(ProductRecommendationRequestCollection request) throws IOException, InterruptedException, ClientException {
         return makeRequestAndValidate("ProductRecommendationRequestCollection", request, ProductRecommendationResponseCollection.class);
     }

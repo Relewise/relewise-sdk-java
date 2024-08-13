@@ -28,6 +28,8 @@ public class ProductDetailsCollectionResponse extends TimedResponse
     public String $type = "Relewise.Client.Responses.ProductDetailsCollectionResponse, Relewise.Client";
     public ProductResultDetails[] products;
     public @Nullable Integer totalNumberOfResults;
+    /** Provides a token for <code>NextPageToken</code> to consume <code>ProductQuery</code> results in pages of <code>PageSize</code>. Turns <code>null</code> as soon as cursor is fully exhausted/read/processed. Once null is returned, there are no more data to be retrieved and no more requests should be made. */
+    public @Nullable UUID nextPageToken;
     public static ProductDetailsCollectionResponse create(ProductResultDetails[] products, @Nullable Integer totalNumberOfResults)
     {
         return new ProductDetailsCollectionResponse(products, totalNumberOfResults);
@@ -47,6 +49,11 @@ public class ProductDetailsCollectionResponse extends TimedResponse
     public @Nullable Integer getTotalNumberOfResults()
     {
         return this.totalNumberOfResults;
+    }
+    /** Provides a token for <code>NextPageToken</code> to consume <code>ProductQuery</code> results in pages of <code>PageSize</code>. Turns <code>null</code> as soon as cursor is fully exhausted/read/processed. Once null is returned, there are no more data to be retrieved and no more requests should be made. */
+    public @Nullable UUID getNextPageToken()
+    {
+        return this.nextPageToken;
     }
     public ProductDetailsCollectionResponse setProducts(ProductResultDetails... products)
     {
@@ -70,6 +77,12 @@ public class ProductDetailsCollectionResponse extends TimedResponse
     public ProductDetailsCollectionResponse setTotalNumberOfResults(@Nullable Integer totalNumberOfResults)
     {
         this.totalNumberOfResults = totalNumberOfResults;
+        return this;
+    }
+    /** Provides a token for <code>NextPageToken</code> to consume <code>ProductQuery</code> results in pages of <code>PageSize</code>. Turns <code>null</code> as soon as cursor is fully exhausted/read/processed. Once null is returned, there are no more data to be retrieved and no more requests should be made. */
+    public ProductDetailsCollectionResponse setNextPageToken(@Nullable UUID nextPageToken)
+    {
+        this.nextPageToken = nextPageToken;
         return this;
     }
     @Override

@@ -63,4 +63,10 @@ public class ContentCategoryHasParentFilter extends HasParentCategoryFilter impl
         this.negated = negated;
         return this;
     }
+    @Override
+    public ContentCategoryHasParentFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

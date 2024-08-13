@@ -104,4 +104,11 @@ public class PopularBrandsRecommendationRequest extends BrandRecommendationReque
         this.currency = currency;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public PopularBrandsRecommendationRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

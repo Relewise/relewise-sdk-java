@@ -93,4 +93,11 @@ public class ProductsViewedAfterViewingContentRequest extends ProductRecommendat
         this.currency = currency;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public ProductsViewedAfterViewingContentRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

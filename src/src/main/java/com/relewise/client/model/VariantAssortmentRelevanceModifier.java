@@ -17,6 +17,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
+/** a <code>RelevanceModifier</code> that can change the relevance of a Variant depending on whether the Assortments match <code>Assortments</code>. */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,
@@ -26,7 +27,9 @@ import java.util.HashSet;
 public class VariantAssortmentRelevanceModifier extends RelevanceModifier implements IVariantRelevanceModifier
 {
     public String $type = "Relewise.Client.Requests.RelevanceModifiers.VariantAssortmentRelevanceModifier, Relewise.Client";
+    /** The assortments that this <code>RelevanceModifier</code> will multiply the weight for. */
     public Integer[] assortments;
+    /** The weight that this <code>RelevanceModifier</code> will multiply relevant variants with. */
     public Double multiplyWeightBy;
     public static VariantAssortmentRelevanceModifier create()
     {
@@ -44,19 +47,23 @@ public class VariantAssortmentRelevanceModifier extends RelevanceModifier implem
     {
         this.multiplyWeightBy = multiplyWeightBy;
     }
+    /** The assortments that this <code>RelevanceModifier</code> will multiply the weight for. */
     public Integer[] getAssortments()
     {
         return this.assortments;
     }
+    /** The weight that this <code>RelevanceModifier</code> will multiply relevant variants with. */
     public Double getMultiplyWeightBy()
     {
         return this.multiplyWeightBy;
     }
+    /** The assortments that this <code>RelevanceModifier</code> will multiply the weight for. */
     public VariantAssortmentRelevanceModifier setAssortments(Integer... assortments)
     {
         this.assortments = assortments;
         return this;
     }
+    /** The assortments that this <code>RelevanceModifier</code> will multiply the weight for. */
     public VariantAssortmentRelevanceModifier addToAssortments(Integer assortment)
     {
         if (this.assortments == null)
@@ -71,6 +78,7 @@ public class VariantAssortmentRelevanceModifier extends RelevanceModifier implem
         }
         return this;
     }
+    /** The weight that this <code>RelevanceModifier</code> will multiply relevant variants with. */
     public VariantAssortmentRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
         this.multiplyWeightBy = multiplyWeightBy;

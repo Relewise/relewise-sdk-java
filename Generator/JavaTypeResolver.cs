@@ -97,12 +97,9 @@ public class JavaTypeResolver
     private string GetGenericTypeDefinition(Type type)
     {
         // We use `RemoveNullable` in the following section because Java does not support to annotate generic type arguments.
-        switch (type.GenericTypeArguments.Length)
+        if (type.GenericTypeArguments.Length >= 1)
         {
-            case 1:
-                return $"{ResolveType(type.GenericTypeArguments.Single()).RemoveNullable()}{GetOrAddTypeDefinition(type)}";
-            case 2:
-                return $"{ResolveType(type.GenericTypeArguments.First()).RemoveNullable()}{ResolveType(type.GenericTypeArguments.Last()).RemoveNullable()}{GetOrAddTypeDefinition(type)}";
+            return string.Join("", type.GenericTypeArguments.Select(t => ResolveType(t).RemoveNullable())) + GetOrAddTypeDefinition(type);
         }
 
         if (type.GetGenericArguments() is not [var genericTypeArgumentDefinition])

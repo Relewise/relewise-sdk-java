@@ -29,6 +29,14 @@ public class Tracker extends RelewiseClient
         makeRequestAndValidate("TrackCartRequest", trackingRequest, Void.class);
     }
     
+    public void track(TrackCompanyAdministrativeActionRequest trackingRequest) throws IOException, InterruptedException, ClientException {
+        makeRequestAndValidate("TrackCompanyAdministrativeActionRequest", trackingRequest, Void.class);
+    }
+    
+    public void track(TrackCompanyUpdateRequest trackingRequest) throws IOException, InterruptedException, ClientException {
+        makeRequestAndValidate("TrackCompanyUpdateRequest", trackingRequest, Void.class);
+    }
+    
     public void track(TrackContentAdministrativeActionRequest trackingRequest) throws IOException, InterruptedException, ClientException {
         makeRequestAndValidate("TrackContentAdministrativeActionRequest", trackingRequest, Void.class);
     }

@@ -26,6 +26,8 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = RedirectRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.RedirectRulesResponse, Relewise.Client"),
     @JsonSubTypes.Type(value = DecompoundRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.DecompoundRulesResponse, Relewise.Client"),
     @JsonSubTypes.Type(value = StemmingRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.StemmingRulesResponse, Relewise.Client"),
+    @JsonSubTypes.Type(value = SearchTermModifierRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SearchTermModifierRulesResponse, Relewise.Client"),
+    @JsonSubTypes.Type(value = SearchResultModifierRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SearchResultModifierRulesResponse, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class StemmingRuleSearchRulesResponse extends TimedResponse

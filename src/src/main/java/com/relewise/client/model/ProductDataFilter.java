@@ -150,4 +150,10 @@ public class ProductDataFilter extends DataFilter implements IProductFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public ProductDataFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

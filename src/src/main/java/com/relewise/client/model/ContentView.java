@@ -28,6 +28,8 @@ public class ContentView extends Trackable implements IUserIdentifier
     public String $type = "Relewise.Client.DataTypes.ContentView, Relewise.Client";
     public @Nullable User user;
     public Content content;
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel channel;
     public static ContentView create(@Nullable User user, Content content)
     {
         return new ContentView(user, content);
@@ -48,6 +50,11 @@ public class ContentView extends Trackable implements IUserIdentifier
     {
         return this.content;
     }
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel getChannel()
+    {
+        return this.channel;
+    }
     public ContentView setUser(User user)
     {
         this.user = user;
@@ -56,6 +63,12 @@ public class ContentView extends Trackable implements IUserIdentifier
     public ContentView setContent(Content content)
     {
         this.content = content;
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    public ContentView setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

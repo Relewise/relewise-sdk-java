@@ -25,7 +25,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RedirectRule extends SearchRule
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.RedirectRule, Relewise.Client";
+    public String $type = "Relewise.Client.DataTypes.Search.Rules.RedirectRule, Relewise.Client";
     public SearchTermCondition condition;
     public @Nullable String destination;
     public @Nullable HashMap<String, String> data;

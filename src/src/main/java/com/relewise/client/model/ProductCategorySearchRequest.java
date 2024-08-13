@@ -158,4 +158,11 @@ public class ProductCategorySearchRequest extends PaginatedSearchRequest impleme
         this.postFilters = postFilters;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public ProductCategorySearchRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

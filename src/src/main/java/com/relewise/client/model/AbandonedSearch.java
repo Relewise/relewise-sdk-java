@@ -32,6 +32,7 @@ public abstract class AbandonedSearch
     public String $type = "";
     public String loweredSearchTerm;
     public Integer hits;
+    public @Nullable Language language;
     public String getLoweredSearchTerm()
     {
         return this.loweredSearchTerm;
@@ -39,6 +40,10 @@ public abstract class AbandonedSearch
     public Integer getHits()
     {
         return this.hits;
+    }
+    public @Nullable Language getLanguage()
+    {
+        return this.language;
     }
     public AbandonedSearch setLoweredSearchTerm(String loweredSearchTerm)
     {
@@ -48,6 +53,11 @@ public abstract class AbandonedSearch
     public AbandonedSearch setHits(Integer hits)
     {
         this.hits = hits;
+        return this;
+    }
+    public AbandonedSearch setLanguage(Language language)
+    {
+        this.language = language;
         return this;
     }
 }

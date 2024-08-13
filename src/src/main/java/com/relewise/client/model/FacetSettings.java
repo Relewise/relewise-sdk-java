@@ -21,6 +21,7 @@ import java.util.HashSet;
 public class FacetSettings
 {
     public Boolean alwaysIncludeSelectedInAvailable;
+    public Boolean includeZeroHitsInAvailable;
     public static FacetSettings create()
     {
         return new FacetSettings();
@@ -32,9 +33,18 @@ public class FacetSettings
     {
         return this.alwaysIncludeSelectedInAvailable;
     }
+    public Boolean getIncludeZeroHitsInAvailable()
+    {
+        return this.includeZeroHitsInAvailable;
+    }
     public FacetSettings setAlwaysIncludeSelectedInAvailable(Boolean alwaysIncludeSelectedInAvailable)
     {
         this.alwaysIncludeSelectedInAvailable = alwaysIncludeSelectedInAvailable;
+        return this;
+    }
+    public FacetSettings setIncludeZeroHitsInAvailable(Boolean includeZeroHitsInAvailable)
+    {
+        this.includeZeroHitsInAvailable = includeZeroHitsInAvailable;
         return this;
     }
 }

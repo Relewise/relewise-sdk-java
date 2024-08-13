@@ -32,8 +32,11 @@ public class User
     public @Nullable HashMap<String, String> identifiers;
     /** Data stored on the user */
     public @Nullable HashMap<String, DataValue> data;
-    /** A fingerprint, highly likely to change in the future, e.g. between a users sessions */
+    /** A fingerprint, highly likely to change in the future, e.g. between sessions */
     public @Nullable String fingerprint;
+    public @Nullable Channel channel;
+    /** Company the user is associated with in the current context (Note: Companies themselves can be associated with a parent company, if the current user is acting on the behalf of a hierarchical chain of up to 2 companies) */
+    public @Nullable Company company;
     /**
      * User DTO
      * @param authenticatedId A persistent Id for current user, e.g. a database-id
@@ -101,10 +104,19 @@ public class User
     {
         return this.data;
     }
-    /** A fingerprint, highly likely to change in the future, e.g. between a users sessions */
+    /** A fingerprint, highly likely to change in the future, e.g. between sessions */
     public @Nullable String getFingerprint()
     {
         return this.fingerprint;
+    }
+    public @Nullable Channel getChannel()
+    {
+        return this.channel;
+    }
+    /** Company the user is associated with in the current context (Note: Companies themselves can be associated with a parent company, if the current user is acting on the behalf of a hierarchical chain of up to 2 companies) */
+    public @Nullable Company getCompany()
+    {
+        return this.company;
     }
     /** A persistent Id for current user, e.g. a database-id This Id should never be expected to change in the future */
     public User setAuthenticatedId(String authenticatedId)
@@ -172,10 +184,21 @@ public class User
         this.data = data;
         return this;
     }
-    /** A fingerprint, highly likely to change in the future, e.g. between a users sessions */
+    /** A fingerprint, highly likely to change in the future, e.g. between sessions */
     public User setFingerprint(String fingerprint)
     {
         this.fingerprint = fingerprint;
+        return this;
+    }
+    public User setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
+    /** Company the user is associated with in the current context (Note: Companies themselves can be associated with a parent company, if the current user is acting on the behalf of a hierarchical chain of up to 2 companies) */
+    public User setCompany(Company company)
+    {
+        this.company = company;
         return this;
     }
 }

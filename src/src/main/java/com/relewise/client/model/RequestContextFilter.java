@@ -25,6 +25,7 @@ public class RequestContextFilter
     public ArrayList<String> locations;
     public ArrayList<Language> languages;
     public ArrayList<Currency> currencies;
+    public RequestFilterCriteria filters;
     public static RequestContextFilter create()
     {
         return new RequestContextFilter();
@@ -51,6 +52,10 @@ public class RequestContextFilter
     public ArrayList<Currency> getCurrencies()
     {
         return this.currencies;
+    }
+    public RequestFilterCriteria getFilters()
+    {
+        return this.filters;
     }
     public RequestContextFilter setRecommendations(RecommendationTypeCollection recommendations)
     {
@@ -102,6 +107,11 @@ public class RequestContextFilter
             this.currencies = new ArrayList<>();
         }
         this.currencies.add(currencies);
+        return this;
+    }
+    public RequestContextFilter setFilters(RequestFilterCriteria filters)
+    {
+        this.filters = filters;
         return this;
     }
 }

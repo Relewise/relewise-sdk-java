@@ -17,9 +17,15 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.EXISTING_PROPERTY,
+    property = "$type",
+    defaultImpl = ProductFacetQuery.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProductFacetQuery
+public class ProductFacetQuery extends FacetQuery
 {
+    public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.ProductFacetQuery, Relewise.Client";
     public ArrayList<Facet> items;
     public static ProductFacetQuery create()
     {

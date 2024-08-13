@@ -30,6 +30,7 @@ public class ProductSearchResponse extends PaginatedSearchResponse
     public ProductFacetResult facets;
     public ProductResult[] recommendations;
     public RedirectResult[] redirects;
+    public RetailMediaResult retailMedia;
     public static ProductSearchResponse create()
     {
         return new ProductSearchResponse();
@@ -52,6 +53,10 @@ public class ProductSearchResponse extends PaginatedSearchResponse
     public RedirectResult[] getRedirects()
     {
         return this.redirects;
+    }
+    public RetailMediaResult getRetailMedia()
+    {
+        return this.retailMedia;
     }
     public ProductSearchResponse setResults(ProductResult... results)
     {
@@ -113,6 +118,11 @@ public class ProductSearchResponse extends PaginatedSearchResponse
             existingList.add(redirect);
             this.redirects = existingList.toArray(new RedirectResult[0]);
         }
+        return this;
+    }
+    public ProductSearchResponse setRetailMedia(RetailMediaResult retailMedia)
+    {
+        this.retailMedia = retailMedia;
         return this;
     }
     @Override

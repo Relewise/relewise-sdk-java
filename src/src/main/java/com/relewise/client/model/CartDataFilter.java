@@ -126,4 +126,10 @@ public class CartDataFilter extends Filter
         this.negated = negated;
         return this;
     }
+    @Override
+    public CartDataFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

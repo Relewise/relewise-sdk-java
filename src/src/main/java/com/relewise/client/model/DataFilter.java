@@ -117,4 +117,10 @@ public abstract class DataFilter extends Filter
         this.negated = negated;
         return this;
     }
+    @Override
+    public DataFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

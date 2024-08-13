@@ -63,4 +63,10 @@ public class ContentCategoryLevelFilter extends CategoryLevelFilter implements I
         this.negated = negated;
         return this;
     }
+    @Override
+    public ContentCategoryLevelFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

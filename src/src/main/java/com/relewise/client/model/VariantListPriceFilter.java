@@ -77,4 +77,10 @@ public class VariantListPriceFilter extends Filter implements IVariantFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public VariantListPriceFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

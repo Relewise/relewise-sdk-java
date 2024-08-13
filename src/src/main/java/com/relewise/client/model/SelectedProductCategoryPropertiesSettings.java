@@ -17,15 +17,15 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.EXISTING_PROPERTY,
+    property = "$type",
+    defaultImpl = SelectedProductCategoryPropertiesSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SelectedProductCategoryPropertiesSettings
+public class SelectedProductCategoryPropertiesSettings extends SelectedCategoryPropertiesSettings
 {
-    public Boolean displayName;
-    public Boolean paths;
-    public Boolean assortments;
-    public Boolean viewedByUserInfo;
-    public Boolean allData;
-    public String[] dataKeys;
+    public String $type = "Relewise.Client.Requests.Shared.SelectedProductCategoryPropertiesSettings, Relewise.Client";
     public static SelectedProductCategoryPropertiesSettings create()
     {
         return new SelectedProductCategoryPropertiesSettings();
@@ -33,55 +33,37 @@ public class SelectedProductCategoryPropertiesSettings
     public SelectedProductCategoryPropertiesSettings()
     {
     }
-    public Boolean getDisplayName()
-    {
-        return this.displayName;
-    }
-    public Boolean getPaths()
-    {
-        return this.paths;
-    }
-    public Boolean getAssortments()
-    {
-        return this.assortments;
-    }
-    public Boolean getViewedByUserInfo()
-    {
-        return this.viewedByUserInfo;
-    }
-    public Boolean getAllData()
-    {
-        return this.allData;
-    }
-    public String[] getDataKeys()
-    {
-        return this.dataKeys;
-    }
+    @Override
     public SelectedProductCategoryPropertiesSettings setDisplayName(Boolean displayName)
     {
         this.displayName = displayName;
         return this;
     }
+    @Override
     public SelectedProductCategoryPropertiesSettings setPaths(Boolean paths)
     {
         this.paths = paths;
         return this;
     }
+    @Override
     public SelectedProductCategoryPropertiesSettings setAssortments(Boolean assortments)
     {
         this.assortments = assortments;
         return this;
     }
+    @Override
     public SelectedProductCategoryPropertiesSettings setViewedByUserInfo(Boolean viewedByUserInfo)
     {
         this.viewedByUserInfo = viewedByUserInfo;
         return this;
     }
+    @Override
     public SelectedProductCategoryPropertiesSettings setAllData(Boolean allData)
     {
         this.allData = allData;
         return this;
     }
+    @Override
     public SelectedProductCategoryPropertiesSettings setDataKeys(String... dataKeys)
     {
         this.dataKeys = dataKeys;

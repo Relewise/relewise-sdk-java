@@ -20,6 +20,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Language
 {
+    /** Trimmed language name in lower-invariant. */
     public String value;
     public static final Language UNDEFINED = null;
     public static Language create(String name)
@@ -33,10 +34,12 @@ public class Language
     public Language()
     {
     }
+    /** Trimmed language name in lower-invariant. */
     public String getValue()
     {
         return this.value;
     }
+    /** Trimmed language name in lower-invariant. */
     public Language setValue(String value)
     {
         this.value = value;

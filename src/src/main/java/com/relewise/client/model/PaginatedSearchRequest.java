@@ -95,4 +95,11 @@ public abstract class PaginatedSearchRequest extends SearchRequest implements IU
         this.postFilters = postFilters;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public PaginatedSearchRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

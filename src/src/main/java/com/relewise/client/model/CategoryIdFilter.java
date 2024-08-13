@@ -64,4 +64,10 @@ public abstract class CategoryIdFilter extends Filter
         this.negated = negated;
         return this;
     }
+    @Override
+    public CategoryIdFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

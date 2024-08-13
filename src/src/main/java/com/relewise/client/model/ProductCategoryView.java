@@ -28,6 +28,8 @@ public class ProductCategoryView extends Trackable implements IUserIdentifier
     public String $type = "Relewise.Client.DataTypes.ProductCategoryView, Relewise.Client";
     public @Nullable User user;
     public String[] idPath;
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel channel;
     public static ProductCategoryView create(@Nullable User user, String... idPath)
     {
         return new ProductCategoryView(user, idPath);
@@ -47,6 +49,11 @@ public class ProductCategoryView extends Trackable implements IUserIdentifier
     public String[] getIdPath()
     {
         return this.idPath;
+    }
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel getChannel()
+    {
+        return this.channel;
     }
     public ProductCategoryView setUser(User user)
     {
@@ -70,6 +77,12 @@ public class ProductCategoryView extends Trackable implements IUserIdentifier
             existingList.add(idPath);
             this.idPath = existingList.toArray(new String[0]);
         }
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    public ProductCategoryView setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

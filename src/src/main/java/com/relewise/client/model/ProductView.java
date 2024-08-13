@@ -29,6 +29,8 @@ public class ProductView extends Trackable implements IUserIdentifier
     public @Nullable User user;
     public Product product;
     public @Nullable ProductVariant variant;
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel channel;
     public static ProductView create(@Nullable User user, Product product)
     {
         return new ProductView(user, product);
@@ -65,6 +67,11 @@ public class ProductView extends Trackable implements IUserIdentifier
     {
         return this.variant;
     }
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel getChannel()
+    {
+        return this.channel;
+    }
     public ProductView setUser(User user)
     {
         this.user = user;
@@ -78,6 +85,12 @@ public class ProductView extends Trackable implements IUserIdentifier
     public ProductView setVariant(ProductVariant variant)
     {
         this.variant = variant;
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    public ProductView setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

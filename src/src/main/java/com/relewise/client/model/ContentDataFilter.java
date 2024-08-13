@@ -150,4 +150,10 @@ public class ContentDataFilter extends DataFilter implements IContentFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public ContentDataFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

@@ -26,6 +26,8 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = RedirectRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.RedirectRulesRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = DecompoundRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.DecompoundRulesRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = StemmingRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.StemmingRulesRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = SearchTermModifierRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SearchTermModifierRulesRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = SearchResultModifierRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SearchResultModifierRulesRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class PredictionRulesRequestSortBySearchRulesRequest extends LicensedRequest

@@ -75,4 +75,11 @@ public abstract class ProductCategoryRecommendationRequest extends Recommendatio
         this.currency = currency;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public ProductCategoryRecommendationRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

@@ -26,7 +26,8 @@ import java.util.HashSet;
 public class ProductRecentlyPurchasedByUserFilter extends Filter implements IProductFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.ProductRecentlyPurchasedByUserFilter, Relewise.Client";
-    public OffsetDateTime sinceUtc;
+    public @Nullable OffsetDateTime sinceUtc;
+    public @Nullable Integer sinceMinutesAgo;
     public static ProductRecentlyPurchasedByUserFilter create(OffsetDateTime sinceUtc)
     {
         return new ProductRecentlyPurchasedByUserFilter(sinceUtc);
@@ -49,19 +50,34 @@ public class ProductRecentlyPurchasedByUserFilter extends Filter implements IPro
     {
         this.negated = false;
     }
-    public OffsetDateTime getSinceUtc()
+    public @Nullable OffsetDateTime getSinceUtc()
     {
         return this.sinceUtc;
     }
-    public ProductRecentlyPurchasedByUserFilter setSinceUtc(OffsetDateTime sinceUtc)
+    public @Nullable Integer getSinceMinutesAgo()
+    {
+        return this.sinceMinutesAgo;
+    }
+    public ProductRecentlyPurchasedByUserFilter setSinceUtc(@Nullable OffsetDateTime sinceUtc)
     {
         this.sinceUtc = sinceUtc;
+        return this;
+    }
+    public ProductRecentlyPurchasedByUserFilter setSinceMinutesAgo(@Nullable Integer sinceMinutesAgo)
+    {
+        this.sinceMinutesAgo = sinceMinutesAgo;
         return this;
     }
     @Override
     public ProductRecentlyPurchasedByUserFilter setNegated(Boolean negated)
     {
         this.negated = negated;
+        return this;
+    }
+    @Override
+    public ProductRecentlyPurchasedByUserFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
         return this;
     }
 }

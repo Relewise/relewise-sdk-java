@@ -17,6 +17,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
+/** a <code>RelevanceModifier</code> that can change the relevance of a Product depending on the sales price falling within a specific <code>Range</code>. */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,
@@ -26,9 +27,13 @@ import java.util.HashSet;
 public class ProductSalesPriceRelevanceModifier extends RelevanceModifier implements IProductRelevanceModifier
 {
     public String $type = "Relewise.Client.Requests.RelevanceModifiers.ProductSalesPriceRelevanceModifier, Relewise.Client";
+    /** The range of sales prices that this <code>RelevanceModifier</code> will distinguish on. */
     public DoubleRange range;
+    /** The currency that is used to distinguish the price. */
     public @Nullable Currency currency;
+    /** The weight that this <code>RelevanceModifier</code> will multiply relevant products with. */
     public Double multiplyWeightBy;
+    /** Determines whether this <code>RelevanceModifier</code> should apply to all the Products that aren't contained within the specific <code>Range</code> instead. */
     public Boolean negated;
     public static ProductSalesPriceRelevanceModifier create(DoubleRange range)
     {
@@ -41,12 +46,24 @@ public class ProductSalesPriceRelevanceModifier extends RelevanceModifier implem
         this.currency = null;
         this.negated = false;
     }
-    /** 0.0: Means it will be given zero percentage of its default weight during evaluation, but may still be used as "fill" to meet the "desiredNumberOfRecommendations" 0.5: Means a product must be twice as good a match as one with a default weight of 1.0 in order to be considered equal in the recommendation results. 1.0: Default weight 2.0: Means a product only have to be half as good a match, as one with a weight of 1.0 to still score equally high in the recommendation results */
+    /**
+     * Creates a <code>RelevanceModifier</code> that can change the relevance of a Product depending on the sales price falling within a specific <code>Range</code>.
+     * @param range The range of sales prices that this RelevanceModifier will distinguish on.
+     * @param multiplyWeightBy The weight that this RelevanceModifier will multiply relevant products with.
+     * @param currency The currency that is used to distinguish the price.
+     * @param negated Determines whether this RelevanceModifier should apply to all the Products that aren't contained within the specific Range instead.
+     */
     public static ProductSalesPriceRelevanceModifier create(DoubleRange range, Double multiplyWeightBy, @Nullable Currency currency, Boolean negated)
     {
         return new ProductSalesPriceRelevanceModifier(range, multiplyWeightBy, currency, negated);
     }
-    /** 0.0: Means it will be given zero percentage of its default weight during evaluation, but may still be used as "fill" to meet the "desiredNumberOfRecommendations" 0.5: Means a product must be twice as good a match as one with a default weight of 1.0 in order to be considered equal in the recommendation results. 1.0: Default weight 2.0: Means a product only have to be half as good a match, as one with a weight of 1.0 to still score equally high in the recommendation results */
+    /**
+     * Creates a <code>RelevanceModifier</code> that can change the relevance of a Product depending on the sales price falling within a specific <code>Range</code>.
+     * @param range The range of sales prices that this RelevanceModifier will distinguish on.
+     * @param multiplyWeightBy The weight that this RelevanceModifier will multiply relevant products with.
+     * @param currency The currency that is used to distinguish the price.
+     * @param negated Determines whether this RelevanceModifier should apply to all the Products that aren't contained within the specific Range instead.
+     */
     public ProductSalesPriceRelevanceModifier(DoubleRange range, Double multiplyWeightBy, @Nullable Currency currency, Boolean negated)
     {
         this.range = range;
@@ -60,37 +77,45 @@ public class ProductSalesPriceRelevanceModifier extends RelevanceModifier implem
         this.multiplyWeightBy = 1d;
         this.negated = false;
     }
+    /** The range of sales prices that this <code>RelevanceModifier</code> will distinguish on. */
     public DoubleRange getRange()
     {
         return this.range;
     }
+    /** The currency that is used to distinguish the price. */
     public @Nullable Currency getCurrency()
     {
         return this.currency;
     }
+    /** The weight that this <code>RelevanceModifier</code> will multiply relevant products with. */
     public Double getMultiplyWeightBy()
     {
         return this.multiplyWeightBy;
     }
+    /** Determines whether this <code>RelevanceModifier</code> should apply to all the Products that aren't contained within the specific <code>Range</code> instead. */
     public Boolean getNegated()
     {
         return this.negated;
     }
+    /** The range of sales prices that this <code>RelevanceModifier</code> will distinguish on. */
     public ProductSalesPriceRelevanceModifier setRange(DoubleRange range)
     {
         this.range = range;
         return this;
     }
+    /** The currency that is used to distinguish the price. */
     public ProductSalesPriceRelevanceModifier setCurrency(Currency currency)
     {
         this.currency = currency;
         return this;
     }
+    /** The weight that this <code>RelevanceModifier</code> will multiply relevant products with. */
     public ProductSalesPriceRelevanceModifier setMultiplyWeightBy(Double multiplyWeightBy)
     {
         this.multiplyWeightBy = multiplyWeightBy;
         return this;
     }
+    /** Determines whether this <code>RelevanceModifier</code> should apply to all the Products that aren't contained within the specific <code>Range</code> instead. */
     public ProductSalesPriceRelevanceModifier setNegated(Boolean negated)
     {
         this.negated = negated;

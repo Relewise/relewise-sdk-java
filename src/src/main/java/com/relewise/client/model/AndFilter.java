@@ -78,4 +78,10 @@ public class AndFilter extends Filter implements IProductFilter, IContentFilter,
         this.negated = negated;
         return this;
     }
+    @Override
+    public AndFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

@@ -93,4 +93,11 @@ public class SearchTermBasedProductRecommendationRequest extends ProductRecommen
         this.currency = currency;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public SearchTermBasedProductRecommendationRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

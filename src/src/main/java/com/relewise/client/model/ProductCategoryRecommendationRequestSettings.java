@@ -25,6 +25,7 @@ public class ProductCategoryRecommendationRequestSettings
     public Boolean allowReplacingOfRecentlyShownRecommendations;
     public Boolean prioritizeDiversityBetweenRequests;
     public SelectedProductCategoryPropertiesSettings selectedProductCategoryProperties;
+    public @Nullable Integer prioritizeResultsNotRecommendedWithinSeconds;
     public static ProductCategoryRecommendationRequestSettings create()
     {
         return new ProductCategoryRecommendationRequestSettings();
@@ -52,6 +53,10 @@ public class ProductCategoryRecommendationRequestSettings
     {
         return this.selectedProductCategoryProperties;
     }
+    public @Nullable Integer getPrioritizeResultsNotRecommendedWithinSeconds()
+    {
+        return this.prioritizeResultsNotRecommendedWithinSeconds;
+    }
     public ProductCategoryRecommendationRequestSettings setNumberOfRecommendations(Integer numberOfRecommendations)
     {
         this.numberOfRecommendations = numberOfRecommendations;
@@ -75,6 +80,11 @@ public class ProductCategoryRecommendationRequestSettings
     public ProductCategoryRecommendationRequestSettings setSelectedProductCategoryProperties(SelectedProductCategoryPropertiesSettings selectedProductCategoryProperties)
     {
         this.selectedProductCategoryProperties = selectedProductCategoryProperties;
+        return this;
+    }
+    public ProductCategoryRecommendationRequestSettings setPrioritizeResultsNotRecommendedWithinSeconds(@Nullable Integer prioritizeResultsNotRecommendedWithinSeconds)
+    {
+        this.prioritizeResultsNotRecommendedWithinSeconds = prioritizeResultsNotRecommendedWithinSeconds;
         return this;
     }
 }

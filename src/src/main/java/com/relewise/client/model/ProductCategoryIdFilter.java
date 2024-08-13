@@ -75,4 +75,10 @@ public class ProductCategoryIdFilter extends CategoryIdFilter implements IProduc
         this.negated = negated;
         return this;
     }
+    @Override
+    public ProductCategoryIdFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

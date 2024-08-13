@@ -54,4 +54,10 @@ public abstract class HasParentCategoryFilter extends Filter
         this.negated = negated;
         return this;
     }
+    @Override
+    public HasParentCategoryFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

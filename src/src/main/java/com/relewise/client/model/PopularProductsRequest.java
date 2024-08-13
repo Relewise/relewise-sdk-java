@@ -28,6 +28,8 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
     public String $type = "Relewise.Client.Requests.Recommendations.PopularProductsRequest, Relewise.Client";
     public PopularityTypes basedOn;
     public Integer sinceMinutesAgo;
+    /** A selector for changing the weighing of observed views or purchases on an entity basis when making the recommendation. */
+    public @Nullable PopularityMultiplierSelector popularityMultiplier;
     public static PopularProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, PopularityTypes basedOn, Integer sinceMinutesAgo)
     {
         return new PopularProductsRequest(language, currency, displayedAtLocationType, user, basedOn, sinceMinutesAgo);
@@ -52,6 +54,11 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
     {
         return this.sinceMinutesAgo;
     }
+    /** A selector for changing the weighing of observed views or purchases on an entity basis when making the recommendation. */
+    public @Nullable PopularityMultiplierSelector getPopularityMultiplier()
+    {
+        return this.popularityMultiplier;
+    }
     public PopularProductsRequest setBasedOn(PopularityTypes basedOn)
     {
         this.basedOn = basedOn;
@@ -60,6 +67,12 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
     public PopularProductsRequest setSinceMinutesAgo(Integer sinceMinutesAgo)
     {
         this.sinceMinutesAgo = sinceMinutesAgo;
+        return this;
+    }
+    /** A selector for changing the weighing of observed views or purchases on an entity basis when making the recommendation. */
+    public PopularProductsRequest setPopularityMultiplier(PopularityMultiplierSelector popularityMultiplier)
+    {
+        this.popularityMultiplier = popularityMultiplier;
         return this;
     }
     @Override
@@ -102,6 +115,13 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
     public PopularProductsRequest setCurrency(Currency currency)
     {
         this.currency = currency;
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public PopularProductsRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

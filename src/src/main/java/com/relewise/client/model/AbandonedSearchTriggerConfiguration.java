@@ -28,6 +28,8 @@ public class AbandonedSearchTriggerConfiguration extends AbandonedSearchTriggerR
     public String $type = "Relewise.Client.DataTypes.Triggers.Configurations.AbandonedSearchTriggerConfiguration, Relewise.Client";
     public SearchType[] searchTypesInPrioritizedOrder;
     public @Nullable SearchTermCondition searchTermCondition;
+    public Boolean suppressOnEntityFromSearchResultViewed;
+    public Integer considerAbandonedAfterMinutes;
     public static AbandonedSearchTriggerConfiguration create(String name, String description, SearchType... searchTypesInPrioritizedOrder)
     {
         return new AbandonedSearchTriggerConfiguration(name, description, searchTypesInPrioritizedOrder);
@@ -38,21 +40,24 @@ public class AbandonedSearchTriggerConfiguration extends AbandonedSearchTriggerR
         this.description = description;
         this.searchTypesInPrioritizedOrder = searchTypesInPrioritizedOrder;
         this.searchTermCondition = null;
+        this.suppressOnEntityFromSearchResultViewed = true;
     }
-    public static AbandonedSearchTriggerConfiguration create(String name, String description, SearchType[] searchTypesInPrioritizedOrder, SearchTermCondition searchTermCondition)
+    public static AbandonedSearchTriggerConfiguration create(String name, String description, SearchType[] searchTypesInPrioritizedOrder, @Nullable SearchTermCondition searchTermCondition, Boolean suppressOnEntityFromSearchResultViewed)
     {
-        return new AbandonedSearchTriggerConfiguration(name, description, searchTypesInPrioritizedOrder, searchTermCondition);
+        return new AbandonedSearchTriggerConfiguration(name, description, searchTypesInPrioritizedOrder, searchTermCondition, suppressOnEntityFromSearchResultViewed);
     }
-    public AbandonedSearchTriggerConfiguration(String name, String description, SearchType[] searchTypesInPrioritizedOrder, SearchTermCondition searchTermCondition)
+    public AbandonedSearchTriggerConfiguration(String name, String description, SearchType[] searchTypesInPrioritizedOrder, @Nullable SearchTermCondition searchTermCondition, Boolean suppressOnEntityFromSearchResultViewed)
     {
         this.name = name;
         this.description = description;
         this.searchTypesInPrioritizedOrder = searchTypesInPrioritizedOrder;
         this.searchTermCondition = searchTermCondition;
+        this.suppressOnEntityFromSearchResultViewed = suppressOnEntityFromSearchResultViewed;
     }
     public AbandonedSearchTriggerConfiguration()
     {
         this.searchTermCondition = null;
+        this.suppressOnEntityFromSearchResultViewed = true;
     }
     public SearchType[] getSearchTypesInPrioritizedOrder()
     {
@@ -61,6 +66,14 @@ public class AbandonedSearchTriggerConfiguration extends AbandonedSearchTriggerR
     public @Nullable SearchTermCondition getSearchTermCondition()
     {
         return this.searchTermCondition;
+    }
+    public Boolean getSuppressOnEntityFromSearchResultViewed()
+    {
+        return this.suppressOnEntityFromSearchResultViewed;
+    }
+    public Integer getConsiderAbandonedAfterMinutes()
+    {
+        return this.considerAbandonedAfterMinutes;
     }
     public AbandonedSearchTriggerConfiguration setSearchTypesInPrioritizedOrder(SearchType... searchTypesInPrioritizedOrder)
     {
@@ -84,6 +97,16 @@ public class AbandonedSearchTriggerConfiguration extends AbandonedSearchTriggerR
     public AbandonedSearchTriggerConfiguration setSearchTermCondition(SearchTermCondition searchTermCondition)
     {
         this.searchTermCondition = searchTermCondition;
+        return this;
+    }
+    public AbandonedSearchTriggerConfiguration setSuppressOnEntityFromSearchResultViewed(Boolean suppressOnEntityFromSearchResultViewed)
+    {
+        this.suppressOnEntityFromSearchResultViewed = suppressOnEntityFromSearchResultViewed;
+        return this;
+    }
+    public AbandonedSearchTriggerConfiguration setConsiderAbandonedAfterMinutes(Integer considerAbandonedAfterMinutes)
+    {
+        this.considerAbandonedAfterMinutes = considerAbandonedAfterMinutes;
         return this;
     }
     @Override

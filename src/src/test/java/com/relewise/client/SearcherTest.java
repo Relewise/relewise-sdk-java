@@ -58,6 +58,13 @@ public class SearcherTest extends TestBase {
         ).setFilters(
             FilterCollection.create(
                 ProductRecentlyViewedByUserFilter.create(OffsetDateTime.now().minusDays(365))
+                    .setSettings(
+                        FilterSettings.create()
+                            .setScopes(
+                                FilterScopes.create()
+                                    .setDefault(ApplyFilterSettings.create(true))
+                            )
+                    )
             )
         );
 

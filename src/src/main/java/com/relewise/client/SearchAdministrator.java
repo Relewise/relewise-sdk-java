@@ -72,4 +72,28 @@ public class SearchAdministrator extends RelewiseClient
     public DeleteSearchRulesResponse delete(DeleteStemmingRulesRequest request) throws IOException, InterruptedException, ClientException {
         return makeRequestAndValidate("DeleteStemmingRulesRequest", request, DeleteSearchRulesResponse.class);
     }
+    
+    public SearchTermModifierRulesResponse load(SearchTermModifierRulesRequest request) throws IOException, InterruptedException, ClientException {
+        return makeRequestAndValidate("SearchTermModifierRulesRequest", request, SearchTermModifierRulesResponse.class);
+    }
+    
+    public SaveSearchTermModifierRulesResponse save(SaveSearchTermModifierRulesRequest request) throws IOException, InterruptedException, ClientException {
+        return makeRequestAndValidate("SaveSearchTermModifierRulesRequest", request, SaveSearchTermModifierRulesResponse.class);
+    }
+    
+    public DeleteSearchRulesResponse delete(DeleteSearchTermModifierRulesRequest request) throws IOException, InterruptedException, ClientException {
+        return makeRequestAndValidate("DeleteSearchTermModifierRulesRequest", request, DeleteSearchRulesResponse.class);
+    }
+    
+    public SearchResultModifierRulesResponse load(SearchResultModifierRulesRequest request) throws IOException, InterruptedException, ClientException {
+        return makeRequestAndValidate("SearchResultModifierRulesRequest", request, SearchResultModifierRulesResponse.class);
+    }
+    
+    public SaveSearchResultModifierRulesResponse save(SaveSearchResultModifierRulesRequest request) throws IOException, InterruptedException, ClientException {
+        return makeRequestAndValidate("SaveSearchResultModifierRulesRequest", request, SaveSearchResultModifierRulesResponse.class);
+    }
+    
+    public DeleteSearchRulesResponse delete(DeleteSearchResultModifierRulesRequest request) throws IOException, InterruptedException, ClientException {
+        return makeRequestAndValidate("DeleteSearchResultModifierRulesRequest", request, DeleteSearchRulesResponse.class);
+    }
 }

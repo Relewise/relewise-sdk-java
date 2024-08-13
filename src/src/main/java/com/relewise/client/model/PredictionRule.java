@@ -25,7 +25,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PredictionRule extends SearchRule
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.PredictionRule, Relewise.Client";
+    public String $type = "Relewise.Client.DataTypes.Search.Rules.PredictionRule, Relewise.Client";
     public SearchTermCondition condition;
     public PredictionRulePromotion promote;
     public PredictionRuleSuppression suppress;

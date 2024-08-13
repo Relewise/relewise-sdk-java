@@ -104,4 +104,11 @@ public class PopularContentCategoriesRecommendationRequest extends ContentCatego
         this.currency = currency;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public PopularContentCategoriesRecommendationRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

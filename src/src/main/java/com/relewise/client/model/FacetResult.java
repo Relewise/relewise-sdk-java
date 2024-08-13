@@ -54,6 +54,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = DataObjectDoubleRangeFacetResult.class, name = "Relewise.Client.DataTypes.Search.Facets.Result.DataObjectDoubleRangeFacetResult, Relewise.Client"),
     @JsonSubTypes.Type(value = DataObjectDoubleRangesFacetResult.class, name = "Relewise.Client.DataTypes.Search.Facets.Result.DataObjectDoubleRangesFacetResult, Relewise.Client"),
     @JsonSubTypes.Type(value = DataObjectFacetResult.class, name = "Relewise.Client.DataTypes.Search.Facets.Result.DataObjectFacetResult, Relewise.Client"),
+    @JsonSubTypes.Type(value = CategoryHierarchyFacetResult.class, name = "Relewise.Client.DataTypes.Search.Facets.Result.CategoryHierarchyFacetResult, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class FacetResult

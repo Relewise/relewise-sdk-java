@@ -65,4 +65,10 @@ public class AbandonedContentSearch extends StringAbandonedSearch
         this.hits = hits;
         return this;
     }
+    @Override
+    public AbandonedContentSearch setLanguage(Language language)
+    {
+        this.language = language;
+        return this;
+    }
 }

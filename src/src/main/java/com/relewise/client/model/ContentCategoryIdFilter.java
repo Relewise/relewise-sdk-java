@@ -75,4 +75,10 @@ public class ContentCategoryIdFilter extends CategoryIdFilter implements IConten
         this.negated = negated;
         return this;
     }
+    @Override
+    public ContentCategoryIdFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

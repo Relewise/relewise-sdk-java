@@ -138,4 +138,11 @@ public class ContentCategorySearchRequest extends PaginatedSearchRequest impleme
         this.postFilters = postFilters;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public ContentCategorySearchRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

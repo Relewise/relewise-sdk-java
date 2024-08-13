@@ -67,4 +67,10 @@ public class ContentIdFilter extends Filter implements IContentFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public ContentIdFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

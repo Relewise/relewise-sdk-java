@@ -93,4 +93,11 @@ public class SortVariantsRequest extends ProductRecommendationRequest implements
         this.currency = currency;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public SortVariantsRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

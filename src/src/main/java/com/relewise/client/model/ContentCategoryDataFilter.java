@@ -150,4 +150,10 @@ public class ContentCategoryDataFilter extends DataFilter implements ICategoryFi
         this.negated = negated;
         return this;
     }
+    @Override
+    public ContentCategoryDataFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

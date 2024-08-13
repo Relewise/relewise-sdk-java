@@ -29,6 +29,8 @@ public class SearchTerm extends Trackable implements IUserIdentifier
     public Language language;
     public User user;
     public String term;
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel channel;
     public static SearchTerm create(Language language, User user, String term)
     {
         return new SearchTerm(language, user, term);
@@ -54,6 +56,11 @@ public class SearchTerm extends Trackable implements IUserIdentifier
     {
         return this.term;
     }
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel getChannel()
+    {
+        return this.channel;
+    }
     public SearchTerm setLanguage(Language language)
     {
         this.language = language;
@@ -67,6 +74,12 @@ public class SearchTerm extends Trackable implements IUserIdentifier
     public SearchTerm setTerm(String term)
     {
         this.term = term;
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    public SearchTerm setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

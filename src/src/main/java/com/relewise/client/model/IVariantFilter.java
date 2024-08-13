@@ -17,6 +17,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
 
+/** a <code>Filter</code> that can be used to define which variants to include for products in queries. */
 public interface IVariantFilter
 {
 }

@@ -25,6 +25,7 @@ public class OverriddenContentRecommendationRequestSettings
     public @Nullable Boolean allowReplacingOfRecentlyShownRecommendations;
     public OverriddenSelectedContentPropertiesSettings selectedContentProperties;
     public @Nullable Boolean prioritizeDiversityBetweenRequests;
+    public @Nullable Integer prioritizeResultsNotRecommendedWithinSeconds;
     public static OverriddenContentRecommendationRequestSettings create()
     {
         return new OverriddenContentRecommendationRequestSettings();
@@ -52,6 +53,10 @@ public class OverriddenContentRecommendationRequestSettings
     {
         return this.prioritizeDiversityBetweenRequests;
     }
+    public @Nullable Integer getPrioritizeResultsNotRecommendedWithinSeconds()
+    {
+        return this.prioritizeResultsNotRecommendedWithinSeconds;
+    }
     public OverriddenContentRecommendationRequestSettings setNumberOfRecommendations(@Nullable Integer numberOfRecommendations)
     {
         this.numberOfRecommendations = numberOfRecommendations;
@@ -75,6 +80,11 @@ public class OverriddenContentRecommendationRequestSettings
     public OverriddenContentRecommendationRequestSettings setPrioritizeDiversityBetweenRequests(@Nullable Boolean prioritizeDiversityBetweenRequests)
     {
         this.prioritizeDiversityBetweenRequests = prioritizeDiversityBetweenRequests;
+        return this;
+    }
+    public OverriddenContentRecommendationRequestSettings setPrioritizeResultsNotRecommendedWithinSeconds(@Nullable Integer prioritizeResultsNotRecommendedWithinSeconds)
+    {
+        this.prioritizeResultsNotRecommendedWithinSeconds = prioritizeResultsNotRecommendedWithinSeconds;
         return this;
     }
 }

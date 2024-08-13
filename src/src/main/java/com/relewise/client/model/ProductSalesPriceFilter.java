@@ -77,4 +77,10 @@ public class ProductSalesPriceFilter extends Filter implements IProductFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public ProductSalesPriceFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

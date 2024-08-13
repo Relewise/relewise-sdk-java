@@ -150,4 +150,10 @@ public class VariantDataFilter extends DataFilter implements IVariantFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public VariantDataFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

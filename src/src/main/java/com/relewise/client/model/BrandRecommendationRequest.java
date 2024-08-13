@@ -75,4 +75,11 @@ public abstract class BrandRecommendationRequest extends RecommendationRequest i
         this.currency = currency;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public BrandRecommendationRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

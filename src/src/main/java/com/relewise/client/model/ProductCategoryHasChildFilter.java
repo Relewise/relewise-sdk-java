@@ -63,4 +63,10 @@ public class ProductCategoryHasChildFilter extends HasChildCategoryFilter implem
         this.negated = negated;
         return this;
     }
+    @Override
+    public ProductCategoryHasChildFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

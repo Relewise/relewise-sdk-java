@@ -29,4 +29,9 @@ public enum PopularityTypes
             return "MostViewed";
         }
     },
+    LineRevenue {
+        public String toString() {
+            return "LineRevenue";
+        }
+    },
 }

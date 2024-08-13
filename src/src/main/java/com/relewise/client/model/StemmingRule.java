@@ -25,7 +25,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StemmingRule extends SearchRule
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.StemmingRule, Relewise.Client";
+    public String $type = "Relewise.Client.DataTypes.Search.Rules.StemmingRule, Relewise.Client";
     public String[] words;
     public @Nullable String stem;
     public static StemmingRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, String[] words, String stem)

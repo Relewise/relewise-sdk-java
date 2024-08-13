@@ -63,4 +63,10 @@ public class ProductCategoryLevelFilter extends CategoryLevelFilter implements I
         this.negated = negated;
         return this;
     }
+    @Override
+    public ProductCategoryLevelFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

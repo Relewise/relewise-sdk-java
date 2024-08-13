@@ -150,4 +150,10 @@ public class ProductCategoryDataFilter extends DataFilter implements ICategoryFi
         this.negated = negated;
         return this;
     }
+    @Override
+    public ProductCategoryDataFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

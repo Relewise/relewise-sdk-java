@@ -28,6 +28,8 @@ public class BrandView extends Trackable implements IUserIdentifier
     public String $type = "Relewise.Client.DataTypes.BrandView, Relewise.Client";
     public @Nullable User user;
     public Brand brand;
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel channel;
     public static BrandView create(@Nullable User user, Brand brand)
     {
         return new BrandView(user, brand);
@@ -48,6 +50,11 @@ public class BrandView extends Trackable implements IUserIdentifier
     {
         return this.brand;
     }
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel getChannel()
+    {
+        return this.channel;
+    }
     public BrandView setUser(User user)
     {
         this.user = user;
@@ -56,6 +63,12 @@ public class BrandView extends Trackable implements IUserIdentifier
     public BrandView setBrand(Brand brand)
     {
         this.brand = brand;
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    public BrandView setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

@@ -25,6 +25,7 @@ public class ContentCategoryRecommendationRequestSettings
     public Boolean allowReplacingOfRecentlyShownRecommendations;
     public Boolean prioritizeDiversityBetweenRequests;
     public SelectedContentCategoryPropertiesSettings selectedContentCategoryProperties;
+    public @Nullable Integer prioritizeResultsNotRecommendedWithinSeconds;
     public static ContentCategoryRecommendationRequestSettings create()
     {
         return new ContentCategoryRecommendationRequestSettings();
@@ -52,6 +53,10 @@ public class ContentCategoryRecommendationRequestSettings
     {
         return this.selectedContentCategoryProperties;
     }
+    public @Nullable Integer getPrioritizeResultsNotRecommendedWithinSeconds()
+    {
+        return this.prioritizeResultsNotRecommendedWithinSeconds;
+    }
     public ContentCategoryRecommendationRequestSettings setNumberOfRecommendations(Integer numberOfRecommendations)
     {
         this.numberOfRecommendations = numberOfRecommendations;
@@ -75,6 +80,11 @@ public class ContentCategoryRecommendationRequestSettings
     public ContentCategoryRecommendationRequestSettings setSelectedContentCategoryProperties(SelectedContentCategoryPropertiesSettings selectedContentCategoryProperties)
     {
         this.selectedContentCategoryProperties = selectedContentCategoryProperties;
+        return this;
+    }
+    public ContentCategoryRecommendationRequestSettings setPrioritizeResultsNotRecommendedWithinSeconds(@Nullable Integer prioritizeResultsNotRecommendedWithinSeconds)
+    {
+        this.prioritizeResultsNotRecommendedWithinSeconds = prioritizeResultsNotRecommendedWithinSeconds;
         return this;
     }
 }

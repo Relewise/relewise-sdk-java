@@ -25,6 +25,7 @@ public class BrandRecommendationRequestSettings
     public Boolean allowReplacingOfRecentlyShownRecommendations;
     public Boolean prioritizeDiversityBetweenRequests;
     public @Nullable SelectedBrandPropertiesSettings selectedBrandProperties;
+    public @Nullable Integer prioritizeResultsNotRecommendedWithinSeconds;
     public static BrandRecommendationRequestSettings create()
     {
         return new BrandRecommendationRequestSettings();
@@ -52,6 +53,10 @@ public class BrandRecommendationRequestSettings
     {
         return this.selectedBrandProperties;
     }
+    public @Nullable Integer getPrioritizeResultsNotRecommendedWithinSeconds()
+    {
+        return this.prioritizeResultsNotRecommendedWithinSeconds;
+    }
     public BrandRecommendationRequestSettings setNumberOfRecommendations(Integer numberOfRecommendations)
     {
         this.numberOfRecommendations = numberOfRecommendations;
@@ -75,6 +80,11 @@ public class BrandRecommendationRequestSettings
     public BrandRecommendationRequestSettings setSelectedBrandProperties(SelectedBrandPropertiesSettings selectedBrandProperties)
     {
         this.selectedBrandProperties = selectedBrandProperties;
+        return this;
+    }
+    public BrandRecommendationRequestSettings setPrioritizeResultsNotRecommendedWithinSeconds(@Nullable Integer prioritizeResultsNotRecommendedWithinSeconds)
+    {
+        this.prioritizeResultsNotRecommendedWithinSeconds = prioritizeResultsNotRecommendedWithinSeconds;
         return this;
     }
 }

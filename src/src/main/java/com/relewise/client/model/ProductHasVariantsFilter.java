@@ -64,4 +64,10 @@ public class ProductHasVariantsFilter extends Filter implements IProductFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public ProductHasVariantsFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

@@ -25,7 +25,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DecompoundRule extends SearchRule
 {
-    public String $type = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.DecompoundRule, Relewise.Client";
+    public String $type = "Relewise.Client.DataTypes.Search.Rules.DecompoundRule, Relewise.Client";
     public String word;
     public @Nullable String head;
     public @Nullable String[] modifiers;

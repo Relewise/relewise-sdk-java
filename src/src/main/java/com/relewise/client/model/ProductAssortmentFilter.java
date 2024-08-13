@@ -67,4 +67,10 @@ public class ProductAssortmentFilter extends Filter implements IProductFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public ProductAssortmentFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

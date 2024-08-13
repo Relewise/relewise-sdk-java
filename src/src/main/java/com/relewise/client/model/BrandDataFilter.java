@@ -150,4 +150,10 @@ public class BrandDataFilter extends DataFilter implements IBrandFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public BrandDataFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

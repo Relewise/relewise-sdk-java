@@ -77,4 +77,10 @@ public class VariantSalesPriceFilter extends Filter implements IVariantFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public VariantSalesPriceFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

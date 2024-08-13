@@ -17,6 +17,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
 
+/** Defines how entities are to be selected by given paths. */
 public enum CategorySelectionStrategy
 {
     ImmediateParent {
@@ -27,6 +28,11 @@ public enum CategorySelectionStrategy
     Ancestors {
         public String toString() {
             return "Ancestors";
+        }
+    },
+    Descendants {
+        public String toString() {
+            return "Descendants";
         }
     },
 }

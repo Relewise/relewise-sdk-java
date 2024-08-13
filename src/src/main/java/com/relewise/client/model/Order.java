@@ -26,13 +26,16 @@ import java.util.HashSet;
 public class Order extends Trackable implements IUserIdentifier
 {
     public String $type = "Relewise.Client.DataTypes.Order, Relewise.Client";
-    public User user;
+    public @Nullable User user;
     public Money subtotal;
     public ArrayList<LineItem> lineItems;
     public String orderNumber;
     public String cartName;
-    public @Nullable String channel;
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel channel;
+    /** @deprecated Use Channel.SubChannel instead. */
     public @Nullable String subChannel;
+    public @Nullable HashMap<String, DataValue> data;
     /** @deprecated Use OrderNumber instead. */
     public @Nullable String trackingNumber;
     public static Order create(User user, Money subtotal, String orderNumber, LineItem... lineItems)
@@ -63,7 +66,7 @@ public class Order extends Trackable implements IUserIdentifier
     {
         this.cartName = "default";
     }
-    public User getUser()
+    public @Nullable User getUser()
     {
         return this.user;
     }
@@ -83,13 +86,19 @@ public class Order extends Trackable implements IUserIdentifier
     {
         return this.cartName;
     }
-    public @Nullable String getChannel()
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel getChannel()
     {
         return this.channel;
     }
+    /** @deprecated Use Channel.SubChannel instead. */
     public @Nullable String getSubChannel()
     {
         return this.subChannel;
+    }
+    public @Nullable HashMap<String, DataValue> getData()
+    {
+        return this.data;
     }
     /** @deprecated Use OrderNumber instead. */
     public @Nullable String getTrackingNumber()
@@ -130,14 +139,30 @@ public class Order extends Trackable implements IUserIdentifier
         this.cartName = cartName;
         return this;
     }
-    public Order setChannel(String channel)
+    /** @deprecated Use User.Channel instead. */
+    public Order setChannel(Channel channel)
     {
         this.channel = channel;
         return this;
     }
+    /** @deprecated Use Channel.SubChannel instead. */
     public Order setSubChannel(String subChannel)
     {
         this.subChannel = subChannel;
+        return this;
+    }
+    public Order addToData(String key, DataValue value)
+    {
+        if (this.data == null)
+        {
+            this.data = new HashMap<>();
+        }
+        this.data.put(key, value);
+        return this;
+    }
+    public Order setData(HashMap<String, DataValue> data)
+    {
+        this.data = data;
         return this;
     }
     /** @deprecated Use OrderNumber instead. */

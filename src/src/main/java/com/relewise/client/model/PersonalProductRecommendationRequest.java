@@ -82,4 +82,11 @@ public class PersonalProductRecommendationRequest extends ProductRecommendationR
         this.currency = currency;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public PersonalProductRecommendationRequest setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

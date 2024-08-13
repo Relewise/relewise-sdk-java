@@ -86,4 +86,10 @@ public class VariantSpecificationFilter extends Filter implements IVariantFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public VariantSpecificationFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

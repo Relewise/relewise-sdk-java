@@ -31,6 +31,8 @@ public class Cart extends Trackable implements IUserIdentifier
     public @Nullable Money subtotal;
     public @Nullable ArrayList<LineItem> lineItems;
     public @Nullable HashMap<String, DataValue> data;
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel channel;
     public static Cart create(@Nullable User user, Money subtotal, LineItem... lineItems)
     {
         return new Cart(user, subtotal, lineItems);
@@ -76,6 +78,11 @@ public class Cart extends Trackable implements IUserIdentifier
     {
         return this.data;
     }
+    /** @deprecated Use User.Channel instead. */
+    public @Nullable Channel getChannel()
+    {
+        return this.channel;
+    }
     public Cart setUser(User user)
     {
         this.user = user;
@@ -117,6 +124,12 @@ public class Cart extends Trackable implements IUserIdentifier
     public Cart setData(HashMap<String, DataValue> data)
     {
         this.data = data;
+        return this;
+    }
+    /** @deprecated Use User.Channel instead. */
+    public Cart setChannel(Channel channel)
+    {
+        this.channel = channel;
         return this;
     }
 }

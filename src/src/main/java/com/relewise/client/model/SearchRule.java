@@ -22,10 +22,12 @@ import java.util.HashSet;
     include = JsonTypeInfo.As.EXISTING_PROPERTY,
     property = "$type")
 @JsonSubTypes({
-    @JsonSubTypes.Type(value = PredictionRule.class, name = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.PredictionRule, Relewise.Client"),
-    @JsonSubTypes.Type(value = RedirectRule.class, name = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.RedirectRule, Relewise.Client"),
-    @JsonSubTypes.Type(value = DecompoundRule.class, name = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.DecompoundRule, Relewise.Client"),
-    @JsonSubTypes.Type(value = StemmingRule.class, name = "Relewise.Client.DataTypes.Search.Configuration.SearchRules.StemmingRule, Relewise.Client"),
+    @JsonSubTypes.Type(value = PredictionRule.class, name = "Relewise.Client.DataTypes.Search.Rules.PredictionRule, Relewise.Client"),
+    @JsonSubTypes.Type(value = RedirectRule.class, name = "Relewise.Client.DataTypes.Search.Rules.RedirectRule, Relewise.Client"),
+    @JsonSubTypes.Type(value = DecompoundRule.class, name = "Relewise.Client.DataTypes.Search.Rules.DecompoundRule, Relewise.Client"),
+    @JsonSubTypes.Type(value = StemmingRule.class, name = "Relewise.Client.DataTypes.Search.Rules.StemmingRule, Relewise.Client"),
+    @JsonSubTypes.Type(value = SearchTermModifierRule.class, name = "Relewise.Client.DataTypes.Search.Rules.SearchTermModifierRule, Relewise.Client"),
+    @JsonSubTypes.Type(value = SearchResultModifierRule.class, name = "Relewise.Client.DataTypes.Search.Rules.SearchResultModifierRule, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class SearchRule

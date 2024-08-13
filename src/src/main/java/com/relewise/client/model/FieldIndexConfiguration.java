@@ -24,6 +24,7 @@ public class FieldIndexConfiguration
     public Short weight;
     public PredictionSourceType predictionSourceType;
     public @Nullable Parser parser;
+    public @Nullable MatchTypeSettings matchTypeSettings;
     public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser)
     {
         return new FieldIndexConfiguration(included, weight, predictionSourceType, parser);
@@ -34,6 +35,19 @@ public class FieldIndexConfiguration
         this.weight = weight;
         this.predictionSourceType = predictionSourceType;
         this.parser = parser;
+        this.matchTypeSettings = null;
+    }
+    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser, MatchTypeSettings matchTypeSettings)
+    {
+        return new FieldIndexConfiguration(included, weight, predictionSourceType, parser, matchTypeSettings);
+    }
+    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser, MatchTypeSettings matchTypeSettings)
+    {
+        this.included = included;
+        this.weight = weight;
+        this.predictionSourceType = predictionSourceType;
+        this.parser = parser;
+        this.matchTypeSettings = matchTypeSettings;
     }
     public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType)
     {
@@ -44,9 +58,22 @@ public class FieldIndexConfiguration
         this.included = included;
         this.weight = weight;
         this.predictionSourceType = predictionSourceType;
+        this.matchTypeSettings = null;
+    }
+    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType, MatchTypeSettings matchTypeSettings)
+    {
+        return new FieldIndexConfiguration(included, weight, predictionSourceType, matchTypeSettings);
+    }
+    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType, MatchTypeSettings matchTypeSettings)
+    {
+        this.included = included;
+        this.weight = weight;
+        this.predictionSourceType = predictionSourceType;
+        this.matchTypeSettings = matchTypeSettings;
     }
     public FieldIndexConfiguration()
     {
+        this.matchTypeSettings = null;
     }
     public Boolean getIncluded()
     {
@@ -63,6 +90,10 @@ public class FieldIndexConfiguration
     public @Nullable Parser getParser()
     {
         return this.parser;
+    }
+    public @Nullable MatchTypeSettings getMatchTypeSettings()
+    {
+        return this.matchTypeSettings;
     }
     public FieldIndexConfiguration setIncluded(Boolean included)
     {
@@ -82,6 +113,11 @@ public class FieldIndexConfiguration
     public FieldIndexConfiguration setParser(Parser parser)
     {
         this.parser = parser;
+        return this;
+    }
+    public FieldIndexConfiguration setMatchTypeSettings(MatchTypeSettings matchTypeSettings)
+    {
+        this.matchTypeSettings = matchTypeSettings;
         return this;
     }
 }

@@ -67,4 +67,10 @@ public class ProductAndVariantIdFilter extends Filter implements IProductFilter
         this.negated = negated;
         return this;
     }
+    @Override
+    public ProductAndVariantIdFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }

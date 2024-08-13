@@ -117,4 +117,11 @@ public class SearchRequestCollection extends SearchRequest implements IUserIdent
         this.postFilters = postFilters;
         return this;
     }
+    /** @deprecated Use User.Channel instead. */
+    @Override
+    public SearchRequestCollection setChannel(Channel channel)
+    {
+        this.channel = channel;
+        return this;
+    }
 }

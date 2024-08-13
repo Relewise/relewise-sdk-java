@@ -65,4 +65,10 @@ public class AbandonedProductSearch extends ProductAndVariantIdAbandonedSearch
         this.hits = hits;
         return this;
     }
+    @Override
+    public AbandonedProductSearch setLanguage(Language language)
+    {
+        this.language = language;
+        return this;
+    }
 }

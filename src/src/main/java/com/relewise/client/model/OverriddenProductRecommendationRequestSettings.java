@@ -29,6 +29,7 @@ public class OverriddenProductRecommendationRequestSettings
     public @Nullable Boolean prioritizeDiversityBetweenRequests;
     public @Nullable Boolean allowProductsCurrentlyInCart;
     public OverriddenSelectedBrandPropertiesSettings selectedBrandProperties;
+    public @Nullable Integer prioritizeResultsNotRecommendedWithinSeconds;
     public static OverriddenProductRecommendationRequestSettings create()
     {
         return new OverriddenProductRecommendationRequestSettings();
@@ -71,6 +72,10 @@ public class OverriddenProductRecommendationRequestSettings
     public OverriddenSelectedBrandPropertiesSettings getSelectedBrandProperties()
     {
         return this.selectedBrandProperties;
+    }
+    public @Nullable Integer getPrioritizeResultsNotRecommendedWithinSeconds()
+    {
+        return this.prioritizeResultsNotRecommendedWithinSeconds;
     }
     public OverriddenProductRecommendationRequestSettings setNumberOfRecommendations(@Nullable Integer numberOfRecommendations)
     {
@@ -115,6 +120,11 @@ public class OverriddenProductRecommendationRequestSettings
     public OverriddenProductRecommendationRequestSettings setSelectedBrandProperties(OverriddenSelectedBrandPropertiesSettings selectedBrandProperties)
     {
         this.selectedBrandProperties = selectedBrandProperties;
+        return this;
+    }
+    public OverriddenProductRecommendationRequestSettings setPrioritizeResultsNotRecommendedWithinSeconds(@Nullable Integer prioritizeResultsNotRecommendedWithinSeconds)
+    {
+        this.prioritizeResultsNotRecommendedWithinSeconds = prioritizeResultsNotRecommendedWithinSeconds;
         return this;
     }
 }

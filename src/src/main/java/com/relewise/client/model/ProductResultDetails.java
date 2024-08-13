@@ -41,6 +41,7 @@ public class ProductResultDetails
     public MultiCurrency listPrice;
     public MultiCurrency salesPrice;
     public BrandResultDetails brand;
+    public VariantResultDetails[] filteredVariants;
     public static ProductResultDetails create(String productId)
     {
         return new ProductResultDetails(productId);
@@ -135,6 +136,10 @@ public class ProductResultDetails
     public BrandResultDetails getBrand()
     {
         return this.brand;
+    }
+    public VariantResultDetails[] getFilteredVariants()
+    {
+        return this.filteredVariants;
     }
     public ProductResultDetails setProductId(String productId)
     {
@@ -290,6 +295,25 @@ public class ProductResultDetails
     public ProductResultDetails setBrand(BrandResultDetails brand)
     {
         this.brand = brand;
+        return this;
+    }
+    public ProductResultDetails setFilteredVariants(VariantResultDetails... filteredVariants)
+    {
+        this.filteredVariants = filteredVariants;
+        return this;
+    }
+    public ProductResultDetails addToFilteredVariants(VariantResultDetails filteredVariant)
+    {
+        if (this.filteredVariants == null)
+        {
+            this.filteredVariants = new VariantResultDetails[] { filteredVariant };
+        }
+        else
+        {
+            ArrayList<VariantResultDetails> existingList = new ArrayList<>(Arrays.asList(this.filteredVariants));
+            existingList.add(filteredVariant);
+            this.filteredVariants = existingList.toArray(new VariantResultDetails[0]);
+        }
         return this;
     }
 }

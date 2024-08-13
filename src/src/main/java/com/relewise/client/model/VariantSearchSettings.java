@@ -20,6 +20,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VariantSearchSettings
 {
+    /** @deprecated Use ProductSearchSettings.ResultConstraint instead */
     public Boolean excludeResultsWithoutVariant;
     public static VariantSearchSettings create()
     {
@@ -28,10 +29,12 @@ public class VariantSearchSettings
     public VariantSearchSettings()
     {
     }
+    /** @deprecated Use ProductSearchSettings.ResultConstraint instead */
     public Boolean getExcludeResultsWithoutVariant()
     {
         return this.excludeResultsWithoutVariant;
     }
+    /** @deprecated Use ProductSearchSettings.ResultConstraint instead */
     public VariantSearchSettings setExcludeResultsWithoutVariant(Boolean excludeResultsWithoutVariant)
     {
         this.excludeResultsWithoutVariant = excludeResultsWithoutVariant;

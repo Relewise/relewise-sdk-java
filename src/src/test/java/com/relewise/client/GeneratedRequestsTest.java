@@ -15,10 +15,10 @@ public class GeneratedRequestsTest extends TestBase {
 
         var orderRequest = TrackOrderRequest.create(
             Order.create(
-                UserFactory.byTemporaryId("t-id"),
+                UserFactory.byTemporaryId("t-id").setChannel(Channel.create("Channel 1")),
                 Money.create(Currency.create("DKK"), 100.0),
                 "1"
-            ).setChannel("Channel 1")
+            )
         );
 
         Executable action = () -> tracker.track(orderRequest);
@@ -36,7 +36,7 @@ public class GeneratedRequestsTest extends TestBase {
 
         var orderRequest = (new TrackOrderRequest())
             .setOrder((new Order())
-                .setUser(new User().setTemporaryId("t-Id"))
+                .setUser(new User().setTemporaryId("t-Id").setChannel(Channel.create("Channel 1")))
                 .setSubtotal((new Money())
                     .setAmount(100.0)
                     .setCurrency((new Currency())
@@ -45,7 +45,6 @@ public class GeneratedRequestsTest extends TestBase {
                 )
                 .setOrderNumber("1")
                 .setCartName("1")
-                .setChannel("Channel 1")
             );
 
         Executable action = () -> tracker.track(orderRequest);
@@ -62,14 +61,13 @@ public class GeneratedRequestsTest extends TestBase {
         var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         var order = new Order(
-            UserFactory.byTemporaryId("t-ID"),
+            UserFactory.byTemporaryId("t-ID").setChannel(Channel.create("Channel 1")),
             new Money(
                 new Currency("DKK"),
                 100.0
             ),
             "1"
         );
-        order.setChannel("Channel 1");
 
         var orderRequest = new TrackOrderRequest(order);
 

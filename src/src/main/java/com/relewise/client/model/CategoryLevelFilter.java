@@ -54,4 +54,10 @@ public abstract class CategoryLevelFilter extends Filter
         this.negated = negated;
         return this;
     }
+    @Override
+    public CategoryLevelFilter setSettings(FilterSettings settings)
+    {
+        this.settings = settings;
+        return this;
+    }
 }
