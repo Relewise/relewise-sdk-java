@@ -88,12 +88,12 @@ public abstract class SearchRule
         this.id = id;
         return this;
     }
-    public SearchRule setIndexes(ApplicableIndexes indexes)
+    public SearchRule setIndexes(@Nullable ApplicableIndexes indexes)
     {
         this.indexes = indexes;
         return this;
     }
-    public SearchRule setLanguages(ApplicableLanguages languages)
+    public SearchRule setLanguages(@Nullable ApplicableLanguages languages)
     {
         this.languages = languages;
         return this;

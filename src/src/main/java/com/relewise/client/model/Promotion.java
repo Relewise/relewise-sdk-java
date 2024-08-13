@@ -43,7 +43,7 @@ public abstract class Promotion
         this.name = name;
         return this;
     }
-    public Promotion setLocations(PromotionLocationCollection locations)
+    public Promotion setLocations(@Nullable PromotionLocationCollection locations)
     {
         this.locations = locations;
         return this;

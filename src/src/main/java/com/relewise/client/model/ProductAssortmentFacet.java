@@ -77,7 +77,7 @@ public class ProductAssortmentFacet extends AssortmentFacet
         return this;
     }
     @Override
-    public ProductAssortmentFacet setSettings(FacetSettings settings)
+    public ProductAssortmentFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

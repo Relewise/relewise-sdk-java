@@ -105,7 +105,7 @@ public class Order extends Trackable implements IUserIdentifier
     {
         return this.trackingNumber;
     }
-    public Order setUser(User user)
+    public Order setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -140,13 +140,13 @@ public class Order extends Trackable implements IUserIdentifier
         return this;
     }
     /** @deprecated Use User.Channel instead. */
-    public Order setChannel(Channel channel)
+    public Order setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;
     }
     /** @deprecated Use Channel.SubChannel instead. */
-    public Order setSubChannel(String subChannel)
+    public Order setSubChannel(@Nullable String subChannel)
     {
         this.subChannel = subChannel;
         return this;
@@ -160,13 +160,13 @@ public class Order extends Trackable implements IUserIdentifier
         this.data.put(key, value);
         return this;
     }
-    public Order setData(HashMap<String, DataValue> data)
+    public Order setData(@Nullable HashMap<String, DataValue> data)
     {
         this.data = data;
         return this;
     }
     /** @deprecated Use OrderNumber instead. */
-    public Order setTrackingNumber(String trackingNumber)
+    public Order setTrackingNumber(@Nullable String trackingNumber)
     {
         this.trackingNumber = trackingNumber;
         return this;

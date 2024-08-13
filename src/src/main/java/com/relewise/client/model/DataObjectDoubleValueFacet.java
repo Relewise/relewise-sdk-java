@@ -73,7 +73,7 @@ public class DataObjectDoubleValueFacet extends DoubleDataObjectValueFacet
         return this;
     }
     @Override
-    public DataObjectDoubleValueFacet setSettings(FacetSettings settings)
+    public DataObjectDoubleValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

@@ -92,7 +92,7 @@ public class SimilarProductsEvaluationSettings
         this.significanceOfSimilaritiesInDisplayName = significanceOfSimilaritiesInDisplayName;
         return this;
     }
-    public SimilarProductsEvaluationSettings setProductDisplayNameTransformer(TrimStringTransformer productDisplayNameTransformer)
+    public SimilarProductsEvaluationSettings setProductDisplayNameTransformer(@Nullable TrimStringTransformer productDisplayNameTransformer)
     {
         this.productDisplayNameTransformer = productDisplayNameTransformer;
         return this;
@@ -151,7 +151,7 @@ public class SimilarProductsEvaluationSettings
         this.significanceOfSimilarBrand = significanceOfSimilarBrand;
         return this;
     }
-    public SimilarProductsEvaluationSettings setVariantEvaluationSettings(SimilarVariantEvaluationSettings variantEvaluationSettings)
+    public SimilarProductsEvaluationSettings setVariantEvaluationSettings(@Nullable SimilarVariantEvaluationSettings variantEvaluationSettings)
     {
         this.variantEvaluationSettings = variantEvaluationSettings;
         return this;

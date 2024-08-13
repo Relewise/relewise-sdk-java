@@ -44,13 +44,13 @@ public abstract class ContentRecommendationRequest extends RecommendationRequest
         return this;
     }
     @Override
-    public ContentRecommendationRequest setLanguage(Language language)
+    public ContentRecommendationRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ContentRecommendationRequest setUser(User user)
+    public ContentRecommendationRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -74,14 +74,14 @@ public abstract class ContentRecommendationRequest extends RecommendationRequest
         return this;
     }
     @Override
-    public ContentRecommendationRequest setCurrency(Currency currency)
+    public ContentRecommendationRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public ContentRecommendationRequest setChannel(Channel channel)
+    public ContentRecommendationRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

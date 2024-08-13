@@ -67,17 +67,17 @@ public class DataObjectValueSelector
         this.key = key;
         return this;
     }
-    public DataObjectValueSelector setFilter(DataObjectFilter filter)
+    public DataObjectValueSelector setFilter(@Nullable DataObjectFilter filter)
     {
         this.filter = filter;
         return this;
     }
-    public DataObjectValueSelector setChildSelector(DataObjectValueSelector childSelector)
+    public DataObjectValueSelector setChildSelector(@Nullable DataObjectValueSelector childSelector)
     {
         this.childSelector = childSelector;
         return this;
     }
-    public DataObjectValueSelector setFallbackSelector(DataObjectValueSelector fallbackSelector)
+    public DataObjectValueSelector setFallbackSelector(@Nullable DataObjectValueSelector fallbackSelector)
     {
         this.fallbackSelector = fallbackSelector;
         return this;

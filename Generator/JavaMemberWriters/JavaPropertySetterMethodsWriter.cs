@@ -44,7 +44,7 @@ public class JavaPropertySetterMethodsWriter
                 javaWriter.XmlDocumentation.GetSummary(returnType, propertyName),
                 deprecationComment
             );
-            var parameterType = javaWriter.BetterTypedParameterTypeName(propertyType, new NullabilityInfoContext().Create(info));
+            var parameterType = javaWriter.BetterTypedParameterTypeName(info, new NullabilityInfoContext().Create(info));
             if (!ownedProperties.Any(p => p.ToLower() == lowerCaseName.ToLower()))
             {
                 writer.WriteLine("@Override");

@@ -79,7 +79,7 @@ public class OrFilter extends Filter implements IProductFilter, IContentFilter, 
         return this;
     }
     @Override
-    public OrFilter setSettings(FilterSettings settings)
+    public OrFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

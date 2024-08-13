@@ -32,7 +32,7 @@ public class FilterSettings
     {
         return this.scopes;
     }
-    public FilterSettings setScopes(FilterScopes scopes)
+    public FilterSettings setScopes(@Nullable FilterScopes scopes)
     {
         this.scopes = scopes;
         return this;

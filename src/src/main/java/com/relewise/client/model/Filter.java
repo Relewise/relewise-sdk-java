@@ -114,7 +114,7 @@ public abstract class Filter
         this.negated = negated;
         return this;
     }
-    public Filter setSettings(FilterSettings settings)
+    public Filter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

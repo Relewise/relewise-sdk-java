@@ -66,7 +66,7 @@ public class AbandonedContentSearch extends StringAbandonedSearch
         return this;
     }
     @Override
-    public AbandonedContentSearch setLanguage(Language language)
+    public AbandonedContentSearch setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;

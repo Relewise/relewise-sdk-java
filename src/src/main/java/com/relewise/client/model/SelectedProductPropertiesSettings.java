@@ -166,7 +166,7 @@ public class SelectedProductPropertiesSettings
         this.purchasedByUserCompanyInfo = purchasedByUserCompanyInfo;
         return this;
     }
-    public SelectedProductPropertiesSettings setFilteredVariants(FilteredVariantsSettings filteredVariants)
+    public SelectedProductPropertiesSettings setFilteredVariants(@Nullable FilteredVariantsSettings filteredVariants)
     {
         this.filteredVariants = filteredVariants;
         return this;

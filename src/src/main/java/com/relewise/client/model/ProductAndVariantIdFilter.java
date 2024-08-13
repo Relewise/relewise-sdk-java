@@ -68,7 +68,7 @@ public class ProductAndVariantIdFilter extends Filter implements IProductFilter
         return this;
     }
     @Override
-    public ProductAndVariantIdFilter setSettings(FilterSettings settings)
+    public ProductAndVariantIdFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -47,13 +47,13 @@ public class PersonalProductRecommendationRequest extends ProductRecommendationR
         return this;
     }
     @Override
-    public PersonalProductRecommendationRequest setLanguage(Language language)
+    public PersonalProductRecommendationRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public PersonalProductRecommendationRequest setUser(User user)
+    public PersonalProductRecommendationRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -77,14 +77,14 @@ public class PersonalProductRecommendationRequest extends ProductRecommendationR
         return this;
     }
     @Override
-    public PersonalProductRecommendationRequest setCurrency(Currency currency)
+    public PersonalProductRecommendationRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public PersonalProductRecommendationRequest setChannel(Channel channel)
+    public PersonalProductRecommendationRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

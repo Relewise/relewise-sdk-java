@@ -37,7 +37,7 @@ public abstract class AdvertiserEntityStateAdvertiserMetadataValuesRetailMediaEn
     {
         return this.states;
     }
-    public AdvertiserEntityStateAdvertiserMetadataValuesRetailMediaEntityEntityFilters setTerm(String term)
+    public AdvertiserEntityStateAdvertiserMetadataValuesRetailMediaEntityEntityFilters setTerm(@Nullable String term)
     {
         this.term = term;
         return this;

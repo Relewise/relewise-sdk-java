@@ -97,12 +97,12 @@ public class ProductRecommendationRequestSettings
         this.recommendVariant = recommendVariant;
         return this;
     }
-    public ProductRecommendationRequestSettings setSelectedProductProperties(SelectedProductPropertiesSettings selectedProductProperties)
+    public ProductRecommendationRequestSettings setSelectedProductProperties(@Nullable SelectedProductPropertiesSettings selectedProductProperties)
     {
         this.selectedProductProperties = selectedProductProperties;
         return this;
     }
-    public ProductRecommendationRequestSettings setSelectedVariantProperties(SelectedVariantPropertiesSettings selectedVariantProperties)
+    public ProductRecommendationRequestSettings setSelectedVariantProperties(@Nullable SelectedVariantPropertiesSettings selectedVariantProperties)
     {
         this.selectedVariantProperties = selectedVariantProperties;
         return this;
@@ -117,7 +117,7 @@ public class ProductRecommendationRequestSettings
         this.allowProductsCurrentlyInCart = allowProductsCurrentlyInCart;
         return this;
     }
-    public ProductRecommendationRequestSettings setSelectedBrandProperties(SelectedBrandPropertiesSettings selectedBrandProperties)
+    public ProductRecommendationRequestSettings setSelectedBrandProperties(@Nullable SelectedBrandPropertiesSettings selectedBrandProperties)
     {
         this.selectedBrandProperties = selectedBrandProperties;
         return this;

@@ -55,7 +55,7 @@ public abstract class AbandonedSearch
         this.hits = hits;
         return this;
     }
-    public AbandonedSearch setLanguage(Language language)
+    public AbandonedSearch setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;

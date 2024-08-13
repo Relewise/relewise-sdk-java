@@ -64,7 +64,7 @@ public class ProductCategoryLevelFilter extends CategoryLevelFilter implements I
         return this;
     }
     @Override
-    public ProductCategoryLevelFilter setSettings(FilterSettings settings)
+    public ProductCategoryLevelFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

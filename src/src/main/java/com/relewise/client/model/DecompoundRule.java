@@ -63,7 +63,7 @@ public class DecompoundRule extends SearchRule
         this.word = word;
         return this;
     }
-    public DecompoundRule setHead(String head)
+    public DecompoundRule setHead(@Nullable String head)
     {
         this.head = head;
         return this;
@@ -94,13 +94,13 @@ public class DecompoundRule extends SearchRule
         return this;
     }
     @Override
-    public DecompoundRule setIndexes(ApplicableIndexes indexes)
+    public DecompoundRule setIndexes(@Nullable ApplicableIndexes indexes)
     {
         this.indexes = indexes;
         return this;
     }
     @Override
-    public DecompoundRule setLanguages(ApplicableLanguages languages)
+    public DecompoundRule setLanguages(@Nullable ApplicableLanguages languages)
     {
         this.languages = languages;
         return this;

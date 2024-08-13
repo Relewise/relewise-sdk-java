@@ -78,22 +78,22 @@ public class ProductCategorySearchRequest extends PaginatedSearchRequest impleme
     {
         return this.sorting;
     }
-    public ProductCategorySearchRequest setTerm(String term)
+    public ProductCategorySearchRequest setTerm(@Nullable String term)
     {
         this.term = term;
         return this;
     }
-    public ProductCategorySearchRequest setSettings(ProductCategorySearchSettings settings)
+    public ProductCategorySearchRequest setSettings(@Nullable ProductCategorySearchSettings settings)
     {
         this.settings = settings;
         return this;
     }
-    public ProductCategorySearchRequest setFacets(ProductCategoryFacetQuery facets)
+    public ProductCategorySearchRequest setFacets(@Nullable ProductCategoryFacetQuery facets)
     {
         this.facets = facets;
         return this;
     }
-    public ProductCategorySearchRequest setSorting(ProductCategorySortBySpecification sorting)
+    public ProductCategorySearchRequest setSorting(@Nullable ProductCategorySortBySpecification sorting)
     {
         this.sorting = sorting;
         return this;
@@ -111,56 +111,56 @@ public class ProductCategorySearchRequest extends PaginatedSearchRequest impleme
         return this;
     }
     @Override
-    public ProductCategorySearchRequest setLanguage(Language language)
+    public ProductCategorySearchRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ProductCategorySearchRequest setCurrency(Currency currency)
+    public ProductCategorySearchRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     @Override
-    public ProductCategorySearchRequest setUser(User user)
+    public ProductCategorySearchRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
     }
     @Override
-    public ProductCategorySearchRequest setDisplayedAtLocation(String displayedAtLocation)
+    public ProductCategorySearchRequest setDisplayedAtLocation(@Nullable String displayedAtLocation)
     {
         this.displayedAtLocation = displayedAtLocation;
         return this;
     }
     @Override
-    public ProductCategorySearchRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
+    public ProductCategorySearchRequest setRelevanceModifiers(@Nullable RelevanceModifierCollection relevanceModifiers)
     {
         this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
-    public ProductCategorySearchRequest setFilters(FilterCollection filters)
+    public ProductCategorySearchRequest setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;
     }
     @Override
-    public ProductCategorySearchRequest setIndexSelector(SearchIndexSelector indexSelector)
+    public ProductCategorySearchRequest setIndexSelector(@Nullable SearchIndexSelector indexSelector)
     {
         this.indexSelector = indexSelector;
         return this;
     }
     @Override
-    public ProductCategorySearchRequest setPostFilters(FilterCollection postFilters)
+    public ProductCategorySearchRequest setPostFilters(@Nullable FilterCollection postFilters)
     {
         this.postFilters = postFilters;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public ProductCategorySearchRequest setChannel(Channel channel)
+    public ProductCategorySearchRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

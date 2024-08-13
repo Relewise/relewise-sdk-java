@@ -65,7 +65,7 @@ public class VariantDataHasKeyFilter extends Filter implements IVariantFilter
         return this;
     }
     @Override
-    public VariantDataHasKeyFilter setSettings(FilterSettings settings)
+    public VariantDataHasKeyFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -41,7 +41,7 @@ public class RetailMediaResult
         this.placements.put(key, value);
         return this;
     }
-    public RetailMediaResult setPlacements(HashMap<String, RetailMediaResultPlacement> placements)
+    public RetailMediaResult setPlacements(@Nullable HashMap<String, RetailMediaResultPlacement> placements)
     {
         this.placements = placements;
         return this;

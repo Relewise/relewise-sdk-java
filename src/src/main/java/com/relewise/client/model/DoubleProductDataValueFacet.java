@@ -71,7 +71,7 @@ public abstract class DoubleProductDataValueFacet extends DoubleDataValueFacet
         return this;
     }
     @Override
-    public DoubleProductDataValueFacet setSettings(FacetSettings settings)
+    public DoubleProductDataValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

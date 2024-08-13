@@ -94,7 +94,7 @@ public class AbandonedSearchTriggerConfiguration extends AbandonedSearchTriggerR
         }
         return this;
     }
-    public AbandonedSearchTriggerConfiguration setSearchTermCondition(SearchTermCondition searchTermCondition)
+    public AbandonedSearchTriggerConfiguration setSearchTermCondition(@Nullable SearchTermCondition searchTermCondition)
     {
         this.searchTermCondition = searchTermCondition;
         return this;

@@ -37,7 +37,7 @@ public class FilteredVariantsSettings
     {
         return this.inheritFiltersFromRequest;
     }
-    public FilteredVariantsSettings setFilters(FilterCollection filters)
+    public FilteredVariantsSettings setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;

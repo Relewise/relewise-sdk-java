@@ -93,13 +93,13 @@ public class PredictionRule extends SearchRule
         return this;
     }
     @Override
-    public PredictionRule setIndexes(ApplicableIndexes indexes)
+    public PredictionRule setIndexes(@Nullable ApplicableIndexes indexes)
     {
         this.indexes = indexes;
         return this;
     }
     @Override
-    public PredictionRule setLanguages(ApplicableLanguages languages)
+    public PredictionRule setLanguages(@Nullable ApplicableLanguages languages)
     {
         this.languages = languages;
         return this;

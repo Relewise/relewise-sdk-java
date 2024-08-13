@@ -82,7 +82,7 @@ public class SignificantDataValue
         this.significance = significance;
         return this;
     }
-    public SignificantDataValue setTransformer(TrimStringTransformer transformer)
+    public SignificantDataValue setTransformer(@Nullable TrimStringTransformer transformer)
     {
         this.transformer = transformer;
         return this;

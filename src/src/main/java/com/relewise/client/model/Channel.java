@@ -55,7 +55,7 @@ public class Channel
         this.name = name;
         return this;
     }
-    public Channel setSubChannel(Channel subChannel)
+    public Channel setSubChannel(@Nullable Channel subChannel)
     {
         this.subChannel = subChannel;
         return this;

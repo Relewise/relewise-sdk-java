@@ -117,6 +117,18 @@ public class JavaWriter
                     : TypeName(parameterType);
     }
 
+    public string BetterTypedParameterTypeName(PropertyInfo property, NullabilityInfo nullabilityInfo)
+    {
+        Type parameterType = property.PropertyType;
+
+        return parameterType.IsGenericType && parameterType.GetGenericTypeDefinition() == typeof(List<>) &&
+               parameterType.GenericTypeArguments is [var elementType]
+            ? TypeName(elementType) + "..."
+            : parameterType.IsArray
+                ? TypeName(parameterType.GetElementType()!) + "..."
+                : TypeName(property);
+    }
+
     public string ValueSetter(Type toType, string toName, Type fromType, string fromName) => (toType, fromType) switch
     {
         { fromType: { IsArray: true }, toType: { IsGenericType: true } generic } when generic.GetGenericTypeDefinition() == typeof(List<>) => $"{toName} = new ArrayList<>(Arrays.asList({fromName}));",

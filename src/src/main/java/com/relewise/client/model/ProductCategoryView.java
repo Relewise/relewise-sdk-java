@@ -55,7 +55,7 @@ public class ProductCategoryView extends Trackable implements IUserIdentifier
     {
         return this.channel;
     }
-    public ProductCategoryView setUser(User user)
+    public ProductCategoryView setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -80,7 +80,7 @@ public class ProductCategoryView extends Trackable implements IUserIdentifier
         return this;
     }
     /** @deprecated Use User.Channel instead. */
-    public ProductCategoryView setChannel(Channel channel)
+    public ProductCategoryView setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

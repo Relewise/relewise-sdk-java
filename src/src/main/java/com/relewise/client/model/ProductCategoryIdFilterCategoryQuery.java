@@ -82,12 +82,12 @@ public abstract class ProductCategoryIdFilterCategoryQuery extends LicensedReque
         this.numberOfResults = numberOfResults;
         return this;
     }
-    public ProductCategoryIdFilterCategoryQuery setLanguage(Language language)
+    public ProductCategoryIdFilterCategoryQuery setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public ProductCategoryIdFilterCategoryQuery setCurrency(Currency currency)
+    public ProductCategoryIdFilterCategoryQuery setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

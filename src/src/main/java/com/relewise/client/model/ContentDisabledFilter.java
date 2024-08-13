@@ -49,7 +49,7 @@ public class ContentDisabledFilter extends Filter implements IContentFilter
         return this;
     }
     @Override
-    public ContentDisabledFilter setSettings(FilterSettings settings)
+    public ContentDisabledFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

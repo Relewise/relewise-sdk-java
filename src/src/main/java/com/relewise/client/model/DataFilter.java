@@ -77,17 +77,17 @@ public abstract class DataFilter extends Filter
         this.mustMatchAllConditions = mustMatchAllConditions;
         return this;
     }
-    public DataFilter setConditions(ValueConditionCollection conditions)
+    public DataFilter setConditions(@Nullable ValueConditionCollection conditions)
     {
         this.conditions = conditions;
         return this;
     }
-    public DataFilter setLanguage(Language language)
+    public DataFilter setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public DataFilter setCurrency(Currency currency)
+    public DataFilter setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
@@ -118,7 +118,7 @@ public abstract class DataFilter extends Filter
         return this;
     }
     @Override
-    public DataFilter setSettings(FilterSettings settings)
+    public DataFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

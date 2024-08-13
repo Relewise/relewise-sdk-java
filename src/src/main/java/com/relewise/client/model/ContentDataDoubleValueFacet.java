@@ -73,7 +73,7 @@ public class ContentDataDoubleValueFacet extends DoubleContentDataValueFacet
         return this;
     }
     @Override
-    public ContentDataDoubleValueFacet setSettings(FacetSettings settings)
+    public ContentDataDoubleValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

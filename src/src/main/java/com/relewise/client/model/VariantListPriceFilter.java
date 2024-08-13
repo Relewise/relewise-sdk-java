@@ -66,7 +66,7 @@ public class VariantListPriceFilter extends Filter implements IVariantFilter
         this.range = range;
         return this;
     }
-    public VariantListPriceFilter setCurrency(Currency currency)
+    public VariantListPriceFilter setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
@@ -78,7 +78,7 @@ public class VariantListPriceFilter extends Filter implements IVariantFilter
         return this;
     }
     @Override
-    public VariantListPriceFilter setSettings(FilterSettings settings)
+    public VariantListPriceFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

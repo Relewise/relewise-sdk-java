@@ -47,7 +47,7 @@ public class ProductPromotion extends Promotion
         return this.filters;
     }
     /** Filters matching the products to be promoted */
-    public ProductPromotion setFilters(FilterCollection filters)
+    public ProductPromotion setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;
@@ -59,7 +59,7 @@ public class ProductPromotion extends Promotion
         return this;
     }
     @Override
-    public ProductPromotion setLocations(PromotionLocationCollection locations)
+    public ProductPromotion setLocations(@Nullable PromotionLocationCollection locations)
     {
         this.locations = locations;
         return this;

@@ -47,12 +47,12 @@ public abstract class CampaignEntityStateCampaignMetadataValuesCampaignsRequestS
     {
         return this.take;
     }
-    public CampaignEntityStateCampaignMetadataValuesCampaignsRequestSortByCampaignsRequestEntityFiltersEntitiesRequest setFilters(CampaignsRequestEntityFilters filters)
+    public CampaignEntityStateCampaignMetadataValuesCampaignsRequestSortByCampaignsRequestEntityFiltersEntitiesRequest setFilters(@Nullable CampaignsRequestEntityFilters filters)
     {
         this.filters = filters;
         return this;
     }
-    public CampaignEntityStateCampaignMetadataValuesCampaignsRequestSortByCampaignsRequestEntityFiltersEntitiesRequest setSorting(CampaignsRequestSortBySorting sorting)
+    public CampaignEntityStateCampaignMetadataValuesCampaignsRequestSortByCampaignsRequestEntityFiltersEntitiesRequest setSorting(@Nullable CampaignsRequestSortBySorting sorting)
     {
         this.sorting = sorting;
         return this;

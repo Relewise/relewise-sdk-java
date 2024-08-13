@@ -50,7 +50,7 @@ public abstract class ProductAndVariantIdAbandonedSearch extends AbandonedSearch
         return this;
     }
     @Override
-    public ProductAndVariantIdAbandonedSearch setLanguage(Language language)
+    public ProductAndVariantIdAbandonedSearch setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;

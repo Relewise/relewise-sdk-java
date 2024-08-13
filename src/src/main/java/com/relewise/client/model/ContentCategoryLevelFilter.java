@@ -64,7 +64,7 @@ public class ContentCategoryLevelFilter extends CategoryLevelFilter implements I
         return this;
     }
     @Override
-    public ContentCategoryLevelFilter setSettings(FilterSettings settings)
+    public ContentCategoryLevelFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

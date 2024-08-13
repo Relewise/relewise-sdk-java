@@ -75,7 +75,7 @@ public class ProductCategoryRecentlyViewedByUserFilter extends Filter implements
         return this;
     }
     @Override
-    public ProductCategoryRecentlyViewedByUserFilter setSettings(FilterSettings settings)
+    public ProductCategoryRecentlyViewedByUserFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

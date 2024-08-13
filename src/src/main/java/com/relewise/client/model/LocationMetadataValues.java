@@ -68,7 +68,7 @@ public class LocationMetadataValues extends MetadataValues
         this.inactivated = inactivated;
         return this;
     }
-    public LocationMetadataValues setInactivatedBy(String inactivatedBy)
+    public LocationMetadataValues setInactivatedBy(@Nullable String inactivatedBy)
     {
         this.inactivatedBy = inactivatedBy;
         return this;
@@ -78,7 +78,7 @@ public class LocationMetadataValues extends MetadataValues
         this.activated = activated;
         return this;
     }
-    public LocationMetadataValues setActivatedBy(String activatedBy)
+    public LocationMetadataValues setActivatedBy(@Nullable String activatedBy)
     {
         this.activatedBy = activatedBy;
         return this;
@@ -88,7 +88,7 @@ public class LocationMetadataValues extends MetadataValues
         this.archived = archived;
         return this;
     }
-    public LocationMetadataValues setArchivedBy(String archivedBy)
+    public LocationMetadataValues setArchivedBy(@Nullable String archivedBy)
     {
         this.archivedBy = archivedBy;
         return this;

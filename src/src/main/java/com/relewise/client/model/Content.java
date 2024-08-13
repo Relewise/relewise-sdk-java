@@ -61,7 +61,7 @@ public class Content
         this.id = id;
         return this;
     }
-    public Content setDisplayName(Multilingual displayName)
+    public Content setDisplayName(@Nullable Multilingual displayName)
     {
         this.displayName = displayName;
         return this;
@@ -103,7 +103,7 @@ public class Content
         this.data.put(key, value);
         return this;
     }
-    public Content setData(HashMap<String, DataValue> data)
+    public Content setData(@Nullable HashMap<String, DataValue> data)
     {
         this.data = data;
         return this;

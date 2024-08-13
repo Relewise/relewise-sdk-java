@@ -39,7 +39,7 @@ public class ProductCategoryDataDoubleRangeFacet extends DoubleProductCategoryDa
     {
     }
     @Override
-    public ProductCategoryDataDoubleRangeFacet setSelected(DoubleRange selected)
+    public ProductCategoryDataDoubleRangeFacet setSelected(@Nullable DoubleRange selected)
     {
         this.selected = selected;
         return this;
@@ -57,7 +57,7 @@ public class ProductCategoryDataDoubleRangeFacet extends DoubleProductCategoryDa
         return this;
     }
     @Override
-    public ProductCategoryDataDoubleRangeFacet setSettings(FacetSettings settings)
+    public ProductCategoryDataDoubleRangeFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

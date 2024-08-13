@@ -73,7 +73,7 @@ public class ContentCategorySearchRequest extends PaginatedSearchRequest impleme
         this.term = term;
         return this;
     }
-    public ContentCategorySearchRequest setSettings(ContentCategorySearchSettings settings)
+    public ContentCategorySearchRequest setSettings(@Nullable ContentCategorySearchSettings settings)
     {
         this.settings = settings;
         return this;
@@ -91,56 +91,56 @@ public class ContentCategorySearchRequest extends PaginatedSearchRequest impleme
         return this;
     }
     @Override
-    public ContentCategorySearchRequest setLanguage(Language language)
+    public ContentCategorySearchRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ContentCategorySearchRequest setCurrency(Currency currency)
+    public ContentCategorySearchRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     @Override
-    public ContentCategorySearchRequest setUser(User user)
+    public ContentCategorySearchRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
     }
     @Override
-    public ContentCategorySearchRequest setDisplayedAtLocation(String displayedAtLocation)
+    public ContentCategorySearchRequest setDisplayedAtLocation(@Nullable String displayedAtLocation)
     {
         this.displayedAtLocation = displayedAtLocation;
         return this;
     }
     @Override
-    public ContentCategorySearchRequest setRelevanceModifiers(RelevanceModifierCollection relevanceModifiers)
+    public ContentCategorySearchRequest setRelevanceModifiers(@Nullable RelevanceModifierCollection relevanceModifiers)
     {
         this.relevanceModifiers = relevanceModifiers;
         return this;
     }
     @Override
-    public ContentCategorySearchRequest setFilters(FilterCollection filters)
+    public ContentCategorySearchRequest setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
         return this;
     }
     @Override
-    public ContentCategorySearchRequest setIndexSelector(SearchIndexSelector indexSelector)
+    public ContentCategorySearchRequest setIndexSelector(@Nullable SearchIndexSelector indexSelector)
     {
         this.indexSelector = indexSelector;
         return this;
     }
     @Override
-    public ContentCategorySearchRequest setPostFilters(FilterCollection postFilters)
+    public ContentCategorySearchRequest setPostFilters(@Nullable FilterCollection postFilters)
     {
         this.postFilters = postFilters;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public ContentCategorySearchRequest setChannel(Channel channel)
+    public ContentCategorySearchRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

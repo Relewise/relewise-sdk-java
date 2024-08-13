@@ -104,7 +104,7 @@ public class ProductListPriceRelevanceModifier extends RelevanceModifier impleme
         return this;
     }
     /** The currency that is used to distinguish the price. */
-    public ProductListPriceRelevanceModifier setCurrency(Currency currency)
+    public ProductListPriceRelevanceModifier setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

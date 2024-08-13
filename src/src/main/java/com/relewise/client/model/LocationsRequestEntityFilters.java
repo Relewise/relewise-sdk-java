@@ -82,7 +82,7 @@ public class LocationsRequestEntityFilters extends LocationEntityStateLocationMe
         return this;
     }
     @Override
-    public LocationsRequestEntityFilters setTerm(String term)
+    public LocationsRequestEntityFilters setTerm(@Nullable String term)
     {
         this.term = term;
         return this;

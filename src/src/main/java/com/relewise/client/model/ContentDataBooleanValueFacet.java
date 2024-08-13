@@ -73,7 +73,7 @@ public class ContentDataBooleanValueFacet extends BooleanContentDataValueFacet
         return this;
     }
     @Override
-    public ContentDataBooleanValueFacet setSettings(FacetSettings settings)
+    public ContentDataBooleanValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

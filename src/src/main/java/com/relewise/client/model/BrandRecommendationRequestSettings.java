@@ -77,7 +77,7 @@ public class BrandRecommendationRequestSettings
         this.prioritizeDiversityBetweenRequests = prioritizeDiversityBetweenRequests;
         return this;
     }
-    public BrandRecommendationRequestSettings setSelectedBrandProperties(SelectedBrandPropertiesSettings selectedBrandProperties)
+    public BrandRecommendationRequestSettings setSelectedBrandProperties(@Nullable SelectedBrandPropertiesSettings selectedBrandProperties)
     {
         this.selectedBrandProperties = selectedBrandProperties;
         return this;

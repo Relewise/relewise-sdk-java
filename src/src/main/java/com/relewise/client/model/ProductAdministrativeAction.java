@@ -82,7 +82,7 @@ public class ProductAdministrativeAction extends Trackable
         this.filters = filters;
         return this;
     }
-    public ProductAdministrativeAction setLanguage(Language language)
+    public ProductAdministrativeAction setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
@@ -97,7 +97,7 @@ public class ProductAdministrativeAction extends Trackable
         this.variantUpdateKind = variantUpdateKind;
         return this;
     }
-    public ProductAdministrativeAction setCurrency(Currency currency)
+    public ProductAdministrativeAction setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

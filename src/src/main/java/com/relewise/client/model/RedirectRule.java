@@ -78,7 +78,7 @@ public class RedirectRule extends SearchRule
         this.condition = condition;
         return this;
     }
-    public RedirectRule setDestination(String destination)
+    public RedirectRule setDestination(@Nullable String destination)
     {
         this.destination = destination;
         return this;
@@ -92,7 +92,7 @@ public class RedirectRule extends SearchRule
         this.data.put(key, value);
         return this;
     }
-    public RedirectRule setData(HashMap<String, String> data)
+    public RedirectRule setData(@Nullable HashMap<String, String> data)
     {
         this.data = data;
         return this;
@@ -104,13 +104,13 @@ public class RedirectRule extends SearchRule
         return this;
     }
     @Override
-    public RedirectRule setIndexes(ApplicableIndexes indexes)
+    public RedirectRule setIndexes(@Nullable ApplicableIndexes indexes)
     {
         this.indexes = indexes;
         return this;
     }
     @Override
-    public RedirectRule setLanguages(ApplicableLanguages languages)
+    public RedirectRule setLanguages(@Nullable ApplicableLanguages languages)
     {
         this.languages = languages;
         return this;

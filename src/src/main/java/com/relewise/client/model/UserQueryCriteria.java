@@ -57,27 +57,27 @@ public class UserQueryCriteria
     {
         return this.identifiers;
     }
-    public UserQueryCriteria setAuthenticatedId(String authenticatedId)
+    public UserQueryCriteria setAuthenticatedId(@Nullable String authenticatedId)
     {
         this.authenticatedId = authenticatedId;
         return this;
     }
-    public UserQueryCriteria setTemporaryId(String temporaryId)
+    public UserQueryCriteria setTemporaryId(@Nullable String temporaryId)
     {
         this.temporaryId = temporaryId;
         return this;
     }
-    public UserQueryCriteria setEmail(String email)
+    public UserQueryCriteria setEmail(@Nullable String email)
     {
         this.email = email;
         return this;
     }
-    public UserQueryCriteria setLanguage(Language language)
+    public UserQueryCriteria setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public UserQueryCriteria setCurrency(Currency currency)
+    public UserQueryCriteria setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
@@ -91,7 +91,7 @@ public class UserQueryCriteria
         this.identifiers.put(key, value);
         return this;
     }
-    public UserQueryCriteria setIdentifiers(HashMap<String, String> identifiers)
+    public UserQueryCriteria setIdentifiers(@Nullable HashMap<String, String> identifiers)
     {
         this.identifiers = identifiers;
         return this;

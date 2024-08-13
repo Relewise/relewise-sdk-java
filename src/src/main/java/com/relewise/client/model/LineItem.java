@@ -73,7 +73,7 @@ public class LineItem
         this.product = product;
         return this;
     }
-    public LineItem setVariant(ProductVariant variant)
+    public LineItem setVariant(@Nullable ProductVariant variant)
     {
         this.variant = variant;
         return this;
@@ -97,7 +97,7 @@ public class LineItem
         this.data.put(key, value);
         return this;
     }
-    public LineItem setData(HashMap<String, DataValue> data)
+    public LineItem setData(@Nullable HashMap<String, DataValue> data)
     {
         this.data = data;
         return this;

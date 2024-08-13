@@ -90,12 +90,12 @@ public abstract class RecommendationRequest extends LicensedRequest implements I
     {
         return this.channel;
     }
-    public RecommendationRequest setLanguage(Language language)
+    public RecommendationRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public RecommendationRequest setUser(User user)
+    public RecommendationRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -115,13 +115,13 @@ public abstract class RecommendationRequest extends LicensedRequest implements I
         this.displayedAtLocationType = displayedAtLocationType;
         return this;
     }
-    public RecommendationRequest setCurrency(Currency currency)
+    public RecommendationRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
-    public RecommendationRequest setChannel(Channel channel)
+    public RecommendationRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

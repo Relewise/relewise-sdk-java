@@ -68,7 +68,7 @@ public class AdvertiserMetadataValues extends MetadataValues
         this.inactivated = inactivated;
         return this;
     }
-    public AdvertiserMetadataValues setInactivatedBy(String inactivatedBy)
+    public AdvertiserMetadataValues setInactivatedBy(@Nullable String inactivatedBy)
     {
         this.inactivatedBy = inactivatedBy;
         return this;
@@ -78,7 +78,7 @@ public class AdvertiserMetadataValues extends MetadataValues
         this.activated = activated;
         return this;
     }
-    public AdvertiserMetadataValues setActivatedBy(String activatedBy)
+    public AdvertiserMetadataValues setActivatedBy(@Nullable String activatedBy)
     {
         this.activatedBy = activatedBy;
         return this;
@@ -88,7 +88,7 @@ public class AdvertiserMetadataValues extends MetadataValues
         this.archived = archived;
         return this;
     }
-    public AdvertiserMetadataValues setArchivedBy(String archivedBy)
+    public AdvertiserMetadataValues setArchivedBy(@Nullable String archivedBy)
     {
         this.archivedBy = archivedBy;
         return this;

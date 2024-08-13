@@ -61,7 +61,7 @@ public abstract class BooleanProductCategoryDataValueFacet extends BooleanDataVa
         return this;
     }
     @Override
-    public BooleanProductCategoryDataValueFacet setSettings(FacetSettings settings)
+    public BooleanProductCategoryDataValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

@@ -68,7 +68,7 @@ public class ProductIdFilter extends Filter implements IProductFilter
         return this;
     }
     @Override
-    public ProductIdFilter setSettings(FilterSettings settings)
+    public ProductIdFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

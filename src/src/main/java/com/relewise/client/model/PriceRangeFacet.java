@@ -49,7 +49,7 @@ public class PriceRangeFacet extends Facet
     {
         return this.priceSelectionStrategy;
     }
-    public PriceRangeFacet setSelected(DoubleRange selected)
+    public PriceRangeFacet setSelected(@Nullable DoubleRange selected)
     {
         this.selected = selected;
         return this;
@@ -66,7 +66,7 @@ public class PriceRangeFacet extends Facet
         return this;
     }
     @Override
-    public PriceRangeFacet setSettings(FacetSettings settings)
+    public PriceRangeFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

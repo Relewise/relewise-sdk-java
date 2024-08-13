@@ -49,7 +49,7 @@ public class ProductCategoryDisabledFilter extends Filter implements ICategoryFi
         return this;
     }
     @Override
-    public ProductCategoryDisabledFilter setSettings(FilterSettings settings)
+    public ProductCategoryDisabledFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

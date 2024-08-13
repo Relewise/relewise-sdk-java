@@ -69,13 +69,13 @@ public class PopularProductCategoriesRecommendationRequest extends ProductCatego
         return this;
     }
     @Override
-    public PopularProductCategoriesRecommendationRequest setLanguage(Language language)
+    public PopularProductCategoriesRecommendationRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public PopularProductCategoriesRecommendationRequest setUser(User user)
+    public PopularProductCategoriesRecommendationRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -99,14 +99,14 @@ public class PopularProductCategoriesRecommendationRequest extends ProductCatego
         return this;
     }
     @Override
-    public PopularProductCategoriesRecommendationRequest setCurrency(Currency currency)
+    public PopularProductCategoriesRecommendationRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public PopularProductCategoriesRecommendationRequest setChannel(Channel channel)
+    public PopularProductCategoriesRecommendationRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

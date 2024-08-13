@@ -65,7 +65,7 @@ public class CompanyAdministrativeAction extends Trackable
         this.filters = filters;
         return this;
     }
-    public CompanyAdministrativeAction setLanguage(Language language)
+    public CompanyAdministrativeAction setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
@@ -75,7 +75,7 @@ public class CompanyAdministrativeAction extends Trackable
         this.kind = kind;
         return this;
     }
-    public CompanyAdministrativeAction setCurrency(Currency currency)
+    public CompanyAdministrativeAction setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

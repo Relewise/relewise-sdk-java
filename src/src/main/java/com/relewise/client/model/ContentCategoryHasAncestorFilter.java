@@ -64,7 +64,7 @@ public class ContentCategoryHasAncestorFilter extends HasAncestorCategoryFilter 
         return this;
     }
     @Override
-    public ContentCategoryHasAncestorFilter setSettings(FilterSettings settings)
+    public ContentCategoryHasAncestorFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

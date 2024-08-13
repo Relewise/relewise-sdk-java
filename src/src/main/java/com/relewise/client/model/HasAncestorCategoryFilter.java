@@ -55,7 +55,7 @@ public abstract class HasAncestorCategoryFilter extends Filter
         return this;
     }
     @Override
-    public HasAncestorCategoryFilter setSettings(FilterSettings settings)
+    public HasAncestorCategoryFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

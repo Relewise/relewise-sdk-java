@@ -75,7 +75,7 @@ public class ContentCategoryRecentlyViewedByUserFilter extends Filter implements
         return this;
     }
     @Override
-    public ContentCategoryRecentlyViewedByUserFilter setSettings(FilterSettings settings)
+    public ContentCategoryRecentlyViewedByUserFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

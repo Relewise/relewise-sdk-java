@@ -58,13 +58,13 @@ public class SearchTermBasedProductRecommendationRequest extends ProductRecommen
         return this;
     }
     @Override
-    public SearchTermBasedProductRecommendationRequest setLanguage(Language language)
+    public SearchTermBasedProductRecommendationRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public SearchTermBasedProductRecommendationRequest setUser(User user)
+    public SearchTermBasedProductRecommendationRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -88,14 +88,14 @@ public class SearchTermBasedProductRecommendationRequest extends ProductRecommen
         return this;
     }
     @Override
-    public SearchTermBasedProductRecommendationRequest setCurrency(Currency currency)
+    public SearchTermBasedProductRecommendationRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public SearchTermBasedProductRecommendationRequest setChannel(Channel channel)
+    public SearchTermBasedProductRecommendationRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

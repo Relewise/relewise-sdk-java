@@ -68,7 +68,7 @@ public class VariantAssortmentFilter extends Filter implements IVariantFilter
         return this;
     }
     @Override
-    public VariantAssortmentFilter setSettings(FilterSettings settings)
+    public VariantAssortmentFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

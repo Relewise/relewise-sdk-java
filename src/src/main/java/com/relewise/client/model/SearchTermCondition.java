@@ -82,7 +82,7 @@ public class SearchTermCondition
         this.kind = kind;
         return this;
     }
-    public SearchTermCondition setValue(String value)
+    public SearchTermCondition setValue(@Nullable String value)
     {
         this.value = value;
         return this;

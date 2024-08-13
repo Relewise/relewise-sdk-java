@@ -105,17 +105,17 @@ public class CartDataFilter extends Filter
         this.mustMatchAllConditions = mustMatchAllConditions;
         return this;
     }
-    public CartDataFilter setConditions(ValueConditionCollection conditions)
+    public CartDataFilter setConditions(@Nullable ValueConditionCollection conditions)
     {
         this.conditions = conditions;
         return this;
     }
-    public CartDataFilter setLanguage(Language language)
+    public CartDataFilter setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
-    public CartDataFilter setCurrency(Currency currency)
+    public CartDataFilter setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
@@ -127,7 +127,7 @@ public class CartDataFilter extends Filter
         return this;
     }
     @Override
-    public CartDataFilter setSettings(FilterSettings settings)
+    public CartDataFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

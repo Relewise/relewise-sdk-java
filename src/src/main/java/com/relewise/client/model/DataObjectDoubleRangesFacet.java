@@ -89,7 +89,7 @@ public class DataObjectDoubleRangesFacet extends DoubleDataObjectRangesFacet
         return this;
     }
     @Override
-    public DataObjectDoubleRangesFacet setSettings(FacetSettings settings)
+    public DataObjectDoubleRangesFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

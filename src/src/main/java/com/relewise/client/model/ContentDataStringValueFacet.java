@@ -73,7 +73,7 @@ public class ContentDataStringValueFacet extends StringContentDataValueFacet
         return this;
     }
     @Override
-    public ContentDataStringValueFacet setSettings(FacetSettings settings)
+    public ContentDataStringValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

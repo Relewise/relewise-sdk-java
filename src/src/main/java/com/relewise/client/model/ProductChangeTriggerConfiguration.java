@@ -42,7 +42,7 @@ public class ProductChangeTriggerConfiguration extends ProductChangeTriggerResul
     {
     }
     @Override
-    public ProductChangeTriggerConfiguration setEntityPropertySelector(ProductPropertySelector entityPropertySelector)
+    public ProductChangeTriggerConfiguration setEntityPropertySelector(@Nullable ProductPropertySelector entityPropertySelector)
     {
         this.entityPropertySelector = entityPropertySelector;
         return this;
@@ -66,7 +66,7 @@ public class ProductChangeTriggerConfiguration extends ProductChangeTriggerResul
         return this;
     }
     @Override
-    public ProductChangeTriggerConfiguration setResultSettings(ProductChangeTriggerResultSettings resultSettings)
+    public ProductChangeTriggerConfiguration setResultSettings(@Nullable ProductChangeTriggerResultSettings resultSettings)
     {
         this.resultSettings = resultSettings;
         return this;

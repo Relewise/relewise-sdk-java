@@ -82,7 +82,7 @@ public class CampaignsRequestEntityFilters extends CampaignEntityStateCampaignMe
         return this;
     }
     @Override
-    public CampaignsRequestEntityFilters setTerm(String term)
+    public CampaignsRequestEntityFilters setTerm(@Nullable String term)
     {
         this.term = term;
         return this;

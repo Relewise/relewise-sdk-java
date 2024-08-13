@@ -68,7 +68,7 @@ public class ContentIdFilter extends Filter implements IContentFilter
         return this;
     }
     @Override
-    public ContentIdFilter setSettings(FilterSettings settings)
+    public ContentIdFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

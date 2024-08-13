@@ -53,7 +53,7 @@ public class SearchTermModifierRuleReplaceWordsInTermAction extends SearchTermMo
         this.words = words;
         return this;
     }
-    public SearchTermModifierRuleReplaceWordsInTermAction setReplacement(String replacement)
+    public SearchTermModifierRuleReplaceWordsInTermAction setReplacement(@Nullable String replacement)
     {
         this.replacement = replacement;
         return this;

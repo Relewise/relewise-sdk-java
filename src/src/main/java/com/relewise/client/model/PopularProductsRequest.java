@@ -70,7 +70,7 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
         return this;
     }
     /** A selector for changing the weighing of observed views or purchases on an entity basis when making the recommendation. */
-    public PopularProductsRequest setPopularityMultiplier(PopularityMultiplierSelector popularityMultiplier)
+    public PopularProductsRequest setPopularityMultiplier(@Nullable PopularityMultiplierSelector popularityMultiplier)
     {
         this.popularityMultiplier = popularityMultiplier;
         return this;
@@ -82,13 +82,13 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
         return this;
     }
     @Override
-    public PopularProductsRequest setLanguage(Language language)
+    public PopularProductsRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public PopularProductsRequest setUser(User user)
+    public PopularProductsRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -112,14 +112,14 @@ public class PopularProductsRequest extends ProductRecommendationRequest impleme
         return this;
     }
     @Override
-    public PopularProductsRequest setCurrency(Currency currency)
+    public PopularProductsRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public PopularProductsRequest setChannel(Channel channel)
+    public PopularProductsRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

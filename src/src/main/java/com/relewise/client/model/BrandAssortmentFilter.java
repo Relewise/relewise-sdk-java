@@ -68,7 +68,7 @@ public class BrandAssortmentFilter extends Filter implements IBrandFilter
         return this;
     }
     @Override
-    public BrandAssortmentFilter setSettings(FilterSettings settings)
+    public BrandAssortmentFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

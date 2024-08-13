@@ -57,7 +57,7 @@ public class ProductAndVariantId
         this.productId = productId;
         return this;
     }
-    public ProductAndVariantId setVariantId(String variantId)
+    public ProductAndVariantId setVariantId(@Nullable String variantId)
     {
         this.variantId = variantId;
         return this;

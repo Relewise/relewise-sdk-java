@@ -83,7 +83,7 @@ public class DataObjectFacet extends Facet
         return this;
     }
     @Override
-    public DataObjectFacet setSettings(FacetSettings settings)
+    public DataObjectFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

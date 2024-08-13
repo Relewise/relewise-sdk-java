@@ -65,7 +65,7 @@ public class CompanyDataHasKeyFilter extends Filter implements ICompanyFilter
         return this;
     }
     @Override
-    public CompanyDataHasKeyFilter setSettings(FilterSettings settings)
+    public CompanyDataHasKeyFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -61,7 +61,7 @@ public class UserAssociatedCompanyResultDetails
         this.id = id;
         return this;
     }
-    public UserAssociatedCompanyResultDetails setParent(UserAssociatedCompanyResultDetails parent)
+    public UserAssociatedCompanyResultDetails setParent(@Nullable UserAssociatedCompanyResultDetails parent)
     {
         this.parent = parent;
         return this;
@@ -75,7 +75,7 @@ public class UserAssociatedCompanyResultDetails
         this.data.put(key, value);
         return this;
     }
-    public UserAssociatedCompanyResultDetails setData(HashMap<String, DataValue> data)
+    public UserAssociatedCompanyResultDetails setData(@Nullable HashMap<String, DataValue> data)
     {
         this.data = data;
         return this;

@@ -52,7 +52,7 @@ public class RequestFilterCriteria
         this.excludes = excludes;
         return this;
     }
-    public RequestFilterCriteria setCount(IntegerRange count)
+    public RequestFilterCriteria setCount(@Nullable IntegerRange count)
     {
         this.count = count;
         return this;

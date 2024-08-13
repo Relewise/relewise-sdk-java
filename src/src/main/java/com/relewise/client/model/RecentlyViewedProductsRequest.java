@@ -47,13 +47,13 @@ public class RecentlyViewedProductsRequest extends ProductRecommendationRequest 
         return this;
     }
     @Override
-    public RecentlyViewedProductsRequest setLanguage(Language language)
+    public RecentlyViewedProductsRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public RecentlyViewedProductsRequest setUser(User user)
+    public RecentlyViewedProductsRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -77,14 +77,14 @@ public class RecentlyViewedProductsRequest extends ProductRecommendationRequest 
         return this;
     }
     @Override
-    public RecentlyViewedProductsRequest setCurrency(Currency currency)
+    public RecentlyViewedProductsRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public RecentlyViewedProductsRequest setChannel(Channel channel)
+    public RecentlyViewedProductsRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

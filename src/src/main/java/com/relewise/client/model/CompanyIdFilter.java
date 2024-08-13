@@ -68,7 +68,7 @@ public class CompanyIdFilter extends Filter implements ICompanyFilter
         return this;
     }
     @Override
-    public CompanyIdFilter setSettings(FilterSettings settings)
+    public CompanyIdFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

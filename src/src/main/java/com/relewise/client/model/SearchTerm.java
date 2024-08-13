@@ -77,7 +77,7 @@ public class SearchTerm extends Trackable implements IUserIdentifier
         return this;
     }
     /** @deprecated Use User.Channel instead. */
-    public SearchTerm setChannel(Channel channel)
+    public SearchTerm setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

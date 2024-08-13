@@ -71,7 +71,7 @@ public class StemmingRule extends SearchRule
         }
         return this;
     }
-    public StemmingRule setStem(String stem)
+    public StemmingRule setStem(@Nullable String stem)
     {
         this.stem = stem;
         return this;
@@ -83,13 +83,13 @@ public class StemmingRule extends SearchRule
         return this;
     }
     @Override
-    public StemmingRule setIndexes(ApplicableIndexes indexes)
+    public StemmingRule setIndexes(@Nullable ApplicableIndexes indexes)
     {
         this.indexes = indexes;
         return this;
     }
     @Override
-    public StemmingRule setLanguages(ApplicableLanguages languages)
+    public StemmingRule setLanguages(@Nullable ApplicableLanguages languages)
     {
         this.languages = languages;
         return this;

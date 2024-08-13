@@ -73,7 +73,7 @@ public class ProductCategoryDataBooleanValueFacet extends BooleanProductCategory
         return this;
     }
     @Override
-    public ProductCategoryDataBooleanValueFacet setSettings(FacetSettings settings)
+    public ProductCategoryDataBooleanValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

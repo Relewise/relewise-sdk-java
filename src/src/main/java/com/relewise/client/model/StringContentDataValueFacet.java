@@ -61,7 +61,7 @@ public abstract class StringContentDataValueFacet extends StringDataValueFacet
         return this;
     }
     @Override
-    public StringContentDataValueFacet setSettings(FacetSettings settings)
+    public StringContentDataValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

@@ -104,7 +104,7 @@ public class VariantSalesPriceRelevanceModifier extends RelevanceModifier implem
         return this;
     }
     /** The currency that is used to distinguish the price. */
-    public VariantSalesPriceRelevanceModifier setCurrency(Currency currency)
+    public VariantSalesPriceRelevanceModifier setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;

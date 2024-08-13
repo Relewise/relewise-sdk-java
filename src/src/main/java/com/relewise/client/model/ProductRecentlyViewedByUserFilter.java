@@ -75,7 +75,7 @@ public class ProductRecentlyViewedByUserFilter extends Filter implements IProduc
         return this;
     }
     @Override
-    public ProductRecentlyViewedByUserFilter setSettings(FilterSettings settings)
+    public ProductRecentlyViewedByUserFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

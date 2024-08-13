@@ -56,7 +56,7 @@ public class Brand
         this.id = id;
         return this;
     }
-    public Brand setDisplayName(String displayName)
+    public Brand setDisplayName(@Nullable String displayName)
     {
         this.displayName = displayName;
         return this;
@@ -84,7 +84,7 @@ public class Brand
         this.data.put(key, value);
         return this;
     }
-    public Brand setData(HashMap<String, DataValue> data)
+    public Brand setData(@Nullable HashMap<String, DataValue> data)
     {
         this.data = data;
         return this;

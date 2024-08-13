@@ -64,7 +64,7 @@ public class ProductCategoryHasAncestorFilter extends HasAncestorCategoryFilter 
         return this;
     }
     @Override
-    public ProductCategoryHasAncestorFilter setSettings(FilterSettings settings)
+    public ProductCategoryHasAncestorFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

@@ -55,7 +55,7 @@ public class BrandView extends Trackable implements IUserIdentifier
     {
         return this.channel;
     }
-    public BrandView setUser(User user)
+    public BrandView setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -66,7 +66,7 @@ public class BrandView extends Trackable implements IUserIdentifier
         return this;
     }
     /** @deprecated Use User.Channel instead. */
-    public BrandView setChannel(Channel channel)
+    public BrandView setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

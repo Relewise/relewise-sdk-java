@@ -41,13 +41,13 @@ public class LocationsRequest extends LocationEntityStateLocationMetadataValuesL
     {
     }
     @Override
-    public LocationsRequest setFilters(LocationsRequestEntityFilters filters)
+    public LocationsRequest setFilters(@Nullable LocationsRequestEntityFilters filters)
     {
         this.filters = filters;
         return this;
     }
     @Override
-    public LocationsRequest setSorting(LocationsRequestSortBySorting sorting)
+    public LocationsRequest setSorting(@Nullable LocationsRequestSortBySorting sorting)
     {
         this.sorting = sorting;
         return this;

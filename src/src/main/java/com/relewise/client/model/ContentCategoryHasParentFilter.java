@@ -64,7 +64,7 @@ public class ContentCategoryHasParentFilter extends HasParentCategoryFilter impl
         return this;
     }
     @Override
-    public ContentCategoryHasParentFilter setSettings(FilterSettings settings)
+    public ContentCategoryHasParentFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

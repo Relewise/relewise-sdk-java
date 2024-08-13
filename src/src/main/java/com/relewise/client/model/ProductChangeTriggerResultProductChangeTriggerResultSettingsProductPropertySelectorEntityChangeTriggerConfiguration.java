@@ -63,7 +63,7 @@ public abstract class ProductChangeTriggerResultProductChangeTriggerResultSettin
         return this.resultSettings;
     }
     /** The selector used for choosing which property of the entity the trigger should look for change in. */
-    public ProductChangeTriggerResultProductChangeTriggerResultSettingsProductPropertySelectorEntityChangeTriggerConfiguration setEntityPropertySelector(ProductPropertySelector entityPropertySelector)
+    public ProductChangeTriggerResultProductChangeTriggerResultSettingsProductPropertySelectorEntityChangeTriggerConfiguration setEntityPropertySelector(@Nullable ProductPropertySelector entityPropertySelector)
     {
         this.entityPropertySelector = entityPropertySelector;
         return this;
@@ -87,7 +87,7 @@ public abstract class ProductChangeTriggerResultProductChangeTriggerResultSettin
         return this;
     }
     /** Settings for defining which properties should be included in the result of the trigger. */
-    public ProductChangeTriggerResultProductChangeTriggerResultSettingsProductPropertySelectorEntityChangeTriggerConfiguration setResultSettings(ProductChangeTriggerResultSettings resultSettings)
+    public ProductChangeTriggerResultProductChangeTriggerResultSettingsProductPropertySelectorEntityChangeTriggerConfiguration setResultSettings(@Nullable ProductChangeTriggerResultSettings resultSettings)
     {
         this.resultSettings = resultSettings;
         return this;

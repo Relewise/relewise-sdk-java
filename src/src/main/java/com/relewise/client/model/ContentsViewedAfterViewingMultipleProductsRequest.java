@@ -72,13 +72,13 @@ public class ContentsViewedAfterViewingMultipleProductsRequest extends ContentRe
         return this;
     }
     @Override
-    public ContentsViewedAfterViewingMultipleProductsRequest setLanguage(Language language)
+    public ContentsViewedAfterViewingMultipleProductsRequest setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ContentsViewedAfterViewingMultipleProductsRequest setUser(User user)
+    public ContentsViewedAfterViewingMultipleProductsRequest setUser(@Nullable User user)
     {
         this.user = user;
         return this;
@@ -102,14 +102,14 @@ public class ContentsViewedAfterViewingMultipleProductsRequest extends ContentRe
         return this;
     }
     @Override
-    public ContentsViewedAfterViewingMultipleProductsRequest setCurrency(Currency currency)
+    public ContentsViewedAfterViewingMultipleProductsRequest setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
     }
     /** @deprecated Use User.Channel instead. */
     @Override
-    public ContentsViewedAfterViewingMultipleProductsRequest setChannel(Channel channel)
+    public ContentsViewedAfterViewingMultipleProductsRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
         return this;

@@ -70,7 +70,7 @@ public class VariantSpecificationFacet extends StringValueFacet
         return this;
     }
     @Override
-    public VariantSpecificationFacet setSettings(FacetSettings settings)
+    public VariantSpecificationFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

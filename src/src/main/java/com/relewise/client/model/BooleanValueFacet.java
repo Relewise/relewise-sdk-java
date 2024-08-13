@@ -53,7 +53,7 @@ public abstract class BooleanValueFacet extends Facet
         return this;
     }
     @Override
-    public BooleanValueFacet setSettings(FacetSettings settings)
+    public BooleanValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

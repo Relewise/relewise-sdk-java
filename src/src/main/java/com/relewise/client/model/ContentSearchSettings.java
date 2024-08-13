@@ -43,7 +43,7 @@ public class ContentSearchSettings extends SearchSettings
     {
         return this.recommendations;
     }
-    public ContentSearchSettings setSelectedContentProperties(SelectedContentPropertiesSettings selectedContentProperties)
+    public ContentSearchSettings setSelectedContentProperties(@Nullable SelectedContentPropertiesSettings selectedContentProperties)
     {
         this.selectedContentProperties = selectedContentProperties;
         return this;

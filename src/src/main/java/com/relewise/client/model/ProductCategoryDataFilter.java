@@ -107,19 +107,19 @@ public class ProductCategoryDataFilter extends DataFilter implements ICategoryFi
         return this;
     }
     @Override
-    public ProductCategoryDataFilter setConditions(ValueConditionCollection conditions)
+    public ProductCategoryDataFilter setConditions(@Nullable ValueConditionCollection conditions)
     {
         this.conditions = conditions;
         return this;
     }
     @Override
-    public ProductCategoryDataFilter setLanguage(Language language)
+    public ProductCategoryDataFilter setLanguage(@Nullable Language language)
     {
         this.language = language;
         return this;
     }
     @Override
-    public ProductCategoryDataFilter setCurrency(Currency currency)
+    public ProductCategoryDataFilter setCurrency(@Nullable Currency currency)
     {
         this.currency = currency;
         return this;
@@ -151,7 +151,7 @@ public class ProductCategoryDataFilter extends DataFilter implements ICategoryFi
         return this;
     }
     @Override
-    public ProductCategoryDataFilter setSettings(FilterSettings settings)
+    public ProductCategoryDataFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

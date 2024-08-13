@@ -92,7 +92,7 @@ public abstract class DoubleDataRangesFacet extends Facet
         return this;
     }
     @Override
-    public DoubleDataRangesFacet setSettings(FacetSettings settings)
+    public DoubleDataRangesFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

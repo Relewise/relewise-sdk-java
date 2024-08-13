@@ -49,7 +49,7 @@ public class BrandDisabledFilter extends Filter implements IBrandFilter
         return this;
     }
     @Override
-    public BrandDisabledFilter setSettings(FilterSettings settings)
+    public BrandDisabledFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

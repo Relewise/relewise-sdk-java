@@ -83,7 +83,7 @@ public class ContainsCondition extends ValueCondition
     {
         return this.objectFilter;
     }
-    public ContainsCondition setValue(DataValue value)
+    public ContainsCondition setValue(@Nullable DataValue value)
     {
         this.value = value;
         return this;
@@ -93,7 +93,7 @@ public class ContainsCondition extends ValueCondition
         this.valueCollectionEvaluationMode = valueCollectionEvaluationMode;
         return this;
     }
-    public ContainsCondition setObjectFilter(DataObjectFilter objectFilter)
+    public ContainsCondition setObjectFilter(@Nullable DataObjectFilter objectFilter)
     {
         this.objectFilter = objectFilter;
         return this;

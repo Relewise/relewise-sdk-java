@@ -38,7 +38,7 @@ public abstract class DoubleProductDataRangeFacet extends DoubleDataRangeFacet
         return this;
     }
     @Override
-    public DoubleProductDataRangeFacet setSelected(DoubleRange selected)
+    public DoubleProductDataRangeFacet setSelected(@Nullable DoubleRange selected)
     {
         this.selected = selected;
         return this;
@@ -56,7 +56,7 @@ public abstract class DoubleProductDataRangeFacet extends DoubleDataRangeFacet
         return this;
     }
     @Override
-    public DoubleProductDataRangeFacet setSettings(FacetSettings settings)
+    public DoubleProductDataRangeFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

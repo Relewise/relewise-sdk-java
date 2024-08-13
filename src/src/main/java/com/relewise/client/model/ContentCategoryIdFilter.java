@@ -76,7 +76,7 @@ public class ContentCategoryIdFilter extends CategoryIdFilter implements IConten
         return this;
     }
     @Override
-    public ContentCategoryIdFilter setSettings(FilterSettings settings)
+    public ContentCategoryIdFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

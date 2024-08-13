@@ -28,7 +28,7 @@ public abstract class DoubleDataObjectRangeFacet extends DoubleDataRangeFacet
 {
     public String $type = "";
     @Override
-    public DoubleDataObjectRangeFacet setSelected(DoubleRange selected)
+    public DoubleDataObjectRangeFacet setSelected(@Nullable DoubleRange selected)
     {
         this.selected = selected;
         return this;
@@ -46,7 +46,7 @@ public abstract class DoubleDataObjectRangeFacet extends DoubleDataRangeFacet
         return this;
     }
     @Override
-    public DoubleDataObjectRangeFacet setSettings(FacetSettings settings)
+    public DoubleDataObjectRangeFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

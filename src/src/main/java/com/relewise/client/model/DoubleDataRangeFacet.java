@@ -37,7 +37,7 @@ public abstract class DoubleDataRangeFacet extends Facet
     {
         return this.key;
     }
-    public DoubleDataRangeFacet setSelected(DoubleRange selected)
+    public DoubleDataRangeFacet setSelected(@Nullable DoubleRange selected)
     {
         this.selected = selected;
         return this;
@@ -54,7 +54,7 @@ public abstract class DoubleDataRangeFacet extends Facet
         return this;
     }
     @Override
-    public DoubleDataRangeFacet setSettings(FacetSettings settings)
+    public DoubleDataRangeFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;

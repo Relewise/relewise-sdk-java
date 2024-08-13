@@ -64,7 +64,7 @@ public class ProductCategoryHasParentFilter extends HasParentCategoryFilter impl
         return this;
     }
     @Override
-    public ProductCategoryHasParentFilter setSettings(FilterSettings settings)
+    public ProductCategoryHasParentFilter setSettings(@Nullable FilterSettings settings)
     {
         this.settings = settings;
         return this;

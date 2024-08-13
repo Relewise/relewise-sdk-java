@@ -64,7 +64,7 @@ public class RedirectResult
         this.condition = condition;
         return this;
     }
-    public RedirectResult setDestination(String destination)
+    public RedirectResult setDestination(@Nullable String destination)
     {
         this.destination = destination;
         return this;
@@ -78,7 +78,7 @@ public class RedirectResult
         this.data.put(key, value);
         return this;
     }
-    public RedirectResult setData(HashMap<String, String> data)
+    public RedirectResult setData(@Nullable HashMap<String, String> data)
     {
         this.data = data;
         return this;

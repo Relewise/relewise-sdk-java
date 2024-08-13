@@ -81,7 +81,7 @@ public class ProductDataIntegerValueFacet extends IntegerProductDataValueFacet
         return this;
     }
     @Override
-    public ProductDataIntegerValueFacet setSettings(FacetSettings settings)
+    public ProductDataIntegerValueFacet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;
         return this;
