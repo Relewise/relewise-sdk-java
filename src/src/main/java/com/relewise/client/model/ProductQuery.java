@@ -37,9 +37,9 @@ public class ProductQuery extends LicensedRequest
     public Boolean includeDisabledProducts;
     public Boolean includeDisabledVariants;
     public Boolean excludeProductsWithNoVariants;
-    /** The identifier for the <code>ProductQuery</code> paged cursor, to consume results in <code>PageSize</code> batches. Leave as <code>null</code> for retrieving the first page, and set to the value returned in <code>NextPageToken</code> for any subsequent page requests. <remarks>Should a wrong/unexisting token be supplied, a 'Validation' exception shall be returned.</remarks> */
+    /** The identifier for the <code>ProductQuery</code> paged cursor, to consume results in <code>PageSize</code> batches. Leave as <code>null</code> for retrieving the first page, and set to the value returned in <code>NextPageToken</code> for any subsequent page requests. Should a wrong/unexisting token be supplied, a 'Validation' exception shall be returned. */
     public @Nullable UUID nextPageToken;
-    /** The size of the page requested. <remarks>Maximum allowed value is 1000.</remarks> */
+    /** The size of the page requested. Maximum allowed value is 1000. */
     public @Nullable Integer pageSize;
     public static ProductQuery create(@Nullable FilterCollection filters, Boolean excludeProductsWithNoVariants)
     {
@@ -55,7 +55,7 @@ public class ProductQuery extends LicensedRequest
         this.nextPageToken = null;
     }
     /**
-     * Initiates a new instance of <code>ProductQuery</code> with support for paging. The initial request needs to set <code>PageSize</code>. Should results span over multiple pages, the response would have token for <paramref name="nextPageToken">.</paramref>
+     * Initiates a new instance of <code>ProductQuery</code> with support for paging. The initial request needs to set <code>PageSize</code>. Should results span over multiple pages, the response would have token for <code>nextPageToken</code>
      * @param filters The filters to be executed to limit results.
      * @param excludeProductsWithNoVariants Should products without variants be included.
      * @param pageSize The positive number of elements in page should results span over multiple pages.
@@ -68,7 +68,7 @@ public class ProductQuery extends LicensedRequest
         return new ProductQuery(filters, excludeProductsWithNoVariants, pageSize, language, currency, nextPageToken);
     }
     /**
-     * Initiates a new instance of <code>ProductQuery</code> with support for paging. The initial request needs to set <code>PageSize</code>. Should results span over multiple pages, the response would have token for <paramref name="nextPageToken">.</paramref>
+     * Initiates a new instance of <code>ProductQuery</code> with support for paging. The initial request needs to set <code>PageSize</code>. Should results span over multiple pages, the response would have token for <code>nextPageToken</code>
      * @param filters The filters to be executed to limit results.
      * @param excludeProductsWithNoVariants Should products without variants be included.
      * @param pageSize The positive number of elements in page should results span over multiple pages.
@@ -131,12 +131,12 @@ public class ProductQuery extends LicensedRequest
     {
         return this.excludeProductsWithNoVariants;
     }
-    /** The identifier for the <code>ProductQuery</code> paged cursor, to consume results in <code>PageSize</code> batches. Leave as <code>null</code> for retrieving the first page, and set to the value returned in <code>NextPageToken</code> for any subsequent page requests. <remarks>Should a wrong/unexisting token be supplied, a 'Validation' exception shall be returned.</remarks> */
+    /** The identifier for the <code>ProductQuery</code> paged cursor, to consume results in <code>PageSize</code> batches. Leave as <code>null</code> for retrieving the first page, and set to the value returned in <code>NextPageToken</code> for any subsequent page requests. Should a wrong/unexisting token be supplied, a 'Validation' exception shall be returned. */
     public @Nullable UUID getNextPageToken()
     {
         return this.nextPageToken;
     }
-    /** The size of the page requested. <remarks>Maximum allowed value is 1000.</remarks> */
+    /** The size of the page requested. Maximum allowed value is 1000. */
     public @Nullable Integer getPageSize()
     {
         return this.pageSize;
@@ -188,13 +188,13 @@ public class ProductQuery extends LicensedRequest
         this.excludeProductsWithNoVariants = excludeProductsWithNoVariants;
         return this;
     }
-    /** The identifier for the <code>ProductQuery</code> paged cursor, to consume results in <code>PageSize</code> batches. Leave as <code>null</code> for retrieving the first page, and set to the value returned in <code>NextPageToken</code> for any subsequent page requests. <remarks>Should a wrong/unexisting token be supplied, a 'Validation' exception shall be returned.</remarks> */
+    /** The identifier for the <code>ProductQuery</code> paged cursor, to consume results in <code>PageSize</code> batches. Leave as <code>null</code> for retrieving the first page, and set to the value returned in <code>NextPageToken</code> for any subsequent page requests. Should a wrong/unexisting token be supplied, a 'Validation' exception shall be returned. */
     public ProductQuery setNextPageToken(@Nullable UUID nextPageToken)
     {
         this.nextPageToken = nextPageToken;
         return this;
     }
-    /** The size of the page requested. <remarks>Maximum allowed value is 1000.</remarks> */
+    /** The size of the page requested. Maximum allowed value is 1000. */
     public ProductQuery setPageSize(@Nullable Integer pageSize)
     {
         this.pageSize = pageSize;
