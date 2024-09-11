@@ -1,6 +1,6 @@
-# relewise-sdk-java [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![relewise-sdk](https://maven-badges.herokuapp.com/maven-central/com.relewise.client/relewise-sdk/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.relewise.client/relewise-sdk) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Relewise/relewise-sdk-php/pulls)
+# relewise-sdk-java [![relewise-sdk](https://maven-badges.herokuapp.com/maven-central/com.relewise.client/relewise-sdk/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.relewise.client/relewise-sdk) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Relewise/relewise-sdk-php/pulls)
 
-Java SDK for Relewise
+Java SDK for Relewise. Find detailed usage examples on our [docs site](https://docs.relewise.com/docs/examples/java/).
 
 ## Installation
 
