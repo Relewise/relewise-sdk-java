@@ -17,11 +17,13 @@ public class JavaClassWriter : IJavaTypeWriter
         this.javaWriter = javaWriter;
     }
 
-    public bool CanWrite(Type type) => IsClass(type) || IsReadonlyStruct(type);
+    public bool CanWrite(Type type) => IsClass(type) || IsAnyStruct(type);
 
     private bool IsClass(Type type) => type.IsClass;
 
     private bool IsReadonlyStruct(Type type) => type.IsValueType && type.GetProperties().All(p => !p.CanWrite);
+
+    private bool IsAnyStruct(Type type) => type.IsValueType;
 
     public void Write(IndentedTextWriter writer, Type type, string typeName)
     {
@@ -123,16 +125,7 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
             .Select(MapPropertyInfo)
             .ToArray();
 
-        if (IsClass(type))
-        {
-            javaWriter.SettablePropertiesWriter.Write(writer, type, ownedProperties);
-            javaWriter.StaticReadonlyPropertiesWriter.Write(writer, type, staticGetterProperties);
-
-            javaWriter.CreatorMethodWriter.Write(writer, type, typeName, settableProperties);
-            javaWriter.PropertyGetterMethodsWriter.Write(writer, type, ownedProperties);
-            javaWriter.PropertySetterMethodsWriter.Write(writer, type, typeName, settableProperties, ownedProperties.Select(p => p.propertyName).ToArray());
-        }
-        else if (IsReadonlyStruct(type))
+        if (IsReadonlyStruct(type))
         {
             javaWriter.SettablePropertiesWriter.Write(writer, type, gettableProperties);
             javaWriter.StaticReadonlyPropertiesWriter.Write(writer, type, staticGetterProperties);
@@ -140,6 +133,15 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
             javaWriter.CreatorMethodWriter.Write(writer, type, typeName, gettableProperties);
             javaWriter.PropertyGetterMethodsWriter.Write(writer, type, gettableProperties);
             javaWriter.PropertySetterMethodsWriter.Write(writer, type, typeName, gettableProperties, gettableProperties.Select(p => p.propertyName).ToArray());
+        }
+        else if (IsClass(type) || IsAnyStruct(type))
+        {
+            javaWriter.SettablePropertiesWriter.Write(writer, type, ownedProperties);
+            javaWriter.StaticReadonlyPropertiesWriter.Write(writer, type, staticGetterProperties);
+
+            javaWriter.CreatorMethodWriter.Write(writer, type, typeName, settableProperties);
+            javaWriter.PropertyGetterMethodsWriter.Write(writer, type, ownedProperties);
+            javaWriter.PropertySetterMethodsWriter.Write(writer, type, typeName, settableProperties, ownedProperties.Select(p => p.propertyName).ToArray());
         }
 
         writer.Indent--;
