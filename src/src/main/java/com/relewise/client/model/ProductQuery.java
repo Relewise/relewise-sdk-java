@@ -41,6 +41,8 @@ public class ProductQuery extends LicensedRequest
     public @Nullable UUID nextPageToken;
     /** The size of the page requested. Maximum allowed value is 1000. */
     public @Nullable Integer pageSize;
+    /** Settings for which properties should be included for the entities in the response. If settings are not set they default to include everything. */
+    public @Nullable ProductQuerySelectedPropertiesSettings resultSettings;
     public static ProductQuery create(@Nullable FilterCollection filters, Boolean excludeProductsWithNoVariants)
     {
         return new ProductQuery(filters, excludeProductsWithNoVariants);
@@ -141,6 +143,11 @@ public class ProductQuery extends LicensedRequest
     {
         return this.pageSize;
     }
+    /** Settings for which properties should be included for the entities in the response. If settings are not set they default to include everything. */
+    public @Nullable ProductQuerySelectedPropertiesSettings getResultSettings()
+    {
+        return this.resultSettings;
+    }
     public ProductQuery setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
@@ -198,6 +205,12 @@ public class ProductQuery extends LicensedRequest
     public ProductQuery setPageSize(@Nullable Integer pageSize)
     {
         this.pageSize = pageSize;
+        return this;
+    }
+    /** Settings for which properties should be included for the entities in the response. If settings are not set they default to include everything. */
+    public ProductQuery setResultSettings(@Nullable ProductQuerySelectedPropertiesSettings resultSettings)
+    {
+        this.resultSettings = resultSettings;
         return this;
     }
 }

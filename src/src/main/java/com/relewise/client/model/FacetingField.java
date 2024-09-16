@@ -54,4 +54,9 @@ public enum FacetingField
             return "VariantSpecification";
         }
     },
+    User {
+        public String toString() {
+            return "User";
+        }
+    },
 }

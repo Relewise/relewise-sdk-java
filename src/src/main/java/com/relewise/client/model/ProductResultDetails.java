@@ -22,6 +22,7 @@ public class ProductResultDetails
 {
     public String productId;
     public Multilingual displayName;
+    /** @deprecated Not in use, this will always be null */
     public VariantResult variant;
     public Integer[] assortments;
     public HashMap<String, DataValue> data;
@@ -61,6 +62,7 @@ public class ProductResultDetails
     {
         return this.displayName;
     }
+    /** @deprecated Not in use, this will always be null */
     public VariantResult getVariant()
     {
         return this.variant;
@@ -151,6 +153,7 @@ public class ProductResultDetails
         this.displayName = displayName;
         return this;
     }
+    /** @deprecated Not in use, this will always be null */
     public ProductResultDetails setVariant(VariantResult variant)
     {
         this.variant = variant;

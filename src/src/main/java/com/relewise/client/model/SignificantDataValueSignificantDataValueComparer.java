@@ -39,4 +39,9 @@ public enum SignificantDataValueSignificantDataValueComparer
             return "KeyExists";
         }
     },
+    CollectionOverlap {
+        public String toString() {
+            return "CollectionOverlap";
+        }
+    },
 }

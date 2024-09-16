@@ -17,6 +17,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
+/** a <code>RelevanceModifier</code> that can change the relevance of an entity depending on matching conditions on a certain key. */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,

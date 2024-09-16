@@ -20,8 +20,8 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VariantChangeTriggerResultSettings
 {
-    public SelectedProductPropertiesSettings selectedProductProperties;
-    public SelectedVariantPropertiesSettings selectedVariantProperties;
+    public SelectedProductDetailsPropertiesSettings selectedProductProperties;
+    public SelectedVariantDetailsPropertiesSettings selectedVariantProperties;
     public static VariantChangeTriggerResultSettings create()
     {
         return new VariantChangeTriggerResultSettings();
@@ -29,20 +29,20 @@ public class VariantChangeTriggerResultSettings
     public VariantChangeTriggerResultSettings()
     {
     }
-    public SelectedProductPropertiesSettings getSelectedProductProperties()
+    public SelectedProductDetailsPropertiesSettings getSelectedProductProperties()
     {
         return this.selectedProductProperties;
     }
-    public SelectedVariantPropertiesSettings getSelectedVariantProperties()
+    public SelectedVariantDetailsPropertiesSettings getSelectedVariantProperties()
     {
         return this.selectedVariantProperties;
     }
-    public VariantChangeTriggerResultSettings setSelectedProductProperties(SelectedProductPropertiesSettings selectedProductProperties)
+    public VariantChangeTriggerResultSettings setSelectedProductProperties(SelectedProductDetailsPropertiesSettings selectedProductProperties)
     {
         this.selectedProductProperties = selectedProductProperties;
         return this;
     }
-    public VariantChangeTriggerResultSettings setSelectedVariantProperties(SelectedVariantPropertiesSettings selectedVariantProperties)
+    public VariantChangeTriggerResultSettings setSelectedVariantProperties(SelectedVariantDetailsPropertiesSettings selectedVariantProperties)
     {
         this.selectedVariantProperties = selectedVariantProperties;
         return this;

@@ -91,6 +91,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = CompanyDataHasKeyFilter.class, name = "Relewise.Client.Requests.Filters.CompanyDataHasKeyFilter, Relewise.Client"),
     @JsonSubTypes.Type(value = ProductHasCategoriesFilter.class, name = "Relewise.Client.Requests.Filters.ProductHasCategoriesFilter, Relewise.Client"),
     @JsonSubTypes.Type(value = ContentHasCategoriesFilter.class, name = "Relewise.Client.Requests.Filters.ContentHasCategoriesFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductInCartFilter.class, name = "Relewise.Client.Requests.Filters.ProductInCartFilter, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Filter
