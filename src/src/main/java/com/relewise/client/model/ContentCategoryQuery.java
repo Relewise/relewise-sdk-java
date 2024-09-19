@@ -35,11 +35,11 @@ public class ContentCategoryQuery extends ContentCategoryIdFilterCategoryQuery
         this.language = null;
         this.currency = null;
     }
-    public static ContentCategoryQuery create(@Nullable Language language, Currency currency)
+    public static ContentCategoryQuery create(@Nullable Language language, @Nullable Currency currency)
     {
         return new ContentCategoryQuery(language, currency);
     }
-    public ContentCategoryQuery(@Nullable Language language, Currency currency)
+    public ContentCategoryQuery(@Nullable Language language, @Nullable Currency currency)
     {
         this.language = language;
         this.currency = currency;

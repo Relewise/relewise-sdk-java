@@ -26,11 +26,11 @@ import java.util.HashSet;
 public class ContentDataDoubleRangeFacet extends DoubleContentDataRangeFacet
 {
     public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.ContentDataDoubleRangeFacet, Relewise.Client";
-    public static ContentDataDoubleRangeFacet create(String key, DoubleRange selected)
+    public static ContentDataDoubleRangeFacet create(String key, @Nullable DoubleRange selected)
     {
         return new ContentDataDoubleRangeFacet(key, selected);
     }
-    public ContentDataDoubleRangeFacet(String key, DoubleRange selected)
+    public ContentDataDoubleRangeFacet(String key, @Nullable DoubleRange selected)
     {
         this.key = key;
         this.selected = selected;

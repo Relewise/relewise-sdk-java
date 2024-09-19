@@ -45,11 +45,11 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
         this.considerAlreadyKnownInformationAboutProduct = considerAlreadyKnownInformationAboutProduct;
         this.evaluationSettings = null;
     }
-    public static SimilarProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Product productData, Boolean considerAlreadyKnownInformationAboutProduct, SimilarProductsEvaluationSettings evaluationSettings)
+    public static SimilarProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Product productData, Boolean considerAlreadyKnownInformationAboutProduct, @Nullable SimilarProductsEvaluationSettings evaluationSettings)
     {
         return new SimilarProductsRequest(language, currency, displayedAtLocationType, user, productData, considerAlreadyKnownInformationAboutProduct, evaluationSettings);
     }
-    public SimilarProductsRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Product productData, Boolean considerAlreadyKnownInformationAboutProduct, SimilarProductsEvaluationSettings evaluationSettings)
+    public SimilarProductsRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Product productData, Boolean considerAlreadyKnownInformationAboutProduct, @Nullable SimilarProductsEvaluationSettings evaluationSettings)
     {
         this.language = language;
         this.currency = currency;
@@ -72,11 +72,11 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
         this.existingProductId = existingProductId;
         this.evaluationSettings = null;
     }
-    public static SimilarProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ProductAndVariantId existingProductId, SimilarProductsEvaluationSettings evaluationSettings)
+    public static SimilarProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ProductAndVariantId existingProductId, @Nullable SimilarProductsEvaluationSettings evaluationSettings)
     {
         return new SimilarProductsRequest(language, currency, displayedAtLocationType, user, existingProductId, evaluationSettings);
     }
-    public SimilarProductsRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ProductAndVariantId existingProductId, SimilarProductsEvaluationSettings evaluationSettings)
+    public SimilarProductsRequest(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, ProductAndVariantId existingProductId, @Nullable SimilarProductsEvaluationSettings evaluationSettings)
     {
         this.language = language;
         this.currency = currency;

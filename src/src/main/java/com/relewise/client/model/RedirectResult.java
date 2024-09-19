@@ -24,11 +24,11 @@ public class RedirectResult
     public SearchTermCondition condition;
     public @Nullable String destination;
     public @Nullable HashMap<String, String> data;
-    public static RedirectResult create(UUID id, SearchTermCondition condition, @Nullable String destination, HashMap<String, String> data)
+    public static RedirectResult create(UUID id, SearchTermCondition condition, @Nullable String destination, @Nullable HashMap<String, String> data)
     {
         return new RedirectResult(id, condition, destination, data);
     }
-    public RedirectResult(UUID id, SearchTermCondition condition, @Nullable String destination, HashMap<String, String> data)
+    public RedirectResult(UUID id, SearchTermCondition condition, @Nullable String destination, @Nullable HashMap<String, String> data)
     {
         this.id = id;
         this.condition = condition;

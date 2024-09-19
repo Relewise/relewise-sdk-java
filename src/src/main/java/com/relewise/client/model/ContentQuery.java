@@ -42,11 +42,11 @@ public class ContentQuery extends LicensedRequest
         this.language = null;
         this.currency = null;
     }
-    public static ContentQuery create(@Nullable Language language, Currency currency)
+    public static ContentQuery create(@Nullable Language language, @Nullable Currency currency)
     {
         return new ContentQuery(language, currency);
     }
-    public ContentQuery(@Nullable Language language, Currency currency)
+    public ContentQuery(@Nullable Language language, @Nullable Currency currency)
     {
         this.language = language;
         this.currency = currency;

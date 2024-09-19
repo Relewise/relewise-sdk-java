@@ -28,11 +28,11 @@ public class SearchTermModifierRuleReplaceWordsInTermAction extends SearchTermMo
     public String $type = "Relewise.Client.DataTypes.Search.Rules.SearchTermModifierRule+ReplaceWordsInTermAction, Relewise.Client";
     public String words;
     public @Nullable String replacement;
-    public static SearchTermModifierRuleReplaceWordsInTermAction create(String words, String replacement)
+    public static SearchTermModifierRuleReplaceWordsInTermAction create(String words, @Nullable String replacement)
     {
         return new SearchTermModifierRuleReplaceWordsInTermAction(words, replacement);
     }
-    public SearchTermModifierRuleReplaceWordsInTermAction(String words, String replacement)
+    public SearchTermModifierRuleReplaceWordsInTermAction(String words, @Nullable String replacement)
     {
         this.words = words;
         this.replacement = replacement;

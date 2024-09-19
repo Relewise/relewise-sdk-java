@@ -39,11 +39,11 @@ public class ProductDisplayNameFilter extends Filter implements IProductFilter
         this.mustMatchAllConditions = true;
         this.language = null;
     }
-    public static ProductDisplayNameFilter create(ValueConditionCollection conditions, Boolean mustMatchAllConditions, Language language)
+    public static ProductDisplayNameFilter create(ValueConditionCollection conditions, Boolean mustMatchAllConditions, @Nullable Language language)
     {
         return new ProductDisplayNameFilter(conditions, mustMatchAllConditions, language);
     }
-    public ProductDisplayNameFilter(ValueConditionCollection conditions, Boolean mustMatchAllConditions, Language language)
+    public ProductDisplayNameFilter(ValueConditionCollection conditions, Boolean mustMatchAllConditions, @Nullable Language language)
     {
         this.conditions = conditions;
         this.mustMatchAllConditions = mustMatchAllConditions;

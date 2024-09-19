@@ -26,11 +26,11 @@ import java.util.HashSet;
 public class DataObjectDoubleRangeFacet extends DoubleDataObjectRangeFacet
 {
     public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.DataObjectDoubleRangeFacet, Relewise.Client";
-    public static DataObjectDoubleRangeFacet create(String key, DoubleRange selected)
+    public static DataObjectDoubleRangeFacet create(String key, @Nullable DoubleRange selected)
     {
         return new DataObjectDoubleRangeFacet(key, selected);
     }
-    public DataObjectDoubleRangeFacet(String key, DoubleRange selected)
+    public DataObjectDoubleRangeFacet(String key, @Nullable DoubleRange selected)
     {
         this.key = key;
         this.selected = selected;

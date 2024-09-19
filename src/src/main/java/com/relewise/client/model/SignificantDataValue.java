@@ -35,11 +35,11 @@ public class SignificantDataValue
         this.significance = 1d;
         this.transformer = null;
     }
-    public static SignificantDataValue create(String key, SignificantDataValueSignificantDataValueComparer comparer, Double significance, TrimStringTransformer transformer)
+    public static SignificantDataValue create(String key, SignificantDataValueSignificantDataValueComparer comparer, Double significance, @Nullable TrimStringTransformer transformer)
     {
         return new SignificantDataValue(key, comparer, significance, transformer);
     }
-    public SignificantDataValue(String key, SignificantDataValueSignificantDataValueComparer comparer, Double significance, TrimStringTransformer transformer)
+    public SignificantDataValue(String key, SignificantDataValueSignificantDataValueComparer comparer, Double significance, @Nullable TrimStringTransformer transformer)
     {
         this.key = key;
         this.comparer = comparer;
