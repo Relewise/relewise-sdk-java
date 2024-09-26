@@ -19,6 +19,12 @@ public class DataValueFactory {
             .setValue(value);
     }
 
+    public static DataValue create(boolean value) {
+        return DataValue.create()
+            .setType(DataValueDataValueTypes.Boolean)
+            .setValue(value);
+    }
+
     public static DataValue create(MultiCurrency value) {
         return DataValue.create()
             .setType(DataValueDataValueTypes.MultiCurrency)
