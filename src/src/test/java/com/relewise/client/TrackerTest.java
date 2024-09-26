@@ -28,7 +28,8 @@ public class TrackerTest extends TestBase {
         assertDoesNotThrow(action);
     }
 
-    private void testDocsSampleProductUpdateWithVariant() throws Exception {
+    @Test
+    public void testDocsSampleProductUpdateWithVariant() throws Exception {
         var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
 
         // Create a timestamp to distinguish active and inactive entities
@@ -191,6 +192,119 @@ public class TrackerTest extends TestBase {
         updates.add(enabledProductsWithNewestTimestamp);
 
         tracker.track(BatchedTrackingRequest.create(updates.toArray(new Trackable[updates.size()])));
+    }
+
+    @Test
+    public void testDocsSampleContentUpdate() throws Exception {
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+
+        // Create a timestamp to distinguish active and inactive entities
+        // Read more at
+        // https://docs.relewise.com/docs/developer/bestpractices/product-integration.html
+        long importedAtTimestamp = System.currentTimeMillis();
+
+        // Language can be any string, and doesn't have to be a valid iso-standard.
+        var english = Language.create("en");
+
+        var updates = new ArrayList<Trackable>();
+
+        // Foreach content element that needs to be imported, do the following:
+        {
+            // The Id should be some value associated to the content element
+            // which does not change if titles or similar are changed.
+            var content = Content.create("Content-ID-01");
+
+            // We only set the English translation in this example
+            // but more can be set by parsing more MultilingualValue
+            // to the Multilingual.create method.
+            content.setDisplayName(Multilingual.create(
+                MultilingualValue.create(english, "The English display name"))
+            );
+
+            content.addToData("ShortDescription", DataValueFactory.create(Multilingual.create(
+                MultilingualValue.create(
+                    english,
+                    "The short English description"
+                )
+            )));
+
+            content.addToCategoryPaths(CategoryPath.create(
+                CategoryNameAndId.create("23", Multilingual.create(
+                    MultilingualValue.create(english, "Outdoor")
+                )),
+                CategoryNameAndId.create("372", Multilingual.create(
+                    MultilingualValue.create(english, "Hiking")
+                ))
+            ));
+
+            content.addToData("ImportedAt", DataValueFactory.create(importedAtTimestamp));
+            content.addToData("ReadingTimeInMinutes", DataValueFactory.create(3));
+            content.addToData("News", DataValueFactory.create(true));
+            content.addToData("Badges", DataValueFactory.create("fun", "current season", "some other badge"));
+
+            var contentUpdate = ContentUpdate.create(
+                content,
+                ContentUpdateUpdateKind.ReplaceProvidedProperties
+            );
+
+            updates.add(contentUpdate);
+        }
+        // Foreach content element END
+
+        // If this is a full-import (not delta), disable all non-included content elements
+        {
+            // Setting this to false will make it disable all content elements that don't have the "ImportedAt" key.
+            boolean onlyDisableOldContentElementsThatHaveTheImportedAtKey = true;
+
+            boolean negated = true;
+            var nonUpdatedContentFilter = FilterCollection.create(
+                ContentDataFilter.create(
+                    "ImportedAt",
+                    ValueConditionCollection.create().setItems(
+                        EqualsCondition.create(DataValueFactory.create(importedAtTimestamp), negated)
+                    ),
+                    true,
+                    onlyDisableOldContentElementsThatHaveTheImportedAtKey,
+                    null,
+                    null
+                )
+            );
+
+            var disableContentElementsWithoutNewestTimestamp = ContentAdministrativeAction.create(
+                Language.UNDEFINED,
+                Currency.UNDEFINED,
+                nonUpdatedContentFilter,
+                ContentAdministrativeActionUpdateKind.Disable
+            );
+
+            updates.add(disableContentElementsWithoutNewestTimestamp);
+        }
+
+        boolean negated = false;
+        var updatedContentFilter = FilterCollection.create(
+            ContentDataFilter.create(
+                "ImportedAt",
+                ValueConditionCollection.create().setItems(
+                    EqualsCondition.create(DataValueFactory.create(importedAtTimestamp), negated)
+                ),
+                true,
+                true,
+                null,
+                null
+            )
+        );
+        var enableContentElementsWithNewestTimestamp = ContentAdministrativeAction.create(
+            Language.UNDEFINED,
+            Currency.UNDEFINED,
+            updatedContentFilter,
+            ContentAdministrativeActionUpdateKind.Enable
+        );
+
+        updates.add(enableContentElementsWithNewestTimestamp);
+
+        tracker.track(BatchedTrackingRequest.create(
+            updates.toArray(new Trackable[updates.size()])
+        ));
     }
 
     @Test
