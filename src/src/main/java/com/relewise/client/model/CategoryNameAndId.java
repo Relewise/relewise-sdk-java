@@ -37,7 +37,7 @@ public class CategoryNameAndId
      * @param id The ID of the category (Which is generally very unlikely to change in the future)
      * @param displayName The Display name of the category (More likely to change in the future)
      */
-    public static CategoryNameAndId create(String id, Multilingual displayName)
+    public static CategoryNameAndId create(String id, @Nullable Multilingual displayName)
     {
         return new CategoryNameAndId(id, displayName);
     }
@@ -46,7 +46,7 @@ public class CategoryNameAndId
      * @param id The ID of the category (Which is generally very unlikely to change in the future)
      * @param displayName The Display name of the category (More likely to change in the future)
      */
-    public CategoryNameAndId(String id, Multilingual displayName)
+    public CategoryNameAndId(String id, @Nullable Multilingual displayName)
     {
         this.id = id;
         this.displayName = displayName;

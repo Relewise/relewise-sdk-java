@@ -37,11 +37,11 @@ public class FieldIndexConfiguration
         this.parser = parser;
         this.matchTypeSettings = null;
     }
-    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser, MatchTypeSettings matchTypeSettings)
+    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser, @Nullable MatchTypeSettings matchTypeSettings)
     {
         return new FieldIndexConfiguration(included, weight, predictionSourceType, parser, matchTypeSettings);
     }
-    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser, MatchTypeSettings matchTypeSettings)
+    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser, @Nullable MatchTypeSettings matchTypeSettings)
     {
         this.included = included;
         this.weight = weight;
@@ -60,11 +60,11 @@ public class FieldIndexConfiguration
         this.predictionSourceType = predictionSourceType;
         this.matchTypeSettings = null;
     }
-    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType, MatchTypeSettings matchTypeSettings)
+    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType, @Nullable MatchTypeSettings matchTypeSettings)
     {
         return new FieldIndexConfiguration(included, weight, predictionSourceType, matchTypeSettings);
     }
-    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType, MatchTypeSettings matchTypeSettings)
+    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType, @Nullable MatchTypeSettings matchTypeSettings)
     {
         this.included = included;
         this.weight = weight;

@@ -41,11 +41,11 @@ public class ProductView extends Trackable implements IUserIdentifier
         this.product = product;
         this.variant = null;
     }
-    public static ProductView create(@Nullable User user, Product product, ProductVariant variant)
+    public static ProductView create(@Nullable User user, Product product, @Nullable ProductVariant variant)
     {
         return new ProductView(user, product, variant);
     }
-    public ProductView(@Nullable User user, Product product, ProductVariant variant)
+    public ProductView(@Nullable User user, Product product, @Nullable ProductVariant variant)
     {
         this.user = user;
         this.product = product;

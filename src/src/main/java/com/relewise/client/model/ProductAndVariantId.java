@@ -31,11 +31,11 @@ public class ProductAndVariantId
         this.productId = productId;
         this.variantId = null;
     }
-    public static ProductAndVariantId create(String productId, String variantId)
+    public static ProductAndVariantId create(String productId, @Nullable String variantId)
     {
         return new ProductAndVariantId(productId, variantId);
     }
-    public ProductAndVariantId(String productId, String variantId)
+    public ProductAndVariantId(String productId, @Nullable String variantId)
     {
         this.productId = productId;
         this.variantId = variantId;

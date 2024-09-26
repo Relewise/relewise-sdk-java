@@ -24,11 +24,11 @@ public class DataObjectValueSelector
     public @Nullable DataObjectFilter filter;
     public @Nullable DataObjectValueSelector childSelector;
     public @Nullable DataObjectValueSelector fallbackSelector;
-    public static DataObjectValueSelector create(String key, @Nullable DataObjectFilter filter, @Nullable DataObjectValueSelector childSelector, DataObjectValueSelector fallbackSelector)
+    public static DataObjectValueSelector create(String key, @Nullable DataObjectFilter filter, @Nullable DataObjectValueSelector childSelector, @Nullable DataObjectValueSelector fallbackSelector)
     {
         return new DataObjectValueSelector(key, filter, childSelector, fallbackSelector);
     }
-    public DataObjectValueSelector(String key, @Nullable DataObjectFilter filter, @Nullable DataObjectValueSelector childSelector, DataObjectValueSelector fallbackSelector)
+    public DataObjectValueSelector(String key, @Nullable DataObjectFilter filter, @Nullable DataObjectValueSelector childSelector, @Nullable DataObjectValueSelector fallbackSelector)
     {
         this.key = key;
         this.filter = filter;

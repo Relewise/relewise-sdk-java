@@ -28,11 +28,11 @@ public class ProductPromotion extends Promotion
     public String $type = "Relewise.Client.DataTypes.RetailMedia.ProductPromotion, Relewise.Client";
     /** Filters matching the products to be promoted */
     public @Nullable FilterCollection filters;
-    public static ProductPromotion create(String name, @Nullable FilterCollection filters, PromotionLocationCollection locations)
+    public static ProductPromotion create(String name, @Nullable FilterCollection filters, @Nullable PromotionLocationCollection locations)
     {
         return new ProductPromotion(name, filters, locations);
     }
-    public ProductPromotion(String name, @Nullable FilterCollection filters, PromotionLocationCollection locations)
+    public ProductPromotion(String name, @Nullable FilterCollection filters, @Nullable PromotionLocationCollection locations)
     {
         this.name = name;
         this.filters = filters;

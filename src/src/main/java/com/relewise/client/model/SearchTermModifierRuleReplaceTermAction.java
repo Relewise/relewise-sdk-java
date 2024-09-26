@@ -27,11 +27,11 @@ public class SearchTermModifierRuleReplaceTermAction extends SearchTermModifierR
 {
     public String $type = "Relewise.Client.DataTypes.Search.Rules.SearchTermModifierRule+ReplaceTermAction, Relewise.Client";
     public @Nullable String replacement;
-    public static SearchTermModifierRuleReplaceTermAction create(String replacement)
+    public static SearchTermModifierRuleReplaceTermAction create(@Nullable String replacement)
     {
         return new SearchTermModifierRuleReplaceTermAction(replacement);
     }
-    public SearchTermModifierRuleReplaceTermAction(String replacement)
+    public SearchTermModifierRuleReplaceTermAction(@Nullable String replacement)
     {
         this.replacement = replacement;
     }

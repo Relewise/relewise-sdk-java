@@ -35,11 +35,11 @@ public class ProductCategoryQuery extends ProductCategoryIdFilterCategoryQuery
         this.language = null;
         this.currency = null;
     }
-    public static ProductCategoryQuery create(@Nullable Language language, Currency currency)
+    public static ProductCategoryQuery create(@Nullable Language language, @Nullable Currency currency)
     {
         return new ProductCategoryQuery(language, currency);
     }
-    public ProductCategoryQuery(@Nullable Language language, Currency currency)
+    public ProductCategoryQuery(@Nullable Language language, @Nullable Currency currency)
     {
         this.language = language;
         this.currency = currency;

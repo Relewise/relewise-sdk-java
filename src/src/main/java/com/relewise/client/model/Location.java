@@ -35,11 +35,11 @@ public class Location extends LocationEntityStateLocationMetadataValuesRetailMed
     public @Nullable LocationPlacementCollection placements;
     /** Defines what kinds of promotions are supported by this location */
     public @Nullable PromotionSpecificationCollection supportedPromotions;
-    public static Location create(@Nullable UUID id, LocationEntityState state, String name, LocationPlacementCollection placements, PromotionSpecificationCollection supportedPromotions)
+    public static Location create(@Nullable UUID id, LocationEntityState state, String name, LocationPlacementCollection placements, @Nullable PromotionSpecificationCollection supportedPromotions)
     {
         return new Location(id, state, name, placements, supportedPromotions);
     }
-    public Location(@Nullable UUID id, LocationEntityState state, String name, LocationPlacementCollection placements, PromotionSpecificationCollection supportedPromotions)
+    public Location(@Nullable UUID id, LocationEntityState state, String name, LocationPlacementCollection placements, @Nullable PromotionSpecificationCollection supportedPromotions)
     {
         this.id = id;
         this.state = state;

@@ -23,11 +23,11 @@ public class LocationPlacementVariation
     public String name;
     public @Nullable String key;
     public @Nullable PromotionSpecificationVariationCollection supportedPromotions;
-    public static LocationPlacementVariation create(String name, PromotionSpecificationVariationCollection supportedPromotions)
+    public static LocationPlacementVariation create(String name, @Nullable PromotionSpecificationVariationCollection supportedPromotions)
     {
         return new LocationPlacementVariation(name, supportedPromotions);
     }
-    public LocationPlacementVariation(String name, PromotionSpecificationVariationCollection supportedPromotions)
+    public LocationPlacementVariation(String name, @Nullable PromotionSpecificationVariationCollection supportedPromotions)
     {
         this.name = name;
         this.supportedPromotions = supportedPromotions;

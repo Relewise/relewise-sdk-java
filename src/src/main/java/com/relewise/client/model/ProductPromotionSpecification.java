@@ -29,11 +29,11 @@ public class ProductPromotionSpecification extends PromotionSpecification
     public String $type = "Relewise.Client.DataTypes.RetailMedia.ProductPromotion+Specification, Relewise.Client";
     /** Filters matching the products which may be promoted */
     public @Nullable FilterCollection promotableProducts;
-    public static ProductPromotionSpecification create(FilterCollection promotableProducts)
+    public static ProductPromotionSpecification create(@Nullable FilterCollection promotableProducts)
     {
         return new ProductPromotionSpecification(promotableProducts);
     }
-    public ProductPromotionSpecification(FilterCollection promotableProducts)
+    public ProductPromotionSpecification(@Nullable FilterCollection promotableProducts)
     {
         this.promotableProducts = promotableProducts;
     }

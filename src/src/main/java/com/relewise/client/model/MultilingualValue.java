@@ -22,11 +22,11 @@ public class MultilingualValue
 {
     public Language language;
     public @Nullable String text;
-    public static MultilingualValue create(Language language, String text)
+    public static MultilingualValue create(Language language, @Nullable String text)
     {
         return new MultilingualValue(language, text);
     }
-    public MultilingualValue(Language language, String text)
+    public MultilingualValue(Language language, @Nullable String text)
     {
         this.language = language;
         this.text = text;
