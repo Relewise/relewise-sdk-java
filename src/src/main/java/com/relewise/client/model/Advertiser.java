@@ -31,11 +31,11 @@ public class Advertiser extends AdvertiserEntityStateAdvertiserMetadataValuesRet
     public @Nullable PromotionSpecificationCollection allowedPromotions;
     /** Defines locations/placements/variations where this advertiser is allowed to make promotions at. If <code>null</code> or empty, an advertiser will not be allowed to make any promotions anywhere, only useful for Advertisers in draft. */
     public @Nullable PromotionLocationCollection allowedLocations;
-    public static Advertiser create(@Nullable UUID id, AdvertiserEntityState state, String name, @Nullable PromotionSpecificationCollection allowedPromotions, PromotionLocationCollection allowedLocations)
+    public static Advertiser create(@Nullable UUID id, AdvertiserEntityState state, String name, @Nullable PromotionSpecificationCollection allowedPromotions, @Nullable PromotionLocationCollection allowedLocations)
     {
         return new Advertiser(id, state, name, allowedPromotions, allowedLocations);
     }
-    public Advertiser(@Nullable UUID id, AdvertiserEntityState state, String name, @Nullable PromotionSpecificationCollection allowedPromotions, PromotionLocationCollection allowedLocations)
+    public Advertiser(@Nullable UUID id, AdvertiserEntityState state, String name, @Nullable PromotionSpecificationCollection allowedPromotions, @Nullable PromotionLocationCollection allowedLocations)
     {
         this.id = id;
         this.state = state;

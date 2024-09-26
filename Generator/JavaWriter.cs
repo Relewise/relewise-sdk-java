@@ -103,8 +103,11 @@ public class JavaWriter
         return typeName;
     }
 
-    public string BetterTypedParameterTypeName(Type parameterType, NullabilityInfo nullabilityInfo)
+    public string BetterTypedParameterTypeName(ParameterInfo parameter)
     {
+        Type parameterType = parameter.ParameterType;
+        var nullabilityInfo = new NullabilityInfoContext().Create(parameter);
+
         if (nullabilityInfo.WriteState is NullabilityState.Nullable)
         {
             parameterType = nullabilityInfo.Type;
@@ -114,7 +117,7 @@ public class JavaWriter
                 ? TypeName(elementType) + "..."
                 : parameterType.IsArray
                     ? TypeName(parameterType.GetElementType()!) + "..."
-                    : TypeName(parameterType);
+                    : PrependNullableIfApplicable(TypeName(parameterType), nullabilityInfo);
     }
 
     public string BetterTypedParameterTypeName(PropertyInfo property, NullabilityInfo nullabilityInfo)

@@ -29,11 +29,11 @@ public class RedirectRule extends SearchRule
     public SearchTermCondition condition;
     public @Nullable String destination;
     public @Nullable HashMap<String, String> data;
-    public static RedirectRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, String destination)
+    public static RedirectRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, @Nullable String destination)
     {
         return new RedirectRule(id, indexes, languages, isApproved, condition, destination);
     }
-    public RedirectRule(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, String destination)
+    public RedirectRule(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, @Nullable String destination)
     {
         this.id = id;
         this.indexes = indexes;
@@ -43,11 +43,11 @@ public class RedirectRule extends SearchRule
         this.destination = destination;
         this.data = null;
     }
-    public static RedirectRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, @Nullable String destination, HashMap<String, String> data)
+    public static RedirectRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, @Nullable String destination, @Nullable HashMap<String, String> data)
     {
         return new RedirectRule(id, indexes, languages, isApproved, condition, destination, data);
     }
-    public RedirectRule(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, @Nullable String destination, HashMap<String, String> data)
+    public RedirectRule(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, @Nullable String destination, @Nullable HashMap<String, String> data)
     {
         this.id = id;
         this.indexes = indexes;

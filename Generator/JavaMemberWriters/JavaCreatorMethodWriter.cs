@@ -186,7 +186,7 @@ public class JavaCreatorMethodWriter
             if (propertyName is not null)
             {
                 if (property!.PropertyType.IsGenericType && property!.PropertyType.GetGenericTypeDefinition() == typeof(List<>) && (parameter.ParameterType.IsArray
-                    || (parameter == parameters.Last() && javaWriter.BetterTypedParameterTypeName(parameter.ParameterType, new NullabilityInfoContext().Create(parameter)).Contains("..."))))
+                    || (parameter == parameters.Last() && javaWriter.BetterTypedParameterTypeName(parameter).Contains("..."))))
                 {
                     writer.WriteLine($"{variable}.{propertyName.AsFieldName()} = new ArrayList<>(Arrays.asList({parameter.Name.AsFieldName()}));");
                 }
@@ -262,7 +262,7 @@ public class JavaCreatorMethodWriter
     {
         return string.Join(", ",
             parameters.Select(parameter =>
-                $"{(parameters[^1] == parameter ? javaWriter.BetterTypedParameterTypeName(parameter.ParameterType, new NullabilityInfoContext().Create(parameter)) : javaWriter.TypeName(parameter))} {parameter.Name.AsFieldName()}"
+                $"{(parameters[^1] == parameter ? javaWriter.BetterTypedParameterTypeName(parameter) : javaWriter.TypeName(parameter))} {parameter.Name.AsFieldName()}"
             )
         );
     }

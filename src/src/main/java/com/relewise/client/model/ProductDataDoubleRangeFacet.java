@@ -26,11 +26,11 @@ import java.util.HashSet;
 public class ProductDataDoubleRangeFacet extends DoubleProductDataRangeFacet
 {
     public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.ProductDataDoubleRangeFacet, Relewise.Client";
-    public static ProductDataDoubleRangeFacet create(String key, DataSelectionStrategy dataSelectionStrategy, DoubleRange selected)
+    public static ProductDataDoubleRangeFacet create(String key, DataSelectionStrategy dataSelectionStrategy, @Nullable DoubleRange selected)
     {
         return new ProductDataDoubleRangeFacet(key, dataSelectionStrategy, selected);
     }
-    public ProductDataDoubleRangeFacet(String key, DataSelectionStrategy dataSelectionStrategy, DoubleRange selected)
+    public ProductDataDoubleRangeFacet(String key, DataSelectionStrategy dataSelectionStrategy, @Nullable DoubleRange selected)
     {
         this.key = key;
         this.dataSelectionStrategy = dataSelectionStrategy;

@@ -31,11 +31,11 @@ public class PromotionLocation
         this.key = key;
         this.placements = null;
     }
-    public static PromotionLocation create(String key, PromotionLocationPlacementCollection placements)
+    public static PromotionLocation create(String key, @Nullable PromotionLocationPlacementCollection placements)
     {
         return new PromotionLocation(key, placements);
     }
-    public PromotionLocation(String key, PromotionLocationPlacementCollection placements)
+    public PromotionLocation(String key, @Nullable PromotionLocationPlacementCollection placements)
     {
         this.key = key;
         this.placements = placements;

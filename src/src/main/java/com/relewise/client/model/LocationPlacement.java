@@ -27,11 +27,11 @@ public class LocationPlacement
     public @Nullable String key;
     /** The variations of this placement, e.g. to support multiple different views, like Mobile, Tablet, Desktop, Email template etc. If null or empty, no promotions will be shown for this placement */
     public @Nullable LocationPlacementVariationCollection variations;
-    public static LocationPlacement create(String name, LocationPlacementVariationCollection variations)
+    public static LocationPlacement create(String name, @Nullable LocationPlacementVariationCollection variations)
     {
         return new LocationPlacement(name, variations);
     }
-    public LocationPlacement(String name, LocationPlacementVariationCollection variations)
+    public LocationPlacement(String name, @Nullable LocationPlacementVariationCollection variations)
     {
         this.name = name;
         this.variations = variations;

@@ -31,11 +31,11 @@ public class CampaignAnalyticsRequest extends LicensedRequest
     public UUID id;
     public LocalDateTimeRange periodUtc;
     public @Nullable FilterCollection filters;
-    public static CampaignAnalyticsRequest create(UUID id, LocalDateTimeRange periodUtc, FilterCollection filters)
+    public static CampaignAnalyticsRequest create(UUID id, LocalDateTimeRange periodUtc, @Nullable FilterCollection filters)
     {
         return new CampaignAnalyticsRequest(id, periodUtc, filters);
     }
-    public CampaignAnalyticsRequest(UUID id, LocalDateTimeRange periodUtc, FilterCollection filters)
+    public CampaignAnalyticsRequest(UUID id, LocalDateTimeRange periodUtc, @Nullable FilterCollection filters)
     {
         this.id = id;
         this.periodUtc = periodUtc;
