@@ -42,7 +42,10 @@ public class VariantDataRelevanceModifier extends DataRelevanceModifier implemen
     /**
      * Creates a <code>RelevanceModifier</code> that can change the relevance of a variant depending on matching conditions on a certain key.
      * @param key The data key that this RelevanceModifier will distinguish on.
-     * @param conditions The selector for the multiplier which the entities parsing the Conditions will be have their rank multiplied by. It can either be a FixedDoubleValueSelector taking a fixed value or a DataDoubleSelector that can take the multiplier from a data key containing a double.   Specifies whether all Conditions should parse their test on the specific data Key (true) or if only one is required (false).   Specifies whether entities that don't have the specific data Key should be considered a match (true) or not (false).
+     * @param conditions The conditions that must hold for the specific data Key in order for the entity to be boosted.
+     * @param multiplierSelector The selector for the multiplier which the entities parsing the Conditions will be have their rank multiplied by. It can either be a FixedDoubleValueSelector taking a fixed value or a DataDoubleSelector that can take the multiplier from a data key containing a double.
+     * @param mustMatchAllConditions Specifies whether all Conditions should parse their test on the specific data Key (true) or if only one is required (false).
+     * @param considerAsMatchIfKeyIsNotFound Specifies whether entities that don't have the specific data Key should be considered a match (true) or not (false).
      */
     public static VariantDataRelevanceModifier create(String key, ArrayList<ValueCondition> conditions, ValueSelector multiplierSelector, Boolean mustMatchAllConditions, Boolean considerAsMatchIfKeyIsNotFound)
     {
@@ -51,7 +54,10 @@ public class VariantDataRelevanceModifier extends DataRelevanceModifier implemen
     /**
      * Creates a <code>RelevanceModifier</code> that can change the relevance of a variant depending on matching conditions on a certain key.
      * @param key The data key that this RelevanceModifier will distinguish on.
-     * @param conditions The selector for the multiplier which the entities parsing the Conditions will be have their rank multiplied by. It can either be a FixedDoubleValueSelector taking a fixed value or a DataDoubleSelector that can take the multiplier from a data key containing a double.   Specifies whether all Conditions should parse their test on the specific data Key (true) or if only one is required (false).   Specifies whether entities that don't have the specific data Key should be considered a match (true) or not (false).
+     * @param conditions The conditions that must hold for the specific data Key in order for the entity to be boosted.
+     * @param multiplierSelector The selector for the multiplier which the entities parsing the Conditions will be have their rank multiplied by. It can either be a FixedDoubleValueSelector taking a fixed value or a DataDoubleSelector that can take the multiplier from a data key containing a double.
+     * @param mustMatchAllConditions Specifies whether all Conditions should parse their test on the specific data Key (true) or if only one is required (false).
+     * @param considerAsMatchIfKeyIsNotFound Specifies whether entities that don't have the specific data Key should be considered a match (true) or not (false).
      */
     public VariantDataRelevanceModifier(String key, ArrayList<ValueCondition> conditions, ValueSelector multiplierSelector, Boolean mustMatchAllConditions, Boolean considerAsMatchIfKeyIsNotFound)
     {

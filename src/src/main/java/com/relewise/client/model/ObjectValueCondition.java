@@ -30,6 +30,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = ObjectValueMinByCondition.class, name = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueMinByCondition, Relewise.Client"),
     @JsonSubTypes.Type(value = ObjectValueMaxByCondition.class, name = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueMaxByCondition, Relewise.Client"),
     @JsonSubTypes.Type(value = ObjectValueRelativeDateTimeCondition.class, name = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueRelativeDateTimeCondition, Relewise.Client"),
+    @JsonSubTypes.Type(value = ObjectValueIsSubsetOfCondition.class, name = "Relewise.Client.Requests.Filters.DataObjects.Conditions.ObjectValueIsSubsetOfCondition, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class ObjectValueCondition

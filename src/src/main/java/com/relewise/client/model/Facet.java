@@ -57,6 +57,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = ProductCategoryDataObjectFacet.class, name = "Relewise.Client.DataTypes.Search.Facets.Queries.ProductCategoryDataObjectFacet, Relewise.Client"),
     @JsonSubTypes.Type(value = ContentDataObjectFacet.class, name = "Relewise.Client.DataTypes.Search.Facets.Queries.ContentDataObjectFacet, Relewise.Client"),
     @JsonSubTypes.Type(value = CategoryHierarchyFacet.class, name = "Relewise.Client.DataTypes.Search.Facets.Queries.CategoryHierarchyFacet, Relewise.Client"),
+    @JsonSubTypes.Type(value = RecentlyPurchasedFacet.class, name = "Relewise.Client.DataTypes.Search.Facets.Queries.RecentlyPurchasedFacet, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Facet

@@ -20,8 +20,8 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductInterestTriggerResultResultSettings
 {
-    public SelectedProductPropertiesSettings selectedProductProperties;
-    public SelectedVariantPropertiesSettings selectedVariantProperties;
+    public SelectedProductDetailsPropertiesSettings selectedProductProperties;
+    public SelectedVariantDetailsPropertiesSettings selectedVariantProperties;
     public static ProductInterestTriggerResultResultSettings create()
     {
         return new ProductInterestTriggerResultResultSettings();
@@ -29,20 +29,20 @@ public class ProductInterestTriggerResultResultSettings
     public ProductInterestTriggerResultResultSettings()
     {
     }
-    public SelectedProductPropertiesSettings getSelectedProductProperties()
+    public SelectedProductDetailsPropertiesSettings getSelectedProductProperties()
     {
         return this.selectedProductProperties;
     }
-    public SelectedVariantPropertiesSettings getSelectedVariantProperties()
+    public SelectedVariantDetailsPropertiesSettings getSelectedVariantProperties()
     {
         return this.selectedVariantProperties;
     }
-    public ProductInterestTriggerResultResultSettings setSelectedProductProperties(SelectedProductPropertiesSettings selectedProductProperties)
+    public ProductInterestTriggerResultResultSettings setSelectedProductProperties(SelectedProductDetailsPropertiesSettings selectedProductProperties)
     {
         this.selectedProductProperties = selectedProductProperties;
         return this;
     }
-    public ProductInterestTriggerResultResultSettings setSelectedVariantProperties(SelectedVariantPropertiesSettings selectedVariantProperties)
+    public ProductInterestTriggerResultResultSettings setSelectedVariantProperties(SelectedVariantDetailsPropertiesSettings selectedVariantProperties)
     {
         this.selectedVariantProperties = selectedVariantProperties;
         return this;
