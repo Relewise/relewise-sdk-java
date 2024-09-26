@@ -28,11 +28,11 @@ public class StemmingRule extends SearchRule
     public String $type = "Relewise.Client.DataTypes.Search.Rules.StemmingRule, Relewise.Client";
     public String[] words;
     public @Nullable String stem;
-    public static StemmingRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, String[] words, String stem)
+    public static StemmingRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, String[] words, @Nullable String stem)
     {
         return new StemmingRule(id, indexes, languages, isApproved, words, stem);
     }
-    public StemmingRule(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, String[] words, String stem)
+    public StemmingRule(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, String[] words, @Nullable String stem)
     {
         this.id = id;
         this.indexes = indexes;

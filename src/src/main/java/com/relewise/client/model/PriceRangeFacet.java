@@ -28,11 +28,11 @@ public class PriceRangeFacet extends Facet
     public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.PriceRangeFacet, Relewise.Client";
     public @Nullable DoubleRange selected;
     public PriceSelectionStrategy priceSelectionStrategy;
-    public static PriceRangeFacet create(FacetingField field, PriceSelectionStrategy priceSelectionStrategy, DoubleRange selected)
+    public static PriceRangeFacet create(FacetingField field, PriceSelectionStrategy priceSelectionStrategy, @Nullable DoubleRange selected)
     {
         return new PriceRangeFacet(field, priceSelectionStrategy, selected);
     }
-    public PriceRangeFacet(FacetingField field, PriceSelectionStrategy priceSelectionStrategy, DoubleRange selected)
+    public PriceRangeFacet(FacetingField field, PriceSelectionStrategy priceSelectionStrategy, @Nullable DoubleRange selected)
     {
         this.field = field;
         this.priceSelectionStrategy = priceSelectionStrategy;

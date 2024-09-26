@@ -47,7 +47,7 @@ public class User
      * @param identifiers A set of additional ids associated with the user, e.g. ERP customer id, Marketing id, CDP id etc.
      * @param data Data stored on the user
      */
-    public static User create(@Nullable String authenticatedId, @Nullable String temporaryId, @Nullable String email, @Nullable String fingerprint, @Nullable HashMap<String, String> classifications, @Nullable HashMap<String, String> identifiers, HashMap<String, DataValue> data)
+    public static User create(@Nullable String authenticatedId, @Nullable String temporaryId, @Nullable String email, @Nullable String fingerprint, @Nullable HashMap<String, String> classifications, @Nullable HashMap<String, String> identifiers, @Nullable HashMap<String, DataValue> data)
     {
         return new User(authenticatedId, temporaryId, email, fingerprint, classifications, identifiers, data);
     }
@@ -61,7 +61,7 @@ public class User
      * @param identifiers A set of additional ids associated with the user, e.g. ERP customer id, Marketing id, CDP id etc.
      * @param data Data stored on the user
      */
-    public User(@Nullable String authenticatedId, @Nullable String temporaryId, @Nullable String email, @Nullable String fingerprint, @Nullable HashMap<String, String> classifications, @Nullable HashMap<String, String> identifiers, HashMap<String, DataValue> data)
+    public User(@Nullable String authenticatedId, @Nullable String temporaryId, @Nullable String email, @Nullable String fingerprint, @Nullable HashMap<String, String> classifications, @Nullable HashMap<String, String> identifiers, @Nullable HashMap<String, DataValue> data)
     {
         this.authenticatedId = authenticatedId;
         this.temporaryId = temporaryId;

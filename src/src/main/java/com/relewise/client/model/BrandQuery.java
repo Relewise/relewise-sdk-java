@@ -42,11 +42,11 @@ public class BrandQuery extends LicensedRequest
         this.language = null;
         this.currency = null;
     }
-    public static BrandQuery create(@Nullable Language language, Currency currency)
+    public static BrandQuery create(@Nullable Language language, @Nullable Currency currency)
     {
         return new BrandQuery(language, currency);
     }
-    public BrandQuery(@Nullable Language language, Currency currency)
+    public BrandQuery(@Nullable Language language, @Nullable Currency currency)
     {
         this.language = language;
         this.currency = currency;
