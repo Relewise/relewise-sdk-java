@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = AndFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AndFilter extends Filter implements IProductFilter, IContentFilter, IBrandFilter, ICategoryFilter, IVariantFilter
+public class AndFilter extends Filter implements IProductFilter, IContentFilter, IBrandFilter, IProductCategoryFilter, ICategoryFilter, IContentCategoryFilter, IVariantFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.AndFilter, Relewise.Client";
     public Filter[] filters;

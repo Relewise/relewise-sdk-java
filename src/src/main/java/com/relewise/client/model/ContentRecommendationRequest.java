@@ -30,7 +30,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = ContentsViewedAfterViewingMultipleContentsRequest.class, name = "Relewise.Client.Requests.Recommendations.ContentsViewedAfterViewingMultipleContentsRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class ContentRecommendationRequest extends RecommendationRequest implements IUserIdentifier
+public abstract class ContentRecommendationRequest extends RecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
 {
     public String $type = "";
     public ContentRecommendationRequestSettings settings;

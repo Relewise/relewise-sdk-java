@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = BrandQuery.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BrandQuery extends LicensedRequest
+public class BrandQuery extends LicensedRequest implements IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.Requests.Queries.BrandQuery, Relewise.Client";
     public FilterCollection filters;

@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = PersonalContentRecommendationRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PersonalContentRecommendationRequest extends ContentRecommendationRequest implements IUserIdentifier
+public class PersonalContentRecommendationRequest extends ContentRecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.Requests.Recommendations.PersonalContentRecommendationRequest, Relewise.Client";
     public static PersonalContentRecommendationRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user)

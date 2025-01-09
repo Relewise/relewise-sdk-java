@@ -24,7 +24,7 @@ import java.util.HashSet;
 @JsonSubTypes({
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class ContentCategoryIdFilterCategoryQuery extends LicensedRequest
+public abstract class ContentCategoryIdFilterCategoryQuery extends LicensedRequest implements IHaveCurrencyLanguage
 {
     public String $type = "";
     public FilterCollection filters;

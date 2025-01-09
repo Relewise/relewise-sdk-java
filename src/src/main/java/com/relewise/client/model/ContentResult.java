@@ -27,6 +27,7 @@ public class ContentResult
     public HashMap<String, DataValue> data;
     public CategoryPathResult[] categoryPaths;
     public ViewedByUserInfo viewedByUser;
+    public @Nullable HighlightResult highlight;
     public static ContentResult create(String contentId, Integer rank)
     {
         return new ContentResult(contentId, rank);
@@ -66,6 +67,10 @@ public class ContentResult
     public ViewedByUserInfo getViewedByUser()
     {
         return this.viewedByUser;
+    }
+    public @Nullable HighlightResult getHighlight()
+    {
+        return this.highlight;
     }
     public ContentResult setContentId(String contentId)
     {
@@ -137,6 +142,11 @@ public class ContentResult
     public ContentResult setViewedByUser(ViewedByUserInfo viewedByUser)
     {
         this.viewedByUser = viewedByUser;
+        return this;
+    }
+    public ContentResult setHighlight(@Nullable HighlightResult highlight)
+    {
+        this.highlight = highlight;
         return this;
     }
 }

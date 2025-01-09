@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = CartDataFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CartDataFilter extends Filter
+public class CartDataFilter extends Filter implements IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.Requests.Filters.CartDataFilter, Relewise.Client";
     public String key;

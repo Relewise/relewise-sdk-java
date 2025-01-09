@@ -23,11 +23,12 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ContentSearchSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContentSearchSettings extends SearchSettings
+public class ContentSearchSettings extends SearchSettings implements ContentContentHighlightPropsIHighlightSettings
 {
     public String $type = "Relewise.Client.Requests.Search.Settings.ContentSearchSettings, Relewise.Client";
     public @Nullable SelectedContentPropertiesSettings selectedContentProperties;
     public RecommendationSettings recommendations;
+    public @Nullable ContentSearchSettingsHighlightSettings highlight;
     public static ContentSearchSettings create()
     {
         return new ContentSearchSettings();
@@ -43,6 +44,10 @@ public class ContentSearchSettings extends SearchSettings
     {
         return this.recommendations;
     }
+    public @Nullable ContentSearchSettingsHighlightSettings getHighlight()
+    {
+        return this.highlight;
+    }
     public ContentSearchSettings setSelectedContentProperties(@Nullable SelectedContentPropertiesSettings selectedContentProperties)
     {
         this.selectedContentProperties = selectedContentProperties;
@@ -51,6 +56,11 @@ public class ContentSearchSettings extends SearchSettings
     public ContentSearchSettings setRecommendations(RecommendationSettings recommendations)
     {
         this.recommendations = recommendations;
+        return this;
+    }
+    public ContentSearchSettings setHighlight(@Nullable ContentSearchSettingsHighlightSettings highlight)
+    {
+        this.highlight = highlight;
         return this;
     }
 }

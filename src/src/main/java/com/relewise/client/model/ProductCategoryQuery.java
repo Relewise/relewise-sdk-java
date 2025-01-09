@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ProductCategoryQuery.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProductCategoryQuery extends ProductCategoryIdFilterCategoryQuery
+public class ProductCategoryQuery extends ProductCategoryIdFilterCategoryQuery implements IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.Requests.Queries.ProductCategoryQuery, Relewise.Client";
     public static ProductCategoryQuery create()

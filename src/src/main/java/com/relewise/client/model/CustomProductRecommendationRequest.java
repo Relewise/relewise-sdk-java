@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = CustomProductRecommendationRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CustomProductRecommendationRequest extends ProductRecommendationRequest implements IUserIdentifier
+public class CustomProductRecommendationRequest extends ProductRecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.Requests.Recommendations.CustomProductRecommendationRequest, Relewise.Client";
     public String recommendationType;

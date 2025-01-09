@@ -27,6 +27,8 @@ public class ProductHasVariantsFilter extends Filter implements IProductFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.ProductHasVariantsFilter, Relewise.Client";
     public IntegerRange numberOfVariants;
+    /** Should disabled variants be considered when evaluating if a product has any variants? */
+    public Boolean includeDisabled;
     public static ProductHasVariantsFilter create(IntegerRange numberOfVariants)
     {
         return new ProductHasVariantsFilter(numberOfVariants);
@@ -53,9 +55,20 @@ public class ProductHasVariantsFilter extends Filter implements IProductFilter
     {
         return this.numberOfVariants;
     }
+    /** Should disabled variants be considered when evaluating if a product has any variants? */
+    public Boolean getIncludeDisabled()
+    {
+        return this.includeDisabled;
+    }
     public ProductHasVariantsFilter setNumberOfVariants(IntegerRange numberOfVariants)
     {
         this.numberOfVariants = numberOfVariants;
+        return this;
+    }
+    /** Should disabled variants be considered when evaluating if a product has any variants? */
+    public ProductHasVariantsFilter setIncludeDisabled(Boolean includeDisabled)
+    {
+        this.includeDisabled = includeDisabled;
         return this;
     }
     @Override

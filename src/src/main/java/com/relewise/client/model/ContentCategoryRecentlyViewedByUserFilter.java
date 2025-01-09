@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ContentCategoryRecentlyViewedByUserFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContentCategoryRecentlyViewedByUserFilter extends Filter implements ICategoryFilter
+public class ContentCategoryRecentlyViewedByUserFilter extends Filter implements IContentCategoryFilter, ICategoryFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.ContentCategoryRecentlyViewedByUserFilter, Relewise.Client";
     public @Nullable OffsetDateTime sinceUtc;

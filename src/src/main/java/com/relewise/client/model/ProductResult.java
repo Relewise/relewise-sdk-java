@@ -36,6 +36,7 @@ public class ProductResult
     public PurchasedByUserCompanyInfo purchasedByUserCompany;
     public ViewedByUserCompanyInfo viewedByUserCompany;
     public VariantResult[] filteredVariants;
+    public @Nullable HighlightResult highlight;
     public static ProductResult create(String productId, Integer rank)
     {
         return new ProductResult(productId, rank);
@@ -111,6 +112,10 @@ public class ProductResult
     public VariantResult[] getFilteredVariants()
     {
         return this.filteredVariants;
+    }
+    public @Nullable HighlightResult getHighlight()
+    {
+        return this.highlight;
     }
     public ProductResult setProductId(String productId)
     {
@@ -255,6 +260,11 @@ public class ProductResult
             existingList.add(filteredVariant);
             this.filteredVariants = existingList.toArray(new VariantResult[0]);
         }
+        return this;
+    }
+    public ProductResult setHighlight(@Nullable HighlightResult highlight)
+    {
+        this.highlight = highlight;
         return this;
     }
 }

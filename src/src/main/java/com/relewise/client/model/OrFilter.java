@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = OrFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OrFilter extends Filter implements IProductFilter, IContentFilter, IBrandFilter, ICategoryFilter, IVariantFilter
+public class OrFilter extends Filter implements IProductFilter, IContentFilter, IBrandFilter, IProductCategoryFilter, ICategoryFilter, IContentCategoryFilter, IVariantFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.OrFilter, Relewise.Client";
     public Filter[] filters;

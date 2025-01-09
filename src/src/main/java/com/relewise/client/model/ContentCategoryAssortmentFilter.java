@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ContentCategoryAssortmentFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContentCategoryAssortmentFilter extends Filter implements ICategoryFilter
+public class ContentCategoryAssortmentFilter extends Filter implements IContentCategoryFilter, ICategoryFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.ContentCategoryAssortmentFilter, Relewise.Client";
     public ArrayList<Integer> assortments;

@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ProductCategoryLevelFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProductCategoryLevelFilter extends CategoryLevelFilter implements ICategoryFilter
+public class ProductCategoryLevelFilter extends CategoryLevelFilter implements IProductCategoryFilter, ICategoryFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.ProductCategoryLevelFilter, Relewise.Client";
     public static ProductCategoryLevelFilter create()

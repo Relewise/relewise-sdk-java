@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = UserQuery.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserQuery extends LicensedRequest
+public class UserQuery extends LicensedRequest implements IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.Requests.Queries.UserQuery, Relewise.Client";
     public UserQueryCriteria[] criteria;

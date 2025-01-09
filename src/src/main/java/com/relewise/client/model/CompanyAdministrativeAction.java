@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = CompanyAdministrativeAction.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CompanyAdministrativeAction extends Trackable
+public class CompanyAdministrativeAction extends Trackable implements IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.DataTypes.CompanyAdministrativeAction, Relewise.Client";
     public FilterCollection filters;

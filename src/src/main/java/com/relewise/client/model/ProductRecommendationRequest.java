@@ -37,7 +37,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = SearchTermBasedProductRecommendationRequest.class, name = "Relewise.Client.Requests.Recommendations.SearchTermBasedProductRecommendationRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class ProductRecommendationRequest extends RecommendationRequest implements IUserIdentifier
+public abstract class ProductRecommendationRequest extends RecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
 {
     public String $type = "";
     public ProductRecommendationRequestSettings settings;

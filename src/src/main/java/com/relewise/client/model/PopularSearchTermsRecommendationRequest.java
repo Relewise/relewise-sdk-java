@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = PopularSearchTermsRecommendationRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PopularSearchTermsRecommendationRequest extends RecommendationRequest implements IUserIdentifier
+public class PopularSearchTermsRecommendationRequest extends RecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.Requests.Recommendations.PopularSearchTermsRecommendationRequest, Relewise.Client";
     public @Nullable String term;

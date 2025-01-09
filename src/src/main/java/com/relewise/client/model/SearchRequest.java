@@ -31,7 +31,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = SearchRequestCollection.class, name = "Relewise.Client.Requests.Search.SearchRequestCollection, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class SearchRequest extends LicensedRequest implements IUserIdentifier
+public abstract class SearchRequest extends LicensedRequest implements IUserIdentifier, IHaveCurrencyLanguage
 {
     public String $type = "";
     public @Nullable Language language;

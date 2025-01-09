@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ContentQuery.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContentQuery extends LicensedRequest
+public class ContentQuery extends LicensedRequest implements IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.Requests.Queries.ContentQuery, Relewise.Client";
     public FilterCollection filters;

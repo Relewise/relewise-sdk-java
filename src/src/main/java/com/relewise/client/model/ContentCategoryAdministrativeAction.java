@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ContentCategoryAdministrativeAction.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContentCategoryAdministrativeAction extends CategoryAdministrativeAction
+public class ContentCategoryAdministrativeAction extends CategoryAdministrativeAction implements IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.DataTypes.ContentCategoryAdministrativeAction, Relewise.Client";
     public static ContentCategoryAdministrativeAction create(@Nullable Language language, @Nullable Currency currency, FilterCollection filters, CategoryAdministrativeActionUpdateKind kind)

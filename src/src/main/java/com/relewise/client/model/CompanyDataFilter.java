@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = CompanyDataFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CompanyDataFilter extends DataFilter implements ICompanyFilter
+public class CompanyDataFilter extends DataFilter implements IHaveCurrencyLanguage, ICompanyFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.CompanyDataFilter, Relewise.Client";
     public static CompanyDataFilter create(String key, String... objectPath)

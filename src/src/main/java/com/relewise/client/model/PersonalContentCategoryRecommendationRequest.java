@@ -23,7 +23,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = PersonalContentCategoryRecommendationRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PersonalContentCategoryRecommendationRequest extends ContentCategoryRecommendationRequest implements IUserIdentifier
+public class PersonalContentCategoryRecommendationRequest extends ContentCategoryRecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.Requests.Recommendations.PersonalContentCategoryRecommendationRequest, Relewise.Client";
     public Integer sinceMinutesAgo;

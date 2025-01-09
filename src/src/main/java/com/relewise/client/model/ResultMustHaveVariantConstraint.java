@@ -27,7 +27,7 @@ import java.util.HashSet;
 public class ResultMustHaveVariantConstraint extends ProductSearchResultConstraint
 {
     public String $type = "Relewise.Client.Requests.Search.Settings.ResultMustHaveVariantConstraint, Relewise.Client";
-    /** Used to instruct the search engine that products which does not have any variants, will be returned anyway. */
+    /** Instructs the search engine that products that do not have any <b>enabled</b> variants, will be returned anyway. */
     public Boolean exceptWhenProductHasNoVariants;
     public static ResultMustHaveVariantConstraint create()
     {
@@ -36,12 +36,12 @@ public class ResultMustHaveVariantConstraint extends ProductSearchResultConstrai
     public ResultMustHaveVariantConstraint()
     {
     }
-    /** Used to instruct the search engine that products which does not have any variants, will be returned anyway. */
+    /** Instructs the search engine that products that do not have any <b>enabled</b> variants, will be returned anyway. */
     public Boolean getExceptWhenProductHasNoVariants()
     {
         return this.exceptWhenProductHasNoVariants;
     }
-    /** Used to instruct the search engine that products which does not have any variants, will be returned anyway. */
+    /** Instructs the search engine that products that do not have any <b>enabled</b> variants, will be returned anyway. */
     public ResultMustHaveVariantConstraint setExceptWhenProductHasNoVariants(Boolean exceptWhenProductHasNoVariants)
     {
         this.exceptWhenProductHasNoVariants = exceptWhenProductHasNoVariants;
