@@ -63,6 +63,11 @@ public static class XMLDocsFetcher
                     {
                         exampleWrapper.OuterHtml = exampleWrapper.InnerHtml.Trim();
                     }
+                    foreach (var exampleWrapper in child.Children.Where(c => c.TagName == "SEEALSO"))
+                    {
+                        // We intentionally remove these tags entirely as there is no good way to present them in Java. This is the same as saying that we don't support them in Java.
+                        exampleWrapper.OuterHtml = "";
+                    }
 
                     result.Summaries.TryAdd(member.GetAttribute("name")!, HttpUtility.HtmlDecode(JoinInOneLine(child.InnerHtml)));
                 }
