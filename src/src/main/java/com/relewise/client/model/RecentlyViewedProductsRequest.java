@@ -11,9 +11,6 @@ import java.util.UUID;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.AbstractMap;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
@@ -23,7 +20,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = RecentlyViewedProductsRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RecentlyViewedProductsRequest extends ProductRecommendationRequest implements IUserIdentifier
+public class RecentlyViewedProductsRequest extends ProductRecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.Requests.Recommendations.RecentlyViewedProductsRequest, Relewise.Client";
     public static RecentlyViewedProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user)

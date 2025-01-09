@@ -11,9 +11,6 @@ import java.util.UUID;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.AbstractMap;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
@@ -24,7 +21,7 @@ import java.util.HashSet;
 @JsonSubTypes({
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class ContentCategoryIdFilterCategoryQuery extends LicensedRequest
+public abstract class ContentCategoryIdFilterCategoryQuery extends LicensedRequest implements IHaveCurrencyLanguage
 {
     public String $type = "";
     public FilterCollection filters;

@@ -11,9 +11,6 @@ import java.util.UUID;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.AbstractMap;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
@@ -23,7 +20,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = CompanyAdministrativeAction.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CompanyAdministrativeAction extends Trackable
+public class CompanyAdministrativeAction extends Trackable implements IHaveCurrencyLanguage
 {
     public String $type = "Relewise.Client.DataTypes.CompanyAdministrativeAction, Relewise.Client";
     public FilterCollection filters;

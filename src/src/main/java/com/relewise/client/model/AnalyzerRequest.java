@@ -11,9 +11,6 @@ import java.util.UUID;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.AbstractMap;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
@@ -25,7 +22,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = ProductPerformanceRequest.class, name = "Relewise.Client.Requests.Analyzers.ProductPerformanceRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class AnalyzerRequest extends LicensedRequest
+public abstract class AnalyzerRequest extends LicensedRequest implements IHaveCurrencyLanguage
 {
     public String $type = "";
     public @Nullable Language language;

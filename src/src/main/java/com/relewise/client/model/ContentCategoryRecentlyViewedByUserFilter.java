@@ -11,9 +11,6 @@ import java.util.UUID;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.AbstractMap;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
@@ -23,7 +20,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ContentCategoryRecentlyViewedByUserFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContentCategoryRecentlyViewedByUserFilter extends Filter implements ICategoryFilter
+public class ContentCategoryRecentlyViewedByUserFilter extends Filter implements IContentCategoryFilter, ICategoryFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.ContentCategoryRecentlyViewedByUserFilter, Relewise.Client";
     public @Nullable OffsetDateTime sinceUtc;

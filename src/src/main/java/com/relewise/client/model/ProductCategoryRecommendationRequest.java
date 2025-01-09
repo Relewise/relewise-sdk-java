@@ -11,9 +11,6 @@ import java.util.UUID;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.AbstractMap;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
@@ -26,7 +23,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = PersonalProductCategoryRecommendationRequest.class, name = "Relewise.Client.Requests.Recommendations.PersonalProductCategoryRecommendationRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class ProductCategoryRecommendationRequest extends RecommendationRequest implements IUserIdentifier
+public abstract class ProductCategoryRecommendationRequest extends RecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
 {
     public String $type = "";
     public ProductCategoryRecommendationRequestSettings settings;

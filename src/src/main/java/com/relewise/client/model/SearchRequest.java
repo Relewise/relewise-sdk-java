@@ -11,9 +11,6 @@ import java.util.UUID;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.AbstractMap;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
@@ -31,7 +28,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = SearchRequestCollection.class, name = "Relewise.Client.Requests.Search.SearchRequestCollection, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class SearchRequest extends LicensedRequest implements IUserIdentifier
+public abstract class SearchRequest extends LicensedRequest implements IUserIdentifier, IHaveCurrencyLanguage
 {
     public String $type = "";
     public @Nullable Language language;

@@ -11,9 +11,6 @@ import java.util.UUID;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.AbstractMap;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
@@ -23,7 +20,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ProductSearchSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProductSearchSettings extends SearchSettings
+public class ProductSearchSettings extends SearchSettings implements ProductProductHighlightPropsIHighlightSettings
 {
     public String $type = "Relewise.Client.Requests.Search.Settings.ProductSearchSettings, Relewise.Client";
     public @Nullable SelectedProductPropertiesSettings selectedProductProperties;
@@ -35,6 +32,7 @@ public class ProductSearchSettings extends SearchSettings
     public @Nullable VariantSearchSettings variantSettings;
     /** Used to define constraints which must be honoured to be a valid results. The difference between this and Filters, is that filters are evaluated per product and variant, constraints could be acting on the result of such filter evaluations or a combination of factors, such as whether the product has any variants which matched the provided filters etc. */
     public @Nullable ProductSearchResultConstraint resultConstraint;
+    public @Nullable ProductSearchSettingsHighlightSettings highlight;
     public static ProductSearchSettings create()
     {
         return new ProductSearchSettings();
@@ -72,6 +70,10 @@ public class ProductSearchSettings extends SearchSettings
     {
         return this.resultConstraint;
     }
+    public @Nullable ProductSearchSettingsHighlightSettings getHighlight()
+    {
+        return this.highlight;
+    }
     public ProductSearchSettings setSelectedProductProperties(@Nullable SelectedProductPropertiesSettings selectedProductProperties)
     {
         this.selectedProductProperties = selectedProductProperties;
@@ -107,6 +109,11 @@ public class ProductSearchSettings extends SearchSettings
     public ProductSearchSettings setResultConstraint(@Nullable ProductSearchResultConstraint resultConstraint)
     {
         this.resultConstraint = resultConstraint;
+        return this;
+    }
+    public ProductSearchSettings setHighlight(@Nullable ProductSearchSettingsHighlightSettings highlight)
+    {
+        this.highlight = highlight;
         return this;
     }
 }

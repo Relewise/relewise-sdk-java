@@ -1,6 +1,5 @@
 ﻿using System.CodeDom.Compiler;
 using System.Reflection;
-using System.Reflection.Metadata.Ecma335;
 using Generator.Extensions;
 using Generator.JavaMemberWriters;
 using Generator.JavaTypeWriters;
@@ -24,7 +23,7 @@ public class JavaWriter
 
     public JavaWriter(Assembly assembly, string basePath, XmlDocumentation xmlDocumentation)
     {
-        javaTypeWriters = new List<IJavaTypeWriter>() { new JavaEnumWriter(this), new JavaInterfaceWriter(this), new JavaClassWriter(this) };
+        javaTypeWriters = new List<IJavaTypeWriter>() { new JavaKeyValuePairWriter(this), new JavaEnumWriter(this), new JavaInterfaceWriter(this), new JavaClassWriter(this) };
         javaTypeResolver = new JavaTypeResolver(assembly);
         Assembly = assembly;
         BasePath = basePath;
@@ -52,8 +51,6 @@ public class JavaWriter
 
             var potentialNullableTypeName = TypeName(type);
             string typeName = potentialNullableTypeName.RemoveNullable();
-
-            typeName = typeName.RemoveNullable();
 
             if (javaTypeResolver.IsWritten(typeName)) continue;
 

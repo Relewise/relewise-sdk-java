@@ -11,9 +11,6 @@ import java.util.UUID;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.AbstractMap;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.HashSet;
     
@@ -23,7 +20,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ContentCategoryDataFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContentCategoryDataFilter extends DataFilter implements ICategoryFilter
+public class ContentCategoryDataFilter extends DataFilter implements IHaveCurrencyLanguage, IContentCategoryFilter, ICategoryFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.ContentCategoryDataFilter, Relewise.Client";
     public static ContentCategoryDataFilter create(String key, String... objectPath)
