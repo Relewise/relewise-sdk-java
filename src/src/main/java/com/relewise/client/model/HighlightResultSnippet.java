@@ -22,12 +22,12 @@ import java.util.HashSet;
 public class HighlightResultSnippet
 {
     public String[] displayName;
-    public AbstractMap.SimpleEntry<String, String[]>[] data;
-    public static HighlightResultSnippet create(String[] displayName, AbstractMap.SimpleEntry<String, String[]>... data)
+    public StringStringArrayKeyValuePair[] data;
+    public static HighlightResultSnippet create(String[] displayName, StringStringArrayKeyValuePair... data)
     {
         return new HighlightResultSnippet(displayName, data);
     }
-    public HighlightResultSnippet(String[] displayName, AbstractMap.SimpleEntry<String, String[]>... data)
+    public HighlightResultSnippet(String[] displayName, StringStringArrayKeyValuePair... data)
     {
         this.displayName = displayName;
         this.data = data;
@@ -39,7 +39,7 @@ public class HighlightResultSnippet
     {
         return this.displayName;
     }
-    public AbstractMap.SimpleEntry<String, String[]>[] getData()
+    public StringStringArrayKeyValuePair[] getData()
     {
         return this.data;
     }
@@ -62,22 +62,22 @@ public class HighlightResultSnippet
         }
         return this;
     }
-    public HighlightResultSnippet setData(AbstractMap.SimpleEntry<String, String[]>... data)
+    public HighlightResultSnippet setData(StringStringArrayKeyValuePair... data)
     {
         this.data = data;
         return this;
     }
-    public HighlightResultSnippet addToData(AbstractMap.SimpleEntry<String, String[]> data)
+    public HighlightResultSnippet addToData(StringStringArrayKeyValuePair data)
     {
         if (this.data == null)
         {
-            this.data = new AbstractMap.SimpleEntry<String, String[]>[] { data };
+            this.data = new StringStringArrayKeyValuePair[] { data };
         }
         else
         {
-            ArrayList<AbstractMap.SimpleEntry<String, String[]>> existingList = new ArrayList<>(Arrays.asList(this.data));
+            ArrayList<StringStringArrayKeyValuePair> existingList = new ArrayList<>(Arrays.asList(this.data));
             existingList.add(data);
-            this.data = existingList.toArray(new AbstractMap.SimpleEntry<String, String[]>[0]);
+            this.data = existingList.toArray(new StringStringArrayKeyValuePair[0]);
         }
         return this;
     }

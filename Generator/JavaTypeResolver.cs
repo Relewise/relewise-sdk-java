@@ -33,7 +33,7 @@ public class JavaTypeResolver
         "DateTimeOffset" => "OffsetDateTime",
         "DateTime" => "LocalDateTime",
         var value when value.StartsWith("Nullable") => $"@Nullable {ResolveType(type.GetGenericArguments()[0])}",
-        var value when value.StartsWith("List") || value.StartsWith("Dictionary") || value.StartsWith("KeyValuePair") || value.EndsWith("[]") => AddCollectionTypeDefinition(type),
+        var value when value.StartsWith("List") || value.StartsWith("Dictionary") || value.EndsWith("[]") => AddCollectionTypeDefinition(type),
         _ when type.IsGenericType => GetGenericTypeDefinition(type),
         _ => GetOrAddTypeDefinition(type)
     };
@@ -86,10 +86,6 @@ public class JavaTypeResolver
             {
                 return $"HashMap<{ResolveType(type.GetGenericArguments()[0])}, {ResolveType(type.GetGenericArguments()[1])}>";
             }
-            if (type.GetGenericTypeDefinition() == typeof(KeyValuePair<,>))
-            {
-                return $"AbstractMap.SimpleEntry<{ResolveType(type.GetGenericArguments()[0])}, {ResolveType(type.GetGenericArguments()[1])}>";
-            }
         }
         return "Object[]";
     }
@@ -99,7 +95,7 @@ public class JavaTypeResolver
         // We use `RemoveNullable` in the following section because Java does not support to annotate generic type arguments.
         if (type.GenericTypeArguments.Length >= 1)
         {
-            return string.Join("", type.GenericTypeArguments.Select(t => ResolveType(t).RemoveNullable())) + GetOrAddTypeDefinition(type);
+            return string.Join("", type.GenericTypeArguments.Select(t => ResolveType(t).RemoveNullable().ReplaceSpecialCharactersWithSpelling())) + GetOrAddTypeDefinition(type);
         }
 
         if (type.GetGenericArguments() is not [var genericTypeArgumentDefinition])

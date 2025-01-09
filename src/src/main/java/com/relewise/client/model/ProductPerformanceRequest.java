@@ -36,7 +36,7 @@ public class ProductPerformanceRequest extends AnalyzerRequest implements IHaveC
     public @Nullable SelectedVariantPropertiesSettings selectedVariantProperties;
     public ProductPerformanceRequestOrderByOptions orderBy;
     public ProductPerformanceRequestVariantDataOptions variantData;
-    public @Nullable ArrayList<AbstractMap.SimpleEntry<String, String>> classifications;
+    public @Nullable ArrayList<StringStringKeyValuePair> classifications;
     public @Nullable SelectedBrandPropertiesSettings selectedBrandProperties;
     public static ProductPerformanceRequest create(@Nullable Language language, @Nullable Currency currency, Boolean byVariant, Integer numberOfResultsPerRequest)
     {
@@ -106,7 +106,7 @@ public class ProductPerformanceRequest extends AnalyzerRequest implements IHaveC
     {
         return this.variantData;
     }
-    public @Nullable ArrayList<AbstractMap.SimpleEntry<String, String>> getClassifications()
+    public @Nullable ArrayList<StringStringKeyValuePair> getClassifications()
     {
         return this.classifications;
     }
@@ -164,12 +164,12 @@ public class ProductPerformanceRequest extends AnalyzerRequest implements IHaveC
         this.variantData = variantData;
         return this;
     }
-    public ProductPerformanceRequest setClassifications(AbstractMap.SimpleEntry<String, String>... classifications)
+    public ProductPerformanceRequest setClassifications(StringStringKeyValuePair... classifications)
     {
         this.classifications = new ArrayList<>(Arrays.asList(classifications));;
         return this;
     }
-    public ProductPerformanceRequest addToClassifications(AbstractMap.SimpleEntry<String, String> classifications)
+    public ProductPerformanceRequest addToClassifications(StringStringKeyValuePair classifications)
     {
         if (this.classifications == null)
         {
