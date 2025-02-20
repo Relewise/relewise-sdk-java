@@ -20,6 +20,7 @@ public class SearchTermPredictionResult
     public String term;
     public Integer rank;
     public ExpectedSearchTermResult[] expectedResultTypes;
+    /** @deprecated No longer in use */
     public SearchTermPredictionResultPredictionType type;
     public Boolean[] correctedWordsMask;
     public static SearchTermPredictionResult create()
@@ -41,6 +42,7 @@ public class SearchTermPredictionResult
     {
         return this.expectedResultTypes;
     }
+    /** @deprecated No longer in use */
     public SearchTermPredictionResultPredictionType getType()
     {
         return this.type;
@@ -78,6 +80,7 @@ public class SearchTermPredictionResult
         }
         return this;
     }
+    /** @deprecated No longer in use */
     public SearchTermPredictionResult setType(SearchTermPredictionResultPredictionType type)
     {
         this.type = type;

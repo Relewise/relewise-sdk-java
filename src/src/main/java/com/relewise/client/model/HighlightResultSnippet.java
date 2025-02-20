@@ -18,63 +18,58 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HighlightResultSnippet
 {
-    public String[] displayName;
-    public StringStringArrayKeyValuePair[] data;
-    public static HighlightResultSnippet create(String[] displayName, StringStringArrayKeyValuePair... data)
+    public HighlightResultSnippetDisplayNameSnippetMatch[] displayName;
+    public StringHighlightResultSnippetFieldSnippetMatchArrayKeyValuePair[] data;
+    public static HighlightResultSnippet create()
     {
-        return new HighlightResultSnippet(displayName, data);
-    }
-    public HighlightResultSnippet(String[] displayName, StringStringArrayKeyValuePair... data)
-    {
-        this.displayName = displayName;
-        this.data = data;
+        return new HighlightResultSnippet();
     }
     public HighlightResultSnippet()
     {
     }
-    public String[] getDisplayName()
+    public HighlightResultSnippetDisplayNameSnippetMatch[] getDisplayName()
     {
         return this.displayName;
     }
-    public StringStringArrayKeyValuePair[] getData()
+    public StringHighlightResultSnippetFieldSnippetMatchArrayKeyValuePair[] getData()
     {
         return this.data;
     }
-    public HighlightResultSnippet setDisplayName(String... displayName)
+    public HighlightResultSnippet setDisplayName(HighlightResultSnippetDisplayNameSnippetMatch... displayName)
     {
         this.displayName = displayName;
         return this;
     }
-    public HighlightResultSnippet addToDisplayName(String displayName)
+    public HighlightResultSnippet addToDisplayName(HighlightResultSnippetDisplayNameSnippetMatch displayName)
     {
         if (this.displayName == null)
         {
-            this.displayName = new String[] { displayName };
+            this.displayName = new HighlightResultSnippetDisplayNameSnippetMatch[] { displayName };
         }
         else
         {
-            ArrayList<String> existingList = new ArrayList<>(Arrays.asList(this.displayName));
+            ArrayList<HighlightResultSnippetDisplayNameSnippetMatch> existingList = new ArrayList<>(Arrays.asList(this.displayName));
             existingList.add(displayName);
-            this.displayName = existingList.toArray(new String[0]);
+            this.displayName = existingList.toArray(new HighlightResultSnippetDisplayNameSnippetMatch[0]);
         }
         return this;
     }
-    public HighlightResultSnippet setData(StringStringArrayKeyValuePair... data)
+    public HighlightResultSnippet setData(StringHighlightResultSnippetFieldSnippetMatchArrayKeyValuePair... data)
     {
         this.data = data;
         return this;
     }
-    public HighlightResultSnippet addToData(StringStringArrayKeyValuePair data)
+    public HighlightResultSnippet addToData(StringHighlightResultSnippetFieldSnippetMatchArrayKeyValuePair data)
     {
         if (this.data == null)
         {
-            this.data = new StringStringArrayKeyValuePair[] { data };
+            this.data = new StringHighlightResultSnippetFieldSnippetMatchArrayKeyValuePair[] { data };
         }
         else
         {
-            ArrayList<StringStringArrayKeyValuePair> existingList = new ArrayList<>(Arrays.asList(this.data));
+            ArrayList<StringHighlightResultSnippetFieldSnippetMatchArrayKeyValuePair> existingList = new ArrayList<>(Arrays.asList(this.data));
             existingList.add(data);
-            this.data = existingList.toArray(new StringStringArrayKeyValuePair[0]);
+            this.data = existingList.toArray(new StringHighlightResultSnippetFieldSnippetMatchArrayKeyValuePair[0]);
         }
         return this;
     }

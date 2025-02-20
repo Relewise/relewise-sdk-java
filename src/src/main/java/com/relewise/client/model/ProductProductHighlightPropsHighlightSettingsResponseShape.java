@@ -14,13 +14,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+/** Indicates how the highlight result should be shaped or presented. */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductProductHighlightPropsHighlightSettingsResponseShape
 {
-    /** If highlights should be presented as offsets/indices within inspected data values. */
-    public Boolean includeOffsets;
-    /** If highlights should be presented as text fragment within inspected data values; and if so, additional configuration on how to. */
-    public @Nullable ProductProductHighlightPropsHighlightSettingsTextSnippetsSettings textSnippets;
+    /** Whether to return match positions (offsets) within fields. */
+    public @Nullable ProductProductHighlightPropsHighlightSettingsOffsetSettings offsets;
+    /** Controls whether to return context-based text snippets; can include further snippet configuration. */
+    public @Nullable ProductProductHighlightPropsHighlightSettingsSnippetsSettings snippets;
     public static ProductProductHighlightPropsHighlightSettingsResponseShape create()
     {
         return new ProductProductHighlightPropsHighlightSettingsResponseShape();
@@ -28,26 +29,26 @@ public class ProductProductHighlightPropsHighlightSettingsResponseShape
     public ProductProductHighlightPropsHighlightSettingsResponseShape()
     {
     }
-    /** If highlights should be presented as offsets/indices within inspected data values. */
-    public Boolean getIncludeOffsets()
+    /** Whether to return match positions (offsets) within fields. */
+    public @Nullable ProductProductHighlightPropsHighlightSettingsOffsetSettings getOffsets()
     {
-        return this.includeOffsets;
+        return this.offsets;
     }
-    /** If highlights should be presented as text fragment within inspected data values; and if so, additional configuration on how to. */
-    public @Nullable ProductProductHighlightPropsHighlightSettingsTextSnippetsSettings getTextSnippets()
+    /** Controls whether to return context-based text snippets; can include further snippet configuration. */
+    public @Nullable ProductProductHighlightPropsHighlightSettingsSnippetsSettings getSnippets()
     {
-        return this.textSnippets;
+        return this.snippets;
     }
-    /** If highlights should be presented as offsets/indices within inspected data values. */
-    public ProductProductHighlightPropsHighlightSettingsResponseShape setIncludeOffsets(Boolean includeOffsets)
+    /** Whether to return match positions (offsets) within fields. */
+    public ProductProductHighlightPropsHighlightSettingsResponseShape setOffsets(@Nullable ProductProductHighlightPropsHighlightSettingsOffsetSettings offsets)
     {
-        this.includeOffsets = includeOffsets;
+        this.offsets = offsets;
         return this;
     }
-    /** If highlights should be presented as text fragment within inspected data values; and if so, additional configuration on how to. */
-    public ProductProductHighlightPropsHighlightSettingsResponseShape setTextSnippets(@Nullable ProductProductHighlightPropsHighlightSettingsTextSnippetsSettings textSnippets)
+    /** Controls whether to return context-based text snippets; can include further snippet configuration. */
+    public ProductProductHighlightPropsHighlightSettingsResponseShape setSnippets(@Nullable ProductProductHighlightPropsHighlightSettingsSnippetsSettings snippets)
     {
-        this.textSnippets = textSnippets;
+        this.snippets = snippets;
         return this;
     }
 }

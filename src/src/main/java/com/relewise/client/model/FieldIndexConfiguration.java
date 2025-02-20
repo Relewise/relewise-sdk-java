@@ -19,53 +19,55 @@ public class FieldIndexConfiguration
 {
     public Boolean included;
     public Short weight;
+    /** @deprecated Use PredictionConfiguration instead */
     public PredictionSourceType predictionSourceType;
     public @Nullable Parser parser;
     public @Nullable MatchTypeSettings matchTypeSettings;
-    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser)
+    public @Nullable PredictionConfiguration predictionConfiguration;
+    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionConfiguration predictionConfiguration, Parser parser)
     {
-        return new FieldIndexConfiguration(included, weight, predictionSourceType, parser);
+        return new FieldIndexConfiguration(included, weight, predictionConfiguration, parser);
     }
-    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser)
+    public FieldIndexConfiguration(Boolean included, Short weight, PredictionConfiguration predictionConfiguration, Parser parser)
     {
         this.included = included;
         this.weight = weight;
-        this.predictionSourceType = predictionSourceType;
+        this.predictionConfiguration = predictionConfiguration;
         this.parser = parser;
         this.matchTypeSettings = null;
     }
-    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser, @Nullable MatchTypeSettings matchTypeSettings)
+    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionConfiguration predictionConfiguration, Parser parser, @Nullable MatchTypeSettings matchTypeSettings)
     {
-        return new FieldIndexConfiguration(included, weight, predictionSourceType, parser, matchTypeSettings);
+        return new FieldIndexConfiguration(included, weight, predictionConfiguration, parser, matchTypeSettings);
     }
-    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType, Parser parser, @Nullable MatchTypeSettings matchTypeSettings)
+    public FieldIndexConfiguration(Boolean included, Short weight, PredictionConfiguration predictionConfiguration, Parser parser, @Nullable MatchTypeSettings matchTypeSettings)
     {
         this.included = included;
         this.weight = weight;
-        this.predictionSourceType = predictionSourceType;
+        this.predictionConfiguration = predictionConfiguration;
         this.parser = parser;
         this.matchTypeSettings = matchTypeSettings;
     }
-    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType)
+    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionConfiguration predictionConfiguration)
     {
-        return new FieldIndexConfiguration(included, weight, predictionSourceType);
+        return new FieldIndexConfiguration(included, weight, predictionConfiguration);
     }
-    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType)
+    public FieldIndexConfiguration(Boolean included, Short weight, PredictionConfiguration predictionConfiguration)
     {
         this.included = included;
         this.weight = weight;
-        this.predictionSourceType = predictionSourceType;
+        this.predictionConfiguration = predictionConfiguration;
         this.matchTypeSettings = null;
     }
-    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionSourceType predictionSourceType, @Nullable MatchTypeSettings matchTypeSettings)
+    public static FieldIndexConfiguration create(Boolean included, Short weight, PredictionConfiguration predictionConfiguration, @Nullable MatchTypeSettings matchTypeSettings)
     {
-        return new FieldIndexConfiguration(included, weight, predictionSourceType, matchTypeSettings);
+        return new FieldIndexConfiguration(included, weight, predictionConfiguration, matchTypeSettings);
     }
-    public FieldIndexConfiguration(Boolean included, Short weight, PredictionSourceType predictionSourceType, @Nullable MatchTypeSettings matchTypeSettings)
+    public FieldIndexConfiguration(Boolean included, Short weight, PredictionConfiguration predictionConfiguration, @Nullable MatchTypeSettings matchTypeSettings)
     {
         this.included = included;
         this.weight = weight;
-        this.predictionSourceType = predictionSourceType;
+        this.predictionConfiguration = predictionConfiguration;
         this.matchTypeSettings = matchTypeSettings;
     }
     public FieldIndexConfiguration()
@@ -80,6 +82,7 @@ public class FieldIndexConfiguration
     {
         return this.weight;
     }
+    /** @deprecated Use PredictionConfiguration instead */
     public PredictionSourceType getPredictionSourceType()
     {
         return this.predictionSourceType;
@@ -92,6 +95,10 @@ public class FieldIndexConfiguration
     {
         return this.matchTypeSettings;
     }
+    public @Nullable PredictionConfiguration getPredictionConfiguration()
+    {
+        return this.predictionConfiguration;
+    }
     public FieldIndexConfiguration setIncluded(Boolean included)
     {
         this.included = included;
@@ -102,6 +109,7 @@ public class FieldIndexConfiguration
         this.weight = weight;
         return this;
     }
+    /** @deprecated Use PredictionConfiguration instead */
     public FieldIndexConfiguration setPredictionSourceType(PredictionSourceType predictionSourceType)
     {
         this.predictionSourceType = predictionSourceType;
@@ -115,6 +123,11 @@ public class FieldIndexConfiguration
     public FieldIndexConfiguration setMatchTypeSettings(@Nullable MatchTypeSettings matchTypeSettings)
     {
         this.matchTypeSettings = matchTypeSettings;
+        return this;
+    }
+    public FieldIndexConfiguration setPredictionConfiguration(@Nullable PredictionConfiguration predictionConfiguration)
+    {
+        this.predictionConfiguration = predictionConfiguration;
         return this;
     }
 }

@@ -24,13 +24,13 @@ public class PredictionRule extends SearchRule
 {
     public String $type = "Relewise.Client.DataTypes.Search.Rules.PredictionRule, Relewise.Client";
     public SearchTermCondition condition;
-    public PredictionRulePromotion promote;
-    public PredictionRuleSuppression suppress;
-    public static PredictionRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, PredictionRulePromotion promote, PredictionRuleSuppression suppress)
+    public @Nullable PredictionRulePromotion promote;
+    public @Nullable PredictionRuleSuppression suppress;
+    public static PredictionRule create(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, @Nullable PredictionRulePromotion promote, @Nullable PredictionRuleSuppression suppress)
     {
         return new PredictionRule(id, indexes, languages, isApproved, condition, promote, suppress);
     }
-    public PredictionRule(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, PredictionRulePromotion promote, PredictionRuleSuppression suppress)
+    public PredictionRule(UUID id, @Nullable ApplicableIndexes indexes, @Nullable ApplicableLanguages languages, Boolean isApproved, SearchTermCondition condition, @Nullable PredictionRulePromotion promote, @Nullable PredictionRuleSuppression suppress)
     {
         this.id = id;
         this.indexes = indexes;
@@ -60,11 +60,11 @@ public class PredictionRule extends SearchRule
     {
         return this.condition;
     }
-    public PredictionRulePromotion getPromote()
+    public @Nullable PredictionRulePromotion getPromote()
     {
         return this.promote;
     }
-    public PredictionRuleSuppression getSuppress()
+    public @Nullable PredictionRuleSuppression getSuppress()
     {
         return this.suppress;
     }
@@ -73,12 +73,12 @@ public class PredictionRule extends SearchRule
         this.condition = condition;
         return this;
     }
-    public PredictionRule setPromote(PredictionRulePromotion promote)
+    public PredictionRule setPromote(@Nullable PredictionRulePromotion promote)
     {
         this.promote = promote;
         return this;
     }
-    public PredictionRule setSuppress(PredictionRuleSuppression suppress)
+    public PredictionRule setSuppress(@Nullable PredictionRuleSuppression suppress)
     {
         this.suppress = suppress;
         return this;

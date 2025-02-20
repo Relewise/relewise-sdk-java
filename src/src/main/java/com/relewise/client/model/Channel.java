@@ -19,22 +19,14 @@ public class Channel
 {
     public String name;
     public @Nullable Channel subChannel;
-    public static Channel create(String name, Channel subChannel)
+    public static Channel create(String name, @Nullable Channel subChannel)
     {
         return new Channel(name, subChannel);
     }
-    public Channel(String name, Channel subChannel)
+    public Channel(String name, @Nullable Channel subChannel)
     {
         this.name = name;
         this.subChannel = subChannel;
-    }
-    public static Channel create(String name)
-    {
-        return new Channel(name);
-    }
-    public Channel(String name)
-    {
-        this.name = name;
     }
     public Channel()
     {

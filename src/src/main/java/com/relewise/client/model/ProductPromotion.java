@@ -25,6 +25,8 @@ public class ProductPromotion extends Promotion
     public String $type = "Relewise.Client.DataTypes.RetailMedia.ProductPromotion, Relewise.Client";
     /** Filters matching the products to be promoted */
     public @Nullable FilterCollection filters;
+    /** The condition search must match to have <code>ProductPromotion</code> activated. */
+    public @Nullable RetailMediaConditions conditions;
     public static ProductPromotion create(String name, @Nullable FilterCollection filters, @Nullable PromotionLocationCollection locations)
     {
         return new ProductPromotion(name, filters, locations);
@@ -43,10 +45,21 @@ public class ProductPromotion extends Promotion
     {
         return this.filters;
     }
+    /** The condition search must match to have <code>ProductPromotion</code> activated. */
+    public @Nullable RetailMediaConditions getConditions()
+    {
+        return this.conditions;
+    }
     /** Filters matching the products to be promoted */
     public ProductPromotion setFilters(@Nullable FilterCollection filters)
     {
         this.filters = filters;
+        return this;
+    }
+    /** The condition search must match to have <code>ProductPromotion</code> activated. */
+    public ProductPromotion setConditions(@Nullable RetailMediaConditions conditions)
+    {
+        this.conditions = conditions;
         return this;
     }
     @Override

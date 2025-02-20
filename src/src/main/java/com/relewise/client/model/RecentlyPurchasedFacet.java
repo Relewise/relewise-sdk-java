@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
-/** Performs facetting based on if product is known to be purchased recently (within <code>!: SinceMinutesAgo</code>), applicable only for product searches. Requires <b>at least one</b> level of selection, whether <code>!:ByUser</code>, or <code>!:ByUserCompany</code>, or <code>!:ByUserParentCompany</code>. */
+/** Performs faceting based on if product is known to be purchased recently (within <code>SinceMinutesAgo</code>), applicable only for product searches. Requires <b>at least one</b> level of selection, whether <code>ByUser</code>, or <code>ByUserCompany</code>, or <code>ByUserParentCompany</code>. */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,

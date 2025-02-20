@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
+/** @deprecated Replaced by PredictionConfiguration */
 public enum PredictionSourceType
 {
     Disabled {

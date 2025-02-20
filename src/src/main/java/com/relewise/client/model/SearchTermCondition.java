@@ -22,6 +22,8 @@ public class SearchTermCondition
     public @Nullable ArrayList<SearchTermCondition> andConditions;
     public @Nullable ArrayList<SearchTermCondition> orConditions;
     public @Nullable Integer minimumLength;
+    /** Negates only direct <code>Kind</code> and <code>Value</code> condition. Requires <code>Kind</code> to be supplied in case 'negate' logic is requested. */
+    public Boolean negated;
     public static SearchTermCondition create(SearchTermConditionConditionKind kind, String value)
     {
         return new SearchTermCondition(kind, value);
@@ -31,16 +33,18 @@ public class SearchTermCondition
         this.kind = kind;
         this.value = value;
         this.minimumLength = null;
+        this.negated = false;
     }
-    public static SearchTermCondition create(SearchTermConditionConditionKind kind, String value, @Nullable Integer minimumLength)
+    public static SearchTermCondition create(SearchTermConditionConditionKind kind, String value, @Nullable Integer minimumLength, Boolean negated)
     {
-        return new SearchTermCondition(kind, value, minimumLength);
+        return new SearchTermCondition(kind, value, minimumLength, negated);
     }
-    public SearchTermCondition(SearchTermConditionConditionKind kind, String value, @Nullable Integer minimumLength)
+    public SearchTermCondition(SearchTermConditionConditionKind kind, String value, @Nullable Integer minimumLength, Boolean negated)
     {
         this.kind = kind;
         this.value = value;
         this.minimumLength = minimumLength;
+        this.negated = negated;
     }
     public static SearchTermCondition create(Integer minimumLength)
     {
@@ -53,6 +57,7 @@ public class SearchTermCondition
     public SearchTermCondition()
     {
         this.minimumLength = null;
+        this.negated = false;
     }
     public @Nullable SearchTermConditionConditionKind getKind()
     {
@@ -73,6 +78,11 @@ public class SearchTermCondition
     public @Nullable Integer getMinimumLength()
     {
         return this.minimumLength;
+    }
+    /** Negates only direct <code>Kind</code> and <code>Value</code> condition. Requires <code>Kind</code> to be supplied in case 'negate' logic is requested. */
+    public Boolean getNegated()
+    {
+        return this.negated;
     }
     public SearchTermCondition setKind(@Nullable SearchTermConditionConditionKind kind)
     {
@@ -115,6 +125,12 @@ public class SearchTermCondition
     public SearchTermCondition setMinimumLength(@Nullable Integer minimumLength)
     {
         this.minimumLength = minimumLength;
+        return this;
+    }
+    /** Negates only direct <code>Kind</code> and <code>Value</code> condition. Requires <code>Kind</code> to be supplied in case 'negate' logic is requested. */
+    public SearchTermCondition setNegated(Boolean negated)
+    {
+        this.negated = negated;
         return this;
     }
 }

@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
+/** @deprecated No longer in use */
 public enum SearchTermPredictionResultPredictionType
 {
     Match {

@@ -29,6 +29,8 @@ public class Campaign extends CampaignEntityStateCampaignMetadataValuesRetailMed
     public UUID advertiserId;
     public Budget budget;
     public CampaignStatusWithHistory status;
+    /** Conditions for Retail Media engine to be applied. */
+    public @Nullable RetailMediaConditions conditions;
     public static Campaign create(@Nullable UUID id, CampaignEntityState state, String name, UUID advertiserId, Budget budget, @Nullable ISchedule schedule, PromotionCollection promotions)
     {
         return new Campaign(id, state, name, advertiserId, budget, schedule, promotions);
@@ -70,6 +72,11 @@ public class Campaign extends CampaignEntityStateCampaignMetadataValuesRetailMed
     {
         return this.status;
     }
+    /** Conditions for Retail Media engine to be applied. */
+    public @Nullable RetailMediaConditions getConditions()
+    {
+        return this.conditions;
+    }
     public Campaign setName(String name)
     {
         this.name = name;
@@ -98,6 +105,12 @@ public class Campaign extends CampaignEntityStateCampaignMetadataValuesRetailMed
     public Campaign setStatus(CampaignStatusWithHistory status)
     {
         this.status = status;
+        return this;
+    }
+    /** Conditions for Retail Media engine to be applied. */
+    public Campaign setConditions(@Nullable RetailMediaConditions conditions)
+    {
+        this.conditions = conditions;
         return this;
     }
     @Override
