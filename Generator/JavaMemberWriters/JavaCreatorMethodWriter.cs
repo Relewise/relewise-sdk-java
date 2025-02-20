@@ -1,13 +1,24 @@
 ﻿using Generator.Extensions;
 using Newtonsoft.Json;
+using Relewise.Client.DataTypes.Search.Configuration;
 using System.CodeDom.Compiler;
 using System.Globalization;
 using System.Reflection;
+using Relewise.Client.DataTypes.Search.Configuration.Parsers;
 
 namespace Generator.JavaMemberWriters;
 
 public class JavaCreatorMethodWriter
 {
+    private readonly Dictionary<Type, ConstructorInfo[]> additionalConstructors = new()
+    {
+        // For backwards compatibility we still want the constructor with the obsoleted parameter
+        [typeof(FieldIndexConfiguration)] = [
+                typeof(FieldIndexConfiguration).GetConstructor([typeof(bool), typeof(byte), typeof(PredictionSourceType), typeof(MatchTypeSettings)])!,
+                typeof(FieldIndexConfiguration).GetConstructor([typeof(bool), typeof(byte), typeof(PredictionSourceType), typeof(Parser), typeof(MatchTypeSettings)])!
+            ]
+    };
+
     private readonly JavaWriter javaWriter;
 
     private HashSet<string> WrittenCreator = new HashSet<string>();
@@ -19,6 +30,10 @@ public class JavaCreatorMethodWriter
 
     public void Write(IndentedTextWriter writer, Type type, string typeName, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations)
     {
+        if (typeName == "FieldIndexConfiguration")
+        {
+
+        }
         if (type.IsAbstract || type.IsInterface) return;
 
         WrittenCreator.Clear();
@@ -54,7 +69,7 @@ public class JavaCreatorMethodWriter
         var smallestCoveringTypeAndNameMappableConstructorParameters = coveringTypeAndNameMappableConstructorParameters
             .MinBy(c => c.GetParameters().Length);
 
-        var allConstructorParametersIntersectionWithMappableNamesAndTypes = type
+        var smallestNonEmptyConstructor = type
             .GetConstructors()
             .Where(c => c.GetParameters().Length > 0)
             .MinBy(c => c.GetParameters().Length);
@@ -94,14 +109,14 @@ public class JavaCreatorMethodWriter
         }
         else if (coveringUniqueTypeMappableConstructorParameters == null)
         {
-            if (allConstructorParametersIntersectionWithMappableNamesAndTypes != null)
+            if (smallestNonEmptyConstructor != null)
             {
-                string[] defaultParameters = allConstructorParametersIntersectionWithMappableNamesAndTypes.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
+                string[] defaultParameters = smallestNonEmptyConstructor.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
 
-                WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, Array.Empty<string>());
+                WriteConstructor(writer, type, typeName, propertyInformations, smallestNonEmptyConstructor, Array.Empty<string>());
                 if (defaultParameters.Any())
                 {
-                    WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, defaultParameters);
+                    WriteConstructor(writer, type, typeName, propertyInformations, smallestNonEmptyConstructor, defaultParameters);
                 }
             }
             else
@@ -112,6 +127,20 @@ public class JavaCreatorMethodWriter
                 writer.WriteLine($"return new {typeName}();");
                 writer.Indent--;
                 writer.WriteLine("}");
+            }
+        }
+
+        if (additionalConstructors.TryGetValue(type, out ConstructorInfo[]? constructors))
+        {
+            foreach (ConstructorInfo constructor in constructors)
+            {
+                string[] defaultParameters = constructor.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
+
+                WriteConstructor(writer, type, typeName, propertyInformations, constructor, []);
+                if (defaultParameters.Any())
+                {
+                    WriteConstructor(writer, type, typeName, propertyInformations, constructor, defaultParameters);
+                }
             }
         }
 
@@ -216,7 +245,7 @@ public class JavaCreatorMethodWriter
 
     private PropertyInfo? SingleMatchingProperty(Type returnType, (PropertyInfo info, string propertyTypeName, string propertyName, string lowerCaseName)[] propertyInformations, ParameterInfo parameter)
     {
-        if (propertyInformations.FirstOrDefault(p => p.lowerCaseName == parameter.Name && ParameterIsPersuadableIntoPropertyType(p.info, parameter)) is { info: {} } exactSameNameProperty)
+        if (propertyInformations.FirstOrDefault(p => p.lowerCaseName == parameter.Name && ParameterIsPersuadableIntoPropertyType(p.info, parameter)) is { info: { } } exactSameNameProperty)
         {
             return exactSameNameProperty.info;
         }
