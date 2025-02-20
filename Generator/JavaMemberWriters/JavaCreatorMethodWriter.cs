@@ -5,6 +5,7 @@ using System.CodeDom.Compiler;
 using System.Globalization;
 using System.Reflection;
 using Relewise.Client.DataTypes.Search.Configuration.Parsers;
+using Relewise.Client.DataTypes.Search.Rules;
 
 namespace Generator.JavaMemberWriters;
 
@@ -18,6 +19,18 @@ public class JavaCreatorMethodWriter
                 typeof(FieldIndexConfiguration).GetConstructor([typeof(bool), typeof(byte), typeof(PredictionSourceType), typeof(Parser), typeof(MatchTypeSettings)])!
             ]
     };
+
+    /// <summary>
+    /// We don't generate all combinations of constructors in regard to if default parameters are included.
+    /// So, in certain cases we specifically define that certain signatures have to be generated.
+    /// </summary>
+    private readonly Dictionary<Type, (ConstructorInfo constructor, string[] parameters)> additionalConstructorsWithSelectedParameters = new()
+    {
+        // For backwards compatibility remove in next major release.
+        [typeof(SearchTermCondition)] = (typeof(SearchTermCondition).GetConstructor(new[] { typeof(SearchTermCondition.ConditionKind), typeof(string), typeof(int?), typeof(bool) })!,
+            ["kind", "value", "minimumLength"]),
+    };
+
 
     private readonly JavaWriter javaWriter;
 
@@ -141,6 +154,21 @@ public class JavaCreatorMethodWriter
                 {
                     WriteConstructor(writer, type, typeName, propertyInformations, constructor, defaultParameters);
                 }
+            }
+        }
+        
+        if (additionalConstructorsWithSelectedParameters.TryGetValue(type, out (ConstructorInfo constructor, string[] parameters) constructorWithSelectedParameters))
+        {
+            string[] defaultParameters = constructorWithSelectedParameters.constructor.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
+
+            var propertySubset = propertyInformations
+                .Where(x => constructorWithSelectedParameters.parameters.Contains(x.lowerCaseName))
+                .ToArray();
+
+            WriteConstructor(writer, type, typeName, propertySubset, constructorWithSelectedParameters.constructor, []);
+            if (defaultParameters.Any())
+            {
+                WriteConstructor(writer, type, typeName, propertySubset, constructorWithSelectedParameters.constructor, defaultParameters);
             }
         }
 
