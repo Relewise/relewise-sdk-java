@@ -34,6 +34,14 @@ public class ContentRecommendationRequestCollection extends LicensedRequest
         this.requireDistinctContentsAcrossResults = requireDistinctContentsAcrossResults;
         this.requests = new ArrayList<>(Arrays.asList(requests));
     }
+    public static ContentRecommendationRequestCollection create(Boolean requireDistinctContentsAcrossResults)
+    {
+        return new ContentRecommendationRequestCollection(requireDistinctContentsAcrossResults);
+    }
+    public ContentRecommendationRequestCollection(Boolean requireDistinctContentsAcrossResults)
+    {
+        this.requireDistinctContentsAcrossResults = requireDistinctContentsAcrossResults;
+    }
     public ContentRecommendationRequestCollection()
     {
     }

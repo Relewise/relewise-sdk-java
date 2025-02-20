@@ -49,6 +49,24 @@ public class CompanyUpdate extends Trackable
         this.parents = parents;
         this.kind = kind;
     }
+    public static CompanyUpdate create(Company company)
+    {
+        return new CompanyUpdate(company);
+    }
+    public CompanyUpdate(Company company)
+    {
+        this.company = company;
+        this.kind = CompanyUpdateUpdateKind.UpdateAndAppend;
+    }
+    public static CompanyUpdate create(Company company, CompanyUpdateUpdateKind kind)
+    {
+        return new CompanyUpdate(company, kind);
+    }
+    public CompanyUpdate(Company company, CompanyUpdateUpdateKind kind)
+    {
+        this.company = company;
+        this.kind = kind;
+    }
     public CompanyUpdate()
     {
         this.kind = CompanyUpdateUpdateKind.UpdateAndAppend;

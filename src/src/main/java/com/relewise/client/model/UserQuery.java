@@ -36,6 +36,14 @@ public class UserQuery extends LicensedRequest implements IHaveCurrencyLanguage
         this.currency = currency;
         this.criteria = criteria;
     }
+    public static UserQuery create(UserQueryCriteria... criteria)
+    {
+        return new UserQuery(criteria);
+    }
+    public UserQuery(UserQueryCriteria... criteria)
+    {
+        this.criteria = criteria;
+    }
     public UserQuery()
     {
     }

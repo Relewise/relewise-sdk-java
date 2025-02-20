@@ -34,6 +34,14 @@ public class ProductRecommendationRequestCollection extends LicensedRequest
         this.requireDistinctProductsAcrossResults = requireDistinctProductsAcrossResults;
         this.requests = new ArrayList<>(Arrays.asList(requests));
     }
+    public static ProductRecommendationRequestCollection create(Boolean requireDistinctProductsAcrossResults)
+    {
+        return new ProductRecommendationRequestCollection(requireDistinctProductsAcrossResults);
+    }
+    public ProductRecommendationRequestCollection(Boolean requireDistinctProductsAcrossResults)
+    {
+        this.requireDistinctProductsAcrossResults = requireDistinctProductsAcrossResults;
+    }
     public ProductRecommendationRequestCollection()
     {
     }

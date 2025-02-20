@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Generator": {
+      "commandName": "Project",
+      "commandLineArgs": "../../../../src/src/main/java/com/relewise/client"
+    }
+  }
+}

@@ -28,6 +28,14 @@ public class Channel
         this.name = name;
         this.subChannel = subChannel;
     }
+    public static Channel create(String name)
+    {
+        return new Channel(name);
+    }
+    public Channel(String name)
+    {
+        this.name = name;
+    }
     public Channel()
     {
     }

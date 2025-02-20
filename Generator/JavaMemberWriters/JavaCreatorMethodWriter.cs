@@ -69,7 +69,7 @@ public class JavaCreatorMethodWriter
                 WriteConstructor(writer, type, typeName, propertyInformations, coveringUniqueTypeMappableConstructorParameters, defaultParameters);
             }
         }
-        else if (largestCoveringTypeAndNameMappableConstructorParameters != null || smallestCoveringTypeAndNameMappableConstructorParameters != null)
+        if (largestCoveringTypeAndNameMappableConstructorParameters != null || smallestCoveringTypeAndNameMappableConstructorParameters != null)
         {
             if (largestCoveringTypeAndNameMappableConstructorParameters != null)
             {
@@ -92,24 +92,27 @@ public class JavaCreatorMethodWriter
                 }
             }
         }
-        else if (allConstructorParametersIntersectionWithMappableNamesAndTypes != null)
+        else if (coveringUniqueTypeMappableConstructorParameters == null)
         {
-            string[] defaultParameters = allConstructorParametersIntersectionWithMappableNamesAndTypes.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
-
-            WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, Array.Empty<string>());
-            if (defaultParameters.Any())
+            if (allConstructorParametersIntersectionWithMappableNamesAndTypes != null)
             {
-                WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, defaultParameters);
+                string[] defaultParameters = allConstructorParametersIntersectionWithMappableNamesAndTypes.GetParameters().Where(parameter => parameter.HasDefaultValue).Select(parameter => parameter.Name).ToArray()!;
+
+                WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, Array.Empty<string>());
+                if (defaultParameters.Any())
+                {
+                    WriteConstructor(writer, type, typeName, propertyInformations, allConstructorParametersIntersectionWithMappableNamesAndTypes, defaultParameters);
+                }
             }
-        }
-        else
-        {
-            writer.WriteLine($"public static {typeName} create()");
-            writer.WriteLine("{");
-            writer.Indent++;
-            writer.WriteLine($"return new {typeName}();");
-            writer.Indent--;
-            writer.WriteLine("}");
+            else
+            {
+                writer.WriteLine($"public static {typeName} create()");
+                writer.WriteLine("{");
+                writer.Indent++;
+                writer.WriteLine($"return new {typeName}();");
+                writer.Indent--;
+                writer.WriteLine("}");
+            }
         }
 
         var allDefaultParameters = type.GetProperties().Where(property =>
