@@ -15,8 +15,10 @@ public class JavaCreatorMethodWriter
     {
         // For backwards compatibility we still want the constructor with the obsoleted parameter
         [typeof(FieldIndexConfiguration)] = [
-                typeof(FieldIndexConfiguration).GetConstructor([typeof(bool), typeof(byte), typeof(PredictionSourceType), typeof(MatchTypeSettings)])!,
-                typeof(FieldIndexConfiguration).GetConstructor([typeof(bool), typeof(byte), typeof(PredictionSourceType), typeof(Parser), typeof(MatchTypeSettings)])!
+#pragma warning disable CS0618 // Type or member is obsolete
+            typeof(FieldIndexConfiguration).GetConstructor([typeof(bool), typeof(byte), typeof(PredictionSourceType), typeof(MatchTypeSettings)])!,
+            typeof(FieldIndexConfiguration).GetConstructor([typeof(bool), typeof(byte), typeof(PredictionSourceType), typeof(Parser), typeof(MatchTypeSettings)])!
+#pragma warning restore CS0618 // Type or member is obsolete
             ]
     };
 
