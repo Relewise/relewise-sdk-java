@@ -140,7 +140,9 @@ public class SearcherTest extends TestBase {
                         .addToDataKeys("Description")
                     )
                     .setShape(ProductProductHighlightPropsHighlightSettingsResponseShape.create()
-                        .setIncludeOffsets(true)
+                        .setOffsets(ProductProductHighlightPropsHighlightSettingsOffsetSettings.create()
+                            .setInclude(true)
+                        )
                     )
             )
         );
