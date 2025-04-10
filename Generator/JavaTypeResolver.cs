@@ -32,6 +32,7 @@ public class JavaTypeResolver
         "Object" => "Object",
         "DateTimeOffset" => "OffsetDateTime",
         "DateTime" => "LocalDateTime",
+        "TimeSpan" => "Duration",
         var value when value.StartsWith("Nullable") => $"@Nullable {ResolveType(type.GetGenericArguments()[0])}",
         var value when value.StartsWith("List") || value.StartsWith("Dictionary") || value.EndsWith("[]") => AddCollectionTypeDefinition(type),
         _ when type.IsGenericType => GetGenericTypeDefinition(type),

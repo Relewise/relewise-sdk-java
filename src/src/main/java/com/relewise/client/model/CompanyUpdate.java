@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -47,6 +48,24 @@ public class CompanyUpdate extends Trackable
         this.company = company;
         this.replaceExistingParents = replaceExistingParents;
         this.parents = parents;
+        this.kind = kind;
+    }
+    public static CompanyUpdate create(Company company)
+    {
+        return new CompanyUpdate(company);
+    }
+    public CompanyUpdate(Company company)
+    {
+        this.company = company;
+        this.kind = CompanyUpdateUpdateKind.UpdateAndAppend;
+    }
+    public static CompanyUpdate create(Company company, CompanyUpdateUpdateKind kind)
+    {
+        return new CompanyUpdate(company, kind);
+    }
+    public CompanyUpdate(Company company, CompanyUpdateUpdateKind kind)
+    {
+        this.company = company;
         this.kind = kind;
     }
     public CompanyUpdate()

@@ -38,7 +38,7 @@ public class RelewiseClient {
 
         this.objectMapper = JsonMapper.builder()
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
-            .addModule(new JavaTimeModule())
+            .addModule(new JavaTimeModule().addDeserializer(Duration.class, new DurationDeserializer()))
             .build();
 
         try {

@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -14,13 +15,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+/** Indicates how the highlight result should be shaped or presented. */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ContentContentHighlightPropsHighlightSettingsResponseShape
 {
-    /** If highlights should be presented as offsets/indices within inspected data values. */
-    public Boolean includeOffsets;
-    /** If highlights should be presented as text fragment within inspected data values; and if so, additional configuration on how to. */
-    public @Nullable ContentContentHighlightPropsHighlightSettingsTextSnippetsSettings textSnippets;
+    /** Whether to return match positions (offsets) within fields. */
+    public @Nullable ContentContentHighlightPropsHighlightSettingsOffsetSettings offsets;
+    /** Controls whether to return context-based text snippets; can include further snippet configuration. */
+    public @Nullable ContentContentHighlightPropsHighlightSettingsSnippetsSettings snippets;
     public static ContentContentHighlightPropsHighlightSettingsResponseShape create()
     {
         return new ContentContentHighlightPropsHighlightSettingsResponseShape();
@@ -28,26 +30,26 @@ public class ContentContentHighlightPropsHighlightSettingsResponseShape
     public ContentContentHighlightPropsHighlightSettingsResponseShape()
     {
     }
-    /** If highlights should be presented as offsets/indices within inspected data values. */
-    public Boolean getIncludeOffsets()
+    /** Whether to return match positions (offsets) within fields. */
+    public @Nullable ContentContentHighlightPropsHighlightSettingsOffsetSettings getOffsets()
     {
-        return this.includeOffsets;
+        return this.offsets;
     }
-    /** If highlights should be presented as text fragment within inspected data values; and if so, additional configuration on how to. */
-    public @Nullable ContentContentHighlightPropsHighlightSettingsTextSnippetsSettings getTextSnippets()
+    /** Controls whether to return context-based text snippets; can include further snippet configuration. */
+    public @Nullable ContentContentHighlightPropsHighlightSettingsSnippetsSettings getSnippets()
     {
-        return this.textSnippets;
+        return this.snippets;
     }
-    /** If highlights should be presented as offsets/indices within inspected data values. */
-    public ContentContentHighlightPropsHighlightSettingsResponseShape setIncludeOffsets(Boolean includeOffsets)
+    /** Whether to return match positions (offsets) within fields. */
+    public ContentContentHighlightPropsHighlightSettingsResponseShape setOffsets(@Nullable ContentContentHighlightPropsHighlightSettingsOffsetSettings offsets)
     {
-        this.includeOffsets = includeOffsets;
+        this.offsets = offsets;
         return this;
     }
-    /** If highlights should be presented as text fragment within inspected data values; and if so, additional configuration on how to. */
-    public ContentContentHighlightPropsHighlightSettingsResponseShape setTextSnippets(@Nullable ContentContentHighlightPropsHighlightSettingsTextSnippetsSettings textSnippets)
+    /** Controls whether to return context-based text snippets; can include further snippet configuration. */
+    public ContentContentHighlightPropsHighlightSettingsResponseShape setSnippets(@Nullable ContentContentHighlightPropsHighlightSettingsSnippetsSettings snippets)
     {
-        this.textSnippets = textSnippets;
+        this.snippets = snippets;
         return this;
     }
 }

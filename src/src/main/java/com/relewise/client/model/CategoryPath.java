@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -20,7 +21,7 @@ public class CategoryPath
 {
     public ArrayList<CategoryNameAndId> breadcrumbPathStartingFromRoot;
     /**
-     * The full path of the products, starting at the root > subcategory > subcategory2 etc. If you dont have a category id available, provide the Category name for both ID and Name, and the same if you have an ID, but not a Name. Example: new CategoryPath(new CategoryNameAndId("515", "Soups"), new CategoryNameAndId("518", "Vegetable soups"))
+     * The full path of the products, starting at the root > subcategory > subcategory2 etc. If you don't have a category id available, provide the Category name for both ID and Name, and the same if you have an ID, but not a Name. Example: new CategoryPath(new CategoryNameAndId("515", "Soups"), new CategoryNameAndId("518", "Vegetable soups"))
      * @param breadcrumbPathStartingFromRoot Example: new CategoryPath(new CategoryNameAndId("515", "Soups"), new CategoryNameAndId("518", "Vegetable soups"))
      */
     public static CategoryPath create(CategoryNameAndId... breadcrumbPathStartingFromRoot)
@@ -28,7 +29,7 @@ public class CategoryPath
         return new CategoryPath(breadcrumbPathStartingFromRoot);
     }
     /**
-     * The full path of the products, starting at the root > subcategory > subcategory2 etc. If you dont have a category id available, provide the Category name for both ID and Name, and the same if you have an ID, but not a Name. Example: new CategoryPath(new CategoryNameAndId("515", "Soups"), new CategoryNameAndId("518", "Vegetable soups"))
+     * The full path of the products, starting at the root > subcategory > subcategory2 etc. If you don't have a category id available, provide the Category name for both ID and Name, and the same if you have an ID, but not a Name. Example: new CategoryPath(new CategoryNameAndId("515", "Soups"), new CategoryNameAndId("518", "Vegetable soups"))
      * @param breadcrumbPathStartingFromRoot Example: new CategoryPath(new CategoryNameAndId("515", "Soups"), new CategoryNameAndId("518", "Vegetable soups"))
      */
     public CategoryPath(CategoryNameAndId... breadcrumbPathStartingFromRoot)

@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -18,9 +19,9 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HighlightResult
 {
-    /** Represents matches as offsets should <code>Shape</code>.<code>IncludeOffsets</code> be requested by client. */
+    /** Represents matches as offsets should <code>Shape</code>.<code>Offsets</code> be requested by client. */
     public @Nullable HighlightResultOffset offsets;
-    /** Represents matches as offsets should <code>Shape</code>.<code>IncludeTextSnippets</code> be requested by client. */
+    /** Represents matches as text should <code>Shape</code>.<code>Snippets</code> be requested by client. */
     public @Nullable HighlightResultSnippet snippets;
     public static HighlightResult create()
     {
@@ -29,23 +30,23 @@ public class HighlightResult
     public HighlightResult()
     {
     }
-    /** Represents matches as offsets should <code>Shape</code>.<code>IncludeOffsets</code> be requested by client. */
+    /** Represents matches as offsets should <code>Shape</code>.<code>Offsets</code> be requested by client. */
     public @Nullable HighlightResultOffset getOffsets()
     {
         return this.offsets;
     }
-    /** Represents matches as offsets should <code>Shape</code>.<code>IncludeTextSnippets</code> be requested by client. */
+    /** Represents matches as text should <code>Shape</code>.<code>Snippets</code> be requested by client. */
     public @Nullable HighlightResultSnippet getSnippets()
     {
         return this.snippets;
     }
-    /** Represents matches as offsets should <code>Shape</code>.<code>IncludeOffsets</code> be requested by client. */
+    /** Represents matches as offsets should <code>Shape</code>.<code>Offsets</code> be requested by client. */
     public HighlightResult setOffsets(@Nullable HighlightResultOffset offsets)
     {
         this.offsets = offsets;
         return this;
     }
-    /** Represents matches as offsets should <code>Shape</code>.<code>IncludeTextSnippets</code> be requested by client. */
+    /** Represents matches as text should <code>Shape</code>.<code>Snippets</code> be requested by client. */
     public HighlightResult setSnippets(@Nullable HighlightResultSnippet snippets)
     {
         this.snippets = snippets;

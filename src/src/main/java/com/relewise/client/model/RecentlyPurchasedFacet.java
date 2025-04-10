@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
-/** Performs facetting based on if product is known to be purchased recently (within <code>!: SinceMinutesAgo</code>), applicable only for product searches. Requires <b>at least one</b> level of selection, whether <code>!:ByUser</code>, or <code>!:ByUserCompany</code>, or <code>!:ByUserParentCompany</code>. */
+/** Performs faceting based on if product is known to be purchased recently (within <code>SinceMinutesAgo</code>), applicable only for product searches. Requires <b>at least one</b> level of selection, whether <code>ByUser</code>, or <code>ByUserCompany</code>, or <code>ByUserParentCompany</code>. */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,

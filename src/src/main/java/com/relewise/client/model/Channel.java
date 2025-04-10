@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -19,11 +20,11 @@ public class Channel
 {
     public String name;
     public @Nullable Channel subChannel;
-    public static Channel create(String name, Channel subChannel)
+    public static Channel create(String name, @Nullable Channel subChannel)
     {
         return new Channel(name, subChannel);
     }
-    public Channel(String name, Channel subChannel)
+    public Channel(String name, @Nullable Channel subChannel)
     {
         this.name = name;
         this.subChannel = subChannel;

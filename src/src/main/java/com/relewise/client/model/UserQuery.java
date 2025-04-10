@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -34,6 +35,14 @@ public class UserQuery extends LicensedRequest implements IHaveCurrencyLanguage
     {
         this.language = language;
         this.currency = currency;
+        this.criteria = criteria;
+    }
+    public static UserQuery create(UserQueryCriteria... criteria)
+    {
+        return new UserQuery(criteria);
+    }
+    public UserQuery(UserQueryCriteria... criteria)
+    {
         this.criteria = criteria;
     }
     public UserQuery()

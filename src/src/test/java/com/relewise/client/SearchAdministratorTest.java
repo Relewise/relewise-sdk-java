@@ -82,4 +82,16 @@ public class SearchAdministratorTest extends TestBase {
         getResponse  = searchAdministrator.load(getRequest);
         assertNull(getResponse);
     }
+
+    @Test
+    public void testGetSearchIndexHasRebuildStatusPopulated() throws Exception {
+        var searchAdministrator = new SearchAdministrator(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+
+        // Read
+        var getRequest = SearchIndexRequest.create("default");
+        var getResponse  = searchAdministrator.load(getRequest);
+        assertNotNull(getResponse);
+        assertEquals("default", getResponse.index.description);
+        assertNotEquals(0, getResponse.index.getRebuildStatus().getLastRebuildDuration().toNanos());
+    }
 }

@@ -3,6 +3,7 @@ package com.relewise.client.model;
 import com.fasterxml.jackson.annotation.*;
 import javax.annotation.Nullable;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -33,6 +34,14 @@ public class ProductRecommendationRequestCollection extends LicensedRequest
     {
         this.requireDistinctProductsAcrossResults = requireDistinctProductsAcrossResults;
         this.requests = new ArrayList<>(Arrays.asList(requests));
+    }
+    public static ProductRecommendationRequestCollection create(Boolean requireDistinctProductsAcrossResults)
+    {
+        return new ProductRecommendationRequestCollection(requireDistinctProductsAcrossResults);
+    }
+    public ProductRecommendationRequestCollection(Boolean requireDistinctProductsAcrossResults)
+    {
+        this.requireDistinctProductsAcrossResults = requireDistinctProductsAcrossResults;
     }
     public ProductRecommendationRequestCollection()
     {
