@@ -10,7 +10,7 @@ Install via Maven.
 <dependency>
     <groupId>com.relewise.client</groupId>
     <artifactId>relewise-sdk</artifactId>
-    <version>1.1.0</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
