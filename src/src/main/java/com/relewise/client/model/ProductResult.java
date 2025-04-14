@@ -35,14 +35,17 @@ public class ProductResult
     public ViewedByUserCompanyInfo viewedByUserCompany;
     public VariantResult[] filteredVariants;
     public @Nullable HighlightResult highlight;
-    public static ProductResult create(String productId, Integer rank)
+    /** Holds information about how good this product result is. */
+    public Score score;
+    public static ProductResult create(String productId, Integer rank, Score score)
     {
-        return new ProductResult(productId, rank);
+        return new ProductResult(productId, rank, score);
     }
-    public ProductResult(String productId, Integer rank)
+    public ProductResult(String productId, Integer rank, Score score)
     {
         this.productId = productId;
         this.rank = rank;
+        this.score = score;
     }
     public ProductResult()
     {
@@ -114,6 +117,11 @@ public class ProductResult
     public @Nullable HighlightResult getHighlight()
     {
         return this.highlight;
+    }
+    /** Holds information about how good this product result is. */
+    public Score getScore()
+    {
+        return this.score;
     }
     public ProductResult setProductId(String productId)
     {
@@ -263,6 +271,12 @@ public class ProductResult
     public ProductResult setHighlight(@Nullable HighlightResult highlight)
     {
         this.highlight = highlight;
+        return this;
+    }
+    /** Holds information about how good this product result is. */
+    public ProductResult setScore(Score score)
+    {
+        this.score = score;
         return this;
     }
 }

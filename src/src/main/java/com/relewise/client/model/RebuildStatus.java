@@ -37,13 +37,15 @@ public class RebuildStatus
     public Boolean isPartial;
     /** The timestamp representing the last time this index has been marked as stale, meaning it requires a rebuild. This property is set server-side. Any value sent from the client will be ignored. */
     public OffsetDateTime lastMarkedAsStale;
-    /** The duration of how long the index has been marked as stale, essentially waiting for a rebuild. This property is set server-side. Any value sent from the client will be ignored. */
+    /** The duration of how long the index has currently been marked as stale, waiting for a rebuild to be performed. Will be zero if the index is not currently stale This property is set server-side. Any value sent from the client will be ignored. */
     public Duration staleDuration;
-    public static RebuildStatus create(Boolean isBuilt, Boolean isPartial, Boolean isRebuilding, Boolean isStale, OffsetDateTime lastRebuildStarted, OffsetDateTime lastRebuildCompleted, OffsetDateTime lastRebuildOpportunity, Duration lastRebuildDuration, OffsetDateTime lastMarkedAsStale, Duration staleDuration)
+    /** The duration of how long the index was previously marked as stale before it was rebuilt. This property is set server-side. Any value sent from the client will be ignored. */
+    public Duration lastStaleDuration;
+    public static RebuildStatus create(Boolean isBuilt, Boolean isPartial, Boolean isRebuilding, Boolean isStale, OffsetDateTime lastRebuildStarted, OffsetDateTime lastRebuildCompleted, OffsetDateTime lastRebuildOpportunity, Duration lastRebuildDuration, OffsetDateTime lastMarkedAsStale, Duration staleDuration, Duration lastStaleDuration)
     {
-        return new RebuildStatus(isBuilt, isPartial, isRebuilding, isStale, lastRebuildStarted, lastRebuildCompleted, lastRebuildOpportunity, lastRebuildDuration, lastMarkedAsStale, staleDuration);
+        return new RebuildStatus(isBuilt, isPartial, isRebuilding, isStale, lastRebuildStarted, lastRebuildCompleted, lastRebuildOpportunity, lastRebuildDuration, lastMarkedAsStale, staleDuration, lastStaleDuration);
     }
-    public RebuildStatus(Boolean isBuilt, Boolean isPartial, Boolean isRebuilding, Boolean isStale, OffsetDateTime lastRebuildStarted, OffsetDateTime lastRebuildCompleted, OffsetDateTime lastRebuildOpportunity, Duration lastRebuildDuration, OffsetDateTime lastMarkedAsStale, Duration staleDuration)
+    public RebuildStatus(Boolean isBuilt, Boolean isPartial, Boolean isRebuilding, Boolean isStale, OffsetDateTime lastRebuildStarted, OffsetDateTime lastRebuildCompleted, OffsetDateTime lastRebuildOpportunity, Duration lastRebuildDuration, OffsetDateTime lastMarkedAsStale, Duration staleDuration, Duration lastStaleDuration)
     {
         this.isBuilt = isBuilt;
         this.isPartial = isPartial;
@@ -55,6 +57,7 @@ public class RebuildStatus
         this.lastRebuildDuration = lastRebuildDuration;
         this.lastMarkedAsStale = lastMarkedAsStale;
         this.staleDuration = staleDuration;
+        this.lastStaleDuration = lastStaleDuration;
     }
     public RebuildStatus()
     {
@@ -104,10 +107,15 @@ public class RebuildStatus
     {
         return this.lastMarkedAsStale;
     }
-    /** The duration of how long the index has been marked as stale, essentially waiting for a rebuild. This property is set server-side. Any value sent from the client will be ignored. */
+    /** The duration of how long the index has currently been marked as stale, waiting for a rebuild to be performed. Will be zero if the index is not currently stale This property is set server-side. Any value sent from the client will be ignored. */
     public Duration getStaleDuration()
     {
         return this.staleDuration;
+    }
+    /** The duration of how long the index was previously marked as stale before it was rebuilt. This property is set server-side. Any value sent from the client will be ignored. */
+    public Duration getLastStaleDuration()
+    {
+        return this.lastStaleDuration;
     }
     /** Indicates whether the rebuild process is currently in progress. This property is set server-side during modification. Any value sent from the client will be ignored. */
     public RebuildStatus setIsRebuilding(Boolean isRebuilding)
@@ -163,10 +171,16 @@ public class RebuildStatus
         this.lastMarkedAsStale = lastMarkedAsStale;
         return this;
     }
-    /** The duration of how long the index has been marked as stale, essentially waiting for a rebuild. This property is set server-side. Any value sent from the client will be ignored. */
+    /** The duration of how long the index has currently been marked as stale, waiting for a rebuild to be performed. Will be zero if the index is not currently stale This property is set server-side. Any value sent from the client will be ignored. */
     public RebuildStatus setStaleDuration(Duration staleDuration)
     {
         this.staleDuration = staleDuration;
+        return this;
+    }
+    /** The duration of how long the index was previously marked as stale before it was rebuilt. This property is set server-side. Any value sent from the client will be ignored. */
+    public RebuildStatus setLastStaleDuration(Duration lastStaleDuration)
+    {
+        this.lastStaleDuration = lastStaleDuration;
         return this;
     }
 }

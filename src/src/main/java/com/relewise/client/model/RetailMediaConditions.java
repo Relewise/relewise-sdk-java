@@ -16,24 +16,14 @@ import java.util.Set;
 import java.util.HashSet;
     
 /** Conditions for Retail Media engine to be applied. */
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.EXISTING_PROPERTY,
+    property = "$type")
+@JsonSubTypes({
+})
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RetailMediaConditions
+public abstract class RetailMediaConditions
 {
-    public @Nullable RetailMediaSearchTermCondition searchTerm;
-    public static RetailMediaConditions create()
-    {
-        return new RetailMediaConditions();
-    }
-    public RetailMediaConditions()
-    {
-    }
-    public @Nullable RetailMediaSearchTermCondition getSearchTerm()
-    {
-        return this.searchTerm;
-    }
-    public RetailMediaConditions setSearchTerm(@Nullable RetailMediaSearchTermCondition searchTerm)
-    {
-        this.searchTerm = searchTerm;
-        return this;
-    }
+    public String $type = "";
 }
