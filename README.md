@@ -25,3 +25,6 @@ relewise-sdk-java is licensed under the MIT license
 
 ## Local Development
 Check [DEVELOPMENT.md](./DEVELOPMENT.md) for details on running this project locally for development.
+
+## Publish
+Check [PUBLISH.md](./PUBLISH.md) for details about the release workflow and how to troubleshoot it.
