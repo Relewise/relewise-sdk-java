@@ -25,11 +25,11 @@ import java.util.HashSet;
 public class VariantSpecificationsInCommonRelevanceModifier extends RelevanceModifier implements IVariantRelevanceModifier
 {
     public String $type = "Relewise.Client.Requests.RelevanceModifiers.VariantSpecificationsInCommonRelevanceModifier, Relewise.Client";
-    /** A collection of <code>KeyMultiplier</code> that each define a certain key and value that the relevance should be multiplied with if matching on this key. The default multiplier for keys not included, is 1.0. */
+    /** A collection of <code>KeyMultiplier</code>s that each define a certain key and value that the relevance should be multiplied with if matching on this key. */
     public KeyMultiplier[] specificationKeysAndMultipliers;
     /**
      * Creates a <code>RelevanceModifier</code> that can change the relevance of a Variant depending on whether certain <code>SpecificationKeysAndMultipliers</code> match with a specific variant.
-     * @param specificationKeysAndMultipliers A collection of KeyMultiplier that each define a certain key and value that the relevance should be multiplied with if matching on this key. The default multiplier for keys not included, is 1.0.
+     * @param specificationKeysAndMultipliers A collection of KeyMultipliers that each define a certain key and value that the relevance should be multiplied with if matching on this key.
      */
     public static VariantSpecificationsInCommonRelevanceModifier create(KeyMultiplier... specificationKeysAndMultipliers)
     {
@@ -37,7 +37,7 @@ public class VariantSpecificationsInCommonRelevanceModifier extends RelevanceMod
     }
     /**
      * Creates a <code>RelevanceModifier</code> that can change the relevance of a Variant depending on whether certain <code>SpecificationKeysAndMultipliers</code> match with a specific variant.
-     * @param specificationKeysAndMultipliers A collection of KeyMultiplier that each define a certain key and value that the relevance should be multiplied with if matching on this key. The default multiplier for keys not included, is 1.0.
+     * @param specificationKeysAndMultipliers A collection of KeyMultipliers that each define a certain key and value that the relevance should be multiplied with if matching on this key.
      */
     public VariantSpecificationsInCommonRelevanceModifier(KeyMultiplier... specificationKeysAndMultipliers)
     {
@@ -46,18 +46,18 @@ public class VariantSpecificationsInCommonRelevanceModifier extends RelevanceMod
     public VariantSpecificationsInCommonRelevanceModifier()
     {
     }
-    /** A collection of <code>KeyMultiplier</code> that each define a certain key and value that the relevance should be multiplied with if matching on this key. The default multiplier for keys not included, is 1.0. */
+    /** A collection of <code>KeyMultiplier</code>s that each define a certain key and value that the relevance should be multiplied with if matching on this key. */
     public KeyMultiplier[] getSpecificationKeysAndMultipliers()
     {
         return this.specificationKeysAndMultipliers;
     }
-    /** A collection of <code>KeyMultiplier</code> that each define a certain key and value that the relevance should be multiplied with if matching on this key. The default multiplier for keys not included, is 1.0. */
+    /** A collection of <code>KeyMultiplier</code>s that each define a certain key and value that the relevance should be multiplied with if matching on this key. */
     public VariantSpecificationsInCommonRelevanceModifier setSpecificationKeysAndMultipliers(KeyMultiplier... specificationKeysAndMultipliers)
     {
         this.specificationKeysAndMultipliers = specificationKeysAndMultipliers;
         return this;
     }
-    /** A collection of <code>KeyMultiplier</code> that each define a certain key and value that the relevance should be multiplied with if matching on this key. The default multiplier for keys not included, is 1.0. */
+    /** A collection of <code>KeyMultiplier</code>s that each define a certain key and value that the relevance should be multiplied with if matching on this key. */
     public VariantSpecificationsInCommonRelevanceModifier addToSpecificationKeysAndMultipliers(KeyMultiplier specificationKeysAndMultiplier)
     {
         if (this.specificationKeysAndMultipliers == null)

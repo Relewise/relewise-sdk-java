@@ -27,7 +27,7 @@ public class ProductPromotion extends Promotion
     /** Filters matching the products to be promoted */
     public @Nullable FilterCollection filters;
     /** The condition search must match to have <code>ProductPromotion</code> activated. */
-    public @Nullable RetailMediaConditions conditions;
+    public @Nullable ProductPromotionPromotionConditions conditions;
     public static ProductPromotion create(String name, @Nullable FilterCollection filters, @Nullable PromotionLocationCollection locations)
     {
         return new ProductPromotion(name, filters, locations);
@@ -47,7 +47,7 @@ public class ProductPromotion extends Promotion
         return this.filters;
     }
     /** The condition search must match to have <code>ProductPromotion</code> activated. */
-    public @Nullable RetailMediaConditions getConditions()
+    public @Nullable ProductPromotionPromotionConditions getConditions()
     {
         return this.conditions;
     }
@@ -58,7 +58,7 @@ public class ProductPromotion extends Promotion
         return this;
     }
     /** The condition search must match to have <code>ProductPromotion</code> activated. */
-    public ProductPromotion setConditions(@Nullable RetailMediaConditions conditions)
+    public ProductPromotion setConditions(@Nullable ProductPromotionPromotionConditions conditions)
     {
         this.conditions = conditions;
         return this;

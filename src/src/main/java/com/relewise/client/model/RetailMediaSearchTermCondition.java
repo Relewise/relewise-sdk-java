@@ -24,40 +24,53 @@ import java.util.HashSet;
 public class RetailMediaSearchTermCondition extends SearchTermCondition
 {
     public String $type = "Relewise.Client.DataTypes.RetailMedia.RetailMediaSearchTermCondition, Relewise.Client";
-    public static RetailMediaSearchTermCondition create(SearchTermConditionConditionKind kind, String value)
+    public Language language;
+    public static RetailMediaSearchTermCondition create(Language language, SearchTermConditionConditionKind kind, String value)
     {
-        return new RetailMediaSearchTermCondition(kind, value);
+        return new RetailMediaSearchTermCondition(language, kind, value);
     }
-    public RetailMediaSearchTermCondition(SearchTermConditionConditionKind kind, String value)
+    public RetailMediaSearchTermCondition(Language language, SearchTermConditionConditionKind kind, String value)
     {
+        this.language = language;
         this.kind = kind;
         this.value = value;
         this.minimumLength = null;
         this.negated = false;
     }
-    public static RetailMediaSearchTermCondition create(SearchTermConditionConditionKind kind, String value, @Nullable Integer minimumLength, Boolean negated)
+    public static RetailMediaSearchTermCondition create(Language language, SearchTermConditionConditionKind kind, String value, @Nullable Integer minimumLength, Boolean negated)
     {
-        return new RetailMediaSearchTermCondition(kind, value, minimumLength, negated);
+        return new RetailMediaSearchTermCondition(language, kind, value, minimumLength, negated);
     }
-    public RetailMediaSearchTermCondition(SearchTermConditionConditionKind kind, String value, @Nullable Integer minimumLength, Boolean negated)
+    public RetailMediaSearchTermCondition(Language language, SearchTermConditionConditionKind kind, String value, @Nullable Integer minimumLength, Boolean negated)
     {
+        this.language = language;
         this.kind = kind;
         this.value = value;
         this.minimumLength = minimumLength;
         this.negated = negated;
     }
-    public static RetailMediaSearchTermCondition create(Integer minimumLength)
+    public static RetailMediaSearchTermCondition create(Language language, Integer minimumLength)
     {
-        return new RetailMediaSearchTermCondition(minimumLength);
+        return new RetailMediaSearchTermCondition(language, minimumLength);
     }
-    public RetailMediaSearchTermCondition(Integer minimumLength)
+    public RetailMediaSearchTermCondition(Language language, Integer minimumLength)
     {
+        this.language = language;
         this.minimumLength = minimumLength;
     }
     public RetailMediaSearchTermCondition()
     {
         this.minimumLength = null;
         this.negated = false;
+    }
+    public Language getLanguage()
+    {
+        return this.language;
+    }
+    public RetailMediaSearchTermCondition setLanguage(Language language)
+    {
+        this.language = language;
+        return this;
     }
     @Override
     public RetailMediaSearchTermCondition setKind(@Nullable SearchTermConditionConditionKind kind)
