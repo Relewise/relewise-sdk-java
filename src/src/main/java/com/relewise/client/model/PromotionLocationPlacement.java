@@ -21,6 +21,8 @@ public class PromotionLocationPlacement
 {
     /** A key which is automatically computed based on the name. This value gets created the first time the placement is saved and cannot be modified in the future. Manually assigning a value to this will have no effect. */
     public String key;
+    /** The minimum relevancy required by this <code>Placement</code> for results to be promoted. */
+    public @Nullable ScoreThresholds thresholds;
     public static PromotionLocationPlacement create(String key)
     {
         return new PromotionLocationPlacement(key);
@@ -37,10 +39,21 @@ public class PromotionLocationPlacement
     {
         return this.key;
     }
+    /** The minimum relevancy required by this <code>Placement</code> for results to be promoted. */
+    public @Nullable ScoreThresholds getThresholds()
+    {
+        return this.thresholds;
+    }
     /** A key which is automatically computed based on the name. This value gets created the first time the placement is saved and cannot be modified in the future. Manually assigning a value to this will have no effect. */
     public PromotionLocationPlacement setKey(String key)
     {
         this.key = key;
+        return this;
+    }
+    /** The minimum relevancy required by this <code>Placement</code> for results to be promoted. */
+    public PromotionLocationPlacement setThresholds(@Nullable ScoreThresholds thresholds)
+    {
+        this.thresholds = thresholds;
         return this;
     }
 }

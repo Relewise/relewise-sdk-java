@@ -31,6 +31,8 @@ public class SelectedProductPropertiesSettings
     public Boolean viewedByUserCompanyInfo;
     public Boolean purchasedByUserCompanyInfo;
     public @Nullable FilteredVariantsSettings filteredVariants;
+    /** Defines what <code>Score</code> properties will be included for the <code>Score</code>. */
+    public @Nullable SelectedScorePropertiesSettings score;
     public static SelectedProductPropertiesSettings create()
     {
         return new SelectedProductPropertiesSettings();
@@ -89,6 +91,11 @@ public class SelectedProductPropertiesSettings
     public @Nullable FilteredVariantsSettings getFilteredVariants()
     {
         return this.filteredVariants;
+    }
+    /** Defines what <code>Score</code> properties will be included for the <code>Score</code>. */
+    public @Nullable SelectedScorePropertiesSettings getScore()
+    {
+        return this.score;
     }
     public SelectedProductPropertiesSettings setDisplayName(Boolean displayName)
     {
@@ -167,6 +174,12 @@ public class SelectedProductPropertiesSettings
     public SelectedProductPropertiesSettings setFilteredVariants(@Nullable FilteredVariantsSettings filteredVariants)
     {
         this.filteredVariants = filteredVariants;
+        return this;
+    }
+    /** Defines what <code>Score</code> properties will be included for the <code>Score</code>. */
+    public SelectedProductPropertiesSettings setScore(@Nullable SelectedScorePropertiesSettings score)
+    {
+        this.score = score;
         return this;
     }
 }

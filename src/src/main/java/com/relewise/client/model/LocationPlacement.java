@@ -25,6 +25,8 @@ public class LocationPlacement
     public @Nullable String key;
     /** The variations of this placement, e.g. to support multiple different views, like Mobile, Tablet, Desktop, Email template etc. If null or empty, no promotions will be shown for this placement */
     public @Nullable LocationPlacementVariationCollection variations;
+    /** The minimum relevancy required by this <code>Placement</code> for results to be promoted. */
+    public @Nullable ScoreThresholds thresholds;
     public static LocationPlacement create(String name, @Nullable LocationPlacementVariationCollection variations)
     {
         return new LocationPlacement(name, variations);
@@ -60,6 +62,11 @@ public class LocationPlacement
     {
         return this.variations;
     }
+    /** The minimum relevancy required by this <code>Placement</code> for results to be promoted. */
+    public @Nullable ScoreThresholds getThresholds()
+    {
+        return this.thresholds;
+    }
     /** The name of this placement, e.g. "Top", "Bottom", "Right", "Overlay" etc. */
     public LocationPlacement setName(String name)
     {
@@ -76,6 +83,12 @@ public class LocationPlacement
     public LocationPlacement setVariations(@Nullable LocationPlacementVariationCollection variations)
     {
         this.variations = variations;
+        return this;
+    }
+    /** The minimum relevancy required by this <code>Placement</code> for results to be promoted. */
+    public LocationPlacement setThresholds(@Nullable ScoreThresholds thresholds)
+    {
+        this.thresholds = thresholds;
         return this;
     }
 }
