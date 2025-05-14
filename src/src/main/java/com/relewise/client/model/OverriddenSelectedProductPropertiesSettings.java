@@ -28,6 +28,7 @@ public class OverriddenSelectedProductPropertiesSettings
     public @Nullable Boolean brand;
     public @Nullable Boolean allVariants;
     public String[] dataKeys;
+    public @Nullable SelectedScorePropertiesSettings score;
     public static OverriddenSelectedProductPropertiesSettings create()
     {
         return new OverriddenSelectedProductPropertiesSettings();
@@ -74,6 +75,10 @@ public class OverriddenSelectedProductPropertiesSettings
     public String[] getDataKeys()
     {
         return this.dataKeys;
+    }
+    public @Nullable SelectedScorePropertiesSettings getScore()
+    {
+        return this.score;
     }
     public OverriddenSelectedProductPropertiesSettings setDisplayName(@Nullable Boolean displayName)
     {
@@ -137,6 +142,11 @@ public class OverriddenSelectedProductPropertiesSettings
             existingList.add(dataKey);
             this.dataKeys = existingList.toArray(new String[0]);
         }
+        return this;
+    }
+    public OverriddenSelectedProductPropertiesSettings setScore(@Nullable SelectedScorePropertiesSettings score)
+    {
+        this.score = score;
         return this;
     }
 }

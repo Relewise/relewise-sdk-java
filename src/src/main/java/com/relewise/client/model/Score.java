@@ -19,40 +19,35 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Score
 {
-    /** The base score is a number between 0 and 100 that has not been manipulated by relevance modifiers and merchandising rules. Greater values indicate better results. */
-    public Float base;
-    /** The adjusted score is based on the base score but with relevance modifiers and merchandising rules applied. */
-    public Float adjusted;
-    public static Score create(Float baseScore, Float adjustedScore)
+    /** The relevance score is a number between 0 and 100 that has not been manipulated by relevance modifiers and merchandising rules. Greater values indicate better results. */
+    public @Nullable Float relevance;
+    /** The adjusted score is based on the relevance score but with relevance modifiers and merchandising rules applied. */
+    public @Nullable Float adjusted;
+    public static Score create()
     {
-        return new Score(baseScore, adjustedScore);
-    }
-    public Score(Float baseScore, Float adjustedScore)
-    {
-        this.base = baseScore;
-        this.adjusted = adjustedScore;
+        return new Score();
     }
     public Score()
     {
     }
-    /** The base score is a number between 0 and 100 that has not been manipulated by relevance modifiers and merchandising rules. Greater values indicate better results. */
-    public Float getBase()
+    /** The relevance score is a number between 0 and 100 that has not been manipulated by relevance modifiers and merchandising rules. Greater values indicate better results. */
+    public @Nullable Float getRelevance()
     {
-        return this.base;
+        return this.relevance;
     }
-    /** The adjusted score is based on the base score but with relevance modifiers and merchandising rules applied. */
-    public Float getAdjusted()
+    /** The adjusted score is based on the relevance score but with relevance modifiers and merchandising rules applied. */
+    public @Nullable Float getAdjusted()
     {
         return this.adjusted;
     }
-    /** The base score is a number between 0 and 100 that has not been manipulated by relevance modifiers and merchandising rules. Greater values indicate better results. */
-    public Score setBase(Float base)
+    /** The relevance score is a number between 0 and 100 that has not been manipulated by relevance modifiers and merchandising rules. Greater values indicate better results. */
+    public Score setRelevance(@Nullable Float relevance)
     {
-        this.base = base;
+        this.relevance = relevance;
         return this;
     }
-    /** The adjusted score is based on the base score but with relevance modifiers and merchandising rules applied. */
-    public Score setAdjusted(Float adjusted)
+    /** The adjusted score is based on the relevance score but with relevance modifiers and merchandising rules applied. */
+    public Score setAdjusted(@Nullable Float adjusted)
     {
         this.adjusted = adjusted;
         return this;

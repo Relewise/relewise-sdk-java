@@ -35,17 +35,16 @@ public class ProductResult
     public ViewedByUserCompanyInfo viewedByUserCompany;
     public VariantResult[] filteredVariants;
     public @Nullable HighlightResult highlight;
-    /** Holds information about how good this product result is. */
-    public Score score;
-    public static ProductResult create(String productId, Integer rank, Score score)
+    /** Holds information about how good this product result is. This will only be populated if specifically requested which is currently only possible for term-based product search requests. */
+    public @Nullable Score score;
+    public static ProductResult create(String productId, Integer rank)
     {
-        return new ProductResult(productId, rank, score);
+        return new ProductResult(productId, rank);
     }
-    public ProductResult(String productId, Integer rank, Score score)
+    public ProductResult(String productId, Integer rank)
     {
         this.productId = productId;
         this.rank = rank;
-        this.score = score;
     }
     public ProductResult()
     {
@@ -118,8 +117,8 @@ public class ProductResult
     {
         return this.highlight;
     }
-    /** Holds information about how good this product result is. */
-    public Score getScore()
+    /** Holds information about how good this product result is. This will only be populated if specifically requested which is currently only possible for term-based product search requests. */
+    public @Nullable Score getScore()
     {
         return this.score;
     }
@@ -273,8 +272,8 @@ public class ProductResult
         this.highlight = highlight;
         return this;
     }
-    /** Holds information about how good this product result is. */
-    public ProductResult setScore(Score score)
+    /** Holds information about how good this product result is. This will only be populated if specifically requested which is currently only possible for term-based product search requests. */
+    public ProductResult setScore(@Nullable Score score)
     {
         this.score = score;
         return this;
