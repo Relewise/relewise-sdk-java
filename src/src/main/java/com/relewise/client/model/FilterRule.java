@@ -123,4 +123,16 @@ public class FilterRule extends MerchandisingRule
         this.settings = settings;
         return this;
     }
+    @Override
+    public FilterRule setSchedule(@Nullable ISchedule schedule)
+    {
+        this.schedule = schedule;
+        return this;
+    }
+    @Override
+    public FilterRule setStatus(@Nullable MerchandisingRuleStatusName status)
+    {
+        this.status = status;
+        return this;
+    }
 }

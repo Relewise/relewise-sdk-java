@@ -62,11 +62,13 @@ public abstract class Facet
 {
     public String $type = "";
     public FacetingField field;
+    /** Can be used for controlling whether the selected values should always be a part of the available values and the same for values with zero hits. You can also limit how many available values you want back and specify a sorting for them. */
     public @Nullable FacetSettings settings;
     public FacetingField getField()
     {
         return this.field;
     }
+    /** Can be used for controlling whether the selected values should always be a part of the available values and the same for values with zero hits. You can also limit how many available values you want back and specify a sorting for them. */
     public @Nullable FacetSettings getSettings()
     {
         return this.settings;
@@ -76,6 +78,7 @@ public abstract class Facet
         this.field = field;
         return this;
     }
+    /** Can be used for controlling whether the selected values should always be a part of the available values and the same for values with zero hits. You can also limit how many available values you want back and specify a sorting for them. */
     public Facet setSettings(@Nullable FacetSettings settings)
     {
         this.settings = settings;

@@ -134,4 +134,16 @@ public class FixedPositionRule extends MerchandisingRule
         this.settings = settings;
         return this;
     }
+    @Override
+    public FixedPositionRule setSchedule(@Nullable ISchedule schedule)
+    {
+        this.schedule = schedule;
+        return this;
+    }
+    @Override
+    public FixedPositionRule setStatus(@Nullable MerchandisingRuleStatusName status)
+    {
+        this.status = status;
+        return this;
+    }
 }

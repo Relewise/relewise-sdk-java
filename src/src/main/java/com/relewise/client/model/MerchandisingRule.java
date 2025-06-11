@@ -42,6 +42,8 @@ public abstract class MerchandisingRule
     public RequestConfiguration request;
     public Double priority;
     public HashMap<String, String> settings;
+    public @Nullable ISchedule schedule;
+    public @Nullable MerchandisingRuleStatusName status;
     public UUID getId()
     {
         return this.id;
@@ -93,6 +95,14 @@ public abstract class MerchandisingRule
     public HashMap<String, String> getSettings()
     {
         return this.settings;
+    }
+    public @Nullable ISchedule getSchedule()
+    {
+        return this.schedule;
+    }
+    public @Nullable MerchandisingRuleStatusName getStatus()
+    {
+        return this.status;
     }
     public MerchandisingRule setId(UUID id)
     {
@@ -166,6 +176,16 @@ public abstract class MerchandisingRule
     public MerchandisingRule setSettings(HashMap<String, String> settings)
     {
         this.settings = settings;
+        return this;
+    }
+    public MerchandisingRule setSchedule(@Nullable ISchedule schedule)
+    {
+        this.schedule = schedule;
+        return this;
+    }
+    public MerchandisingRule setStatus(@Nullable MerchandisingRuleStatusName status)
+    {
+        this.status = status;
         return this;
     }
 }

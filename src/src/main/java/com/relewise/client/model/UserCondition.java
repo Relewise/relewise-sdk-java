@@ -32,16 +32,20 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = HasLineItemsInCartCondition.class, name = "Relewise.Client.DataTypes.UserConditions.HasLineItemsInCartCondition, Relewise.Client"),
     @JsonSubTypes.Type(value = OrCondition.class, name = "Relewise.Client.DataTypes.UserConditions.OrCondition, Relewise.Client"),
     @JsonSubTypes.Type(value = AndCondition.class, name = "Relewise.Client.DataTypes.UserConditions.AndCondition, Relewise.Client"),
+    @JsonSubTypes.Type(value = HasDataCondition.class, name = "Relewise.Client.DataTypes.UserConditions.HasDataCondition, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class UserCondition
 {
     public String $type = "";
+    /** Whether the <code>UserCondition</code> should have opposite effect. */
     public Boolean negated;
+    /** Whether the <code>UserCondition</code> should have opposite effect. */
     public Boolean getNegated()
     {
         return this.negated;
     }
+    /** Whether the <code>UserCondition</code> should have opposite effect. */
     public UserCondition setNegated(Boolean negated)
     {
         this.negated = negated;
