@@ -150,9 +150,9 @@ public class FacetsTest extends TestBase {
         assertNotNull(response);
         assertNotNull(response.facets);
         assertNotNull(response.facets.items);
-        assertEquals(4, ((CategoryFacetResult) response.facets.items.getFirst()).available.size());
+        assertEquals(4, ((CategoryFacetResult) response.facets.items.get(0)).available.size());
 
-        assertTrue(((CategoryFacetResult) response.facets.items.getFirst()).available
-                .getFirst().hits > ((CategoryFacetResult) response.facets.items.getFirst()).available.getLast().hits);
+        assertTrue(((CategoryFacetResult) response.facets.items.get(0)).available
+                .get(0).hits > ((CategoryFacetResult) response.facets.items.get(0)).available.get(3).hits);
     }
 }
