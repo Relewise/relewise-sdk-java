@@ -23,7 +23,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ScheduledPeriod implements ISchedule
 {
-    public String $type = "Relewise.Client.DataTypes.RetailMedia.ScheduledPeriod, Relewise.Client";
+    public String $type = "Relewise.Client.DataTypes.Scheduling.ScheduledPeriod, Relewise.Client";
     public @Nullable OffsetDateTime fromUtc;
     public @Nullable OffsetDateTime toUtc;
     public static ScheduledPeriod create(@Nullable OffsetDateTime fromUtc, @Nullable OffsetDateTime toUtc)

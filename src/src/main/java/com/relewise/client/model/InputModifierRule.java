@@ -123,4 +123,16 @@ public class InputModifierRule extends MerchandisingRule
         this.settings = settings;
         return this;
     }
+    @Override
+    public InputModifierRule setSchedule(@Nullable ISchedule schedule)
+    {
+        this.schedule = schedule;
+        return this;
+    }
+    @Override
+    public InputModifierRule setStatus(@Nullable MerchandisingRuleStatusName status)
+    {
+        this.status = status;
+        return this;
+    }
 }

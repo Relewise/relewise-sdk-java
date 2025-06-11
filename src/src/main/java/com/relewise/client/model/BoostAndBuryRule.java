@@ -134,4 +134,16 @@ public class BoostAndBuryRule extends MerchandisingRule
         this.settings = settings;
         return this;
     }
+    @Override
+    public BoostAndBuryRule setSchedule(@Nullable ISchedule schedule)
+    {
+        this.schedule = schedule;
+        return this;
+    }
+    @Override
+    public BoostAndBuryRule setStatus(@Nullable MerchandisingRuleStatusName status)
+    {
+        this.status = status;
+        return this;
+    }
 }
