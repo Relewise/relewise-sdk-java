@@ -182,6 +182,6 @@ public class FacetsTest extends TestBase {
         assertNotNull(response.facets.items);
         var facet = (DataObjectFacetResult) response.facets.items.get(0);
 
-        assertEquals(FacetEvaluationMode.And.name(), facet.evaluationMode.name());
+        assertEquals(FacetEvaluationMode.Or.name(), facet.evaluationMode.name());
     }
 }
