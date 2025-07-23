@@ -155,4 +155,33 @@ public class FacetsTest extends TestBase {
         assertTrue(((CategoryFacetResult) response.facets.items.get(0)).available
                 .get(0).hits > ((CategoryFacetResult) response.facets.items.get(0)).available.get(3).hits);
     }
+
+    @Test
+    public void testDataObjectFacetEvaluationMode() throws Exception {
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+
+        var productSearch = ProductSearchRequest.create(
+                Language.create("da-dk"),
+                Currency.create("DKK"),
+                UserFactory.anonymous(),
+                "integration test",
+                null,
+                0,
+                0).setFacets(
+                        ProductFacetQuery.create()
+                                .setItems(
+                                        ProductDataObjectFacet.create(
+                                                DataSelectionStrategy.Product,
+                                                "SomeStringList")
+                                        .setEvaluationMode(FacetEvaluationMode.Or)));
+
+        var response = searcher.search(productSearch);
+        
+        assertNotNull(response);
+        assertNotNull(response.facets);
+        assertNotNull(response.facets.items);
+        var facet = (DataObjectFacetResult) response.facets.items.getFirst();
+
+        assertEquals(FacetEvaluationMode.Or.name(), facet.evaluationMode.name());
+    }
 }
