@@ -180,7 +180,7 @@ public class FacetsTest extends TestBase {
         assertNotNull(response);
         assertNotNull(response.facets);
         assertNotNull(response.facets.items);
-        var facet = (DataObjectFacetResult) response.facets.items.getFirst();
+        var facet = (DataObjectFacetResult) response.facets.items.get(0);
 
         assertEquals(FacetEvaluationMode.Or.name(), facet.evaluationMode.name());
     }
