@@ -25,16 +25,17 @@ public class ProductDataObjectFacetResult extends DataObjectFacetResult
 {
     public String $type = "Relewise.Client.DataTypes.Search.Facets.Result.ProductDataObjectFacetResult, Relewise.Client";
     public DataSelectionStrategy dataSelectionStrategy;
-    public static ProductDataObjectFacetResult create(DataSelectionStrategy dataSelectionStrategy, String key, ArrayList<FacetResult> items, DataObjectFilter filter)
+    public static ProductDataObjectFacetResult create(DataSelectionStrategy dataSelectionStrategy, String key, ArrayList<FacetResult> items, DataObjectFilter filter, FacetEvaluationMode evaluationMode)
     {
-        return new ProductDataObjectFacetResult(dataSelectionStrategy, key, items, filter);
+        return new ProductDataObjectFacetResult(dataSelectionStrategy, key, items, filter, evaluationMode);
     }
-    public ProductDataObjectFacetResult(DataSelectionStrategy dataSelectionStrategy, String key, ArrayList<FacetResult> items, DataObjectFilter filter)
+    public ProductDataObjectFacetResult(DataSelectionStrategy dataSelectionStrategy, String key, ArrayList<FacetResult> items, DataObjectFilter filter, FacetEvaluationMode evaluationMode)
     {
         this.dataSelectionStrategy = dataSelectionStrategy;
         this.key = key;
         this.items = items;
         this.filter = filter;
+        this.evaluationMode = evaluationMode;
     }
     public ProductDataObjectFacetResult()
     {
@@ -73,6 +74,12 @@ public class ProductDataObjectFacetResult extends DataObjectFacetResult
     public ProductDataObjectFacetResult setFilter(DataObjectFilter filter)
     {
         this.filter = filter;
+        return this;
+    }
+    @Override
+    public ProductDataObjectFacetResult setEvaluationMode(FacetEvaluationMode evaluationMode)
+    {
+        this.evaluationMode = evaluationMode;
         return this;
     }
     @Override

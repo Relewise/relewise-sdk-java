@@ -27,6 +27,7 @@ public class DataObjectFacet extends Facet
     public String key;
     public ArrayList<Facet> items;
     public DataObjectFilter filter;
+    public @Nullable FacetEvaluationMode evaluationMode;
     public static DataObjectFacet create(String key)
     {
         return new DataObjectFacet(key);
@@ -50,6 +51,10 @@ public class DataObjectFacet extends Facet
     {
         return this.filter;
     }
+    public @Nullable FacetEvaluationMode getEvaluationMode()
+    {
+        return this.evaluationMode;
+    }
     public DataObjectFacet setKey(String key)
     {
         this.key = key;
@@ -72,6 +77,11 @@ public class DataObjectFacet extends Facet
     public DataObjectFacet setFilter(DataObjectFilter filter)
     {
         this.filter = filter;
+        return this;
+    }
+    public DataObjectFacet setEvaluationMode(@Nullable FacetEvaluationMode evaluationMode)
+    {
+        this.evaluationMode = evaluationMode;
         return this;
     }
     @Override

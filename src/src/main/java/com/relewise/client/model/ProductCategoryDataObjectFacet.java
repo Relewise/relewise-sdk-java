@@ -63,6 +63,12 @@ public class ProductCategoryDataObjectFacet extends DataObjectFacet
         return this;
     }
     @Override
+    public ProductCategoryDataObjectFacet setEvaluationMode(@Nullable FacetEvaluationMode evaluationMode)
+    {
+        this.evaluationMode = evaluationMode;
+        return this;
+    }
+    @Override
     public ProductCategoryDataObjectFacet setField(FacetingField field)
     {
         this.field = field;
