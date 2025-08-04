@@ -63,6 +63,12 @@ public class ContentDataObjectFacet extends DataObjectFacet
         return this;
     }
     @Override
+    public ContentDataObjectFacet setEvaluationMode(@Nullable FacetEvaluationMode evaluationMode)
+    {
+        this.evaluationMode = evaluationMode;
+        return this;
+    }
+    @Override
     public ContentDataObjectFacet setField(FacetingField field)
     {
         this.field = field;

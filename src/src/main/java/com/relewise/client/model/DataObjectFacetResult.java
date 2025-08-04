@@ -27,15 +27,17 @@ public class DataObjectFacetResult extends FacetResult
     public String key;
     public ArrayList<FacetResult> items;
     public DataObjectFilter filter;
-    public static DataObjectFacetResult create(String key, ArrayList<FacetResult> items, DataObjectFilter filter)
+    public FacetEvaluationMode evaluationMode;
+    public static DataObjectFacetResult create(String key, ArrayList<FacetResult> items, DataObjectFilter filter, FacetEvaluationMode evaluationMode)
     {
-        return new DataObjectFacetResult(key, items, filter);
+        return new DataObjectFacetResult(key, items, filter, evaluationMode);
     }
-    public DataObjectFacetResult(String key, ArrayList<FacetResult> items, DataObjectFilter filter)
+    public DataObjectFacetResult(String key, ArrayList<FacetResult> items, DataObjectFilter filter, FacetEvaluationMode evaluationMode)
     {
         this.key = key;
         this.items = items;
         this.filter = filter;
+        this.evaluationMode = evaluationMode;
     }
     public DataObjectFacetResult()
     {
@@ -51,6 +53,10 @@ public class DataObjectFacetResult extends FacetResult
     public DataObjectFilter getFilter()
     {
         return this.filter;
+    }
+    public FacetEvaluationMode getEvaluationMode()
+    {
+        return this.evaluationMode;
     }
     public DataObjectFacetResult setKey(String key)
     {
@@ -74,6 +80,11 @@ public class DataObjectFacetResult extends FacetResult
     public DataObjectFacetResult setFilter(DataObjectFilter filter)
     {
         this.filter = filter;
+        return this;
+    }
+    public DataObjectFacetResult setEvaluationMode(FacetEvaluationMode evaluationMode)
+    {
+        this.evaluationMode = evaluationMode;
         return this;
     }
     @Override

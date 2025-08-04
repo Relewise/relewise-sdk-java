@@ -24,15 +24,16 @@ import java.util.HashSet;
 public class ContentDataObjectFacetResult extends DataObjectFacetResult
 {
     public String $type = "Relewise.Client.DataTypes.Search.Facets.Result.ContentDataObjectFacetResult, Relewise.Client";
-    public static ContentDataObjectFacetResult create(String key, ArrayList<FacetResult> items, DataObjectFilter filter)
+    public static ContentDataObjectFacetResult create(String key, ArrayList<FacetResult> items, DataObjectFilter filter, FacetEvaluationMode evaluationMode)
     {
-        return new ContentDataObjectFacetResult(key, items, filter);
+        return new ContentDataObjectFacetResult(key, items, filter, evaluationMode);
     }
-    public ContentDataObjectFacetResult(String key, ArrayList<FacetResult> items, DataObjectFilter filter)
+    public ContentDataObjectFacetResult(String key, ArrayList<FacetResult> items, DataObjectFilter filter, FacetEvaluationMode evaluationMode)
     {
         this.key = key;
         this.items = items;
         this.filter = filter;
+        this.evaluationMode = evaluationMode;
     }
     public ContentDataObjectFacetResult()
     {
@@ -62,6 +63,12 @@ public class ContentDataObjectFacetResult extends DataObjectFacetResult
     public ContentDataObjectFacetResult setFilter(DataObjectFilter filter)
     {
         this.filter = filter;
+        return this;
+    }
+    @Override
+    public ContentDataObjectFacetResult setEvaluationMode(FacetEvaluationMode evaluationMode)
+    {
+        this.evaluationMode = evaluationMode;
         return this;
     }
     @Override
