@@ -52,7 +52,7 @@ jobs:
         run: mvn org.kordamp.maven:pomchecker-maven-plugin:1.7.0:check-maven-central --file src/pom.xml
 
       - name: Build and deploy to Maven Central
-        run: mvn --batch-mode -f src/pom.xml deploy -Prelease
+        run: mvn --batch-mode -Prelease deploy -f src/pom.xml -Dgpg.passphrase="${{ secrets.GPG_PASSPHRASE }}"
         env:
           SONATYPE_USERNAME: ${{ secrets.JRELEASER_NEXUS2_USERNAME }}
           SONATYPE_TOKEN: ${{ secrets.JRELEASER_NEXUS2_PASSWORD }}
