@@ -8,56 +8,47 @@ on:
     types: [published]
 
 jobs:
-  build:
-
+  publish:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: read
       packages: write
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-        
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
       - name: Setup .NET 7
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '9.0.x'
 
       - name: Generate Java classes
         run: ./generate.sh
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
+      - name: Set up JDK 17 and Maven Central auth
+        uses: actions/setup-java@v4
         with:
-          java-version: '17'
           distribution: 'temurin'
+          java-version: '17'
+          server-id: central
+          server-username: SONATYPE_USERNAME
+          server-password: SONATYPE_TOKEN
+          gpg-private-key: ${{ secrets.JRELEASER_GPG_SECRET_KEY }}
+          gpg-passphrase: ${{ secrets.JRELEASER_GPG_PASSPHRASE }}
           cache: maven
 
-      - name: Build
-        run: mvn --batch-mode -DskipTests package --file src/pom.xml
-
-      - name: Load version into generated .properties file.
-        run: mvn resources:resources --file src/pom.xml
-        
-      - name: Maven version check
-        run: mvn -v
-        
-      - name: target folder ls
-        run: ls ./src/target
-        
-      - name: POM validator
-        run: mvn org.kordamp.maven:pomchecker-maven-plugin:1.7.0:check-maven-central --file src/pom.xml
-      
-      - name: Publish package
+      - name: Build and deploy to Maven Central
+        run: mvn --batch-mode deploy -Prelease
         env:
-          JRELEASER_NEXUS2_USERNAME: ${{ secrets.JRELEASER_NEXUS2_USERNAME }}
-          JRELEASER_NEXUS2_PASSWORD: ${{ secrets.JRELEASER_NEXUS2_PASSWORD }}
-          JRELEASER_GPG_PASSPHRASE: ${{ secrets.JRELEASER_GPG_PASSPHRASE }}
-          JRELEASER_GPG_SECRET_KEY: ${{ secrets.JRELEASER_GPG_SECRET_KEY }}
-          JRELEASER_GPG_PUBLIC_KEY: ${{ secrets.JRELEASER_GPG_PUBLIC_KEY }}
-          JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DATASET_ID: ${{secrets.INTEGRATIONTESTS_DATASET_ID}}
-          API_KEY: ${{secrets.INTEGRATIONTESTS_API_KEY}}
-        run: ./src/mvnw -Prelease deploy jreleaser:deploy -DaltDeploymentRepository=local::file:src/target/staging-deploy --file src/pom.xml -e -X
+          SONATYPE_USERNAME: ${{ secrets.JRELEASER_NEXUS2_USERNAME }}
+          SONATYPE_TOKEN: ${{ secrets.JRELEASER_NEXUS2_PASSWORD }}
+          GPG_PRIVATE_KEY: ${{ secrets.JRELEASER_GPG_SECRET_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.JRELEASER_GPG_PASSPHRASE }}
+
+      - name: Confirm published files
+        run: ls -al src/target
+
+      - name: Version check
+        run: mvn -v
