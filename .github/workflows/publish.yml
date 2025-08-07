@@ -58,3 +58,5 @@ jobs:
           SONATYPE_TOKEN: ${{ secrets.JRELEASER_NEXUS2_PASSWORD }}
           GPG_PRIVATE_KEY: ${{ secrets.JRELEASER_GPG_SECRET_KEY }}
           GPG_PASSPHRASE: ${{ secrets.JRELEASER_GPG_PASSPHRASE }}
+          DATASET_ID: ${{secrets.INTEGRATIONTESTS_DATASET_ID}}
+          API_KEY: ${{secrets.INTEGRATIONTESTS_API_KEY}}
