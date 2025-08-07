@@ -154,11 +154,11 @@
                         <version>0.8.0</version>
                         <executions>
                             <execution>
-                                <id>create-central-bundle</id>
+                                <id>publish-to-central</id>
                                 <goals>
-                                    <goal>bundle</goal>
+                                    <goal>publish</goal>
                                 </goals>
-                                <phase>package</phase>
+                                <phase>deploy</phase>
                             </execution>
                         </executions>
                     </plugin>
