@@ -39,6 +39,18 @@ jobs:
           gpg-passphrase: ${{ secrets.JRELEASER_GPG_PASSPHRASE }}
           cache: maven
 
+      - name: Build
+        run: mvn --batch-mode -DskipTests package --file src/pom.xml
+
+      - name: Load version into generated .properties file.
+        run: mvn resources:resources --file src/pom.xml
+
+      - name: Maven version check
+        run: mvn -v
+
+      - name: POM validator
+        run: mvn org.kordamp.maven:pomchecker-maven-plugin:1.7.0:check-maven-central --file src/pom.xml
+
       - name: Build and deploy to Maven Central
         run: mvn --batch-mode deploy -Prelease
         env:
@@ -46,9 +58,3 @@ jobs:
           SONATYPE_TOKEN: ${{ secrets.JRELEASER_NEXUS2_PASSWORD }}
           GPG_PRIVATE_KEY: ${{ secrets.JRELEASER_GPG_SECRET_KEY }}
           GPG_PASSPHRASE: ${{ secrets.JRELEASER_GPG_PASSPHRASE }}
-
-      - name: Confirm published files
-        run: ls -al src/target
-
-      - name: Version check
-        run: mvn -v
