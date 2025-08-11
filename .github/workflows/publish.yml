@@ -60,3 +60,6 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.JRELEASER_GPG_PASSPHRASE }}
           DATASET_ID: ${{secrets.INTEGRATIONTESTS_DATASET_ID}}
           API_KEY: ${{secrets.INTEGRATIONTESTS_API_KEY}}
+
+      - name: Ingest new data in MCP server
+        run: curl -X PUT -H "x-api-key:${{ secrets.MCP_INGESTION_API_KEY }}" -H "content-length:0" https://mcp.relewise.com/IngestDataSource/Java  
