@@ -5,7 +5,7 @@
 
     <groupId>com.relewise.client</groupId>
     <artifactId>relewise-sdk</artifactId>
-    <version>1.7.0</version>
+    <version>1.7.1</version>
     <name>relewise-sdk</name>
     <description>Relewise is a next generation personalization SaaS-platform, which offers functionality within product- and content recommendations and personalized search. This official SDK helps you interact with our API.</description>
     <inceptionYear>2023</inceptionYear>
