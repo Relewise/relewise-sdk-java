@@ -25,6 +25,7 @@ public class RelewiseClient {
     private final String serverUrl;
     private final int timeout;
     private final ObjectMapper objectMapper;
+    private final HttpClient httpClient;
 
     public RelewiseClient(String datasetId, String apiKey, String serverUrl, int timeout) {
         if (apiKey.isBlank()) {
@@ -40,6 +41,8 @@ public class RelewiseClient {
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
             .addModule(new JavaTimeModule().addDeserializer(Duration.class, new DurationDeserializer()))
             .build();
+
+        this.httpClient = HttpClient.newHttpClient();
 
         try {
             Properties properties = new Properties();
@@ -66,7 +69,6 @@ public class RelewiseClient {
                 .timeout(Duration.ofSeconds(timeout))
                 .build();
 
-        var httpClient = HttpClient.newHttpClient();
         return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     }
 
