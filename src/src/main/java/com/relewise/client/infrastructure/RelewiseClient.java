@@ -19,13 +19,13 @@ public class RelewiseClient {
     private static final String apiKeyNotDefinedMessage = "apiKey must not be empty.";
     private static final String apiVersion = "v1";
     private static final String clientName = "RelewiseJavaClient";
+    private static final HttpClient httpClient = HttpClient.newHttpClient();
     private String clientVersion = "unknown";
     private final String datasetId;
     private final String apiKey;
     private final String serverUrl;
     private final int timeout;
     private final ObjectMapper objectMapper;
-    private final HttpClient httpClient;
 
     public RelewiseClient(String datasetId, String apiKey, String serverUrl, int timeout) {
         if (apiKey.isBlank()) {
@@ -41,8 +41,6 @@ public class RelewiseClient {
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
             .addModule(new JavaTimeModule().addDeserializer(Duration.class, new DurationDeserializer()))
             .build();
-
-        this.httpClient = HttpClient.newHttpClient();
 
         try {
             Properties properties = new Properties();
