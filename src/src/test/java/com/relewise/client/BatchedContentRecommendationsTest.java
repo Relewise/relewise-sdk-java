@@ -33,7 +33,7 @@ public class BatchedContentRecommendationsTest extends TestBase {
 
         assertNotNull(response);
         assertEquals(2, response.responses.length);
-        ssertNotEquals(0, response.responses[0].recommendations.length);
+        assertNotEquals(0, response.responses[0].recommendations.length);
         assertNotEquals(0, response.responses[1].recommendations.length);
     }
 }
