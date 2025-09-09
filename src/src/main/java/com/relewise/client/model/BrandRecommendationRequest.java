@@ -24,7 +24,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = PersonalBrandRecommendationRequest.class, name = "Relewise.Client.Requests.Recommendations.PersonalBrandRecommendationRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class BrandRecommendationRequest extends RecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
+public abstract class BrandRecommendationRequest extends RecommendationRequest implements IUserIdentifier
 {
     public String $type = "";
     public BrandRecommendationRequestSettings settings;

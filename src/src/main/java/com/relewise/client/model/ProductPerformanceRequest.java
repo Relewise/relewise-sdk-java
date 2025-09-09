@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ProductPerformanceRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProductPerformanceRequest extends AnalyzerRequest implements IHaveCurrencyLanguage
+public class ProductPerformanceRequest extends AnalyzerRequest
 {
     public String $type = "Relewise.Client.Requests.Analyzers.ProductPerformanceRequest, Relewise.Client";
     public Long fromUnixTimeSeconds;

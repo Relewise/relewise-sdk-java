@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = PersonalBrandRecommendationRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PersonalBrandRecommendationRequest extends BrandRecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
+public class PersonalBrandRecommendationRequest extends BrandRecommendationRequest implements IUserIdentifier
 {
     public String $type = "Relewise.Client.Requests.Recommendations.PersonalBrandRecommendationRequest, Relewise.Client";
     public Integer sinceMinutesAgo;

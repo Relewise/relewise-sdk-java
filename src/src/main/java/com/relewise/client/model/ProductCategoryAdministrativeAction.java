@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ProductCategoryAdministrativeAction.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProductCategoryAdministrativeAction extends CategoryAdministrativeAction implements IHaveCurrencyLanguage
+public class ProductCategoryAdministrativeAction extends CategoryAdministrativeAction
 {
     public String $type = "Relewise.Client.DataTypes.ProductCategoryAdministrativeAction, Relewise.Client";
     public static ProductCategoryAdministrativeAction create(@Nullable Language language, @Nullable Currency currency, FilterCollection filters, CategoryAdministrativeActionUpdateKind kind)

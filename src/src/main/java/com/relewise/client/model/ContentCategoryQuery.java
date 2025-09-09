@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ContentCategoryQuery.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContentCategoryQuery extends ContentCategoryIdFilterCategoryQuery implements IHaveCurrencyLanguage
+public class ContentCategoryQuery extends ContentCategoryIdFilterCategoryQuery
 {
     public String $type = "Relewise.Client.Requests.Queries.ContentCategoryQuery, Relewise.Client";
     public static ContentCategoryQuery create()

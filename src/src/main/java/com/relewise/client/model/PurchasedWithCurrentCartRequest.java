@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = PurchasedWithCurrentCartRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PurchasedWithCurrentCartRequest extends ProductRecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
+public class PurchasedWithCurrentCartRequest extends ProductRecommendationRequest implements IUserIdentifier
 {
     public String $type = "Relewise.Client.Requests.Recommendations.PurchasedWithCurrentCartRequest, Relewise.Client";
     public static PurchasedWithCurrentCartRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user)

@@ -22,7 +22,7 @@ import java.util.HashSet;
 @JsonSubTypes({
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class DataFilter extends Filter implements IHaveCurrencyLanguage
+public abstract class DataFilter extends Filter
 {
     public String $type = "";
     public String key;

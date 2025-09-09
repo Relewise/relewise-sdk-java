@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ContentSearchRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContentSearchRequest extends PaginatedSearchRequest implements IUserIdentifier, IHaveCurrencyLanguage
+public class ContentSearchRequest extends PaginatedSearchRequest implements IUserIdentifier
 {
     public String $type = "Relewise.Client.Requests.Search.ContentSearchRequest, Relewise.Client";
     public @Nullable String term;

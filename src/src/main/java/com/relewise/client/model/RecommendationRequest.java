@@ -48,7 +48,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = PersonalBrandRecommendationRequest.class, name = "Relewise.Client.Requests.Recommendations.PersonalBrandRecommendationRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class RecommendationRequest extends LicensedRequest implements IUserIdentifier, IHaveCurrencyLanguage
+public abstract class RecommendationRequest extends LicensedRequest implements IUserIdentifier
 {
     public String $type = "";
     public @Nullable Language language;

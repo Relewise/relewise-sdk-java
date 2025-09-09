@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ProductCategoryDataFilter.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProductCategoryDataFilter extends DataFilter implements IHaveCurrencyLanguage, IProductCategoryFilter, ICategoryFilter
+public class ProductCategoryDataFilter extends DataFilter implements IProductCategoryFilter, ICategoryFilter
 {
     public String $type = "Relewise.Client.Requests.Filters.ProductCategoryDataFilter, Relewise.Client";
     public static ProductCategoryDataFilter create(String key, String... objectPath)

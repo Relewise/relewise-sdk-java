@@ -1,22 +1,13 @@
 ﻿using Generator.Extensions;
 using MessagePack;
 using Newtonsoft.Json;
-using Relewise.Client.Responses;
-using System;
 using System.CodeDom.Compiler;
 using System.Reflection;
 
 namespace Generator.JavaTypeWriters;
 
-public class JavaClassWriter : IJavaTypeWriter
+public class JavaClassWriter(JavaWriter javaWriter) : IJavaTypeWriter
 {
-    private readonly JavaWriter javaWriter;
-
-    public JavaClassWriter(JavaWriter javaWriter)
-    {
-        this.javaWriter = javaWriter;
-    }
-
     public bool CanWrite(Type type) => IsClass(type) || IsAnyStruct(type);
 
     private bool IsClass(Type type) => type.IsClass;
@@ -81,7 +72,7 @@ package {Constants.Namespace}.{Constants.GenerationFolderPath};
             baseTypeName = javaWriter.TypeName(baseType).RemoveNullable();
         }
 
-        writer.WriteLine($"public {(type.IsAbstract ? "abstract " : "")}class {typeName}{(baseTypeName is not null ? $" extends {baseTypeName}" : "")}{(type.GetInterfaces() is { Length: > 0 } interfaces ? " implements " + string.Join(", ", interfaces.Select(i => javaWriter.TypeName(i))) : "")}");
+        writer.WriteLine($"public {(type.IsAbstract ? "abstract " : "")}class {typeName}{(baseTypeName is not null ? $" extends {baseTypeName}" : "")}{(type.GetInterfaces().Where(x => x.IsPublic).ToArray() is { Length: > 0 } interfaces ? " implements " + string.Join(", ", interfaces.Select(i => javaWriter.TypeName(i))) : "")}");
         writer.WriteLine("{");
         writer.Indent++;
         if (type.IsMaybeBaseClassOfSomethingPolymorphic())

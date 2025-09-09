@@ -22,7 +22,7 @@ import java.util.HashSet;
 @JsonSubTypes({
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class ProductCategoryIdFilterCategoryQuery extends LicensedRequest implements IHaveCurrencyLanguage
+public abstract class ProductCategoryIdFilterCategoryQuery extends LicensedRequest
 {
     public String $type = "";
     public FilterCollection filters;

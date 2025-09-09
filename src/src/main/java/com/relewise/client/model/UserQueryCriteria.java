@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = UserQueryCriteria.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserQueryCriteria implements IHaveCurrencyLanguage
+public class UserQueryCriteria
 {
     public String $type = "Relewise.Client.DataTypes.UserQueryCriteria, Relewise.Client";
     public @Nullable String authenticatedId;
