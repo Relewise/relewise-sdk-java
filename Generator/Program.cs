@@ -25,6 +25,8 @@ Console.WriteLine($"Loaded {xmlDocumentation.Params.Count} documentation params.
 
 var javaWriter = new JavaWriter(assembly, basePath, xmlDocumentation);
 
+javaWriter.ClearFolder();
+
 javaWriter.WriteTypes(assembly
     .GetTypes()
     .Where(type => type.IsSubclassOf(typeof(LicensedRequest))));

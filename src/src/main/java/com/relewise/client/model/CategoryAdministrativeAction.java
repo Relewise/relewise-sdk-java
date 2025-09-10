@@ -22,7 +22,7 @@ import java.util.HashSet;
 @JsonSubTypes({
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class CategoryAdministrativeAction extends Trackable implements IHaveCurrencyLanguage
+public abstract class CategoryAdministrativeAction extends Trackable
 {
     public String $type = "";
     public FilterCollection filters;

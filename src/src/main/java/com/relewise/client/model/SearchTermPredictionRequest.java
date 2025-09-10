@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = SearchTermPredictionRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchTermPredictionRequest extends SearchRequest implements IUserIdentifier, IHaveCurrencyLanguage
+public class SearchTermPredictionRequest extends SearchRequest implements IUserIdentifier
 {
     public String $type = "Relewise.Client.Requests.Search.SearchTermPredictionRequest, Relewise.Client";
     public String term;

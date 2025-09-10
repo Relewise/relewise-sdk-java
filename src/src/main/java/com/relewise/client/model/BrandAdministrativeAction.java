@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = BrandAdministrativeAction.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BrandAdministrativeAction extends Trackable implements IHaveCurrencyLanguage
+public class BrandAdministrativeAction extends Trackable
 {
     public String $type = "Relewise.Client.DataTypes.BrandAdministrativeAction, Relewise.Client";
     public FilterCollection filters;
