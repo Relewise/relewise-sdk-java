@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = SearchRequestCollection.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchRequestCollection extends SearchRequest implements IUserIdentifier, IHaveCurrencyLanguage
+public class SearchRequestCollection extends SearchRequest implements IUserIdentifier
 {
     public String $type = "Relewise.Client.Requests.Search.SearchRequestCollection, Relewise.Client";
     public ArrayList<SearchRequest> requests;

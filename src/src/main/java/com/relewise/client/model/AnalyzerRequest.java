@@ -23,7 +23,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = ProductPerformanceRequest.class, name = "Relewise.Client.Requests.Analyzers.ProductPerformanceRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class AnalyzerRequest extends LicensedRequest implements IHaveCurrencyLanguage
+public abstract class AnalyzerRequest extends LicensedRequest
 {
     public String $type = "";
     public @Nullable Language language;

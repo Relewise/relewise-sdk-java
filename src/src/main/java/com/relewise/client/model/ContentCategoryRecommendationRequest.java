@@ -24,7 +24,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = PersonalContentCategoryRecommendationRequest.class, name = "Relewise.Client.Requests.Recommendations.PersonalContentCategoryRecommendationRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class ContentCategoryRecommendationRequest extends RecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
+public abstract class ContentCategoryRecommendationRequest extends RecommendationRequest implements IUserIdentifier
 {
     public String $type = "";
     public ContentCategoryRecommendationRequestSettings settings;

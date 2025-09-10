@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = SearchTermBasedProductRecommendationRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchTermBasedProductRecommendationRequest extends ProductRecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
+public class SearchTermBasedProductRecommendationRequest extends ProductRecommendationRequest implements IUserIdentifier
 {
     public String $type = "Relewise.Client.Requests.Recommendations.SearchTermBasedProductRecommendationRequest, Relewise.Client";
     public String term;

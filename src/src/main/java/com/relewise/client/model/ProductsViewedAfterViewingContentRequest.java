@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ProductsViewedAfterViewingContentRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProductsViewedAfterViewingContentRequest extends ProductRecommendationRequest implements IUserIdentifier, IHaveCurrencyLanguage
+public class ProductsViewedAfterViewingContentRequest extends ProductRecommendationRequest implements IUserIdentifier
 {
     public String $type = "Relewise.Client.Requests.Recommendations.ProductsViewedAfterViewingContentRequest, Relewise.Client";
     public String contentId;

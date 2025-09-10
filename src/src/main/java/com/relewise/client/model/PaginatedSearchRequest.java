@@ -22,7 +22,7 @@ import java.util.HashSet;
 @JsonSubTypes({
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class PaginatedSearchRequest extends SearchRequest implements IUserIdentifier, IHaveCurrencyLanguage
+public abstract class PaginatedSearchRequest extends SearchRequest implements IUserIdentifier
 {
     public String $type = "";
     public Integer skip;
