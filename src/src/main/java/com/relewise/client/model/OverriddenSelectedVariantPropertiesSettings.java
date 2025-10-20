@@ -25,6 +25,8 @@ public class OverriddenSelectedVariantPropertiesSettings
     public @Nullable Boolean allData;
     public String[] dataKeys;
     public String[] specificationKeys;
+    /** When set, overrides whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public @Nullable Boolean userEngagement;
     public static OverriddenSelectedVariantPropertiesSettings create()
     {
         return new OverriddenSelectedVariantPropertiesSettings();
@@ -59,6 +61,11 @@ public class OverriddenSelectedVariantPropertiesSettings
     public String[] getSpecificationKeys()
     {
         return this.specificationKeys;
+    }
+    /** When set, overrides whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public @Nullable Boolean getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public OverriddenSelectedVariantPropertiesSettings setDisplayName(@Nullable Boolean displayName)
     {
@@ -121,6 +128,12 @@ public class OverriddenSelectedVariantPropertiesSettings
             existingList.add(specificationKey);
             this.specificationKeys = existingList.toArray(new String[0]);
         }
+        return this;
+    }
+    /** When set, overrides whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public OverriddenSelectedVariantPropertiesSettings setUserEngagement(@Nullable Boolean userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

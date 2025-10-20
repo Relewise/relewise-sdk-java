@@ -47,6 +47,9 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = ContentDataRelevanceModifier.class, name = "Relewise.Client.Requests.RelevanceModifiers.ContentDataRelevanceModifier, Relewise.Client"),
     @JsonSubTypes.Type(value = ProductCategoryDataRelevanceModifier.class, name = "Relewise.Client.Requests.RelevanceModifiers.ProductCategoryDataRelevanceModifier, Relewise.Client"),
     @JsonSubTypes.Type(value = ContentCategoryDataRelevanceModifier.class, name = "Relewise.Client.Requests.RelevanceModifiers.ContentCategoryDataRelevanceModifier, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductEngagementRelevanceModifier.class, name = "Relewise.Client.Requests.RelevanceModifiers.ProductEngagementRelevanceModifier, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentEngagementRelevanceModifier.class, name = "Relewise.Client.Requests.RelevanceModifiers.ContentEngagementRelevanceModifier, Relewise.Client"),
+    @JsonSubTypes.Type(value = VariantEngagementRelevanceModifier.class, name = "Relewise.Client.Requests.RelevanceModifiers.VariantEngagementRelevanceModifier, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class RelevanceModifier

@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = CampaignsResponse.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CampaignsResponse extends CampaignCampaignEntityStateEntityResponse
+public class CampaignsResponse extends CampaignUUIDCampaignEntityStateEntityResponse
 {
     public String $type = "Relewise.Client.Responses.RetailMedia.CampaignsResponse, Relewise.Client";
     public static CampaignsResponse create(Campaign[] campaigns, Integer hits, HashMap<CampaignEntityState, Integer> hitsPerState)

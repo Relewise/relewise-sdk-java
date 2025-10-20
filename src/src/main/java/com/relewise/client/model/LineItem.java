@@ -15,9 +15,15 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.EXISTING_PROPERTY,
+    property = "$type",
+    defaultImpl = LineItem.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LineItem
 {
+    public String $type = "Relewise.Client.DataTypes.LineItem, Relewise.Client";
     public Product product;
     public @Nullable ProductVariant variant;
     public Float quantity;

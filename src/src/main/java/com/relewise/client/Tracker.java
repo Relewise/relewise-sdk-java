@@ -53,12 +53,20 @@ public class Tracker extends RelewiseClient
         makeRequestAndValidate("TrackContentCategoryViewRequest", trackingRequest, Void.class);
     }
     
+    public void track(TrackContentEngagementRequest trackingRequest) throws IOException, InterruptedException, ClientException {
+        makeRequestAndValidate("TrackContentEngagementRequest", trackingRequest, Void.class);
+    }
+    
     public void track(TrackContentUpdateRequest trackingRequest) throws IOException, InterruptedException, ClientException {
         makeRequestAndValidate("TrackContentUpdateRequest", trackingRequest, Void.class);
     }
     
     public void track(TrackContentViewRequest trackingRequest) throws IOException, InterruptedException, ClientException {
         makeRequestAndValidate("TrackContentViewRequest", trackingRequest, Void.class);
+    }
+    
+    public void track(TrackDisplayAdClickRequest trackingRequest) throws IOException, InterruptedException, ClientException {
+        makeRequestAndValidate("TrackDisplayAdClickRequest", trackingRequest, Void.class);
     }
     
     public void track(TrackingRequest trackingRequest) throws IOException, InterruptedException, ClientException {
@@ -85,6 +93,10 @@ public class Tracker extends RelewiseClient
         makeRequestAndValidate("TrackProductCategoryViewRequest", trackingRequest, Void.class);
     }
     
+    public void track(TrackProductEngagementRequest trackingRequest) throws IOException, InterruptedException, ClientException {
+        makeRequestAndValidate("TrackProductEngagementRequest", trackingRequest, Void.class);
+    }
+    
     public void track(TrackProductUpdateRequest trackingRequest) throws IOException, InterruptedException, ClientException {
         makeRequestAndValidate("TrackProductUpdateRequest", trackingRequest, Void.class);
     }
@@ -99,5 +111,17 @@ public class Tracker extends RelewiseClient
     
     public void track(TrackUserUpdateRequest trackingRequest) throws IOException, InterruptedException, ClientException {
         makeRequestAndValidate("TrackUserUpdateRequest", trackingRequest, Void.class);
+    }
+    
+    public void track(TrackFeedDwellRequest trackingRequest) throws IOException, InterruptedException, ClientException {
+        makeRequestAndValidate("TrackFeedDwellRequest", trackingRequest, Void.class);
+    }
+    
+    public void track(TrackFeedItemClickRequest trackingRequest) throws IOException, InterruptedException, ClientException {
+        makeRequestAndValidate("TrackFeedItemClickRequest", trackingRequest, Void.class);
+    }
+    
+    public void track(TrackFeedItemPreviewRequest trackingRequest) throws IOException, InterruptedException, ClientException {
+        makeRequestAndValidate("TrackFeedItemPreviewRequest", trackingRequest, Void.class);
     }
 }

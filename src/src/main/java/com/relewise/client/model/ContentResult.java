@@ -26,6 +26,8 @@ public class ContentResult
     public CategoryPathResult[] categoryPaths;
     public ViewedByUserInfo viewedByUser;
     public @Nullable HighlightResult highlight;
+    /** Contains engagement signals recorded for the current user on this content item. Populated only when explicitly requested via <code>UserEngagement</code>. */
+    public @Nullable ContentEngagementData userEngagement;
     public static ContentResult create(String contentId, Integer rank)
     {
         return new ContentResult(contentId, rank);
@@ -69,6 +71,11 @@ public class ContentResult
     public @Nullable HighlightResult getHighlight()
     {
         return this.highlight;
+    }
+    /** Contains engagement signals recorded for the current user on this content item. Populated only when explicitly requested via <code>UserEngagement</code>. */
+    public @Nullable ContentEngagementData getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public ContentResult setContentId(String contentId)
     {
@@ -145,6 +152,12 @@ public class ContentResult
     public ContentResult setHighlight(@Nullable HighlightResult highlight)
     {
         this.highlight = highlight;
+        return this;
+    }
+    /** Contains engagement signals recorded for the current user on this content item. Populated only when explicitly requested via <code>UserEngagement</code>. */
+    public ContentResult setUserEngagement(@Nullable ContentEngagementData userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

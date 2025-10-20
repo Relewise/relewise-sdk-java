@@ -15,9 +15,15 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.EXISTING_PROPERTY,
+    property = "$type",
+    defaultImpl = UserResultDetails.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserResultDetails
 {
+    public String $type = "Relewise.Client.DataTypes.UserResultDetails, Relewise.Client";
     public String authenticatedId;
     public String temporaryId;
     public String email;

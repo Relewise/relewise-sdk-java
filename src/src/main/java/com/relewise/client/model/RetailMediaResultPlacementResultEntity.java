@@ -19,6 +19,7 @@ import java.util.HashSet;
 public class RetailMediaResultPlacementResultEntity
 {
     public @Nullable RetailMediaResultPlacementResultEntityProduct promotedProduct;
+    public @Nullable RetailMediaResultPlacementResultEntityDisplayAd promotedDisplayAd;
     public static RetailMediaResultPlacementResultEntity create()
     {
         return new RetailMediaResultPlacementResultEntity();
@@ -30,9 +31,18 @@ public class RetailMediaResultPlacementResultEntity
     {
         return this.promotedProduct;
     }
+    public @Nullable RetailMediaResultPlacementResultEntityDisplayAd getPromotedDisplayAd()
+    {
+        return this.promotedDisplayAd;
+    }
     public RetailMediaResultPlacementResultEntity setPromotedProduct(@Nullable RetailMediaResultPlacementResultEntityProduct promotedProduct)
     {
         this.promotedProduct = promotedProduct;
+        return this;
+    }
+    public RetailMediaResultPlacementResultEntity setPromotedDisplayAd(@Nullable RetailMediaResultPlacementResultEntityDisplayAd promotedDisplayAd)
+    {
+        this.promotedDisplayAd = promotedDisplayAd;
         return this;
     }
 }

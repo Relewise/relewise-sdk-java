@@ -31,6 +31,8 @@ public class SelectedProductDetailsPropertiesSettings
     public Boolean viewedByUserCompanyInfo;
     public Boolean purchasedByUserCompanyInfo;
     public @Nullable FilteredVariantsSettings filteredVariants;
+    /** Determines whether <code>UserEngagement</code> should be populated when result details are mapped. */
+    public Boolean userEngagement;
     public static SelectedProductDetailsPropertiesSettings create()
     {
         return new SelectedProductDetailsPropertiesSettings();
@@ -89,6 +91,11 @@ public class SelectedProductDetailsPropertiesSettings
     public @Nullable FilteredVariantsSettings getFilteredVariants()
     {
         return this.filteredVariants;
+    }
+    /** Determines whether <code>UserEngagement</code> should be populated when result details are mapped. */
+    public Boolean getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public SelectedProductDetailsPropertiesSettings setDisplayName(Boolean displayName)
     {
@@ -167,6 +174,12 @@ public class SelectedProductDetailsPropertiesSettings
     public SelectedProductDetailsPropertiesSettings setFilteredVariants(@Nullable FilteredVariantsSettings filteredVariants)
     {
         this.filteredVariants = filteredVariants;
+        return this;
+    }
+    /** Determines whether <code>UserEngagement</code> should be populated when result details are mapped. */
+    public SelectedProductDetailsPropertiesSettings setUserEngagement(Boolean userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

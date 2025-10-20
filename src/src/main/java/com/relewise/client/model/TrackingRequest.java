@@ -42,6 +42,12 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = TrackContentCategoryAdministrativeActionRequest.class, name = "Relewise.Client.Requests.Tracking.TrackContentCategoryAdministrativeActionRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = TrackCompanyUpdateRequest.class, name = "Relewise.Client.Requests.Tracking.TrackCompanyUpdateRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = TrackCompanyAdministrativeActionRequest.class, name = "Relewise.Client.Requests.Tracking.TrackCompanyAdministrativeActionRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = TrackFeedDwellRequest.class, name = "Relewise.Client.Requests.Tracking.Feed.TrackFeedDwellRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = TrackProductEngagementRequest.class, name = "Relewise.Client.Requests.Tracking.TrackProductEngagementRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = TrackFeedItemPreviewRequest.class, name = "Relewise.Client.Requests.Tracking.Feed.TrackFeedItemPreviewRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = TrackFeedItemClickRequest.class, name = "Relewise.Client.Requests.Tracking.Feed.TrackFeedItemClickRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = TrackContentEngagementRequest.class, name = "Relewise.Client.Requests.Tracking.TrackContentEngagementRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = TrackDisplayAdClickRequest.class, name = "Relewise.Client.Requests.Tracking.TrackDisplayAdClickRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class TrackingRequest extends LicensedRequest

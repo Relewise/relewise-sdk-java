@@ -26,6 +26,8 @@ public class VariantResult
     public Integer rank;
     public @Nullable Double listPrice;
     public @Nullable Double salesPrice;
+    /** Contains engagement signals recorded for the current user on this variant. Populated when requested via <code>UserEngagement</code>. */
+    public @Nullable ProductEngagementData userEngagement;
     public static VariantResult create(String variantId, Integer rank)
     {
         return new VariantResult(variantId, rank);
@@ -69,6 +71,11 @@ public class VariantResult
     public @Nullable Double getSalesPrice()
     {
         return this.salesPrice;
+    }
+    /** Contains engagement signals recorded for the current user on this variant. Populated when requested via <code>UserEngagement</code>. */
+    public @Nullable ProductEngagementData getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public VariantResult setVariantId(String variantId)
     {
@@ -140,6 +147,12 @@ public class VariantResult
     public VariantResult setSalesPrice(@Nullable Double salesPrice)
     {
         this.salesPrice = salesPrice;
+        return this;
+    }
+    /** Contains engagement signals recorded for the current user on this variant. Populated when requested via <code>UserEngagement</code>. */
+    public VariantResult setUserEngagement(@Nullable ProductEngagementData userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

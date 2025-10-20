@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = Campaign.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Campaign extends CampaignEntityStateCampaignMetadataValuesRetailMediaEntity
+public class Campaign extends CampaignEntityStateUUIDCampaignMetadataValuesRetailMediaEntity
 {
     public String $type = "Relewise.Client.DataTypes.RetailMedia.Campaign, Relewise.Client";
     public String name;

@@ -15,9 +15,15 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.EXISTING_PROPERTY,
+    property = "$type",
+    defaultImpl = SelectedBrandPropertiesSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SelectedBrandPropertiesSettings
 {
+    public String $type = "Relewise.Client.Requests.Shared.SelectedBrandPropertiesSettings, Relewise.Client";
     public Boolean displayName;
     public Boolean assortments;
     public Boolean viewedByUserInfo;

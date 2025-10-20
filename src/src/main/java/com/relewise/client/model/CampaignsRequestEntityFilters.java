@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = CampaignsRequestEntityFilters.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CampaignsRequestEntityFilters extends CampaignEntityStateCampaignMetadataValuesRetailMediaEntityEntityFilters
+public class CampaignsRequestEntityFilters extends CampaignEntityStateUUIDCampaignMetadataValuesRetailMediaEntityEntityFilters
 {
     public String $type = "Relewise.Client.Requests.RetailMedia.CampaignsRequest+EntityFilters, Relewise.Client";
     public @Nullable UUID[] ids;

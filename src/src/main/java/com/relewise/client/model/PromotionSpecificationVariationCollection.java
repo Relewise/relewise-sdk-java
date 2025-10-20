@@ -18,7 +18,9 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PromotionSpecificationVariationCollection
 {
+    /** @deprecated Use VariationPromotion instead */
     public @Nullable ProductPromotionSpecificationVariation productPromotion;
+    public @Nullable PromotionVariationPromotion variationPromotion;
     public static PromotionSpecificationVariationCollection create()
     {
         return new PromotionSpecificationVariationCollection();
@@ -26,13 +28,24 @@ public class PromotionSpecificationVariationCollection
     public PromotionSpecificationVariationCollection()
     {
     }
+    /** @deprecated Use VariationPromotion instead */
     public @Nullable ProductPromotionSpecificationVariation getProductPromotion()
     {
         return this.productPromotion;
     }
+    public @Nullable PromotionVariationPromotion getVariationPromotion()
+    {
+        return this.variationPromotion;
+    }
+    /** @deprecated Use VariationPromotion instead */
     public PromotionSpecificationVariationCollection setProductPromotion(@Nullable ProductPromotionSpecificationVariation productPromotion)
     {
         this.productPromotion = productPromotion;
+        return this;
+    }
+    public PromotionSpecificationVariationCollection setVariationPromotion(@Nullable PromotionVariationPromotion variationPromotion)
+    {
+        this.variationPromotion = variationPromotion;
         return this;
     }
 }

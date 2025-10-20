@@ -24,6 +24,7 @@ public class RequestContextFilter
     public ArrayList<Language> languages;
     public ArrayList<Currency> currencies;
     public RequestFilterCriteria filters;
+    public @Nullable SearchTermConditionByLanguageCollection searchTerms;
     public static RequestContextFilter create()
     {
         return new RequestContextFilter();
@@ -54,6 +55,10 @@ public class RequestContextFilter
     public RequestFilterCriteria getFilters()
     {
         return this.filters;
+    }
+    public @Nullable SearchTermConditionByLanguageCollection getSearchTerms()
+    {
+        return this.searchTerms;
     }
     public RequestContextFilter setRecommendations(RecommendationTypeCollection recommendations)
     {
@@ -110,6 +115,11 @@ public class RequestContextFilter
     public RequestContextFilter setFilters(RequestFilterCriteria filters)
     {
         this.filters = filters;
+        return this;
+    }
+    public RequestContextFilter setSearchTerms(@Nullable SearchTermConditionByLanguageCollection searchTerms)
+    {
+        this.searchTerms = searchTerms;
         return this;
     }
 }

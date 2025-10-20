@@ -37,6 +37,8 @@ public class ProductResult
     public @Nullable HighlightResult highlight;
     /** Holds information about how good this product result is. This will only be populated if specifically requested which is currently only possible for term-based product search requests. */
     public @Nullable Score score;
+    /** Contains engagement signals (sentiment, favorite) recorded for the current user on this product. Populated only when explicitly requested via <code>UserEngagement</code>. */
+    public @Nullable ProductEngagementData userEngagement;
     public static ProductResult create(String productId, Integer rank)
     {
         return new ProductResult(productId, rank);
@@ -121,6 +123,11 @@ public class ProductResult
     public @Nullable Score getScore()
     {
         return this.score;
+    }
+    /** Contains engagement signals (sentiment, favorite) recorded for the current user on this product. Populated only when explicitly requested via <code>UserEngagement</code>. */
+    public @Nullable ProductEngagementData getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public ProductResult setProductId(String productId)
     {
@@ -276,6 +283,12 @@ public class ProductResult
     public ProductResult setScore(@Nullable Score score)
     {
         this.score = score;
+        return this;
+    }
+    /** Contains engagement signals (sentiment, favorite) recorded for the current user on this product. Populated only when explicitly requested via <code>UserEngagement</code>. */
+    public ProductResult setUserEngagement(@Nullable ProductEngagementData userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

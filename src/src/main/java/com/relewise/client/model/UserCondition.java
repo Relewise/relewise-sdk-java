@@ -33,6 +33,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = OrCondition.class, name = "Relewise.Client.DataTypes.UserConditions.OrCondition, Relewise.Client"),
     @JsonSubTypes.Type(value = AndCondition.class, name = "Relewise.Client.DataTypes.UserConditions.AndCondition, Relewise.Client"),
     @JsonSubTypes.Type(value = HasDataCondition.class, name = "Relewise.Client.DataTypes.UserConditions.HasDataCondition, Relewise.Client"),
+    @JsonSubTypes.Type(value = HasCompanyDataCondition.class, name = "Relewise.Client.DataTypes.UserConditions.HasCompanyDataCondition, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class UserCondition

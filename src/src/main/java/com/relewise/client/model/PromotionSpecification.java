@@ -21,6 +21,7 @@ import java.util.HashSet;
     property = "$type")
 @JsonSubTypes({
     @JsonSubTypes.Type(value = ProductPromotionSpecification.class, name = "Relewise.Client.DataTypes.RetailMedia.ProductPromotion+Specification, Relewise.Client"),
+    @JsonSubTypes.Type(value = DisplayAdPromotionSpecification.class, name = "Relewise.Client.DataTypes.RetailMedia.DisplayAdPromotion+Specification, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class PromotionSpecification

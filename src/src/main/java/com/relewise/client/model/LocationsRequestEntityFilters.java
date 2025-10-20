@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = LocationsRequestEntityFilters.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LocationsRequestEntityFilters extends LocationEntityStateLocationMetadataValuesRetailMediaEntityEntityFilters
+public class LocationsRequestEntityFilters extends LocationEntityStateUUIDLocationMetadataValuesRetailMediaEntityEntityFilters
 {
     public String $type = "Relewise.Client.Requests.RetailMedia.LocationsRequest+EntityFilters, Relewise.Client";
     public @Nullable UUID[] ids;

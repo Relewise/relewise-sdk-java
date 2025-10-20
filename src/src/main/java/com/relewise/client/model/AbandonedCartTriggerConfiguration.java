@@ -25,6 +25,7 @@ public class AbandonedCartTriggerConfiguration extends AbandonedCartTriggerResul
 {
     public String $type = "Relewise.Client.DataTypes.Triggers.Configurations.AbandonedCartTriggerConfiguration, Relewise.Client";
     public String cartName;
+    public @Nullable AbandonedCartTriggerConfigurationPropertySelectionSettings selectedProperties;
     public static AbandonedCartTriggerConfiguration create(String name, String description)
     {
         return new AbandonedCartTriggerConfiguration(name, description);
@@ -53,9 +54,18 @@ public class AbandonedCartTriggerConfiguration extends AbandonedCartTriggerResul
     {
         return this.cartName;
     }
+    public @Nullable AbandonedCartTriggerConfigurationPropertySelectionSettings getSelectedProperties()
+    {
+        return this.selectedProperties;
+    }
     public AbandonedCartTriggerConfiguration setCartName(String cartName)
     {
         this.cartName = cartName;
+        return this;
+    }
+    public AbandonedCartTriggerConfiguration setSelectedProperties(@Nullable AbandonedCartTriggerConfigurationPropertySelectionSettings selectedProperties)
+    {
+        this.selectedProperties = selectedProperties;
         return this;
     }
     @Override

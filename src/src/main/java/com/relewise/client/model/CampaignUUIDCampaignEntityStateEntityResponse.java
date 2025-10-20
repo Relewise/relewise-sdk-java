@@ -1,0 +1,73 @@
+package com.relewise.client.model;
+
+import com.fasterxml.jackson.annotation.*;
+import javax.annotation.Nullable;
+import java.io.IOException;
+import java.time.Duration;
+import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
+import java.util.Objects;
+import java.util.Arrays;
+import java.util.UUID;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
+    
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.EXISTING_PROPERTY,
+    property = "$type")
+@JsonSubTypes({
+})
+@JsonIgnoreProperties(ignoreUnknown = true)
+public abstract class CampaignUUIDCampaignEntityStateEntityResponse extends TimedResponse
+{
+    public String $type = "";
+    public Campaign[] entities;
+    public Integer hits;
+    public HashMap<CampaignEntityState, Integer> hitsPerState;
+    public Campaign[] getEntities()
+    {
+        return this.entities;
+    }
+    public Integer getHits()
+    {
+        return this.hits;
+    }
+    public HashMap<CampaignEntityState, Integer> getHitsPerState()
+    {
+        return this.hitsPerState;
+    }
+    public CampaignUUIDCampaignEntityStateEntityResponse setEntities(Campaign... entities)
+    {
+        this.entities = entities;
+        return this;
+    }
+    public CampaignUUIDCampaignEntityStateEntityResponse setHits(Integer hits)
+    {
+        this.hits = hits;
+        return this;
+    }
+    public CampaignUUIDCampaignEntityStateEntityResponse addToHitsPerState(CampaignEntityState key, Integer value)
+    {
+        if (this.hitsPerState == null)
+        {
+            this.hitsPerState = new HashMap<>();
+        }
+        this.hitsPerState.put(key, value);
+        return this;
+    }
+    public CampaignUUIDCampaignEntityStateEntityResponse setHitsPerState(HashMap<CampaignEntityState, Integer> hitsPerState)
+    {
+        this.hitsPerState = hitsPerState;
+        return this;
+    }
+    @Override
+    public CampaignUUIDCampaignEntityStateEntityResponse setStatistics(Statistics statistics)
+    {
+        this.statistics = statistics;
+        return this;
+    }
+}

@@ -25,6 +25,8 @@ public class SelectedVariantDetailsPropertiesSettings
     public Boolean allData;
     public @Nullable String[] dataKeys;
     public @Nullable String[] specificationKeys;
+    /** Determines whether <code>UserEngagement</code> should be populated when result details are mapped. */
+    public Boolean userEngagement;
     public static SelectedVariantDetailsPropertiesSettings create()
     {
         return new SelectedVariantDetailsPropertiesSettings();
@@ -59,6 +61,11 @@ public class SelectedVariantDetailsPropertiesSettings
     public @Nullable String[] getSpecificationKeys()
     {
         return this.specificationKeys;
+    }
+    /** Determines whether <code>UserEngagement</code> should be populated when result details are mapped. */
+    public Boolean getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public SelectedVariantDetailsPropertiesSettings setDisplayName(Boolean displayName)
     {
@@ -121,6 +128,12 @@ public class SelectedVariantDetailsPropertiesSettings
             existingList.add(specificationKey);
             this.specificationKeys = existingList.toArray(new String[0]);
         }
+        return this;
+    }
+    /** Determines whether <code>UserEngagement</code> should be populated when result details are mapped. */
+    public SelectedVariantDetailsPropertiesSettings setUserEngagement(Boolean userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

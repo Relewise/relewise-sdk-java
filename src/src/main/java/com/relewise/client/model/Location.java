@@ -22,7 +22,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = Location.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Location extends LocationEntityStateLocationMetadataValuesRetailMediaEntity
+public class Location extends LocationEntityStateUUIDLocationMetadataValuesRetailMediaEntity
 {
     public String $type = "Relewise.Client.DataTypes.RetailMedia.Location, Relewise.Client";
     /** The name of this location, e.g. "Front page", "PDP", "Home screen" etc. */
