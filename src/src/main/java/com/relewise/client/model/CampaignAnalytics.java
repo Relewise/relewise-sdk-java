@@ -19,13 +19,15 @@ import java.util.HashSet;
 public class CampaignAnalytics
 {
     public CampaignAnalyticsProductAnalytics products;
-    public static CampaignAnalytics create(CampaignAnalyticsProductAnalytics products)
+    public CampaignAnalyticsDisplayAdAnalytics displayAds;
+    public static CampaignAnalytics create(CampaignAnalyticsProductAnalytics products, CampaignAnalyticsDisplayAdAnalytics displayAds)
     {
-        return new CampaignAnalytics(products);
+        return new CampaignAnalytics(products, displayAds);
     }
-    public CampaignAnalytics(CampaignAnalyticsProductAnalytics products)
+    public CampaignAnalytics(CampaignAnalyticsProductAnalytics products, CampaignAnalyticsDisplayAdAnalytics displayAds)
     {
         this.products = products;
+        this.displayAds = displayAds;
     }
     public CampaignAnalytics()
     {
@@ -34,9 +36,18 @@ public class CampaignAnalytics
     {
         return this.products;
     }
+    public CampaignAnalyticsDisplayAdAnalytics getDisplayAds()
+    {
+        return this.displayAds;
+    }
     public CampaignAnalytics setProducts(CampaignAnalyticsProductAnalytics products)
     {
         this.products = products;
+        return this;
+    }
+    public CampaignAnalytics setDisplayAds(CampaignAnalyticsDisplayAdAnalytics displayAds)
+    {
+        this.displayAds = displayAds;
         return this;
     }
 }

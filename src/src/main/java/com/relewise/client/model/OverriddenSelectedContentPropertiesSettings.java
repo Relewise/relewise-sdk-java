@@ -24,6 +24,8 @@ public class OverriddenSelectedContentPropertiesSettings
     public @Nullable Boolean allData;
     public @Nullable Boolean viewedByUserInfo;
     public String[] dataKeys;
+    /** When set, overrides whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public @Nullable Boolean userEngagement;
     public static OverriddenSelectedContentPropertiesSettings create()
     {
         return new OverriddenSelectedContentPropertiesSettings();
@@ -54,6 +56,11 @@ public class OverriddenSelectedContentPropertiesSettings
     public String[] getDataKeys()
     {
         return this.dataKeys;
+    }
+    /** When set, overrides whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public @Nullable Boolean getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public OverriddenSelectedContentPropertiesSettings setDisplayName(@Nullable Boolean displayName)
     {
@@ -97,6 +104,12 @@ public class OverriddenSelectedContentPropertiesSettings
             existingList.add(dataKey);
             this.dataKeys = existingList.toArray(new String[0]);
         }
+        return this;
+    }
+    /** When set, overrides whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public OverriddenSelectedContentPropertiesSettings setUserEngagement(@Nullable Boolean userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

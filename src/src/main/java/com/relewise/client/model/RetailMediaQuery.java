@@ -20,6 +20,7 @@ public class RetailMediaQuery
 {
     /** Defines the location (f.e. 'Home Page'), placements (f.e. 'main zone' and 'power action') for specific <code>Variation</code> (f.e. 'desktop'). */
     public RetailMediaQueryLocationSelector location;
+    public @Nullable RetailMediaQuerySettings settings;
     public static RetailMediaQuery create(RetailMediaQueryLocationSelector location)
     {
         return new RetailMediaQuery(location);
@@ -36,10 +37,19 @@ public class RetailMediaQuery
     {
         return this.location;
     }
+    public @Nullable RetailMediaQuerySettings getSettings()
+    {
+        return this.settings;
+    }
     /** Defines the location (f.e. 'Home Page'), placements (f.e. 'main zone' and 'power action') for specific <code>Variation</code> (f.e. 'desktop'). */
     public RetailMediaQuery setLocation(RetailMediaQueryLocationSelector location)
     {
         this.location = location;
+        return this;
+    }
+    public RetailMediaQuery setSettings(@Nullable RetailMediaQuerySettings settings)
+    {
+        this.settings = settings;
         return this;
     }
 }

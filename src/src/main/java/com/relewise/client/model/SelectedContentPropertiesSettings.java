@@ -24,6 +24,8 @@ public class SelectedContentPropertiesSettings
     public Boolean allData;
     public Boolean viewedByUserInfo;
     public @Nullable String[] dataKeys;
+    /** Determines whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public Boolean userEngagement;
     public static SelectedContentPropertiesSettings create()
     {
         return new SelectedContentPropertiesSettings();
@@ -54,6 +56,11 @@ public class SelectedContentPropertiesSettings
     public @Nullable String[] getDataKeys()
     {
         return this.dataKeys;
+    }
+    /** Determines whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public Boolean getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public SelectedContentPropertiesSettings setDisplayName(Boolean displayName)
     {
@@ -97,6 +104,12 @@ public class SelectedContentPropertiesSettings
             existingList.add(dataKey);
             this.dataKeys = existingList.toArray(new String[0]);
         }
+        return this;
+    }
+    /** Determines whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public SelectedContentPropertiesSettings setUserEngagement(Boolean userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

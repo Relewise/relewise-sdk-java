@@ -41,6 +41,12 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = ContentCategoryUpdate.class, name = "Relewise.Client.DataTypes.ContentCategoryUpdate, Relewise.Client"),
     @JsonSubTypes.Type(value = CompanyUpdate.class, name = "Relewise.Client.DataTypes.CompanyUpdate, Relewise.Client"),
     @JsonSubTypes.Type(value = CompanyAdministrativeAction.class, name = "Relewise.Client.DataTypes.CompanyAdministrativeAction, Relewise.Client"),
+    @JsonSubTypes.Type(value = FeedDwell.class, name = "Relewise.Client.DataTypes.Feed.FeedDwell, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductEngagement.class, name = "Relewise.Client.DataTypes.ProductEngagement, Relewise.Client"),
+    @JsonSubTypes.Type(value = FeedItemPreview.class, name = "Relewise.Client.DataTypes.Feed.FeedItemPreview, Relewise.Client"),
+    @JsonSubTypes.Type(value = FeedItemClick.class, name = "Relewise.Client.DataTypes.Feed.FeedItemClick, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentEngagement.class, name = "Relewise.Client.DataTypes.ContentEngagement, Relewise.Client"),
+    @JsonSubTypes.Type(value = DisplayAdClick.class, name = "Relewise.Client.DataTypes.DisplayAdClick, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Trackable

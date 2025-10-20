@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = LocationsResponse.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LocationsResponse extends LocationLocationEntityStateEntityResponse
+public class LocationsResponse extends LocationUUIDLocationEntityStateEntityResponse
 {
     public String $type = "Relewise.Client.Responses.RetailMedia.LocationsResponse, Relewise.Client";
     public static LocationsResponse create(Location[] locations, Integer hits, HashMap<LocationEntityState, Integer> hitsPerState)

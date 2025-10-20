@@ -15,9 +15,15 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.EXISTING_PROPERTY,
+    property = "$type",
+    defaultImpl = SelectedProductPropertiesSettings.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SelectedProductPropertiesSettings
 {
+    public String $type = "Relewise.Client.Requests.Shared.SelectedProductPropertiesSettings, Relewise.Client";
     public Boolean displayName;
     public Boolean categoryPaths;
     public Boolean assortments;
@@ -33,6 +39,8 @@ public class SelectedProductPropertiesSettings
     public @Nullable FilteredVariantsSettings filteredVariants;
     /** Defines what <code>Score</code> properties will be included for the <code>Score</code>. */
     public @Nullable SelectedScorePropertiesSettings score;
+    /** Determines whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public Boolean userEngagement;
     public static SelectedProductPropertiesSettings create()
     {
         return new SelectedProductPropertiesSettings();
@@ -96,6 +104,11 @@ public class SelectedProductPropertiesSettings
     public @Nullable SelectedScorePropertiesSettings getScore()
     {
         return this.score;
+    }
+    /** Determines whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public Boolean getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public SelectedProductPropertiesSettings setDisplayName(Boolean displayName)
     {
@@ -180,6 +193,12 @@ public class SelectedProductPropertiesSettings
     public SelectedProductPropertiesSettings setScore(@Nullable SelectedScorePropertiesSettings score)
     {
         this.score = score;
+        return this;
+    }
+    /** Determines whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public SelectedProductPropertiesSettings setUserEngagement(Boolean userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

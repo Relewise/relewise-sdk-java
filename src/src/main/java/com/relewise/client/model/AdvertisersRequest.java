@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = AdvertisersRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AdvertisersRequest extends AdvertiserEntityStateAdvertiserMetadataValuesAdvertisersRequestSortByAdvertisersRequestEntityFiltersEntitiesRequest
+public class AdvertisersRequest extends AdvertiserEntityStateUUIDAdvertiserMetadataValuesAdvertisersRequestSortByAdvertisersRequestEntityFiltersEntitiesRequest
 {
     public String $type = "Relewise.Client.Requests.RetailMedia.AdvertisersRequest, Relewise.Client";
     public static AdvertisersRequest create(@Nullable AdvertisersRequestEntityFilters filters, @Nullable AdvertisersRequestSortBySorting sorting, Integer skip, Integer take)

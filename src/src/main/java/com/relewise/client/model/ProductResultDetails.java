@@ -41,6 +41,8 @@ public class ProductResultDetails
     public MultiCurrency salesPrice;
     public BrandResultDetails brand;
     public VariantResultDetails[] filteredVariants;
+    /** Contains engagement signals (sentiment and favorite state) recorded for the current user on this product. Populated only when the request sets <code>UserEngagement</code> to <code>true</code>. */
+    public @Nullable ProductEngagementData userEngagement;
     public static ProductResultDetails create(String productId)
     {
         return new ProductResultDetails(productId);
@@ -140,6 +142,11 @@ public class ProductResultDetails
     public VariantResultDetails[] getFilteredVariants()
     {
         return this.filteredVariants;
+    }
+    /** Contains engagement signals (sentiment and favorite state) recorded for the current user on this product. Populated only when the request sets <code>UserEngagement</code> to <code>true</code>. */
+    public @Nullable ProductEngagementData getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public ProductResultDetails setProductId(String productId)
     {
@@ -315,6 +322,12 @@ public class ProductResultDetails
             existingList.add(filteredVariant);
             this.filteredVariants = existingList.toArray(new VariantResultDetails[0]);
         }
+        return this;
+    }
+    /** Contains engagement signals (sentiment and favorite state) recorded for the current user on this product. Populated only when the request sets <code>UserEngagement</code> to <code>true</code>. */
+    public ProductResultDetails setUserEngagement(@Nullable ProductEngagementData userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

@@ -28,16 +28,18 @@ public class CampaignAnalyticsRequest extends LicensedRequest
     /** The campaign to provide analytics for. */
     public UUID id;
     public LocalDateTimeRange periodUtc;
-    public @Nullable FilterCollection filters;
-    public static CampaignAnalyticsRequest create(UUID id, LocalDateTimeRange periodUtc, @Nullable FilterCollection filters)
+    public @Nullable FilterCollection productFilters;
+    public @Nullable FilterCollection displayAdFilters;
+    public static CampaignAnalyticsRequest create(UUID id, LocalDateTimeRange periodUtc, @Nullable FilterCollection productFilters, @Nullable FilterCollection displayAdFilters)
     {
-        return new CampaignAnalyticsRequest(id, periodUtc, filters);
+        return new CampaignAnalyticsRequest(id, periodUtc, productFilters, displayAdFilters);
     }
-    public CampaignAnalyticsRequest(UUID id, LocalDateTimeRange periodUtc, @Nullable FilterCollection filters)
+    public CampaignAnalyticsRequest(UUID id, LocalDateTimeRange periodUtc, @Nullable FilterCollection productFilters, @Nullable FilterCollection displayAdFilters)
     {
         this.id = id;
         this.periodUtc = periodUtc;
-        this.filters = filters;
+        this.productFilters = productFilters;
+        this.displayAdFilters = displayAdFilters;
     }
     public CampaignAnalyticsRequest()
     {
@@ -51,9 +53,13 @@ public class CampaignAnalyticsRequest extends LicensedRequest
     {
         return this.periodUtc;
     }
-    public @Nullable FilterCollection getFilters()
+    public @Nullable FilterCollection getProductFilters()
     {
-        return this.filters;
+        return this.productFilters;
+    }
+    public @Nullable FilterCollection getDisplayAdFilters()
+    {
+        return this.displayAdFilters;
     }
     /** The campaign to provide analytics for. */
     public CampaignAnalyticsRequest setId(UUID id)
@@ -66,9 +72,14 @@ public class CampaignAnalyticsRequest extends LicensedRequest
         this.periodUtc = periodUtc;
         return this;
     }
-    public CampaignAnalyticsRequest setFilters(@Nullable FilterCollection filters)
+    public CampaignAnalyticsRequest setProductFilters(@Nullable FilterCollection productFilters)
     {
-        this.filters = filters;
+        this.productFilters = productFilters;
+        return this;
+    }
+    public CampaignAnalyticsRequest setDisplayAdFilters(@Nullable FilterCollection displayAdFilters)
+    {
+        this.displayAdFilters = displayAdFilters;
         return this;
     }
 }

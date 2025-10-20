@@ -27,6 +27,7 @@ public class LocationPlacement
     public @Nullable LocationPlacementVariationCollection variations;
     /** The minimum relevancy required by this <code>Placement</code> for results to be promoted. */
     public @Nullable ScoreThresholds thresholds;
+    public @Nullable FilterCollection displayAdTemplateFilters;
     public static LocationPlacement create(String name, @Nullable LocationPlacementVariationCollection variations)
     {
         return new LocationPlacement(name, variations);
@@ -67,6 +68,10 @@ public class LocationPlacement
     {
         return this.thresholds;
     }
+    public @Nullable FilterCollection getDisplayAdTemplateFilters()
+    {
+        return this.displayAdTemplateFilters;
+    }
     /** The name of this placement, e.g. "Top", "Bottom", "Right", "Overlay" etc. */
     public LocationPlacement setName(String name)
     {
@@ -89,6 +94,11 @@ public class LocationPlacement
     public LocationPlacement setThresholds(@Nullable ScoreThresholds thresholds)
     {
         this.thresholds = thresholds;
+        return this;
+    }
+    public LocationPlacement setDisplayAdTemplateFilters(@Nullable FilterCollection displayAdTemplateFilters)
+    {
+        this.displayAdTemplateFilters = displayAdTemplateFilters;
         return this;
     }
 }

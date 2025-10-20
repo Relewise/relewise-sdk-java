@@ -29,6 +29,8 @@ public class OverriddenSelectedProductPropertiesSettings
     public @Nullable Boolean allVariants;
     public String[] dataKeys;
     public @Nullable SelectedScorePropertiesSettings score;
+    /** When set, overrides whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public @Nullable Boolean userEngagement;
     public static OverriddenSelectedProductPropertiesSettings create()
     {
         return new OverriddenSelectedProductPropertiesSettings();
@@ -79,6 +81,11 @@ public class OverriddenSelectedProductPropertiesSettings
     public @Nullable SelectedScorePropertiesSettings getScore()
     {
         return this.score;
+    }
+    /** When set, overrides whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public @Nullable Boolean getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public OverriddenSelectedProductPropertiesSettings setDisplayName(@Nullable Boolean displayName)
     {
@@ -147,6 +154,12 @@ public class OverriddenSelectedProductPropertiesSettings
     public OverriddenSelectedProductPropertiesSettings setScore(@Nullable SelectedScorePropertiesSettings score)
     {
         this.score = score;
+        return this;
+    }
+    /** When set, overrides whether <code>UserEngagement</code> should be populated when results are mapped. */
+    public OverriddenSelectedProductPropertiesSettings setUserEngagement(@Nullable Boolean userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

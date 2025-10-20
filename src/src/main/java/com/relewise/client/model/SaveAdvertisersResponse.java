@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = SaveAdvertisersResponse.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SaveAdvertisersResponse extends AdvertiserSaveEntitiesResponse
+public class SaveAdvertisersResponse extends AdvertiserUUIDSaveEntitiesResponse
 {
     public String $type = "Relewise.Client.Responses.RetailMedia.SaveAdvertisersResponse, Relewise.Client";
     public static SaveAdvertisersResponse create(Advertiser... advertisers)

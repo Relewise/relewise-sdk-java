@@ -30,6 +30,8 @@ public class ContentResultDetails
     public Integer viewedByDifferentNumberOfUsers;
     public Boolean disabled;
     public Boolean deleted;
+    /** Contains engagement signals (sentiment and favorite state) recorded for the current user on this content item. Populated only when the request sets <code>UserEngagement</code> to <code>true</code>. */
+    public @Nullable ContentEngagementData userEngagement;
     public static ContentResultDetails create(String contentId)
     {
         return new ContentResultDetails(contentId);
@@ -88,6 +90,11 @@ public class ContentResultDetails
     public Boolean getDeleted()
     {
         return this.deleted;
+    }
+    /** Contains engagement signals (sentiment and favorite state) recorded for the current user on this content item. Populated only when the request sets <code>UserEngagement</code> to <code>true</code>. */
+    public @Nullable ContentEngagementData getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public ContentResultDetails setContentId(String contentId)
     {
@@ -184,6 +191,12 @@ public class ContentResultDetails
     public ContentResultDetails setDeleted(Boolean deleted)
     {
         this.deleted = deleted;
+        return this;
+    }
+    /** Contains engagement signals (sentiment and favorite state) recorded for the current user on this content item. Populated only when the request sets <code>UserEngagement</code> to <code>true</code>. */
+    public ContentResultDetails setUserEngagement(@Nullable ContentEngagementData userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

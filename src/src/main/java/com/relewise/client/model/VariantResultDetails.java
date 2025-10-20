@@ -26,6 +26,8 @@ public class VariantResultDetails
     public MultiCurrency listPrice;
     public MultiCurrency salesPrice;
     public Boolean disabled;
+    /** Contains engagement signals (sentiment and favorite state) recorded for the current user on this variant. Populated only when the request sets <code>UserEngagement</code> to <code>true</code>. */
+    public @Nullable ProductEngagementData userEngagement;
     public static VariantResultDetails create(String variantId)
     {
         return new VariantResultDetails(variantId);
@@ -68,6 +70,11 @@ public class VariantResultDetails
     public Boolean getDisabled()
     {
         return this.disabled;
+    }
+    /** Contains engagement signals (sentiment and favorite state) recorded for the current user on this variant. Populated only when the request sets <code>UserEngagement</code> to <code>true</code>. */
+    public @Nullable ProductEngagementData getUserEngagement()
+    {
+        return this.userEngagement;
     }
     public VariantResultDetails setVariantId(String variantId)
     {
@@ -139,6 +146,12 @@ public class VariantResultDetails
     public VariantResultDetails setDisabled(Boolean disabled)
     {
         this.disabled = disabled;
+        return this;
+    }
+    /** Contains engagement signals (sentiment and favorite state) recorded for the current user on this variant. Populated only when the request sets <code>UserEngagement</code> to <code>true</code>. */
+    public VariantResultDetails setUserEngagement(@Nullable ProductEngagementData userEngagement)
+    {
+        this.userEngagement = userEngagement;
         return this;
     }
 }

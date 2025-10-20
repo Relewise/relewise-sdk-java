@@ -90,6 +90,12 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = ProductHasCategoriesFilter.class, name = "Relewise.Client.Requests.Filters.ProductHasCategoriesFilter, Relewise.Client"),
     @JsonSubTypes.Type(value = ContentHasCategoriesFilter.class, name = "Relewise.Client.Requests.Filters.ContentHasCategoriesFilter, Relewise.Client"),
     @JsonSubTypes.Type(value = ProductInCartFilter.class, name = "Relewise.Client.Requests.Filters.ProductInCartFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = DisplayAdIdFilter.class, name = "Relewise.Client.Requests.Filters.DisplayAdIdFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = DisplayAdDataFilter.class, name = "Relewise.Client.Requests.Filters.DisplayAdDataFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = DisplayAdTemplateIdFilter.class, name = "Relewise.Client.Requests.Filters.DisplayAdTemplateIdFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ProductEngagementFilter.class, name = "Relewise.Client.Requests.Filters.ProductEngagementFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = ContentEngagementFilter.class, name = "Relewise.Client.Requests.Filters.ContentEngagementFilter, Relewise.Client"),
+    @JsonSubTypes.Type(value = VariantEngagementFilter.class, name = "Relewise.Client.Requests.Filters.VariantEngagementFilter, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Filter

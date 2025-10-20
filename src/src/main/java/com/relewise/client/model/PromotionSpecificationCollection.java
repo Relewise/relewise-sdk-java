@@ -19,6 +19,7 @@ import java.util.HashSet;
 public class PromotionSpecificationCollection
 {
     public @Nullable ProductPromotionSpecification productPromotion;
+    public @Nullable DisplayAdPromotionSpecification displayAdPromotion;
     public static PromotionSpecificationCollection create()
     {
         return new PromotionSpecificationCollection();
@@ -30,9 +31,18 @@ public class PromotionSpecificationCollection
     {
         return this.productPromotion;
     }
+    public @Nullable DisplayAdPromotionSpecification getDisplayAdPromotion()
+    {
+        return this.displayAdPromotion;
+    }
     public PromotionSpecificationCollection setProductPromotion(@Nullable ProductPromotionSpecification productPromotion)
     {
         this.productPromotion = productPromotion;
+        return this;
+    }
+    public PromotionSpecificationCollection setDisplayAdPromotion(@Nullable DisplayAdPromotionSpecification displayAdPromotion)
+    {
+        this.displayAdPromotion = displayAdPromotion;
         return this;
     }
 }

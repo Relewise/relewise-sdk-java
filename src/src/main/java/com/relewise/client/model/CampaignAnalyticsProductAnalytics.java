@@ -22,7 +22,7 @@ public class CampaignAnalyticsProductAnalytics
     public CampaignAnalyticsProductAnalyticsPeriodMetrics[] timeSeries;
     /** Number of times products are being promoted by the <code>Campaign</code>. */
     public Integer promotions;
-    /** How many times each individual product was promoted. */
+    /** How many times each product was promoted. */
     public CampaignAnalyticsProductAnalyticsPromotedProductMetrics[] promotedProducts;
     public static CampaignAnalyticsProductAnalytics create(CampaignAnalyticsProductAnalyticsPeriodMetrics[] timeSeries, Integer promotions, CampaignAnalyticsProductAnalyticsPromotedProductMetrics... promotedProducts)
     {
@@ -46,7 +46,7 @@ public class CampaignAnalyticsProductAnalytics
     {
         return this.promotions;
     }
-    /** How many times each individual product was promoted. */
+    /** How many times each product was promoted. */
     public CampaignAnalyticsProductAnalyticsPromotedProductMetrics[] getPromotedProducts()
     {
         return this.promotedProducts;
@@ -76,13 +76,13 @@ public class CampaignAnalyticsProductAnalytics
         this.promotions = promotions;
         return this;
     }
-    /** How many times each individual product was promoted. */
+    /** How many times each product was promoted. */
     public CampaignAnalyticsProductAnalytics setPromotedProducts(CampaignAnalyticsProductAnalyticsPromotedProductMetrics... promotedProducts)
     {
         this.promotedProducts = promotedProducts;
         return this;
     }
-    /** How many times each individual product was promoted. */
+    /** How many times each product was promoted. */
     public CampaignAnalyticsProductAnalytics addToPromotedProducts(CampaignAnalyticsProductAnalyticsPromotedProductMetrics promotedProduct)
     {
         if (this.promotedProducts == null)

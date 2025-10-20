@@ -24,7 +24,7 @@ import java.util.HashSet;
 public class CampaignCampaignConditions extends RetailMediaConditions
 {
     public String $type = "Relewise.Client.DataTypes.RetailMedia.Campaign+CampaignConditions, Relewise.Client";
-    public @Nullable RetailMediaSearchTermConditionCollection searchTerm;
+    public @Nullable SearchTermConditionByLanguageCollection searchTerm;
     public static CampaignCampaignConditions create()
     {
         return new CampaignCampaignConditions();
@@ -32,11 +32,11 @@ public class CampaignCampaignConditions extends RetailMediaConditions
     public CampaignCampaignConditions()
     {
     }
-    public @Nullable RetailMediaSearchTermConditionCollection getSearchTerm()
+    public @Nullable SearchTermConditionByLanguageCollection getSearchTerm()
     {
         return this.searchTerm;
     }
-    public CampaignCampaignConditions setSearchTerm(@Nullable RetailMediaSearchTermConditionCollection searchTerm)
+    public CampaignCampaignConditions setSearchTerm(@Nullable SearchTermConditionByLanguageCollection searchTerm)
     {
         this.searchTerm = searchTerm;
         return this;

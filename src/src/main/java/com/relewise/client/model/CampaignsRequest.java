@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = CampaignsRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CampaignsRequest extends CampaignEntityStateCampaignMetadataValuesCampaignsRequestSortByCampaignsRequestEntityFiltersEntitiesRequest
+public class CampaignsRequest extends CampaignEntityStateUUIDCampaignMetadataValuesCampaignsRequestSortByCampaignsRequestEntityFiltersEntitiesRequest
 {
     public String $type = "Relewise.Client.Requests.RetailMedia.CampaignsRequest, Relewise.Client";
     public static CampaignsRequest create(@Nullable CampaignsRequestEntityFilters filters, @Nullable CampaignsRequestSortBySorting sorting, Integer skip, Integer take)

@@ -24,7 +24,8 @@ import java.util.HashSet;
 public class ProductPromotionPromotionConditions extends RetailMediaConditions
 {
     public String $type = "Relewise.Client.DataTypes.RetailMedia.ProductPromotion+PromotionConditions, Relewise.Client";
-    public @Nullable RetailMediaSearchTermConditionCollection searchTerm;
+    public @Nullable SearchTermConditionByLanguageCollection searchTerm;
+    public @Nullable RequestFilterCriteria requestFilters;
     public static ProductPromotionPromotionConditions create()
     {
         return new ProductPromotionPromotionConditions();
@@ -32,13 +33,22 @@ public class ProductPromotionPromotionConditions extends RetailMediaConditions
     public ProductPromotionPromotionConditions()
     {
     }
-    public @Nullable RetailMediaSearchTermConditionCollection getSearchTerm()
+    public @Nullable SearchTermConditionByLanguageCollection getSearchTerm()
     {
         return this.searchTerm;
     }
-    public ProductPromotionPromotionConditions setSearchTerm(@Nullable RetailMediaSearchTermConditionCollection searchTerm)
+    public @Nullable RequestFilterCriteria getRequestFilters()
+    {
+        return this.requestFilters;
+    }
+    public ProductPromotionPromotionConditions setSearchTerm(@Nullable SearchTermConditionByLanguageCollection searchTerm)
     {
         this.searchTerm = searchTerm;
+        return this;
+    }
+    public ProductPromotionPromotionConditions setRequestFilters(@Nullable RequestFilterCriteria requestFilters)
+    {
+        this.requestFilters = requestFilters;
         return this;
     }
 }

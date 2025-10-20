@@ -46,6 +46,8 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = PopularContentCategoriesRecommendationRequest.class, name = "Relewise.Client.Requests.Recommendations.PopularContentCategoriesRecommendationRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = PersonalContentCategoryRecommendationRequest.class, name = "Relewise.Client.Requests.Recommendations.PersonalContentCategoryRecommendationRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = PersonalBrandRecommendationRequest.class, name = "Relewise.Client.Requests.Recommendations.PersonalBrandRecommendationRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = FeedRecommendationInitializationRequest.class, name = "Relewise.Client.Requests.Recommendations.Feed.FeedRecommendationInitializationRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = FeedRecommendationNextItemsRequest.class, name = "Relewise.Client.Requests.Recommendations.Feed.FeedRecommendationNextItemsRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class RecommendationRequest extends LicensedRequest implements IUserIdentifier
