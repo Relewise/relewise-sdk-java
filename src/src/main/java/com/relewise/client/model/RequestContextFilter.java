@@ -24,7 +24,9 @@ public class RequestContextFilter
     public ArrayList<Language> languages;
     public ArrayList<Currency> currencies;
     public RequestFilterCriteria filters;
+    /** @deprecated Use SearchTermCriteria instead */
     public @Nullable SearchTermConditionByLanguageCollection searchTerms;
+    public @Nullable SearchTermCriteria searchTermCriteria;
     public static RequestContextFilter create()
     {
         return new RequestContextFilter();
@@ -56,9 +58,14 @@ public class RequestContextFilter
     {
         return this.filters;
     }
+    /** @deprecated Use SearchTermCriteria instead */
     public @Nullable SearchTermConditionByLanguageCollection getSearchTerms()
     {
         return this.searchTerms;
+    }
+    public @Nullable SearchTermCriteria getSearchTermCriteria()
+    {
+        return this.searchTermCriteria;
     }
     public RequestContextFilter setRecommendations(RecommendationTypeCollection recommendations)
     {
@@ -117,9 +124,15 @@ public class RequestContextFilter
         this.filters = filters;
         return this;
     }
+    /** @deprecated Use SearchTermCriteria instead */
     public RequestContextFilter setSearchTerms(@Nullable SearchTermConditionByLanguageCollection searchTerms)
     {
         this.searchTerms = searchTerms;
+        return this;
+    }
+    public RequestContextFilter setSearchTermCriteria(@Nullable SearchTermCriteria searchTermCriteria)
+    {
+        this.searchTermCriteria = searchTermCriteria;
         return this;
     }
 }

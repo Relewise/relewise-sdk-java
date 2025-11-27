@@ -22,6 +22,7 @@ public class CampaignAnalyticsDisplayAdAnalyticsPromotedDisplayAdMetrics
     public Integer promotions;
     public Integer lastClickedUnixMinutes;
     public Integer numberOfTimesClicked;
+    public DisplayAdResult displayAd;
     public static CampaignAnalyticsDisplayAdAnalyticsPromotedDisplayAdMetrics create(String displayAdId, Integer promotions, Integer lastClickedUnixMinutes, Integer numberOfTimesClicked)
     {
         return new CampaignAnalyticsDisplayAdAnalyticsPromotedDisplayAdMetrics(displayAdId, promotions, lastClickedUnixMinutes, numberOfTimesClicked);
@@ -52,6 +53,10 @@ public class CampaignAnalyticsDisplayAdAnalyticsPromotedDisplayAdMetrics
     {
         return this.numberOfTimesClicked;
     }
+    public DisplayAdResult getDisplayAd()
+    {
+        return this.displayAd;
+    }
     public CampaignAnalyticsDisplayAdAnalyticsPromotedDisplayAdMetrics setDisplayAdId(String displayAdId)
     {
         this.displayAdId = displayAdId;
@@ -70,6 +75,11 @@ public class CampaignAnalyticsDisplayAdAnalyticsPromotedDisplayAdMetrics
     public CampaignAnalyticsDisplayAdAnalyticsPromotedDisplayAdMetrics setNumberOfTimesClicked(Integer numberOfTimesClicked)
     {
         this.numberOfTimesClicked = numberOfTimesClicked;
+        return this;
+    }
+    public CampaignAnalyticsDisplayAdAnalyticsPromotedDisplayAdMetrics setDisplayAd(DisplayAdResult displayAd)
+    {
+        this.displayAd = displayAd;
         return this;
     }
 }

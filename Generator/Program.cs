@@ -37,10 +37,10 @@ javaWriter.WriteTypes(assembly
 
 var javaClientWriter = new JavaClientWriter(javaWriter);
 
-javaClientWriter.GenerateClientClass(typeof(Tracker), new[] { "Track" });
-javaClientWriter.GenerateClientClass(typeof(Searcher), new[] { "Search", "Predict", "Batch" });
-javaClientWriter.GenerateClientClass(typeof(Recommender), new[] { "Recommend" });
-javaClientWriter.GenerateClientClass(typeof(SearchAdministrator), new[] { "Delete", "Save", "Load" });
+javaClientWriter.GenerateClientClass(typeof(Tracker), ["Track"]);
+javaClientWriter.GenerateClientClass(typeof(Searcher), ["Search", "Predict", "Batch"]);
+javaClientWriter.GenerateClientClass(typeof(Recommender), ["Recommend"]);
+javaClientWriter.GenerateClientClass(typeof(SearchAdministrator), ["Delete", "Save", "Load"]);
 
 if (javaWriter.MissingTypeDefinitions.Count > 0)
 {

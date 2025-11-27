@@ -22,16 +22,18 @@ public class CampaignAnalyticsProductAnalyticsPeriodMetrics
     public Integer views;
     public Integer salesQuantity;
     public CampaignAnalyticsProductAnalyticsPeriodMetricsCurrencyMetrics[] currencies;
-    public static CampaignAnalyticsProductAnalyticsPeriodMetrics create(OffsetDateTime periodFromUtc, Integer views, Integer salesQuantity, CampaignAnalyticsProductAnalyticsPeriodMetricsCurrencyMetrics... currencies)
+    public Integer promotions;
+    public static CampaignAnalyticsProductAnalyticsPeriodMetrics create(OffsetDateTime periodFromUtc, Integer views, Integer salesQuantity, CampaignAnalyticsProductAnalyticsPeriodMetricsCurrencyMetrics[] currencies, Integer promotions)
     {
-        return new CampaignAnalyticsProductAnalyticsPeriodMetrics(periodFromUtc, views, salesQuantity, currencies);
+        return new CampaignAnalyticsProductAnalyticsPeriodMetrics(periodFromUtc, views, salesQuantity, currencies, promotions);
     }
-    public CampaignAnalyticsProductAnalyticsPeriodMetrics(OffsetDateTime periodFromUtc, Integer views, Integer salesQuantity, CampaignAnalyticsProductAnalyticsPeriodMetricsCurrencyMetrics... currencies)
+    public CampaignAnalyticsProductAnalyticsPeriodMetrics(OffsetDateTime periodFromUtc, Integer views, Integer salesQuantity, CampaignAnalyticsProductAnalyticsPeriodMetricsCurrencyMetrics[] currencies, Integer promotions)
     {
         this.periodFromUtc = periodFromUtc;
         this.views = views;
         this.salesQuantity = salesQuantity;
         this.currencies = currencies;
+        this.promotions = promotions;
     }
     public CampaignAnalyticsProductAnalyticsPeriodMetrics()
     {
@@ -51,6 +53,10 @@ public class CampaignAnalyticsProductAnalyticsPeriodMetrics
     public CampaignAnalyticsProductAnalyticsPeriodMetricsCurrencyMetrics[] getCurrencies()
     {
         return this.currencies;
+    }
+    public Integer getPromotions()
+    {
+        return this.promotions;
     }
     public CampaignAnalyticsProductAnalyticsPeriodMetrics setPeriodFromUtc(OffsetDateTime periodFromUtc)
     {
@@ -84,6 +90,11 @@ public class CampaignAnalyticsProductAnalyticsPeriodMetrics
             existingList.add(currency);
             this.currencies = existingList.toArray(new CampaignAnalyticsProductAnalyticsPeriodMetricsCurrencyMetrics[0]);
         }
+        return this;
+    }
+    public CampaignAnalyticsProductAnalyticsPeriodMetrics setPromotions(Integer promotions)
+    {
+        this.promotions = promotions;
         return this;
     }
 }

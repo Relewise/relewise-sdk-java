@@ -31,19 +31,16 @@ public class Location extends LocationEntityStateUUIDLocationMetadataValuesRetai
     public @Nullable String key;
     /** The placements where promotions may be displayed at this location If <code>null</code> or empty, no promotions will be shown at this location */
     public @Nullable LocationPlacementCollection placements;
-    /** Defines what kinds of promotions are supported by this location */
-    public @Nullable PromotionSpecificationCollection supportedPromotions;
-    public static Location create(@Nullable UUID id, LocationEntityState state, String name, LocationPlacementCollection placements, @Nullable PromotionSpecificationCollection supportedPromotions)
+    public static Location create(@Nullable UUID id, LocationEntityState state, String name, LocationPlacementCollection placements)
     {
-        return new Location(id, state, name, placements, supportedPromotions);
+        return new Location(id, state, name, placements);
     }
-    public Location(@Nullable UUID id, LocationEntityState state, String name, LocationPlacementCollection placements, @Nullable PromotionSpecificationCollection supportedPromotions)
+    public Location(@Nullable UUID id, LocationEntityState state, String name, LocationPlacementCollection placements)
     {
         this.id = id;
         this.state = state;
         this.name = name;
         this.placements = placements;
-        this.supportedPromotions = supportedPromotions;
     }
     public static Location create(@Nullable UUID id, LocationEntityState state, String name)
     {
@@ -73,11 +70,6 @@ public class Location extends LocationEntityStateUUIDLocationMetadataValuesRetai
     {
         return this.placements;
     }
-    /** Defines what kinds of promotions are supported by this location */
-    public @Nullable PromotionSpecificationCollection getSupportedPromotions()
-    {
-        return this.supportedPromotions;
-    }
     /** The name of this location, e.g. "Front page", "PDP", "Home screen" etc. */
     public Location setName(String name)
     {
@@ -94,12 +86,6 @@ public class Location extends LocationEntityStateUUIDLocationMetadataValuesRetai
     public Location setPlacements(@Nullable LocationPlacementCollection placements)
     {
         this.placements = placements;
-        return this;
-    }
-    /** Defines what kinds of promotions are supported by this location */
-    public Location setSupportedPromotions(@Nullable PromotionSpecificationCollection supportedPromotions)
-    {
-        this.supportedPromotions = supportedPromotions;
         return this;
     }
     @Override

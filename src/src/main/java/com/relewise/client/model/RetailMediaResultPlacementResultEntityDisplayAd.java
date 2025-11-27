@@ -19,6 +19,7 @@ import java.util.HashSet;
 public class RetailMediaResultPlacementResultEntityDisplayAd
 {
     public DisplayAdResult result;
+    public UUID campaignId;
     public static RetailMediaResultPlacementResultEntityDisplayAd create()
     {
         return new RetailMediaResultPlacementResultEntityDisplayAd();
@@ -30,9 +31,18 @@ public class RetailMediaResultPlacementResultEntityDisplayAd
     {
         return this.result;
     }
+    public UUID getCampaignId()
+    {
+        return this.campaignId;
+    }
     public RetailMediaResultPlacementResultEntityDisplayAd setResult(DisplayAdResult result)
     {
         this.result = result;
+        return this;
+    }
+    public RetailMediaResultPlacementResultEntityDisplayAd setCampaignId(UUID campaignId)
+    {
+        this.campaignId = campaignId;
         return this;
     }
 }

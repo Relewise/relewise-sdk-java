@@ -19,16 +19,16 @@ import java.util.HashSet;
 public class CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics
 {
     public OffsetDateTime periodFromUtc;
-    public Integer views;
+    public Integer promotions;
     public Integer clicks;
-    public static CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics create(OffsetDateTime periodFromUtc, Integer views, Integer clicks)
+    public static CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics create(OffsetDateTime periodFromUtc, Integer promotions, Integer clicks)
     {
-        return new CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics(periodFromUtc, views, clicks);
+        return new CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics(periodFromUtc, promotions, clicks);
     }
-    public CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics(OffsetDateTime periodFromUtc, Integer views, Integer clicks)
+    public CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics(OffsetDateTime periodFromUtc, Integer promotions, Integer clicks)
     {
         this.periodFromUtc = periodFromUtc;
-        this.views = views;
+        this.promotions = promotions;
         this.clicks = clicks;
     }
     public CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics()
@@ -38,9 +38,9 @@ public class CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics
     {
         return this.periodFromUtc;
     }
-    public Integer getViews()
+    public Integer getPromotions()
     {
-        return this.views;
+        return this.promotions;
     }
     public Integer getClicks()
     {
@@ -51,9 +51,9 @@ public class CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics
         this.periodFromUtc = periodFromUtc;
         return this;
     }
-    public CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics setViews(Integer views)
+    public CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics setPromotions(Integer promotions)
     {
-        this.views = views;
+        this.promotions = promotions;
         return this;
     }
     public CampaignAnalyticsDisplayAdAnalyticsPeriodMetrics setClicks(Integer clicks)
