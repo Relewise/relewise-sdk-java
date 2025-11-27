@@ -14,16 +14,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
-    
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type")
-@JsonSubTypes({
-    @JsonSubTypes.Type(value = ProductPromotionSpecification.class, name = "Relewise.Client.DataTypes.RetailMedia.ProductPromotion+Specification, Relewise.Client"),
-})
-@JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class PromotionSpecification
+
+public enum SearchTermCriteriaSearchTermPolicy
 {
-    public String $type = "";
+    MustHaveSearchTerm {
+        public String toString() {
+            return "MustHaveSearchTerm";
+        }
+    },
+    MustNotHaveSearchTerm {
+        public String toString() {
+            return "MustNotHaveSearchTerm";
+        }
+    },
 }

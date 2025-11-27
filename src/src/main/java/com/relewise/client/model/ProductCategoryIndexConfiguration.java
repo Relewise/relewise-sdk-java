@@ -37,4 +37,19 @@ public class ProductCategoryIndexConfiguration extends CategoryIndexConfiguratio
         this.unspecified = unspecified;
         return this;
     }
+    public ProductCategoryIndexConfiguration addToByScope(CategoryScope key, CategoryIndexConfigurationEntry value)
+    {
+        if (this.byScope == null)
+        {
+            this.byScope = new HashMap<>();
+        }
+        this.byScope.put(key, value);
+        return this;
+    }
+    @Override
+    public ProductCategoryIndexConfiguration setByScope(@Nullable HashMap<CategoryScope, CategoryIndexConfigurationEntry> byScope)
+    {
+        this.byScope = byScope;
+        return this;
+    }
 }

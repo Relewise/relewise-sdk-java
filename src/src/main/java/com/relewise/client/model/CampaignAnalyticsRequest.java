@@ -30,6 +30,10 @@ public class CampaignAnalyticsRequest extends LicensedRequest
     public LocalDateTimeRange periodUtc;
     public @Nullable FilterCollection productFilters;
     public @Nullable FilterCollection displayAdFilters;
+    public @Nullable Language language;
+    public @Nullable Currency currency;
+    public @Nullable SelectedProductPropertiesSettings selectedProductProperties;
+    public @Nullable SelectedDisplayAdPropertiesSettings selectedDisplayAdProperties;
     public static CampaignAnalyticsRequest create(UUID id, LocalDateTimeRange periodUtc, @Nullable FilterCollection productFilters, @Nullable FilterCollection displayAdFilters)
     {
         return new CampaignAnalyticsRequest(id, periodUtc, productFilters, displayAdFilters);
@@ -61,6 +65,22 @@ public class CampaignAnalyticsRequest extends LicensedRequest
     {
         return this.displayAdFilters;
     }
+    public @Nullable Language getLanguage()
+    {
+        return this.language;
+    }
+    public @Nullable Currency getCurrency()
+    {
+        return this.currency;
+    }
+    public @Nullable SelectedProductPropertiesSettings getSelectedProductProperties()
+    {
+        return this.selectedProductProperties;
+    }
+    public @Nullable SelectedDisplayAdPropertiesSettings getSelectedDisplayAdProperties()
+    {
+        return this.selectedDisplayAdProperties;
+    }
     /** The campaign to provide analytics for. */
     public CampaignAnalyticsRequest setId(UUID id)
     {
@@ -80,6 +100,26 @@ public class CampaignAnalyticsRequest extends LicensedRequest
     public CampaignAnalyticsRequest setDisplayAdFilters(@Nullable FilterCollection displayAdFilters)
     {
         this.displayAdFilters = displayAdFilters;
+        return this;
+    }
+    public CampaignAnalyticsRequest setLanguage(@Nullable Language language)
+    {
+        this.language = language;
+        return this;
+    }
+    public CampaignAnalyticsRequest setCurrency(@Nullable Currency currency)
+    {
+        this.currency = currency;
+        return this;
+    }
+    public CampaignAnalyticsRequest setSelectedProductProperties(@Nullable SelectedProductPropertiesSettings selectedProductProperties)
+    {
+        this.selectedProductProperties = selectedProductProperties;
+        return this;
+    }
+    public CampaignAnalyticsRequest setSelectedDisplayAdProperties(@Nullable SelectedDisplayAdPropertiesSettings selectedDisplayAdProperties)
+    {
+        this.selectedDisplayAdProperties = selectedDisplayAdProperties;
         return this;
     }
 }

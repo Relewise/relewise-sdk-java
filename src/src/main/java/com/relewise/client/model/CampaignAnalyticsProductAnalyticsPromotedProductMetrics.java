@@ -20,6 +20,7 @@ public class CampaignAnalyticsProductAnalyticsPromotedProductMetrics
 {
     public String productId;
     public Integer promotions;
+    public ProductResult product;
     public static CampaignAnalyticsProductAnalyticsPromotedProductMetrics create(String productId, Integer promotions)
     {
         return new CampaignAnalyticsProductAnalyticsPromotedProductMetrics(productId, promotions);
@@ -40,6 +41,10 @@ public class CampaignAnalyticsProductAnalyticsPromotedProductMetrics
     {
         return this.promotions;
     }
+    public ProductResult getProduct()
+    {
+        return this.product;
+    }
     public CampaignAnalyticsProductAnalyticsPromotedProductMetrics setProductId(String productId)
     {
         this.productId = productId;
@@ -48,6 +53,11 @@ public class CampaignAnalyticsProductAnalyticsPromotedProductMetrics
     public CampaignAnalyticsProductAnalyticsPromotedProductMetrics setPromotions(Integer promotions)
     {
         this.promotions = promotions;
+        return this;
+    }
+    public CampaignAnalyticsProductAnalyticsPromotedProductMetrics setProduct(ProductResult product)
+    {
+        this.product = product;
         return this;
     }
 }
