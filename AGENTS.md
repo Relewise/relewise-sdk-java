@@ -16,6 +16,12 @@ The repository is a Java SDK with generated client/models and Maven-based build/
 - `PUBLISH.md`: release workflow and troubleshooting notes.
 - `openapitools.json`, `swagger.json`: generation/reference assets.
 
+## Repository Skills
+- `update-sdk`:
+  - Location: `.agents/skills/update-sdk/SKILL.md`
+  - Use when asked to regenerate generated SDK code from `Generator`.
+  - This skill enforces Trello URL pre-requisite, clean-main preflight checks, timestamped chore branch creation, validation commands, and Trello-first PR descriptions.
+
 ## Core Working Conventions
 - Run generation scripts from repository root.
 - Run Maven commands against `src/pom.xml`.
@@ -84,6 +90,15 @@ mvn --batch-mode test --file src/pom.xml
 - Required for release/publish changes:
   - Validate relevant release-profile commands as appropriate.
   - Follow `PUBLISH.md` as source of truth for release operations.
+
+## SDK Update Guidance
+For generation-driven SDK refresh tasks, prefer using the `update-sdk` skill:
+
+```text
+$update-sdk
+```
+
+Use `update-sdk` when the goal is regenerating Java SDK code and opening a branch/PR flow tied to a Trello card.
 
 ## PR Expectations
 Each PR should include:
