@@ -20,12 +20,12 @@ import java.util.HashSet;
     include = JsonTypeInfo.As.EXISTING_PROPERTY,
     property = "$type")
 @JsonSubTypes({
-    @JsonSubTypes.Type(value = DataDoubleSelector.class, name = "Relewise.Client.Requests.ValueSelectors.DataDoubleSelector, Relewise.Client"),
-    @JsonSubTypes.Type(value = FixedDoubleValueSelector.class, name = "Relewise.Client.Requests.ValueSelectors.FixedDoubleValueSelector, Relewise.Client"),
-    @JsonSubTypes.Type(value = DataObjectDoubleSelector.class, name = "Relewise.Client.Requests.ValueSelectors.DataObjectDoubleSelector, Relewise.Client"),
+    @JsonSubTypes.Type(value = UserAdministrativeActionDeleteUser.class, name = "Relewise.Client.DataTypes.UserAdministrativeAction+DeleteUser, Relewise.Client"),
+    @JsonSubTypes.Type(value = UserAdministrativeActionRemoveClassifications.class, name = "Relewise.Client.DataTypes.UserAdministrativeAction+RemoveClassifications, Relewise.Client"),
+    @JsonSubTypes.Type(value = UserAdministrativeActionRemoveIdentifiers.class, name = "Relewise.Client.DataTypes.UserAdministrativeAction+RemoveIdentifiers, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class ValueSelector
+public abstract class UserAdministrativeActionUpdateAction
 {
     public String $type = "";
 }

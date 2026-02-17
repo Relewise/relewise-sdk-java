@@ -33,12 +33,16 @@ public class FeedComposition
     public @Nullable String name;
     /** Determines whether to include empty results for this composition element. Useful in combination with <code>Name</code> if you need to show a placeholder or alternative content when no results are found for this composition element. The default is false, meaning empty results will not be included in recommendation responses. */
     public Boolean includeEmptyResults;
-    /** If specified, this composition will only be included in the rotation the specified number of times. Any subsequent rotations will exclude this composition element. */
+    /** If specified, this composition will only be included in the rotation the specified number of times. Any subsequent rotations will exclude this composition element. Leave null to apply no limit. */
     public @Nullable Integer rotationLimit;
+    /** If specified (minimum 1), this composition will only be included in the rotation the specified number of times per request. Any subsequent rotations within the same request will exclude this composition element. Leave null to apply no per-request limit. */
+    public @Nullable Integer rotationLimitPerRequest;
+    /** If true, the entire composition element will be skipped if the requested count cannot be met. Example: If true: Requesting 3-5 results, but only 2 are available, then those 2 will be dropped as the lower bound of 3 cannot be met. Example: If false (default): Requesting 3-5 results, but only 2 are available, then those 2 will still be returned. */
+    public Boolean skipEntirelyIfUnableToMeetCount;
     /**
      * Initializes a new instance of the <code>FeedComposition</code> class.
      * @param type The type of the entity represented by this composition element.
-     * @param count The desired range of counts for the entity. The lower bound must be greater than or equal to 0, and the upper bound must be greater than or equal to the lower bound.
+     * @param count The desired range of counts for the entity. The lower bound must be greater than or equal to 0, and the upper bound must be at least 1 and greater than or equal to the lower bound.
      */
     public static FeedComposition create(FeedCompositionEntityType type, IntegerRange count)
     {
@@ -47,7 +51,7 @@ public class FeedComposition
     /**
      * Initializes a new instance of the <code>FeedComposition</code> class.
      * @param type The type of the entity represented by this composition element.
-     * @param count The desired range of counts for the entity. The lower bound must be greater than or equal to 0, and the upper bound must be greater than or equal to the lower bound.
+     * @param count The desired range of counts for the entity. The lower bound must be greater than or equal to 0, and the upper bound must be at least 1 and greater than or equal to the lower bound.
      */
     public FeedComposition(FeedCompositionEntityType type, IntegerRange count)
     {
@@ -92,10 +96,20 @@ public class FeedComposition
     {
         return this.includeEmptyResults;
     }
-    /** If specified, this composition will only be included in the rotation the specified number of times. Any subsequent rotations will exclude this composition element. */
+    /** If specified, this composition will only be included in the rotation the specified number of times. Any subsequent rotations will exclude this composition element. Leave null to apply no limit. */
     public @Nullable Integer getRotationLimit()
     {
         return this.rotationLimit;
+    }
+    /** If specified (minimum 1), this composition will only be included in the rotation the specified number of times per request. Any subsequent rotations within the same request will exclude this composition element. Leave null to apply no per-request limit. */
+    public @Nullable Integer getRotationLimitPerRequest()
+    {
+        return this.rotationLimitPerRequest;
+    }
+    /** If true, the entire composition element will be skipped if the requested count cannot be met. Example: If true: Requesting 3-5 results, but only 2 are available, then those 2 will be dropped as the lower bound of 3 cannot be met. Example: If false (default): Requesting 3-5 results, but only 2 are available, then those 2 will still be returned. */
+    public Boolean getSkipEntirelyIfUnableToMeetCount()
+    {
+        return this.skipEntirelyIfUnableToMeetCount;
     }
     /** Gets or sets the type of the entity. */
     public FeedComposition setType(FeedCompositionEntityType type)
@@ -139,10 +153,22 @@ public class FeedComposition
         this.includeEmptyResults = includeEmptyResults;
         return this;
     }
-    /** If specified, this composition will only be included in the rotation the specified number of times. Any subsequent rotations will exclude this composition element. */
+    /** If specified, this composition will only be included in the rotation the specified number of times. Any subsequent rotations will exclude this composition element. Leave null to apply no limit. */
     public FeedComposition setRotationLimit(@Nullable Integer rotationLimit)
     {
         this.rotationLimit = rotationLimit;
+        return this;
+    }
+    /** If specified (minimum 1), this composition will only be included in the rotation the specified number of times per request. Any subsequent rotations within the same request will exclude this composition element. Leave null to apply no per-request limit. */
+    public FeedComposition setRotationLimitPerRequest(@Nullable Integer rotationLimitPerRequest)
+    {
+        this.rotationLimitPerRequest = rotationLimitPerRequest;
+        return this;
+    }
+    /** If true, the entire composition element will be skipped if the requested count cannot be met. Example: If true: Requesting 3-5 results, but only 2 are available, then those 2 will be dropped as the lower bound of 3 cannot be met. Example: If false (default): Requesting 3-5 results, but only 2 are available, then those 2 will still be returned. */
+    public FeedComposition setSkipEntirelyIfUnableToMeetCount(Boolean skipEntirelyIfUnableToMeetCount)
+    {
+        this.skipEntirelyIfUnableToMeetCount = skipEntirelyIfUnableToMeetCount;
         return this;
     }
 }
