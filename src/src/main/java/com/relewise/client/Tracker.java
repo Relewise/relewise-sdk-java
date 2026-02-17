@@ -109,6 +109,10 @@ public class Tracker extends RelewiseClient
         makeRequestAndValidate("TrackSearchTermRequest", trackingRequest, Void.class);
     }
     
+    public void track(TrackUserAdministrativeActionRequest trackingRequest) throws IOException, InterruptedException, ClientException {
+        makeRequestAndValidate("TrackUserAdministrativeActionRequest", trackingRequest, Void.class);
+    }
+    
     public void track(TrackUserUpdateRequest trackingRequest) throws IOException, InterruptedException, ClientException {
         makeRequestAndValidate("TrackUserUpdateRequest", trackingRequest, Void.class);
     }

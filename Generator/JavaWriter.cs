@@ -32,7 +32,13 @@ public class JavaWriter
 
     public JavaWriter(Assembly assembly, string basePath, XmlDocumentation xmlDocumentation)
     {
-        _javaTypeWriters = new List<IJavaTypeWriter> { new JavaKeyValuePairWriter(this), new JavaEnumWriter(this), new JavaInterfaceWriter(this), new JavaClassWriter(this) };
+        _javaTypeWriters =
+        [
+            new JavaKeyValuePairWriter(this), 
+            new JavaEnumWriter(this), 
+            new JavaInterfaceWriter(this),
+            new JavaClassWriter(this)
+        ];
         _javaTypeResolver = new JavaTypeResolver(assembly);
         Assembly = assembly;
         BasePath = basePath;
@@ -47,19 +53,19 @@ public class JavaWriter
 
     public void WriteTypes(IEnumerable<Type> types)
     {
-        foreach (var type in types)
+        foreach (Type type in types)
         {
             _javaTypeResolver.TypesToGenerate.Enqueue(type);
         }
 
         while (_javaTypeResolver.TypesToGenerate.Count > 0)
         {
-            var type = _javaTypeResolver.TypesToGenerate.Dequeue();
+            Type type = _javaTypeResolver.TypesToGenerate.Dequeue();
 
             if (type == typeof(object) || type == typeof(ValueType) || type == typeof(Enum))
                 continue;
 
-            var potentialNullableTypeName = TypeName(type);
+            string potentialNullableTypeName = TypeName(type);
             string typeName = potentialNullableTypeName.RemoveNullable();
 
             if (_javaTypeResolver.IsWritten(typeName)) continue;
@@ -69,10 +75,12 @@ public class JavaWriter
                 continue;
             }
 
+            DiscoverReferencedTypesFromSignatures(type);
+
             using var streamWriter = File.CreateText($"{ModelsPath}{typeName}.java");
             using var writer = new IndentedTextWriter(streamWriter);
 
-            var javaTypeWriter = _javaTypeWriters.FirstOrDefault(w => w.CanWrite(type));
+            IJavaTypeWriter? javaTypeWriter = _javaTypeWriters.FirstOrDefault(w => w.CanWrite(type));
             if (javaTypeWriter is null)
             {
                 MissingTypeDefinitions.Add(type);
@@ -85,17 +93,114 @@ public class JavaWriter
         }
     }
 
+    private void DiscoverReferencedTypesFromSignatures(Type type)
+    {
+        const BindingFlags flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly;
+
+        foreach (var constructor in type.GetConstructors(flags))
+        {
+            foreach (var parameter in constructor.GetParameters())
+            {
+                DiscoverReferencedType(parameter.ParameterType);
+            }
+        }
+
+        foreach (var method in type.GetMethods(flags))
+        {
+            // Keep property/event accessors out of traversal, but include conversion operators.
+            if (method.IsSpecialName && method.Name is not "op_Implicit" and not "op_Explicit")
+            {
+                continue;
+            }
+            if (method.IsGenericMethodDefinition || method.ContainsGenericParameters)
+            {
+                continue;
+            }
+
+            DiscoverReferencedType(method.ReturnType);
+
+            foreach (var parameter in method.GetParameters())
+            {
+                DiscoverReferencedType(parameter.ParameterType);
+            }
+        }
+    }
+
+    private void DiscoverReferencedType(Type type)
+    {
+        if (type == typeof(void))
+        {
+            return;
+        }
+        if (type.ContainsGenericParameters)
+        {
+            return;
+        }
+
+        if (type.IsByRef || type.IsPointer)
+        {
+            if (type.GetElementType() is { } elementType)
+            {
+                DiscoverReferencedType(elementType);
+            }
+            return;
+        }
+
+        if (type.IsArray)
+        {
+            if (type.GetElementType() is { } elementType)
+            {
+                DiscoverReferencedType(elementType);
+            }
+            return;
+        }
+
+        if (type.IsGenericType || type.IsGenericTypeDefinition)
+        {
+            foreach (var genericArgument in type.GetGenericArguments())
+            {
+                if (genericArgument.IsGenericParameter)
+                {
+                    foreach (var constraint in genericArgument.GetGenericParameterConstraints())
+                    {
+                        DiscoverReferencedType(constraint);
+                    }
+                }
+                else
+                {
+                    DiscoverReferencedType(genericArgument);
+                }
+            }
+        }
+
+        if (type.IsGenericParameter)
+        {
+            foreach (var constraint in type.GetGenericParameterConstraints())
+            {
+                DiscoverReferencedType(constraint);
+            }
+            return;
+        }
+
+        if (type.IsGenericTypeDefinition || type.Assembly != Assembly)
+        {
+            return;
+        }
+
+        TypeName(type);
+    }
+
     public string TypeName(Type type) => _javaTypeResolver.ResolveType(type);
 
     public string TypeName(PropertyInfo property)
     {
-        var typeName = TypeName(property.PropertyType);
+        string typeName = TypeName(property.PropertyType);
         return PrependNullableIfApplicable(typeName, new NullabilityInfoContext().Create(property));
     }
 
     public string TypeName(ParameterInfo property)
     {
-        var typeName = TypeName(property.ParameterType);
+        string typeName = TypeName(property.ParameterType);
         return PrependNullableIfApplicable(typeName, new NullabilityInfoContext().Create(property));
     }
 

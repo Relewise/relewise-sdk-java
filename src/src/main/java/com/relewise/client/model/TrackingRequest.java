@@ -48,6 +48,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = TrackFeedItemClickRequest.class, name = "Relewise.Client.Requests.Tracking.Feed.TrackFeedItemClickRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = TrackContentEngagementRequest.class, name = "Relewise.Client.Requests.Tracking.TrackContentEngagementRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = TrackDisplayAdClickRequest.class, name = "Relewise.Client.Requests.Tracking.TrackDisplayAdClickRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = TrackUserAdministrativeActionRequest.class, name = "Relewise.Client.Requests.Tracking.TrackUserAdministrativeActionRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class TrackingRequest extends LicensedRequest

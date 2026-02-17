@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
-/** Defines the settings for seeding the feed with specific products or content. Useful, for example, when you want to show a feed based on specific product(s) or content, such as for a feed on a PDP/CDP, a shopping cart, or an order. */
+/** Defines the settings for seeding the feed with specific products or content. Useful, for example, when you want to show a feed based on specific product(s) or content, such as for a feed on a PDP/CDP, a shopping cart, or an order. When provided, at least one of <code>ProductAndVariantIds</code> or <code>ContentIds</code> must be provided. */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FeedSeed
 {

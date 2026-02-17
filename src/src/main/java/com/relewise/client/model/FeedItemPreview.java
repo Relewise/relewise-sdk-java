@@ -33,7 +33,7 @@ public class FeedItemPreview extends Trackable implements IUserIdentifier
     public FeedItem item;
     /**
      * Initializes a new instance of the <code>FeedItemPreview</code> class.
-     * @param user The user who previewed the feed item. Must be an authenticated user.
+     * @param user The user who previewed the feed item.
      * @param feedId The unique identifier of the feed where the preview occurred.
      * @param item The specific feed item that was previewed.
      */
@@ -43,7 +43,7 @@ public class FeedItemPreview extends Trackable implements IUserIdentifier
     }
     /**
      * Initializes a new instance of the <code>FeedItemPreview</code> class.
-     * @param user The user who previewed the feed item. Must be an authenticated user.
+     * @param user The user who previewed the feed item.
      * @param feedId The unique identifier of the feed where the preview occurred.
      * @param item The specific feed item that was previewed.
      */

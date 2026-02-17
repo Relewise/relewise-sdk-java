@@ -33,7 +33,7 @@ public class FeedItemClick extends Trackable implements IUserIdentifier
     public FeedItem item;
     /**
      * Initializes a new instance of the <code>FeedItemClick</code> class.
-     * @param user The user who clicked the feed item. Must be an authenticated user.
+     * @param user The user who clicked the feed item.
      * @param feedId The unique identifier of the feed where the click occurred.
      * @param item The specific feed item that was clicked.
      */
@@ -43,7 +43,7 @@ public class FeedItemClick extends Trackable implements IUserIdentifier
     }
     /**
      * Initializes a new instance of the <code>FeedItemClick</code> class.
-     * @param user The user who clicked the feed item. Must be an authenticated user.
+     * @param user The user who clicked the feed item.
      * @param feedId The unique identifier of the feed where the click occurred.
      * @param item The specific feed item that was clicked.
      */

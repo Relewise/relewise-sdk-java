@@ -34,6 +34,9 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = AndCondition.class, name = "Relewise.Client.DataTypes.UserConditions.AndCondition, Relewise.Client"),
     @JsonSubTypes.Type(value = HasDataCondition.class, name = "Relewise.Client.DataTypes.UserConditions.HasDataCondition, Relewise.Client"),
     @JsonSubTypes.Type(value = HasCompanyDataCondition.class, name = "Relewise.Client.DataTypes.UserConditions.HasCompanyDataCondition, Relewise.Client"),
+    @JsonSubTypes.Type(value = EmailCondition.class, name = "Relewise.Client.DataTypes.UserConditions.EmailCondition, Relewise.Client"),
+    @JsonSubTypes.Type(value = AuthenticatedIdCondition.class, name = "Relewise.Client.DataTypes.UserConditions.AuthenticatedIdCondition, Relewise.Client"),
+    @JsonSubTypes.Type(value = IdentifierCondition.class, name = "Relewise.Client.DataTypes.UserConditions.IdentifierCondition, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class UserCondition

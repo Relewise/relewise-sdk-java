@@ -29,13 +29,13 @@ public class FeedDwell extends Trackable implements IUserIdentifier
     public @Nullable User user;
     /** The unique identifier of the feed where the dwell occurred. This corresponds to the <code>InitializedFeedId</code> from a feed recommendation response. */
     public UUID feedId;
-    /** The total time in milliseconds that the user spent viewing the visible items. Must be greater than 0. */
+    /** The total time in milliseconds that the user spent viewing the visible items. Must be at least 1. */
     public Integer dwellTimeMilliseconds;
     /** The collection of feed items that were visible to the user during the dwell period. Must contain at least one item. */
     public FeedItem[] visibleItems;
     /**
      * Initializes a new instance of the <code>FeedDwell</code> class.
-     * @param user The user who was viewing the feed items. Must be an authenticated user.
+     * @param user The user who was viewing the feed items.
      * @param feedId The unique identifier of the feed where the dwell occurred.
      * @param dwellTimeMilliseconds The total time in milliseconds that the user spent viewing the visible items.
      * @param visibleItems The collection of feed items that were visible to the user during the dwell period.
@@ -46,7 +46,7 @@ public class FeedDwell extends Trackable implements IUserIdentifier
     }
     /**
      * Initializes a new instance of the <code>FeedDwell</code> class.
-     * @param user The user who was viewing the feed items. Must be an authenticated user.
+     * @param user The user who was viewing the feed items.
      * @param feedId The unique identifier of the feed where the dwell occurred.
      * @param dwellTimeMilliseconds The total time in milliseconds that the user spent viewing the visible items.
      * @param visibleItems The collection of feed items that were visible to the user during the dwell period.
@@ -71,7 +71,7 @@ public class FeedDwell extends Trackable implements IUserIdentifier
     {
         return this.feedId;
     }
-    /** The total time in milliseconds that the user spent viewing the visible items. Must be greater than 0. */
+    /** The total time in milliseconds that the user spent viewing the visible items. Must be at least 1. */
     public Integer getDwellTimeMilliseconds()
     {
         return this.dwellTimeMilliseconds;
@@ -93,7 +93,7 @@ public class FeedDwell extends Trackable implements IUserIdentifier
         this.feedId = feedId;
         return this;
     }
-    /** The total time in milliseconds that the user spent viewing the visible items. Must be greater than 0. */
+    /** The total time in milliseconds that the user spent viewing the visible items. Must be at least 1. */
     public FeedDwell setDwellTimeMilliseconds(Integer dwellTimeMilliseconds)
     {
         this.dwellTimeMilliseconds = dwellTimeMilliseconds;
