@@ -23,7 +23,7 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VariantChangeTriggerResultTriggerResultResponse extends TimedResponse
 {
-    public String $type = "Relewise.Client.Responses.Triggers.TriggerResultResponse`1[[Relewise.Client.Responses.Triggers.Results.VariantChangeTriggerResult, Relewise.Client, Version=1.280.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
+    public String $type = "Relewise.Client.Responses.Triggers.TriggerResultResponse`1[[Relewise.Client.Responses.Triggers.Results.VariantChangeTriggerResult, Relewise.Client, Version=1.299.0.0, Culture=neutral, PublicKeyToken=null]], Relewise.Client";
     public VariantChangeTriggerResult result;
     public static VariantChangeTriggerResultTriggerResultResponse create()
     {

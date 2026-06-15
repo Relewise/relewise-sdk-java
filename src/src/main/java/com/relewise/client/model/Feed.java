@@ -35,6 +35,8 @@ public class Feed
     public @Nullable Boolean recommendVariant;
     /** Defines if products should be excluded if they are currently present in the users Cart */
     public @Nullable Boolean allowProductsCurrentlyInCart;
+    /** Selects the stored feed configuration to use when the feed is initialized. When omitted, the default feed configuration is used. */
+    public @Nullable String configurationKey;
     /**
      * Initializes a new instance of the <code>Feed</code> class.
      * @param minimumPageSize The minimum number of items to return initially and per every
@@ -100,6 +102,11 @@ public class Feed
     {
         return this.allowProductsCurrentlyInCart;
     }
+    /** Selects the stored feed configuration to use when the feed is initialized. When omitted, the default feed configuration is used. */
+    public @Nullable String getConfigurationKey()
+    {
+        return this.configurationKey;
+    }
     /** The minimum number of items to return initially and per every <code>FeedRecommendationNextItemsRequest</code>. A higher number of results may be returned if composition configurations dictate so. For example, if a given <code>FeedComposition</code> has a lower bound of 5, and the <code>MinimumPageSize</code> is set to 4, then the feed will return at least 5 items whenever the result contains any derived from that composition element. */
     public Feed setMinimumPageSize(Integer minimumPageSize)
     {
@@ -156,6 +163,12 @@ public class Feed
     public Feed setAllowProductsCurrentlyInCart(@Nullable Boolean allowProductsCurrentlyInCart)
     {
         this.allowProductsCurrentlyInCart = allowProductsCurrentlyInCart;
+        return this;
+    }
+    /** Selects the stored feed configuration to use when the feed is initialized. When omitted, the default feed configuration is used. */
+    public Feed setConfigurationKey(@Nullable String configurationKey)
+    {
+        this.configurationKey = configurationKey;
         return this;
     }
 }

@@ -28,6 +28,7 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
     public @Nullable Product productData;
     public Boolean considerAlreadyKnownInformationAboutProduct;
     public @Nullable SimilarProductsEvaluationSettings evaluationSettings;
+    /** @deprecated Use Settings.VariantRequestSettings.MaxVariantsPerProduct instead. */
     public @Nullable Integer explodedVariants;
     public static SimilarProductsRequest create(@Nullable Language language, @Nullable Currency currency, String displayedAtLocationType, User user, Product productData, Boolean considerAlreadyKnownInformationAboutProduct)
     {
@@ -103,6 +104,7 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
     {
         return this.evaluationSettings;
     }
+    /** @deprecated Use Settings.VariantRequestSettings.MaxVariantsPerProduct instead. */
     public @Nullable Integer getExplodedVariants()
     {
         return this.explodedVariants;
@@ -127,6 +129,7 @@ public class SimilarProductsRequest extends ProductRecommendationRequest impleme
         this.evaluationSettings = evaluationSettings;
         return this;
     }
+    /** @deprecated Use Settings.VariantRequestSettings.MaxVariantsPerProduct instead. */
     public SimilarProductsRequest setExplodedVariants(@Nullable Integer explodedVariants)
     {
         this.explodedVariants = explodedVariants;

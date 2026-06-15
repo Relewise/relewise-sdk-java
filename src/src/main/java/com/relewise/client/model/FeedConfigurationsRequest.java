@@ -14,16 +14,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
-
+    
+/** Loads all stored feed configurations. */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type")
-@JsonSubTypes({
-    @JsonSubTypes.Type(value = Change.class, name = "Relewise.Client.DataTypes.Changes.Change, Relewise.Client"),
-    @JsonSubTypes.Type(value = Decrease.class, name = "Relewise.Client.DataTypes.Changes.Decrease, Relewise.Client"),
-    @JsonSubTypes.Type(value = Increase.class, name = "Relewise.Client.DataTypes.Changes.Increase, Relewise.Client"),
-})
-public interface IChange
+    property = "$type",
+    defaultImpl = FeedConfigurationsRequest.class)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class FeedConfigurationsRequest extends LicensedRequest
 {
+    public String $type = "Relewise.Client.Requests.Recommendations.Feed.FeedConfigurationsRequest, Relewise.Client";
+    public static FeedConfigurationsRequest create()
+    {
+        return new FeedConfigurationsRequest();
+    }
+    public FeedConfigurationsRequest()
+    {
+    }
 }

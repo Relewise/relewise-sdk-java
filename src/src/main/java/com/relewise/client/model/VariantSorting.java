@@ -15,13 +15,17 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type")
-@JsonSubTypes({
-    @JsonSubTypes.Type(value = ScheduledPeriod.class, name = "Relewise.Client.DataTypes.Scheduling.ScheduledPeriod, Relewise.Client"),
-})
-public interface ISchedule
+/** Controls how variants should be ordered when more than one variant per product can participate in the result. */
+public enum VariantSorting
 {
+    GroupedByProduct {
+        public String toString() {
+            return "GroupedByProduct";
+        }
+    },
+    ByRelevance {
+        public String toString() {
+            return "ByRelevance";
+        }
+    },
 }

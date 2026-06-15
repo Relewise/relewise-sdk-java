@@ -14,16 +14,25 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
-
+    
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,
     property = "$type")
 @JsonSubTypes({
-    @JsonSubTypes.Type(value = Change.class, name = "Relewise.Client.DataTypes.Changes.Change, Relewise.Client"),
-    @JsonSubTypes.Type(value = Decrease.class, name = "Relewise.Client.DataTypes.Changes.Decrease, Relewise.Client"),
-    @JsonSubTypes.Type(value = Increase.class, name = "Relewise.Client.DataTypes.Changes.Increase, Relewise.Client"),
 })
-public interface IChange
+@JsonIgnoreProperties(ignoreUnknown = true)
+public abstract class UUIDConfigurationEntity
 {
+    public String $type = "";
+    public @Nullable UUID id;
+    public @Nullable UUID getId()
+    {
+        return this.id;
+    }
+    public UUIDConfigurationEntity setId(@Nullable UUID id)
+    {
+        this.id = id;
+        return this;
+    }
 }
