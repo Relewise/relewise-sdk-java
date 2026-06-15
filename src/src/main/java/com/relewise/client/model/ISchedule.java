@@ -15,6 +15,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.EXISTING_PROPERTY,
+    property = "$type")
+@JsonSubTypes({
+    @JsonSubTypes.Type(value = ScheduledPeriod.class, name = "Relewise.Client.DataTypes.Scheduling.ScheduledPeriod, Relewise.Client"),
+})
 public interface ISchedule
 {
 }
