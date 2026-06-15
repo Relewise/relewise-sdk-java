@@ -1,0 +1,165 @@
+name: Generate API Version
+
+on:
+  workflow_call:
+    inputs:
+      trello-card-url:
+        description: Trello card URL
+        required: true
+        type: string
+  workflow_dispatch:
+    inputs:
+      trello-card-url:
+        description: Trello card URL
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  REVIEWERS: mzanoni,soe-relewise
+  TARGET_REPOSITORY: Relewise/relewise-sdk-java
+
+jobs:
+  generate-api-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate workflow input
+        shell: pwsh
+        env:
+          TRELLO_CARD_URL_INPUT: ${{ inputs['trello-card-url'] }}
+        run: |
+          $trelloCardUrl = $env:TRELLO_CARD_URL_INPUT
+
+          if ([string]::IsNullOrWhiteSpace($trelloCardUrl)) {
+            throw 'A Trello card URL is required. Provide the trello-card-url input.'
+          }
+
+          "TRELLO_CARD_URL=$trelloCardUrl" >> $env:GITHUB_ENV
+
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          repository: ${{ env.TARGET_REPOSITORY }}
+          ref: main
+          token: ${{ secrets.SDK_UPDATE_TOKEN || github.token }}
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore generator
+        run: dotnet restore Generator/Generator.csproj
+
+      - name: Build generator
+        run: dotnet build Generator/Generator.csproj --configuration Release --no-restore
+
+      - name: Resolve Relewise.Client version
+        shell: pwsh
+        run: |
+          $assetsPath = 'Generator/obj/project.assets.json'
+          $assets = Get-Content $assetsPath -Raw | ConvertFrom-Json
+          $package = $assets.libraries.PSObject.Properties.Name |
+            Where-Object { $_ -like 'Relewise.Client/*' } |
+            Select-Object -First 1
+
+          if ([string]::IsNullOrWhiteSpace($package)) {
+            throw "Could not find Relewise.Client in $assetsPath."
+          }
+
+          $version = $package.Split('/', 2)[1]
+
+          if ([string]::IsNullOrWhiteSpace($version)) {
+            throw "Could not extract Relewise.Client version from '$package'."
+          }
+
+          "API_VERSION=$version" >> $env:GITHUB_ENV
+          "Resolved Relewise.Client version $version." >> $env:GITHUB_STEP_SUMMARY
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Update Maven package version
+        run: mvn --batch-mode versions:set -DnewVersion=${{ env.API_VERSION }} -DgenerateBackupPoms=false --file src/pom.xml
+
+      - name: Generate Java classes
+        shell: pwsh
+        run: ./generate.ps1
+
+      - name: Build
+        run: mvn --batch-mode -DskipTests package --file src/pom.xml
+
+      - name: Load version into generated .properties file
+        run: mvn resources:resources --file src/pom.xml
+
+      - name: Test
+        env:
+          DATASET_ID: ${{ secrets.INTEGRATIONTESTS_DATASET_ID }}
+          API_KEY: ${{ secrets.INTEGRATIONTESTS_API_KEY }}
+        run: mvn --batch-mode test --file src/pom.xml
+
+      - name: Check generated changes
+        id: changes
+        shell: pwsh
+        run: |
+          $changes = git status --porcelain -- Generator/Generator.csproj src
+
+          if ([string]::IsNullOrWhiteSpace($changes)) {
+            "has_changes=false" >> $env:GITHUB_OUTPUT
+            "No Java SDK changes were produced for API version $env:API_VERSION. No pull request was created." >> $env:GITHUB_STEP_SUMMARY
+          } else {
+            "has_changes=true" >> $env:GITHUB_OUTPUT
+            "Java SDK changes were produced for API version $env:API_VERSION." >> $env:GITHUB_STEP_SUMMARY
+          }
+
+      - name: Create pull request
+        if: steps.changes.outputs.has_changes == 'true'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.SDK_UPDATE_TOKEN || github.token }}
+        run: |
+          $branch = "chore/update-sdk-api-$env:API_VERSION-${{ github.run_number }}"
+          $commitMessage = "chore(java): update SDK for API version $env:API_VERSION"
+          $title = "feat: API version $env:API_VERSION"
+          $bodyPath = Join-Path $env:RUNNER_TEMP 'generate-api-version-pr-body.md'
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c $branch
+          git add -A Generator/Generator.csproj src
+          git commit -m $commitMessage
+          git push --set-upstream origin $branch
+
+          @(
+            $env:TRELLO_CARD_URL
+            ''
+            '## Summary'
+            "- Generated Java SDK code for Relewise.Client $env:API_VERSION."
+            ''
+            '## Validation'
+            '- dotnet restore Generator/Generator.csproj'
+            '- dotnet build Generator/Generator.csproj --configuration Release --no-restore'
+            "- Updated src/pom.xml version to $env:API_VERSION"
+            '- pwsh ./generate.ps1'
+            '- mvn --batch-mode -DskipTests package --file src/pom.xml'
+            '- mvn resources:resources --file src/pom.xml'
+            '- mvn --batch-mode test --file src/pom.xml'
+          ) | Set-Content -Path $bodyPath
+
+          gh pr create `
+            --repo $env:TARGET_REPOSITORY `
+            --base main `
+            --head $branch `
+            --title $title `
+            --body-file $bodyPath `
+            --reviewer $env:REVIEWERS
+
+          "Created pull request '$title' from '$branch'." >> $env:GITHUB_STEP_SUMMARY
