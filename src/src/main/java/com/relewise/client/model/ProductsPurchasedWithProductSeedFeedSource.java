@@ -1,0 +1,77 @@
+package com.relewise.client.model;
+
+import com.fasterxml.jackson.annotation.*;
+import javax.annotation.Nullable;
+import java.io.IOException;
+import java.time.Duration;
+import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
+import java.util.Objects;
+import java.util.Arrays;
+import java.util.UUID;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
+    
+/** Produces products that are commonly purchased with the products configured by <code>ProductAndVariantIds</code>. */
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.EXISTING_PROPERTY,
+    property = "$type",
+    defaultImpl = ProductsPurchasedWithProductSeedFeedSource.class)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ProductsPurchasedWithProductSeedFeedSource extends EntityBySeedFeedSource implements IProductFeedSource
+{
+    public String $type = "Relewise.Client.DataTypes.Feed.Sources.ProductsPurchasedWithProductSeedFeedSource, Relewise.Client";
+    public static ProductsPurchasedWithProductSeedFeedSource create(FeedSourceSelectionPolicy selectionPolicy, Integer maxSeedItems, Integer randomizationWindow)
+    {
+        return new ProductsPurchasedWithProductSeedFeedSource(selectionPolicy, maxSeedItems, randomizationWindow);
+    }
+    public ProductsPurchasedWithProductSeedFeedSource(FeedSourceSelectionPolicy selectionPolicy, Integer maxSeedItems, Integer randomizationWindow)
+    {
+        this.selectionPolicy = selectionPolicy;
+        this.maxSeedItems = maxSeedItems;
+        this.randomizationWindow = randomizationWindow;
+    }
+    public ProductsPurchasedWithProductSeedFeedSource()
+    {
+    }
+    @Override
+    public ProductsPurchasedWithProductSeedFeedSource setMaxSeedItems(Integer maxSeedItems)
+    {
+        this.maxSeedItems = maxSeedItems;
+        return this;
+    }
+    @Override
+    public ProductsPurchasedWithProductSeedFeedSource setRandomizationWindow(Integer randomizationWindow)
+    {
+        this.randomizationWindow = randomizationWindow;
+        return this;
+    }
+    @Override
+    public ProductsPurchasedWithProductSeedFeedSource setEnabled(Boolean enabled)
+    {
+        this.enabled = enabled;
+        return this;
+    }
+    @Override
+    public ProductsPurchasedWithProductSeedFeedSource setSelectionPolicy(FeedSourceSelectionPolicy selectionPolicy)
+    {
+        this.selectionPolicy = selectionPolicy;
+        return this;
+    }
+    @Override
+    public ProductsPurchasedWithProductSeedFeedSource setMaxResults(@Nullable Integer maxResults)
+    {
+        this.maxResults = maxResults;
+        return this;
+    }
+    @Override
+    public ProductsPurchasedWithProductSeedFeedSource setMaxResultsPerChanceGiven(@Nullable Integer maxResultsPerChanceGiven)
+    {
+        this.maxResultsPerChanceGiven = maxResultsPerChanceGiven;
+        return this;
+    }
+}

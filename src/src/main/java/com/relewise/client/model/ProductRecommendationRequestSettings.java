@@ -15,12 +15,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+/** Controls how product recommendation requests should shape and trim the returned product and variant output. */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductRecommendationRequestSettings
 {
     public Integer numberOfRecommendations;
     public Boolean allowFillIfNecessaryToReachNumberOfRecommendations;
     public Boolean allowReplacingOfRecentlyShownRecommendations;
+    /** @deprecated Use VariantRequestSettings.MaxVariantsPerProduct instead. Setting VariantRequestSettings.MaxVariantsPerProduct = 1 is the same as RecommendVariant = true. */
     public Boolean recommendVariant;
     public @Nullable SelectedProductPropertiesSettings selectedProductProperties;
     public @Nullable SelectedVariantPropertiesSettings selectedVariantProperties;
@@ -28,6 +30,8 @@ public class ProductRecommendationRequestSettings
     public @Nullable Boolean allowProductsCurrentlyInCart;
     public @Nullable SelectedBrandPropertiesSettings selectedBrandProperties;
     public @Nullable Integer prioritizeResultsNotRecommendedWithinSeconds;
+    /** Controls whether recommendation results may include concrete variants, and how many variants may be returned per product. Use <code>MaxVariantsPerProduct</code> to switch between product-only output and variant-inclusive output. */
+    public @Nullable VariantRecommendationRequestSettings variantRequestSettings;
     public static ProductRecommendationRequestSettings create()
     {
         return new ProductRecommendationRequestSettings();
@@ -47,6 +51,7 @@ public class ProductRecommendationRequestSettings
     {
         return this.allowReplacingOfRecentlyShownRecommendations;
     }
+    /** @deprecated Use VariantRequestSettings.MaxVariantsPerProduct instead. Setting VariantRequestSettings.MaxVariantsPerProduct = 1 is the same as RecommendVariant = true. */
     public Boolean getRecommendVariant()
     {
         return this.recommendVariant;
@@ -75,6 +80,11 @@ public class ProductRecommendationRequestSettings
     {
         return this.prioritizeResultsNotRecommendedWithinSeconds;
     }
+    /** Controls whether recommendation results may include concrete variants, and how many variants may be returned per product. Use <code>MaxVariantsPerProduct</code> to switch between product-only output and variant-inclusive output. */
+    public @Nullable VariantRecommendationRequestSettings getVariantRequestSettings()
+    {
+        return this.variantRequestSettings;
+    }
     public ProductRecommendationRequestSettings setNumberOfRecommendations(Integer numberOfRecommendations)
     {
         this.numberOfRecommendations = numberOfRecommendations;
@@ -90,6 +100,7 @@ public class ProductRecommendationRequestSettings
         this.allowReplacingOfRecentlyShownRecommendations = allowReplacingOfRecentlyShownRecommendations;
         return this;
     }
+    /** @deprecated Use VariantRequestSettings.MaxVariantsPerProduct instead. Setting VariantRequestSettings.MaxVariantsPerProduct = 1 is the same as RecommendVariant = true. */
     public ProductRecommendationRequestSettings setRecommendVariant(Boolean recommendVariant)
     {
         this.recommendVariant = recommendVariant;
@@ -123,6 +134,12 @@ public class ProductRecommendationRequestSettings
     public ProductRecommendationRequestSettings setPrioritizeResultsNotRecommendedWithinSeconds(@Nullable Integer prioritizeResultsNotRecommendedWithinSeconds)
     {
         this.prioritizeResultsNotRecommendedWithinSeconds = prioritizeResultsNotRecommendedWithinSeconds;
+        return this;
+    }
+    /** Controls whether recommendation results may include concrete variants, and how many variants may be returned per product. Use <code>MaxVariantsPerProduct</code> to switch between product-only output and variant-inclusive output. */
+    public ProductRecommendationRequestSettings setVariantRequestSettings(@Nullable VariantRecommendationRequestSettings variantRequestSettings)
+    {
+        this.variantRequestSettings = variantRequestSettings;
         return this;
     }
 }

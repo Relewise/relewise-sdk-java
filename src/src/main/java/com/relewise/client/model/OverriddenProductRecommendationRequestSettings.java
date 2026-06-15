@@ -15,12 +15,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+/** Partial overrides that can be merged into an existing <code>ProductRecommendationRequestSettings</code> instance. */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OverriddenProductRecommendationRequestSettings
 {
     public @Nullable Integer numberOfRecommendations;
     public @Nullable Boolean allowFillIfNecessaryToReachNumberOfRecommendations;
     public @Nullable Boolean allowReplacingOfRecentlyShownRecommendations;
+    /** @deprecated Use VariantRequestSettings.MaxVariantsPerProduct instead. */
     public @Nullable Boolean recommendVariant;
     public OverriddenSelectedProductPropertiesSettings selectedProductProperties;
     public OverriddenSelectedVariantPropertiesSettings selectedVariantProperties;
@@ -28,6 +30,8 @@ public class OverriddenProductRecommendationRequestSettings
     public @Nullable Boolean allowProductsCurrentlyInCart;
     public OverriddenSelectedBrandPropertiesSettings selectedBrandProperties;
     public @Nullable Integer prioritizeResultsNotRecommendedWithinSeconds;
+    /** Overrides variant-inclusion behavior for product recommendation requests. Use this to replace the effective <code>VariantRequestSettings</code> for the overridden request. <code>MaxVariantsPerProduct</code>. */
+    public @Nullable VariantRecommendationRequestSettings variantRequestSettings;
     public static OverriddenProductRecommendationRequestSettings create()
     {
         return new OverriddenProductRecommendationRequestSettings();
@@ -47,6 +51,7 @@ public class OverriddenProductRecommendationRequestSettings
     {
         return this.allowReplacingOfRecentlyShownRecommendations;
     }
+    /** @deprecated Use VariantRequestSettings.MaxVariantsPerProduct instead. */
     public @Nullable Boolean getRecommendVariant()
     {
         return this.recommendVariant;
@@ -75,6 +80,11 @@ public class OverriddenProductRecommendationRequestSettings
     {
         return this.prioritizeResultsNotRecommendedWithinSeconds;
     }
+    /** Overrides variant-inclusion behavior for product recommendation requests. Use this to replace the effective <code>VariantRequestSettings</code> for the overridden request. <code>MaxVariantsPerProduct</code>. */
+    public @Nullable VariantRecommendationRequestSettings getVariantRequestSettings()
+    {
+        return this.variantRequestSettings;
+    }
     public OverriddenProductRecommendationRequestSettings setNumberOfRecommendations(@Nullable Integer numberOfRecommendations)
     {
         this.numberOfRecommendations = numberOfRecommendations;
@@ -90,6 +100,7 @@ public class OverriddenProductRecommendationRequestSettings
         this.allowReplacingOfRecentlyShownRecommendations = allowReplacingOfRecentlyShownRecommendations;
         return this;
     }
+    /** @deprecated Use VariantRequestSettings.MaxVariantsPerProduct instead. */
     public OverriddenProductRecommendationRequestSettings setRecommendVariant(@Nullable Boolean recommendVariant)
     {
         this.recommendVariant = recommendVariant;
@@ -123,6 +134,12 @@ public class OverriddenProductRecommendationRequestSettings
     public OverriddenProductRecommendationRequestSettings setPrioritizeResultsNotRecommendedWithinSeconds(@Nullable Integer prioritizeResultsNotRecommendedWithinSeconds)
     {
         this.prioritizeResultsNotRecommendedWithinSeconds = prioritizeResultsNotRecommendedWithinSeconds;
+        return this;
+    }
+    /** Overrides variant-inclusion behavior for product recommendation requests. Use this to replace the effective <code>VariantRequestSettings</code> for the overridden request. <code>MaxVariantsPerProduct</code>. */
+    public OverriddenProductRecommendationRequestSettings setVariantRequestSettings(@Nullable VariantRecommendationRequestSettings variantRequestSettings)
+    {
+        this.variantRequestSettings = variantRequestSettings;
         return this;
     }
 }

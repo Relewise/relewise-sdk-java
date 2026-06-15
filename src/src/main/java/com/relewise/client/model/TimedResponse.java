@@ -37,6 +37,8 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = ProductCategoryRecommendationResponse.class, name = "Relewise.Client.Responses.ProductCategoryRecommendationResponse, Relewise.Client"),
     @JsonSubTypes.Type(value = ContentCategoryRecommendationResponse.class, name = "Relewise.Client.Responses.ContentCategoryRecommendationResponse, Relewise.Client"),
     @JsonSubTypes.Type(value = BrandRecommendationResponse.class, name = "Relewise.Client.Responses.BrandRecommendationResponse, Relewise.Client"),
+    @JsonSubTypes.Type(value = FeedConfigurationResponse.class, name = "Relewise.Client.Responses.Feed.FeedConfigurationResponse, Relewise.Client"),
+    @JsonSubTypes.Type(value = FeedConfigurationsResponse.class, name = "Relewise.Client.Responses.Feed.FeedConfigurationsResponse, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class TimedResponse

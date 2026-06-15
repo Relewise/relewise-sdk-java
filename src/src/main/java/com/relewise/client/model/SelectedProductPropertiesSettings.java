@@ -41,6 +41,8 @@ public class SelectedProductPropertiesSettings
     public @Nullable SelectedScorePropertiesSettings score;
     /** Determines whether <code>UserEngagement</code> should be populated when results are mapped. */
     public Boolean userEngagement;
+    /** Determines whether <code>VariantResolution</code> should be populated for product search results. */
+    public Boolean variantResolution;
     public static SelectedProductPropertiesSettings create()
     {
         return new SelectedProductPropertiesSettings();
@@ -109,6 +111,11 @@ public class SelectedProductPropertiesSettings
     public Boolean getUserEngagement()
     {
         return this.userEngagement;
+    }
+    /** Determines whether <code>VariantResolution</code> should be populated for product search results. */
+    public Boolean getVariantResolution()
+    {
+        return this.variantResolution;
     }
     public SelectedProductPropertiesSettings setDisplayName(Boolean displayName)
     {
@@ -199,6 +206,12 @@ public class SelectedProductPropertiesSettings
     public SelectedProductPropertiesSettings setUserEngagement(Boolean userEngagement)
     {
         this.userEngagement = userEngagement;
+        return this;
+    }
+    /** Determines whether <code>VariantResolution</code> should be populated for product search results. */
+    public SelectedProductPropertiesSettings setVariantResolution(Boolean variantResolution)
+    {
+        this.variantResolution = variantResolution;
         return this;
     }
 }

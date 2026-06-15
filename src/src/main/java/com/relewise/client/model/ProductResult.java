@@ -39,6 +39,8 @@ public class ProductResult
     public @Nullable Score score;
     /** Contains engagement signals (sentiment, favorite) recorded for the current user on this product. Populated only when explicitly requested via <code>UserEngagement</code>. */
     public @Nullable ProductEngagementData userEngagement;
+    /** Explains how <code>Variant</code> got selected for this product result. Populated only when explicitly requested via <code>VariantResolution</code>. */
+    public @Nullable VariantResolutionInfo variantResolution;
     public static ProductResult create(String productId, Integer rank)
     {
         return new ProductResult(productId, rank);
@@ -128,6 +130,11 @@ public class ProductResult
     public @Nullable ProductEngagementData getUserEngagement()
     {
         return this.userEngagement;
+    }
+    /** Explains how <code>Variant</code> got selected for this product result. Populated only when explicitly requested via <code>VariantResolution</code>. */
+    public @Nullable VariantResolutionInfo getVariantResolution()
+    {
+        return this.variantResolution;
     }
     public ProductResult setProductId(String productId)
     {
@@ -289,6 +296,12 @@ public class ProductResult
     public ProductResult setUserEngagement(@Nullable ProductEngagementData userEngagement)
     {
         this.userEngagement = userEngagement;
+        return this;
+    }
+    /** Explains how <code>Variant</code> got selected for this product result. Populated only when explicitly requested via <code>VariantResolution</code>. */
+    public ProductResult setVariantResolution(@Nullable VariantResolutionInfo variantResolution)
+    {
+        this.variantResolution = variantResolution;
         return this;
     }
 }

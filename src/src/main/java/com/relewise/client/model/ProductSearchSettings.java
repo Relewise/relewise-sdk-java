@@ -26,6 +26,7 @@ public class ProductSearchSettings extends SearchSettings implements ProductProd
     public String $type = "Relewise.Client.Requests.Search.Settings.ProductSearchSettings, Relewise.Client";
     public @Nullable SelectedProductPropertiesSettings selectedProductProperties;
     public @Nullable SelectedVariantPropertiesSettings selectedVariantProperties;
+    /** @deprecated Use VariantRequestSettings.MaxVariantsPerProduct instead. */
     public @Nullable Integer explodedVariants;
     /** @deprecated Not currently in use */
     public RecommendationSettings recommendations;
@@ -34,6 +35,7 @@ public class ProductSearchSettings extends SearchSettings implements ProductProd
     /** Used to define constraints which must be honoured to be a valid results. The difference between this and Filters, is that filters are evaluated per product and variant, constraints could be acting on the result of such filter evaluations or a combination of factors, such as whether the product has any variants which matched the provided filters etc. */
     public @Nullable ProductSearchResultConstraint resultConstraint;
     public @Nullable ProductSearchSettingsHighlightSettings highlight;
+    public @Nullable VariantSearchRequestSettings variantRequestSettings;
     public static ProductSearchSettings create()
     {
         return new ProductSearchSettings();
@@ -49,6 +51,7 @@ public class ProductSearchSettings extends SearchSettings implements ProductProd
     {
         return this.selectedVariantProperties;
     }
+    /** @deprecated Use VariantRequestSettings.MaxVariantsPerProduct instead. */
     public @Nullable Integer getExplodedVariants()
     {
         return this.explodedVariants;
@@ -75,6 +78,10 @@ public class ProductSearchSettings extends SearchSettings implements ProductProd
     {
         return this.highlight;
     }
+    public @Nullable VariantSearchRequestSettings getVariantRequestSettings()
+    {
+        return this.variantRequestSettings;
+    }
     public ProductSearchSettings setSelectedProductProperties(@Nullable SelectedProductPropertiesSettings selectedProductProperties)
     {
         this.selectedProductProperties = selectedProductProperties;
@@ -85,6 +92,7 @@ public class ProductSearchSettings extends SearchSettings implements ProductProd
         this.selectedVariantProperties = selectedVariantProperties;
         return this;
     }
+    /** @deprecated Use VariantRequestSettings.MaxVariantsPerProduct instead. */
     public ProductSearchSettings setExplodedVariants(@Nullable Integer explodedVariants)
     {
         this.explodedVariants = explodedVariants;
@@ -115,6 +123,11 @@ public class ProductSearchSettings extends SearchSettings implements ProductProd
     public ProductSearchSettings setHighlight(@Nullable ProductSearchSettingsHighlightSettings highlight)
     {
         this.highlight = highlight;
+        return this;
+    }
+    public ProductSearchSettings setVariantRequestSettings(@Nullable VariantSearchRequestSettings variantRequestSettings)
+    {
+        this.variantRequestSettings = variantRequestSettings;
         return this;
     }
 }

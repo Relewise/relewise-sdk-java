@@ -18,10 +18,10 @@ import java.util.HashSet;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ConditionConfiguration
 {
-    public UserConditionConfiguration user;
-    public InputConditionConfiguration input;
-    public TargetConditionConfiguration target;
-    public ContextConditionConfiguration context;
+    public @Nullable UserConditionConfiguration user;
+    public @Nullable InputConditionConfiguration input;
+    public @Nullable TargetConditionConfiguration target;
+    public @Nullable ContextConditionConfiguration context;
     public static ConditionConfiguration create()
     {
         return new ConditionConfiguration();
@@ -29,38 +29,38 @@ public class ConditionConfiguration
     public ConditionConfiguration()
     {
     }
-    public UserConditionConfiguration getUser()
+    public @Nullable UserConditionConfiguration getUser()
     {
         return this.user;
     }
-    public InputConditionConfiguration getInput()
+    public @Nullable InputConditionConfiguration getInput()
     {
         return this.input;
     }
-    public TargetConditionConfiguration getTarget()
+    public @Nullable TargetConditionConfiguration getTarget()
     {
         return this.target;
     }
-    public ContextConditionConfiguration getContext()
+    public @Nullable ContextConditionConfiguration getContext()
     {
         return this.context;
     }
-    public ConditionConfiguration setUser(UserConditionConfiguration user)
+    public ConditionConfiguration setUser(@Nullable UserConditionConfiguration user)
     {
         this.user = user;
         return this;
     }
-    public ConditionConfiguration setInput(InputConditionConfiguration input)
+    public ConditionConfiguration setInput(@Nullable InputConditionConfiguration input)
     {
         this.input = input;
         return this;
     }
-    public ConditionConfiguration setTarget(TargetConditionConfiguration target)
+    public ConditionConfiguration setTarget(@Nullable TargetConditionConfiguration target)
     {
         this.target = target;
         return this;
     }
-    public ConditionConfiguration setContext(ContextConditionConfiguration context)
+    public ConditionConfiguration setContext(@Nullable ContextConditionConfiguration context)
     {
         this.context = context;
         return this;
