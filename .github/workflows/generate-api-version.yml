@@ -87,8 +87,32 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: Resolve next Maven package version
+        shell: pwsh
+        run: |
+          [xml]$pom = Get-Content 'src/pom.xml' -Raw
+          $namespace = New-Object System.Xml.XmlNamespaceManager($pom.NameTable)
+          $namespace.AddNamespace('m', 'http://maven.apache.org/POM/4.0.0')
+
+          $versionNode = $pom.SelectSingleNode('/m:project/m:version', $namespace)
+
+          if ($null -eq $versionNode -or [string]::IsNullOrWhiteSpace($versionNode.InnerText)) {
+            throw 'Could not find project version in src/pom.xml.'
+          }
+
+          $currentVersion = $versionNode.InnerText.Trim()
+
+          if ($currentVersion -notmatch '^(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)$') {
+            throw "Current Maven version '$currentVersion' is not a supported major.minor.patch version."
+          }
+
+          $nextVersion = '{0}.{1}.0' -f $Matches.major, ([int]$Matches.minor + 1)
+
+          "SDK_VERSION=$nextVersion" >> $env:GITHUB_ENV
+          "Resolved next Maven package version $nextVersion from current version $currentVersion." >> $env:GITHUB_STEP_SUMMARY
+
       - name: Update Maven package version
-        run: mvn --batch-mode versions:set -DnewVersion=${{ env.API_VERSION }} -DgenerateBackupPoms=false --file src/pom.xml
+        run: mvn --batch-mode versions:set -DnewVersion=${{ env.SDK_VERSION }} -DgenerateBackupPoms=false --file src/pom.xml
 
       - name: Generate Java classes
         shell: pwsh
@@ -147,7 +171,7 @@ jobs:
             '## Validation'
             '- dotnet restore Generator/Generator.csproj'
             '- dotnet build Generator/Generator.csproj --configuration Release --no-restore'
-            "- Updated src/pom.xml version to $env:API_VERSION"
+            "- Updated src/pom.xml version to $env:SDK_VERSION"
             '- pwsh ./generate.ps1'
             '- mvn --batch-mode -DskipTests package --file src/pom.xml'
             '- mvn resources:resources --file src/pom.xml'
