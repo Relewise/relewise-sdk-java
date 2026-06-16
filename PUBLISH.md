@@ -71,15 +71,25 @@ In this case it failed the signature validation because it could not find a key 
 ## Signing the artifacts
 The signing of the artifacts before they are pushed to the Nexus repository is also done for us as a part of the workflow, but the workflow needs some information about what cryptographic key to use for the signing. These three parts are also parsed to the workflow through secrets. They are called `JRELEASER_GPG_PASSPHRASE`, `JRELEASER_GPG_SECRET_KEY`, and `JRELEASER_GPG_PUBLIC_KEY`.
 
-If the cryptographic key has expired then we need to create a new. If you have Git installed, then you probably also have Git Bash installed, which you can use to generate a new GPG key.
+If the cryptographic key has expired then we need to create a new. If GPG is not installed locally on Windows, install [Gpg4win](https://gpg4win.org/download.html) first. After installing it, open PowerShell or Git Bash and verify that `gpg` is available:
 
-If you open Git Bash and run this command, then you will get instructions to create a new key:
+```bash
+gpg --version
+```
+
+Run this command to create a new key:
 
 ```bash
 gpg --full-generate-key
 ```
 
-For the type please use `RSA and RSA` which is the default and for the email please use `hello@relewise.com`.
+Use these values when prompted:
+
+- Type: `RSA and RSA`
+- Key size: `3072` or `4096`
+- Expiry: for example `2y`
+- Name: `Relewise`
+- Email: `hello@relewise.com`
 
 During the generation it prompts you for a pass phrase, please use some long random string for this. That pass phrase is our `JRELEASER_GPG_PASSPHRASE`, so please save that.
 
@@ -94,21 +104,28 @@ uid                      Relewise (Java SDK) <hello@relewise.com>
 sub   rsa3072 2025-04-10 [E] [expires: 2026-04-10]
 ```
 
-To export the public key run this command:
+You can also list the secret keys afterwards to find the new fingerprint:
 
 ```bash
-gpg --armor --export E496E2704059B23C82962B146FF7820B61B50335
+gpg --list-secret-keys --keyid-format LONG
 ```
 
-To export the secret key run this command (which will prompt you for your passphrase):
+Export the public key to a file:
 
 ```bash
-gpg --armor --export-secret-keys E496E2704059B23C82962B146FF7820B61B50335
+gpg --armor --output public-key.asc --export E496E2704059B23C82962B146FF7820B61B50335
 ```
 
-Now we have all the parts and we can insert them in GitHub (if you have the permissions to change secrets).
+Export the secret key to a file (this prompts for the passphrase):
 
-But we also need to publish the public part of the key to a key server. We have chosen **keys.openpgp.org** as our key server, but it really doesn't matter which you choose. To upload the key to them, use the following command:
 ```bash
-gpg --export E496E2704059B23C82962B146FF7820B61B50335 | curl -T - https://keys.openpgp.org
+gpg --armor --output private-key.asc --export-secret-keys E496E2704059B23C82962B146FF7820B61B50335
 ```
+
+Update the GitHub repository secrets:
+
+- `JRELEASER_GPG_PASSPHRASE`: the passphrase used when creating the key.
+- `JRELEASER_GPG_SECRET_KEY`: the full contents of `private-key.asc`, including the `BEGIN PGP PRIVATE KEY BLOCK` and `END PGP PRIVATE KEY BLOCK` lines.
+- `JRELEASER_GPG_PUBLIC_KEY`: the full contents of `public-key.asc`, including the `BEGIN PGP PUBLIC KEY BLOCK` and `END PGP PUBLIC KEY BLOCK` lines.
+
+Finally, publish the public key. The most reliable way on Windows is to upload `public-key.asc` manually at [https://keys.openpgp.org/upload](https://keys.openpgp.org/upload). After uploading, complete the email verification sent to `hello@relewise.com`; otherwise the key may not be discoverable by email.
