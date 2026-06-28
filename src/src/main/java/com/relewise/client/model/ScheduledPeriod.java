@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ScheduledPeriod.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ScheduledPeriod implements ISchedule
+public class ScheduledPeriod extends ScheduleBase implements ISchedule
 {
     public String $type = "Relewise.Client.DataTypes.Scheduling.ScheduledPeriod, Relewise.Client";
     public @Nullable OffsetDateTime fromUtc;

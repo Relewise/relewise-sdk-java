@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = AbandonedCartTriggerResult.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AbandonedCartTriggerResult implements ITriggerResult
+public class AbandonedCartTriggerResult extends TriggerResultBase implements ITriggerResult
 {
     public String $type = "Relewise.Client.Responses.Triggers.Results.AbandonedCartTriggerResult, Relewise.Client";
     public UserResultDetails user;

@@ -15,24 +15,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "$type")
-@JsonSubTypes({
-})
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class EntityChangeTriggerResult extends TriggerResultBase implements ITriggerResult
+public abstract class ScheduleBase implements ISchedule
 {
     public String $type = "";
-    public UserResultDetails user;
-    public UserResultDetails getUser()
-    {
-        return this.user;
-    }
-    public EntityChangeTriggerResult setUser(UserResultDetails user)
-    {
-        this.user = user;
-        return this;
-    }
 }

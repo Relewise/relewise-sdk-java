@@ -22,7 +22,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = Change.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Change implements IChange
+public class Change extends ChangeBase implements IChange
 {
     public String $type = "Relewise.Client.DataTypes.Changes.Change, Relewise.Client";
     public static Change create()

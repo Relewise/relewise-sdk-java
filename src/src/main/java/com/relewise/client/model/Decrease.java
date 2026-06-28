@@ -22,7 +22,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = Decrease.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Decrease implements IChange
+public class Decrease extends ChangeBase implements IChange
 {
     public String $type = "Relewise.Client.DataTypes.Changes.Decrease, Relewise.Client";
     public static Decrease create()
