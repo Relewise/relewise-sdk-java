@@ -23,6 +23,7 @@ public class MatchTypeSettings
     public Boolean startsWith;
     public Boolean endsWith;
     public Boolean fuzzy;
+    public Boolean semantic;
     public static MatchTypeSettings create()
     {
         return new MatchTypeSettings();
@@ -50,6 +51,10 @@ public class MatchTypeSettings
     {
         return this.fuzzy;
     }
+    public Boolean getSemantic()
+    {
+        return this.semantic;
+    }
     public MatchTypeSettings setCompound(Boolean compound)
     {
         this.compound = compound;
@@ -73,6 +78,11 @@ public class MatchTypeSettings
     public MatchTypeSettings setFuzzy(Boolean fuzzy)
     {
         this.fuzzy = fuzzy;
+        return this;
+    }
+    public MatchTypeSettings setSemantic(Boolean semantic)
+    {
+        this.semantic = semantic;
         return this;
     }
 }

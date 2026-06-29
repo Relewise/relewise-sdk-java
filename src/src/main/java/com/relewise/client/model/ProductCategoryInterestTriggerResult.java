@@ -21,7 +21,7 @@ import java.util.HashSet;
     property = "$type",
     defaultImpl = ProductCategoryInterestTriggerResult.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProductCategoryInterestTriggerResult implements ITriggerResult
+public class ProductCategoryInterestTriggerResult extends TriggerResultBase implements ITriggerResult
 {
     public String $type = "Relewise.Client.Responses.Triggers.Results.ProductCategoryInterestTriggerResult, Relewise.Client";
     public UserResultDetails user;

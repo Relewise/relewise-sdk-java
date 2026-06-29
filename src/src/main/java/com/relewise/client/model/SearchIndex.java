@@ -38,6 +38,8 @@ public class SearchIndex
     public IndexConfiguration configuration;
     /** Details about the current rebuild status of the index These values are set server side, any values set from client is ignored */
     public RebuildStatus rebuildStatus;
+    /** Details about the current semantic index status, if semantic indexing has produced runtime metadata for this index. These values are set server side, any values set from client is ignored */
+    public @Nullable SemanticIndexInfo semanticIndex;
     public static SearchIndex create(String id, String description, Boolean isDefault)
     {
         return new SearchIndex(id, description, isDefault);
@@ -114,6 +116,11 @@ public class SearchIndex
     {
         return this.rebuildStatus;
     }
+    /** Details about the current semantic index status, if semantic indexing has produced runtime metadata for this index. These values are set server side, any values set from client is ignored */
+    public @Nullable SemanticIndexInfo getSemanticIndex()
+    {
+        return this.semanticIndex;
+    }
     /** A unique identifier for the search index. */
     public SearchIndex setId(String id)
     {
@@ -172,6 +179,12 @@ public class SearchIndex
     public SearchIndex setRebuildStatus(RebuildStatus rebuildStatus)
     {
         this.rebuildStatus = rebuildStatus;
+        return this;
+    }
+    /** Details about the current semantic index status, if semantic indexing has produced runtime metadata for this index. These values are set server side, any values set from client is ignored */
+    public SearchIndex setSemanticIndex(@Nullable SemanticIndexInfo semanticIndex)
+    {
+        this.semanticIndex = semanticIndex;
         return this;
     }
 }
