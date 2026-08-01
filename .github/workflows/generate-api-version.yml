@@ -41,7 +41,7 @@ jobs:
           "TRELLO_CARD_URL=$trelloCardUrl" >> $env:GITHUB_ENV
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: ${{ env.TARGET_REPOSITORY }}
           ref: main
