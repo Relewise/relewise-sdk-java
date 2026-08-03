@@ -20,7 +20,7 @@ jobs:
         run: ./generate.sh
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5.6.0
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -44,7 +44,7 @@ jobs:
         run: mvn --batch-mode -DexcludedGroups=integration test --file src/pom.xml
 
       - name: Report
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@v3
         if: ${{ always() && github.actor != 'dependabot[bot]' }}
         with:
           name: Maven Tests
