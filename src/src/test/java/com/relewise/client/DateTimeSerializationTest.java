@@ -14,7 +14,7 @@ import java.util.concurrent.Callable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class DateTimeSerializationTest extends TestBase {
+public class DateTimeSerializationTest {
     @Test
     public void testSerializeOffsetDateTime() throws Exception {
         var objectMapper = JsonMapper.builder()

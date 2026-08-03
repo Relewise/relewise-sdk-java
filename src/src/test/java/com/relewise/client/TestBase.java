@@ -1,5 +1,8 @@
 package com.relewise.client;
 
+import org.junit.jupiter.api.Tag;
+
+@Tag("integration")
 public abstract class TestBase {
 
     public static String GetDatasetId() {

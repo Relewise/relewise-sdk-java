@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ClientConstructionTest extends TestBase {
+public class ClientConstructionTest {
     @Test
     public void testApiKeyEmpty() {
         assertThrows(IllegalArgumentException.class, () -> new Tracker("00000000-0000-0000-0000-000000000001", "", "https://api.relewise.com/"));

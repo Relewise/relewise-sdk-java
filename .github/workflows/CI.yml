@@ -33,14 +33,19 @@ jobs:
         run: mvn resources:resources --file src/pom.xml
 
       - name: Test
+        if: ${{ github.actor != 'dependabot[bot]' }}
         run: mvn --batch-mode -Dmaven.test.failure.ignore=true test --file src/pom.xml
         env:
           DATASET_ID: ${{secrets.INTEGRATIONTESTS_DATASET_ID}}
           API_KEY: ${{secrets.INTEGRATIONTESTS_API_KEY}}
 
+      - name: Unit tests
+        if: ${{ github.actor == 'dependabot[bot]' }}
+        run: mvn --batch-mode -DexcludedGroups=integration test --file src/pom.xml
+
       - name: Report
         uses: dorny/test-reporter@v1
-        if: always()
+        if: ${{ always() && github.actor != 'dependabot[bot]' }}
         with:
           name: Maven Tests
           path: src/target/surefire-reports/*.xml

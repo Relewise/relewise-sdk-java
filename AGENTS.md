@@ -76,9 +76,16 @@ Run tests:
 mvn --batch-mode test --file src/pom.xml
 ```
 
+Run tests that do not require integration credentials:
+
+```powershell
+mvn --batch-mode -DexcludedGroups=integration test --file src/pom.xml
+```
+
 ## Testing and Credentials
-- Tests use `DATASET_ID` and `API_KEY` from environment (`TestBase`).
+- Integration tests inherit the `integration` tag and use `DATASET_ID` and `API_KEY` from the environment (`TestBase`).
 - CI injects credentials from secrets.
+- CI excludes integration tests when triggered by Dependabot.
 - If credentials are unavailable locally, explicitly report integration-style test coverage as not run.
 
 ## Validation Policy (CI-Aligned, Pragmatic)
