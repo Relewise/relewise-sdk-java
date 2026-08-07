@@ -3,6 +3,7 @@ package com.relewise.client;
 import com.relewise.client.model.*;
 import com.relewise.client.infrastructure.*;
 import java.io.IOException;
+import java.util.*;
 
 public class Tracker extends RelewiseClient
 {
@@ -10,7 +11,14 @@ public class Tracker extends RelewiseClient
     public Tracker(String datasetId, String apiKey, String serverUrl, int timeout) { super(datasetId, apiKey, serverUrl, timeout); }
     
     public void track(BatchedTrackingRequest trackingRequest) throws IOException, InterruptedException, ClientException {
-        makeRequestAndValidate("BatchedTrackingRequest", trackingRequest, Void.class);
+        if (trackingRequest.getItems() == null || trackingRequest.getItems().length == 0) {
+            return;
+        }
+        for (var batch : createBatches(trackingRequest.getItems())) {
+            var chunkedRequest = new BatchedTrackingRequest();
+            chunkedRequest.setItems(batch.toArray(new Trackable[0]));
+            makeRequestAndValidate("BatchedTrackingRequest", chunkedRequest, Void.class);
+        }
     }
     
     public void track(TrackBrandAdministrativeActionRequest trackingRequest) throws IOException, InterruptedException, ClientException {
