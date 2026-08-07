@@ -12,8 +12,11 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Properties;
-import java.util.function.Supplier;
 
 public class RelewiseClient {
     private static final String apiKeyNotDefinedMessage = "apiKey must not be empty.";
@@ -26,6 +29,7 @@ public class RelewiseClient {
     private final String serverUrl;
     private final int timeout;
     private final ObjectMapper objectMapper;
+    private int batchSize = 1000;
 
     public RelewiseClient(String datasetId, String apiKey, String serverUrl, int timeout) {
         if (apiKey.isBlank()) {
@@ -49,6 +53,36 @@ public class RelewiseClient {
         } catch (IOException e) {
             // We intentionally swallow this exception as we don't want users code to throw exceptions if this is not successful.
         }
+    }
+
+    /** Returns the maximum number of items sent in one batch request. */
+    public int getBatchSize() {
+        return batchSize;
+    }
+
+    /** Configures the maximum number of items sent in one batch request. */
+    public void setBatchSize(int batchSize) {
+        if (batchSize < 1) {
+            throw new IllegalArgumentException("batchSize must be greater than 0.");
+        }
+        this.batchSize = batchSize;
+    }
+
+    protected <T> List<List<T>> createBatches(T[] items) {
+        return items == null ? Collections.emptyList() : createBatches(Arrays.asList(items));
+    }
+
+    protected <T> List<List<T>> createBatches(List<T> items) {
+        if (items == null || items.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        var configuredBatchSize = batchSize;
+        var batches = new ArrayList<List<T>>(((items.size() - 1) / configuredBatchSize) + 1);
+        for (int offset = 0; offset < items.size(); offset += configuredBatchSize) {
+            batches.add(new ArrayList<>(items.subList(offset, Math.min(offset + configuredBatchSize, items.size()))));
+        }
+        return batches;
     }
 
     public HttpResponse<String> makeRequestAsync(String endpoint, LicensedRequest requestBody) throws IOException, InterruptedException {

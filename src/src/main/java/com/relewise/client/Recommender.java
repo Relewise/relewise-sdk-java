@@ -3,6 +3,7 @@ package com.relewise.client;
 import com.relewise.client.model.*;
 import com.relewise.client.infrastructure.*;
 import java.io.IOException;
+import java.util.*;
 
 public class Recommender extends RelewiseClient
 {
@@ -126,11 +127,61 @@ public class Recommender extends RelewiseClient
     }
     
     public ProductRecommendationResponseCollection recommend(ProductRecommendationRequestCollection request) throws IOException, InterruptedException, ClientException {
-        return makeRequestAndValidate("ProductRecommendationRequestCollection", request, ProductRecommendationResponseCollection.class);
+        if (request.getRequests() == null || request.getRequests().isEmpty()) {
+            return null;
+        }
+        ProductRecommendationResponseCollection aggregatedResponse = null;
+        for (var batch : createBatches(request.getRequests())) {
+            var chunkedRequest = new ProductRecommendationRequestCollection();
+            chunkedRequest.setRequireDistinctProductsAcrossResults(request.getRequireDistinctProductsAcrossResults());
+            chunkedRequest.setRequests(batch.toArray(new ProductRecommendationRequest[0]));
+            var chunkResponse = makeRequestAndValidate("ProductRecommendationRequestCollection", chunkedRequest, ProductRecommendationResponseCollection.class);
+            if (chunkResponse == null) {
+                continue;
+            }
+            if (aggregatedResponse == null) {
+                aggregatedResponse = chunkResponse;
+            }
+            else {
+                if (chunkResponse.getResponses() != null) {
+                    var responses = aggregatedResponse.getResponses() == null
+                        ? new ArrayList<ProductRecommendationResponse>()
+                        : new ArrayList<>(Arrays.asList(aggregatedResponse.getResponses()));
+                    responses.addAll(Arrays.asList(chunkResponse.getResponses()));
+                    aggregatedResponse.setResponses(responses.toArray(new ProductRecommendationResponse[0]));
+                }
+            }
+        }
+        return aggregatedResponse;
     }
     
     public ContentRecommendationResponseCollection recommend(ContentRecommendationRequestCollection request) throws IOException, InterruptedException, ClientException {
-        return makeRequestAndValidate("ContentRecommendationRequestCollection", request, ContentRecommendationResponseCollection.class);
+        if (request.getRequests() == null || request.getRequests().isEmpty()) {
+            return null;
+        }
+        ContentRecommendationResponseCollection aggregatedResponse = null;
+        for (var batch : createBatches(request.getRequests())) {
+            var chunkedRequest = new ContentRecommendationRequestCollection();
+            chunkedRequest.setRequireDistinctContentsAcrossResults(request.getRequireDistinctContentsAcrossResults());
+            chunkedRequest.setRequests(batch.toArray(new ContentRecommendationRequest[0]));
+            var chunkResponse = makeRequestAndValidate("ContentRecommendationRequestCollection", chunkedRequest, ContentRecommendationResponseCollection.class);
+            if (chunkResponse == null) {
+                continue;
+            }
+            if (aggregatedResponse == null) {
+                aggregatedResponse = chunkResponse;
+            }
+            else {
+                if (chunkResponse.getResponses() != null) {
+                    var responses = aggregatedResponse.getResponses() == null
+                        ? new ArrayList<ContentRecommendationResponse>()
+                        : new ArrayList<>(Arrays.asList(aggregatedResponse.getResponses()));
+                    responses.addAll(Arrays.asList(chunkResponse.getResponses()));
+                    aggregatedResponse.setResponses(responses.toArray(new ContentRecommendationResponse[0]));
+                }
+            }
+        }
+        return aggregatedResponse;
     }
     
     public ProductRecommendationResponse recommend(ProductRecommendationRequest request) throws IOException, InterruptedException, ClientException {

@@ -3,6 +3,7 @@ package com.relewise.client;
 import com.relewise.client.model.*;
 import com.relewise.client.infrastructure.*;
 import java.io.IOException;
+import java.util.*;
 
 public class Searcher extends RelewiseClient
 {
@@ -30,6 +31,39 @@ public class Searcher extends RelewiseClient
     }
     
     public SearchResponseCollection batch(SearchRequestCollection request) throws IOException, InterruptedException, ClientException {
-        return makeRequestAndValidate("SearchRequestCollection", request, SearchResponseCollection.class);
+        if (request.getRequests() == null || request.getRequests().isEmpty()) {
+            return null;
+        }
+        SearchResponseCollection aggregatedResponse = null;
+        for (var batch : createBatches(request.getRequests())) {
+            var chunkedRequest = new SearchRequestCollection();
+            chunkedRequest.setLanguage(request.getLanguage());
+            chunkedRequest.setCurrency(request.getCurrency());
+            chunkedRequest.setUser(request.getUser());
+            chunkedRequest.setDisplayedAtLocation(request.getDisplayedAtLocation());
+            chunkedRequest.setRelevanceModifiers(request.getRelevanceModifiers());
+            chunkedRequest.setFilters(request.getFilters());
+            chunkedRequest.setIndexSelector(request.getIndexSelector());
+            chunkedRequest.setPostFilters(request.getPostFilters());
+            chunkedRequest.setChannel(request.getChannel());
+            chunkedRequest.setRequests(batch.toArray(new SearchRequest[0]));
+            var chunkResponse = makeRequestAndValidate("SearchRequestCollection", chunkedRequest, SearchResponseCollection.class);
+            if (chunkResponse == null) {
+                continue;
+            }
+            if (aggregatedResponse == null) {
+                aggregatedResponse = chunkResponse;
+            }
+            else {
+                if (chunkResponse.getResponses() != null) {
+                    var responses = aggregatedResponse.getResponses() == null
+                        ? new ArrayList<SearchResponse>()
+                        : new ArrayList<>(Arrays.asList(aggregatedResponse.getResponses()));
+                    responses.addAll(Arrays.asList(chunkResponse.getResponses()));
+                    aggregatedResponse.setResponses(responses.toArray(new SearchResponse[0]));
+                }
+            }
+        }
+        return aggregatedResponse;
     }
 }
