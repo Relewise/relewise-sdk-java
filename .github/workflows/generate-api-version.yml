@@ -40,6 +40,10 @@ jobs:
 
           "TRELLO_CARD_URL=$trelloCardUrl" >> $env:GITHUB_ENV
 
+      - name: Wait for NuGet package to be published
+        if: github.event_name != 'workflow_dispatch'
+        run: sleep 600
+
       - name: Checkout
         uses: actions/checkout@v7
         with:
