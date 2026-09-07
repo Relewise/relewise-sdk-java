@@ -24,6 +24,9 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = SaveRedirectRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SaveRedirectRulesResponse, Relewise.Client"),
     @JsonSubTypes.Type(value = SaveDecompoundRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SaveDecompoundRulesResponse, Relewise.Client"),
     @JsonSubTypes.Type(value = SaveStemmingRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SaveStemmingRulesResponse, Relewise.Client"),
+    @JsonSubTypes.Type(value = SaveSearchTermModifierRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SaveSearchTermModifierRulesResponse, Relewise.Client"),
+    @JsonSubTypes.Type(value = SaveSearchResultModifierRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SaveSearchResultModifierRulesResponse, Relewise.Client"),
+    @JsonSubTypes.Type(value = SaveSynonymRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SaveSynonymRulesResponse, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class SearchResultModifierRuleSaveSearchRulesResponse extends TimedResponse

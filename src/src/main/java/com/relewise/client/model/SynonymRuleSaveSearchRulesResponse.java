@@ -29,21 +29,21 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = SaveSynonymRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SaveSynonymRulesResponse, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class PredictionRuleSaveSearchRulesResponse extends TimedResponse
+public abstract class SynonymRuleSaveSearchRulesResponse extends TimedResponse
 {
     public String $type = "";
-    public PredictionRule[] rules;
-    public PredictionRule[] getRules()
+    public SynonymRule[] rules;
+    public SynonymRule[] getRules()
     {
         return this.rules;
     }
-    public PredictionRuleSaveSearchRulesResponse setRules(PredictionRule... rules)
+    public SynonymRuleSaveSearchRulesResponse setRules(SynonymRule... rules)
     {
         this.rules = rules;
         return this;
     }
     @Override
-    public PredictionRuleSaveSearchRulesResponse setStatistics(Statistics statistics)
+    public SynonymRuleSaveSearchRulesResponse setStatistics(Statistics statistics)
     {
         this.statistics = statistics;
         return this;

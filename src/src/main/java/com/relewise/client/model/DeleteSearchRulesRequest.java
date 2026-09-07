@@ -26,6 +26,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = DeleteStemmingRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.DeleteStemmingRulesRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = DeleteSearchTermModifierRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.DeleteSearchTermModifierRulesRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = DeleteSearchResultModifierRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.DeleteSearchResultModifierRulesRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = DeleteSynonymRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.DeleteSynonymRulesRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class DeleteSearchRulesRequest extends LicensedRequest

@@ -24,8 +24,9 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = SaveRedirectRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SaveRedirectRulesRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = SaveDecompoundRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SaveDecompoundRulesRequest, Relewise.Client"),
     @JsonSubTypes.Type(value = SaveStemmingRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SaveStemmingRulesRequest, Relewise.Client"),
-    @JsonSubTypes.Type(value = SaveSearchTermModifierRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SaveSearchTermModifierRulesResponse, Relewise.Client"),
-    @JsonSubTypes.Type(value = SaveSearchResultModifierRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SaveSearchResultModifierRulesResponse, Relewise.Client"),
+    @JsonSubTypes.Type(value = SaveSearchTermModifierRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SaveSearchTermModifierRulesRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = SaveSearchResultModifierRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SaveSearchResultModifierRulesRequest, Relewise.Client"),
+    @JsonSubTypes.Type(value = SaveSynonymRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SaveSynonymRulesRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class RedirectRuleSaveSearchRulesRequest extends LicensedRequest

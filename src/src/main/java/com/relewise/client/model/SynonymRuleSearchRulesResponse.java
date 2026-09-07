@@ -29,12 +29,12 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = SynonymRulesResponse.class, name = "Relewise.Client.Responses.Search.Rules.SynonymRulesResponse, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class PredictionRuleSearchRulesResponse extends TimedResponse
+public abstract class SynonymRuleSearchRulesResponse extends TimedResponse
 {
     public String $type = "";
-    public PredictionRule[] rules;
+    public SynonymRule[] rules;
     public Integer hits;
-    public PredictionRule[] getRules()
+    public SynonymRule[] getRules()
     {
         return this.rules;
     }
@@ -42,18 +42,18 @@ public abstract class PredictionRuleSearchRulesResponse extends TimedResponse
     {
         return this.hits;
     }
-    public PredictionRuleSearchRulesResponse setRules(PredictionRule... rules)
+    public SynonymRuleSearchRulesResponse setRules(SynonymRule... rules)
     {
         this.rules = rules;
         return this;
     }
-    public PredictionRuleSearchRulesResponse setHits(Integer hits)
+    public SynonymRuleSearchRulesResponse setHits(Integer hits)
     {
         this.hits = hits;
         return this;
     }
     @Override
-    public PredictionRuleSearchRulesResponse setStatistics(Statistics statistics)
+    public SynonymRuleSearchRulesResponse setStatistics(Statistics statistics)
     {
         this.statistics = statistics;
         return this;

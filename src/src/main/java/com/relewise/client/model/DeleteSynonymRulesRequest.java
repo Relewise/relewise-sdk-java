@@ -15,44 +15,45 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
-/** @deprecated Use DeleteSynonymRulesRequest and SearchAdministrator.Delete(DeleteSynonymRulesRequest) instead. */
+/** Deletes one or more synonym rules. */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,
     property = "$type",
-    defaultImpl = DeleteSynonymsRequest.class)
+    defaultImpl = DeleteSynonymRulesRequest.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DeleteSynonymsRequest extends LicensedRequest
+public class DeleteSynonymRulesRequest extends DeleteSearchRulesRequest
 {
-    public String $type = "Relewise.Client.Requests.Search.DeleteSynonymsRequest, Relewise.Client";
-    public UUID[] ids;
-    public String deletedBy;
-    public static DeleteSynonymsRequest create(UUID[] ids, String deletedBy)
+    public String $type = "Relewise.Client.Requests.Search.Rules.DeleteSynonymRulesRequest, Relewise.Client";
+    /**
+     * Creates a request that deletes one or more synonym rules.
+     * @param ids The identifiers of the rules to delete.
+     * @param deletedBy The identity responsible for the deletion.
+     */
+    public static DeleteSynonymRulesRequest create(UUID[] ids, String deletedBy)
     {
-        return new DeleteSynonymsRequest(ids, deletedBy);
+        return new DeleteSynonymRulesRequest(ids, deletedBy);
     }
-    public DeleteSynonymsRequest(UUID[] ids, String deletedBy)
+    /**
+     * Creates a request that deletes one or more synonym rules.
+     * @param ids The identifiers of the rules to delete.
+     * @param deletedBy The identity responsible for the deletion.
+     */
+    public DeleteSynonymRulesRequest(UUID[] ids, String deletedBy)
     {
         this.ids = ids;
         this.deletedBy = deletedBy;
     }
-    public DeleteSynonymsRequest()
+    public DeleteSynonymRulesRequest()
     {
     }
-    public UUID[] getIds()
-    {
-        return this.ids;
-    }
-    public String getDeletedBy()
-    {
-        return this.deletedBy;
-    }
-    public DeleteSynonymsRequest setIds(UUID... ids)
+    @Override
+    public DeleteSynonymRulesRequest setIds(UUID... ids)
     {
         this.ids = ids;
         return this;
     }
-    public DeleteSynonymsRequest addToIds(UUID id)
+    public DeleteSynonymRulesRequest addToIds(UUID id)
     {
         if (this.ids == null)
         {
@@ -66,7 +67,8 @@ public class DeleteSynonymsRequest extends LicensedRequest
         }
         return this;
     }
-    public DeleteSynonymsRequest setDeletedBy(String deletedBy)
+    @Override
+    public DeleteSynonymRulesRequest setDeletedBy(String deletedBy)
     {
         this.deletedBy = deletedBy;
         return this;

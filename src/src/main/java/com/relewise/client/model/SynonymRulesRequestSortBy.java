@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
-/** @deprecated Use SynonymRulesRequest.SortBy instead. */
-public enum SynonymsRequestSynonymSorting
+/** Defines the fields by which synonym rules can be sorted. */
+public enum SynonymRulesRequestSortBy
 {
     Created {
         public String toString() {
@@ -46,11 +46,6 @@ public enum SynonymsRequestSynonymSorting
     ApprovedBy {
         public String toString() {
             return "ApprovedBy";
-        }
-    },
-    Usages {
-        public String toString() {
-            return "Usages";
         }
     },
     Type {
