@@ -29,12 +29,12 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = SaveSynonymRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SaveSynonymRulesRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class PredictionRuleSaveSearchRulesRequest extends LicensedRequest
+public abstract class SynonymRuleSaveSearchRulesRequest extends LicensedRequest
 {
     public String $type = "";
-    public PredictionRule[] rules;
+    public SynonymRule[] rules;
     public String modifiedBy;
-    public PredictionRule[] getRules()
+    public SynonymRule[] getRules()
     {
         return this.rules;
     }
@@ -42,12 +42,12 @@ public abstract class PredictionRuleSaveSearchRulesRequest extends LicensedReque
     {
         return this.modifiedBy;
     }
-    public PredictionRuleSaveSearchRulesRequest setRules(PredictionRule... rules)
+    public SynonymRuleSaveSearchRulesRequest setRules(SynonymRule... rules)
     {
         this.rules = rules;
         return this;
     }
-    public PredictionRuleSaveSearchRulesRequest setModifiedBy(String modifiedBy)
+    public SynonymRuleSaveSearchRulesRequest setModifiedBy(String modifiedBy)
     {
         this.modifiedBy = modifiedBy;
         return this;

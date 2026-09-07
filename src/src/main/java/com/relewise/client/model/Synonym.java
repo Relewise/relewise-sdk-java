@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+/** @deprecated Use Relewise.Client.DataTypes.Search.Rules.SynonymRule instead. */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Synonym
 {

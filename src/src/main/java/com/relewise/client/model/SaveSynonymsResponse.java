@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+/** @deprecated Use SaveSynonymRulesResponse returned by SaveSynonymRulesRequest instead. */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,

@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
-/** @deprecated Use Relewise.Client.DataTypes.Search.Rules.SynonymRule.SynonymType instead. */
-public enum SynonymType
+/** Defines the direction in which a synonym relation is applied. */
+public enum SynonymRuleSynonymType
 {
     OneWay {
         public String toString() {

@@ -26,6 +26,7 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = StemmingRule.class, name = "Relewise.Client.DataTypes.Search.Rules.StemmingRule, Relewise.Client"),
     @JsonSubTypes.Type(value = SearchTermModifierRule.class, name = "Relewise.Client.DataTypes.Search.Rules.SearchTermModifierRule, Relewise.Client"),
     @JsonSubTypes.Type(value = SearchResultModifierRule.class, name = "Relewise.Client.DataTypes.Search.Rules.SearchResultModifierRule, Relewise.Client"),
+    @JsonSubTypes.Type(value = SynonymRule.class, name = "Relewise.Client.DataTypes.Search.Rules.SynonymRule, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class SearchRule

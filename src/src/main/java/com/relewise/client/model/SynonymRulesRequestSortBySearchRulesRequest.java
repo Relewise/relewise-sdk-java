@@ -29,18 +29,18 @@ import java.util.HashSet;
     @JsonSubTypes.Type(value = SynonymRulesRequest.class, name = "Relewise.Client.Requests.Search.Rules.SynonymRulesRequest, Relewise.Client"),
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class PredictionRulesRequestSortBySearchRulesRequest extends LicensedRequest
+public abstract class SynonymRulesRequestSortBySearchRulesRequest extends LicensedRequest
 {
     public String $type = "";
     public SearchRuleFilters filters;
-    public PredictionRulesRequestSortBySorting sorting;
+    public SynonymRulesRequestSortBySorting sorting;
     public Integer skip;
     public Integer take;
     public SearchRuleFilters getFilters()
     {
         return this.filters;
     }
-    public PredictionRulesRequestSortBySorting getSorting()
+    public SynonymRulesRequestSortBySorting getSorting()
     {
         return this.sorting;
     }
@@ -52,22 +52,22 @@ public abstract class PredictionRulesRequestSortBySearchRulesRequest extends Lic
     {
         return this.take;
     }
-    public PredictionRulesRequestSortBySearchRulesRequest setFilters(SearchRuleFilters filters)
+    public SynonymRulesRequestSortBySearchRulesRequest setFilters(SearchRuleFilters filters)
     {
         this.filters = filters;
         return this;
     }
-    public PredictionRulesRequestSortBySearchRulesRequest setSorting(PredictionRulesRequestSortBySorting sorting)
+    public SynonymRulesRequestSortBySearchRulesRequest setSorting(SynonymRulesRequestSortBySorting sorting)
     {
         this.sorting = sorting;
         return this;
     }
-    public PredictionRulesRequestSortBySearchRulesRequest setSkip(Integer skip)
+    public SynonymRulesRequestSortBySearchRulesRequest setSkip(Integer skip)
     {
         this.skip = skip;
         return this;
     }
-    public PredictionRulesRequestSortBySearchRulesRequest setTake(Integer take)
+    public SynonymRulesRequestSortBySearchRulesRequest setTake(Integer take)
     {
         this.take = take;
         return this;

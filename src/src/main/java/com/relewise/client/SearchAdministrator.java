@@ -37,6 +37,18 @@ public class SearchAdministrator extends RelewiseClient
         return makeRequestAndValidate("DeleteSynonymsRequest", request, DeleteSynonymsResponse.class);
     }
     
+    public SynonymRulesResponse load(SynonymRulesRequest request) throws IOException, InterruptedException, ClientException {
+        return makeRequestAndValidate("SynonymRulesRequest", request, SynonymRulesResponse.class);
+    }
+    
+    public SaveSynonymRulesResponse save(SaveSynonymRulesRequest request) throws IOException, InterruptedException, ClientException {
+        return makeRequestAndValidate("SaveSynonymRulesRequest", request, SaveSynonymRulesResponse.class);
+    }
+    
+    public DeleteSearchRulesResponse delete(DeleteSynonymRulesRequest request) throws IOException, InterruptedException, ClientException {
+        return makeRequestAndValidate("DeleteSynonymRulesRequest", request, DeleteSearchRulesResponse.class);
+    }
+    
     public RedirectRulesResponse load(RedirectRulesRequest request) throws IOException, InterruptedException, ClientException {
         return makeRequestAndValidate("RedirectRulesRequest", request, RedirectRulesResponse.class);
     }
