@@ -41,7 +41,7 @@ jobs:
         run: mvn --batch-mode -Dmaven.test.failure.ignore=true test --file src/pom.xml
         env:
           DATASET_ID: 24e8aba9-1e21-46b2-8fad-6fffa956bd3b
-          API_KEY: ${{secrets.INTEGRATIONTESTS_API_KEY}}
+          API_KEY: ${{secrets.INTEGRATION_TESTS_DATASET_API_KEY}}
           SERVER_URL: https://sandbox-api.relewise.com/
 
       - name: Report
