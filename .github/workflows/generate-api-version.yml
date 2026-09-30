@@ -18,6 +18,11 @@ permissions:
   contents: write
   pull-requests: write
 
+concurrency:
+  group: relewise-sdk-java-integration-dataset
+  cancel-in-progress: false
+  queue: max
+
 env:
   REVIEWERS: mzanoni,soe-relewise
   TARGET_REPOSITORY: Relewise/relewise-sdk-java
@@ -130,8 +135,9 @@ jobs:
 
       - name: Test
         env:
-          DATASET_ID: ${{ secrets.INTEGRATIONTESTS_DATASET_ID }}
+          DATASET_ID: 24e8aba9-1e21-46b2-8fad-6fffa956bd3b
           API_KEY: ${{ secrets.INTEGRATIONTESTS_API_KEY }}
+          SERVER_URL: https://sandbox-api.relewise.com/
         run: mvn --batch-mode test --file src/pom.xml
 
       - name: Check generated changes

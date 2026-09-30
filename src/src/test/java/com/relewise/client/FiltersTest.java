@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class FiltersTest extends TestBase {
     @Test
     public void testProductAssortmentFilter() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
             Language.create("en-US"),
@@ -34,19 +34,19 @@ public class FiltersTest extends TestBase {
 
     @Test
     public void testProductIdFilter() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
             Language.create("en-US"),
             Currency.create("USD"),
             UserFactory.byTemporaryId("t-id"),
             "integration test",
-            "1",
+            null,
             0,
             20
         ).setFilters(
             FilterCollection.create(
-                ProductIdFilter.create().setProductIds("1")
+                ProductIdFilter.create().setProductIds(filterProductId())
             )
         );
 

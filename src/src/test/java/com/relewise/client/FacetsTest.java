@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class FacetsTest extends TestBase {
     @Test
     public void testSalesPriceFacet() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
                 Language.create("en-US"),
@@ -38,7 +38,7 @@ public class FacetsTest extends TestBase {
 
     @Test
     public void testBrandFacet() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
                 Language.create("en-US"),
@@ -50,7 +50,7 @@ public class FacetsTest extends TestBase {
                 0).setFacets(
                         ProductFacetQuery.create()
                                 .setItems(
-                                        BrandFacet.create("b-1")
+                                        BrandFacet.create(fixtureBrandId())
                                                 .setField(FacetingField.Brand)));
 
         var response = searcher.search(productSearch);
@@ -59,13 +59,13 @@ public class FacetsTest extends TestBase {
         assertNotNull(response.facets.items);
         assertNotEquals(0, response.facets.items.size());
         assertEquals(BrandFacetResult.class, response.facets.items.get(0).getClass());
-        assertEquals("b-1", ((BrandFacetResult) response.facets.items.get(0)).selected.get(0));
+        assertEquals(fixtureBrandId(), ((BrandFacetResult) response.facets.items.get(0)).selected.get(0));
         assertEquals(FacetingField.Brand, response.facets.items.get(0).field);
     }
 
     @Test
     public void testProductDataFacet() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
                 Language.create("en-US"),
@@ -99,7 +99,7 @@ public class FacetsTest extends TestBase {
 
     @Test
     public void testCategoryFacet() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
                 Language.create("en-US"),
@@ -127,7 +127,7 @@ public class FacetsTest extends TestBase {
 
     @Test
     public void testFacetSorting() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
                 Language.create("en-US"),
@@ -158,7 +158,7 @@ public class FacetsTest extends TestBase {
 
     @Test
     public void testDataObjectFacetEvaluationMode() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
                 Language.create("da-dk"),

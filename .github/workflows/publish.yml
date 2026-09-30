@@ -7,6 +7,11 @@ on:
   release:
     types: [published]
 
+concurrency:
+  group: relewise-sdk-java-integration-dataset
+  cancel-in-progress: false
+  queue: max
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -60,8 +65,9 @@ jobs:
           SONATYPE_USERNAME: ${{ secrets.JRELEASER_NEXUS2_USERNAME }}
           SONATYPE_TOKEN: ${{ secrets.JRELEASER_NEXUS2_PASSWORD }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.JRELEASER_GPG_PASSPHRASE }}
-          DATASET_ID: ${{secrets.INTEGRATIONTESTS_DATASET_ID}}
+          DATASET_ID: 24e8aba9-1e21-46b2-8fad-6fffa956bd3b
           API_KEY: ${{secrets.INTEGRATIONTESTS_API_KEY}}
+          SERVER_URL: https://sandbox-api.relewise.com/
 
       - name: Ingest new data in MCP server
         run: curl -X PUT -H "x-api-key:${{ secrets.MCP_INGESTION_API_KEY }}" -H "content-length:0" https://mcp.relewise.com/IngestDataSource/Java  

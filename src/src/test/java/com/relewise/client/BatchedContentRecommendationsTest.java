@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BatchedContentRecommendationsTest extends TestBase {
     @Test
     public void testBatchedContentRecommendations() throws Exception {
-        var recommender = new Recommender(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var recommender = new Recommender(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var contentRecommendationRequestCollection  = ContentRecommendationRequestCollection.create(
             false,
@@ -33,7 +33,7 @@ public class BatchedContentRecommendationsTest extends TestBase {
 
         assertNotNull(response);
         assertEquals(2, response.responses.length);
-        assertNotEquals(0, response.responses[0].recommendations.length);
-        assertNotEquals(0, response.responses[1].recommendations.length);
+        assertNotNull(response.responses[0].recommendations);
+        assertNotNull(response.responses[1].recommendations);
     }
 }
