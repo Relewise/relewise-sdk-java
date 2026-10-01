@@ -11,13 +11,13 @@ import static org.junit.jupiter.api.Assertions.*;
 public class GeneratedRequestsTest extends TestBase {
     @Test
     public void testTrackOrderRequestWithBuilderPatternAndCreatorMethod() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var orderRequest = TrackOrderRequest.create(
             Order.create(
-                UserFactory.byTemporaryId("t-id").setChannel(Channel.create("Channel 1")),
+                fixtureUser("order-creator").setChannel(Channel.create("Channel 1")),
                 Money.create(Currency.create("DKK"), 100.0),
-                "1"
+                fixtureId("order-creator")
             )
         );
 
@@ -32,18 +32,18 @@ public class GeneratedRequestsTest extends TestBase {
      */
     @Test
     public void testTrackOrderRequestWithBuilderPattern() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var orderRequest = (new TrackOrderRequest())
             .setOrder((new Order())
-                .setUser(new User().setTemporaryId("t-Id").setChannel(Channel.create("Channel 1")))
+                .setUser(fixtureUser("order-builder").setChannel(Channel.create("Channel 1")))
                 .setSubtotal((new Money())
                     .setAmount(100.0)
                     .setCurrency((new Currency())
                         .setValue("DKK")
                     )
                 )
-                .setOrderNumber("1")
+                .setOrderNumber(fixtureId("order-builder"))
                 .setCartName("1")
             );
 
@@ -58,15 +58,15 @@ public class GeneratedRequestsTest extends TestBase {
      */
     @Test
     public void testTrackOrderRequest() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var order = new Order(
-            UserFactory.byTemporaryId("t-ID").setChannel(Channel.create("Channel 1")),
+            fixtureUser("order-direct").setChannel(Channel.create("Channel 1")),
             new Money(
                 new Currency("DKK"),
                 100.0
             ),
-            "1"
+            fixtureId("order-direct")
         );
 
         var orderRequest = new TrackOrderRequest(order);

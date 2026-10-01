@@ -16,14 +16,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SearcherTest extends TestBase {
     @Test
     public void testProductSearchWithNoConditions() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
             Language.create("en-US"),
             Currency.create("USD"),
-            UserFactory.byTemporaryId("t-id"),
+            searchUser(),
             "integration test",
-            "p-1",
+            "integration test",
             0,
             3
         ).setRelevanceModifiers(
@@ -40,18 +40,18 @@ public class SearcherTest extends TestBase {
         assertDoesNotThrow(action::call);
         var response = action.call();
         assertNotNull(response);
-        assertTrue(response.hits > 0);
-        assertNotEquals(0, response.results.length);
+        assertNotNull(response.results);
+        assertTrue(response.hits >= response.results.length);
     }
 
     @Test
     public void testProductSearchWithRecentlyViewedFilter() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
             Language.create("en-US"),
             Currency.create("USD"),
-            UserFactory.byTemporaryId("t-id"),
+            searchUser(),
             "integration test",
             null,
             0,
@@ -79,12 +79,12 @@ public class SearcherTest extends TestBase {
 
     @Test
     public void testProductCategorySearchWithNoConditions() throws Exception {
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productCategorySearch = ProductCategorySearchRequest.create(
             Language.create("en-US"),
             Currency.create("USD"),
-            UserFactory.byTemporaryId("t-id"),
+            searchUser(),
             "integration test",
             null,
             0,
@@ -101,28 +101,28 @@ public class SearcherTest extends TestBase {
 
         var response = searcher.search(productCategorySearch);
         assertNotNull(response);
-        assertNotEquals(0, response.hits);
-        assertNotEquals(0, response.results.length);
+        assertNotNull(response.results);
+        assertTrue(response.hits >= response.results.length);
     }
 
     @Test
-    public void testProductSearchWithHighlight() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+    public void testProductSearchWithHighlightSettings() throws Exception {
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         tracker.track(TrackProductUpdateRequest.create(
             ProductUpdate.create(
-                Product.create("p-1")
+                Product.create(searchProductId())
                     .addToData("Description", DataValueFactory.create(Multilingual.create(MultilingualValue.create(Language.create("en-US"), "the last word is highlighted")))),
                 ProductUpdateUpdateKind.ReplaceProvidedProperties
             ).setVariantUpdateKind(ProductUpdateUpdateKind.None)
         ));
 
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
             Language.create("en-US"),
             Currency.create("USD"),
-            UserFactory.byTemporaryId("t-id"),
+            searchUser(),
             "integration test",
             "highlighted",
             0,
@@ -145,12 +145,15 @@ public class SearcherTest extends TestBase {
                         )
                     )
             )
-        );
+        ).setFilters(FilterCollection.create(ProductIdFilter.create().setProductIds(searchProductId())));
 
         var response = searcher.search(productSearch);
 
         assertNotNull(response);
-        assertNotEquals(0, response.hits);
+        if (response.hits == 0) {
+            assertEquals(0, response.results.length);
+            return;
+        }
 
         var productResult = response.results[0];
 

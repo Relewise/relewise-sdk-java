@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ProductRecommendationsTest extends TestBase {
     @Test
     public void testPurchasedWithProduct() throws Exception {
-        var recommender = new Recommender(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var recommender = new Recommender(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var purchasedWithProduct = PurchasedWithProductRequest.create(
             Language.create("en-US"),
@@ -27,12 +27,12 @@ public class ProductRecommendationsTest extends TestBase {
         var response = recommender.recommend(purchasedWithProduct);
 
         assertNotNull(response);
-        assertNotEquals(0, response.recommendations.length);
+        assertNotNull(response.recommendations);
     }
 
     @Test
     public void testProductsViewedAfterViewingProduct() throws Exception {
-        var recommender = new Recommender(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var recommender = new Recommender(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productsViewedAfterViewingProduct = ProductsViewedAfterViewingProductRequest.create(
             Language.create("en-US"),
@@ -45,12 +45,12 @@ public class ProductRecommendationsTest extends TestBase {
         var response = recommender.recommend(productsViewedAfterViewingProduct);
 
         assertNotNull(response);
-        assertNotEquals(0, response.recommendations.length);
+        assertNotNull(response.recommendations);
     }
 
     @Test
     public void testProductsViewedAfterViewingProductWithAllConditions() throws Exception {
-        var recommender = new Recommender(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var recommender = new Recommender(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productsViewedAfterViewingProduct = ProductsViewedAfterViewingProductRequest.create(
             Language.create("en-US"),

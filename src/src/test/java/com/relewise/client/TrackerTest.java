@@ -14,13 +14,20 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TrackerTest extends TestBase {
     @Test
     public void testProductView() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), GetServerUrl());
+        String productId = fixtureId("product-view-product");
+        String variantId = fixtureId("product-view-variant");
+        deleteFixtureProductAfterTest(productId);
+        tracker.track(TrackProductUpdateRequest.create(ProductUpdate.create(
+            Product.create(productId), ProductUpdateUpdateKind.ReplaceProvidedProperties)
+            .setVariants(ProductVariant.create(variantId))
+            .setVariantUpdateKind(ProductUpdateUpdateKind.UpdateAndAppend)));
 
         var productSearch = TrackProductViewRequest.create(
             ProductView.create(
-                UserFactory.byTemporaryId("t-id"),
-                Product.create("p-1"),
-                ProductVariant.create("v-1")
+                fixtureUser("product-view-user"),
+                Product.create(productId),
+                ProductVariant.create(variantId)
             )
         );
 
@@ -30,7 +37,7 @@ public class TrackerTest extends TestBase {
 
     @Test
     public void testDocsSampleProductUpdateWithVariant() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         // Create a timestamp to distinguish active and inactive entities
         // Read more at
@@ -40,13 +47,22 @@ public class TrackerTest extends TestBase {
         // Language can be any string, and doesn't have to be a valid iso-standard.
         var english = Language.create("en");
         var dkk = Currency.create("DKK");
+        String productId = fixtureId("docs-product");
 
         var updates = new ArrayList<Trackable>();
 
         // Foreach product that needs to be imported, do the following:
         {
             // The Id should be the primary id of the product
-            var product = Product.create("Product-SKU-01");
+            var product = Product.create(productId);
+            deleteFixtureProductAfterTest(product.id);
+            String brandId = fixtureBrandId();
+            String playCategoryId = fixtureId("play-category");
+            String swingsCategoryId = fixtureId("swings-category");
+            String seatsCategoryId = fixtureId("seats-category");
+            deleteFixtureProductCategoryAfterTest(playCategoryId);
+            deleteFixtureProductCategoryAfterTest(swingsCategoryId);
+            deleteFixtureProductCategoryAfterTest(seatsCategoryId);
 
             // We only set the English translation in this example
             // but more can be set by parsing more MultilingualValue
@@ -62,7 +78,7 @@ public class TrackerTest extends TestBase {
 
             product.setBrand(
                 // Displayname can be left out, but Id is required
-                Brand.create("brandId")
+                Brand.create(brandId)
                     .setDisplayName("Brand display name")
             );
 
@@ -76,13 +92,13 @@ public class TrackerTest extends TestBase {
             ));
 
             product.addToCategoryPaths(CategoryPath.create(
-                CategoryNameAndId.create("74", Multilingual.create(
+                CategoryNameAndId.create(playCategoryId, Multilingual.create(
                     MultilingualValue.create(english, "Play")
                 )),
-                CategoryNameAndId.create("2", Multilingual.create(
+                CategoryNameAndId.create(swingsCategoryId, Multilingual.create(
                     MultilingualValue.create(english, "Swings")
                 )),
-                CategoryNameAndId.create("529", Multilingual.create(
+                CategoryNameAndId.create(seatsCategoryId, Multilingual.create(
                     MultilingualValue.create(english, "Swing Seats")
                 ))
             ));
@@ -155,7 +171,8 @@ public class TrackerTest extends TestBase {
                     true,
                     onlyDisableOldProductsThatHaveTheImportedAtKey,
                     null,
-                    null)
+                    null),
+                ProductIdFilter.create().setProductIds(productId)
             );
 
             var disableProductsWithoutNewestTimestamp = ProductAdministrativeAction.create(
@@ -179,7 +196,8 @@ public class TrackerTest extends TestBase {
                 true,
                 true,
                 null,
-                null)
+                null),
+            ProductIdFilter.create().setProductIds(productId)
         );
         var enabledProductsWithNewestTimestamp = ProductAdministrativeAction.create(
             Language.UNDEFINED,
@@ -196,7 +214,7 @@ public class TrackerTest extends TestBase {
 
     @Test
     public void testDocsSampleContentUpdate() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         // Create a timestamp to distinguish active and inactive entities
         // Read more at
@@ -205,6 +223,7 @@ public class TrackerTest extends TestBase {
 
         // Language can be any string, and doesn't have to be a valid iso-standard.
         var english = Language.create("en");
+        String contentId = fixtureId("docs-content");
 
         var updates = new ArrayList<Trackable>();
 
@@ -212,7 +231,12 @@ public class TrackerTest extends TestBase {
         {
             // The Id should be some value associated to the content element
             // which does not change if titles or similar are changed.
-            var content = Content.create("Content-ID-01");
+            var content = Content.create(contentId);
+            deleteFixtureContentAfterTest(content.id);
+            String outdoorCategoryId = fixtureId("outdoor-category");
+            String hikingCategoryId = fixtureId("hiking-category");
+            deleteFixtureContentCategoryAfterTest(outdoorCategoryId);
+            deleteFixtureContentCategoryAfterTest(hikingCategoryId);
 
             // We only set the English translation in this example
             // but more can be set by parsing more MultilingualValue
@@ -229,10 +253,10 @@ public class TrackerTest extends TestBase {
             )));
 
             content.addToCategoryPaths(CategoryPath.create(
-                CategoryNameAndId.create("23", Multilingual.create(
+                CategoryNameAndId.create(outdoorCategoryId, Multilingual.create(
                     MultilingualValue.create(english, "Outdoor")
                 )),
-                CategoryNameAndId.create("372", Multilingual.create(
+                CategoryNameAndId.create(hikingCategoryId, Multilingual.create(
                     MultilingualValue.create(english, "Hiking")
                 ))
             ));
@@ -267,7 +291,8 @@ public class TrackerTest extends TestBase {
                     onlyDisableOldContentElementsThatHaveTheImportedAtKey,
                     null,
                     null
-                )
+                ),
+                ContentIdFilter.create().setContentIds(contentId)
             );
 
             var disableContentElementsWithoutNewestTimestamp = ContentAdministrativeAction.create(
@@ -291,7 +316,8 @@ public class TrackerTest extends TestBase {
                 true,
                 null,
                 null
-            )
+            ),
+            ContentIdFilter.create().setContentIds(contentId)
         );
         var enableContentElementsWithNewestTimestamp = ContentAdministrativeAction.create(
             Language.UNDEFINED,
@@ -310,24 +336,29 @@ public class TrackerTest extends TestBase {
     @Test
     public void testCompactProductUpdateWithVariant() throws Exception {
         // Create Product by tracking it.
-        var tracker = new Tracker(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var tracker = new Tracker(GetDatasetId(), GetApiKey(), GetServerUrl());
+        String productId = fixtureId("compact-product");
+        String categoryId = fixtureId("compact-category");
+        String variantId = fixtureId("compact-variant");
+        deleteFixtureProductAfterTest(productId);
+        deleteFixtureProductCategoryAfterTest(categoryId);
 
         var productUpdate = TrackProductUpdateRequest.create(
             ProductUpdate.create(
-                    Product.create("p-1")
+                    Product.create(productId)
                         .setDisplayName(
                             Multilingual.create(
                                 MultilingualValue.create(Language.create("da-dk"), "My Product 1")
                             )
                         )
                         .setBrand(
-                            Brand.create("b-1")
+                            Brand.create(fixtureBrandId())
                                 .setDisplayName("My Brand 1")
                         )
                         .setCategoryPaths(
                             CategoryPath.create(
                                 CategoryNameAndId.create(
-                                    "c-1",
+                                    categoryId,
                                     Multilingual.create(
                                         MultilingualValue.create(
                                             Language.create("da-dk"),
@@ -345,7 +376,7 @@ public class TrackerTest extends TestBase {
                         .addToData("SomeBooleanList", DataValueFactory.create(true, true, false))
                 )
                 .setVariants(
-                    ProductVariant.create("v-1")
+                    ProductVariant.create(variantId)
                         .setDisplayName(
                             Multilingual.create(
                                 MultilingualValue.create(
@@ -361,20 +392,22 @@ public class TrackerTest extends TestBase {
 
         Executable action = () -> tracker.track(productUpdate);
         assertDoesNotThrow(action);
+        awaitIndexedFixture();
 
         // Validate that the product was created with search.
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), "https://api.relewise.com");
+        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(
             Language.create("da-dk"),
             Currency.create("DKK"),
             UserFactory.anonymous(),
             "integration test",
-            "p-1",
+            null,
             0,
             1
         ).setSettings(
             ProductSearchSettings.create()
+                .setVariantRequestSettings(VariantSearchRequestSettings.create().setMaxVariantsPerProduct(1))
                 .setSelectedVariantProperties(
                     SelectedVariantPropertiesSettings.create()
                         .setDisplayName(true)
@@ -384,19 +417,19 @@ public class TrackerTest extends TestBase {
                         .setCategoryPaths(true)
                 )
         ).setFilters(FilterCollection.create(
-            ProductIdFilter.create().setProductIds("p-1"),
-            VariantIdFilter.create().setVariantIds("v-1")
+            ProductIdFilter.create().setProductIds(productId),
+            VariantIdFilter.create().setVariantIds(variantId)
         ));
 
         var searchResult = searcher.search(productSearch);
 
         assertEquals(1, searchResult.hits);
         assertNotEquals(0, searchResult.results.length);
-        assertEquals("p-1", searchResult.results[0].productId);
+        assertEquals(productId, searchResult.results[0].productId);
         assertEquals("My Product 1", searchResult.results[0].displayName);
-        assertEquals("c-1", searchResult.results[0].categoryPaths[0].pathFromRoot.get(0).id);
+        assertEquals(categoryId, searchResult.results[0].categoryPaths[0].pathFromRoot.get(0).id);
         assertEquals("My Category 1", searchResult.results[0].categoryPaths[0].pathFromRoot.get(0).displayName);
-        assertEquals("v-1", searchResult.results[0].variant.variantId);
+        assertEquals(variantId, searchResult.results[0].variant.variantId);
         assertEquals("My Variant 1", searchResult.results[0].variant.displayName);
     }
 }
