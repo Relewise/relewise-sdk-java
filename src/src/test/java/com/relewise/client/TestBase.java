@@ -124,6 +124,7 @@ public abstract class TestBase {
 
     protected final void awaitIndexedFixture() throws Exception {
         if (fixtureProducts.isEmpty() && fixtureContents.isEmpty()) return;
+        IntegrationIndexSync.synchronize(GetDatasetId(), GetApiKey(), GetServerUrl());
         var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
         long deadline = System.nanoTime() + java.util.concurrent.TimeUnit.SECONDS.toNanos(45);
         Language productLanguage = getClass() == TrackerTest.class ? Language.create("da-dk") : Language.create("en-US");
