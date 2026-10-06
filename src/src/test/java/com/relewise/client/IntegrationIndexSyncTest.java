@@ -14,6 +14,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * A temporary local server supplies fake UI responses to test the helper's HTTP behavior.
+ * It performs no indexing and needs no dataset or credentials; integration tests use SERVER_URL.
+ */
 class IntegrationIndexSyncTest {
     private final ObjectMapper json = new ObjectMapper();
     private final List<Request> requests = new ArrayList<>();
@@ -29,12 +33,14 @@ class IntegrationIndexSyncTest {
 
     @BeforeEach
     void startServer() throws Exception {
+        // Bind only to this machine; port 0 lets the OS choose an available port for each test.
         server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
         server.createContext("/dataset/ui/", exchange -> {
             byte[] requestBody = exchange.getRequestBody().readAllBytes();
             requests.add(new Request(exchange.getRequestURI().getPath(),
                 exchange.getRequestMethod(), exchange.getRequestHeaders().getFirst("Authorization"),
                 json.readTree(requestBody)));
+            // Each test controls these responses to exercise successful and failed operations.
             boolean rebuild = exchange.getRequestURI().getPath().endsWith("/RebuildSearchIndexRequest");
             int status = rebuild ? rebuildStatus : refreshStatus;
             byte[] responseBody = (rebuild ? rebuildBody : refreshBody).getBytes(StandardCharsets.UTF_8);

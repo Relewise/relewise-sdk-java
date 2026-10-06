@@ -124,6 +124,7 @@ public abstract class TestBase {
 
     protected final void awaitIndexedFixture() throws Exception {
         if (fixtureProducts.isEmpty() && fixtureContents.isEmpty()) return;
+        // Fixture writes are complete; synchronize index and candidate caches before exact-ID polling.
         IntegrationIndexSync.synchronize(GetDatasetId(), GetApiKey(), GetServerUrl());
         var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
         long deadline = System.nanoTime() + java.util.concurrent.TimeUnit.SECONDS.toNanos(45);

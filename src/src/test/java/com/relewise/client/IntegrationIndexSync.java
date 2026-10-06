@@ -34,6 +34,7 @@ final class IntegrationIndexSync {
         postAndCheck(client, baseUrl + "RebuildSearchIndexRequest", apiKey,
             rebuild.toString(), "rebuildTimeMs");
 
+        // Termless searches use presorted candidates, which need a separate refresh after rebuild.
         var refresh = JSON.createObjectNode()
             .put("Fill", true)
             .put("Popular", true)
@@ -51,6 +52,7 @@ final class IntegrationIndexSync {
             .header("Accept", "application/json")
             .POST(HttpRequest.BodyPublishers.ofString(body))
             .build();
+        // send() blocks until this UI operation responds, preserving rebuild-before-refresh order.
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         if (response.statusCode() < 200 || response.statusCode() >= 300) {
             String details = response.body() == null ? "" : response.body();
@@ -59,6 +61,7 @@ final class IntegrationIndexSync {
                 + details.substring(0, Math.min(details.length(), 500)));
         }
 
+        // Require the completion payload as well as HTTP success before allowing search assertions.
         JsonNode result = JSON.readTree(response.body());
         JsonNode duration = result == null ? null : result.get(durationField);
         if (duration == null || !duration.isNumber()
