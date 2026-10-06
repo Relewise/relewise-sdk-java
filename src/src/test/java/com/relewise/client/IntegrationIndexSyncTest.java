@@ -2,121 +2,107 @@ package com.relewise.client;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.net.httpserver.HttpServer;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.net.InetSocketAddress;
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * A temporary local server supplies fake UI responses to test the helper's HTTP behavior.
- * It performs no indexing and needs no dataset or credentials; integration tests use SERVER_URL.
- */
+/** Fake HTTP responses verify the helper without opening ports or accessing a real dataset. */
 class IntegrationIndexSyncTest {
     private final ObjectMapper json = new ObjectMapper();
     private final List<Request> requests = new ArrayList<>();
-    private HttpServer server;
-    private String serverUrl;
-    private int rebuildStatus = 200;
-    private String rebuildBody = "{\"rebuildTimeMs\":12}";
-    private int refreshStatus = 200;
-    private String refreshBody = "{\"refreshTimeMs\":8}";
+    private IntegrationIndexSync.Response rebuildResponse =
+        new IntegrationIndexSync.Response(200, "{\"rebuildTimeMs\":12}");
+    private IntegrationIndexSync.Response refreshResponse =
+        new IntegrationIndexSync.Response(200, "{\"refreshTimeMs\":8}");
 
-    private record Request(String path, String method, String authorization, JsonNode body) {
+    private record Request(String url, JsonNode body, Map<String, String> headers, Duration timeout) {
     }
 
-    @BeforeEach
-    void startServer() throws Exception {
-        // Bind only to this machine; port 0 lets the OS choose an available port for each test.
-        server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
-        server.createContext("/dataset/ui/", exchange -> {
-            byte[] requestBody = exchange.getRequestBody().readAllBytes();
-            requests.add(new Request(exchange.getRequestURI().getPath(),
-                exchange.getRequestMethod(), exchange.getRequestHeaders().getFirst("Authorization"),
-                json.readTree(requestBody)));
-            // Each test controls these responses to exercise successful and failed operations.
-            boolean rebuild = exchange.getRequestURI().getPath().endsWith("/RebuildSearchIndexRequest");
-            int status = rebuild ? rebuildStatus : refreshStatus;
-            byte[] responseBody = (rebuild ? rebuildBody : refreshBody).getBytes(StandardCharsets.UTF_8);
-            exchange.getResponseHeaders().add("Content-Type", "application/json");
-            exchange.sendResponseHeaders(status, responseBody.length);
-            try (var output = exchange.getResponseBody()) {
-                output.write(responseBody);
-            }
-        });
-        server.start();
-        serverUrl = "http://127.0.0.1:" + server.getAddress().getPort() + "/";
-    }
-
-    @AfterEach
-    void stopServer() {
-        server.stop(0);
-    }
+    // Capture each request before returning the response chosen by the test.
+    private final IntegrationIndexSync.Transport transport = (url, body, headers, timeout) -> {
+        requests.add(new Request(url, json.readTree(body), headers, timeout));
+        return url.endsWith("/RebuildSearchIndexRequest") ? rebuildResponse : refreshResponse;
+    };
 
     @Test
     void rebuildsThenRefreshesAllCandidateCachesBeforeReturning() throws Exception {
-        IntegrationIndexSync.synchronize("dataset", "master-key", serverUrl);
+        IntegrationIndexSync.synchronize("dataset", "master-key", "https://example.test/", transport);
 
         assertEquals(2, requests.size());
         Request rebuild = requests.get(0);
-        assertEquals("/dataset/ui/RebuildSearchIndexRequest", rebuild.path());
-        assertEquals("POST", rebuild.method());
-        assertEquals("APIKey master-key", rebuild.authorization());
+        assertEquals("https://example.test/dataset/ui/RebuildSearchIndexRequest", rebuild.url());
         assertEquals("default", rebuild.body().get("IndexId").asText());
 
         Request refresh = requests.get(1);
-        assertEquals("/dataset/ui/RefreshPresorterRequest", refresh.path());
-        assertEquals("POST", refresh.method());
-        assertEquals("APIKey master-key", refresh.authorization());
+        assertEquals("https://example.test/dataset/ui/RefreshPresorterRequest", refresh.url());
         assertTrue(refresh.body().get("Fill").asBoolean());
         assertTrue(refresh.body().get("Popular").asBoolean());
         assertTrue(refresh.body().get("Fallback").asBoolean());
+
+        for (Request request : requests) {
+            assertEquals("APIKey master-key", request.headers().get("Authorization"));
+            assertEquals("application/json", request.headers().get("Content-Type"));
+            assertEquals("application/json", request.headers().get("Accept"));
+            assertEquals(Duration.ofSeconds(120), request.timeout());
+        }
     }
 
     @Test
     void failedRebuildStopsBeforeRefresh() {
-        rebuildStatus = 503;
-        rebuildBody = "{\"message\":\"busy\"}";
+        rebuildResponse = new IntegrationIndexSync.Response(503, "{\"message\":\"busy\"}");
 
         IllegalStateException error = assertThrows(IllegalStateException.class,
-            () -> IntegrationIndexSync.synchronize("dataset", "master-key", serverUrl));
+            () -> IntegrationIndexSync.synchronize("dataset", "master-key", "https://example.test", transport));
         assertTrue(error.getMessage().contains("HTTP 503"));
         assertEquals(1, requests.size());
     }
 
     @Test
     void malformedCompletionResponseStopsBeforeRefresh() {
-        rebuildBody = "{}";
+        rebuildResponse = new IntegrationIndexSync.Response(200, "{}");
 
         IllegalStateException error = assertThrows(IllegalStateException.class,
-            () -> IntegrationIndexSync.synchronize("dataset", "master-key", serverUrl));
+            () -> IntegrationIndexSync.synchronize("dataset", "master-key", "https://example.test", transport));
         assertTrue(error.getMessage().contains("rebuildTimeMs"));
         assertEquals(1, requests.size());
     }
 
     @Test
     void failedRefreshIsPropagated() {
-        refreshStatus = 500;
+        refreshResponse = new IntegrationIndexSync.Response(500, "{}");
 
         IllegalStateException error = assertThrows(IllegalStateException.class,
-            () -> IntegrationIndexSync.synchronize("dataset", "master-key", serverUrl));
+            () -> IntegrationIndexSync.synchronize("dataset", "master-key", "https://example.test", transport));
         assertTrue(error.getMessage().contains("HTTP 500"));
         assertEquals(2, requests.size());
     }
 
     @Test
     void malformedRefreshCompletionIsPropagated() {
-        refreshBody = "{\"refreshTimeMs\":-1}";
+        refreshResponse = new IntegrationIndexSync.Response(200, "{\"refreshTimeMs\":-1}");
 
         IllegalStateException error = assertThrows(IllegalStateException.class,
-            () -> IntegrationIndexSync.synchronize("dataset", "master-key", serverUrl));
+            () -> IntegrationIndexSync.synchronize("dataset", "master-key", "https://example.test", transport));
         assertTrue(error.getMessage().contains("refreshTimeMs"));
         assertEquals(2, requests.size());
+    }
+
+    @Test
+    void transportFailureStopsBeforeRefresh() {
+        IntegrationIndexSync.Transport failingTransport = (url, body, headers, timeout) -> {
+            requests.add(new Request(url, json.readTree(body), headers, timeout));
+            throw new IOException("request timed out");
+        };
+
+        IOException error = assertThrows(IOException.class,
+            () -> IntegrationIndexSync.synchronize("dataset", "master-key", "https://example.test", failingTransport));
+        assertEquals("request timed out", error.getMessage());
+        assertEquals(1, requests.size());
     }
 }
