@@ -17,7 +17,7 @@ public class GeneratedRequestsTest extends TestBase {
             Order.create(
                 fixtureUser("order-creator").setChannel(Channel.create("Channel 1")),
                 Money.create(Currency.create("DKK"), 100.0),
-                fixtureId("order-creator")
+                fixtureId("order-creator") + "-" + java.util.UUID.randomUUID()
             )
         );
 
@@ -43,7 +43,7 @@ public class GeneratedRequestsTest extends TestBase {
                         .setValue("DKK")
                     )
                 )
-                .setOrderNumber(fixtureId("order-builder"))
+                .setOrderNumber(fixtureId("order-builder") + "-" + java.util.UUID.randomUUID())
                 .setCartName("1")
             );
 
@@ -66,7 +66,7 @@ public class GeneratedRequestsTest extends TestBase {
                 new Currency("DKK"),
                 100.0
             ),
-            fixtureId("order-direct")
+            fixtureId("order-direct") + "-" + java.util.UUID.randomUUID()
         );
 
         var orderRequest = new TrackOrderRequest(order);

@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
 import java.util.ArrayList;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +19,6 @@ public class TrackerTest extends TestBase {
         var tracker = new Tracker(GetDatasetId(), GetApiKey(), GetServerUrl());
         String productId = fixtureId("product-view-product");
         String variantId = fixtureId("product-view-variant");
-        deleteFixtureProductAfterTest(productId);
         tracker.track(TrackProductUpdateRequest.create(ProductUpdate.create(
             Product.create(productId), ProductUpdateUpdateKind.ReplaceProvidedProperties)
             .setVariants(ProductVariant.create(variantId))
@@ -55,14 +56,10 @@ public class TrackerTest extends TestBase {
         {
             // The Id should be the primary id of the product
             var product = Product.create(productId);
-            deleteFixtureProductAfterTest(product.id);
             String brandId = fixtureBrandId();
             String playCategoryId = fixtureId("play-category");
             String swingsCategoryId = fixtureId("swings-category");
             String seatsCategoryId = fixtureId("seats-category");
-            deleteFixtureProductCategoryAfterTest(playCategoryId);
-            deleteFixtureProductCategoryAfterTest(swingsCategoryId);
-            deleteFixtureProductCategoryAfterTest(seatsCategoryId);
 
             // We only set the English translation in this example
             // but more can be set by parsing more MultilingualValue
@@ -232,11 +229,8 @@ public class TrackerTest extends TestBase {
             // The Id should be some value associated to the content element
             // which does not change if titles or similar are changed.
             var content = Content.create(contentId);
-            deleteFixtureContentAfterTest(content.id);
             String outdoorCategoryId = fixtureId("outdoor-category");
             String hikingCategoryId = fixtureId("hiking-category");
-            deleteFixtureContentCategoryAfterTest(outdoorCategoryId);
-            deleteFixtureContentCategoryAfterTest(hikingCategoryId);
 
             // We only set the English translation in this example
             // but more can be set by parsing more MultilingualValue
@@ -337,99 +331,116 @@ public class TrackerTest extends TestBase {
     public void testCompactProductUpdateWithVariant() throws Exception {
         // Create Product by tracking it.
         var tracker = new Tracker(GetDatasetId(), GetApiKey(), GetServerUrl());
-        String productId = fixtureId("compact-product");
-        String categoryId = fixtureId("compact-category");
-        String variantId = fixtureId("compact-variant");
-        deleteFixtureProductAfterTest(productId);
-        deleteFixtureProductCategoryAfterTest(categoryId);
+        String productId = fixtureId("compact-product") + "-" + UUID.randomUUID();
+        String categoryId = fixtureId("compact-category") + "-" + UUID.randomUUID();
+        String variantId = fixtureId("compact-variant") + "-" + UUID.randomUUID();
 
-        var productUpdate = TrackProductUpdateRequest.create(
-            ProductUpdate.create(
-                    Product.create(productId)
-                        .setDisplayName(
-                            Multilingual.create(
-                                MultilingualValue.create(Language.create("da-dk"), "My Product 1")
+        try {
+            var productUpdate = TrackProductUpdateRequest.create(
+                ProductUpdate.create(
+                        Product.create(productId)
+                            .setDisplayName(
+                                Multilingual.create(
+                                    MultilingualValue.create(Language.create("da-dk"), "My Product 1")
+                                )
                             )
-                        )
-                        .setBrand(
-                            Brand.create(fixtureBrandId())
-                                .setDisplayName("My Brand 1")
-                        )
-                        .setCategoryPaths(
-                            CategoryPath.create(
-                                CategoryNameAndId.create(
-                                    categoryId,
-                                    Multilingual.create(
-                                        MultilingualValue.create(
-                                            Language.create("da-dk"),
-                                            "My Category 1"
+                            .setBrand(
+                                Brand.create(fixtureBrandId())
+                                    .setDisplayName("My Brand 1")
+                            )
+                            .setCategoryPaths(
+                                CategoryPath.create(
+                                    CategoryNameAndId.create(
+                                        categoryId,
+                                        Multilingual.create(
+                                            MultilingualValue.create(
+                                                Language.create("da-dk"),
+                                                "My Category 1"
+                                            )
                                         )
                                     )
                                 )
                             )
-                        )
-                        .addToData("SomeString", DataValueFactory.create("SomeValue"))
-                        .addToData("SomeObject", DataValueFactory.create(new Object() {
-                            public final String SomeString = "SomeValue";
-                        }))
-                        .addToData("SomeStringList", DataValueFactory.create("FirstString", "SecondString"))
-                        .addToData("SomeBooleanList", DataValueFactory.create(true, true, false))
-                )
-                .setVariants(
-                    ProductVariant.create(variantId)
-                        .setDisplayName(
-                            Multilingual.create(
-                                MultilingualValue.create(
-                                    Language.create("da-dk"),
-                                    "My Variant 1"
+                            .addToData("SomeString", DataValueFactory.create("SomeValue"))
+                            .addToData("SomeObject", DataValueFactory.create(new Object() {
+                                public final String SomeString = "SomeValue";
+                            }))
+                            .addToData("SomeStringList", DataValueFactory.create("FirstString", "SecondString"))
+                            .addToData("SomeBooleanList", DataValueFactory.create(true, true, false))
+                    )
+                    .setVariants(
+                        ProductVariant.create(variantId)
+                            .setDisplayName(
+                                Multilingual.create(
+                                    MultilingualValue.create(
+                                        Language.create("da-dk"),
+                                        "My Variant 1"
+                                    )
                                 )
                             )
-                        )
-                )
-                .setProductUpdateKind(ProductUpdateUpdateKind.ReplaceProvidedProperties)
-                .setVariantUpdateKind(ProductUpdateUpdateKind.ReplaceProvidedProperties)
-        );
+                    )
+                    .setProductUpdateKind(ProductUpdateUpdateKind.ReplaceProvidedProperties)
+                    .setVariantUpdateKind(ProductUpdateUpdateKind.ReplaceProvidedProperties)
+            );
 
-        Executable action = () -> tracker.track(productUpdate);
-        assertDoesNotThrow(action);
-        awaitIndexedFixture();
+            Executable action = () -> tracker.track(productUpdate);
+            assertDoesNotThrow(action);
 
-        // Validate that the product was created with search.
-        var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
+            // Validate that the product was created with search.
+            var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
-        var productSearch = ProductSearchRequest.create(
-            Language.create("da-dk"),
-            Currency.create("DKK"),
-            UserFactory.anonymous(),
-            "integration test",
-            null,
-            0,
-            1
-        ).setSettings(
-            ProductSearchSettings.create()
-                .setVariantRequestSettings(VariantSearchRequestSettings.create().setMaxVariantsPerProduct(1))
-                .setSelectedVariantProperties(
-                    SelectedVariantPropertiesSettings.create()
-                        .setDisplayName(true)
-                ).setSelectedProductProperties(
-                    SelectedProductPropertiesSettings.create()
-                        .setDisplayName(true)
-                        .setCategoryPaths(true)
-                )
-        ).setFilters(FilterCollection.create(
-            ProductIdFilter.create().setProductIds(productId),
-            VariantIdFilter.create().setVariantIds(variantId)
-        ));
+            var productSearch = ProductSearchRequest.create(
+                Language.create("da-dk"),
+                Currency.create("DKK"),
+                UserFactory.anonymous(),
+                "integration test",
+                null,
+                0,
+                1
+            ).setSettings(
+                ProductSearchSettings.create()
+                    .setVariantRequestSettings(VariantSearchRequestSettings.create().setMaxVariantsPerProduct(1))
+                    .setSelectedVariantProperties(
+                        SelectedVariantPropertiesSettings.create()
+                            .setDisplayName(true)
+                    ).setSelectedProductProperties(
+                        SelectedProductPropertiesSettings.create()
+                            .setDisplayName(true)
+                            .setCategoryPaths(true)
+                    )
+            ).setFilters(FilterCollection.create(
+                ProductIdFilter.create().setProductIds(productId),
+                VariantIdFilter.create().setVariantIds(variantId)
+            ));
 
-        var searchResult = searcher.search(productSearch);
+            ProductSearchResponse searchResult;
+            long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(45);
+            do {
+                searchResult = searcher.search(productSearch);
+                if (searchResult.hits == 1) break;
+                Thread.sleep(500);
+            } while (System.nanoTime() < deadline);
 
-        assertEquals(1, searchResult.hits);
-        assertNotEquals(0, searchResult.results.length);
-        assertEquals(productId, searchResult.results[0].productId);
-        assertEquals("My Product 1", searchResult.results[0].displayName);
-        assertEquals(categoryId, searchResult.results[0].categoryPaths[0].pathFromRoot.get(0).id);
-        assertEquals("My Category 1", searchResult.results[0].categoryPaths[0].pathFromRoot.get(0).displayName);
-        assertEquals(variantId, searchResult.results[0].variant.variantId);
-        assertEquals("My Variant 1", searchResult.results[0].variant.displayName);
+            assertEquals(1, searchResult.hits);
+            assertNotEquals(0, searchResult.results.length);
+            assertEquals(productId, searchResult.results[0].productId);
+            assertEquals("My Product 1", searchResult.results[0].displayName);
+            assertEquals(categoryId, searchResult.results[0].categoryPaths[0].pathFromRoot.get(0).id);
+            assertEquals("My Category 1", searchResult.results[0].categoryPaths[0].pathFromRoot.get(0).displayName);
+            assertEquals(variantId, searchResult.results[0].variant.variantId);
+            assertEquals("My Variant 1", searchResult.results[0].variant.displayName);
+        } finally {
+            try {
+                tracker.track(TrackProductAdministrativeActionRequest.create(ProductAdministrativeAction.create(
+                    Language.UNDEFINED, Currency.UNDEFINED,
+                    FilterCollection.create(ProductIdFilter.create().setProductIds(productId)),
+                    ProductAdministrativeActionUpdateKind.Delete, ProductAdministrativeActionUpdateKind.None)));
+            } finally {
+                tracker.track(TrackProductCategoryAdministrativeActionRequest.create(ProductCategoryAdministrativeAction.create(
+                    Language.UNDEFINED, Currency.UNDEFINED,
+                    FilterCollection.create(ProductCategoryIdFilter.create(CategoryScope.Ancestor).setCategoryIds(categoryId)),
+                    CategoryAdministrativeActionUpdateKind.Delete)));
+            }
+        }
     }
 }
