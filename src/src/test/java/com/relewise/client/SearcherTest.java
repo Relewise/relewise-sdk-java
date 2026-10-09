@@ -107,16 +107,6 @@ public class SearcherTest extends TestBase {
 
     @Test
     public void testProductSearchWithHighlightSettings() throws Exception {
-        var tracker = new Tracker(GetDatasetId(), GetApiKey(), GetServerUrl());
-
-        tracker.track(TrackProductUpdateRequest.create(
-            ProductUpdate.create(
-                Product.create(searchProductId())
-                    .addToData("Description", DataValueFactory.create(Multilingual.create(MultilingualValue.create(Language.create("en-US"), "the last word is highlighted")))),
-                ProductUpdateUpdateKind.ReplaceProvidedProperties
-            ).setVariantUpdateKind(ProductUpdateUpdateKind.None)
-        ));
-
         var searcher = new Searcher(GetDatasetId(), GetApiKey(), GetServerUrl());
 
         var productSearch = ProductSearchRequest.create(

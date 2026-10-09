@@ -59,6 +59,13 @@ jobs:
       - name: POM validator
         run: mvn org.kordamp.maven:pomchecker-maven-plugin:1.7.0:check-maven-central --file src/pom.xml
 
+      - name: Seed integration fixtures
+        run: mvn --batch-mode -Dtest=IntegrationSeed test --file src/pom.xml
+        env:
+          DATASET_ID: 24e8aba9-1e21-46b2-8fad-6fffa956bd3b
+          API_KEY: ${{ secrets.INTEGRATION_TESTS_DATASET_API_KEY }}
+          SERVER_URL: https://sandbox-api.relewise.com/
+
       - name: Build and deploy to Maven Central
         run: mvn deploy --batch-mode -Prelease -f src/pom.xml
         env:
