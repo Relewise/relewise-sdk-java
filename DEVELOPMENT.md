@@ -30,7 +30,7 @@ Merge support for `api-version` before enabling that input in the API dispatcher
 Offline workflow regression tests (no API calls or SDK generation):
 
 ```sh
-pwsh -NoProfile -File .github/test_restore_generator.ps1
+bash .github/test_restore_generator.sh
 pwsh -NoProfile -File .github/test_generated_changes.ps1
 ```
 
@@ -39,3 +39,7 @@ Maven version. If the generated Java sources are unchanged, version updates,
 Maven builds, integration tests, and pull request creation are skipped. Previously
 the workflow bumped `src/pom.xml` first and then inspected all of `src`, so the
 version bump itself always counted as a change and could produce version-only PRs.
+
+The restore helper targets Ubuntu CI and uses Bash, GNU timeout, and Python 3.
+Each restore attempt is limited to 120 seconds, with up to five additional seconds
+for forced termination. Offline regression tests run in a separate CI workflow.
