@@ -85,7 +85,26 @@ jobs:
       - name: Build generator
         run: dotnet build Generator/Generator.csproj --configuration Release --no-restore -p:RelewiseClientVersion="[$API_VERSION]"
 
+      - name: Generate Java classes
+        run: dotnet run --project Generator --configuration Release --no-build --no-restore -- src/src/main/java/com/relewise/client
+
+      - name: Check generated changes
+        id: changes
+        shell: pwsh
+        run: |
+          $changes = git status --porcelain -- src/src/main/java/com/relewise/client
+          if ($LASTEXITCODE -ne 0) { throw 'Could not inspect generated Java source changes.' }
+
+          if ([string]::IsNullOrWhiteSpace($changes)) {
+            "has_changes=false" >> $env:GITHUB_OUTPUT
+            "No Java SDK changes were produced for API version $env:API_VERSION. No pull request was created." >> $env:GITHUB_STEP_SUMMARY
+          } else {
+            "has_changes=true" >> $env:GITHUB_OUTPUT
+            "Java SDK changes were produced for API version $env:API_VERSION." >> $env:GITHUB_STEP_SUMMARY
+          }
+
       - name: Set up JDK 17
+        if: steps.changes.outputs.has_changes == 'true'
         uses: actions/setup-java@v6
         with:
           java-version: '17'
@@ -93,6 +112,7 @@ jobs:
           cache: maven
 
       - name: Resolve next Maven package version
+        if: steps.changes.outputs.has_changes == 'true'
         shell: pwsh
         run: |
           [xml]$pom = Get-Content 'src/pom.xml' -Raw
@@ -117,18 +137,19 @@ jobs:
           "Resolved next Maven package version $nextVersion from current version $currentVersion." >> $env:GITHUB_STEP_SUMMARY
 
       - name: Update Maven package version
+        if: steps.changes.outputs.has_changes == 'true'
         run: mvn --batch-mode versions:set -DnewVersion=${{ env.SDK_VERSION }} -DgenerateBackupPoms=false --file src/pom.xml
 
-      - name: Generate Java classes
-        run: dotnet run --project Generator --configuration Release --no-build --no-restore -- src/src/main/java/com/relewise/client
-
       - name: Build
+        if: steps.changes.outputs.has_changes == 'true'
         run: mvn --batch-mode -DskipTests package --file src/pom.xml
 
       - name: Load version into generated .properties file
+        if: steps.changes.outputs.has_changes == 'true'
         run: mvn resources:resources --file src/pom.xml
 
       - name: Seed integration fixtures
+        if: steps.changes.outputs.has_changes == 'true'
         run: mvn --batch-mode -Dtest=IntegrationSeed test --file src/pom.xml
         env:
           DATASET_ID: 24e8aba9-1e21-46b2-8fad-6fffa956bd3b
@@ -136,25 +157,12 @@ jobs:
           SERVER_URL: https://sandbox-api.relewise.com/
 
       - name: Test
+        if: steps.changes.outputs.has_changes == 'true'
         env:
           DATASET_ID: 24e8aba9-1e21-46b2-8fad-6fffa956bd3b
           API_KEY: ${{ secrets.INTEGRATION_TESTS_DATASET_API_KEY }}
           SERVER_URL: https://sandbox-api.relewise.com/
         run: mvn --batch-mode test --file src/pom.xml
-
-      - name: Check generated changes
-        id: changes
-        shell: pwsh
-        run: |
-          $changes = git status --porcelain -- Generator/Generator.csproj src
-
-          if ([string]::IsNullOrWhiteSpace($changes)) {
-            "has_changes=false" >> $env:GITHUB_OUTPUT
-            "No Java SDK changes were produced for API version $env:API_VERSION. No pull request was created." >> $env:GITHUB_STEP_SUMMARY
-          } else {
-            "has_changes=true" >> $env:GITHUB_OUTPUT
-            "Java SDK changes were produced for API version $env:API_VERSION." >> $env:GITHUB_STEP_SUMMARY
-          }
 
       - name: Create pull request
         if: steps.changes.outputs.has_changes == 'true'
@@ -170,7 +178,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git switch -c $branch
-          git add -A Generator/Generator.csproj src
+          git add -A src
           git commit -m $commitMessage
           git push --set-upstream origin $branch
 

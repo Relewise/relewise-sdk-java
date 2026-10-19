@@ -32,3 +32,9 @@ Offline workflow regression tests (no API calls or SDK generation):
 ```sh
 python3 -B -m unittest discover -s .github -p "test_*.py" -v
 ```
+
+Java generation checks for actual generated source changes before bumping the
+Maven version. If the generated Java sources are unchanged, version updates,
+Maven builds, integration tests, and pull request creation are skipped. Previously
+the workflow bumped `src/pom.xml` first and then inspected all of `src`, so the
+version bump itself always counted as a change and could produce version-only PRs.
