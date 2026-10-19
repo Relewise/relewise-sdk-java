@@ -30,7 +30,8 @@ Merge support for `api-version` before enabling that input in the API dispatcher
 Offline workflow regression tests (no API calls or SDK generation):
 
 ```sh
-python3 -B -m unittest discover -s .github -p "test_*.py" -v
+pwsh -NoProfile -File .github/test_restore_generator.ps1
+pwsh -NoProfile -File .github/test_generated_changes.ps1
 ```
 
 Java generation checks for actual generated source changes before bumping the
