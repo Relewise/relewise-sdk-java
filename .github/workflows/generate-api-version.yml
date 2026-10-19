@@ -38,6 +38,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          repository: ${{ env.TARGET_REPOSITORY }}
+          ref: main
+          token: ${{ secrets.SDK_UPDATE_TOKEN || github.token }}
       - name: Setup .NET 10
         uses: actions/setup-dotnet@v6
         with:
