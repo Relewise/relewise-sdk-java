@@ -3,12 +3,20 @@ name: Generate API Version
 on:
   workflow_call:
     inputs:
+      api-version:
+        description: Exact published Relewise.Client version (for example 1.320.0)
+        required: true
+        type: string
       trello-card-url:
         description: Trello card URL
         required: true
         type: string
   workflow_dispatch:
     inputs:
+      api-version:
+        description: Exact published Relewise.Client version (for example 1.320.0)
+        required: true
+        type: string
       trello-card-url:
         description: Trello card URL
         required: true
@@ -18,18 +26,37 @@ permissions:
   contents: write
   pull-requests: write
 
-concurrency:
-  group: relewise-sdk-java-integration-dataset
-  cancel-in-progress: false
-  queue: max
-
 env:
   REVIEWERS: mzanoni,soe-relewise
   TARGET_REPOSITORY: Relewise/relewise-sdk-java
+  API_VERSION: ${{ inputs['api-version'] }}
 
 jobs:
-  generate-api-version:
+  wait-for-package:
     runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ env.TARGET_REPOSITORY }}
+          ref: main
+          token: ${{ secrets.SDK_UPDATE_TOKEN || github.token }}
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+      - name: Wait for exact NuGet package
+        shell: pwsh
+        run: ./.github/restore-generator.ps1 -Version $env:API_VERSION -WaitSeconds 3600
+
+  generate-api-version:
+    needs: wait-for-package
+    runs-on: ubuntu-latest
+    concurrency:
+      group: relewise-sdk-java-integration-dataset
+      cancel-in-progress: false
+      queue: max
 
     steps:
       - name: Validate workflow input
@@ -45,10 +72,6 @@ jobs:
 
           "TRELLO_CARD_URL=$trelloCardUrl" >> $env:GITHUB_ENV
 
-      - name: Wait for NuGet package to be published
-        if: github.event_name != 'workflow_dispatch'
-        run: sleep 600
-
       - name: Checkout
         uses: actions/checkout@v7
         with:
@@ -62,34 +85,32 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore generator
-        run: dotnet restore Generator/Generator.csproj
+        shell: pwsh
+        run: ./.github/restore-generator.ps1 -Version $env:API_VERSION
 
       - name: Build generator
-        run: dotnet build Generator/Generator.csproj --configuration Release --no-restore
+        run: dotnet build Generator/Generator.csproj --configuration Release --no-restore -p:RelewiseClientVersion="[$API_VERSION]"
 
-      - name: Resolve Relewise.Client version
+      - name: Generate Java classes
+        run: dotnet run --project Generator --configuration Release --no-build --no-restore -- src/src/main/java/com/relewise/client
+
+      - name: Check generated changes
+        id: changes
         shell: pwsh
         run: |
-          $assetsPath = 'Generator/obj/project.assets.json'
-          $assets = Get-Content $assetsPath -Raw | ConvertFrom-Json
-          $package = $assets.libraries.PSObject.Properties.Name |
-            Where-Object { $_ -like 'Relewise.Client/*' } |
-            Select-Object -First 1
+          $changes = git status --porcelain -- src/src/main/java/com/relewise/client
+          if ($LASTEXITCODE -ne 0) { throw 'Could not inspect generated Java source changes.' }
 
-          if ([string]::IsNullOrWhiteSpace($package)) {
-            throw "Could not find Relewise.Client in $assetsPath."
+          if ([string]::IsNullOrWhiteSpace($changes)) {
+            "has_changes=false" >> $env:GITHUB_OUTPUT
+            "No Java SDK changes were produced for API version $env:API_VERSION. No pull request was created." >> $env:GITHUB_STEP_SUMMARY
+          } else {
+            "has_changes=true" >> $env:GITHUB_OUTPUT
+            "Java SDK changes were produced for API version $env:API_VERSION." >> $env:GITHUB_STEP_SUMMARY
           }
-
-          $version = $package.Split('/', 2)[1]
-
-          if ([string]::IsNullOrWhiteSpace($version)) {
-            throw "Could not extract Relewise.Client version from '$package'."
-          }
-
-          "API_VERSION=$version" >> $env:GITHUB_ENV
-          "Resolved Relewise.Client version $version." >> $env:GITHUB_STEP_SUMMARY
 
       - name: Set up JDK 17
+        if: steps.changes.outputs.has_changes == 'true'
         uses: actions/setup-java@v6
         with:
           java-version: '17'
@@ -97,6 +118,7 @@ jobs:
           cache: maven
 
       - name: Resolve next Maven package version
+        if: steps.changes.outputs.has_changes == 'true'
         shell: pwsh
         run: |
           [xml]$pom = Get-Content 'src/pom.xml' -Raw
@@ -121,19 +143,19 @@ jobs:
           "Resolved next Maven package version $nextVersion from current version $currentVersion." >> $env:GITHUB_STEP_SUMMARY
 
       - name: Update Maven package version
+        if: steps.changes.outputs.has_changes == 'true'
         run: mvn --batch-mode versions:set -DnewVersion=${{ env.SDK_VERSION }} -DgenerateBackupPoms=false --file src/pom.xml
 
-      - name: Generate Java classes
-        shell: pwsh
-        run: ./generate.ps1
-
       - name: Build
+        if: steps.changes.outputs.has_changes == 'true'
         run: mvn --batch-mode -DskipTests package --file src/pom.xml
 
       - name: Load version into generated .properties file
+        if: steps.changes.outputs.has_changes == 'true'
         run: mvn resources:resources --file src/pom.xml
 
       - name: Seed integration fixtures
+        if: steps.changes.outputs.has_changes == 'true'
         run: mvn --batch-mode -Dtest=IntegrationSeed test --file src/pom.xml
         env:
           DATASET_ID: 24e8aba9-1e21-46b2-8fad-6fffa956bd3b
@@ -141,25 +163,12 @@ jobs:
           SERVER_URL: https://sandbox-api.relewise.com/
 
       - name: Test
+        if: steps.changes.outputs.has_changes == 'true'
         env:
           DATASET_ID: 24e8aba9-1e21-46b2-8fad-6fffa956bd3b
           API_KEY: ${{ secrets.INTEGRATION_TESTS_DATASET_API_KEY }}
           SERVER_URL: https://sandbox-api.relewise.com/
         run: mvn --batch-mode test --file src/pom.xml
-
-      - name: Check generated changes
-        id: changes
-        shell: pwsh
-        run: |
-          $changes = git status --porcelain -- Generator/Generator.csproj src
-
-          if ([string]::IsNullOrWhiteSpace($changes)) {
-            "has_changes=false" >> $env:GITHUB_OUTPUT
-            "No Java SDK changes were produced for API version $env:API_VERSION. No pull request was created." >> $env:GITHUB_STEP_SUMMARY
-          } else {
-            "has_changes=true" >> $env:GITHUB_OUTPUT
-            "Java SDK changes were produced for API version $env:API_VERSION." >> $env:GITHUB_STEP_SUMMARY
-          }
 
       - name: Create pull request
         if: steps.changes.outputs.has_changes == 'true'
@@ -175,7 +184,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git switch -c $branch
-          git add -A Generator/Generator.csproj src
+          git add -A src
           git commit -m $commitMessage
           git push --set-upstream origin $branch
 
@@ -186,10 +195,10 @@ jobs:
             "- Generated Java SDK code for Relewise.Client $env:API_VERSION."
             ''
             '## Validation'
-            '- dotnet restore Generator/Generator.csproj'
+            '- Restored and verified the exact requested Relewise.Client version.'
             '- dotnet build Generator/Generator.csproj --configuration Release --no-restore'
             "- Updated src/pom.xml version to $env:SDK_VERSION"
-            '- pwsh ./generate.ps1'
+            '- Generated Java classes using the verified Release build without another restore.'
             '- mvn --batch-mode -DskipTests package --file src/pom.xml'
             '- mvn resources:resources --file src/pom.xml'
             '- mvn --batch-mode -Dtest=IntegrationSeed test --file src/pom.xml'
