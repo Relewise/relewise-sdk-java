@@ -26,14 +26,15 @@ public class ProductCategoryRecommendationRequestCollection extends LicensedRequ
     public String $type = "Relewise.Client.Requests.Recommendations.ProductCategoryRecommendationRequestCollection, Relewise.Client";
     public ArrayList<ProductCategoryRecommendationRequest> requests;
     public Boolean requireDistinctCategoriesAcrossResults;
-    public static ProductCategoryRecommendationRequestCollection create(Boolean requireDistinctCategoriesesAcrossResults, ProductCategoryRecommendationRequest... requests)
+    /** Default context values used to determine which merchandising rules apply to requests in this batch, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public @Nullable HashMap<String, String> contextValues;
+    public static ProductCategoryRecommendationRequestCollection create(Boolean requireDistinctCategoriesesAcrossResults)
     {
-        return new ProductCategoryRecommendationRequestCollection(requireDistinctCategoriesesAcrossResults, requests);
+        return new ProductCategoryRecommendationRequestCollection(requireDistinctCategoriesesAcrossResults);
     }
-    public ProductCategoryRecommendationRequestCollection(Boolean requireDistinctCategoriesesAcrossResults, ProductCategoryRecommendationRequest... requests)
+    public ProductCategoryRecommendationRequestCollection(Boolean requireDistinctCategoriesesAcrossResults)
     {
         this.requireDistinctCategoriesAcrossResults = requireDistinctCategoriesesAcrossResults;
-        this.requests = new ArrayList<>(Arrays.asList(requests));
     }
     public ProductCategoryRecommendationRequestCollection()
     {
@@ -45,6 +46,11 @@ public class ProductCategoryRecommendationRequestCollection extends LicensedRequ
     public Boolean getRequireDistinctCategoriesAcrossResults()
     {
         return this.requireDistinctCategoriesAcrossResults;
+    }
+    /** Default context values used to determine which merchandising rules apply to requests in this batch, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public @Nullable HashMap<String, String> getContextValues()
+    {
+        return this.contextValues;
     }
     public ProductCategoryRecommendationRequestCollection setRequests(ProductCategoryRecommendationRequest... requests)
     {
@@ -63,6 +69,22 @@ public class ProductCategoryRecommendationRequestCollection extends LicensedRequ
     public ProductCategoryRecommendationRequestCollection setRequireDistinctCategoriesAcrossResults(Boolean requireDistinctCategoriesAcrossResults)
     {
         this.requireDistinctCategoriesAcrossResults = requireDistinctCategoriesAcrossResults;
+        return this;
+    }
+    /** Default context values used to determine which merchandising rules apply to requests in this batch, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public ProductCategoryRecommendationRequestCollection addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    /** Default context values used to determine which merchandising rules apply to requests in this batch, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public ProductCategoryRecommendationRequestCollection setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
         return this;
     }
 }

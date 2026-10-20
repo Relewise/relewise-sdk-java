@@ -28,6 +28,16 @@ public class VariantResultDetails
     public Boolean disabled;
     /** Contains engagement signals (sentiment and favorite state) recorded for the current user on this variant. Populated only when the request sets <code>UserEngagement</code> to <code>true</code>. */
     public @Nullable ProductEngagementData userEngagement;
+    /** Total number of orders containing this variant, regardless of the quantity purchased in each order. */
+    public Long containedInTotalNumberOfOrders;
+    /** Total number of recorded views of this variant, including repeated views by the same user. */
+    public Long viewedTotalNumberOfTimes;
+    /** UTC timestamp when this variant was created in the dataset, with millisecond precision. */
+    public OffsetDateTime createdUtc;
+    /** Recorded UTC timestamp of the last purchase of this variant, with minute precision. Null when no purchase timestamp is recorded. */
+    public @Nullable OffsetDateTime lastPurchasedUtc;
+    /** UTC timestamp of the most recent view of this variant, with minute precision. Null when no view timestamp is recorded. */
+    public @Nullable OffsetDateTime lastViewedUtc;
     public static VariantResultDetails create(String variantId)
     {
         return new VariantResultDetails(variantId);
@@ -75,6 +85,31 @@ public class VariantResultDetails
     public @Nullable ProductEngagementData getUserEngagement()
     {
         return this.userEngagement;
+    }
+    /** Total number of orders containing this variant, regardless of the quantity purchased in each order. */
+    public Long getContainedInTotalNumberOfOrders()
+    {
+        return this.containedInTotalNumberOfOrders;
+    }
+    /** Total number of recorded views of this variant, including repeated views by the same user. */
+    public Long getViewedTotalNumberOfTimes()
+    {
+        return this.viewedTotalNumberOfTimes;
+    }
+    /** UTC timestamp when this variant was created in the dataset, with millisecond precision. */
+    public OffsetDateTime getCreatedUtc()
+    {
+        return this.createdUtc;
+    }
+    /** Recorded UTC timestamp of the last purchase of this variant, with minute precision. Null when no purchase timestamp is recorded. */
+    public @Nullable OffsetDateTime getLastPurchasedUtc()
+    {
+        return this.lastPurchasedUtc;
+    }
+    /** UTC timestamp of the most recent view of this variant, with minute precision. Null when no view timestamp is recorded. */
+    public @Nullable OffsetDateTime getLastViewedUtc()
+    {
+        return this.lastViewedUtc;
     }
     public VariantResultDetails setVariantId(String variantId)
     {
@@ -152,6 +187,36 @@ public class VariantResultDetails
     public VariantResultDetails setUserEngagement(@Nullable ProductEngagementData userEngagement)
     {
         this.userEngagement = userEngagement;
+        return this;
+    }
+    /** Total number of orders containing this variant, regardless of the quantity purchased in each order. */
+    public VariantResultDetails setContainedInTotalNumberOfOrders(Long containedInTotalNumberOfOrders)
+    {
+        this.containedInTotalNumberOfOrders = containedInTotalNumberOfOrders;
+        return this;
+    }
+    /** Total number of recorded views of this variant, including repeated views by the same user. */
+    public VariantResultDetails setViewedTotalNumberOfTimes(Long viewedTotalNumberOfTimes)
+    {
+        this.viewedTotalNumberOfTimes = viewedTotalNumberOfTimes;
+        return this;
+    }
+    /** UTC timestamp when this variant was created in the dataset, with millisecond precision. */
+    public VariantResultDetails setCreatedUtc(OffsetDateTime createdUtc)
+    {
+        this.createdUtc = createdUtc;
+        return this;
+    }
+    /** Recorded UTC timestamp of the last purchase of this variant, with minute precision. Null when no purchase timestamp is recorded. */
+    public VariantResultDetails setLastPurchasedUtc(@Nullable OffsetDateTime lastPurchasedUtc)
+    {
+        this.lastPurchasedUtc = lastPurchasedUtc;
+        return this;
+    }
+    /** UTC timestamp of the most recent view of this variant, with minute precision. Null when no view timestamp is recorded. */
+    public VariantResultDetails setLastViewedUtc(@Nullable OffsetDateTime lastViewedUtc)
+    {
+        this.lastViewedUtc = lastViewedUtc;
         return this;
     }
 }

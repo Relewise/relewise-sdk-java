@@ -109,4 +109,19 @@ public class PersonalBrandRecommendationRequest extends BrandRecommendationReque
         this.channel = channel;
         return this;
     }
+    public PersonalBrandRecommendationRequest addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    @Override
+    public PersonalBrandRecommendationRequest setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
+        return this;
+    }
 }

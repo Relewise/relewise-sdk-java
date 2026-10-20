@@ -139,4 +139,19 @@ public class SearchTermPredictionRequest extends SearchRequest implements IUserI
         this.channel = channel;
         return this;
     }
+    public SearchTermPredictionRequest addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    @Override
+    public SearchTermPredictionRequest setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
+        return this;
+    }
 }

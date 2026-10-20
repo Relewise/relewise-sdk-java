@@ -134,6 +134,7 @@ public class Recommender extends RelewiseClient
         for (var batch : createBatches(request.getRequests())) {
             var chunkedRequest = new ProductRecommendationRequestCollection();
             chunkedRequest.setRequireDistinctProductsAcrossResults(request.getRequireDistinctProductsAcrossResults());
+            chunkedRequest.setContextValues(request.getContextValues());
             chunkedRequest.setRequests(batch.toArray(new ProductRecommendationRequest[0]));
             var chunkResponse = makeRequestAndValidate("ProductRecommendationRequestCollection", chunkedRequest, ProductRecommendationResponseCollection.class);
             if (chunkResponse == null) {
@@ -163,6 +164,7 @@ public class Recommender extends RelewiseClient
         for (var batch : createBatches(request.getRequests())) {
             var chunkedRequest = new ContentRecommendationRequestCollection();
             chunkedRequest.setRequireDistinctContentsAcrossResults(request.getRequireDistinctContentsAcrossResults());
+            chunkedRequest.setContextValues(request.getContextValues());
             chunkedRequest.setRequests(batch.toArray(new ContentRecommendationRequest[0]));
             var chunkResponse = makeRequestAndValidate("ContentRecommendationRequestCollection", chunkedRequest, ContentRecommendationResponseCollection.class);
             if (chunkResponse == null) {

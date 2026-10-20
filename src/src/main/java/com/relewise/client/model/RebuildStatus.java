@@ -41,6 +41,10 @@ public class RebuildStatus
     public Duration staleDuration;
     /** The duration of how long the index was previously marked as stale before it was rebuilt. This property is set server-side. Any value sent from the client will be ignored. */
     public Duration lastStaleDuration;
+    /** The timestamp when field changes were most recently checked for this index. This property is set server-side. Any value sent from the client will be ignored. */
+    public @Nullable OffsetDateTime lastFieldChangeCheck;
+    /** The timestamp when field changes most recently caused this index to be marked as stale. This property is set server-side. Any value sent from the client will be ignored. */
+    public @Nullable OffsetDateTime lastFieldChangeMarkedIndexStale;
     public static RebuildStatus create(Boolean isBuilt, Boolean isPartial, Boolean isRebuilding, Boolean isStale, OffsetDateTime lastRebuildStarted, OffsetDateTime lastRebuildCompleted, OffsetDateTime lastRebuildOpportunity, Duration lastRebuildDuration, OffsetDateTime lastMarkedAsStale, Duration staleDuration, Duration lastStaleDuration)
     {
         return new RebuildStatus(isBuilt, isPartial, isRebuilding, isStale, lastRebuildStarted, lastRebuildCompleted, lastRebuildOpportunity, lastRebuildDuration, lastMarkedAsStale, staleDuration, lastStaleDuration);
@@ -117,6 +121,16 @@ public class RebuildStatus
     {
         return this.lastStaleDuration;
     }
+    /** The timestamp when field changes were most recently checked for this index. This property is set server-side. Any value sent from the client will be ignored. */
+    public @Nullable OffsetDateTime getLastFieldChangeCheck()
+    {
+        return this.lastFieldChangeCheck;
+    }
+    /** The timestamp when field changes most recently caused this index to be marked as stale. This property is set server-side. Any value sent from the client will be ignored. */
+    public @Nullable OffsetDateTime getLastFieldChangeMarkedIndexStale()
+    {
+        return this.lastFieldChangeMarkedIndexStale;
+    }
     /** Indicates whether the rebuild process is currently in progress. This property is set server-side during modification. Any value sent from the client will be ignored. */
     public RebuildStatus setIsRebuilding(Boolean isRebuilding)
     {
@@ -181,6 +195,18 @@ public class RebuildStatus
     public RebuildStatus setLastStaleDuration(Duration lastStaleDuration)
     {
         this.lastStaleDuration = lastStaleDuration;
+        return this;
+    }
+    /** The timestamp when field changes were most recently checked for this index. This property is set server-side. Any value sent from the client will be ignored. */
+    public RebuildStatus setLastFieldChangeCheck(@Nullable OffsetDateTime lastFieldChangeCheck)
+    {
+        this.lastFieldChangeCheck = lastFieldChangeCheck;
+        return this;
+    }
+    /** The timestamp when field changes most recently caused this index to be marked as stale. This property is set server-side. Any value sent from the client will be ignored. */
+    public RebuildStatus setLastFieldChangeMarkedIndexStale(@Nullable OffsetDateTime lastFieldChangeMarkedIndexStale)
+    {
+        this.lastFieldChangeMarkedIndexStale = lastFieldChangeMarkedIndexStale;
         return this;
     }
 }

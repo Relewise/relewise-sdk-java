@@ -98,4 +98,19 @@ public class ProductsViewedAfterViewingContentRequest extends ProductRecommendat
         this.channel = channel;
         return this;
     }
+    public ProductsViewedAfterViewingContentRequest addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    @Override
+    public ProductsViewedAfterViewingContentRequest setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
+        return this;
+    }
 }

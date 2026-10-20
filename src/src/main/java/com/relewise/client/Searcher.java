@@ -46,6 +46,7 @@ public class Searcher extends RelewiseClient
             chunkedRequest.setIndexSelector(request.getIndexSelector());
             chunkedRequest.setPostFilters(request.getPostFilters());
             chunkedRequest.setChannel(request.getChannel());
+            chunkedRequest.setContextValues(request.getContextValues());
             chunkedRequest.setRequests(batch.toArray(new SearchRequest[0]));
             var chunkResponse = makeRequestAndValidate("SearchRequestCollection", chunkedRequest, SearchResponseCollection.class);
             if (chunkResponse == null) {

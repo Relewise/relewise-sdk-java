@@ -26,6 +26,8 @@ public class ProductRecommendationRequestCollection extends LicensedRequest
     public String $type = "Relewise.Client.Requests.Recommendations.ProductRecommendationRequestCollection, Relewise.Client";
     public ArrayList<ProductRecommendationRequest> requests;
     public Boolean requireDistinctProductsAcrossResults;
+    /** Default context values used to determine which merchandising rules apply to requests in this batch, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public @Nullable HashMap<String, String> contextValues;
     public static ProductRecommendationRequestCollection create(Boolean requireDistinctProductsAcrossResults, ProductRecommendationRequest... requests)
     {
         return new ProductRecommendationRequestCollection(requireDistinctProductsAcrossResults, requests);
@@ -54,6 +56,11 @@ public class ProductRecommendationRequestCollection extends LicensedRequest
     {
         return this.requireDistinctProductsAcrossResults;
     }
+    /** Default context values used to determine which merchandising rules apply to requests in this batch, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public @Nullable HashMap<String, String> getContextValues()
+    {
+        return this.contextValues;
+    }
     public ProductRecommendationRequestCollection setRequests(ProductRecommendationRequest... requests)
     {
         this.requests = new ArrayList<>(Arrays.asList(requests));;
@@ -71,6 +78,22 @@ public class ProductRecommendationRequestCollection extends LicensedRequest
     public ProductRecommendationRequestCollection setRequireDistinctProductsAcrossResults(Boolean requireDistinctProductsAcrossResults)
     {
         this.requireDistinctProductsAcrossResults = requireDistinctProductsAcrossResults;
+        return this;
+    }
+    /** Default context values used to determine which merchandising rules apply to requests in this batch, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public ProductRecommendationRequestCollection addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    /** Default context values used to determine which merchandising rules apply to requests in this batch, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public ProductRecommendationRequestCollection setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
         return this;
     }
 }

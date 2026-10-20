@@ -37,4 +37,9 @@ public enum CampaignStatusWithHistoryStatusName
             return "BudgetReached";
         }
     },
+    Scheduled {
+        public String toString() {
+            return "Scheduled";
+        }
+    },
 }
