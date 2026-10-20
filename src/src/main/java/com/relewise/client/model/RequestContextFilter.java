@@ -27,6 +27,8 @@ public class RequestContextFilter
     /** @deprecated Use SearchTermCriteria instead */
     public @Nullable SearchTermConditionByLanguageCollection searchTerms;
     public @Nullable SearchTermCriteria searchTermCriteria;
+    /** A condition on values supplied with the request, such as device type or test variant. It must match along with the other criteria in this filter. Null adds no restriction. */
+    public @Nullable ContextValueCondition contextValueCondition;
     public static RequestContextFilter create()
     {
         return new RequestContextFilter();
@@ -66,6 +68,11 @@ public class RequestContextFilter
     public @Nullable SearchTermCriteria getSearchTermCriteria()
     {
         return this.searchTermCriteria;
+    }
+    /** A condition on values supplied with the request, such as device type or test variant. It must match along with the other criteria in this filter. Null adds no restriction. */
+    public @Nullable ContextValueCondition getContextValueCondition()
+    {
+        return this.contextValueCondition;
     }
     public RequestContextFilter setRecommendations(RecommendationTypeCollection recommendations)
     {
@@ -133,6 +140,12 @@ public class RequestContextFilter
     public RequestContextFilter setSearchTermCriteria(@Nullable SearchTermCriteria searchTermCriteria)
     {
         this.searchTermCriteria = searchTermCriteria;
+        return this;
+    }
+    /** A condition on values supplied with the request, such as device type or test variant. It must match along with the other criteria in this filter. Null adds no restriction. */
+    public RequestContextFilter setContextValueCondition(@Nullable ContextValueCondition contextValueCondition)
+    {
+        this.contextValueCondition = contextValueCondition;
         return this;
     }
 }

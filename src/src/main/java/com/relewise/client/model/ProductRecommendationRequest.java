@@ -91,4 +91,19 @@ public abstract class ProductRecommendationRequest extends RecommendationRequest
         this.channel = channel;
         return this;
     }
+    public ProductRecommendationRequest addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    @Override
+    public ProductRecommendationRequest setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
+        return this;
+    }
 }

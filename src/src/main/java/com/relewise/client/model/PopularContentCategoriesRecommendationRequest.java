@@ -109,4 +109,19 @@ public class PopularContentCategoriesRecommendationRequest extends ContentCatego
         this.channel = channel;
         return this;
     }
+    public PopularContentCategoriesRecommendationRequest addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    @Override
+    public PopularContentCategoriesRecommendationRequest setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
+        return this;
+    }
 }

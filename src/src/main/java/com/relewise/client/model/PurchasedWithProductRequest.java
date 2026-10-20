@@ -98,4 +98,19 @@ public class PurchasedWithProductRequest extends ProductRecommendationRequest im
         this.channel = channel;
         return this;
     }
+    public PurchasedWithProductRequest addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    @Override
+    public PurchasedWithProductRequest setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
+        return this;
+    }
 }

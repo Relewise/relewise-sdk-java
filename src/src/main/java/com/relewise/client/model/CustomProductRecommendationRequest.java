@@ -117,4 +117,19 @@ public class CustomProductRecommendationRequest extends ProductRecommendationReq
         this.channel = channel;
         return this;
     }
+    public CustomProductRecommendationRequest addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    @Override
+    public CustomProductRecommendationRequest setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
+        return this;
+    }
 }

@@ -61,6 +61,8 @@ public abstract class RecommendationRequest extends LicensedRequest implements I
     public @Nullable Currency currency;
     /** @deprecated Use User.Channel instead. */
     public @Nullable Channel channel;
+    /** Context values used to determine which merchandising rules apply to this request, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public @Nullable HashMap<String, String> contextValues;
     public @Nullable Language getLanguage()
     {
         return this.language;
@@ -89,6 +91,11 @@ public abstract class RecommendationRequest extends LicensedRequest implements I
     public @Nullable Channel getChannel()
     {
         return this.channel;
+    }
+    /** Context values used to determine which merchandising rules apply to this request, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public @Nullable HashMap<String, String> getContextValues()
+    {
+        return this.contextValues;
     }
     public RecommendationRequest setLanguage(@Nullable Language language)
     {
@@ -124,6 +131,22 @@ public abstract class RecommendationRequest extends LicensedRequest implements I
     public RecommendationRequest setChannel(@Nullable Channel channel)
     {
         this.channel = channel;
+        return this;
+    }
+    /** Context values used to determine which merchandising rules apply to this request, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public RecommendationRequest addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    /** Context values used to determine which merchandising rules apply to this request, such as DeviceType=Mobile or SplitTestVariant=A. */
+    public RecommendationRequest setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
         return this;
     }
 }

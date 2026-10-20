@@ -80,4 +80,19 @@ public abstract class BrandRecommendationRequest extends RecommendationRequest i
         this.channel = channel;
         return this;
     }
+    public BrandRecommendationRequest addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    @Override
+    public BrandRecommendationRequest setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
+        return this;
+    }
 }

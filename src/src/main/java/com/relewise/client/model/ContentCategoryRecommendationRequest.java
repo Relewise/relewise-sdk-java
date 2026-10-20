@@ -80,4 +80,19 @@ public abstract class ContentCategoryRecommendationRequest extends Recommendatio
         this.channel = channel;
         return this;
     }
+    public ContentCategoryRecommendationRequest addToContextValues(String key, String value)
+    {
+        if (this.contextValues == null)
+        {
+            this.contextValues = new HashMap<>();
+        }
+        this.contextValues.put(key, value);
+        return this;
+    }
+    @Override
+    public ContentCategoryRecommendationRequest setContextValues(@Nullable HashMap<String, String> contextValues)
+    {
+        this.contextValues = contextValues;
+        return this;
+    }
 }
