@@ -9,6 +9,8 @@ public class Tracker extends RelewiseClient
 {
     public Tracker(String datasetId, String apiKey, String serverUrl) { super(datasetId, apiKey, serverUrl, 5); }
     public Tracker(String datasetId, String apiKey, String serverUrl, int timeout) { super(datasetId, apiKey, serverUrl, timeout); }
+    public Tracker(String datasetId, OAuthClientCredentials credentials, String serverUrl) { super(datasetId, credentials, serverUrl, 5); }
+    public Tracker(String datasetId, OAuthClientCredentials credentials, String serverUrl, int timeout) { super(datasetId, credentials, serverUrl, timeout); }
     
     public void track(BatchedTrackingRequest trackingRequest) throws IOException, InterruptedException, ClientException {
         if (trackingRequest.getItems() == null || trackingRequest.getItems().length == 0) {

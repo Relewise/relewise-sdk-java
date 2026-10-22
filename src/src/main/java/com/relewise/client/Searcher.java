@@ -9,6 +9,8 @@ public class Searcher extends RelewiseClient
 {
     public Searcher(String datasetId, String apiKey, String serverUrl) { super(datasetId, apiKey, serverUrl, 5); }
     public Searcher(String datasetId, String apiKey, String serverUrl, int timeout) { super(datasetId, apiKey, serverUrl, timeout); }
+    public Searcher(String datasetId, OAuthClientCredentials credentials, String serverUrl) { super(datasetId, credentials, serverUrl, 5); }
+    public Searcher(String datasetId, OAuthClientCredentials credentials, String serverUrl, int timeout) { super(datasetId, credentials, serverUrl, timeout); }
     
     public ProductSearchResponse search(ProductSearchRequest request) throws IOException, InterruptedException, ClientException {
         return makeRequestAndValidate("ProductSearchRequest", request, ProductSearchResponse.class);

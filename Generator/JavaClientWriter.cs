@@ -79,6 +79,8 @@ import java.io.IOException;
         writer.Indent++;
         writer.WriteLine($"public {clientType.Name}(String datasetId, String apiKey, String serverUrl) {{ super(datasetId, apiKey, serverUrl, {timeout}); }}");
         writer.WriteLine($"public {clientType.Name}(String datasetId, String apiKey, String serverUrl, int timeout) {{ super(datasetId, apiKey, serverUrl, timeout); }}");
+        writer.WriteLine($"public {clientType.Name}(String datasetId, OAuthClientCredentials credentials, String serverUrl) {{ super(datasetId, credentials, serverUrl, {timeout}); }}");
+        writer.WriteLine($"public {clientType.Name}(String datasetId, OAuthClientCredentials credentials, String serverUrl, int timeout) {{ super(datasetId, credentials, serverUrl, timeout); }}");
 
         foreach (var method in clientMethods.DistinctBy(method => method.parameterType))
         {

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.relewise.client.OAuthClientCredentials;
 import com.relewise.client.model.LicensedRequest;
 
 import java.io.IOException;
@@ -22,30 +23,76 @@ public class RelewiseClient {
     private static final String apiKeyNotDefinedMessage = "apiKey must not be empty.";
     private static final String apiVersion = "v1";
     private static final String clientName = "RelewiseJavaClient";
-    private static final HttpClient httpClient = HttpClient.newHttpClient();
     private String clientVersion = "unknown";
     private final String datasetId;
     private final String apiKey;
+    private final OAuthTokenProvider oauthTokenProvider;
     private final String serverUrl;
     private final int timeout;
     private final ObjectMapper objectMapper;
+    private final HttpClient httpClient;
     private int batchSize = 1000;
 
     public RelewiseClient(String datasetId, String apiKey, String serverUrl, int timeout) {
-        if (apiKey.isBlank()) {
+        if (apiKey == null || apiKey.isBlank()) {
             throw new IllegalArgumentException(apiKeyNotDefinedMessage);
         }
 
         this.datasetId = datasetId;
         this.apiKey = apiKey;
+        this.oauthTokenProvider = null;
         this.serverUrl = serverUrl;
         this.timeout = timeout;
+        this.httpClient = null;
 
-        this.objectMapper = JsonMapper.builder()
+        this.objectMapper = createObjectMapper();
+        loadClientVersion();
+    }
+
+    public RelewiseClient(String datasetId, OAuthClientCredentials credentials, String serverUrl, int timeout) {
+        if (!OAuthTokenProvider.isNonEmptyUuid(datasetId)) {
+            throw new IllegalArgumentException("datasetId must be a valid non-empty UUID when using OAuth.");
+        }
+        validateOAuthServerUrl(serverUrl);
+
+        this.datasetId = datasetId;
+        this.apiKey = null;
+        this.oauthTokenProvider = new OAuthTokenProvider(credentials, timeout);
+        this.serverUrl = serverUrl;
+        this.timeout = timeout;
+        this.httpClient = null;
+
+        this.objectMapper = createObjectMapper();
+        loadClientVersion();
+    }
+
+    RelewiseClient(String datasetId, String serverUrl, int timeout, HttpClient httpClient, OAuthTokenProvider oauthTokenProvider) {
+        if (!OAuthTokenProvider.isNonEmptyUuid(datasetId)) {
+            throw new IllegalArgumentException("datasetId must be a valid non-empty UUID when using OAuth.");
+        }
+        validateOAuthServerUrl(serverUrl);
+        if (httpClient == null || oauthTokenProvider == null) {
+            throw new IllegalArgumentException("HTTP client and OAuth token provider cannot be null.");
+        }
+
+        this.datasetId = datasetId;
+        this.apiKey = null;
+        this.oauthTokenProvider = oauthTokenProvider;
+        this.serverUrl = serverUrl;
+        this.timeout = timeout;
+        this.httpClient = httpClient;
+        this.objectMapper = createObjectMapper();
+        loadClientVersion();
+    }
+
+    private ObjectMapper createObjectMapper() {
+        return JsonMapper.builder()
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
             .addModule(new JavaTimeModule().addDeserializer(Duration.class, new DurationDeserializer()))
             .build();
+    }
 
+    private void loadClientVersion() {
         try {
             Properties properties = new Properties();
             properties.load(this.getClass().getClassLoader().getResourceAsStream("project.properties"));
@@ -93,15 +140,32 @@ public class RelewiseClient {
                 new String[] { datasetId, apiVersion, endpoint }
         ));
 
+        if (oauthTokenProvider == null) {
+            return sendRequest(uri, stringRequestBody, "ApiKey " + apiKey);
+        }
+
+        URI tokenEndpoint = URI.create(createRequestUrl(serverUrl, new String[] { datasetId, "oauth/token" }));
+        OAuthToken token = oauthTokenProvider.getToken(tokenEndpoint);
+        HttpResponse<String> response = sendRequest(uri, stringRequestBody, "Bearer " + token.getAccessToken());
+
+        if (OAuthChallenge.isInvalidTokenResponse(response.statusCode(), response.headers())) {
+            token = oauthTokenProvider.getToken(tokenEndpoint, token.getAccessToken());
+            response = sendRequest(uri, stringRequestBody, "Bearer " + token.getAccessToken());
+        }
+
+        return response;
+    }
+
+    private HttpResponse<String> sendRequest(URI uri, String requestBody, String authorization) throws IOException, InterruptedException {
         var request = HttpRequest.newBuilder(uri)
-                .POST(HttpRequest.BodyPublishers.ofString(stringRequestBody))
-                .header("Authorization", "ApiKey " + apiKey)
+                .POST(HttpRequest.BodyPublishers.ofString(requestBody))
+                .header("Authorization", authorization)
                 .header("Content-Type", "application/json")
                 .header("User-Agent",  clientName + "/" + clientVersion)
                 .timeout(Duration.ofSeconds(timeout))
                 .build();
 
-        return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        return getHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
     }
 
     public <T> T makeRequestAndValidate(String endpoint, LicensedRequest requestBody, Class<T> responseClass) throws IOException, InterruptedException, ClientException {
@@ -141,5 +205,31 @@ public class RelewiseClient {
         return baseUrl.endsWith("/")
             ? baseUrl + joinedSegments
             : baseUrl + "/" + joinedSegments;
+    }
+
+    private static void validateOAuthServerUrl(String serverUrl) {
+        try {
+            if (serverUrl == null || !serverUrl.equals(serverUrl.trim())) {
+                throw new IllegalArgumentException();
+            }
+            URI uri = URI.create(serverUrl);
+            if (!"https".equalsIgnoreCase(uri.getScheme())
+                || uri.getHost() == null
+                || uri.getRawUserInfo() != null
+                || uri.getRawQuery() != null
+                || uri.getRawFragment() != null) {
+                throw new IllegalArgumentException();
+            }
+        } catch (IllegalArgumentException exception) {
+            throw new IllegalArgumentException("serverUrl must be a valid HTTPS URL without credentials, query, or fragment when using OAuth.");
+        }
+    }
+
+    private HttpClient getHttpClient() {
+        return httpClient == null ? DefaultHttpClientHolder.instance : httpClient;
+    }
+
+    private static final class DefaultHttpClientHolder {
+        private static final HttpClient instance = HttpClient.newHttpClient();
     }
 }
