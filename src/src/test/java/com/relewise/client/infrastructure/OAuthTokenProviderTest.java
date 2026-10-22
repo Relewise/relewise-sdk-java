@@ -91,6 +91,23 @@ class OAuthTokenProviderTest {
     }
 
     @Test
+    void returnsReissuedRejectedTokenAfterSingleRefresh() throws Exception {
+        AtomicInteger requests = new AtomicInteger();
+        var provider = provider("secret", new AtomicLong(0), (endpoint, auth, body, timeout) -> {
+            if (requests.incrementAndGet() > 2) {
+                throw new IllegalStateException("Token acquisition must not be repeated.");
+            }
+            return completed(200, token("same-token", 300));
+        });
+
+        OAuthToken first = provider.getToken(ENDPOINT);
+        OAuthToken replacement = provider.getToken(ENDPOINT, first.getAccessToken());
+
+        assertEquals("same-token", replacement.getAccessToken());
+        assertEquals(2, requests.get());
+    }
+
+    @Test
     void abandonsAcquisitionWhenFinalWaiterIsInterrupted() throws Exception {
         CountDownLatch firstStarted = new CountDownLatch(1);
         List<CompletableFuture<OAuthTokenProvider.TokenEndpointResponse>> responses = new ArrayList<>();

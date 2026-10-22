@@ -102,12 +102,18 @@ public final class OAuthTokenProvider {
                 acquisition.waiters++;
             }
 
+            CachedToken acquiredToken;
             try {
-                acquisition.future.get();
+                acquiredToken = acquisition.future.get();
             } catch (ExecutionException exception) {
                 throw unwrap(exception.getCause());
             } finally {
                 releaseWaiter(acquisition);
+            }
+
+            if (acquiredToken.endpoint.equals(endpoint)
+                && currentTimeMillis.getAsLong() < acquiredToken.renewAt) {
+                return acquiredToken.token;
             }
         }
     }
