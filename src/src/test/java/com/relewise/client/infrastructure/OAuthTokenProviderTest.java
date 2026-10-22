@@ -156,6 +156,16 @@ class OAuthTokenProviderTest {
     }
 
     @Test
+    void doesNotLeakNonAsciiAccessToken() {
+        var provider = provider("secret", new AtomicLong(0), (endpoint, auth, body, timeout) ->
+            completed(200, token("SUPER_SECRET_MARKER\u0100", 300)));
+
+        IOException error = assertThrows(IOException.class, () -> provider.getToken(ENDPOINT));
+        assertEquals("The OAuth endpoint returned an invalid token response.", error.getMessage());
+        assertFalse(error.toString().contains("SUPER_SECRET_MARKER"));
+    }
+
+    @Test
     void validatesCredentialsAndEndpoint() {
         assertThrows(IllegalArgumentException.class, () -> new OAuthTokenProvider(new OAuthClientCredentials("not-a-uuid", "secret"), 5));
         assertThrows(IllegalArgumentException.class, () -> new OAuthTokenProvider(new OAuthClientCredentials("00000000-0000-0000-0000-000000000000", "secret"), 5));

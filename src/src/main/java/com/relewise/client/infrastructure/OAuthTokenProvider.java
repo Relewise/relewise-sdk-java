@@ -231,7 +231,7 @@ public final class OAuthTokenProvider {
     private static boolean containsInvalidTokenCharacter(String token) {
         for (int index = 0; index < token.length(); index++) {
             char character = token.charAt(index);
-            if (character <= 0x20 || character == 0x7f) {
+            if (character < 0x21 || character > 0x7e) {
                 return true;
             }
         }

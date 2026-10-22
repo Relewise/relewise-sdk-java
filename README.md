@@ -21,6 +21,8 @@ var tracker = new Tracker(datasetId, credentials, relewiseServerUrl);
 
 Create the Relewise client once and reuse it for subsequent requests. Each client instance owns an in-memory token provider which acquires a token on the first request, shares it between concurrent requests, renews it shortly before expiry, and retries an API request once if the server reports `Bearer error="invalid_token"`. Creating a new client creates a new token cache and can cause another token request.
 
+The configured timeout applies separately to each HTTP exchange. Token acquisition, the API request, and any token refresh or API retry each receive the full configured timeout.
+
 The same credentials type can be passed to `Searcher`, `Recommender`, and `SearchAdministrator`.
 
 ## Installation
