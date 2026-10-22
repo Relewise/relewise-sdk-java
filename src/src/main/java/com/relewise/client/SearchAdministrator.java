@@ -8,6 +8,8 @@ public class SearchAdministrator extends RelewiseClient
 {
     public SearchAdministrator(String datasetId, String apiKey, String serverUrl) { super(datasetId, apiKey, serverUrl, 30); }
     public SearchAdministrator(String datasetId, String apiKey, String serverUrl, int timeout) { super(datasetId, apiKey, serverUrl, timeout); }
+    public SearchAdministrator(String datasetId, OAuthClientCredentials credentials, String serverUrl) { super(datasetId, credentials, serverUrl, 30); }
+    public SearchAdministrator(String datasetId, OAuthClientCredentials credentials, String serverUrl, int timeout) { super(datasetId, credentials, serverUrl, timeout); }
     
     public void delete(DeleteSearchIndexRequest request) throws IOException, InterruptedException, ClientException {
         makeRequestAndValidate("DeleteSearchIndexRequest", request, Void.class);

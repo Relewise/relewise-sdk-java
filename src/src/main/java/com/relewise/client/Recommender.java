@@ -9,6 +9,8 @@ public class Recommender extends RelewiseClient
 {
     public Recommender(String datasetId, String apiKey, String serverUrl) { super(datasetId, apiKey, serverUrl, 5); }
     public Recommender(String datasetId, String apiKey, String serverUrl, int timeout) { super(datasetId, apiKey, serverUrl, timeout); }
+    public Recommender(String datasetId, OAuthClientCredentials credentials, String serverUrl) { super(datasetId, credentials, serverUrl, 5); }
+    public Recommender(String datasetId, OAuthClientCredentials credentials, String serverUrl, int timeout) { super(datasetId, credentials, serverUrl, timeout); }
     
     public ProductRecommendationResponse recommend(PurchasedWithProductRequest request) throws IOException, InterruptedException, ClientException {
         return makeRequestAndValidate("PurchasedWithProductRequest", request, ProductRecommendationResponse.class);
