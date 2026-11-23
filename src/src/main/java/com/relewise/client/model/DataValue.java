@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+/** Only used for receiving monetary data in the requested currency from the server, for example in search and recommendation results. Sending a <code>DataValue</code> of this type from client to server is not supported. Use <code>MultiCurrency</code> with a <code>MultiCurrency</code> value instead, even when supplying only one currency. */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DataValue
 {

@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
     
+/** Records a search term entered by a user. */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.EXISTING_PROPERTY,
@@ -24,15 +25,30 @@ import java.util.HashSet;
 public class SearchTerm extends Trackable implements IUserIdentifier
 {
     public String $type = "Relewise.Client.DataTypes.SearchTerm, Relewise.Client";
+    /** The language of the search. Its value must contain a non-whitespace character. */
     public Language language;
+    /** The user who entered the search term, if known. */
     public User user;
+    /** The text entered by the user. It must contain a non-whitespace character. */
     public String term;
     /** @deprecated Use User.Channel instead. */
     public @Nullable Channel channel;
+    /**
+     * Creates a search term for tracking.
+     * @param language The language of the search.
+     * @param user The user who entered the search term, if known.
+     * @param term The text entered by the user.
+     */
     public static SearchTerm create(Language language, User user, String term)
     {
         return new SearchTerm(language, user, term);
     }
+    /**
+     * Creates a search term for tracking.
+     * @param language The language of the search.
+     * @param user The user who entered the search term, if known.
+     * @param term The text entered by the user.
+     */
     public SearchTerm(Language language, User user, String term)
     {
         this.language = language;
@@ -42,14 +58,17 @@ public class SearchTerm extends Trackable implements IUserIdentifier
     public SearchTerm()
     {
     }
+    /** The language of the search. Its value must contain a non-whitespace character. */
     public Language getLanguage()
     {
         return this.language;
     }
+    /** The user who entered the search term, if known. */
     public User getUser()
     {
         return this.user;
     }
+    /** The text entered by the user. It must contain a non-whitespace character. */
     public String getTerm()
     {
         return this.term;
@@ -59,16 +78,19 @@ public class SearchTerm extends Trackable implements IUserIdentifier
     {
         return this.channel;
     }
+    /** The language of the search. Its value must contain a non-whitespace character. */
     public SearchTerm setLanguage(Language language)
     {
         this.language = language;
         return this;
     }
+    /** The user who entered the search term, if known. */
     public SearchTerm setUser(User user)
     {
         this.user = user;
         return this;
     }
+    /** The text entered by the user. It must contain a non-whitespace character. */
     public SearchTerm setTerm(String term)
     {
         this.term = term;
