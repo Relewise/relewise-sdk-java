@@ -25,6 +25,8 @@ public class CategoryFacet extends StringValueFacet
 {
     public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.CategoryFacet, Relewise.Client";
     public CategorySelectionStrategy categorySelectionStrategy;
+    /** Properties to include in each facet value's Category. Null omits Category. The outer Id and DisplayName are always returned. */
+    public @Nullable SelectedCategoryPropertiesSettings selectedPropertiesSettings;
     public static CategoryFacet create(CategorySelectionStrategy categorySelectionStrategy, String... selectedIds)
     {
         return new CategoryFacet(categorySelectionStrategy, selectedIds);
@@ -41,9 +43,20 @@ public class CategoryFacet extends StringValueFacet
     {
         return this.categorySelectionStrategy;
     }
+    /** Properties to include in each facet value's Category. Null omits Category. The outer Id and DisplayName are always returned. */
+    public @Nullable SelectedCategoryPropertiesSettings getSelectedPropertiesSettings()
+    {
+        return this.selectedPropertiesSettings;
+    }
     public CategoryFacet setCategorySelectionStrategy(CategorySelectionStrategy categorySelectionStrategy)
     {
         this.categorySelectionStrategy = categorySelectionStrategy;
+        return this;
+    }
+    /** Properties to include in each facet value's Category. Null omits Category. The outer Id and DisplayName are always returned. */
+    public CategoryFacet setSelectedPropertiesSettings(@Nullable SelectedCategoryPropertiesSettings selectedPropertiesSettings)
+    {
+        this.selectedPropertiesSettings = selectedPropertiesSettings;
         return this;
     }
     @Override

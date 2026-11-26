@@ -24,6 +24,8 @@ import java.util.HashSet;
 public class BrandFacet extends StringValueFacet
 {
     public String $type = "Relewise.Client.DataTypes.Search.Facets.Queries.BrandFacet, Relewise.Client";
+    /** Properties to include in each facet value's Brand. Null omits Brand. The outer Id and DisplayName are always returned. */
+    public @Nullable SelectedBrandPropertiesSettings selectedPropertiesSettings;
     public static BrandFacet create(String... selectedIds)
     {
         return new BrandFacet(selectedIds);
@@ -34,6 +36,17 @@ public class BrandFacet extends StringValueFacet
     }
     public BrandFacet()
     {
+    }
+    /** Properties to include in each facet value's Brand. Null omits Brand. The outer Id and DisplayName are always returned. */
+    public @Nullable SelectedBrandPropertiesSettings getSelectedPropertiesSettings()
+    {
+        return this.selectedPropertiesSettings;
+    }
+    /** Properties to include in each facet value's Brand. Null omits Brand. The outer Id and DisplayName are always returned. */
+    public BrandFacet setSelectedPropertiesSettings(@Nullable SelectedBrandPropertiesSettings selectedPropertiesSettings)
+    {
+        this.selectedPropertiesSettings = selectedPropertiesSettings;
+        return this;
     }
     @Override
     public BrandFacet setSelected(String... selected)

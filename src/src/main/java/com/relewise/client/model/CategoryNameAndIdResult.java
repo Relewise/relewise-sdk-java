@@ -20,6 +20,7 @@ public class CategoryNameAndIdResult
 {
     public String id;
     public String displayName;
+    public @Nullable CategoryResult category;
     public static CategoryNameAndIdResult create(String id, String displayName)
     {
         return new CategoryNameAndIdResult(id, displayName);
@@ -40,6 +41,10 @@ public class CategoryNameAndIdResult
     {
         return this.displayName;
     }
+    public @Nullable CategoryResult getCategory()
+    {
+        return this.category;
+    }
     public CategoryNameAndIdResult setId(String id)
     {
         this.id = id;
@@ -48,6 +53,11 @@ public class CategoryNameAndIdResult
     public CategoryNameAndIdResult setDisplayName(String displayName)
     {
         this.displayName = displayName;
+        return this;
+    }
+    public CategoryNameAndIdResult setCategory(@Nullable CategoryResult category)
+    {
+        this.category = category;
         return this;
     }
 }

@@ -20,6 +20,7 @@ public class BrandNameAndIdResult
 {
     public String id;
     public String displayName;
+    public @Nullable BrandResult brand;
     public static BrandNameAndIdResult create(String id, String displayName)
     {
         return new BrandNameAndIdResult(id, displayName);
@@ -40,6 +41,10 @@ public class BrandNameAndIdResult
     {
         return this.displayName;
     }
+    public @Nullable BrandResult getBrand()
+    {
+        return this.brand;
+    }
     public BrandNameAndIdResult setId(String id)
     {
         this.id = id;
@@ -48,6 +53,11 @@ public class BrandNameAndIdResult
     public BrandNameAndIdResult setDisplayName(String displayName)
     {
         this.displayName = displayName;
+        return this;
+    }
+    public BrandNameAndIdResult setBrand(@Nullable BrandResult brand)
+    {
+        this.brand = brand;
         return this;
     }
 }
